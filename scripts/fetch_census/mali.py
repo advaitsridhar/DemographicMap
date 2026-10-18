@@ -24,8 +24,10 @@ placed on the map's polygons point by point, put the cercle of Ouélessébougou
 and part of Sélingué (Koulikoro) in Bougouni, part of Bla (Ségou) in Koutiala,
 part of Ténenkou (Mopti) in Ségou as Nampala, and draw the District of Bamako
 of 2023 over ground of the Kati cercle. Shares move little when a cercle
-changes hands, so those five shapes keep the summed shares and say what the
-sum takes in or leaves out (CROSSED). Every table prints percentages and each region's
+changes hands, so the four regions keep the summed shares and say what the sum
+takes in or leaves out (CROSSED); the District of Bamako of 2023 is about three
+times the district drawn, a larger unit, so that shape says why it shows none
+of its shares (LARGER). Every table prints percentages and each region's
 population, and the sum is taken on counts rebuilt from the two -- a percent
 of a stated population -- never on percentages, which cannot be added.
 
@@ -56,7 +58,7 @@ import unicodedata
 from pathlib import Path
 from typing import Any
 
-from ._shared import PROCESSED, log, record, shares, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, shares, write_json
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import PAGE_BREAK, fetch_blob, tables_of  # noqa: E402
@@ -110,10 +112,20 @@ CROSSED = {
               "Nampala)."),
     "Mopti": ("The regions summed here leave out part of the cercle of Ténenkou, now the "
               "cercle of Nampala in the Ségou region."),
-    "Bamako": ("The District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units "
-               "about three times the size of the district drawn here, over ground drawn here "
-               "in the Kati cercle; the shares are the larger district's."),
 }
+# The District of Bamako of 2023 is no sum of shapes: OCHA's boundaries of the
+# 2023 units draw it about three times the size of the district drawn here,
+# over ground the map draws in the Kati cercle, and the census counts
+# 4,227,569 people in it against OCHA's 2,231,344 (2018) for the district of
+# before. Its shares are a larger unit's, so the shape carries the reason.
+LARGER = {
+    "Bamako": ("The 2022 census tabulates {field} for the District of Bamako as it was redrawn "
+               "in 2023, which OCHA's boundaries of the 2023 units draw about three times the "
+               "size of the district drawn here, over ground drawn here in the Kati cercle; no "
+               "{field} is published for the district as drawn here."),
+}
+FIELD_WORDS = {"religion": "religion", "ethnicity": "ethnic group",
+               "language": "mother tongue"}
 
 RELIGIONS = ["Islam", "Christianity", "Animist", "No religion", "Other religion"]
 # Annex column labels as printed (a wrap or a mirror does not matter, only
@@ -386,6 +398,10 @@ def build(fields: dict[str, dict[str, tuple[int, dict[str, float]]]]) -> list[di
     for shape in sorted(set(REGIONS.values())):
         values: dict[str, Any] = {}
         for field in per_shape:
+            if shape in LARGER:
+                values[field] = gap(NOT_AVAILABLE,
+                                    LARGER[shape].format(field=FIELD_WORDS[field]))
+                continue
             pop, counts = per_shape[field][shape]
             values[field] = shares({k: v for k, v in counts.items() if v >= 0.5}, total=pop)
             note = (f"{SOURCE}. {NOTES[field]} The report prints each region's shares to "

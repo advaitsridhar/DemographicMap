@@ -434,7 +434,8 @@ def build(reports: list[dict[str, Any]], admin1: list[dict[str, Any]],
                 f"The 2023 census's report for the {rr['region']} region gives each "
                 "department's population in three broad age groups only (under 15, 15 to 64, "
                 "65 and over), from which no median age can be taken.")),
-            sources=[{"field": "median_age", "name": source_name(rr["region"], ""),
+            # The report is the source the note quotes, not of a figure shown.
+            sources=[{"field": "median_age note", "name": source_name(rr["region"], ""),
                       "url": rr["url"], "page": PAGE, "license": LICENCE, "year": YEAR}]))
     return records, report
 

@@ -92,6 +92,37 @@ FACTS_2009 = {"BAMAKO": {"median": 19.4, "men": 905_000, "women": 905_366, "tota
                             "total": 2_418_305}}
 
 
+# Tableau P-1 as the runner printed it (probe e0e2b75), Kidal's block and the
+# District of Bamako's, under a country that is the two together.
+P1_TEXT = """TABLEAU P-1: POPULATION SUIVANT LE SEXE, LA SITUATION DE RESIDENCE ET LE NOMBRE DE MENAGES(REGIONS,CERCLE)
+HOM. FEM. HOM. FEM. HOM. FEM. HOM. FEM. Total
+MALI
+Total 922 502 921 496 21 476 12 631 7 668 13 435 943 978 934 127 1 878 105 299 024 149 143
+REGION DE KIDAL
+Urbain 13 821 11 868 175 105 91 61 13 996 11 973 25 969 4 823 4 238
+Rural 22 110 19 302 229 129 70 42 22 339 19 431 41 770 7 820 7 550
+Total 35 931 31 170 404 234 161 103 36 335 31 404 67 739 12 643 11 788
+CERCLE DE KIDAL
+Urbain 13 821 11 868 175 105 91 61 13 996 11 973 25 969 4 823 4 238
+Rural 3 999 3 444 34 20 6 3 4 033 3 464 7 497 1 280 1 266
+Total 17 820 15 312 209 125 97 64 18 029 15 437 33 466 6 103 5 504
+CERCLE DE ABEIBARA
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 5 464 4 798 24 10 3 4 5 488 4 808 10 296 1 796 1 780
+Total 5 464 4 798 24 10 3 4 5 488 4 808 10 296 1 796 1 780
+CERCLE DE TESSALIT
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 8 270 7 435 154 96 59 35 8 424 7 531 15 955 3 107 2 959
+Total 8 270 7 435 154 96 59 35 8 424 7 531 15 955 3 107 2 959
+CERCLE DE TIN ESSAKO
+Urbain 0 0 0 0 0 0 0 0 0 0 0
+Rural 4 377 3 625 17 3 2 0 4 394 3 628 8 022 1 637 1 545
+Total 4 377 3 625 17 3 2 0 4 394 3 628 8 022 1 637 1 545
+DISTRICT DE BAMAKO
+Total 886 571 890 326 21 072 12 397 7 507 13 332 907 643 902 723 1 810 366 286 381 137 355
+"""
+P1_COUNTRY = (36_335 + 907_643, 31_404 + 902_723, 67_739 + 1_810_366)
+
 class MaliRegionsOfBefore(unittest.TestCase):
     def test_crossed_regions_take_the_2009_census(self):
         sexes, medians, annex = mc.parse_sexes(TEXT), mc.parse_medians(TEXT), mc.parse_annex(TEXT)
@@ -105,9 +136,12 @@ class MaliRegionsOfBefore(unittest.TestCase):
         self.assertIn("Ouélessébougou", koulikoro["median_age_note"])
         self.assertIn("2009", koulikoro["sources"][0]["name"])
         self.assertIn("district as drawn here", by["Bamako"]["median_age_note"])
-        # No count: the 2022 census's crosses the ground and 2009's is older
-        # than the figures the map has.
-        self.assertNotIn("value", koulikoro["population"])
+        # The 2009 census's count of the region as drawn: older than OCHA's
+        # 2018 sum, which the map shows, saying which figure it replaces.
+        self.assertEqual(koulikoro["population"]["value"], 2_418_305)
+        self.assertEqual(koulikoro["population"]["year"], 2009)
+        self.assertIn("as it stood before 2023", koulikoro["population_note"])
+        self.assertIn("population", koulikoro["sources"][0]["field"].split("/"))
         # A crossed region the Bureau gives no figures for still says why.
         self.assertIn("cannot be put together", by["Mopti"]["median_age"]["note"])
 
@@ -132,6 +166,28 @@ class MaliRegionsOfBefore(unittest.TestCase):
         self.assertEqual(pairs[ansongo["id"]]["name"], "ANSONGHO")
         self.assertEqual(len([c for c in cercles if c["id"] in pairs]), len(cercles))
 
+
+    def test_the_final_count_by_cercle(self):
+        final = mc.parse_p1(P1_TEXT, P1_COUNTRY)
+        by = {c["name"]: c for c in final["cercles"]}
+        self.assertEqual((by["Tessalit"]["men"], by["Tessalit"]["women"]), (8_424, 7_531))
+        self.assertEqual(final["regions"]["KIDAL"], (36_335, 31_404, 67_739))
+        self.assertEqual(by["Bamako"]["total"], 1_810_366)
+        # A cercle misread no longer makes its region.
+        with self.assertRaises(SystemExit):
+            mc.parse_p1(P1_TEXT.replace("8 424 7 531 15 955", "8 425 7 531 15 956"),
+                        P1_COUNTRY)
+        records, report = mc.projection_records(None, ADMIN1, ADMIN2, FACTS_2009, final)
+        rec = {r["name"]: r for r in records}
+        tessalit = rec["Tessalit"]
+        self.assertEqual(tessalit["sex_ratio"]["value"], round(1000 * 8_424 / 7_531))
+        self.assertEqual(tessalit["sex_ratio"]["year"], 2009)
+        self.assertIn("8,424 men and 7,531 women", tessalit["sex_ratio_note"])
+        self.assertEqual(tessalit["sources"][0]["field"], "sex_ratio")
+        self.assertIn("Tableau P-1", tessalit["sources"][0]["name"])
+        self.assertEqual(rec["Tin-Essako"]["sex_ratio"]["value"], round(1000 * 4_394 / 3_628))
+        # Bamako, a crossed district drawn as one cercle, keeps its own figures.
+        self.assertIn("drawn as one cercle", rec["Bamako"]["sex_ratio_note"])
 
 if __name__ == "__main__":
     unittest.main()

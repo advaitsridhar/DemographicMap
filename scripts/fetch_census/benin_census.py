@@ -69,8 +69,9 @@ COMMUNE_NAMES = {"dogbo": "dogbotota", "akpomisserete": "akpromisserete",
                  "boukombe": "boukoumbe", "semekpodji": "semepodji", "kobli": "cobly"}
 PUBLISHER = "Institut National de la Statistique et de l'Analyse Economique (INSAE) du Bénin"
 CENSUS = "Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2013"
+# The workbook's two tables by department, by the titles it gives them.
 WORKBOOK_SOURCE = (f"{PUBLISHER}, {CENSUS}, Résultats globaux: principaux indicateurs "
-                   "(sheets STRUCTURE_POPULATION (2) and ETAT_POPULATION (2))")
+                   "(Structure de la population and État de la population, by department)")
 LEAFLET_SOURCE = (f"{PUBLISHER}, {CENSUS}, Synthèse des principaux résultats du RGPH-4, "
                   "{department} (table 1, the population by commune and sex)")
 LICENCE = "INSAE publication (reuse with attribution)"
@@ -220,6 +221,36 @@ def match(name: str, wanted: list[str]) -> str | None:
     return close[0] if len(close) == 1 else None
 
 
+def commune_record(key: str, c: dict[str, Any], communes: list[dict[str, Any]],
+                   found: dict[str, tuple[int, int, int]], whole: tuple[int, int, int],
+                   derived: str | None, d: dict[str, Any], leaflet: dict[str, Any],
+                   workbook: dict[str, Any]) -> dict[str, Any]:
+    """A commune's sex ratio from its department's leaflet; a department of one
+    commune (Littoral, which is Cotonou) is that commune's ground, so the
+    department's median is the commune's too."""
+    total, men, women_n = found[c["name"]]
+    alone: dict[str, Any] = {}
+    cited: list[dict[str, Any]] = []
+    if len(communes) == 1:
+        alone = {"median_age": measure(d["median"], unit="years", year=YEAR,
+                                       source=WORKBOOK_SOURCE),
+                 "median_age_note": ("The median of the department's five-year age groups in "
+                                     "the 2013 census, interpolated within the group holding "
+                                     "the middle person; the department is this one commune.")}
+        cited = [workbook]
+    return record(
+        f"BEN-RGPH4-{key}-{fold(c['name'])}", c["name"], level="admin2", parent="BEN",
+        country="BEN", match_by="shape_id", shape_id=c["id"],
+        sex_ratio=measure(round(1000 * men / women_n), unit="males_per_1000_females",
+                          year=YEAR, source=leaflet["name"]),
+        sex_ratio_note=(
+            f"The 2013 census's count of the commune, {men:,} men and {women_n:,} women: the "
+            f"department's {whole[1]:,} men and {whole[2]:,} women less those of its other "
+            f"{len(communes) - 1} communes, as the leaflet gives them." if c["name"] == derived
+            else f"The 2013 census's count of the commune: {men:,} men and {women_n:,} women."),
+        sources=[leaflet, *cited], **alone)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -301,22 +332,12 @@ def main() -> int:
             continue
         source = LEAFLET_SOURCE.format(department=shape["name"])
         for c in communes:
-            total, men, women_n = found[c["name"]]
-            log(f"    {c['name']}: {total:,} ({men:,} men, {women_n:,} women)")
-            records.append(record(
-                f"BEN-RGPH4-{key}-{fold(c['name'])}", c["name"], level="admin2", parent="BEN",
-                country="BEN", match_by="shape_id", shape_id=c["id"],
-                sex_ratio=measure(round(1000 * men / women_n), unit="males_per_1000_females",
-                                  year=YEAR, source=source),
-                sex_ratio_note=(
-                    f"The 2013 census's count of the commune, {men:,} men and {women_n:,} "
-                    f"women: the department's {whole[0][1][1]:,} men and {whole[0][1][2]:,} "
-                    f"women less those of its other {len(communes) - 1} communes, as the "
-                    "leaflet gives them." if c["name"] == derived else
-                    f"The 2013 census's count of the commune: {men:,} men and {women_n:,} "
-                    "women."),
-                sources=[{"field": "sex_ratio", "name": source, "url": url,
-                          "license": LICENCE, "year": YEAR}]))
+            log(f"    {c['name']}: {found[c['name']][0]:,} ({found[c['name']][1]:,} men, "
+                f"{found[c['name']][2]:,} women)")
+            records.append(commune_record(key, c, communes, found, whole[0][1], derived, d,
+                                          {"field": "sex_ratio", "name": source, "url": url,
+                                           "license": LICENCE, "year": YEAR},
+                                          {**src, "field": "median_age"}))
     for line in problems:
         log("  " + line)
     n1 = sum(1 for r in records if r["level"] == "admin1")

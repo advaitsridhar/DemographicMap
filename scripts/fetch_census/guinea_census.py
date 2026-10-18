@@ -33,8 +33,11 @@ population*, Tableau 3.06, to one decimal).
 **RGPH-3, 2014.** The same report gives religion by region (Tableau 5.10) and
 the principal language spoken by region (Tableau 5.08), the newest census to
 tabulate either below the country: they replace Afrobarometer's survey shares
-on the eight regions. Shares are applied to each region's 2014 population
-(Tableau 2.07) to carry counts.
+on the eight regions. The shares are written as printed. Religion's are of the
+resident population and are applied to each region's 2014 population (Tableau
+2.07) to carry counts; language's base row (Effectif) misprints Kindia's, so
+they carry none. The prefecture of Conakry, the whole region, takes the
+region's median.
 
 **Checks before anything is written.** Every row's men and women make its
 total; the prefectures make their regions and the regions make the country's
@@ -466,6 +469,7 @@ def build(text_2025: str, layout_2025: str, text_2014: str, admin1: list[dict[st
     records: list[dict[str, Any]] = []
     report: list[str] = []
     region_of: dict[str, str] = {}
+    medians_drawn: dict[str, tuple[Any, str, dict[str, Any]]] = {}
     by_region = {fold(r): r for r in REGIONS}
     for shape in admin1:
         region = by_region.get(fold(shape["name"]))
@@ -497,15 +501,21 @@ def build(text_2025: str, layout_2025: str, text_2014: str, admin1: list[dict[st
                 "not the ground drawn here; this is the 2014 census's median for the region on "
                 "its earlier lines.")
             sources.append({**src_2014, "field": "median_age"})
+        # The shares as printed, not rescaled to make 100. Tableau 5.10 is of the
+        # resident population, so its shares of the region's 2014 population
+        # carry counts; Tableau 5.08's base row (Effectif) misprints Kindia's
+        # (140,044 where the row's total wants 1,400,484), so its shares carry
+        # no count.
         religion = {k: v * pop14 / 100 for k, v in old["religion"][region].items() if v}
-        language = {k: v * pop14 / 100 for k, v in old["language"][region].items() if v}
         fields.update({
-            "religion": shares(religion, total=sum(religion.values())),
+            "religion": shares(religion, total=pop14),
             "religion_year": YEAR_2014,
             "religion_note": ("Religion of the resident population as the 2014 census tabulates "
                               "it by region (Tableau 5.10): Muslim, Christian, animist, other, "
                               "none."),
-            "language": shares(language, total=sum(language.values())),
+            "language": [{"group": g, "pct": round(v, 1)} for g, v in
+                         sorted(old["language"][region].items(), key=lambda kv: (-kv[1], kv[0]))
+                         if v],
             "language_year": YEAR_2014,
             "language_note": ("The principal language spoken, as the 2014 census tabulates it by "
                               "region (Tableau 5.08); its national column is the one the report "
@@ -515,6 +525,8 @@ def build(text_2025: str, layout_2025: str, text_2014: str, admin1: list[dict[st
         records.append(record(f"GIN-RGPH-region-{fold(region)}", shape["name"], level="admin1",
                               parent="GIN", country="GIN", match_by="shape_id",
                               shape_id=shape["id"], sources=sources, **fields))
+        medians_drawn[region] = (fields["median_age"], fields["median_age_note"],
+                                 sources[1])
     by_prefecture = {fold(p): p for ps in PREFECTURES.values() for p in ps}
     used: set[str] = set()
     for shape in admin2:
@@ -526,14 +538,23 @@ def build(text_2025: str, layout_2025: str, text_2014: str, admin1: list[dict[st
             continue
         used.add(prefecture)
         m, w, t = drawn["prefectures"][prefecture]
+        # A region of one prefecture (Conakry) is that prefecture's ground: the
+        # region's median is the prefecture's.
+        same: dict[str, Any] = {}
+        extra: list[dict[str, Any]] = []
+        if PREFECTURES[region] == [prefecture] and region in medians_drawn:
+            median, note, cited = medians_drawn[region]
+            same = {"median_age": median,
+                    "median_age_note": note + " The region is this one prefecture."}
+            extra = [cited]
         records.append(record(
             f"GIN-RGPH-{fold(prefecture)}", shape["name"], level="admin2", parent="GIN",
             country="GIN", match_by="shape_id", shape_id=shape["id"],
-            sources=[{**src_2025, "field": "population/sex_ratio"}],
+            sources=[{**src_2025, "field": "population/sex_ratio"}, *extra],
             population=measure(t, year=YEAR_2025, source=SOURCE_2025),
             population_note=notes_for(prefecture, "prefecture", (m, w, t), table, communes,
                                       regions),
-            sex_ratio=sex_ratio(m, w, YEAR_2025, SOURCE_2025)))
+            sex_ratio=sex_ratio(m, w, YEAR_2025, SOURCE_2025), **same))
     missing = sorted(set(by_prefecture.values()) - used)
     if missing:
         report.append(f"prefectures not bound: {missing}")

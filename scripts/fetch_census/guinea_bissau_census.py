@@ -492,12 +492,15 @@ def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                         "parts apart, so no figure is shown here.")
                 # The table it was read from is named, as on every sector:
                 # a record citing nothing would have its empty compositions
-                # put down to "an unnamed source".
+                # put down to "an unnamed source". It is cited for the notes,
+                # which quote its count, not for a figure shown.
                 records.append(record(
                     f"GNB-2009-caio-{sid}", shape["name"], level="admin2", parent="GNB",
                     country="GNB", match_by="shape_id", shape_id=sid,
                     population=gap(NOT_AVAILABLE, text), sex_ratio=gap(NOT_AVAILABLE, text),
-                    median_age=gap(NOT_AVAILABLE, text), sources=cited(region)))
+                    median_age=gap(NOT_AVAILABLE, text),
+                    sources=[{**src, "field": "population note/sex_ratio note/median_age note"}
+                             for src in cited(region)]))
             report.append(f"  Caió: {caio['total']:,} on neither of its two polygons")
     made = sum(t["region"][0] for t in tables.values() if t.get("region"))
     report.append(f"regions read make {made:,}")

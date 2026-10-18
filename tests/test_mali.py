@@ -274,6 +274,12 @@ class TwentyRegionsSumIntoNineShapes(unittest.TestCase):
         self.assertIn("Kayes, Kita, Nioro", kayes["ethnicity_note"])
         self.assertNotIn("This shape is", by["Kidal"]["language_note"])
         self.assertEqual(by["Ségou"]["language"][0]["group"], "Bambara")
+        # The census's District of Bamako is the larger one of 2023: the shape
+        # drawn as the district of before says so instead of wearing its shares.
+        for field in ("religion", "ethnicity", "language"):
+            self.assertEqual(by["Bamako"][field]["status"], "not_available")
+            self.assertIn("redrawn in 2023", by["Bamako"][field]["note"])
+            self.assertNotIn(f"{field}_note", by["Bamako"])
 
 
 if __name__ == "__main__":

@@ -104,5 +104,27 @@ class BeninCensus(unittest.TestCase):
                                      "Atacora": (150, 52.0, OLDER)}))
 
 
+    def test_a_department_of_one_commune(self):
+        # Littoral is the one commune of Cotonou: the commune takes the
+        # department's median as well as its count by sex.
+        d = {"median": 22.1, "total": 679_012, "women_pct": 52.0}
+        leaflet = {"field": "sex_ratio", "name": "leaflet", "url": "u", "year": 2013}
+        book = {"field": "median_age", "name": "workbook", "url": "w", "year": 2013}
+        cotonou = {"id": "c", "name": "Cotonou"}
+        rec = bc.commune_record("littoral", cotonou, [cotonou],
+                                {"Cotonou": (679_012, 326_123, 352_889)},
+                                (679_012, 326_123, 352_889), None, d, leaflet, book)
+        self.assertEqual(rec["median_age"]["value"], 22.1)
+        self.assertIn("this one commune", rec["median_age_note"])
+        self.assertEqual([s["field"] for s in rec["sources"]], ["sex_ratio", "median_age"])
+        self.assertEqual(rec["sex_ratio"]["value"], round(1000 * 326_123 / 352_889))
+        # A commune among several takes no median.
+        other = {"id": "o", "name": "Ouidah"}
+        rec = bc.commune_record("atlantique", other, [other, cotonou],
+                                {"Ouidah": (162_034, 78_000, 84_034)},
+                                (1_398_229, 0, 0), None, d, leaflet, book)
+        self.assertNotIn("value", rec["median_age"])
+        self.assertNotIn("sheets", bc.WORKBOOK_SOURCE)
+
 if __name__ == "__main__":
     unittest.main()

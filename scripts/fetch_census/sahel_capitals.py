@@ -373,9 +373,11 @@ def build(iso3: str, points: list[dict[str, Any]], page: str, admin1: list[dict[
             report.append(f"{u['name']}: {why}")
             note = no_seat(iso3, u, points, given, len(admin2))
             if note:
+                # The layer is the source the note quotes, not of a figure shown.
                 records.append(record(rid, u["name"], level="admin2", parent=iso3, country=iso3,
                                       match_by="shape_id", shape_id=u["id"],
-                                      capital=gap(NOT_AVAILABLE, note)))
+                                      capital=gap(NOT_AVAILABLE, note),
+                                      sources=[{**source, "field": "capital note"}]))
             continue
         log(f"    {iso3} {u['name']} [{u['id']}]: {seat} ({xy[0]:.5f}, {xy[1]:.5f})")
         records.append(record(rid, u["name"], level="admin2", parent=iso3, country=iso3,

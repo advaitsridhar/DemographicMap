@@ -295,11 +295,14 @@ def build(facts: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                 + named[-1] + ", as the 2021 census's regional pages give them; they name no "
                 "seat for the district itself."))
         elif parts[0]["seat"]:
+            # An autonomous district is one region: its page names the city.
             fields["capital"] = parts[0]["seat"]
+        cited = ["population", "sex_ratio"] + (["capital"] if isinstance(fields.get("capital"), str)
+                                                else [])
         records.append(record(f"CIV-RGPH2021-district-{fold(shape['name'])}", shape["name"],
                               level="admin1", parent="CIV", country="CIV", match_by="shape_id",
                               shape_id=shape["id"],
-                              sources=[{**src, "field": "population/sex_ratio"}], **fields))
+                              sources=[{**src, "field": "/".join(cited)}], **fields))
     return records, report
 
 

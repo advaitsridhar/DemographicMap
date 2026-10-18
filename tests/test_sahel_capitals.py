@@ -112,7 +112,9 @@ class Capitals(unittest.TestCase):
         self.assertEqual(by["Loga"]["note"], (
             "OCHA's administrative boundaries for Niger give the seats of the communes, not "
             "of the departments, and they list no commune of this department's name."))
-        self.assertTrue(all("sources" not in r or r["sources"] == []
+        # A reason cites the layer it quotes as the note's source, never as
+        # the source of a capital.
+        self.assertTrue(all([s["field"] for s in r["sources"]] == ["capital note"]
                             for r in records if isinstance(r["capital"], dict)))
 
     def test_provinces_renamed_in_2025(self):

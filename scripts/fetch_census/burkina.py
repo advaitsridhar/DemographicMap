@@ -23,6 +23,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import PROCESSED, log, record, shares, write_json
+from .burkina_provinces import REGION_OF, coverage_note
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import PAGE_BREAK, fetch_text  # noqa: E402
@@ -38,9 +39,10 @@ LICENCE = "Official statistics publication of the Institut National de la Statis
 REGIONS = ["Boucle du Mouhoun", "Cascades", "Centre", "Centre-Est", "Centre-Nord", "Centre-Ouest",
            "Centre-Sud", "Est", "Hauts-Bassins", "Nord", "Plateau Central", "Sahel", "Sud-Ouest"]
 RELIGIONS = ["Animist", "Islam", "Catholic", "Protestant", "Other religion", "No religion"]
-NOTE = ("Tableau I.22: religion of the resident population in the six classes the census "
-        "prints (Animiste, Musulman, Catholique, Protestant, Autre, Sans religion), shares "
-        "to one decimal applied to the region's printed population.")
+# The source's name ends with the table's, which the note does not repeat.
+NOTE = ("Religion of the resident population in the six classes the census prints "
+        "(Animiste, Musulman, Catholique, Protestant, Autre, Sans religion), shares to one "
+        "decimal applied to the region's printed population.")
 ROW = re.compile(r"^(" + "|".join(re.escape(r) for r in sorted(REGIONS + ["Burkina Faso"], key=len,
                                                               reverse=True))
                  + r")\s+((?:\d+(?:,\d+)?\s+){6})((?:\d{1,3}\s*)+)$")
@@ -88,10 +90,13 @@ def build(text: str) -> list[dict[str, Any]]:
     for region in REGIONS:
         pop, pcts = table[region]
         counts = {k: v * pop / 100 for k, v in pcts.items() if v}
+        # The communes insecurity kept the census from enumerating have no
+        # religion (their people were estimated by sex and age only).
+        provinces = [p for p, r in REGION_OF.items() if r == region]
         records.append(record(
             f"BFA-{slugify(region)}", region, level="admin1", parent="BFA", country="BFA",
             sources=src, religion=shares(counts, total=pop), religion_year=YEAR,
-            religion_note=f"{SOURCE}. {NOTE}"))
+            religion_note=f"{SOURCE}. {NOTE}" + coverage_note(provinces, "shares")))
     return records
 
 

@@ -17,6 +17,22 @@ CONTENTS = 'Tableau 2.3: Répartition (%) des effectifs de la population par pro
 PAGE = 'La répartition des effectifs de population\npar\nprovince indique que l\na province du\nMouhoun est la\nplus peuplée avec 391 561 habitants\n,\ntandis que le Nayala demeure la moins peuplée avec 223 151\nhabitants.\nA l’image de la région,\nles femmes sont plus nombreuses que les hommes au niveau des différentes\nprovinces à l’exception de la Kossi où le rapport de masculinité indique 103 hommes pour 100\nfemmes.\nLa province du Sourou compte autant d’hommes que de femmes.\nAu niveau régional, ce\nrapport est de 99 hommes pour 100 femmes (tableau 2.3).\nTableau\n2\n.\n3\n: Répartition (%) des effectifs de la population par province selon le sexe\nProvince\nSexe\nPoids de chaque\nProvince (%)\nRapport de\nmasculini\nté\nHomme\nFemme\nEnsemble\nBalé\n148\n040\n149\n428\n297\n468\n15,6\n99\nBanwa\n169\n820\n177\n169\n346\n989\n18,3\n96\nKossi\n180\n802\n176\n287\n357\n089\n18,8\n103\nMouhoun\n194\n617\n196\n944\n391\n561\n20,6\n99\nNayala\n110\n674\n112\n477\n223\n151\n11,7\n98\nSourou\n142\n230\n142\n781\n285\n011\n15,0\n100\nEnsemble\n946\n183\n955\n086\n1\n901\n269\n100\n99\nAu niveau des communes, Solenzo demeure la plus peuplée avec une proportion de 8,4% de la\npopulation\nde\nla région. Elle est suivie de Dédougou avec 6,5% de la population. Son\no\net Madouba\nsont les communes les moins peuplées de la région\navec un poids démographique de 0,5%.\nLes rapports de masculinité varient d’une commune à l’autre et se situent à 99 hommes pour 100\nfemmes dans l’ensemble de la région (tableau 2.4).\n\n'
 
 
+# The age tables as the runner printed them (dump fix1, 5f564f4): Centre-Nord's
+# Tableau 2.5 with figures broken across lines ("152 10" then "2"), the Boucle's
+# with a two-digit figure broken ("7" then "1" for 71), the Centre's Tableau 2.3.
+CENTRE_NORD_AGES = "Tableau 2.5: Effectif de la population par groupe d'âge selon le milieu de résidence et le sexe  \nGroupe \nd'âge \nRural Urbain Ensemble \nMasc. Fém. Ens. Mas. Fém. Ens. Masc. Fém. Ens. \n0-4 152\u202f10\n2\n151\u202f16\n9\n303\u202f271 14\u202f324 14 733 29 057 166 426 165 902 332 328 \n5-9 149\u202f08\n8\n146\u202f48\n1\n295\u202f569 13\u202f643 14 238 27 881 162 731 160 719 323 450 \n10-14 115\u202f41\n0\n112\u202f97\n8\n228\u202f388 12\u202f091 13 273 25 364 127 501 126 251 253 752 \n15-19 78 188 92 084 170\u202f272 11\u202f129 13 513 24 642 89 317 105 597 194 914 \n20-24 53 330 73 671 127\u202f001 9\u202f298 11 541 20 839 62 628 85 212 147 840 \n25-29 44 833 62 707 107\u202f540 7\u202f495 8 700 16 195 52 328 71 407 123 735 \n30-34 40 180 54 476 94\u202f656 6\u202f939 6 970 13 909 47 119 61 446 108 565 \n35-39 32 793 43 342 76\u202f135 5\u202f658 5 086 10 744 38 451 48 428 86\u202f879 \n40-44 27 447 35 790 63\u202f237 4\u202f284 3 816 8 100 31 731 39 606 71\u202f337 \n45-49 20 410 26 152 46\u202f562 2\u202f970 2 758 5 728 23 380 28 910 52\u202f290 \n50-54 19 652 23 776 43\u202f428 2\u202f431 2 325 4 756 22 083 26 101 48\u202f184 \n55-59 15 107 16 740 31\u202f847 1\u202f708 1 885 3 593 16 815 18 625 35\u202f440 \n60-64 13 431 14 644 28\u202f075 1\u202f446 1 538 2 984 14 877 16 182 31\u202f059 \n65-69 9 809 8 940 18\u202f749 934 1 063 1 997 10 743 10 003 20\u202f746 \n70-74 8 591 8 925 17\u202f516 797 909 1 706 9\u202f388 9\u202f834 19\u202f222 \n75-79 4 630 4 343 8\u202f973 415 511 926 5\u202f045 4\u202f854 9\u202f899 \n80-84 2 926 3 265 6\u202f191 259 387 646 3\u202f185 3\u202f652 6\u202f837 \n85-89 1 544 1 596 3\u202f140 110 178 288 1\u202f654 1\u202f774 3\u202f428 \n90-94 880 1 227 2\u202f107 67 131 198 947 1\u202f358 2\u202f305 \n95 ou + 965 1 250 2\u202f215 100 144 244 1\u202f065 1\u202f394 2\u202f459 \nTotal 791\u202f31\n6\n883\u202f55\n6\n1\u202f674\u202f872 96 098 103 699 199 79\n7\n887 414 987 255 1 874\u202f669 \nAge moyen 20,0 21,3 20,7 22,0 21,9 21,9 20,2 21,3 20,8 \nAge médian 13,0 16,7 15,3 18,6 18,7 18,6 14,4 16,0 15,6 \n"
+BOUCLE_AGES = "Tableau \n2\n.\n5\n: Effectif de la po\npulation par groupe d'âge selon le milieu de résidence et le sexe\n \nGroupe d'âge\n \nRural\n \nUrbain\n \nEnsemble\n \nM\n \nF\n \nM+F\n \nM\n \nF\n \nM+F\n \nM\n \nF\n \nM+F\n \n0\n-\n4 \n \n144\n\u202f\n950\n \n142\n\u202f\n651\n \n287\n\u202f\n601\n \n11\n\u202f\n061\n \n11\n\u202f\n187\n \n22\n\u202f\n248\n \n156\n\u202f\n011\n \n153\n\u202f\n838\n \n309\n\u202f\n849\n \n5\n-\n9\n \n151\n\u202f\n448\n \n145\n\u202f\n015\n \n296\n\u202f\n463\n \n11\n\u202f\n080\n \n11\n\u202f\n597\n \n22\n\u202f\n677\n \n162\n\u202f\n528\n \n156\n\u202f\n612\n \n319\n\u202f\n140\n \n10\n-\n14\n \n123\n\u202f\n163\n \n109\n\u202f\n065\n \n232\n\u202f\n228\n \n10\n\u202f\n929\n \n12\n\u202f\n324\n \n23\n\u202f\n253\n \n134\n\u202f\n092\n \n121\n\u202f\n389\n \n255\n\u202f\n481\n \n15\n-\n19 \n \n90\n\u202f\n536\n \n79\n\u202f\n344\n \n169\n\u202f\n880\n \n11\n\u202f\n787\n \n12\n\u202f\n992\n \n24\n\u202f\n779\n \n102\n\u202f\n323\n \n92\n\u202f\n336\n \n194\n\u202f\n659\n \n20\n-\n24  \n \n62\n\u202f\n941\n \n70\n\u202f\n118\n \n133\n\u202f\n059\n \n10\n\u202f\n388\n \n10\n\u202f\n523\n \n20\n\u202f\n911\n \n73\n\u202f\n329\n \n80\n\u202f\n641\n \n153\n\u202f\n970\n \n25\n-\n29 \n \n53\n\u202f\n408\n \n63\n\u202f\n510\n \n116\n\u202f\n918\n \n7\n\u202f\n214\n \n7\n\u202f\n576\n \n14\n\u202f\n790\n \n60\n\u202f\n622\n \n71\n\u202f\n086\n \n131\n\u202f\n708\n \n30\n-\n34 \n \n49\n\u202f\n738\n \n56\n\u202f\n208\n \n105\n\u202f\n946\n \n6\n\u202f\n633\n \n6\n\u202f\n359\n \n12\n\u202f\n992\n \n56\n\u202f\n371\n \n62\n\u202f\n567\n \n118\n\u202f\n938\n \n35\n-\n39\n \n \n40\n\u202f\n924\n \n45\n\u202f\n196\n \n86\n\u202f\n120\n \n5\n\u202f\n262\n \n5\n\u202f\n018\n \n10\n\u202f\n280\n \n46\n\u202f\n186\n \n50\n\u202f\n214\n \n96\n\u202f\n400\n \n40\n-\n44 \n \n32\n\u202f\n553\n \n36\n\u202f\n071\n \n68\n\u202f\n624\n \n4\n\u202f\n246\n \n3\n\u202f\n640\n \n7\n\u202f\n886\n \n36\n\u202f\n799\n \n39\n\u202f\n711\n \n76\n\u202f\n510\n \n45\n-\n49 \n \n25\n\u202f\n891\n \n27\n\u202f\n955\n \n53\n\u202f\n846\n \n3\n\u202f\n275\n \n2\n\u202f\n803\n \n6\n\u202f\n078\n \n29\n\u202f\n166\n \n30\n\u202f\n758\n \n59\n\u202f\n924\n \n50\n-\n54 \n \n22\n\u202f\n151\n \n24\n\u202f\n323\n \n46\n\u202f\n474\n \n2\n\u202f\n529\n \n2\n\u202f\n461\n \n4\n\u202f\n990\n \n24\n\u202f\n680\n \n26\n\u202f\n784\n \n51\n\u202f\n464\n \n55\n-\n59 \n \n17\n\u202f\n483\n \n18\n\u202f\n444\n \n35\n\u202f\n927\n \n1\n\u202f\n904\n \n1\n\u202f\n848\n \n3\n\u202f\n752\n \n19\n\u202f\n387\n \n20\n\u202f\n292\n \n39\n\u202f\n679\n \n60\n-\n64 \n \n13\n\u202f\n912\n \n15\n\u202f\n594\n \n29\n\u202f\n506\n \n1\n\u202f\n480\n \n1\n\u202f\n509\n \n2\n\u202f\n989\n \n15\n\u202f\n392\n \n17\n\u202f\n103\n \n32\n\u202f\n495\n \n65\n-\n69 \n \n9\n\u202f\n977\n \n9\n\u202f\n799\n \n19\n\u202f\n776\n \n968\n \n1\n\u202f\n066\n \n2\n\u202f\n034\n \n10\n\u202f\n945\n \n10\n\u202f\n865\n \n21\n\u202f\n810\n \n70\n-\n74 \n \n7\n\u202f\n646\n \n8\n\u202f\n195\n \n15\n\u202f\n841\n \n733\n \n899\n \n1\n\u202f\n632\n \n8\n\u202f\n37\n9\n \n9\n\u202f\n094\n \n17\n\u202f\n473\n \n75\n-\n79 \n \n4\n\u202f\n293\n \n4\n\u202f\n515\n \n8\n\u202f\n808\n \n369\n \n510\n \n879\n \n4\n\u202f\n662\n \n5\n\u202f\n025\n \n9\n\u202f\n687\n \n80\n-\n84 \n \n2\n\u202f\n432\n \n3\n\u202f\n136\n \n5\n\u202f\n568\n \n220\n \n336\n \n556\n \n2\n\u202f\n652\n \n3\n\u202f\n472\n \n6\n\u202f\n124\n \n85\n-\n89 \n \n1\n\u202f\n071\n \n1\n\u202f\n312\n \n2\n\u202f\n383\n \n108\n \n141\n \n249\n \n1\n\u202f\n179\n \n1\n\u202f\n453\n \n2\n\u202f\n632\n \n90\n-\n94 \n \n568\n \n695\n \n1\n\u202f\n263\n \n31\n \n87\n \n118\n \n599\n \n782\n \n1\n\u202f\n381\n \n95 ou +\n \n826\n \n993\n \n1\n\u202f\n819\n \n55\n \n7\n1\n \n126\n \n881\n \n1\n\u202f\n064\n \n1\n\u202f\n945\n \nTotal\n \n855\n\u202f\n911\n \n862\n\u202f\n139\n \n1\n\u202f\n718\n\u202f\n05\n90\n\u202f\n272\n \n92\n\u202f\n947\n \n183\n\u202f\n21\n946\n\u202f\n183\n \n955\n\u202f\n086\n \n1\n\u202f\n901\n\u202f\n26\nAge moyen\n \n20,7\n \n21,8\n \n21,3\n \n23,2\n \n22,9\n \n23,1\n \n21\n \n21,9\n \n21,4\n \nAge médian\n \n14,3\n \n16,0\n \n15,0\n \n19,0\n \n18,3\n \n18,7\n \n15,0\n \n16,5\n \n15,5\n \n"
+CENTRE_AGES = "Tabl\neau \n2\n.\n3\n \n: Effectif de la population par groupe d'âge selon le milieu de résidence et le sexe\n \nGroupe d'âge\n \nRural\n \nUrbain\n \nEnsemble\n \nMasculin\n \nFéminin\n \nEnsemble\n \nMasculin\n \nFéminin\n \nEnsemble\n \nMasculin\n \nFéminin\n \nEnsemble\n \n0\n-\n4 \n \n48 342\n \n47 296\n \n95 638\n \n156 611\n \n155 533\n \n312 144\n \n204 953\n \n202 829\n \n407 782\n \n5\n-\n9\n \n42 102\n \n43 074\n \n85 176\n \n135 165\n \n142 921\n \n278 086\n \n177 267\n \n185 995\n \n363 262\n \n10\n-\n14\n \n35 829\n \n36 454\n \n72 283\n \n118 096\n \n138 183\n \n256 279\n \n153 925\n \n174 637\n \n328 562\n \n15\n-\n19 \n \n27 420\n \n31 560\n \n58 980\n \n108 919\n \n152 382\n \n261 301\n \n136 339\n \n183 942\n \n320 281\n \n20\n-\n24  \n \n23 695\n \n32 191\n \n55 886\n \n115 539\n \n142 336\n \n257 875\n \n139 234\n \n174 527\n \n313 761\n \n25\n-\n29 \n \n25 424\n \n30 131\n \n55 555\n \n115 615\n \n126 166\n \n241 781\n \n141 039\n \n156 297\n \n297 336\n \n30\n-\n34 \n \n28 026\n \n24 637\n \n52 663\n \n111 725\n \n104 013\n \n215 738\n \n139 751\n \n128 650\n \n268 401\n \n35\n-\n39 \n \n23 385\n \n17 591\n \n40 976\n \n90 824\n \n76 845\n \n167 669\n \n114 209\n \n94 436\n \n208 645\n \n40\n-\n44 \n \n17 063\n \n11 404\n \n28 467\n \n69 816\n \n53 021\n \n122 837\n \n86 879\n \n64 425\n \n151 304\n \n45\n-\n49 \n \n10 597\n \n7 929\n \n18 526\n \n49 005\n \n37 238\n \n86 243\n \n59 602\n \n45 167\n \n104 769\n \n50\n-\n54 \n \n7 551\n \n6 743\n \n14 294\n \n36 163\n \n29 763\n \n65 926\n \n43 714\n \n36 506\n \n80 220\n \n55\n-\n59 \n \n4 953\n \n5 215\n \n10 168\n \n25 965\n \n23 434\n \n49 399\n \n30 918\n \n28 649\n \n59 567\n \n60\n-\n64 \n \n4 008\n \n4 742\n \n8 750\n \n20 369\n \n17 760\n \n38 129\n \n24 377\n \n22 502\n \n46 879\n \n65\n-\n69 \n \n2 602\n \n3 161\n \n5 763\n \n12 654\n \n11 309\n \n23 963\n \n15 256\n \n14 470\n \n29 \n726\n \n70\n-\n74 \n \n2 242\n \n2 859\n \n5 101\n \n8 394\n \n8 839\n \n17 233\n \n10 636\n \n11 698\n \n22 334\n \n75\n-\n79 \n \n1 283\n \n1 617\n \n2 900\n \n4 102\n \n4 874\n \n8 976\n \n5 385\n \n6 491\n \n11 876\n \n80\n-\n84 \n \n708\n \n1 196\n \n1 904\n \n2 094\n \n3 449\n \n5 543\n \n2 802\n \n4 645\n \n7 447\n \n85\n-\n89 \n \n323\n \n579\n \n902\n \n818\n \n1 508\n \n2 326\n \n1 141\n \n2 087\n \n3 228\n \n90\n-\n94 \n \n147\n \n372\n \n519\n \n347\n \n858\n \n1 205\n \n494\n \n1 230\n \n1 724\n \n95 ou +\n \n255\n \n412\n \n667\n \n1 336\n \n1 277\n \n2 613\n \n1 591\n \n1 689\n \n3 280\n \nEnsemble\n \n305 955\n \n309 163\n \n615 118\n \n1 183 557\n \n1 231 709\n \n2 415 266\n \n1 489 512\n \n1 540 872\n \n3 030 384\n \nAge moyen\n \n22,6\n \n22,1\n \n22,3\n \n24,5\n \n23,1\n \n23,8\n \n24,1\n \n22,9\n \n23,5\n \nAge \nmédian\n \n19\n \n19,4\n \n19,6\n \n19\n \n20,8\n \n21\n \n22,5\n \n20,5\n \n21,3\n \n \n"
+# Constructed in Tableau 2.1's words, with the regions' counts the age tables total.
+CENTRE_NORD_COUNT = ("Tableau 2.1 : Répartition de la population par milieu de résidence selon "
+                     "le sexe en 2019 Milieu de résidence Masculin Féminin Ensemble Urbain "
+                     "96 098 103 699 199 797 Rural 791 316 883 556 1 674 872 Ensemble 887 414 "
+                     "987 255 1 874 669")
+CENTRE_COUNT = ("Tableau 2.1 : Répartition de la population par milieu de résidence selon le "
+                "sexe en 2019 Milieu de résidence Masculin Féminin Ensemble Urbain 1 183 557 "
+                "1 231 709 2 415 266 Rural 305 955 309 163 615 118 Ensemble 1 489 512 "
+                "1 540 872 3 030 384")
+
 class BurkinaProvinces(unittest.TestCase):
     def test_table(self):
         names = ["Bale", "Banwa", "Kossi", "Mouhoun", "Nayala", "Sourou"]
@@ -256,6 +272,61 @@ class ReligionChartsOfFourRegions(unittest.TestCase):
         self.assertEqual(by["Nahouri"]["religion"][0], {"group": "Islam", "pct": 33.4})
         self.assertIn("charts them by province", by["Nahouri"]["religion_note"])
 
+
+    def test_age_table_with_figures_broken_across_lines(self):
+        got = bp.age_table(CENTRE_NORD_AGES)
+        self.assertEqual(len(got["groups"]), 20)
+        self.assertEqual(got["groups"][0], (0, 4, 332_328))
+        self.assertEqual(got["groups"][-1], (95, None, 2_459))
+        self.assertEqual((got["men"], got["women"]), (887_414, 987_255))
+        self.assertEqual(sum(g[2] for g in got["groups"]), 1_874_669)
+        self.assertEqual(got["printed"], 15.6)
+        self.assertEqual(got["table"], "Tableau 2.5")
+        self.assertEqual(bp.grouped_median(got["groups"]), 15.7)
+
+    def test_age_table_with_a_two_digit_figure_broken(self):
+        got = bp.age_table(BOUCLE_AGES)
+        self.assertEqual(got["groups"][-1], (95, None, 1_945))   # 55 + 71 urban
+        self.assertEqual(got["groups"][14], (70, 74, 17_473))    # "8 37 9" is 8 379
+        self.assertEqual((got["men"], got["women"]), (946_183, 955_086))
+        self.assertEqual(got["printed"], 15.5)
+
+    def test_region_figures_and_the_communes_not_enumerated(self):
+        shapes = [{"id": "b", "name": "Bam"}, {"id": "n", "name": "Namentenga"},
+                  {"id": "s", "name": "Sanmatenga"}]
+        with unittest.mock.patch.object(bp, "log"):
+            recs = bp.region_records("Centre-Nord", shapes, {"id": "cn", "name": "Centre-Nord"},
+                                     "u", CENTRE_NORD_COUNT + "\f" + CENTRE_NORD_AGES)
+        region = next(r for r in recs if r["level"] == "admin1")
+        self.assertEqual(region["sex_ratio"]["value"], round(1000 * 887_414 / 987_255))
+        self.assertEqual(region["sex_ratio"]["year"], 2019)
+        self.assertEqual(region["median_age"]["value"], 15.7)
+        self.assertIn("Tableau 2.5", region["median_age_note"])
+        # Six communes of Bam and Sanmatenga were not enumerated, two in part.
+        self.assertIn("Barsalogho", region["sex_ratio_note"])
+        self.assertIn("part of Bourzanga and Pissila", region["median_age_note"])
+        self.assertEqual(sorted(s["field"] for s in region["sources"]),
+                         ["median_age", "sex_ratio"])
+        # No province table in this text: no province takes a figure by sex.
+        self.assertFalse(any("value" in (r.get("sex_ratio") or {})
+                             for r in recs if r["level"] == "admin2"))
+        self.assertEqual(bp.coverage_note(["Namentenga"], "shares"), "")
+        self.assertIn("these shares are of the residents it enumerated",
+                      bp.coverage_note(["Soum"], "shares"))
+
+    def test_the_centre_is_kadiogo(self):
+        # The Centre is the one province of Kadiogo: both carry the census's
+        # count by sex and the median of its age groups.
+        with unittest.mock.patch.object(bp, "log"):
+            recs = bp.region_records("Centre", [{"id": "k", "name": "Kadiogo"}],
+                                     {"id": "c", "name": "Centre"}, "u",
+                                     CENTRE_COUNT + "\f" + CENTRE_AGES)
+        by = {r["level"]: r for r in recs}
+        for level in ("admin1", "admin2"):
+            self.assertEqual(by[level]["sex_ratio"]["value"], round(1000 * 1_489_512 / 1_540_872))
+            self.assertEqual(by[level]["median_age"]["value"], 21.5)
+        self.assertIn("this one province", by["admin2"]["median_age_note"])
+        self.assertIn("Tableau 2.3", by["admin1"]["median_age_note"])
 
 if __name__ == "__main__":
     unittest.main()

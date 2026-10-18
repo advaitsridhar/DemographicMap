@@ -269,6 +269,18 @@ class GuineaReads(unittest.TestCase):
         self.assertEqual(boke["sex_ratio"]["value"], round(1000 * 798_788 / 829_868))
         nz = by[("admin1", "Nzerekore")]
         self.assertEqual(nz["language"][0]["group"], "Konyanka")
+        # The shares as Tableaux 5.08 and 5.10 print them, not rescaled.
+        self.assertEqual(nz["language"][0]["pct"], 24.4)
+        self.assertNotIn("count", nz["language"][0])
+        self.assertEqual(nz["religion"][0], {"group": "Islam", "pct": 46.7,
+                                             "count": int(46.7 * 1_578_068 / 100)})
+        # The prefecture of Conakry is the region: its median too.
+        region = by[("admin1", "Conakry")]
+        self.assertEqual(conakry["median_age"], region["median_age"])
+        self.assertEqual(conakry["median_age"]["year"], 2014)
+        self.assertIn("this one prefecture", conakry["median_age_note"])
+        self.assertIn("median_age", [s["field"] for s in conakry["sources"]])
+        self.assertNotIn("value", by[("admin2", "Coyah")]["median_age"])
 
 
 if __name__ == "__main__":

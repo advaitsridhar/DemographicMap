@@ -354,8 +354,9 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                 population=gap(NOT_AVAILABLE, NOT_BOUND[k]),
                 sex_ratio=gap(NOT_AVAILABLE, NOT_BOUND[k]),
                 median_age=gap(NOT_AVAILABLE, NO_AGES),
-                sources=[{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
-                          "license": LICENCE, "year": YEAR}]))
+                # The census the notes quote, not the source of a figure shown.
+                sources=[{"field": "population note/sex_ratio note/median_age note",
+                          "name": SOURCE, "url": URL, "license": LICENCE, "year": YEAR}]))
             continue
         if k not in MOUGHATAAS:
             report.append(f"moughataa polygon {shape['name']!r}: not placed")

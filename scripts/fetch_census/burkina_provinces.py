@@ -14,6 +14,25 @@ by region only).
 The Centre region is the one province of Kadiogo, and its monograph's regional
 count by sex (Tableau 2.1) is the province's.
 
+**The regions' sex ratio and median age.** Each region takes its own count by
+sex (Tableau 2.1, or its provinces' counts added where the monograph has no
+Tableau 2.1) and the median of its residents' five-year age groups (Tableau
+2.3, 2.4 or 2.5 by monograph: rural, urban and both, each by sex), interpolated
+within the group that holds the middle person, a census's figures in front of
+OCHA's 2023 projection. The tables print medians of their own, but these do
+not agree with their counts (Centre-Est's region-wide 15.0 lies below both its
+rural 15.6 and its urban 17.0), so the median is taken from the groups, the
+same way in every region; the age table's men and women must be the region's
+count. The Centre's median is Kadiogo's too.
+
+**Communes not enumerated.** Insecurity kept the census from enumerating six
+communes of Bam and Sanmatenga and three of Yagha and Soum, and part of seven
+more (NOT_ENUMERATED, as the Centre-Nord and Sahel monographs list them): their
+populations were estimated by sex and age, and their other characteristics are
+marked NC. So those provinces' and regions' religion and language shares are
+of the residents enumerated, and their counts by sex include the estimates;
+the notes say so.
+
 **Religion and language by province.** Each monograph charts its provinces'
 religions (Graphique 3.2, *Répartition (%) de la population des communautés
 religieuses par province*: the census's six classes, to one decimal) and
@@ -56,6 +75,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, write_json
+from .cod_ps_age import grouped_median
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import fetch_blob  # noqa: E402
@@ -205,6 +225,121 @@ def regional_total(text: str) -> tuple[int, int, int]:
         if rows:
             return rows[0]
     raise SystemExit("burkina_provinces: no regional count by sex")
+
+
+# The table of the region's population by five-year age group, residence and sex
+# (Tableau 2.3 or 2.5): nine figures a row -- rural, urban and both, each men,
+# women and both sexes.
+AGE_TITLE = re.compile(r"(?i)groupe\s+d.\s*[âa]\s*ge\s+selon\s+le\s+milieu\s+de\s+r\s*[ée]\s*"
+                       r"sidence\s+et\s+le\s+sexe")
+OPEN_GROUP = re.compile(r"(?<![\d,])(\d{2,3})\s*(?:ans\s*)?(?:ou|et|&)\s*(?:\+|plus)")
+
+
+def group_readings(tokens: list[str], at: int) -> list[tuple[str, int]]:
+    """A three-digit group starting at tokens[at]: one token of three digits, or
+    two whose digits make three -- a figure the text breaks across a line
+    ("152 10" then "2" for 152 102)."""
+    out = []
+    if at < len(tokens) and len(tokens[at]) == 3:
+        out.append((tokens[at], at + 1))
+    if at + 1 < len(tokens) and len(tokens[at]) + len(tokens[at + 1]) == 3 \
+            and len(tokens[at]) < 3:
+        out.append((tokens[at] + tokens[at + 1], at + 2))
+    return out
+
+
+def number_readings(tokens: list[str], at: int) -> list[tuple[int, int]]:
+    """(value, end) for every reading of a figure printed with thousands spaces
+    starting at tokens[at]; its first group too may be broken across a line
+    ("7" then "1" for 71)."""
+    if at >= len(tokens) or not 1 <= len(tokens[at]) <= 3:
+        return []
+    frontier = [(tokens[at], at + 1)]
+    if at + 1 < len(tokens) and len(tokens[at]) + len(tokens[at + 1]) <= 3:
+        frontier.append((tokens[at] + tokens[at + 1], at + 2))
+    out = [(int(d), e) for d, e in frontier]
+    for _ in range(3):
+        nxt = []
+        for digits, end in frontier:
+            for group, after in group_readings(tokens, end):
+                nxt.append((digits + group, after))
+        out += [(int(d), e) for d, e in nxt]
+        frontier = nxt
+    return out
+
+
+def age_row(tokens: list[str]) -> tuple[int, ...] | None:
+    """The row's nine figures, the one reading in which each part's men and
+    women make its both-sexes figure, and rural and urban make the whole."""
+    found: list[tuple[int, ...]] = []
+
+    def walk(at: int, acc: tuple[int, ...]) -> None:
+        if len(found) > 1:
+            return
+        n = len(acc)
+        if n in (3, 6, 9) and acc[n - 3] + acc[n - 2] != acc[n - 1]:
+            return
+        if n == 9:
+            if at == len(tokens) and acc[2] + acc[5] == acc[8] and acc[0] + acc[3] == acc[6]:
+                found.append(acc)
+            return
+        for value, end in number_readings(tokens, at):
+            walk(end, acc + (value,))
+
+    walk(0, ())
+    return found[0] if len(found) == 1 else None
+
+
+def age_table(text: str) -> dict[str, Any] | None:
+    """The region's population by five-year age group, both sexes (the table's
+    last column), from the first title that is not the list of tables' entry
+    for it: {"groups": [(low, high or None, people)], "men": ..., "women": ...,
+    "printed": the table's own median for both sexes, or None, "table": its
+    number}. None where a row does not read."""
+    flat = re.sub(r"\s+", " ", text)
+    for title in AGE_TITLE.finditer(flat):
+        window = flat[title.end():title.end() + 6000]
+        if re.match(r"\s*\.{3,}|\s*_{3,}|\s*\d{1,3}\s+Tableau", window):
+            continue                       # the list of tables
+        labels = []
+        at = 0
+        for low in range(0, 95, 5):
+            m = re.compile(rf"(?<![\d,])0?{low}\s*-\s*0?{low + 4}(?![\d,])").search(window, at)
+            if not m:
+                break
+            labels.append((low, low + 4, m))
+            at = m.end()
+        last = OPEN_GROUP.search(window, at)
+        if len(labels) < 15 or not last:
+            continue
+        labels.append((int(last.group(1)), None, last))
+        total = re.compile(r"(?i)\b(?:Total|Ensemble)\b").search(window, last.end())
+        stop = re.compile(r"(?i)\bAge\s+moyen").search(window, last.end())
+        groups, men, women = [], 0, 0
+        for k, (low, high, m) in enumerate(labels):
+            end = labels[k + 1][2].start() if k + 1 < len(labels) else (
+                total.start() if total else (stop.start() if stop else len(window)))
+            tokens = window[m.end():end].split()
+            row = age_row(tokens)
+            if row is None:
+                log(f"    the age table's row {low}-{high} does not read: {' '.join(tokens)}")
+                groups = []
+                break
+            groups.append((low, high, row[8]))
+            men, women = men + row[6], women + row[7]
+        if not groups:
+            continue
+        printed = None
+        median = re.compile(r"(?i)\bAge\s+m[ée]dian((?:\s+\d{1,2}(?:,\d)?){9})").search(
+            window, last.end())
+        if median:
+            printed = float(median.group(1).split()[-1].replace(",", "."))
+        number = re.findall(r"Tabl\s*eau\s*(\d)\s*\.\s*(\d{1,2})",
+                            flat[max(0, title.start() - 160):title.start()])
+        name = f"Tableau {number[-1][0]}.{number[-1][1]}" if number else "Tableau 2.5"
+        return {"groups": groups, "men": men, "women": women, "printed": printed,
+                "table": name}
+    return None
 
 
 # The census's six religious classes, as burkina.py names them for the regions.
@@ -630,28 +765,94 @@ def listed(shares: dict[str, float]) -> list[dict[str, Any]]:
             for g, p in sorted(shares.items(), key=lambda kv: (-kv[1], kv[0])) if p > 0]
 
 
+# The communes insecurity kept the census from enumerating, whole and in part, as
+# the monographs list them (Centre-Nord, introduction; Sahel, 1.2): their
+# populations were estimated by sex and age, and their tables of every other
+# characteristic -- religion and language among them -- mark them NC, not
+# concerned (Sahel: "Les caractéristiques individuelles autres que le sexe,
+# l'âge ... n'étant donc pas disponibles pour ces communes").
+NOT_ENUMERATED = {
+    "Bam": (["Nasséré", "Zimtanga"], ["Bourzanga"]),
+    "Sanmatenga": (["Barsalogho", "Dablo", "Namissiguima", "Pensa"], ["Pissila"]),
+    "Yagha": (["Boundoré", "Mansila"], []),
+    "Soum": (["Koutougou"], ["Arbinda", "Baraboulé", "Kelbo", "Nassoumbou", "Tongomael"]),
+    "Oudalan": ([], ["Déou"]),
+}
+REGION_OF = {"Bam": "Centre-Nord", "Sanmatenga": "Centre-Nord", "Yagha": "Sahel",
+             "Soum": "Sahel", "Oudalan": "Sahel"}
+
+
+def listed_names(names: list[str]) -> str:
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def not_enumerated(provinces: list[str]) -> str:
+    """The communes of these provinces the census could not enumerate, in words."""
+    whole = [c for p in provinces if p in NOT_ENUMERATED for c in NOT_ENUMERATED[p][0]]
+    part = [c for p in provinces if p in NOT_ENUMERATED for c in NOT_ENUMERATED[p][1]]
+    said = []
+    if whole:
+        said.append(f"the commune{'s' if len(whole) > 1 else ''} of {listed_names(whole)}")
+    if part:
+        said.append(f"part of {listed_names(part)}")
+    return " and ".join(said)
+
+
+def coverage_note(provinces: list[str], what: str) -> str:
+    """What the figures of these provinces leave out or estimate, or ""."""
+    where = not_enumerated(provinces)
+    if not where:
+        return ""
+    if what == "shares":
+        return (f" Insecurity kept the census from enumerating {where}, whose people it "
+                "estimated by sex and age only: these shares are of the residents it "
+                "enumerated.")
+    return (f" Insecurity kept the census from enumerating {where}; the figures include their "
+            "people as the census estimated them by sex and age.")
+
+
 def region_records(region: str, shapes: list[dict[str, Any]], shape: dict[str, Any] | None,
                    url: str, text: str) -> list[dict[str, Any]]:
     """The region's provinces (sex ratio, religion, language) and the region itself
-    (language), from its monograph's text."""
+    (sex ratio, median age, language), from its monograph's text. The Centre is
+    the one province of Kadiogo, which takes the region's median too."""
     names = [s["name"] for s in shapes]
     monograph = (f"{PUBLISHER}, Cinquième Recensement Général de la Population et de "
                  f"l'Habitat (RGPH) 2019, Monographie de la région {region}")
     table = None
+    count = None
+    try:
+        count = regional_total(text)
+    except SystemExit:
+        count = None
     try:
         if len(shapes) == 1:
-            table = {names[0]: regional_total(text)}
+            if count is None:
+                raise SystemExit("no regional count by sex")
+            table = {names[0]: count}
             where = "Tableau 2.1, the region's count, the province being the whole region"
         else:
-            try:
-                count = regional_total(text)
-            except SystemExit:
-                count = None
             table = province_table(text, names, count)
             where = "Tableau 2.3, population by province and sex"
     except SystemExit as err:
         log(f"  {region}: {err}; its provinces keep the sex ratio they had")
         where = ""
+    if count is None and table and len(shapes) > 1:
+        count = tuple(sum(v[k] for v in table.values()) for k in range(3))
+        count_where = "Tableau 2.3, its provinces' count by sex added"
+    else:
+        count_where = "Tableau 2.1, population by residence and sex"
+    ages = age_table(text)
+    median = None
+    if ages and count and (ages["men"], ages["women"]) == count[:2]:
+        median = grouped_median(ages["groups"])
+        log(f"  {region}: median {median} from {ages['table']}'s five-year groups (the table "
+            f"prints {ages['printed']}), {count[0]:,} men and {count[1]:,} women")
+    elif ages:
+        log(f"  {region}: the age table's {ages['men']:,} men and {ages['women']:,} women are "
+            f"not the region's count {count}: no median")
+    else:
+        log(f"  {region}: no age table read: no median")
     if len(shapes) == 1:
         own_religion = region_religion(text)
         religions = {names[0]: own_religion} if own_religion else {}
@@ -666,6 +867,22 @@ def region_records(region: str, shapes: list[dict[str, Any]], shape: dict[str, A
         f"for {sorted(n for n in languages if n in names)}, the region's languages "
         f"{'read' if region_language else 'not read'}")
     one = len(shapes) == 1
+    median_fields: dict[str, Any] = {}
+    median_source: dict[str, Any] = {}
+    if median is not None:
+        median_fields = {
+            "median_age": measure(median, unit="years", year=YEAR,
+                                  source=f"{monograph} ({ages['table']})"),
+            "median_age_note": (
+                "Interpolated within the five-year age group that holds the middle person, "
+                "from the 2019 census's count of the region's residents by five-year age group "
+                f"({ages['table']})" + (", the region being this one province." if one
+                                        else ".") + coverage_note(names, "figures")),
+        }
+        median_source = {"field": "median_age",
+                         "name": f"{monograph} ({ages['table']}, population by age group, "
+                                 "residence and sex)",
+                         "url": url, "license": LICENCE, "year": YEAR}
     out = []
     for s in shapes:
         name = s["name"]
@@ -678,9 +895,13 @@ def region_records(region: str, shapes: list[dict[str, Any]], shape: dict[str, A
                                           unit="males_per_1000_females", year=YEAR,
                                           source=f"{monograph} ({where})")
             fields["sex_ratio_note"] = (f"The 2019 census's count of the province: {men:,} men "
-                                        f"and {women:,} women.")
+                                        f"and {women:,} women." + coverage_note([name],
+                                                                                "figures"))
             sources.append({"field": "sex_ratio", "name": f"{monograph} ({where})", "url": url,
                             "license": LICENCE, "year": YEAR})
+        if one and median_fields:
+            fields.update(median_fields)
+            sources.append(median_source)
         if name in religions:
             what = ("Tableau 3.1, the region's religions, the province being the whole region"
                     if one else "Graphique 3.2, the religions of each province")
@@ -690,7 +911,8 @@ def region_records(region: str, shapes: list[dict[str, Any]], shape: dict[str, A
                 "The 2019 census's shares of the province's residents by religion, as the "
                 "monograph of the region " + ("tabulates them for the region, which is this "
                                               "one province." if one else
-                                              "charts them by province, to one decimal."))
+                                              "charts them by province, to one decimal.")
+                + coverage_note([name], "shares"))
             sources.append({"field": "religion", "name": f"{monograph} ({what})", "url": url,
                             "license": LICENCE, "year": YEAR})
             log(f"      religion: {listed(religions[name])[:3]}")
@@ -710,7 +932,7 @@ def region_records(region: str, shapes: list[dict[str, Any]], shape: dict[str, A
                 "over, in the 2019 census" + (", as the monograph tabulates it for the region, "
                                               "which is this one province." if one else
                                               ", as the monograph of the region tabulates it "
-                                              "by province."))
+                                              "by province.") + coverage_note([name], "shares"))
             sources.append({"field": "language", "name": f"{monograph} ({what})", "url": url,
                             "license": LICENCE, "year": YEAR})
             log(f"      language: {listed(languages[name])[:3]}")
@@ -718,18 +940,37 @@ def region_records(region: str, shapes: list[dict[str, Any]], shape: dict[str, A
             out.append(record(f"BFA-RGPH2019-{fold(name)}", name, level="admin2", parent="BFA",
                               country="BFA", match_by="shape_id", shape_id=s["id"],
                               sources=sources, **fields))
-    if shape and region_language:
+    region_fields: dict[str, Any] = {}
+    region_sources: list[dict[str, Any]] = []
+    if count:
+        men, women, _ = count
+        region_fields["sex_ratio"] = measure(round(1000 * men / women),
+                                             unit="males_per_1000_females", year=YEAR,
+                                             source=f"{monograph} ({count_where})")
+        region_fields["sex_ratio_note"] = (f"The 2019 census's count of the region: {men:,} men "
+                                           f"and {women:,} women."
+                                           + coverage_note(names, "figures"))
+        region_sources.append({"field": "sex_ratio", "name": f"{monograph} ({count_where})",
+                               "url": url, "license": LICENCE, "year": YEAR})
+    if median_fields:
+        region_fields.update(median_fields)
+        region_sources.append(median_source)
+    if region_language:
         what = ("Tableau 3.3, principal languages spoken by sex and province, the region's "
                 "column" if languages.get("Ensemble") else
                 "Tableau 3.2, principal language spoken by residence")
+        region_fields.update(
+            language=listed(region_language), language_year=YEAR,
+            language_note=("The principal language usually spoken by the region's residents "
+                           "aged 3 and over, in the 2019 census, as its monograph tabulates it."
+                           + coverage_note(names, "shares")))
+        region_sources.append({"field": "language", "name": f"{monograph} ({what})", "url": url,
+                               "license": LICENCE, "year": YEAR})
+    if shape and region_fields:
         out.append(record(
             f"BFA-RGPH2019-region-{fold(region)}", region, level="admin1", parent="BFA",
             country="BFA", match_by="shape_id", shape_id=shape["id"],
-            language=listed(region_language), language_year=YEAR,
-            language_note=("The principal language usually spoken by the region's residents "
-                           "aged 3 and over, in the 2019 census, as its monograph tabulates it."),
-            sources=[{"field": "language", "name": f"{monograph} ({what})", "url": url,
-                      "license": LICENCE, "year": YEAR}]))
+            sources=region_sources, **region_fields))
     return out
 
 
