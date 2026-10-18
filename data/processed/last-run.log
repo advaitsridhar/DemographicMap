@@ -1,2 +1,16 @@
-usage: egypt_census.py [-h]
-egypt_census.py: error: unrecognized arguments: --run fix1
+probe_pdf: https://www.hcp.ma/file/245184/
+  458,651,892 bytes
+  236 pages
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 271, in main
+    wanted = [int(n) for n in re.split(r"[,\s]+", args.pages) if n.strip()]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 271, in <listcomp>
+    wanted = [int(n) for n in re.split(r"[,\s]+", args.pages) if n.strip()]
+              ^^^^^^
+ValueError: invalid literal for int() with base 10: '114-118'
