@@ -159,6 +159,133 @@ def write_cod_points(dataset: str, level: int, out: str, wanted: int = 40) -> in
     return 0
 
 
+# The 2024 census's sub-county profile tables (October 2025): every district,
+# county, sub-county and parish with its men, women and total (Table 1) and its
+# people in the dashboard's age groups (Table 3). The Bureau's host fails
+# certificate checks from the runner, so the Internet Archive's capture is read.
+WORKBOOK_PAGE = ("https://www.ubos.org/wp-content/uploads/2025/10/"
+                 "NPHC-2024-Subcounty-Profiles-Excel-Tables.xlsx")
+WORKBOOK = f"https://web.archive.org/web/20251008162910id_/{WORKBOOK_PAGE}"
+WORKBOOK_SOURCE = ("Uganda Bureau of Statistics, National Population and Housing Census 2024, "
+                   "Sub-county Profiles, Tables 1 and 3 (population by sex and by age group)")
+SUBCOUNTY_TABLE = "uganda_subcounties.json"
+SUBCOUNTY_POINTS = "uganda_subcounty_points.json"
+# Table 3's age-group headings -> the dashboard's keys for the same groups.
+WORKBOOK_AGES = {"0 - 4": "age_0_4", "0 - 17": "age_0_17", "15+": "age_15_plus",
+                 "15 - 24": "age_15_24", "18 - 30": "age_18_30", "18+": "age_18_plus",
+                 "60+": "age_60_plus", "65+": "age_65_plus", "80+": "age_80_plus"}
+# A row's level in the workbook is its first cell's indent.
+LEVELS = {0: "district", 1: "county", 2: "subcounty", 3: "parish"}
+
+
+def workbook_rows(table1: list[tuple[str, int, list[Any]]],
+                  table3: list[tuple[str, int, list[Any]]]) -> list[dict[str, Any]]:
+    """The workbook's districts, counties and sub-counties, each with its district
+    and county, men, women, total and age groups, every sum checked: each
+    unit's sexes make its total, its age groups make it (``age_groups``), and
+    each county's sub-counties, each district's counties and each sub-county's
+    parishes make it. Rows come as (label, indent, cells) per table, aligned."""
+    head = next((i for i, (label, _, _) in enumerate(table3) if label.upper() == "PARISH"), None)
+    if head is None:
+        raise SystemExit("uganda_census: Table 3 has no PARISH heading row")
+    columns = {" ".join(str(c or "").split()): i for i, c in enumerate(table3[head][2])}
+    missing = [k for k in WORKBOOK_AGES if k not in columns]
+    if missing:
+        raise SystemExit(f"uganda_census: Table 3 has no column {missing}: {sorted(columns)}")
+    out: list[dict[str, Any]] = []
+    district = county = subcounty = None
+    for (label, indent, cells), (label3, _, cells3) in zip(table1, table3):
+        if label != label3:
+            raise SystemExit(f"uganda_census: Tables 1 and 3 part at {label!r} / {label3!r}")
+        if indent not in LEVELS or len(cells) < 4 or count(cells[3]) is None \
+                or label.upper() in ("DISTRICT", "COUNTY", "SUBCOUNTY", "PARISH"):
+            continue
+        male, female, total = (count(c) for c in cells[1:4])
+        if None in (male, female) or male + female != total:
+            raise SystemExit(f"uganda_census: workbook {label}: {male} men and {female} women "
+                             f"against {total}")
+        level = LEVELS[indent]
+        ages = {key: count(cells3[columns[head_]]) for head_, key in WORKBOOK_AGES.items()}
+        row = {"level": level, "name": label, "male": male, "female": female, "total": total,
+               "ages": ages}
+        if level == "district":
+            district, county, subcounty = row, None, None
+        elif level == "county":
+            if district is None:
+                raise SystemExit(f"uganda_census: workbook county {label} before any district")
+            county, subcounty = row, None
+            row["district"] = district["name"]
+        elif level == "subcounty":
+            if county is None:
+                raise SystemExit(f"uganda_census: workbook sub-county {label} outside a county")
+            subcounty = row
+            row.update(district=district["name"], county=county["name"])
+        else:
+            if subcounty is None:
+                raise SystemExit(f"uganda_census: workbook parish {label} outside a sub-county")
+            subcounty.setdefault("_parishes", 0)
+            subcounty["_parishes"] += total
+            continue
+        out.append(row)
+    problems = []
+    for parent_level, child_level, key in (("district", "county", "district"),
+                                           ("county", "subcounty", "county")):
+        for parent in (r for r in out if r["level"] == parent_level):
+            kids = [r for r in out if r["level"] == child_level and r[key] == parent["name"]
+                    and (parent_level == "district" or r["district"] == parent["district"])]
+            made = sum(k["total"] for k in kids)
+            if made != parent["total"]:
+                problems.append(f"{parent['name']}: its {child_level} rows make {made:,} of "
+                                f"{parent['total']:,}")
+    for row in out:
+        if row["level"] == "subcounty" and row.pop("_parishes", row["total"]) != row["total"]:
+            problems.append(f"{row['name']} ({row['county']}): its parishes do not make it")
+        try:
+            row["groups"] = age_groups(row["total"], row["ages"], row["name"])
+        except ValueError as err:
+            row["groups"] = None
+            log(f"  workbook ages not read: {err}")
+    if problems:
+        raise SystemExit("uganda_census: workbook sums: " + "; ".join(problems[:20]))
+    return out
+
+
+def read_workbook() -> list[dict[str, Any]]:
+    import io                                       # noqa: PLC0415
+
+    import openpyxl                                 # noqa: PLC0415
+    blob = http_get(WORKBOOK, binary=True, cache=False, timeout=900)
+    log(f"  read {WORKBOOK}: {len(blob):,} bytes")
+    # Not read-only: a row's level is its first cell's indent.
+    book = openpyxl.load_workbook(io.BytesIO(blob), data_only=True)
+
+    def rows(title: str) -> list[tuple[str, int, list[Any]]]:
+        out = []
+        for r in book[title].iter_rows():
+            first = r[0]
+            indent = int((first.alignment.indent if first.alignment else 0) or 0)
+            out.append((" ".join(str(first.value or "").split()), indent,
+                        [c.value for c in r]))
+        return out
+
+    return workbook_rows(rows("Table1"), rows("Table3"))
+
+
+def write_subcounty_table() -> int:
+    rows = read_workbook()
+    by_level = {lv: [r for r in rows if r["level"] == lv] for lv in ("district", "county",
+                                                                     "subcounty")}
+    made = sum(r["total"] for r in by_level["district"])
+    log(f"  {len(by_level['district'])} districts making {made:,}, "
+        f"{len(by_level['county'])} counties, {len(by_level['subcounty'])} sub-counties "
+        f"({sum(1 for r in by_level['subcounty'] if r['groups'])} with their age groups)")
+    if abs(made - NATIONAL) > NATIONAL * SLACK:
+        raise SystemExit(f"uganda_census: the workbook's districts make {made:,}")
+    write_json(PROCESSED / SUBCOUNTY_TABLE, [{k: v for k, v in r.items() if k != "groups"}
+                                            for r in rows])
+    return 0
+
+
 def write_points() -> int:
     data = fetch_json(f"{API}/get_geospatial_data.php?level=county")
     features = (data.get("geojson") or data).get("features") or []
@@ -437,10 +564,18 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--points", action="store_true",
                     help="write points sampled over every 2024 county, for the crosswalk")
+    ap.add_argument("--subcounty-points", action="store_true",
+                    help="write points sampled over OCHA's sub-county outlines (cod-ab-uga)")
+    ap.add_argument("--subcounty-table", action="store_true",
+                    help="write the 2024 sub-county profile tables' figures")
     ap.add_argument("--run", default="", help="a label that tells two dispatches apart; ignored")
     args = ap.parse_args()
     if args.points:
         return write_points()
+    if args.subcounty_points:
+        return write_cod_points("cod-ab-uga", 4, SUBCOUNTY_POINTS, 30)
+    if args.subcounty_table:
+        return write_subcounty_table()
     districts, units = read_units()
     log(f"  {len(districts)} districts making {sum(u['total'] for u in districts):,}, "
         f"{sum(1 for u in districts if u.get('groups'))} with their age groups; {len(units)} "
