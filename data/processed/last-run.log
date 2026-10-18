@@ -1,16 +1,15 @@
-probe_pdf: https://www.hcp.ma/file/245184/
-  458,651,892 bytes
-  236 pages
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 271, in main
-    wanted = [int(n) for n in re.split(r"[,\s]+", args.pages) if n.strip()]
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 271, in <listcomp>
-    wanted = [int(n) for n in re.split(r"[,\s]+", args.pages) if n.strip()]
-              ^^^^^^
-ValueError: invalid literal for int() with base 10: '114-118'
+  read https://www.zamstats.gov.zm/Publications/Revised%202022%20Census%20of%20Population%20and%20Housing%20Summary%20Report%20Volume%20II.pdf: 16,069,809 bytes, sha256 16f5ee5b4fea25fb0d24c5e853823171f4e07dd3d049c9c5260488c07ebf209e
+  10 provinces and 116 districts, making 19,693,423
+  the country's median age: 18.3 from Table 5.1, 18.3 from the bands
+  census districts not drawn: []
+  province polygon 'Central': the sum of its drawn districts (2,391,803): The 2022 census's final counts for the 12 districts drawn here, added up: Central Province's districts and Itezhi-Tezhi, which the census counts under Southern Province.
+  province polygon 'Eastern': the sum of its drawn districts (2,321,898): The 2022 census's final counts for the 14 districts drawn here, added up: Eastern Province's districts other than Chama, which this map draws under Muchinga.
+  province polygon 'Lusaka': the sum of its drawn districts (3,172,603): The 2022 census's final counts for the 7 districts drawn here, added up: Lusaka Province's districts and Chirundu, which the census counts under Southern Province.
+  province polygon 'Muchinga': the sum of its drawn districts (1,062,997): The 2022 census's final counts for the 9 districts drawn here, added up: Muchinga Province's districts and Chama, which the census counts under Eastern Province.
+  province polygon 'Southern': the sum of its drawn districts (2,178,638): The 2022 census's final counts for the 13 districts drawn here, added up: Southern Province's districts other than Chirundu (drawn under Lusaka) and Itezhi-Tezhi (drawn under Central).
+  SHANG'OMBO DISTRICT: 74,654
+  SENANGA DISTRICT: 113,124
+  SESHEKE DISTRICT: 73,204
+  WESTERN PROVINCE: 1,375,604
+  116 of 116 districts and 10 of 10 provinces written
+  wrote data/processed/zambia_census.json (299 kB)
