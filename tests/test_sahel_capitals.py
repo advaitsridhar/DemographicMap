@@ -40,6 +40,8 @@ class Capitals(unittest.TestCase):
         self.assertTrue(notes["Bas-Mono"].startswith(
             f"OCHA's administrative boundaries for Togo, which give the seats of {len(by) + 0}"))
         self.assertTrue(notes["Akébou"].endswith("give none for this prefecture."))
+        # The count is of the prefectures the map draws, not Togo's 39.
+        self.assertIn("of the 37 prefectures drawn here", notes["Akébou"])
 
     def test_cabo_verde_parishes_of_one_name(self):
         records, report, admin2 = self.build("CPV")
@@ -57,14 +59,27 @@ class Capitals(unittest.TestCase):
         by = self.named(records)
         self.assertEqual(by["Setor de Gabv"], "Gabu")
         self.assertEqual(by["Setor de Caiv"], "Caio")
+        # Long seats are alike enough to "Setor de ..." to have been replaced by
+        # the sector's label: the point's own name stands.
+        self.assertEqual(by["Setor de Bambadinca"], "Bambadinca")
+        self.assertEqual(by["Setor de Fulacunda"], "Fulacunda")
+        # The sector of Boé is the Gabú polygon labelled Madina do Boé, which
+        # holds the layer's Boé point; the polygon labelled Boé is an island
+        # off Caió and says so.
+        self.assertEqual(by["Setor de Madina do Bo˒"], "Boe")
         self.assertNotIn("Setor de Boe", by)
-        # The polygon drawn as Boé is misplaced: nothing is said there either.
-        self.assertNotIn("Setor de Boe", self.told(records))
+        told = self.told(records)
+        self.assertTrue(told["Setor de Boe"].startswith(
+            "This polygon, labelled Boé, is an island 1 km off the Caió sector polygon"))
+        self.assertTrue(all("Setor de" not in seat for seat in by.values()))
         records, report, _ = self.build("NER")
         by = self.named(records)
         self.assertEqual(by.get("Abala"), "Abala")
         self.assertNotIn("Kollo", by)     # its seat point is named "Kollo Carre"
-        self.assertIn("only the seats of its communes", self.told(records)["Kollo"])
+        self.assertEqual(self.told(records)["Kollo"], (
+            "OCHA's administrative boundaries for Niger give the seats of the communes, not "
+            "of the departments, and the one they give for the commune of Kollo is named "
+            "Kollo Carre, not Kollo."))
         self.assertEqual(by.get("Tahoua"), "Tahoua")   # the city drawn beside it
         self.assertEqual(by.get("Tillabéri"), "Tillabéri")   # the layer's "Tillabery"
 
@@ -95,8 +110,8 @@ class Capitals(unittest.TestCase):
         self.assertEqual(by["Balléyara"], "Balléyara")
         self.assertEqual(by["Madarounfa"], "Madarounfa")
         self.assertEqual(by["Loga"]["note"], (
-            "OCHA's administrative boundaries for Niger, which give the seats of 6 of its 7 "
-            "departments, give none for this department."))
+            "OCHA's administrative boundaries for Niger give the seats of the communes, not "
+            "of the departments, and they list no commune of this department's name."))
         self.assertTrue(all("sources" not in r or r["sources"] == []
                             for r in records if isinstance(r["capital"], dict)))
 
@@ -138,6 +153,36 @@ class Capitals(unittest.TestCase):
         self.assertEqual(by, {"C": "Ouagadougou", "S": "Gaoua"})
         self.assertTrue(all(r["level"] == "admin1" for r in records))
         self.assertTrue(any(line.startswith("Est (first level)") for line in report))
+
+    def test_a_seat_filed_under_another_unit_and_the_year(self):
+        # Benin's layer files its So-Ava point under Abomey-Calavi, inside the
+        # polygon drawn as Abomey-Calavi; the points whose names are not the
+        # commune's say what they are.
+        def point(unit, name):
+            return {"adm1_name": "R", "adm2_name": unit, "adm3_name": "<Null>", "name": name,
+                    "_xy": [0, 0]}
+        points = [point("Abomey-Calavi", "Abomey-Calavi"), point("Abomey-Calavi", "So-Ava"),
+                  point("Akpo-Misserete", "Agpro"), point("Copargo", "Kopargo")]
+        silent = {"status": "not_available"}
+        admin2 = [{"id": f"b{i}", "name": n, "parent": "R", "capital": silent}
+                  for i, n in enumerate(["Abomey-Calavi", "So-Ava", "Akpo-Misserete",
+                                         "Copargo"])]
+        records, _ = sc.build("BEN", points, "page", [{"id": "R", "name": "R"}], admin2,
+                              year=2019)
+        by = {r["name"]: r["capital"] for r in records}
+        self.assertEqual(by["Abomey-Calavi"], "Abomey-Calavi")
+        self.assertEqual(by["Copargo"], "Copargo")      # the unit's own spelling
+        self.assertEqual(by["So-Ava"]["note"], (
+            "OCHA's administrative boundaries for Benin, which give the seats of 2 of the 4 "
+            "communes drawn here, file their one point named So-Ava under Abomey-Calavi, and "
+            "it lies inside the outline drawn here for Abomey-Calavi, not this commune's."))
+        self.assertTrue(by["Akpo-Misserete"]["note"].endswith(
+            "give for this one a point named Agpro, not the commune's name."))
+        source = next(r["sources"][0] for r in records if r["name"] == "Copargo")
+        self.assertEqual(source["year"], 2019)
+        self.assertIn("(COD-AB, 2019)", source["name"])
+        self.assertEqual(sc.dataset_year({"dataset_date": "[2019-07-17T00:00:00 TO "
+                                                          "2019-07-17T23:59:59]"}), 2019)
 
 
 if __name__ == "__main__":

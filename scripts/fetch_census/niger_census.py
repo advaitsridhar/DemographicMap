@@ -25,8 +25,9 @@ regions' counts added: men and women, every five-year age group, every
 religion. Its median age is the median of the added age groups, interpolated
 within the group holding the middle person, and so is every other polygon's;
 each is checked against the report's whole-year median for its regions. The
-two, and Niamey (the capital district, a city rather than a region with a
-seat), say why they show no capital.
+two say why they show no capital; Niamey, the capital district, is the city
+of Niamey (Tableau 6 counts it as the one department Ville de Niamey), which
+is its capital.
 
 **Checks before anything is written.** Every department's men and women make
 its total; the departments make their region and the regions make the
@@ -288,16 +289,19 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
             + ", interpolated within the group holding the middle person; the report gives "
             + reported + " in whole years.")
         seat: dict[str, Any] = {}
+        fields = "sex_ratio/median_age/religion"
         if both:
             seat["capital"] = gap(NOT_AVAILABLE, f"The polygon is two regions, {shown}, each with "
                                                  "a seat of its own.")
         elif regions == ["NIAMEY"]:
-            seat["capital"] = gap(NOT_AVAILABLE, "Niamey is the capital district, the city "
-                                                 "itself, not a region with a seat apart.")
+            # The capital district is the city: Tableau 6 counts the region as
+            # one department, the city of Niamey (Ville de Niamey).
+            seat["capital"] = "Niamey"
+            fields += "/capital"
         records.append(record(
             f"NER-RGPH2012-{fold(shape['name'])}", shape["name"], level="admin1", parent="NER",
             country="NER", match_by="shape_id", shape_id=shape["id"], **seat,
-            sources=[{**src, "field": "sex_ratio/median_age/religion"}],
+            sources=[{**src, "field": fields}],
             sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
                               year=YEAR, source=SOURCE + ", Tableau 6"),
             sex_ratio_note=(f"The regions of {shown} added together." if both else None),
@@ -305,7 +309,8 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
             median_age_note=median_note,
             religion=shares(counts, total=sum(counts.values())), religion_year=YEAR,
             religion_note=("Religion of the resident population as the 2012 census tabulates it "
-                           "by region (Tableau A 11), those who gave none counted as not stated"
+                           "by region (Tableau A 11); those whose religion was not declared (ND) "
+                           "are shown as not stated"
                            + (f"; the regions of {shown} added together." if both else "."))))
     by_name: dict[tuple[str, str], tuple[str, tuple[int, int, int]]] = {}
     for (region, name), figures in table["departments"].items():
@@ -341,51 +346,74 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
 CITIES = {"Ville de Maradi": "Maradi", "Ville de Zinder": "Zinder"}
 
 
-def check_cities() -> None:
-    """Log whether OCHA's 2024 table gives the cities of Maradi and Zinder their
-    region's age proportions: each city's five-year groups against every row of
-    the regions' table (ner_admpop_adm1_2024), and against the departments'
-    common structure, by cod_ps_age's own test (COPY_TOLERANCE)."""
+def check_cities(census_ages: dict[str, Any] | None = None) -> None:
+    """Log whether OCHA's table gives the cities of Maradi and Zinder their
+    region's age proportions: within each year's pair of tables, each city's
+    five-year groups against every row of the regions' table and against the
+    other departments, by cod_ps_age's own test (COPY_TOLERANCE); and against
+    its region's groups in the 2012 census (Tableaux A2 to A4), where given."""
     from .cod_ps import get, name_column
     from .cod_ps_age import COPY_TOLERANCE, age_columns, age_shares, same_structure, tables, \
         unit_figures
 
     package = get("package_show", id="cod-ps-ner")
-    figures: dict[str, dict[str, dict[str, Any]]] = {"1": {}, "2": {}}
+    by_year: dict[str, dict[str, dict[str, dict[str, Any]]]] = {}
     for table in tables(package):
         cols = age_columns(table["columns"])
-        if cols is None or table["level"] not in figures:
+        if cols is None or table["level"] not in ("1", "2"):
             continue
+        year = (re.findall(r"20\d\d", table["label"]) or ["?"])[0]
+        kind = "book" if "xlsx" in table["label"] else "csv"
         name_col = name_column(table["columns"], table["level"])
         log(f"  {table['label']}: {len(table['rows'])} rows, names in {name_col}")
+        into = by_year.setdefault(f"{year} {kind}", {"1": {}, "2": {}})[table["level"]]
         for row in table["rows"]:
             got, why = unit_figures(row, cols)
             name = str(row.get(name_col) or "").strip()
             if got:
-                figures[table["level"]][name] = got
+                into[name] = got
             else:
                 log(f"    {name}: {why}")
-    regions, departments = figures["1"], figures["2"]
+
+    def shares_of(groups: list[Any]) -> list[float]:
+        return age_shares(groups) or []
 
     def shown(groups: list[Any]) -> str:
-        return " ".join(f"{s:.2f}" for s in (age_shares(groups) or [])[:6])
+        return " ".join(f"{v:.2f}" for v in shares_of(groups)[:6])
 
-    for name, got in sorted(regions.items()):
-        log(f"  region {name}: median {got['median']}, shares {shown(got['groups'])} ...")
-    for city, region in CITIES.items():
-        mine = next((g for n, g in departments.items() if fold(n) == fold(city)), None)
-        if mine is None:
-            log(f"  {city}: not in the departments' table ({sorted(departments)[:5]} ...)")
-            continue
-        log(f"  {city}: median {mine['median']}, shares {shown(mine['groups'])} ...")
+    def largest(a: list[Any], b: list[Any]) -> float:
+        return max(abs(x - y) for x, y in zip(shares_of(a), shares_of(b)))
+
+    for key, levels in sorted(by_year.items()):
+        regions, departments = levels["1"], levels["2"]
+        log(f"  == {key}: {len(regions)} regions, {len(departments)} departments")
         for name, got in sorted(regions.items()):
-            gap_ = max(abs(a - b) for a, b in zip(age_shares(mine["groups"]) or [],
-                                                     age_shares(got["groups"]) or []))
-            log(f"    against region {name}: largest difference {gap_:.3f} points; same "
-                f"structure (under {COPY_TOLERANCE}): {same_structure(mine['groups'], got['groups'])}")
-        alike = sum(1 for n, g in departments.items() if fold(n) != fold(city)
-                    and same_structure(mine["groups"], g["groups"]))
-        log(f"    alike to {alike} of the other {len(departments) - 1} departments")
+            log(f"    region {name}: median {got['median']}, shares {shown(got['groups'])} ...")
+        for city, region in CITIES.items():
+            mine = next((g for n, g in departments.items() if fold(n) == fold(city)), None)
+            if mine is None:
+                log(f"    {city}: not in this year's departments")
+                continue
+            log(f"    {city}: median {mine['median']}, shares {shown(mine['groups'])} ...")
+            for name, got in sorted(regions.items()):
+                log(f"      against region {name}: largest difference "
+                    f"{largest(mine['groups'], got['groups']):.3f} points; same structure "
+                    f"(under {COPY_TOLERANCE}): {same_structure(mine['groups'], got['groups'])}")
+            alike = sum(1 for n, g in departments.items() if fold(n) != fold(city)
+                        and same_structure(mine["groups"], g["groups"]))
+            log(f"      alike to {alike} of the other {len(departments) - 1} departments")
+            if census_ages and region.upper() in census_ages:
+                groups = [[low, high, figures[2]] for low, high, figures
+                          in census_ages[region.upper()] if low >= 0]
+                mine_groups = [list(g) for g in mine["groups"]]
+                # The census's groups stop at 85 and over, OCHA's later: compare
+                # the groups both have below 80, as shares of everyone.
+                a = shares_of(mine_groups)[:16]
+                b = shares_of(groups)[:16]
+                log(f"      against the 2012 census's {region} region (median "
+                    f"{grouped_median([tuple(g) for g in groups])}): shares "
+                    f"{' '.join(f'{v:.2f}' for v in b[:6])} ...; largest difference below 80 "
+                    f"{max(abs(x - y) for x, y in zip(a, b)):.3f} points")
 
 
 def main() -> int:
@@ -396,9 +424,6 @@ def main() -> int:
                     help="log whether OCHA's 2024 table gives the cities of Maradi and Zinder "
                     "their region's age proportions, instead of writing anything (a label)")
     args = ap.parse_args()
-    if args.check_cities:
-        check_cities()
-        return 0
     blob = http_get(URL, binary=True, cache=False, timeout=300)
     if not blob.startswith(b"%PDF"):
         raise SystemExit(f"niger_census: {URL} is not a PDF: {blob[:60]!r}")
@@ -413,6 +438,9 @@ def main() -> int:
             if re.search(r"Tableau A[234]\s*:", plain):
                 layout_pages.append(page.extract_text(layout=True) or "")
     layout = "\f".join(layout_pages)
+    if args.check_cities:
+        check_cities(parse_ages(layout))
+        return 0
     admin1 = json.loads((SITE / "admin1" / "NER.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "NER.units.json").read_text())
     records, report = build(text, layout, admin1, admin2)

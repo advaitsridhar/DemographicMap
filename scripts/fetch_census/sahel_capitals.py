@@ -28,10 +28,17 @@ Kadiogo and Djôrô are the old Centre and Sud-Ouest renamed).
 Only units whose capital is empty on the map are written: a capital another
 source names is not replaced. Where the layer spells the seat as a variant of
 the unit's own name (Benin's "Kopargo" for Copargo), the unit's spelling is
-kept. Seats the name rules miss but a checked point gives are listed in
-SEAT_POINTS (Niger's departments the layer names otherwise, its cities drawn
-as units of their own, Kozah's seat Kara). A unit the layer gives no seat
-says so, with how many of the country's units it does give one.
+kept -- but never a label that carries its class word (Guinea-Bissau's "Setor
+de Bambadinca"): there the point's own name stands. Seats the name rules miss
+but a checked point gives are listed in SEAT_POINTS (Niger's departments the
+layer names otherwise, its cities drawn as units of their own, Kozah's seat
+Kara, Guinea-Bissau's sector of Boé drawn under the label Madina do Boé). A
+unit the layer gives no seat says so: how many of the units drawn here it
+gives one, and what it has for this one (a point filed under another unit, a
+point whose name is not the unit's, a polygon that is not the unit its label
+names); Niger's departments are told what the layer, which gives the
+communes' seats, gives for the commune of the department's name. The source
+carries the dataset's year as HDX records it.
 
 Usage:
     python -m scripts.fetch_census.sahel_capitals
@@ -43,6 +50,7 @@ import argparse
 import difflib
 import io
 import json
+import re
 import unicodedata
 import zipfile
 from typing import Any
@@ -70,7 +78,7 @@ ALIASES = {
             "magtalahjar": "maghtalahjar", "moughataadenneama": "nema",
             "selibabi": "selibaby", "tijigja": "tidjikja", "timbedgha": "timbedra"},
     "GNB": {"catie": "catio", "quinh": "quinhamel", "gabv": "gabu", "caiv": "caio",
-            "canghungo": "canchungo", "madinadobo": "boe", "galomaro": "galomarocosse",
+            "canghungo": "canchungo", "galomaro": "galomarocosse",
             "gamamundo": "gamamudoganadu", "stodomingos": "saodomingos",
             "cacheu": "cacheucalequisse", "bissauautonomoussector": "sectorautonomodebissau"},
     # The layer names the provinces of 2025: Oubritenga and Sanmatenga renamed.
@@ -80,25 +88,50 @@ ALIASES = {
 }
 # Units whose point was checked and is not their seat as the map draws them,
 # with what the visitor is told instead (after "OCHA's administrative
-# boundaries for <country>, which give the seats of n of its N units, ...").
+# boundaries for <country>, which give the seats of n of the N units drawn
+# here, ..."): what the layer's point is.
 EXCLUDED = {
     ("MRT", "fderick"): ("the layer names Zouérat, the wilaya's capital, for F'Dérik",
                          "name Zouérat, the capital of the wilaya, for it"),
-    ("BEN", "akpomisserete"): ("the layer's name, Agpro, is not the commune's seat's",
-                               "name Agpro for it, which could not be confirmed as its seat"),
+    ("BEN", "akpomisserete"): ("the layer's name, Agpro, is not the commune's",
+                               "give for this one a point named Agpro, not the commune's name"),
     ("TGO", "basmono"): ("the layer names Athiémé, a town in Benin across the Mono",
                          "name Athiémé, a town in Benin across the Mono, for it"),
-    ("GNB", "boe"): ("the polygon drawn as Boé lies in Cacheu, far from the sector of Boé", None),
-    ("BEN", "aguegues"): ("the layer's Aguégué-Houédomè could not be confirmed as the seat",
-                          "name Aguégué-Houédomè for it, which could not be confirmed as "
-                          "its seat"),
-    ("BEN", "semekpodji"): ("the layer's Sèmè could not be confirmed as the seat",
-                            "name Sèmè for it, which could not be confirmed as its seat"),
+    ("BEN", "aguegues"): ("the layer's name, Aguégué-Houédomè, is not the commune's",
+                          "give for this one a point named Aguégué-Houédomè, not the "
+                          "commune's name"),
+    ("BEN", "semekpodji"): ("the layer's name, Sèmè, is not the commune's",
+                            "give for this one a point named Sèmè, not the commune's name"),
     ("CPV", "nossasenhoradaajuda"): ("the layer names Porto dos Mosteiros, a village beside "
                                      "the municipality's seat",
                                      "name Porto dos Mosteiros for it, a village beside the "
                                      "municipality's seat"),
 }
+# Polygons that are not the unit their label names, with what the visitor is
+# told. The polygon Guinea-Bissau's boundaries label Boé lies 1 km off the Caió
+# sector polygon, in Cacheu (its centroid 16.08 W, 11.83 N); the sector of Boé
+# is the Gabú polygon they label Madina do Boé, which holds the layer's point
+# for Boé (14.217 W, 11.75 N, the town of Boé, once Madina do Boé) and takes it
+# through SEAT_POINTS.
+NOT_THE_UNIT = {
+    ("GNB", "boe"): ("This polygon, labelled Boé, is an island 1 km off the Caió sector "
+                     "polygon in the Cacheu region, not the sector of Boé, which lies in the "
+                     "Gabú region; that sector's seat is shown on the polygon of Madina do "
+                     "Boé."),
+}
+# Seats the layer files under another unit, each point placed on the map's
+# polygons beforehand, with what the visitor is told (after the same opening as
+# EXCLUDED's): Benin's So-Ava point is filed under Abomey-Calavi and lies in
+# the polygon drawn as Abomey-Calavi (2.400 E, 6.500 N).
+FILED_ELSEWHERE = {
+    ("BEN", "soava"): ("file their one point named So-Ava under Abomey-Calavi, and it lies "
+                       "inside the outline drawn here for Abomey-Calavi, not this commune's"),
+}
+# Units whose names the boundary file writes with their class word, and often
+# cut or garbled (Guinea-Bissau's "Setor de Caiv" for Caió, "Setor de Gabv"
+# for Gabú): the class word is not part of the unit's key, and no seat is ever
+# written in the unit's spelling there -- the point's own name stands.
+CLASS_WORDS = {"GNB": "setorde"}
 # Seats the name rules miss, each point checked on the map's polygons
 # (2026-10-17): the map's unit -> (the layer's unit, the point's name, both
 # folded, and the seat as written, or None for the unit's own spelling).
@@ -131,6 +164,9 @@ SEAT_POINTS = {
     ("TGO", "kozah"): ("kozah", "kara", None),
     ("SEN", "thies"): ("thies", "thiesouest", "Thiès"),
     ("SEN", "malemhodar"): ("malemhodar", "malemehoddar", None),
+    # Guinea-Bissau's sector of Boé, drawn in Gabú under the label "Madina do
+    # Boé": the layer's point for Boé lies inside it (NOT_THE_UNIT).
+    ("GNB", "madinadobo"): ("boe", "boe", None),
 }
 # What the second-level units are called, for the reason given where no seat is.
 UNIT_WORDS = {"SEN": ("department", "departments"), "NER": ("department", "departments"),
@@ -149,17 +185,56 @@ def filled(value: Any) -> bool:
     return value not in (None, "", "<Null>")
 
 
-def unit_key(iso3: str, name: str) -> str:
+def base_key(iso3: str, name: str) -> str:
+    """The unit's folded name without its class word (CLASS_WORDS)."""
     key = fold(name)
-    if iso3 == "GNB" and key.startswith("setorde"):
-        key = key[len("setorde"):]
+    word = CLASS_WORDS.get(iso3)
+    if word and key.startswith(word):
+        key = key[len(word):]
+    return key
+
+
+def unit_key(iso3: str, name: str) -> str:
+    key = base_key(iso3, name)
     return ALIASES.get(iso3, {}).get(key, key)
 
 
-def layer(iso3: str) -> tuple[list[dict[str, Any]], str]:
-    """The capitals layer's points, and the dataset's page."""
+def as_written(iso3: str, seat: str, u: dict[str, Any]) -> str:
+    """The seat as written: the unit's own spelling where the layer spells the
+    seat as a variant of the unit's name (Benin's "Kopargo" for Copargo), but
+    never where the unit's name carries its class word (CLASS_WORDS): "Setor de
+    Bambadinca" is no town's name, and the sector's seat is the layer's
+    Bambadinca."""
+    if iso3 in CLASS_WORDS:
+        return seat
+    if difflib.SequenceMatcher(None, fold(seat), fold(u["name"])).ratio() >= 0.7:
+        return u["name"]
+    return seat
+
+
+def dataset_year(package: dict[str, Any]) -> int | None:
+    """The year of the dataset's reference date, as HDX records it."""
+    for key in ("dataset_date", "last_modified", "metadata_modified"):
+        m = re.search(r"(19|20)\d{2}", str(package.get(key) or ""))
+        if m:
+            return int(m.group(0))
+    return None
+
+
+def source_of(country: str, page: str, year: int | None) -> dict[str, Any]:
+    named = f"COD-AB, {year}" if year else "COD-AB"
+    return {"field": "capital",
+            "name": f"OCHA, {country} - Subnational Administrative Boundaries ({named}), "
+                    "administrative capitals",
+            "url": page, "license": "CC BY-IGO", **({"year": year} if year else {})}
+
+
+def layer(iso3: str) -> tuple[list[dict[str, Any]], str, int | None]:
+    """The capitals layer's points, the dataset's page and its year."""
     dataset, _ = COUNTRIES[iso3]
     package = json.loads(http_get(API + dataset, cache=False, timeout=120))["result"]
+    year = dataset_year(package)
+    log(f"  {iso3}: {dataset} dated {package.get('dataset_date')!r} -> {year}")
     urls = [r["url"] for r in package.get("resources") or []
             if str(r.get("url", "")).endswith("admin_boundaries.geojson.zip")]
     if not urls:
@@ -175,7 +250,7 @@ def layer(iso3: str) -> tuple[list[dict[str, Any]], str]:
                         points.append({**(f.get("properties") or {}),
                                        "_xy": geom["coordinates"][:2]})
     log(f"  {iso3}: {len(points)} capital points in {dataset}")
-    return points, f"https://data.humdata.org/dataset/{dataset}"
+    return points, f"https://data.humdata.org/dataset/{dataset}", year
 
 
 def seats(iso3: str, points: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
@@ -232,11 +307,10 @@ def seat_of(iso3: str, u: dict[str, Any], points: list[dict[str, Any]],
                 if fold(p.get("adm2_name")) == unit and fold(point_name(p)) == wanted]
         if len({point_name(p) for p in hits}) != 1:
             return None, None, f"the checked point {wanted!r} of {unit!r} is not in the layer"
-        seat = written or point_name(hits[0])
-        if written is None and difflib.SequenceMatcher(
-                None, fold(seat), fold(u["name"])).ratio() >= 0.7:
-            seat = u["name"]
+        seat = written or as_written(iso3, point_name(hits[0]), u)
         return seat, hits[0]["_xy"], ""
+    if (iso3, key) in NOT_THE_UNIT:
+        return None, None, "left out, the polygon is not the unit its label names"
     if (iso3, key) in EXCLUDED:
         return None, None, f"left out, {EXCLUDED[(iso3, key)][0]}"
     found = by_unit.get(key, [])
@@ -245,37 +319,47 @@ def seat_of(iso3: str, u: dict[str, Any], points: list[dict[str, Any]],
         return None, None, ("no point" if not found
                             else "points " + str(sorted({p["_name"] for p in found})))
     xy = next(p["_xy"] for p in found if p["_name"] == seat)
-    if difflib.SequenceMatcher(None, fold(seat), fold(u["name"])).ratio() >= 0.7:
-        seat = u["name"]                   # the seat bears the unit's name
-    return seat, xy, ""
+    return as_written(iso3, seat, u), xy, ""
 
 
 def no_seat(iso3: str, u: dict[str, Any], points: list[dict[str, Any]], given: int,
             drawn: int) -> str | None:
-    """What the visitor is told where the layer gives this unit no seat."""
+    """What the visitor is told where the layer gives this unit no seat: how
+    many of the units drawn here it gives one, and what it has for this one.
+    Niger's layer gives the communes' seats, so a department is told what it
+    gives for the commune of its name."""
     _, country = COUNTRIES[iso3]
     word, words = UNIT_WORDS[iso3]
     key = unit_key(iso3, u["name"])
+    if (iso3, key) in NOT_THE_UNIT:
+        return NOT_THE_UNIT[(iso3, key)]
+    if iso3 == "NER":
+        head = (f"OCHA's administrative boundaries for {country} give the seats of the "
+                "communes, not of the departments")
+        own = [p for p in points if fold(p.get("adm2_name")) == key
+               and fold(p.get("adm3_name")) == key and point_name(p)]
+        if own:
+            commune, named = str(own[0]["adm3_name"]).strip(), point_name(own[0])
+            return head + (f", and the one they give for the commune of {commune} is named "
+                           f"{named}, not {commune}.")
+        return head + ", and they list no commune of this department's name."
     head = (f"OCHA's administrative boundaries for {country}, which give the seats of "
-            f"{given:,} of its {drawn:,} {words}, ")
+            f"{given:,} of the {drawn:,} {words} drawn here, ")
     if (iso3, key) in EXCLUDED:
         told = EXCLUDED[(iso3, key)][1]
         return head + told + "." if told else None
-    communes = [p for p in points if fold(p.get("adm2_name")) == key]
-    if iso3 == "NER" and communes:
-        return head + ("give for this one only the seats of its communes, none of them under "
-                       "the department's name.")
+    if (iso3, key) in FILED_ELSEWHERE:
+        return head + FILED_ELSEWHERE[(iso3, key)] + "."
     return head + f"give none for this {word}."
 
 
 def build(iso3: str, points: list[dict[str, Any]], page: str, admin1: list[dict[str, Any]],
-          admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+          admin2: list[dict[str, Any]], year: int | None = None
+          ) -> tuple[list[dict[str, Any]], list[str]]:
     _, country = COUNTRIES[iso3]
     parents = {u["id"]: u["name"] for u in admin1}
     by_unit = seats(iso3, points)
-    source = {"field": "capital",
-              "name": f"OCHA, {country} - Subnational Administrative Boundaries (COD-AB), "
-                      "administrative capitals", "url": page, "license": "CC BY-IGO"}
+    source = source_of(country, page, year)
     records, report = [], []
     keys = [unit_key(iso3, u["name"]) for u in admin2]
     found = [(u, *seat_of(iso3, u, points, by_unit, parents.get(u.get("parent"), ""),
@@ -301,16 +385,15 @@ def build(iso3: str, points: list[dict[str, Any]], page: str, admin1: list[dict[
 
 
 def regions(iso3: str, points: list[dict[str, Any]], page: str, admin1: list[dict[str, Any]],
-            admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+            admin2: list[dict[str, Any]], year: int | None = None
+            ) -> tuple[list[dict[str, Any]], list[str]]:
     """First-level units' seats, where the layer has a point for a region (no
     second-level name) and that region is made of exactly the second-level
     units the map draws inside the unit: the same ground, whatever its name
     (Burkina Faso's layer names the regions of 2025, two of which are old
     regions renamed)."""
     _, country = COUNTRIES[iso3]
-    source = {"field": "capital",
-              "name": f"OCHA, {country} - Subnational Administrative Boundaries (COD-AB), "
-                      "administrative capitals", "url": page, "license": "CC BY-IGO"}
+    source = source_of(country, page, year)
     seat_of: dict[str, set[str]] = {}
     made_of: dict[str, set[str]] = {}
     for p in points:
@@ -351,13 +434,13 @@ def main() -> int:
     for iso3 in COUNTRIES:
         admin1 = json.loads((SITE / "admin1" / f"{iso3}.units.json").read_text())
         admin2 = json.loads((SITE / "admin2" / f"{iso3}.units.json").read_text())
-        points, page = layer(iso3)
-        mine, report = build(iso3, points, page, admin1, admin2)
+        points, page, year = layer(iso3)
+        mine, report = build(iso3, points, page, admin1, admin2, year)
         silent = sum(1 for u in admin2 if is_silent(u.get("capital")))
         named = sum(1 for r in mine if isinstance(r.get("capital"), str))
         log(f"  {iso3}: {named} of {silent} empty capitals named, "
             f"{len(mine) - named} say why none is")
-        first, more = regions(iso3, points, page, admin1, admin2)
+        first, more = regions(iso3, points, page, admin1, admin2, year)
         silent1 = sum(1 for u in admin1 if is_silent(u.get("capital")))
         log(f"  {iso3}: {len(first)} of {silent1} empty first-level capitals named")
         for line in report + more:

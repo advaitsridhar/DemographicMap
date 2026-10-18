@@ -52,8 +52,15 @@ class NigerReads(unittest.TestCase):
         self.assertIn("together", merged["median_age_note"])
         self.assertEqual(by[("admin1", "Niamey")]["religion"][0]["group"], "Islam")
         self.assertIn("Tahoua and Agadez", merged["capital"]["note"])
-        self.assertIn("capital district", by[("admin1", "Niamey")]["capital"]["note"])
+        # The capital district is the city, which is its capital, cited.
+        niamey = by[("admin1", "Niamey")]
+        self.assertEqual(niamey["capital"], "Niamey")
+        self.assertIn("capital", niamey["sources"][0]["field"].split("/"))
         self.assertNotIn("note", by[("admin1", "Maradi")]["capital"])
+        # Tableau A 11 has "Sans religion" and "ND" apart: the note says which
+        # is shown as not stated.
+        self.assertIn("not declared (ND) are shown as not stated", niamey["religion_note"])
+        self.assertNotIn("gave none", niamey["religion_note"])
         city = by[("admin2", "Tahoua Ville")]
         self.assertEqual(city["sex_ratio"]["value"], round(1000 * 74_096 / 75_402))
 
