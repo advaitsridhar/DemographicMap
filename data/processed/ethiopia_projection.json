@@ -1260,6 +1260,51 @@
     "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 27 weredas that lie within the zone as drawn, added up."
   },
   {
+    "id": "ETH-2022-57463737B31962206171619",
+    "level": "admin2",
+    "name": "Gedio",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1186459,
+      "year": 2022,
+      "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it",
+        "url": "https://data.humdata.org/dataset/cod-ps-eth",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B31962206171619",
+    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 12 weredas that lie within the zone as drawn, added up. Part of Gedeb wereda, counted here, lies beyond the zone's line."
+  },
+  {
     "id": "ETH-2022-57463737B6587793524925",
     "level": "admin2",
     "name": "Guji",
@@ -1710,6 +1755,51 @@
     "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 12 weredas that lie within the zone as drawn, added up. The zone as drawn also takes in part of Darimu wereda, whose people are not in this figure. Part of Dale Sadi wereda, counted here, lies beyond the zone's line."
   },
   {
+    "id": "ETH-2022-57463737B3908522439812",
+    "level": "admin2",
+    "name": "Kemashi",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 110115,
+      "year": 2022,
+      "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it",
+        "url": "https://data.humdata.org/dataset/cod-ps-eth",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B3908522439812",
+    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 6 weredas that lie within the zone as drawn, added up. The zone as drawn also takes in part of Sasiga, Kiltu Kara and Gimbi weredas, whose people are not in this figure. Part of Mizyiga wereda, counted here, lies beyond the zone's line."
+  },
+  {
     "id": "ETH-2022-57463737B85243758761860",
     "level": "admin2",
     "name": "Konta",
@@ -1753,6 +1843,51 @@
     "match_by": "shape_id",
     "shape_id": "57463737B85243758761860",
     "population_note": "The statistics office's projection for July 2022, from the 2007 census, for the one wereda that lies within the zone as drawn."
+  },
+  {
+    "id": "ETH-2022-57463737B25474915943822",
+    "level": "admin2",
+    "name": "Majang",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 86891,
+      "year": 2022,
+      "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it",
+        "url": "https://data.humdata.org/dataset/cod-ps-eth",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B25474915943822",
+    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 2 weredas that lie within the zone as drawn, added up. The zone as drawn also takes in part of Yeki wereda, whose people are not in this figure."
   },
   {
     "id": "ETH-2022-57463737B57190037536303",
@@ -2126,7 +2261,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1054885,
+      "value": 1076199,
       "year": 2022,
       "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
     },
@@ -2157,7 +2292,52 @@
     "country": "ETH",
     "match_by": "shape_id",
     "shape_id": "57463737B47845623472468",
-    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 11 weredas that lie within the zone as drawn, added up. The zone as drawn also takes in part of Kibet town wereda, whose people are not in this figure. Part of Siltie wereda, counted here, lies beyond the zone's line."
+    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 13 weredas that lie within the zone as drawn, added up. Part of Siltie wereda, counted here, lies beyond the zone's line."
+  },
+  {
+    "id": "ETH-2022-57463737B63626574921368",
+    "level": "admin2",
+    "name": "Sheka",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 333699,
+      "year": 2022,
+      "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it",
+        "url": "https://data.humdata.org/dataset/cod-ps-eth",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B63626574921368",
+    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 5 weredas that lie within the zone as drawn, added up. The zone as drawn also takes in part of Bita and Gesha weredas, whose people are not in this figure. Part of Yeki wereda, counted here, lies beyond the zone's line."
   },
   {
     "id": "ETH-2022-57463737B92297495098422",
@@ -2295,6 +2475,51 @@
     "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 21 weredas that lie within the zone as drawn, added up. Part of Fogera, Dera (AM) and Libokemekem weredas, counted here, lies beyond the zone's line."
   },
   {
+    "id": "ETH-2022-57463737B95170801436908",
+    "level": "admin2",
+    "name": "South Omo",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 651951,
+      "year": 2022,
+      "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it",
+        "url": "https://data.humdata.org/dataset/cod-ps-eth",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B95170801436908",
+    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 11 weredas that lie within the zone as drawn, added up."
+  },
+  {
     "id": "ETH-2022-57463737B99888121280160",
     "level": "admin2",
     "name": "Southern",
@@ -2428,6 +2653,51 @@
     "match_by": "shape_id",
     "shape_id": "57463737B70873970034442",
     "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 17 weredas that lie within the zone as drawn, added up."
+  },
+  {
+    "id": "ETH-2022-57463737B52956719481852",
+    "level": "admin2",
+    "name": "West Gojam",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2760852,
+      "year": 2022,
+      "source": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Ethiopian Statistics Service, population projection for July 2022 from the 2007 census, by region, zone and wereda, as OCHA's COD-PS tabulates it",
+        "url": "https://data.humdata.org/dataset/cod-ps-eth",
+        "year": 2022,
+        "license": "CC BY-IGO, published via HDX"
+      }
+    ],
+    "country": "ETH",
+    "match_by": "shape_id",
+    "shape_id": "57463737B52956719481852",
+    "population_note": "The statistics office's projections for July 2022, from the 2007 census, for the 23 weredas that lie within the zone as drawn, added up. Part of Bahirdar Zuria, Bahir Dar town and Semen Achefer weredas, counted here, lies beyond the zone's line."
   },
   {
     "id": "ETH-2022-57463737B54894668037624",
