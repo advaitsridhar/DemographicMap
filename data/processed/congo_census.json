@@ -11,7 +11,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 97362,
+      "value": 119162,
       "year": 2023,
       "source": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de"
     },
@@ -41,13 +41,20 @@
         "url": "https://www.citypopulation.de/en/congo/admin/01__kouilou/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
+      },
+      {
+        "field": "population",
+        "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
+        "url": "https://www.citypopulation.de/en/congo/admin/12__pointe_noire/",
+        "year": 2023,
+        "license": "citation of citypopulation.de required"
       }
     ],
     "country": "COG",
     "match_by": "shape_id",
     "shape_id": "67827341B19376310286278",
-    "population_note": "The population of Kouilou at the 2023 census, from its preliminary results.",
-    "sex_ratio_note": "Men per 1,000 women among the people the 2023 census counted (52,111 men, 45,251 women), from its preliminary results."
+    "population_note": "The 2023 census's preliminary results count 97,362 people in Kouilou department and 21,800 in the district of Tchiamba-Nzassi, which they count under Pointe-Noire department but which lies inside this polygon; the two are added here.",
+    "sex_ratio_note": "Men per 1,000 women among the people the 2023 census counted in Kouilou department (52,111 men, 45,251 women), without the district of Tchiamba-Nzassi, whose men and women its preliminary results do not give apart."
   },
   {
     "id": "COG-RGPH2023-67827341B58284401685335",
@@ -561,7 +568,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1420612,
+      "value": 1398812,
       "year": 2023,
       "source": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de"
     },
@@ -596,8 +603,8 @@
     "country": "COG",
     "match_by": "shape_id",
     "shape_id": "67827341B24651927925898",
-    "population_note": "The population of Pointe-Noire at the 2023 census, from its preliminary results.",
-    "sex_ratio_note": "Men per 1,000 women among the people the 2023 census counted (708,953 men, 711,659 women), from its preliminary results."
+    "population_note": "The 2023 census's preliminary results count 1,420,612 people in Pointe-Noire department, 21,800 of them in the district of Tchiamba-Nzassi, which lies inside the polygon drawn as Kouilou; the 1,398,812 others are shown here.",
+    "sex_ratio_note": "Men per 1,000 women among the people the 2023 census counted in Pointe-Noire department (708,953 men, 711,659 women), the district of Tchiamba-Nzassi included, whose men and women its preliminary results do not give apart."
   },
   {
     "id": "COG-RGPH2023-1427508B96787194302936",
@@ -606,22 +613,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Abala, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Dolisie (Niari), not Abala, the name it is drawn under, so it cannot be taken for the district of Abala, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Abala, but the town inside it is Dolisie (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Abala, but the town inside it is Dolisie (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Abala, but the town inside it is Dolisie (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Abala, but the town inside it is Dolisie (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Abala, but the town inside it is Dolisie (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Abala, but the town inside it is Dolisie (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -634,14 +647,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -658,22 +671,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Bambama, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Kindamba (Pool), not Bambama, the name it is drawn under, so it cannot be taken for the district of Bambama, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Bambama, but the town inside it is Kindamba (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Bambama, but the town inside it is Kindamba (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Bambama, but the town inside it is Kindamba (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Bambama, but the town inside it is Kindamba (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Bambama, but the town inside it is Kindamba (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Bambama, but the town inside it is Kindamba (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -686,14 +705,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -710,22 +729,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Boko, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Mbinda (Niari), not Boko, the name it is drawn under, so it cannot be taken for the district of Boko, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Boko, but the town inside it is Mbinda (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Boko, but the town inside it is Mbinda (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Boko, but the town inside it is Mbinda (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Boko, but the town inside it is Mbinda (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Boko, but the town inside it is Mbinda (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Boko, but the town inside it is Mbinda (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -738,14 +763,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -762,22 +787,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Boko-Songho, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Souanké (Sangha), not Boko-Songho, the name it is drawn under, so it cannot be taken for the district of Boko-Songho, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Boko-Songho, but the town inside it is Souanké (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Boko-Songho, but the town inside it is Souanké (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Boko-Songho, but the town inside it is Souanké (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Boko-Songho, but the town inside it is Souanké (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Boko-Songho, but the town inside it is Souanké (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Boko-Songho, but the town inside it is Souanké (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -790,14 +821,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -814,22 +845,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Boundji, is out of place here, so no district's seat is shown."
+      "note": "No town inside this polygon shows which district it is, and the polygons drawn for the Republic of the Congo at this level carry names out of place across the country, so no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Boundji, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Boundji, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Boundji, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Boundji, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Boundji, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Boundji, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -842,14 +879,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -866,22 +903,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Divenie, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Sibiti (Lékoumou), not Divenie, the name it is drawn under, so it cannot be taken for the district of Divenie, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Divenie, but the town inside it is Sibiti (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Divenie, but the town inside it is Sibiti (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Divenie, but the town inside it is Sibiti (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Divenie, but the town inside it is Sibiti (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Divenie, but the town inside it is Sibiti (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Divenie, but the town inside it is Sibiti (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -894,14 +937,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -918,22 +961,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Djambala, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Mvouti (Kouilou), not Djambala, the name it is drawn under, so it cannot be taken for the district of Djambala, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Djambala, but the town inside it is Mvouti (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Djambala, but the town inside it is Mvouti (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Djambala, but the town inside it is Mvouti (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Djambala, but the town inside it is Mvouti (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Djambala, but the town inside it is Mvouti (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Djambala, but the town inside it is Mvouti (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -946,14 +995,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -970,22 +1019,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Dongou, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Kinkala (Pool) and Baratier (Pool), not Dongou, the name it is drawn under, so it cannot be taken for the district of Dongou, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Dongou, but the towns inside it are Kinkala (Pool) and Baratier (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Dongou, but the towns inside it are Kinkala (Pool) and Baratier (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Dongou, but the towns inside it are Kinkala (Pool) and Baratier (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Dongou, but the towns inside it are Kinkala (Pool) and Baratier (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Dongou, but the towns inside it are Kinkala (Pool) and Baratier (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Dongou, but the towns inside it are Kinkala (Pool) and Baratier (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -998,14 +1053,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1022,22 +1077,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Epena, is out of place here, so no district's seat is shown."
+      "note": "No town inside this polygon shows which district it is, and the polygons drawn for the Republic of the Congo at this level carry names out of place across the country, so no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Epena, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Epena, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Epena, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Epena, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Epena, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Epena, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1050,14 +1111,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1074,22 +1135,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Ewo, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Gamboma (Plateaux), not Ewo, the name it is drawn under, so it cannot be taken for the district of Ewo, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Ewo, but the town inside it is Gamboma (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ewo, but the town inside it is Gamboma (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Ewo, but the town inside it is Gamboma (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ewo, but the town inside it is Gamboma (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Ewo, but the town inside it is Gamboma (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ewo, but the town inside it is Gamboma (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1102,14 +1169,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1126,22 +1193,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Gamboma, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Pointe-Noire (Pointe-Noire) and Loandjili (Pointe-Noire), not Gamboma, the name it is drawn under, so it cannot be taken for the district of Gamboma, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Gamboma, but the towns inside it are Pointe-Noire (Pointe-Noire) and Loandjili (Pointe-Noire). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Gamboma, but the towns inside it are Pointe-Noire (Pointe-Noire) and Loandjili (Pointe-Noire). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Gamboma, but the towns inside it are Pointe-Noire (Pointe-Noire) and Loandjili (Pointe-Noire). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Gamboma, but the towns inside it are Pointe-Noire (Pointe-Noire) and Loandjili (Pointe-Noire). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Gamboma, but the towns inside it are Pointe-Noire (Pointe-Noire) and Loandjili (Pointe-Noire). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Gamboma, but the towns inside it are Pointe-Noire (Pointe-Noire) and Loandjili (Pointe-Noire). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1154,14 +1227,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1178,22 +1251,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Impfondo, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Mouyondzi (Bouenza) and Mabombo (Bouenza), not Impfondo, the name it is drawn under, so it cannot be taken for the district of Impfondo, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Impfondo, but the towns inside it are Mouyondzi (Bouenza) and Mabombo (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Impfondo, but the towns inside it are Mouyondzi (Bouenza) and Mabombo (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Impfondo, but the towns inside it are Mouyondzi (Bouenza) and Mabombo (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Impfondo, but the towns inside it are Mouyondzi (Bouenza) and Mabombo (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Impfondo, but the towns inside it are Mouyondzi (Bouenza) and Mabombo (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Impfondo, but the towns inside it are Mouyondzi (Bouenza) and Mabombo (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1206,14 +1285,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1230,22 +1309,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Kakamoeka, is out of place here, so no district's seat is shown."
+      "note": "No town inside this polygon shows which district it is, and the polygons drawn for the Republic of the Congo at this level carry names out of place across the country, so no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Kakamoeka, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kakamoeka, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Kakamoeka, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kakamoeka, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Kakamoeka, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kakamoeka, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1258,14 +1343,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1282,22 +1367,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Kelle, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Olombo (Plateaux), not Kelle, the name it is drawn under, so it cannot be taken for the district of Kelle, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Kelle, but the town inside it is Olombo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kelle, but the town inside it is Olombo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Kelle, but the town inside it is Olombo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kelle, but the town inside it is Olombo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Kelle, but the town inside it is Olombo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kelle, but the town inside it is Olombo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1310,14 +1401,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1334,22 +1425,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Kibangou, is out of place here, so no district's seat is shown."
+      "note": "No town inside this polygon shows which district it is, and the polygons drawn for the Republic of the Congo at this level carry names out of place across the country, so no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Kibangou, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kibangou, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Kibangou, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kibangou, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Kibangou, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kibangou, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1362,14 +1459,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1386,22 +1483,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Kimongo, is out of place here, so no district's seat is shown."
+      "note": "No town inside this polygon shows which district it is, and the polygons drawn for the Republic of the Congo at this level carry names out of place across the country, so no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Kimongo, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kimongo, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Kimongo, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kimongo, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Kimongo, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kimongo, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1414,14 +1517,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1438,22 +1541,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Kindamba, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Divenié (Niari), not Kindamba, the name it is drawn under, so it cannot be taken for the district of Kindamba, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Kindamba, but the town inside it is Divenié (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kindamba, but the town inside it is Divenié (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Kindamba, but the town inside it is Divenié (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kindamba, but the town inside it is Divenié (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Kindamba, but the town inside it is Divenié (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kindamba, but the town inside it is Divenié (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1466,14 +1575,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1490,22 +1599,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Kinkala, is out of place here, so no district's seat is shown."
+      "note": "No town inside this polygon shows which district it is, and the polygons drawn for the Republic of the Congo at this level carry names out of place across the country, so no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Kinkala, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kinkala, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Kinkala, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kinkala, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Kinkala, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Kinkala, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1518,14 +1633,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1542,22 +1657,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Komono, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Zanaga (Lékoumou), not Komono, the name it is drawn under, so it cannot be taken for the district of Komono, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Komono, but the town inside it is Zanaga (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Komono, but the town inside it is Zanaga (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Komono, but the town inside it is Zanaga (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Komono, but the town inside it is Zanaga (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Komono, but the town inside it is Zanaga (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Komono, but the town inside it is Zanaga (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1570,14 +1691,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1594,22 +1715,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Lekana, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Kibangou (Kouilou), not Lekana, the name it is drawn under, so it cannot be taken for the district of Lekana, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Lekana, but the town inside it is Kibangou (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Lekana, but the town inside it is Kibangou (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Lekana, but the town inside it is Kibangou (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Lekana, but the town inside it is Kibangou (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Lekana, but the town inside it is Kibangou (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Lekana, but the town inside it is Kibangou (Kouilou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1622,14 +1749,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1646,22 +1773,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Loandjili (Pointe Noire), is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Boundji (Cuvette), not Loandjili, the name it is drawn under, so it cannot be taken for the district of Loandjili, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Loandjili (Pointe Noire), but the town inside it is Boundji (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Loandjili (Pointe Noire), but the town inside it is Boundji (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Loandjili (Pointe Noire), but the town inside it is Boundji (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Loandjili (Pointe Noire), but the town inside it is Boundji (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Loandjili (Pointe Noire), but the town inside it is Boundji (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Loandjili (Pointe Noire), but the town inside it is Boundji (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1674,14 +1807,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1698,22 +1831,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Loudima, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Kellé (Cuvette-Ouest), not Loudima, the name it is drawn under, so it cannot be taken for the district of Loudima, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Loudima, but the town inside it is Kellé (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Loudima, but the town inside it is Kellé (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Loudima, but the town inside it is Kellé (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Loudima, but the town inside it is Kellé (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Loudima, but the town inside it is Kellé (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Loudima, but the town inside it is Kellé (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1726,14 +1865,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1750,22 +1889,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Loukela, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Epéna (Likouala), not Loukela, the name it is drawn under, so it cannot be taken for the district of Loukela, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Loukela, but the town inside it is Epéna (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Loukela, but the town inside it is Epéna (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Loukela, but the town inside it is Epéna (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Loukela, but the town inside it is Epéna (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Loukela, but the town inside it is Epéna (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Loukela, but the town inside it is Epéna (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1778,14 +1923,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1802,22 +1947,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Louvakou (Loubomo), is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Loutété (Bouenza) and Bouansa (Bouenza), not Louvakou, the name it is drawn under, so it cannot be taken for the district of Louvakou, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Louvakou (Loubomo), but the towns inside it are Loutété (Bouenza) and Bouansa (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Louvakou (Loubomo), but the towns inside it are Loutété (Bouenza) and Bouansa (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Louvakou (Loubomo), but the towns inside it are Loutété (Bouenza) and Bouansa (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Louvakou (Loubomo), but the towns inside it are Loutété (Bouenza) and Bouansa (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Louvakou (Loubomo), but the towns inside it are Loutété (Bouenza) and Bouansa (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Louvakou (Loubomo), but the towns inside it are Loutété (Bouenza) and Bouansa (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1830,14 +1981,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1854,22 +2005,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Madingo-Kayes, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Abala (Pool) and Ngabé (Pool), not Madingo-Kayes, the name it is drawn under, so it cannot be taken for the district of Madingo-Kayes, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Madingo-Kayes, but the towns inside it are Abala (Pool) and Ngabé (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Madingo-Kayes, but the towns inside it are Abala (Pool) and Ngabé (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Madingo-Kayes, but the towns inside it are Abala (Pool) and Ngabé (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Madingo-Kayes, but the towns inside it are Abala (Pool) and Ngabé (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Madingo-Kayes, but the towns inside it are Abala (Pool) and Ngabé (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Madingo-Kayes, but the towns inside it are Abala (Pool) and Ngabé (Pool). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1882,14 +2039,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1906,22 +2063,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Madingou, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Ewo (Cuvette-Ouest), not Madingou, the name it is drawn under, so it cannot be taken for the district of Madingou, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Madingou, but the town inside it is Ewo (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Madingou, but the town inside it is Ewo (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Madingou, but the town inside it is Ewo (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Madingou, but the town inside it is Ewo (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Madingou, but the town inside it is Ewo (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Madingou, but the town inside it is Ewo (Cuvette-Ouest). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1934,14 +2097,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -1958,22 +2121,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Makoua, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Mossaka (Cuvette) and Ntokou-Raymondville (Cuvette), not Makoua, the name it is drawn under, so it cannot be taken for the district of Makoua, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Makoua, but the towns inside it are Mossaka (Cuvette) and Ntokou-Raymondville (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Makoua, but the towns inside it are Mossaka (Cuvette) and Ntokou-Raymondville (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Makoua, but the towns inside it are Mossaka (Cuvette) and Ntokou-Raymondville (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Makoua, but the towns inside it are Mossaka (Cuvette) and Ntokou-Raymondville (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Makoua, but the towns inside it are Mossaka (Cuvette) and Ntokou-Raymondville (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Makoua, but the towns inside it are Mossaka (Cuvette) and Ntokou-Raymondville (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -1986,14 +2155,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2010,22 +2179,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Mayama, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Ouesso (Sangha) and Pokola (Sangha), not Mayama, the name it is drawn under, so it cannot be taken for the district of Mayama, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Mayama, but the towns inside it are Ouesso (Sangha) and Pokola (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mayama, but the towns inside it are Ouesso (Sangha) and Pokola (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Mayama, but the towns inside it are Ouesso (Sangha) and Pokola (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mayama, but the towns inside it are Ouesso (Sangha) and Pokola (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Mayama, but the towns inside it are Ouesso (Sangha) and Pokola (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mayama, but the towns inside it are Ouesso (Sangha) and Pokola (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2038,14 +2213,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2062,22 +2237,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Mayoko, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Loudima (Bouenza), not Mayoko, the name it is drawn under, so it cannot be taken for the district of Mayoko, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Mayoko, but the town inside it is Loudima (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mayoko, but the town inside it is Loudima (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Mayoko, but the town inside it is Loudima (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mayoko, but the town inside it is Loudima (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Mayoko, but the town inside it is Loudima (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mayoko, but the town inside it is Loudima (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2090,14 +2271,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2114,22 +2295,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Mbomo, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Owando (Cuvette) and Oyo (Cuvette), not Mbomo, the name it is drawn under, so it cannot be taken for the district of Mbomo, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Mbomo, but the towns inside it are Owando (Cuvette) and Oyo (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mbomo, but the towns inside it are Owando (Cuvette) and Oyo (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Mbomo, but the towns inside it are Owando (Cuvette) and Oyo (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mbomo, but the towns inside it are Owando (Cuvette) and Oyo (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Mbomo, but the towns inside it are Owando (Cuvette) and Oyo (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mbomo, but the towns inside it are Owando (Cuvette) and Oyo (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2142,14 +2329,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2166,22 +2353,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Mfouati, is out of place here, so no district's seat is shown."
+      "note": "No town inside this polygon shows which district it is, and the polygons drawn for the Republic of the Congo at this level carry names out of place across the country, so no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Mfouati, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mfouati, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Mfouati, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mfouati, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Mfouati, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mfouati, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2194,14 +2387,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2218,22 +2411,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Mindouli, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Sémbé (Sangha), not Mindouli, the name it is drawn under, so it cannot be taken for the district of Mindouli, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Mindouli, but the town inside it is Sémbé (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mindouli, but the town inside it is Sémbé (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Mindouli, but the town inside it is Sémbé (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mindouli, but the town inside it is Sémbé (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Mindouli, but the town inside it is Sémbé (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mindouli, but the town inside it is Sémbé (Sangha). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2246,14 +2445,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2270,22 +2469,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Mossaka, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Makoua (Cuvette) and Etoumbi (Cuvette), not Mossaka, the name it is drawn under, so it cannot be taken for the district of Mossaka, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Mossaka, but the towns inside it are Makoua (Cuvette) and Etoumbi (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mossaka, but the towns inside it are Makoua (Cuvette) and Etoumbi (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Mossaka, but the towns inside it are Makoua (Cuvette) and Etoumbi (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mossaka, but the towns inside it are Makoua (Cuvette) and Etoumbi (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Mossaka, but the towns inside it are Makoua (Cuvette) and Etoumbi (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mossaka, but the towns inside it are Makoua (Cuvette) and Etoumbi (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2298,14 +2503,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2322,22 +2527,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Mossendjo, is out of place here, so no district's seat is shown."
+      "note": "This polygon holds the town of Mossendjo, but the polygons drawn for the Republic of the Congo at this level do not follow today's districts, so it cannot be taken for one, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Mossendjo and holds the town of that name. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mossendjo and holds the town of that name. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Mossendjo and holds the town of that name. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mossendjo and holds the town of that name. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Mossendjo and holds the town of that name. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mossendjo and holds the town of that name. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2350,14 +2561,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2374,22 +2585,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Mouyondzi, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Komono (Lékoumou), not Mouyondzi, the name it is drawn under, so it cannot be taken for the district of Mouyondzi, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Mouyondzi, but the town inside it is Komono (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mouyondzi, but the town inside it is Komono (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Mouyondzi, but the town inside it is Komono (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mouyondzi, but the town inside it is Komono (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Mouyondzi, but the town inside it is Komono (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mouyondzi, but the town inside it is Komono (Lékoumou). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2402,14 +2619,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2426,22 +2643,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Mvouti, is out of place here, so no district's seat is shown."
+      "note": "No town inside this polygon shows which district it is, and the polygons drawn for the Republic of the Congo at this level carry names out of place across the country, so no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Mvouti, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mvouti, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Mvouti, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mvouti, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Mvouti, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Mvouti, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2454,14 +2677,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2478,22 +2701,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Ngabe, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Bétou (Likouala), not Ngabe, the name it is drawn under, so it cannot be taken for the district of Ngabe, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Ngabe, but the town inside it is Bétou (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ngabe, but the town inside it is Bétou (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Ngabe, but the town inside it is Bétou (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ngabe, but the town inside it is Bétou (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Ngabe, but the town inside it is Bétou (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ngabe, but the town inside it is Bétou (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2506,14 +2735,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2530,22 +2759,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Ngamaba (Brazzaville), is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Loukoléla (Cuvette), not Ngamaba, the name it is drawn under, so it cannot be taken for the district of Ngamaba, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Ngamaba (Brazzaville), but the town inside it is Loukoléla (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ngamaba (Brazzaville), but the town inside it is Loukoléla (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Ngamaba (Brazzaville), but the town inside it is Loukoléla (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ngamaba (Brazzaville), but the town inside it is Loukoléla (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Ngamaba (Brazzaville), but the town inside it is Loukoléla (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ngamaba (Brazzaville), but the town inside it is Loukoléla (Cuvette). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2558,14 +2793,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2582,22 +2817,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Nkayi District, is out of place here, so no district's seat is shown."
+      "note": "No town inside this polygon shows which district it is, and the polygons drawn for the Republic of the Congo at this level carry names out of place across the country, so no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Nkayi District, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Nkayi District, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Nkayi District, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Nkayi District, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Nkayi District, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Nkayi District, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2610,14 +2851,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2634,22 +2875,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Okoyo, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Djambala (Plateaux) and Ngo (Plateaux), not Okoyo, the name it is drawn under, so it cannot be taken for the district of Okoyo, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Okoyo, but the towns inside it are Djambala (Plateaux) and Ngo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Okoyo, but the towns inside it are Djambala (Plateaux) and Ngo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Okoyo, but the towns inside it are Djambala (Plateaux) and Ngo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Okoyo, but the towns inside it are Djambala (Plateaux) and Ngo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Okoyo, but the towns inside it are Djambala (Plateaux) and Ngo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Okoyo, but the towns inside it are Djambala (Plateaux) and Ngo (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2662,14 +2909,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2686,22 +2933,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Ouesso, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Kimongo (Niari), not Ouesso, the name it is drawn under, so it cannot be taken for the district of Ouesso, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Ouesso, but the town inside it is Kimongo (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ouesso, but the town inside it is Kimongo (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Ouesso, but the town inside it is Kimongo (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ouesso, but the town inside it is Kimongo (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Ouesso, but the town inside it is Kimongo (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Ouesso, but the town inside it is Kimongo (Niari). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2714,14 +2967,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2738,22 +2991,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Owando, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Impfondo (Likouala), not Owando, the name it is drawn under, so it cannot be taken for the district of Owando, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Owando, but the town inside it is Impfondo (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Owando, but the town inside it is Impfondo (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Owando, but the town inside it is Impfondo (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Owando, but the town inside it is Impfondo (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Owando, but the town inside it is Impfondo (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Owando, but the town inside it is Impfondo (Likouala). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2766,14 +3025,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2790,22 +3049,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Sembe, is out of place here, so no district's seat is shown."
+      "note": "No town inside this polygon shows which district it is, and the polygons drawn for the Republic of the Congo at this level carry names out of place across the country, so no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Sembe, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Sembe, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Sembe, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Sembe, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Sembe, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Sembe, and no town that would show its district lies in it. The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2818,14 +3083,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2842,22 +3107,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Sibiti, is out of place here, so no district's seat is shown."
+      "note": "The town inside this polygon is Lékana (Plateaux), not Sibiti, the name it is drawn under, so it cannot be taken for the district of Sibiti, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Sibiti, but the town inside it is Lékana (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Sibiti, but the town inside it is Lékana (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Sibiti, but the town inside it is Lékana (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Sibiti, but the town inside it is Lékana (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Sibiti, but the town inside it is Lékana (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Sibiti, but the town inside it is Lékana (Plateaux). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2870,14 +3141,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2894,22 +3165,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Souanke, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Nkayi (Bouenza) and Kayes (Bouenza), not Souanke, the name it is drawn under, so it cannot be taken for the district of Souanke, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Souanke, but the towns inside it are Nkayi (Bouenza) and Kayes (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Souanke, but the towns inside it are Nkayi (Bouenza) and Kayes (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Souanke, but the towns inside it are Nkayi (Bouenza) and Kayes (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Souanke, but the towns inside it are Nkayi (Bouenza) and Kayes (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Souanke, but the towns inside it are Nkayi (Bouenza) and Kayes (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Souanke, but the towns inside it are Nkayi (Bouenza) and Kayes (Bouenza). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2922,14 +3199,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
@@ -2946,22 +3223,28 @@
     "parent": "COG",
     "capital": {
       "status": "not_available",
-      "note": "The name this polygon is drawn under, Zanaga, is out of place here, so no district's seat is shown."
+      "note": "The towns inside this polygon are Brazzaville (Brazzaville) and Boukiéro (Brazzaville), not Zanaga, the name it is drawn under, so it cannot be taken for the district of Zanaga, and no district's seat is shown."
     },
     "largest_settlement": {
       "status": "not_available"
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is labelled Zanaga, but the towns inside it are Brazzaville (Brazzaville) and Boukiéro (Brazzaville). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Zanaga, but the towns inside it are Brazzaville (Brazzaville) and Boukiéro (Brazzaville). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is labelled Zanaga, but the towns inside it are Brazzaville (Brazzaville) and Boukiéro (Brazzaville). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Zanaga, but the towns inside it are Brazzaville (Brazzaville) and Boukiéro (Brazzaville). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is labelled Zanaga, but the towns inside it are Brazzaville (Brazzaville) and Boukiéro (Brazzaville). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here."
+      "note": "This polygon is labelled Zanaga, but the towns inside it are Brazzaville (Brazzaville) and Boukiéro (Brazzaville). The 46 polygons drawn for the Republic of the Congo at this level carry names out of place across the country, and the 2023 census counts the 92 districts and communes of today, which are not drawn, so no district's figures are shown here.",
+      "displaces_before": 2024,
+      "displaces_undated": true
     },
     "religion": {
       "status": "not_available"
@@ -2974,14 +3257,14 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio/median_age",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Institut National de la Statistique (Congo), 5e Recensement Général de la Population et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de",
         "url": "https://www.citypopulation.de/en/congo/admin/",
         "year": 2023,
         "license": "citation of citypopulation.de required"
       },
       {
-        "field": "population/capital",
+        "field": "population note/sex_ratio note/median_age note/capital note",
         "name": "GeoNames, populated places",
         "url": "https://www.geonames.org/",
         "license": "CC BY 4.0"
