@@ -590,6 +590,10 @@ class Report:
     # Rows left out: table -> municipality (folded) -> why, for the notes.
     refusals: dict[str, dict[str, tuple[Any, ...]]] = field(
         default_factory=lambda: defaultdict(dict))
+    # Rows whose own figures do not hold together, kept in the table for its
+    # shape: table -> the row's place in it -> why.
+    bad_rows: dict[str, dict[int, tuple[Any, ...]]] = field(
+        default_factory=lambda: defaultdict(dict))
     # 2016 municipality (folded) -> the sets of 2024 ones that come within 2%
     # of it, where none or more than one does: [(names, total)].
     candidates: dict[str, list[tuple[list[str], int]]] = field(default_factory=dict)
@@ -826,6 +830,20 @@ def medians_of(rep: Report, pages: list[list[Row]], texts: list[str]) -> None:
     rep.problems.append("median ages: Quadro 1.7 not read")
 
 
+def table_numbers(spec: dict[str, Any], texts: list[str]) -> set[str]:
+    """The numbers of the tables a whole heading names as this one ("61" for
+    Quadro 6.1), from the report's text, where a heading's lines run on."""
+    out: set[str] = set()
+    pattern = "|".join(re.escape(k) for k in keys_of(spec))
+    for text in texts:
+        for m in re.finditer(pattern, text):
+            q = text.rfind("quadro", max(0, m.start() - 300), m.start())
+            found = re.match(r"quadro(\d+)", text[q:]) if q >= 0 else None
+            if found:
+                out.add(found.group(1))
+    return out
+
+
 def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Row]],
                texts: list[str]) -> list[tuple[str, dict[str, int]]]:
     """The table's rows in order, each {label: count}, its column groups joined."""
@@ -833,12 +851,17 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
     order: list[tuple[str, ...]] = []
     last: Block | None = None
     before = False                 # the page before held a block of this table
+    numbers = table_numbers(spec, texts)
     for i, text in enumerate(texts):
         if not before and not any(k in text for k in keys_of(spec)):
             continue
         here = False
         for block in blocks_of(pages[i], lead=before, singles=True):
-            if block.title and not any(k in squeeze(block.title) for k in keys_of(spec)):
+            # A heading that runs onto a second line ("... segundo a religião
+            # ou" / "espiritualidade, 2024" in Cuanza Sul's) is known by its
+            # number, which the full heading gives elsewhere in the report.
+            if block.title and not any(k in squeeze(block.title) for k in keys_of(spec)) \
+                    and quadro_of(block.title).replace(".", "") not in numbers:
                 continue
             bad = assign_columns(block)
             if bad:
@@ -851,7 +874,7 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
                     and all(abs(a - b) <= 4 for a, b in zip(last.columns, block.columns)):
                 labels = last.labels
             if labels is None:
-                if block.title:
+                if block.title or before:
                     rep.problems.append(f"{name} p{i + 1}: header not read "
                                         f"({len(block.columns)} columns: "
                                         + " | ".join(t[:40] for t in header_texts(block))
@@ -902,6 +925,10 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
     def total_of(key: tuple[str, ...], vals: list[int | None]) -> int | None:
         return vals[key.index("TOTAL")] if "TOTAL" in key else None
 
+    # A row whose own figures do not hold together stays in its place, so the
+    # walk through municipalities and communes keeps its shape, and is marked:
+    # that municipality's figures are left out (build), not the table.
+    bad = rep.bad_rows[name]
     for k, (label, vals) in enumerate(first):
         row: dict[str, int] = {}
         blank: list[str] = []
@@ -919,25 +946,24 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
                 if lab == "TOTAL" and "TOTAL" in row and row["TOTAL"] != v:
                     rep.problems.append(f"{name}: {label}'s totals differ between column "
                                         f"groups ({row['TOTAL']} vs {v})")
-                    return []
+                    bad.setdefault(k, ("totals", row["TOTAL"], v))
+                    continue
                 row[lab] = v
-        if blank and any("|" in lab for lab in blank):
-            rep.problems.append(f"{name}: {label} has no figure under {', '.join(blank)}")
-            return []
-        if not join_sexes(row):
+        joined = join_sexes(row)
+        if not joined or (blank and any("|" in lab for lab in blank)):
             rep.problems.append(f"{name}: {label}'s men and women do not make its total")
-            return []
+            bad.setdefault(k, ("sexes",))
         if "TOTAL" not in row:
             rep.problems.append(f"{name}: no column group carries the total")
             return []
         if blank:
             # A cell printed empty is nobody, when the row's groups still make
             # its total to the rounding of its figures; otherwise a figure was
-            # lost and the table is left out.
+            # lost, and the row is marked.
             parts = sum(v for lab, v in row.items() if lab != "TOTAL")
             if "TOTAL" in blank or abs(parts - row["TOTAL"]) > 2 + len(row):
                 rep.problems.append(f"{name}: {label} has no figure under {', '.join(blank)}")
-                return []
+                bad.setdefault(k, ("sums", parts, row["TOTAL"]))
         out.append((label, row))
     return out
 
@@ -1069,8 +1095,14 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
                                 f"{own['TOTAL']:,}; left out")
             rep.refusals[name][current] = ("communes", summed["TOTAL"], own["TOTAL"])
             broken.add(current)
+        elif own_bad:
+            # Its own row's figures do not hold together (read_table).
+            rep.refusals[name][current] = own_bad
+            broken.add(current)
 
-    for label, vals in body:
+    bad = rep.bad_rows.get(name, {})
+    own_bad: tuple[Any, ...] | None = None
+    for at, (label, vals) in enumerate(body, start):
         key = fold(label)
         fresh = key in names and key not in met
         made_up = bool(communes) and abs(summed["TOTAL"] - own["TOTAL"]) <= slack()
@@ -1090,6 +1122,7 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
             current = key
             met.add(key)
             own = dict(vals)
+            own_bad = bad.get(at)
             summed = defaultdict(int)
             communes = 0
             placeholder = not only and not fits(key, vals)
@@ -1389,6 +1422,11 @@ def reason_note(rep: Report, table: str, part: str, reason: tuple[Any, ...],
     if kind == "table":
         return (where + f"the groups of {reason[1]} of its {reason[2]} municipalities' rows "
                 f"do not add up to their totals" + tail)
+    if kind == "totals":
+        return (where + f"{part}'s row gives {reason[1]:,} people in one column group and "
+                f"{reason[2]:,} in another" + tail)
+    if kind == "sexes":
+        return where + f"{part}'s men and women do not make the row's total" + tail
     return where + f"no row can be told apart as {part}'s" + tail
 
 
@@ -2024,7 +2062,7 @@ def debug(stem: str, blob: bytes, numbers: list[int]) -> None:
             rows = rows_of(pdf.pages[n - 1].extract_words(use_text_flow=False,
                                                           keep_blank_chars=False))
             log(f"== {stem} p{n}: {len(rows)} rows")
-            for block in blocks_of(rows):
+            for block in blocks_of(rows, lead=True, singles=True):
                 bad = assign_columns(block)
                 log(f"  block {block.title[:90]!r}")
                 log(f"    columns at {[round(c) for c in block.columns]}")

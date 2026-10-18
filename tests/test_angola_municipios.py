@@ -516,12 +516,22 @@ class Cells(unittest.TestCase):
         rows = dict(am.read_table(rep, "religion", am.TABLES["religion"], pages, texts))
         self.assertEqual(rows["Dande"], {"TOTAL": 100, "Catholic": 100, "Protestant": 0})
 
-    def test_an_empty_cell_that_loses_people_refuses_the_table(self):
+    def test_an_empty_cell_that_loses_people_marks_the_row(self):
+        # The row stays, so the walk through municipalities keeps its shape, and
+        # that municipality's figures are left out, saying why; the rest stand.
         pages, texts = self.page([100, 60])
         rep = am.Report("Bengo")
-        self.assertEqual(am.read_table(rep, "religion", am.TABLES["religion"], pages, texts),
-                         [])
+        rows = am.read_table(rep, "religion", am.TABLES["religion"], pages, texts)
+        self.assertEqual([label for label, _ in rows], ["Bengo", "Dande", "Dembos"])
+        self.assertEqual(rep.bad_rows["religion"], {1: ("sums", 60, 100)})
         self.assertTrue(any("no figure" in p for p in rep.problems))
+        rep.new = [("Dande", 105, 50, 55), ("Dembos", 210, 100, 110)]
+        got = am.municipalities(rep, "religion", rows)
+        self.assertEqual(set(got), {"dembos"})
+        self.assertEqual(rep.refusals["religion"]["dande"], ("sums", 60, 100))
+        self.assertIn("the groups of Dande's row add up to 60, not the 100 printed",
+                      am.reason_note(rep, "religion", "Dande", ("sums", 60, 100), ["Dande"],
+                                     "it stood"))
 
     def test_broad_age_groups_printed_by_sex(self):
         page = Page()
@@ -623,6 +633,20 @@ class Continued(unittest.TestCase):
         rows = am.read_table(rep, "religion", am.TABLES["religion"],
                              [am.rows_of(pg.words) for pg in pages], [pg.text() for pg in pages])
         return rep, dict(rows)
+
+    def test_a_heading_that_runs_onto_a_second_line(self):
+        # Cuanza Sul's: "... segundo a religião ou" / "espiritualidade, 2024".
+        page = Page()
+        page.title("Quadro 7.1 - População com 2 ou mais anos por município e área de "
+                   "residência, segundo a religião ou")
+        page.head([("espiritualidade, 2024", LEFT)])
+        page.head([("População com 2 ou mais anos", 180), ("Católica", 270),
+                   ("Protestante", 335)])
+        page.row("Bengo", [300, 200, 100], [240.0, 310.0, 380.0])
+        page.row("Dande", [100, 60, 40], [240.0, 310.0, 380.0])
+        self.assertEqual(am.table_numbers(am.TABLES["religion"], [page.text()]), {"71"})
+        _, rows = self.read([page])
+        self.assertEqual(rows["Dande"], {"TOTAL": 100, "Catholic": 60, "Protestant": 40})
 
     def test_columns_carried_to_an_untitled_page(self):
         first, second = Page(), Page()
