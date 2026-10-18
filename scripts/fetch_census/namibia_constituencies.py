@@ -257,7 +257,10 @@ def checked(pages: dict[str, dict[str, dict[str, Any]]],
 
 
 def build(regions: dict[str, dict[str, dict[str, Any]]], admin1: list[dict[str, Any]],
-          admin2: list[dict[str, Any]], urls: dict[str, list[str]]) -> list[dict[str, Any]]:
+          admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """A record for each polygon that is the census's ground, citing the page
+    its constituencies' rows were read from (Kavango East's or Kavango
+    West's, not both)."""
     parents = {u["id"]: key(u["name"]) for u in admin1}
     out = []
     for shape in sorted(admin2, key=lambda u: u["name"]):
@@ -299,7 +302,7 @@ def build(regions: dict[str, dict[str, dict[str, Any]]], admin1: list[dict[str, 
             f"NAM-2023-constituency-{shape['id']}", shape["name"], level="admin2", parent="NAM",
             country="NAM", match_by="shape_id", shape_id=shape["id"],
             sources=[{"field": "population", "name": SOURCE, "url": u, "license": LICENCE,
-                      "year": YEAR} for u in urls.get(region, [])],
+                      "year": YEAR} for u in dict.fromkeys(p["url"] for p in parts)],
             population=measure(people, year=YEAR, source=SOURCE), population_note=note))
     return out
 
@@ -310,17 +313,15 @@ def main() -> int:
     parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
     parser.parse_args()
     pages: dict[str, dict[str, dict[str, Any]]] = {}
-    urls: dict[str, list[str]] = {}
     for slug in PAGES:
         url = SITE_URL.format(slug=slug)
         body, where = fetch(url, archive=ARCHIVE)
         rows = constituencies(body.decode("utf-8", "replace"))
         log(f"  {slug}: {len(rows)} constituencies, "
             f"{sum(r['population'] for r in rows.values()):,} people ({where})")
-        pages[slug] = rows
-        urls.setdefault(PAGES[slug], []).append(url)
+        pages[slug] = {k: {**row, "url": url} for k, row in rows.items()}
     regions = checked(pages, region_totals())
-    records = build(regions, units("NAM", "admin1"), units("NAM", "admin2"), urls)
+    records = build(regions, units("NAM", "admin1"), units("NAM", "admin2"))
     for r in records:
         log(f"  {r['name']}: {r['population']['value']:,} -- {r['population_note']}")
     log(f"  {len(records)} of {len(AREAS)} polygons given the census's count")

@@ -415,7 +415,7 @@ def records_of(table: dict[str, Any], admin1: list[dict[str, Any]],
         if d.get("groups") or d.get("ages"):
             extra["religion"] = gap(NOT_AVAILABLE, RELIGION_NOTE)
             extra["language"] = gap(NOT_AVAILABLE, LANGUAGE_NOTE)
-            sources.append({"field": "religion/language note",
+            sources.append({"field": "religion note/language note",
                             "name": "Statistics South Africa, Census 2022 Statistical Release "
                                     "P0301.4", "url": RELEASE, "license": LICENCE,
                             "year": YEAR})

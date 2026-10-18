@@ -320,12 +320,54 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
     return out
 
 
+def show(rows: list[list[Any]], spec: str) -> None:
+    """Log every village line of the councils ``spec`` names (``district:council``,
+    reduced, comma-separated), with its constituency and enumeration area, and
+    the enumeration-area code prefixes of each district and of those councils'
+    namesakes, to see where a council's villages belong."""
+    head = next(i for i, r in enumerate(rows) if any(str(v).strip() == "Village Name"
+                                                      for v in r if v))
+    names = {str(v).strip(): i for i, v in enumerate(rows[head]) if v}
+    col = {f: names[h] for f, h in (("district", "District"), ("constituency", "Constituency"),
+                                    ("council", "Council"), ("ea", "Enumeration Area Code"),
+                                    ("village", "Village Name"))}
+    wanted = {tuple(part.split(":", 1)) for part in spec.split(",") if ":" in part}
+    councils = {c for _, c in wanted}
+    filled: dict[str, str] = {}
+    prefixes: dict[str, set[str]] = defaultdict(set)
+    namesakes: dict[tuple[str, str, str], set[str]] = defaultdict(set)
+    for r in rows[head + 2:]:
+        for f in ("district", "constituency", "council", "ea"):
+            v = r[col[f]] if col[f] < len(r) else None
+            if v not in (None, ""):
+                filled[f] = str(v).strip()
+        ea = filled.get("ea", "")
+        d, c = key(filled.get("district")), council_key(filled.get("council", ""))
+        prefixes[d].add(ea[:2])
+        if c in councils:
+            namesakes[(d, filled.get("constituency", ""), c)].add(ea[:4])
+        if (d, c) in wanted:
+            log(f"    show {filled.get('district')} / {filled.get('constituency')} / "
+                f"{filled.get('council')} / EA {ea}: "
+                + " | ".join(str(v) for v in r if v not in (None, "")))
+    for d, p in sorted(prefixes.items()):
+        log(f"    show district {d}: enumeration areas begin {sorted(p)}")
+    for (d, constituency, c), p in sorted(namesakes.items()):
+        log(f"    show council {c} in {d} ({constituency}): enumeration areas begin {sorted(p)}")
+
+
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--show", help="district:council (reduced), comma-separated: log those "
+                                       "councils' village lines and enumeration areas")
+    args = parser.parse_args()
     blob, where = fetch(URL, archive=ARCHIVE, office=False, expect=b"PK")
     log(f"  read {where}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
-    table = parse(rows_of(blob))
+    rows = rows_of(blob)
+    if args.show:
+        show(rows, args.show)
+    table = parse(rows)
     for d, n in sorted(table["districts"].items()):
         log(f"  district {d}: {n:,}")
     records = build(table, units("LSO", "admin1"), units("LSO", "admin2"))

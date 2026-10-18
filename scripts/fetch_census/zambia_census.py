@@ -71,6 +71,10 @@ AGE_SOURCE = ("Zambia Statistics Agency, 2022 Census of Population and Housing, 
               "(Summary Report Volume II, Table 5.1)")
 BAND_SOURCE = ("Zambia Statistics Agency, 2022 Census of Population and Housing, final results "
                "(Summary Report Volume II, Tables 5.3, 5.4 and 5.6)")
+# The district tables a median age's stated reason quotes: Table 5.5 counts
+# the people aged 19 to 34, the band above the three the medians use.
+NOTE_SOURCE = ("Zambia Statistics Agency, 2022 Census of Population and Housing, final results "
+               "(Summary Report Volume II, Tables 5.3 to 5.6)")
 # The volume's tables read for ages: number -> what its lines count.
 BANDS = {"5.3": "under19", "5.4": "from16", "5.6": "from18"}
 TITLED = re.compile(r"^TABLE (5\.\d):")
@@ -262,12 +266,12 @@ def band_median(total: int, under19: int, from16: int, from18: int) -> tuple[flo
 BAND_NOTES = {
     "under16": ("The census's district tables count the people under 16, 18 and 19 (Summary "
                 "Report Volume II, Tables 5.3, 5.4 and 5.6); more than half of this district's "
-                "people are under 16, and no table splits the ages below that, so no median age "
-                "is computed for it."),
+                "people are under 16, and no table splits the ages below that, so the census's "
+                "tables give no median age for it."),
     "from19": ("The census's district tables count the people under 16, 18 and 19 (Summary "
                "Report Volume II, Tables 5.3, 5.4 and 5.6); half or more of this district's "
                "people are 19 or older, and the tables give no finer band above 19 than 19 to "
-               "34, so no median age is computed for it."),
+               "34 (Table 5.5), so the census's tables give no median age for it."),
 }
 # A province drawn otherwise than the census draws it: Table 5.1's median is
 # the census province's, so the polygon's comes from its districts' bands.
@@ -280,12 +284,14 @@ SUMMED_GAP = {
                 "Volume II, Table 5.1), not of the districts drawn here, and its district tables "
                 "count the people under 16, 18 and 19 (Tables 5.3, 5.4 and 5.6): more than half "
                 "of these districts' people are under 16, and no table splits the ages below "
-                "that, so no median age is computed for this polygon."),
+                "that, so the census's tables give no median age for these districts "
+                "together."),
     "from19": ("The census gives the median age of the province as it draws it (Summary Report "
                "Volume II, Table 5.1), not of the districts drawn here, and its district tables "
                "count the people under 16, 18 and 19 (Tables 5.3, 5.4 and 5.6): half or more of "
                "these districts' people are 19 or older, and the tables give no finer band above "
-               "19 than 19 to 34, so no median age is computed for this polygon."),
+               "19 than 19 to 34 (Table 5.5), so the census's tables give no median age for "
+               "these districts together."),
 }
 
 
@@ -328,6 +334,18 @@ def median_fields(table: dict[str, Any], level: str, k: str) -> dict[str, Any]:
             "median_age_note": ("Interpolated within the age band that holds the middle person, "
                                 "from the 2022 census's counts of the people under 16, 18 and "
                                 "19 (Summary Report Volume II, Tables 5.3, 5.4 and 5.6).")}
+
+
+def median_sources(extra: dict[str, Any], cited: str) -> list[dict[str, Any]]:
+    """The citation for a median age, or for the tables its stated reason quotes."""
+    median = extra.get("median_age") or {}
+    if median.get("value") is not None:
+        return [{"field": "median_age", "name": cited, "url": URL, "license": LICENCE,
+                 "year": YEAR}]
+    if median.get("note"):
+        return [{"field": "median_age note", "name": NOTE_SOURCE, "url": URL,
+                 "license": LICENCE, "year": YEAR}]
+    return []
 
 
 def grouped_median(groups: list[tuple[int, int | None, int]]) -> float:
@@ -437,10 +455,7 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
         polygon[k] = first.get(shape["parent"], "")
         values = fields(row, f"The 2022 census's final count for {shape['name']} district.")
         extra = median_fields(table, "admin2", k)
-        if extra.get("median_age", {}).get("value") is not None:
-            values["sources"] = values["sources"] + [
-                {"field": "median_age", "name": BAND_SOURCE, "url": URL, "license": LICENCE,
-                 "year": YEAR}]
+        values["sources"] = values["sources"] + median_sources(extra, BAND_SOURCE)
         records.append(record(
             f"ZMB-2022-{k}", shape["name"], level="admin2", parent="ZMB", country="ZMB",
             match_by="shape_id", shape_id=shape["id"], **values, **extra))
@@ -479,10 +494,7 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
             extra, cited = median_fields(table, "admin1", k), AGE_SOURCE
         else:
             extra, cited = summed_median(table, here), BAND_SOURCE
-        if extra.get("median_age", {}).get("value") is not None:
-            values["sources"] = values["sources"] + [
-                {"field": "median_age", "name": cited, "url": URL, "license": LICENCE,
-                 "year": YEAR}]
+        values["sources"] = values["sources"] + median_sources(extra, cited)
         records.append(record(f"ZMB-2022-province-{k}", shape["name"], level="admin1", parent="ZMB",
                               country="ZMB", match_by="shape_id", shape_id=shape["id"],
                               **values, **extra))

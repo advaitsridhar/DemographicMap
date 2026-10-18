@@ -79,6 +79,16 @@ class MadagascarCensusTest(unittest.TestCase):
         self.assertIn("1,274,225 people", recs["arr3"]["population"]["note"])
         self.assertEqual(recs["A"]["population"]["value"], 3_623_925)
         self.assertEqual(recs["B"]["sex_ratio"]["value"], round(1000 * 340_841 / 330_152))
+        # An arrondissement's median says the census counts them as one district.
+        self.assertIn("Antananarivo Renivohitra", recs["arr3"]["median_age"]["note"])
+        self.assertIn("this arrondissement", recs["arr3"]["median_age"]["note"])
+        self.assertIn("this district", recs["ank"]["median_age"]["note"])
+
+    def test_a_name_broken_after_a_hyphen_is_joined_whole(self):
+        self.assertEqual(mg.continued("Port-Berge (Borizi-", ["ny-Vaovao)"]),
+                         "Port-Berge (Boriziny-Vaovao)")
+        self.assertEqual(mg.continued("Antananarivo", ["Renivohitra"]),
+                         "Antananarivo Renivohitra")
 
     def test_districts_must_make_their_region(self):
         broken = PAGE_1.replace("Ankazobe 97 546 95 880 193 426", "Ankazobe 97 546 95 881 193 427")

@@ -41,7 +41,9 @@ import io
 import json
 import re
 import sys
+import urllib.error
 import urllib.parse
+import urllib.request
 
 from . import surveys_probe as base
 
@@ -141,8 +143,6 @@ def probe(arg: str) -> None:
                 say(f"  {f[1]} {f[3]} {f[6]} {f[2]}")
         return
     if mode == "heads":
-        import urllib.error                         # noqa: PLC0415
-        import urllib.request                       # noqa: PLC0415
         low, high = int(extra[0]), int(extra[1])
         for number in range(low, min(high, low + 600) + 1):
             target = url.replace("NUM", str(number))

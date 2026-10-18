@@ -269,7 +269,7 @@ PRELIMINARY = ("https://zimbabwe.unfpa.org/sites/default/files/pub-pdf/"
                "2022_population_and_housing_census_preliminary_report_on_population_figures.pdf")
 SOURCES = [{"field": "population/sex_ratio", "name": SOURCE, "url": URL, "license": LICENCE,
             "year": YEAR},
-           {"field": "religion/language/ethnicity note",
+           {"field": "religion note/language note/ethnicity note",
             "name": "ZIMSTAT, 2022 Population and Housing Census Report", "url": REPORT,
             "license": LICENCE, "year": YEAR}]
 HARARE_SOURCES = SOURCES + [{

@@ -2,6 +2,7 @@
 (scripts/fetch_census/comoros_census)."""
 
 import unittest
+import unittest.mock
 
 from scripts.fetch_census import comoros_census as km
 
@@ -85,6 +86,37 @@ Commune de BANGAANI 19 355 9 906 9 449
 Commune de DJOUMOICHONGO 7 442 3 755 3 687
 Commune de ISAHARI 8 280 4 177 4 103"""
 
+# Tableaux 3 and 4 as the report's text layer gives them (pp. 23-24).
+TABLES = """Tableau 3 : Répartition de la population résidente étrangère par nationalité et selon les îles
+Iles (effectifs) Comores Poids île %
+Nationalité
+Mwali Ndzouani Ngazidja Effectif % Mwali Ndzouani Ngazidja
+Afrique Australe 90 658 503 1251 33,7 7,2 52,6 40,2
+Afrique Centrale 9 72 60 141 3,8 6,4 51,1 42,6
+Afrique de l'Est 0 11 72 83 2,2 0,0 13,3 86,7
+Afrique de l'Ouest 8 29 63 100 2,7 8,0 29,0 63,0
+Afrique du Nord 6 42 52 100 2,7 6,0 42,0 52,0
+Amérique du Nord 0 2 19 21 0,6 0,0 9,5 90,5
+Amérique du Sud 0 0 4 4 0,1 0,0 0,0 100,0
+Asie 14 69 111 194 5,2 7,2 35,6 57,2
+Europe 8 138 383 529 14,3 1,5 26,1 72,4
+Moyen/proche orient 0 1 14 15 0,4 0,0 6,7 93,3
+Océan Indien 71 251 946 1268 34,2 5,6 19,8 74,6
+Océanie 1 0 1 2 0,1 50,0 0,0 50,0
+Ensemble des Étrangers 207 1 273 2 228 3 708 100,0 5,6 34,3 60,1
+Source : RGPH-2017
+Tableau 4 : Proportions de la population résidente selon la langue parlée et l'île de résidence
+Langue
+Ensemble Mwali Ndzuwani Ngazidja
+parlée
+Shicomor 677 246 45 808 291 870 339 569
+Français 254 813 19 074 91 453 144 285
+Arabe 50 117 2 901 17 729 29 487
+Anglais 33 951 2 243 11 297 20 411
+Malgache 18 641 920 5 158 12 563
+Swahili 4 370 292 871 3 207
+Source : RGPH-2017"""
+
 ADMIN1 = [{"id": "M", "name": "Moheli"}, {"id": "A", "name": "Anjouan"},
           {"id": "G", "name": "Grande Comore"}]
 ADMIN2 = [{"id": n, "name": n, "parent": p} for n, p in (
@@ -116,6 +148,40 @@ class ComorosCensusTest(unittest.TestCase):
         self.assertIn("Karthala", recs["Kartala"]["population"]["note"])
         self.assertEqual(recs["M"]["sex_ratio"]["value"], round(1000 * 26_621 / 24_946))
         self.assertIn("Mwali (Mohéli)", recs["M"]["population_note"])
+
+    def test_the_islands_carry_nationality_and_languages_spoken(self):
+        table = km.parse(TEXT)
+        with unittest.mock.patch.object(km, "log"):
+            islands = km.compositions(TABLES, table)
+        recs = {r["shape_id"]: r for r in km.build(table, ADMIN1, ADMIN2, islands)}
+        mwali = recs["M"]
+        self.assertEqual(mwali["ethnicity"][0], {"group": "Comorian nationals", "pct": 99.6,
+                                                 "count": 51_567 - 207})
+        self.assertEqual(mwali["ethnicity_basis"], "nationality")
+        self.assertIn("90 from southern Africa", mwali["ethnicity_note"])
+        self.assertEqual(mwali["language"][1], {"group": "French", "pct": 37.0,
+                                                "count": 19_074})
+        self.assertEqual(mwali["language_basis"], km.LANGUAGE_BASIS)
+        self.assertIn("more than 100", mwali["language_note"])
+        self.assertEqual(recs["G"]["language"][1]["pct"], 38.0)
+        self.assertEqual(mwali["religion"]["status"], "not_available")
+        # A prefecture says the two tables are by island only.
+        self.assertIn("by island (Tableau 4)", recs["Fomboni"]["language"]["note"])
+        self.assertIn("by island (Tableau 3)", recs["Fomboni"]["ethnicity"]["note"])
+        self.assertTrue(any(src["field"] == "language note/ethnicity note"
+                            for src in recs["Fomboni"]["sources"]))
+
+    def test_digit_groups_read_as_three_islands_and_their_total(self):
+        self.assertEqual(km.readings("207 1 273 2 228 3 708".split(), total_first=False),
+                         [(207, 1_273, 2_228, 3_708)])
+        # Shicomor's islands miss the printed total by one person.
+        self.assertEqual(km.readings("677 246 45 808 291 870 339 569".split(),
+                                     total_first=True),
+                         [(45_808, 291_870, 339_569, 677_246)])
+        with self.assertRaises(SystemExit):
+            with unittest.mock.patch.object(km, "log"):
+                km.compositions(TABLES.replace("Europe 8 138 383 529", "Europe 8 139 383 530"),
+                                km.parse(TEXT))
 
     def test_a_table_that_does_not_add_up_is_refused(self):
         with self.assertRaises(SystemExit):

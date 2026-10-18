@@ -34,6 +34,11 @@ KHOMAS = table(POP, [["Moses//Garoeb", "68932", "32.37", "2129.2"],
 OSHIKOTO = table(POP, [["Onayena", "16669", "371.47.5", "44.9"], ["Oniipa", "3372", "371.47", "9.1"]])
 
 
+def at(rows, url):
+    """A page's rows as main() keeps them, each with the page's address."""
+    return {k: {**row, "url": url} for k, row in rows.items()}
+
+
 class NamibiaConstituenciesTest(unittest.TestCase):
     def test_the_population_table_is_the_one_with_areas(self):
         rows = nc.constituencies(page(ERONGO, LOCALITIES))
@@ -59,12 +64,12 @@ class NamibiaConstituenciesTest(unittest.TestCase):
                   {"id": "8085530B69443629768018", "name": "Epukiro and Otjinene", "parent": "O"},
                   {"id": "8085530B20678123815895", "name": "Moses Garoeb and Tobias Hainyeko",
                    "parent": "K"}]
-        regions = {"erongo": nc.constituencies(page(ERONGO)),
-                   "hardap": nc.constituencies(page(HARDAP)),
-                   "omaheke": nc.constituencies(page(OMAHEKE)),
-                   "khomas": nc.constituencies(page(KHOMAS))}
+        regions = {"erongo": at(nc.constituencies(page(ERONGO)), "u"),
+                   "hardap": at(nc.constituencies(page(HARDAP)), "h"),
+                   "omaheke": at(nc.constituencies(page(OMAHEKE)), "o"),
+                   "khomas": at(nc.constituencies(page(KHOMAS)), "k")}
         with mock.patch.object(nc, "log"):
-            recs = {r["name"]: r for r in nc.build(regions, admin1, admin2, {"erongo": ["u"]})}
+            recs = {r["name"]: r for r in nc.build(regions, admin1, admin2)}
         # Gibeon is drawn over 50,525 km2 against the census's 10,156; the two
         # Windhoek constituencies' 50.9 km2 against 53.2 is 4.6%, over the 2%
         # allowed where 2,673 people live to the km2.
@@ -76,6 +81,22 @@ class NamibiaConstituenciesTest(unittest.TestCase):
                       recs["Epukiro and Otjinene"]["population_note"])
         self.assertIn("17,346 km² in the census's tables, 17,510 km²",
                       recs["Epukiro and Otjinene"]["population_note"])
+
+    def test_a_constituency_cites_the_page_its_row_is_on(self):
+        # Kavango East's and West's pages both feed the map's one Kavango;
+        # Mashare is on the first page only.
+        east = table(POP, [["Mashare", "19 478", "9 139.89", "2.1"]])
+        west = table(POP, [["Mpungu", "21098", "7976.76", "2.6"]])
+        pages = {"kavango-east-region": at(nc.constituencies(page(east)), "east"),
+                 "kavango-west-region": at(nc.constituencies(page(west)), "west")}
+        with mock.patch.object(nc, "log"):
+            regions = nc.checked(pages, {"kavango": 19_478 + 21_098})
+            recs = {r["name"]: r for r in nc.build(
+                regions, [{"id": "V", "name": "Kavango"}],
+                [{"id": "8085530B8620298556926", "name": "Mashare", "parent": "V"},
+                 {"id": "8085530B94702234009846", "name": "Mpungu", "parent": "V"}])}
+        self.assertEqual([s["url"] for s in recs["Mashare"]["sources"]], ["east"])
+        self.assertEqual([s["url"] for s in recs["Mpungu"]["sources"]], ["west"])
 
     def test_every_polygon_has_an_area(self):
         self.assertEqual(len(nc.AREAS), 103)

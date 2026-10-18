@@ -62,6 +62,12 @@ SOURCE = "INE Moçambique, IV Recenseamento Geral da População e Habitação 2
 LICENCE = "Instituto Nacional de Estatística de Moçambique publication (reuse with attribution)"
 YEAR = 2017
 NATIONAL = 26_899_105
+# INE's published total for the country, which adds to the people counted an
+# estimate of those the census missed; the quadros count the people enumerated.
+ADJUSTED = 27_909_798
+COUNTED = (f"The census's tables count the people enumerated: INE's published total for the "
+           f"country, {ADJUSTED:,}, adds an estimate of those the census missed to the "
+           f"{NATIONAL:,} counted.")
 SLACK = 10                          # people a province's units may miss its total line by
 SPELLING = 0.8                      # how alike a misprinted label and its polygon must be
 OUT = "mozambique_census.json"
@@ -503,8 +509,8 @@ def build(tables: dict[str, Any], admin1: list[dict[str, Any]],
             {"field": "population/sex_ratio/median_age",
              "name": f"{SOURCE}, Quadro 3 ({prov.title()})", "url": url_of(spec["q3"][0]),
              "license": LICENCE, "year": YEAR},
-            {"field": "religion/language note",
-             "name": f"{SOURCE}, Quadros 11 and 22 ({prov.title()})",
+            {"field": "religion note/language note",
+             "name": f"{SOURCE}, Quadros 11, 22 and 23 ({prov.title()})",
              "url": url_of(spec["q11"][0]), "license": LICENCE, "year": YEAR}]
         parent = shape_of.get(key(spec["map"]))
         if parent is None:
@@ -538,7 +544,7 @@ def build(tables: dict[str, Any], admin1: list[dict[str, Any]],
                               sources=district_sources,
                               population=measure(data["total"], year=YEAR,
                                                  source=f"{SOURCE}, Quadro 3"),
-                              population_note=notes[shape["id"]],
+                              population_note=f"{notes[shape['id']]} {COUNTED}",
                               **age_fields(data, "Quadro 3"), **gaps))
     national = tables["national"]
     for shape in admin1:
@@ -567,7 +573,7 @@ def build(tables: dict[str, Any], admin1: list[dict[str, Any]],
             f"MOZ-2017-province-{key(shape['name'])}", shape["name"], level="admin1",
             parent="MOZ", country="MOZ", match_by="shape_id", shape_id=shape["id"], sources=src,
             population=measure(data["total"], year=YEAR, source=f"{SOURCE}, Quadro 3"),
-            population_note=note, **age_fields(data, "Quadro 3"),
+            population_note=f"{note} {COUNTED}", **age_fields(data, "Quadro 3"),
             religion=shares({g: v for g, v in religion.items()
                              if g not in ("TOTAL", "UNKNOWN") and v}, total=stated_rel),
             religion_year=YEAR,

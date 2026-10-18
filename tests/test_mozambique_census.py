@@ -145,6 +145,10 @@ class BuildTest(unittest.TestCase):
         self.assertNotIn("lake", by)
         maputo = by[[a for a in admin1 if a["name"] == "Maputo"][0]["id"]]
         self.assertIn("Maputo Province and Maputo City", maputo["population_note"])
+        # The quadros count the people enumerated, below INE's adjusted total.
+        for rec in (cuamba, maputo):
+            self.assertIn("count the people enumerated", rec["population_note"])
+            self.assertIn("27,909,798", rec["population_note"])
         self.assertEqual(maputo["religion"][0]["group"], "Islam")
         self.assertEqual(maputo["language_basis"], mz.LANGUAGE_BASIS)
         self.assertIn("aged 5 and over", maputo["language_note"])

@@ -113,6 +113,10 @@ AGE_SOURCE = ("INSTAT Madagascar, Résultats globaux du RGPH-3 de 2018, Tome 2, 
               "(population of the health programmes' age groups by region)")
 AGE_NOTE_DISTRICT = ("INSTAT's RGPH-3 Résultats globaux give ages by region (Tome 2, Tableaux 2 "
                      "to 6), not by district, so no median age is published for this district.")
+AGE_NOTE_SPLIT = ("The 2018 census counts the six arrondissements as one district, Antananarivo "
+                  "Renivohitra, and INSTAT's RGPH-3 Résultats globaux give ages by region (Tome "
+                  "2, Tableaux 2 to 6), not for that district or its arrondissements, so no "
+                  "median age is published for this arrondissement.")
 # Tableau 5's columns (both sexes taken), and Tableau 6's.
 T4 = ("10-14", "10-19", "10-24", "15-17", "15-19", "15-24", "15-49")
 T5 = ("18-24", "19-24", "20-24", "25-49", "50-59")
@@ -222,6 +226,18 @@ def rotated(line: str) -> bool:
     return bool(words) and all(w[-1].isupper() and not w[0].isupper() for w in words)
 
 
+def continued(name: str, more: list[str]) -> str:
+    """A district name finished by the lines printed after it. A word the line
+    broke after a hyphen is joined whole: 'Port-Berge (Borizi-' and 'ny-Vaovao)'
+    are Port-Berge (Boriziny-Vaovao)."""
+    for part in more:
+        if name.endswith("-") and part[:1].islower():
+            name = name[:-1] + part
+        else:
+            name = f"{name} {part}"
+    return name
+
+
 def parse(pages: list[str]) -> dict[str, Any]:
     """{"regions": [{"men", "women", "total", "districts": [...]}], "national": row}."""
     regions: list[dict[str, Any]] = []
@@ -254,7 +270,7 @@ def parse(pages: list[str]) -> dict[str, Any]:
             # its capital last), which is dropped.
             rest = [ln for ln in pending if not rotated(ln)]
             if last is not None and rest:
-                last["name"] = " ".join([last["name"]] + rest)
+                last["name"] = continued(last["name"], rest)
             if "Total Région" in name:
                 regions.append({**row, "districts": []})
                 last = None
@@ -320,7 +336,8 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                                       parent="MDG", country="MDG", match_by="shape_id",
                                       shape_id=s["id"], sources=sources,
                                       population=gap(NOT_AVAILABLE, note),
-                                      sex_ratio=gap(NOT_AVAILABLE, note), median_age=no_age))
+                                      sex_ratio=gap(NOT_AVAILABLE, note),
+                                      median_age=gap(NOT_AVAILABLE, AGE_NOTE_SPLIT)))
                 continue
             shape = by_key.get(k)
             if shape is None:
