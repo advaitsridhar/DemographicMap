@@ -1,112 +1,38 @@
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Resultats%20globaux/Doc_principaux_indicateurs.xlsx: 117,480 bytes, sha256 14c5547d8a90678559a0de71f6521e69e315543e50ab5c92c687922f562c9e6d
-  national median 16.6 (the departments' groups pooled: 16.6)
-  Alibori: 867,463, median 14.5, 989 men per 1,000 women
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Alibori_final.pdf: 149,511 bytes, sha256 09ef9095101713679feb375bd91ccb8137cbeb791d31f737bdfc3333a4c8a1e8
-    Banikoara: 246,575 (122,445 men, 124,130 women)
-    Gogounou: 117,523 (58,018 men, 59,505 women)
-    Kandi: 179,290 (88,998 men, 90,292 women)
-    Karimama: 66,353 (33,149 men, 33,204 women)
-    Malanville: 168,641 (83,681 men, 84,960 women)
-    Segbana: 89,081 (45,066 men, 44,015 women)
-  Atakora: 772,262, median 14.8, 971 men per 1,000 women
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Atacora_finale.pdf: 242,134 bytes, sha256 b5eb842910b8be7aecca961273469aca6e9ad8802935752cb46bbdc74d2dd900
-    Boukombe: 82,450 (40,479 men, 41,971 women)
-    Kerou: 100,197 (49,963 men, 50,234 women)
-    Kobli: 67,603 (32,784 men, 34,819 women)
-    Kouande: 111,540 (55,558 men, 55,982 women)
-    Materi: 113,958 (55,676 men, 58,282 women)
-    Natitingou: 103,843 (50,968 men, 52,875 women)
-    Pehunco: 78,217 (39,147 men, 39,070 women)
-    Tanguieta: 74,675 (36,431 men, 38,244 women)
-    Toucountouna: 39,779 (19,442 men, 20,337 women)
-  Atlantique: 1,398,229, median 18.0, 965 men per 1,000 women
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Atlantique_final.pdf: 227,176 bytes, sha256 41f6443d0e8355d0e228b4e6b1e22adee0a209bdaa3c50f78aa4f909f7c20a42
-    Abomey-Calavi: 656,358 (323,574 men, 332,784 women)
-    Allada: 127,512 (62,148 men, 65,364 women)
-    Kpomasse: 67,648 (33,353 men, 34,295 women)
-    Ouidah: 162,034 (78,596 men, 83,438 women)
-    So-Ava: 118,547 (60,020 men, 58,527 women)
-    Toffo: 101,585 (49,068 men, 52,517 women)
-    Tori-Bossito: 57,632 (28,284 men, 29,348 women)
-    Ze: 106,913 (51,704 men, 55,209 women)
-  Borgou: 1,214,249, median 15.1, 1000 men per 1,000 women
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Borgou_final.pdf: 223,264 bytes, sha256 eba2116dda84a66302c14de3c184c9726d84961056a71ea9ec35d80e39a88c1c
-    Bembereke: 131,255 (66,270 men, 64,985 women)
-    Kalale: 168,882 (84,078 men, 84,804 women)
-    N'dali: 113,604 (57,643 men, 55,961 women)
-    Nikki: 151,232 (75,339 men, 75,893 women)
-    Parakou: 255,478 (127,328 men, 128,150 women)
-    Perere: 78,988 (39,139 men, 39,849 women)
-    Sinende: 91,672 (45,640 men, 46,032 women)
-    Tchaourou: 223,138 (111,576 men, 111,562 women)
-  Collines: 717,477, median 16.5, 972 men per 1,000 women
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Collines_final.pdf: 193,765 bytes, sha256 0657a26727637fbeb249f28c38d15e186a3dbcaedc510c7c0700aeacc3ff8d2f
-    Bante: 107,181 (52,516 men, 54,665 women)
-    Dassa-Zoume: 112,122 (54,366 men, 57,756 women)
-    Glazoue: 124,431 (61,070 men, 63,361 women)
-    Ouesse: 142,017 (71,594 men, 70,423 women)
-    Savalou: 144,549 (70,289 men, 74,260 women)
-    Save: 87,177 (43,757 men, 43,420 women)
-  Donga: 543,130, median 16.3, 994 men per 1,000 women
-  retry 1/3 after 2s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 2/3 after 4s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 3/3 after 8s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 1/3 after 2s :: https://web.archive.org/web/2024id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 2/3 after 4s :: https://web.archive.org/web/2024id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error _ssl.c:999: The handshake operation timed out>
-  retry 1/3 after 2s :: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 2/3 after 4s :: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 3/3 after 8s :: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf :: <urlopen error [Errno 111] Connection refused>
-  Kouffo: 745,328, median 15.2, 879 men per 1,000 women
-  retry 1/3 after 2s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Couffo_final.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 2/3 after 4s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Couffo_final.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 3/3 after 8s :: https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Couffo_final.pdf :: <urlopen error [Errno 111] Connection refused>
-  read https://web.archive.org/web/2024id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Couffo_final.pdf: 199,975 bytes, sha256 40a022871bc3e255d38547d14e2826fb81a3bf51bdbefa32019b78e7695b1f88
-    Aplahoue: 171,109 (79,678 men, 91,431 women)
-    Djakotomey: 134,028 (62,384 men, 71,644 women)
-    Dogbo: 103,057 (49,289 men, 53,768 women)
-    Klouekanme: 128,597 (59,541 men, 69,056 women)
-    Lalo: 119,926 (56,529 men, 63,397 women)
-    Toviklin: 88,611 (41,153 men, 47,458 women)
-  Littoral: 679,012, median 21.5, 923 men per 1,000 women
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Littoral_final.pdf: 169,899 bytes, sha256 890d1d75674cf53b583d1d42dbfea5e51c42c541535b76a74b596666527fd31d
-    Cotonou: 679,012 (325,872 men, 353,140 women)
-  Mono: 497,243, median 17.2, 945 men per 1,000 women
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Mono_final.pdf: 204,401 bytes, sha256 9515b9986445b9cdda10184e4f8c5debac7987987082042862e4bc4a3ed3c53d
-    Athieme: 56,483 (27,562 men, 28,921 women)
-    Bopa: 96,281 (46,785 men, 49,496 women)
-    Come: 79,989 (38,507 men, 41,482 women)
-    Grand-Popo: 57,636 (28,237 men, 29,399 women)
-    Houeyogbe: 101,893 (49,187 men, 52,706 women)
-    Lokossa: 104,961 (51,276 men, 53,685 women)
-  Oueme: 1,100,404, median 17.9, 946 men per 1,000 women
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Ou%C3%A9m%C3%A9%20-%20final.pdf: 248,797 bytes, sha256 61f052434f619bdcaf975274817382557eea62d93f8f605f811155684d9e7964
-    Adjarra: 97,424 (47,415 men, 50,009 women)
-    Adjohoun: 75,323 (36,385 men, 38,938 women)
-    Aguegues: 44,562 (22,198 men, 22,364 women)
-    Akpo-Misserete: 127,249 (62,267 men, 64,982 women)
-    Avrankou: 128,050 (62,298 men, 65,752 women)
-    Bonou: 44,349 (21,360 men, 22,989 women)
-    Dangbo: 96,426 (47,281 men, 49,145 women)
-    Porto-Novo: 264,320 (126,016 men, 138,304 women)
-    Seme-Kpodji: 222,701 (109,594 men, 113,107 women)
-  Plateau: 622,372, median 16.9, 931 men per 1,000 women
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Plateau_final.pdf: 160,557 bytes, sha256 5dc786b1d47429dbd27880b6b2724db189dc02754625f3be7cb6360893729db0
-    Adja-Ouere: 116,282 (56,856 men, 59,426 women)
-    Ifangni: 110,973 (53,124 men, 57,849 women)
-    Ketou: 157,352 (76,827 men, 80,525 women)
-    Pobe: 123,677 (59,481 men, 64,196 women)
-    Sakete: 114,088 (53,777 men, 60,311 women)
-  Zou: 851,580, median 16.7, 916 men per 1,000 women
-  read https://web.archive.org/web/2024id_/https://instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Zou_Final.pdf: 239,862 bytes, sha256 af9e4ddda6ecf13fa2b4387811168c29726dd3fbc1a068f27a2f5bc3e9dff2af
-    Abomey: 92,266 (43,538 men, 48,728 women)
-    Agbangnizoun: 72,549 (34,782 men, 37,767 women)
-    Bohicon: 171,781 (81,404 men, 90,377 women)
-    Cove: 51,247 (24,508 men, 26,739 women)
-    Djidja: 123,542 (59,794 men, 63,748 women)
-    Ouinhi: 59,381 (28,969 men, 30,412 women)
-    Za-Kpota: 132,818 (61,945 men, 70,873 women)
-    Zagnanado: 55,061 (26,817 men, 28,244 women)
-    Zogbodomey: 92,935 (45,273 men, 47,662 women)
-  Donga: benin_census: instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf: RuntimeError: GET failed after 3 retries: https://web.archive.org/web/2022id_/https://www.instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats%20finaux/Plaquettes/Plaquette_Donga_Finale.pdf
-  12 departments and 73 communes written
-  wrote data/processed/benin_census.json (156 kB)
+
+===== page: 'Districts of Ivory Coast', 12,020 bytes of wikitext
+  1 table(s)
+--- table 1: 34 rows ---
+  Map no. | District | District capital | Regions | Region seat | Population (District) | Population Regions | Area KM²
+  !scope=row colspan=1|1 | align=left row colspan=4|Abi | 4,707,404 | 2,119 (818)
+  !scope=row rowspan=3|2 | align=row rowspan=3|Bas-Sass | align=left rowspan=3|San-Péd | Gbôklé | Sassandra | 2,280,548 | 400,798 | 25,800 (10,000)
+  Nawa | Soubré | 1,053,084
+  San-Pédro | San-Pédro | 826,666
+  !scope=row rowspan=2|3 | align=row rowspan=2|Comoé (D | align=left rowspan=2|Abengou | Indénié-Djuablin | Abengourou | 1,203,052 | 560,432 | 14,173 (5,472)
+  Sud-Comoé | Aboisso | 642,620
+  !scope=row rowspan=2|4 | align==row rowspan=2|Denguél | align=left rowspan=2|Odienné | Folon | Minignan | 289,779 | 96,415 | 20,997 (8,107)
+  Kabadougou | Odienné | 193,364
+  !scope=row rowspan=2|5 | align=row rowspan=2|Gôh-Djib | align=left rowspan=2|Gagnoa | Gôh | Gagnoa | 1,605,286 | 876,117 | 17,580 (6,790)
+  Lôh-Djiboua | Divo | 729,169
+  !scope=row rowspan=4|6 | align=row rowspan=4|Lacs (Di | align=left rowspan=4|Dimbokr | Bélier | Yamoussoukro | 1,258,604 | 346,768 | 28,500 (11,000)
+  Iffou | Daoukro | 311,642
+  Moronou | Bongouanou | 352,616
+  N'Zi | Dimbokro | 247,578
+  !scope=row rowspan=3|7 | align=row rowspan=3|Lagunes  | align=left rowspan=3|Dabou | Agnéby-Tiassa | Agboville | 1,478,047 | 606,852 | 23,280 (8,990)
+  Grands-Ponts | Dabou | 356,495
+  La Mé | Adzopé | 514,700
+  !scope=row rowspan=3|8 | align=row rowspan=3|Montagne | align=left rowspan=3|Man | Cavally | Guiglo | 2,371,920 | 459,964 | 31,050 (11,990)
+  Guémon | Duékoué | 919,392
+  Tonkpi | Man | 992,564
+  !scope=row rowspan=2|9 | align=row rowspan=2|Sassandr | align=left rowspan=2|Daloa | Haut-Sassandra | Daloa | 2,293,304 | 1,430,960 | 23,940 (9,240)
+  Marahoué | Bouaflé | 862,344
+  !scope=row rowspan=3|10 | align=row rowspan=3|Savanes  | align=left rowspan=3|Korhogo | Bagoué | Boundiali | 1,607,497 | 375,687 | 40,210 (15,530)
+  Poro | Korhogo | 763,852
+  Tchologo | Ferkessédougou | 467,958
+  !scope=row rowspan=2|11 | align=row rowspan=2|Vallée d | align=left rowspan=2|Bouaké | Gbêkê | Bouaké | 1,440,826 | 1,010,849 | 28,518 (11,011)
+  Hambol | Katiola | 429,977
+  !scope=row rowspan=3|12 | align=row rowspan=3|Woroba ( | align=left rowspan=3|Séguéla | Béré | Mankono | 845,139 | 389,758 | 31,088 (12,003)
+  Bafing | Touba | 183,047
+  Worodougou | Séguéla | 272,334
+  !scope=row colspan=1|13 | align=left row colspan=4|Yam | 355,573 | 3,500 (1,350)
+  !scope=row rowspan=2|14 | align=row rowspan=2|Zanzan ( | align=left rowspan=2|Bondouk | Bounkani | Bouna | 934,352 | 267,167 | 38,251 (14,769)
+  Gontougo | Bondoukou | 667,185
