@@ -725,6 +725,9 @@ def read_report(stem: str, pages: list[list[Row]], texts: list[str]) -> Report:
 # Quadro 1.7, "Idade média e mediana da população": the median age of the
 # province, its municipalities and their communes, printed as "18,0".
 MEDIAN_KEY = "idademediaemediana"
+# The words that put a page among those laid out for it: a text layer may break
+# the heading's words apart.
+MEDIAN_PAGES = (MEDIAN_KEY, "mediana", "idademedia")
 DECIMAL = re.compile(r"^\d{1,3},\d{1,2}$")
 
 
@@ -739,29 +742,23 @@ def median_entries(rows: list[Row]) -> tuple[str, list[tuple[str, float | None]]
 
     The table is printed in one column group or in two side by side (Malanje's,
     Bié's, Huíla's). The figures' right ends gather in two columns a group,
-    média and mediana; a word that starts right of the first group's mediana
-    column belongs to the second group, which is read after the first."""
+    média and mediana; a word that starts right of a group's mediana column
+    belongs to a later group, which is read after it."""
     at = next((k for k, r in enumerate(rows) if MEDIAN_KEY in squeeze(words_of(r))), None)
     if at is None:
         return "", []
     end = next((k for k in range(at + 1, len(rows))
                 if squeeze(words_of(rows[k])).startswith("quadro")), len(rows))
     body = rows[at + 1:end]
-    ends = sorted(x1 for r in body for _, x1, t in r.words if DECIMAL.match(t))
-    clusters: list[list[float]] = []
-    for x1 in ends:
-        if clusters and x1 - clusters[-1][-1] <= 12:
-            clusters[-1].append(x1)
-        else:
-            clusters.append([x1])
-    if len(clusters) not in (2, 4):
+    clusters = decimal_columns(body)
+    if not clusters or len(clusters) % 2 or len(clusters) > 6:
         return words_of(rows[at]), []
-    bound = max(clusters[1]) + 1 if len(clusters) == 4 else None
-    groups: list[list[tuple[str, float | None]]] = [[], []]
+    bounds = [max(clusters[k]) + 1 for k in range(1, len(clusters) - 1, 2)]
+    groups: list[list[tuple[str, float | None]]] = [[] for _ in range(len(bounds) + 1)]
     for row in body:
-        parts: list[list[str]] = [[], []]
+        parts: list[list[str]] = [[] for _ in groups]
         for x0, _, t in row.words:
-            parts[1 if bound is not None and x0 > bound else 0].append(t)
+            parts[sum(x0 > b for b in bounds)].append(t)
         for g, words in enumerate(parts):
             figures = [w for w in words if DECIMAL.match(w)]
             label = " ".join(w for w in words if not DECIMAL.match(w))
@@ -769,7 +766,19 @@ def median_entries(rows: list[Row]) -> tuple[str, list[tuple[str, float | None]]
                 groups[g].append((label, float(figures[1].replace(",", "."))))
             elif not figures and label:
                 groups[g].append((label, None))
-    return words_of(rows[at]), groups[0] + groups[1]
+    return words_of(rows[at]), [e for g in groups for e in g]
+
+
+def decimal_columns(rows: list[Row]) -> list[list[float]]:
+    """The right ends of the figures printed as "18,0", gathered into columns."""
+    ends = sorted(x1 for r in rows for _, x1, t in r.words if DECIMAL.match(t))
+    clusters: list[list[float]] = []
+    for x1 in ends:
+        if clusters and x1 - clusters[-1][-1] <= 12:
+            clusters[-1].append(x1)
+        else:
+            clusters.append([x1])
+    return clusters
 
 
 def medians_of(rep: Report, pages: list[list[Row]], texts: list[str]) -> None:
@@ -779,8 +788,9 @@ def medians_of(rep: Report, pages: list[list[Row]], texts: list[str]) -> None:
     heading ("Municípios", "Município / Comuna"), each before its communes and
     in the order of Quadro 10: each is the first row of its name after the one
     before it, so a commune of the same name, printed after it, is passed over."""
-    for i, text in enumerate(texts):
-        if MEDIAN_KEY not in text or not pages[i]:
+    # Every page laid out, not only those whose text layer names the table.
+    for i in range(len(pages)):
+        if not pages[i]:
             continue
         title, entries = median_entries(pages[i])
         first = next((k for k, (_, m) in enumerate(entries) if m is not None), None)
@@ -848,6 +858,13 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
                                         + ")")
                 continue
             block.labels = labels
+            # A row of one figure is a unit all of whose people are under the
+            # columns of another group, which prints only its total here (Lunda
+            # Sul's Alto Chicapa); one whose figure is not under the total is a
+            # heading or a line of text, not a row of the table.
+            at = labels.index("TOTAL") if "TOTAL" in labels else None
+            block.data = [r for r in block.data
+                          if not r.is_single or (at is not None and values(block, r)[at] is not None)]
             if block.title:
                 rep.quadros.setdefault(name, quadro_of(block.title))
             last = block
@@ -1056,12 +1073,17 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
     for label, vals in body:
         key = fold(label)
         fresh = key in names and key not in met
+        made_up = bool(communes) and abs(summed["TOTAL"] - own["TOTAL"]) <= slack()
         if current is None or only:
             ready = True
         elif placeholder:
-            ready = fresh and fits(key, vals)
+            # A row its residents rule out ends at the next municipality whose
+            # row they allow, or at the next one at all once its communes make
+            # it (Benguela's Baía Farta and Caimbambo trade 12,634 people
+            # between their rows and their communes alike).
+            ready = fresh and (fits(key, vals) or made_up)
         else:
-            ready = bool(communes) and abs(summed["TOTAL"] - own["TOTAL"]) <= slack()
+            ready = made_up
         resume = fresh and not ready and fits(key, vals)
         if fresh and (ready or resume):
             close()
@@ -2015,6 +2037,43 @@ def debug(stem: str, blob: bytes, numbers: list[int]) -> None:
                     log(f"    misfit: {line}")
 
 
+def inspect(stem: str, blob: bytes) -> None:
+    """Each table's pages as the reader lays them out: the blocks' columns,
+    headers and first rows, and Quadro 1.7's figure columns and rows."""
+    import pdfplumber                                # noqa: PLC0415
+    texts = page_texts(blob)
+    specs = [*TABLES.items(), ("medians", {"key": MEDIAN_PAGES})]
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for name, spec in specs:
+            hits = [i for i, t in enumerate(texts) if any(k in t for k in keys_of(spec))
+                    and not t.count("quadro") > 12]       # not the list of tables
+            log(f"== {stem} {name}: pages {[i + 1 for i in hits]}")
+            for i in hits[:5]:
+                rows = rows_of(pdf.pages[i].extract_words(use_text_flow=False,
+                                                          keep_blank_chars=False))
+                if name == "medians":
+                    title, entries = median_entries(rows)
+                    at = next((k for k, r in enumerate(rows)
+                               if "mediana" in squeeze(words_of(r))), None)
+                    columns = [round(min(c)) for c in decimal_columns(rows)]
+                    log(f"  p{i + 1}: title {title[:90]!r}; first 'mediana' row "
+                        f"{words_of(rows[at])[:90] if at is not None else None!r}; figure "
+                        f"columns at {columns}; {len(entries)} entries: "
+                        + "; ".join(f"{lab}={m}" for lab, m in entries[:45]))
+                    continue
+                for block in blocks_of(rows, lead=True, singles=True):
+                    bad = assign_columns(block)
+                    log(f"  p{i + 1} block {block.title[:90]!r}: {len(block.data)} rows, "
+                        f"columns at {[round(c) for c in block.columns]}")
+                    for j, t in enumerate(header_texts(block)):
+                        log(f"    col {j}: {t[:90]}")
+                    for r in block.data[:7]:
+                        log(f"    row {r.label!r}: " + " ".join(
+                            f"{v}@{x1:.0f}" for _, x1, v in r.figures(block.columns)))
+                    for line in bad[:4]:
+                        log(f"    misfit: {line}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -2024,9 +2083,18 @@ def main() -> int:
                         help="print where each table is, and write nothing")
     parser.add_argument("--debug", default="",
                         help="Stem:page,page;Stem:page -- print those pages' blocks, write nothing")
+    parser.add_argument("--inspect", default="",
+                        help="Stem,Stem -- print each table's pages as laid out, write nothing")
     args = parser.parse_args()
     import pdfplumber                                # noqa: PLC0415
     stems = [s for s in REPORTS if not args.only or s in args.only.split(",")]
+    if args.inspect:
+        for stem in args.inspect.split(","):
+            try:
+                inspect(stem, fetch_report(stem)[0])
+            except Exception as exc:                  # noqa: BLE001
+                log(f"== {stem}: {type(exc).__name__}: {exc}")
+        return 0
     if args.debug:
         for part in args.debug.split(";"):
             stem, _, numbers = part.partition(":")
@@ -2050,8 +2118,8 @@ def main() -> int:
             texts = page_texts(blob)
             wanted = {i for i, t in enumerate(texts)
                       if any(k in t for k in (*SEX_TABLES, "porgruposetariosquinquenais",
-                                              MEDIAN_KEY, *(k for s in TABLES.values()
-                                                            for k in keys_of(s))))}
+                                              *MEDIAN_PAGES, *(k for s in TABLES.values()
+                                                               for k in keys_of(s))))}
             wanted |= {i + 1 for i in wanted if i + 1 < len(texts)}
             pages: list[list[Row]] = [[] for _ in texts]
             with pdfplumber.open(io.BytesIO(blob)) as pdf:

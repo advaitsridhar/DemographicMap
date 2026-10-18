@@ -757,6 +757,22 @@ class Resuming(unittest.TestCase):
         self.assertEqual(got["humbe"]["TOTAL"], 184_059)
         self.assertEqual(got["naulila"]["TOTAL"], 78_361)
 
+    def test_two_rows_that_trade_people_are_both_found_and_left_out(self):
+        # Benguela's broad age groups give Baía Farta 12,634 people more than
+        # its residents and Caimbambo as many fewer, rows and communes alike.
+        rep = am.Report("Benguela")
+        rep.new = [("Baia Farta", 95_994, 46_000, 49_994), ("Caimbambo", 79_511, 38_000, 41_511),
+                   ("Cubal", 229_379, 110_000, 119_379)]
+        rows = [("Benguela", {"TOTAL": 2_597_638}), ("Baia Farta", {"TOTAL": 108_628}),
+                ("Baia Farta", {"TOTAL": 60_000}), ("Calahanga", {"TOTAL": 48_628}),
+                ("Caimbambo", {"TOTAL": 66_877}), ("Caimbambo", {"TOTAL": 66_877}),
+                ("Cubal", {"TOTAL": 229_379}), ("Cubal", {"TOTAL": 229_379})]
+        got = am.municipalities(rep, "age_broad", rows)
+        self.assertEqual(set(got), {"cubal"})
+        self.assertEqual(rep.refusals["age_broad"]["baiafarta"], ("plausible", 108_628, 95_994))
+        self.assertEqual(rep.refusals["age_broad"]["caimbambo"], ("plausible", 66_877, 79_511))
+        self.assertFalse(any("not found" in p for p in rep.problems))
+
     def test_a_row_no_communes_make_up_for_is_left_out(self):
         rep = am.Report("Cunene")
         rep.new = [("Cahama", 140_925, 68_000, 72_925), ("Cuvelai", 76_582, 37_000, 39_582)]
@@ -804,6 +820,26 @@ class Medians(unittest.TestCase):
         self.assertEqual(rep.median, 18.0)
         self.assertEqual(rep.medians, {"calandula": 19.0, "malanje": 18.0, "milando": 21.0,
                                        "xandel": 18.0})
+
+    def test_three_column_groups(self):
+        page = Page()
+        page.title("Quadro 1.7 - Idade média e mediana da população por área de residência e "
+                   "sexo, 2024")
+        page.head([("Mediana", 150), ("Mediana", 330), ("Mediana", 510)])
+        groups = [[("Uíge", 20.1, 16.0), ("Municípios", None, None), ("Bungo", 19.0, 15.0)],
+                  [("Negage", 21.0, 17.0), ("Negage", 21.0, 17.0)],
+                  [("Puri", 18.0, 14.0), ("Puri", 18.0, 14.0)]]
+        for g, entries in enumerate(groups):
+            left = LEFT + 180 * g
+            for k, (label, mean, median) in enumerate(entries):
+                top = page.top + 12 * k
+                page.words += (header(top, [(label, left)]) if mean is None else
+                               decimal_words(top, label, left, (mean, median),
+                                             (left + 80, left + 100)))
+        rep = self.rep(["Bungo", "Negage", "Puri"])
+        am.medians_of(rep, [am.rows_of(page.words)], [""])
+        self.assertEqual(rep.median, 16.0)
+        self.assertEqual(rep.medians, {"bungo": 15.0, "negage": 17.0, "puri": 14.0})
 
     def test_a_municipality_printed_without_figures(self):
         # Benguela's table leaves the row of a municipality of several communes
@@ -854,6 +890,23 @@ class Columns(unittest.TestCase):
                                  [am.rows_of(p.words) for p in pages], [p.text() for p in pages]))
         self.assertEqual(got["Alto Chicapa"], {"Bakongo": 1, "Ambundu": 340, "Not stated": 0,
                                                "TOTAL": 341})
+        self.assertEqual(rep.problems, [])
+
+    def test_a_line_of_one_figure_off_the_total_is_no_row(self):
+        page = Page()
+        page.title("Quadro 7.1 - População com 2 ou mais anos por área de residência e "
+                   "município, segundo a religião ou espiritualidade, 2024")
+        page.head([("População com 2 ou mais anos", 180), ("Católica", 270),
+                   ("Protestante", 335)])
+        rights = [240.0, 310.0, 380.0]
+        page.row("Bengo", [3_000, 2_000, 1_000], rights)
+        page.row("Municípios / Comunas", [2], [380.0])      # a stray footnote mark
+        page.row("Dande", [1_000, 600, 400], rights)
+        page.row("Dembos", [2_000, 1_400, 600], rights)
+        rep = am.Report("Bengo")
+        got = am.read_table(rep, "religion", am.TABLES["religion"], [am.rows_of(page.words)],
+                            [page.text()])
+        self.assertEqual([label for label, _ in got], ["Bengo", "Dande", "Dembos"])
         self.assertEqual(rep.problems, [])
 
 
