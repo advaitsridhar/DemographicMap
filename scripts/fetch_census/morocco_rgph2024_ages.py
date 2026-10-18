@@ -211,8 +211,9 @@ def read_annex(text: str) -> tuple[list, list]:
     whole = [r["rows"] for r in runs if r["block"] == "Ensemble"
              and r["rows"] and r["rows"][-1][0][1] is None]
     if not whole or any(w != whole[0] for w in whole):
+        heads = [f"{r['block']}: {len(r['rows'])} rows" for r in runs]
         raise SystemExit(f"morocco_rgph2024_ages: {len(whole)} different tables of ages for "
-                         "the whole population in the annex")
+                         f"the whole population in the annex (runs of age rows: {heads})")
     return ([(b[0], b[1], v[2]) for b, v in whole[0]],
             [(b[0], b[1], v[5]) for b, v in whole[0]])
 
@@ -285,10 +286,17 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
     return out, report
 
 
+def pdf_pages(blob: bytes) -> list[str]:
+    """Each page's text as pypdf reads it, which keeps the annex's headings
+    Urbain, Rural and Ensemble on lines of their own (pdfplumber's text of the
+    same notes gave no block headed Ensemble)."""
+    from pypdf import PdfReader                     # noqa: PLC0415
+    return [page.extract_text() or "" for page in PdfReader(io.BytesIO(blob)).pages]
+
+
 def gather(table: dict[str, Any]) -> dict[str, dict[str, Any]]:
     """legal.key(name) -> the unit's five-year shares and their source."""
     import openpyxl                                 # noqa: PLC0415
-    import pdfplumber                               # noqa: PLC0415
     ages: dict[str, dict[str, Any]] = {}
     for region, (url, landing, title) in WORKBOOKS.items():
         blob = http_get(url, binary=True, cache=False, timeout=180)
@@ -313,9 +321,7 @@ def gather(table: dict[str, Any]) -> dict[str, dict[str, Any]]:
     regions = []
     for province, url in ANNEXES.items():
         blob = http_get(url, binary=True, cache=False, timeout=180)
-        with pdfplumber.open(io.BytesIO(blob)) as pdf:
-            text = "\n".join(page.extract_text() or "" for page in pdf.pages)
-        mine, region = read_annex(text)
+        mine, region = read_annex("\n".join(pdf_pages(blob)))
         check(province, mine)
         check(ANNEX_REGION, region)
         regions.append(region)
@@ -332,8 +338,7 @@ def gather(table: dict[str, Any]) -> dict[str, dict[str, Any]]:
             "how": ", in the annex of HCP's provincial notes"}
     for url, names in SERIES.items():
         blob = http_get(url, binary=True, cache=False, timeout=180)
-        with pdfplumber.open(io.BytesIO(blob)) as pdf:
-            pages = [page.extract_text() or "" for page in pdf.pages]
+        pages = pdf_pages(blob)
         # The note's own name for its unit, where two are possible.
         opening = legal.latin(" ".join(pages[:2]))
         named = [n for n in names if legal.key(n) in opening] if len(names) > 1 else list(names)
