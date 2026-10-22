@@ -64,7 +64,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -140,7 +140,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -215,8 +215,8 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "field": "sex_ratio note",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -225,7 +225,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B15620845480465",
-    "population_note": "The people counted in Gamboula at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Mambéré-Kadeï prefecture, as the 2020 division draws it, into 1 units of its own (Dede-Makouba; 24,253 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Gamboula at the mapping stage of the fourth general census (RGPH-4), 1 March 2021."
   },
   {
     "id": "CAF-RGPH4-33826404B17315710707848",
@@ -292,7 +292,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -368,7 +368,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -444,7 +444,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -453,7 +453,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B18938631147464",
-    "population_note": "The people counted in Bria at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haute-Kotto prefecture, as the 2020 division draws it, into 1 units of its own (Ouandja Kotto; 15,104 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Bria at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haute-Kotto prefecture into units of its own (Ouandja Kotto; 15,104 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B19230963390716",
@@ -519,8 +519,8 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "field": "sex_ratio note",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -529,7 +529,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B19230963390716",
-    "population_note": "The people counted in Batangafo at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Ouham-Fafa prefecture, as the 2020 division draws it, into 1 units of its own (Bantangafo; 95,085 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Batangafo at the mapping stage of the fourth general census (RGPH-4), 1 March 2021."
   },
   {
     "id": "CAF-RGPH4-33826404B19731387545693",
@@ -594,8 +594,8 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "field": "sex_ratio note",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -604,7 +604,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B19731387545693",
-    "population_note": "The 2021 census mapping's table gives Haute-Kadéi, this sub-prefecture's one commune, exactly the count it gives Mobaye commune in Basse-Kotto (23,708 people), and which of the two is a copy of the other cannot be told, so that count cannot be taken for this sub-prefecture's own and is not shown here. ICASEES's projection for 2025 divides Mambéré-Kadeï prefecture, as the 2020 division draws it, into 1 units of its own (Dede-Makouba; 24,253 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The 2021 census mapping's table gives Haute-Kadéi, this sub-prefecture's one commune, exactly the count it gives Mobaye commune in Basse-Kotto (23,708 people), and which of the two is a copy of the other cannot be told, so that count cannot be taken for this sub-prefecture's own and is not shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B21321520993489",
@@ -671,7 +671,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -680,7 +680,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B21321520993489",
-    "population_note": "The people counted in Mongoumba at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Lobaye prefecture, as the 2020 division draws it, into 1 units of its own (Moboma; 50,370 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Mongoumba at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Lobaye prefecture into units of its own (Moboma; 50,370 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B21992681295318",
@@ -747,7 +747,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -823,7 +823,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -899,7 +899,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -975,7 +975,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -984,7 +984,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B24481683700723",
-    "population_note": "The people counted in Mbaïki at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Lobaye prefecture, as the 2020 division draws it, into 1 units of its own (Moboma; 50,370 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Mbaïki at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Lobaye prefecture into units of its own (Moboma; 50,370 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B2470815195032",
@@ -1051,7 +1051,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1060,7 +1060,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B2470815195032",
-    "population_note": "The people counted in Bambouti at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haut-Mbomou prefecture, as the 2020 division draws it, into 2 units of its own (Djemah, Mboki; 10,224 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Bambouti at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haut-Mbomou prefecture into units of its own (Mboki; 7,022 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B24746486434253",
@@ -1127,7 +1127,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1203,7 +1203,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1279,7 +1279,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1288,7 +1288,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B28698929649290",
-    "population_note": "The people counted in Ouanda-Djallé at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Vakaga prefecture, as the 2020 division draws it, into 2 units of its own (Am-Dafock, Ouandja; 61,240 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Ouanda-Djallé at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Vakaga prefecture into units of its own (Am-Dafock, Ouandja; 61,240 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B29108379746580",
@@ -1354,8 +1354,8 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "field": "sex_ratio note",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1364,7 +1364,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B29108379746580",
-    "population_note": "The people counted in Berbérati at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Mambéré-Kadeï prefecture, as the 2020 division draws it, into 1 units of its own (Dede-Makouba; 24,253 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Berbérati at the mapping stage of the fourth general census (RGPH-4), 1 March 2021."
   },
   {
     "id": "CAF-RGPH4-33826404B30338372331060",
@@ -1431,7 +1431,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1507,7 +1507,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1583,7 +1583,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1592,7 +1592,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B33100016317003",
-    "population_note": "The people counted in Boganda at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Lobaye prefecture, as the 2020 division draws it, into 1 units of its own (Moboma; 50,370 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Boganda at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Lobaye prefecture into units of its own (Moboma; 50,370 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B36599130273361",
@@ -1659,7 +1659,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1735,7 +1735,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1811,7 +1811,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1820,7 +1820,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B4042011562142",
-    "population_note": "The people counted in Zémio at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haut-Mbomou prefecture, as the 2020 division draws it, into 2 units of its own (Djemah, Mboki; 10,224 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Zémio at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haut-Mbomou prefecture into units of its own (Mboki; 7,022 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B40726346610529",
@@ -1886,8 +1886,8 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "field": "sex_ratio note",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1896,7 +1896,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B40726346610529",
-    "population_note": "The people counted in Bamingui at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Bamingui-Bangoran prefecture, as the 2020 division draws it, into 1 units of its own (Baminigui; 11,258 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Bamingui at the mapping stage of the fourth general census (RGPH-4), 1 March 2021."
   },
   {
     "id": "CAF-RGPH4-33826404B40761150188578",
@@ -1963,7 +1963,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -1972,7 +1972,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B40761150188578",
-    "population_note": "The people counted in Obo at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haut-Mbomou prefecture, as the 2020 division draws it, into 2 units of its own (Djemah, Mboki; 10,224 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Obo at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haut-Mbomou prefecture into units of its own (Mboki; 7,022 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B47432472160828",
@@ -2039,7 +2039,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2115,7 +2115,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2124,7 +2124,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B50242901211322",
-    "population_note": "The people counted in Boganangone at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Lobaye prefecture, as the 2020 division draws it, into 1 units of its own (Moboma; 50,370 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Boganangone at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Lobaye prefecture into units of its own (Moboma; 50,370 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B52601033142025",
@@ -2191,7 +2191,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2267,7 +2267,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2343,7 +2343,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2419,7 +2419,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2495,7 +2495,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2571,7 +2571,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2647,7 +2647,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2656,7 +2656,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B56670707739048",
-    "population_note": "The people counted in Birao at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Vakaga prefecture, as the 2020 division draws it, into 2 units of its own (Am-Dafock, Ouandja; 61,240 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Birao at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Vakaga prefecture into units of its own (Am-Dafock, Ouandja; 61,240 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B56773227283390",
@@ -2723,7 +2723,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2799,7 +2799,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2872,7 +2872,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -2881,7 +2881,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B58165985423079",
-    "population_note": "The people counted in Bangui at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Bangui prefecture, as the 2020 division draws it, into 4 units of its own (Bangui Centre, Bangui Fleuve, Bangui Kaga, Bangui Rapide; 1,486,900 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here.",
+    "population_note": "The people counted in Bangui at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Bangui prefecture into units of its own (Bangui Centre, Bangui Fleuve, Bangui Kaga, Bangui Rapide; 1,486,900 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here.",
     "capital_note": "This polygon is the city of Bangui, which is also the prefecture drawn one level up; its seat is the city itself."
   },
   {
@@ -2949,7 +2949,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3025,7 +3025,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3100,8 +3100,8 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "field": "sex_ratio note",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3110,7 +3110,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B6253227494909",
-    "population_note": "The people counted in Bouca at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Ouham-Fafa prefecture, as the 2020 division draws it, into 1 units of its own (Bantangafo; 95,085 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Bouca at the mapping stage of the fourth general census (RGPH-4), 1 March 2021."
   },
   {
     "id": "CAF-RGPH4-33826404B62845091164313",
@@ -3177,7 +3177,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3253,7 +3253,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3329,7 +3329,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3405,7 +3405,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3481,7 +3481,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3557,7 +3557,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3633,7 +3633,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3709,7 +3709,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3785,7 +3785,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3861,7 +3861,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3937,7 +3937,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -3946,7 +3946,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B77142922363915",
-    "population_note": "The people counted in Yalinga at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haute-Kotto prefecture, as the 2020 division draws it, into 1 units of its own (Ouandja Kotto; 15,104 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Yalinga at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haute-Kotto prefecture into units of its own (Ouandja Kotto; 15,104 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B79989829713557",
@@ -4012,8 +4012,8 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "field": "sex_ratio note",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4022,7 +4022,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B79989829713557",
-    "population_note": "The people counted at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on Kabo's ground as the 2003 census drew it, its communes added up (Ouaki 16,064, Sido 40,477); since 2020 this ground is the sub-prefectures of Kabo and Sido. ICASEES's projection for 2025 divides Ouham-Fafa prefecture, as the 2020 division draws it, into 1 units of its own (Bantangafo; 95,085 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on Kabo's ground as the 2003 census drew it, its communes added up (Ouaki 16,064, Sido 40,477); since 2020 this ground is the sub-prefectures of Kabo and Sido."
   },
   {
     "id": "CAF-RGPH4-33826404B81358030227477",
@@ -4089,7 +4089,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4165,7 +4165,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4174,7 +4174,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B82101327169951",
-    "population_note": "The people counted in Boda at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Lobaye prefecture, as the 2020 division draws it, into 1 units of its own (Moboma; 50,370 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Boda at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Lobaye prefecture into units of its own (Moboma; 50,370 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B83224337375675",
@@ -4240,8 +4240,8 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "field": "sex_ratio note",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4250,7 +4250,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B83224337375675",
-    "population_note": "The people counted in Ndélé at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Bamingui-Bangoran prefecture, as the 2020 division draws it, into 1 units of its own (Baminigui; 11,258 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Ndélé at the mapping stage of the fourth general census (RGPH-4), 1 March 2021."
   },
   {
     "id": "CAF-RGPH4-33826404B83457658124611",
@@ -4316,8 +4316,8 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "field": "sex_ratio note",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4326,7 +4326,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B83457658124611",
-    "population_note": "The people counted in Sosso-Nakombo at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Mambéré-Kadeï prefecture, as the 2020 division draws it, into 1 units of its own (Dede-Makouba; 24,253 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Sosso-Nakombo at the mapping stage of the fourth general census (RGPH-4), 1 March 2021."
   },
   {
     "id": "CAF-RGPH4-33826404B85937091100445",
@@ -4393,7 +4393,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4402,7 +4402,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B85937091100445",
-    "population_note": "The people counted in Ouadda at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haute-Kotto prefecture, as the 2020 division draws it, into 1 units of its own (Ouandja Kotto; 15,104 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Ouadda at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haute-Kotto prefecture into units of its own (Ouandja Kotto; 15,104 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B86044426841106",
@@ -4469,7 +4469,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4545,7 +4545,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4621,7 +4621,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4630,7 +4630,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B89402945162763",
-    "population_note": "The people counted at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on Bimbo's ground as the 2003 census drew it, its communes added up (Bimbo 348,802, Bégoua 264,067); since 2020 this ground is the sub-prefectures of Bimbo and Bégoua. ICASEES's projection for 2025 divides Bangui prefecture, as the 2020 division draws it, into 4 units of its own (Bangui Centre, Bangui Fleuve, Bangui Kaga, Bangui Rapide; 1,486,900 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on Bimbo's ground as the 2003 census drew it, its communes added up (Bimbo 348,802, Bégoua 264,067); since 2020 this ground is the sub-prefectures of Bimbo and Bégoua. ICASEES's projection for 2025 divides Bangui prefecture into units of its own (Bangui Centre, Bangui Fleuve, Bangui Kaga, Bangui Rapide; 1,486,900 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B90258922405871",
@@ -4697,7 +4697,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4773,7 +4773,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4849,7 +4849,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -4925,7 +4925,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5001,7 +5001,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5077,7 +5077,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5153,7 +5153,7 @@
       },
       {
         "field": "population note/sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5162,7 +5162,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "33826404B9662788023259",
-    "population_note": "The people counted in Djéma at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haut-Mbomou prefecture, as the 2020 division draws it, into 2 units of its own (Djemah, Mboki; 10,224 people), which hold the communes of this sub-prefecture as the 2003 census drew it with others, so no 2025 figure is shown here."
+    "population_note": "The people counted in Djéma at the mapping stage of the fourth general census (RGPH-4), 1 March 2021. ICASEES's projection for 2025 divides Haut-Mbomou prefecture into units of its own (Mboki; 7,022 people) that are not the sub-prefectures of the 2020 division whose communes make up this one as the 2003 census drew it, so no 2025 figure is shown here."
   },
   {
     "id": "CAF-RGPH4-33826404B96667764649230",
@@ -5229,7 +5229,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5305,7 +5305,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5381,7 +5381,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5457,7 +5457,7 @@
       },
       {
         "field": "sex_ratio note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5521,13 +5521,6 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
-        "url": "https://data.humdata.org/dataset/cod-ps-caf",
-        "year": 2025,
-        "license": "CC BY-IGO, published via HDX"
-      },
-      {
         "field": "median_age/sex_ratio",
         "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), Annuaire statistique de la République Centrafricaine 2016 (2018), tables 110-116, as tabulated by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/car-subnational-boundaries-and-tabular-data",
@@ -5538,7 +5531,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "63714938B6521805151082",
-    "population_note": "The people counted in Bamingui-Bangoran at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on its ground as the 2003 census drew it: the sum of its sub-prefectures' counts in the table. ICASEES's projection for 2025 gives no figure for Bamingui and Ndélé as the 2003 census drew them, so none is shown for the prefecture.",
+    "population_note": "The people counted in Bamingui-Bangoran at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on its ground as the 2003 census drew it: the sum of its sub-prefectures' counts in the table.",
     "sex_ratio_note": "Men per 1,000 women in the statistics office's administrative population at 31 December 2016, an estimate rather than a count.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the statistics office's administrative population by age at 31 December 2016, an estimate rather than a count."
   },
@@ -5596,7 +5589,7 @@
       },
       {
         "field": "population note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5737,7 +5730,7 @@
       },
       {
         "field": "population note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5811,7 +5804,7 @@
       },
       {
         "field": "population note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -5952,7 +5945,7 @@
       },
       {
         "field": "population note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -6025,13 +6018,6 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
-        "url": "https://data.humdata.org/dataset/cod-ps-caf",
-        "year": 2025,
-        "license": "CC BY-IGO, published via HDX"
-      },
-      {
         "field": "median_age/sex_ratio",
         "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), Annuaire statistique de la République Centrafricaine 2016 (2018), tables 110-116, as tabulated by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/car-subnational-boundaries-and-tabular-data",
@@ -6042,7 +6028,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "63714938B93412376758102",
-    "population_note": "The people counted in Mambéré-Kadéï at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on its ground as the 2003 census drew it: the sum of its sub-prefectures' counts in the table. The sum includes the 23,708 people the 2021 mapping's table gives Haute-Kadéi (Dédé-Mokouba), the same count it gives Mobaye (Mobaye, Basse-Kotto); which of the two is a copy of the other cannot be told, and Dédé-Mokouba itself shows no 2021 count for that reason. ICASEES's projection for 2025 gives no figure for Berbérati and Dédé-Mokouba and Gamboula and Sosso-Nakombo as the 2003 census drew them, so none is shown for the prefecture.",
+    "population_note": "The people counted in Mambéré-Kadéï at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on its ground as the 2003 census drew it: the sum of its sub-prefectures' counts in the table. The sum includes the 23,708 people the 2021 mapping's table gives Haute-Kadéi (Dédé-Mokouba), the same count it gives Mobaye (Mobaye, Basse-Kotto); which of the two is a copy of the other cannot be told, and Dédé-Mokouba itself shows no 2021 count for that reason.",
     "sex_ratio_note": "Men per 1,000 women in the statistics office's administrative population at 31 December 2016, an estimate rather than a count.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the statistics office's administrative population by age at 31 December 2016, an estimate rather than a count."
   },
@@ -6166,13 +6152,6 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
-        "url": "https://data.humdata.org/dataset/cod-ps-caf",
-        "year": 2025,
-        "license": "CC BY-IGO, published via HDX"
-      },
-      {
         "field": "median_age/sex_ratio",
         "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), Annuaire statistique de la République Centrafricaine 2016 (2018), tables 110-116, as tabulated by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/car-subnational-boundaries-and-tabular-data",
@@ -6183,7 +6162,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "63714938B97127275381956",
-    "population_note": "The people counted in Nana-Grébizi at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on its ground as the 2003 census drew it: the sum of its sub-prefectures' counts in the table. ICASEES's projection for 2025 gives no figure for Kaga-Bandoro and Mbrès as the 2003 census drew them, so none is shown for the prefecture.",
+    "population_note": "The people counted in Nana-Grébizi at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on its ground as the 2003 census drew it: the sum of its sub-prefectures' counts in the table.",
     "sex_ratio_note": "Men per 1,000 women in the statistics office's administrative population at 31 December 2016, an estimate rather than a count.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the statistics office's administrative population by age at 31 December 2016, an estimate rather than a count."
   },
@@ -6308,7 +6287,7 @@
       },
       {
         "field": "population note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"
@@ -6448,13 +6427,6 @@
         "license": "CC BY-IGO, published via HDX"
       },
       {
-        "field": "population note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
-        "url": "https://data.humdata.org/dataset/cod-ps-caf",
-        "year": 2025,
-        "license": "CC BY-IGO, published via HDX"
-      },
-      {
         "field": "median_age/sex_ratio",
         "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), Annuaire statistique de la République Centrafricaine 2016 (2018), tables 110-116, as tabulated by the U.S. Census Bureau",
         "url": "https://data.humdata.org/dataset/car-subnational-boundaries-and-tabular-data",
@@ -6465,7 +6437,7 @@
     "country": "CAF",
     "match_by": "shape_id",
     "shape_id": "63714938B89906779781300",
-    "population_note": "The people counted in Ouham at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on its ground as the 2003 census drew it: the sum of its sub-prefectures' counts in the table. ICASEES's projection for 2025 gives no figure for Batangafo and Bouca and Kabo as the 2003 census drew them, so none is shown for the prefecture.",
+    "population_note": "The people counted in Ouham at the mapping stage of the fourth general census (RGPH-4), 1 March 2021, on its ground as the 2003 census drew it: the sum of its sub-prefectures' counts in the table.",
     "sex_ratio_note": "Men per 1,000 women in the statistics office's administrative population at 31 December 2016, an estimate rather than a count.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the statistics office's administrative population by age at 31 December 2016, an estimate rather than a count."
   },
@@ -6657,7 +6629,7 @@
       },
       {
         "field": "population note",
-        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture, as OCHA publishes it for humanitarian planning (cod-ps-caf)",
+        "name": "Institut Centrafricain des Statistiques et des Etudes Economiques et Sociales (ICASEES), projection of the population for 2025 by sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for humanitarian planning (cod-ps-caf)",
         "url": "https://data.humdata.org/dataset/cod-ps-caf",
         "year": 2025,
         "license": "CC BY-IGO, published via HDX"

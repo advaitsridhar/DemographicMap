@@ -1,29 +1,225 @@
-congo_census: 12 department pages, 92 districts and communes listed
-  Kouilou: 6 districts and communes listed, making 97,362 of 97,362: Hinda 19,264; Kakamoeka 8,729; Loango 39,531; Madingo-Kayes 8,574; Mvouti 19,132; Nzambi 2,132
-  Niari: 14 districts and communes listed, making 334,863 of 334,863: Banda 7,403; Divénié 12,268; Kibangou 13,430; Kimongo 18,929; Londéla-Kayes 10,108; Louvakou ( incl. Dolisie commune ) 209,889; Makabana 11,436; Mayoko 8,098; Mbinda 3,956; Moungoundou-Nord 1,845; Moungoundou-Sud 4,710; Moutamba ( incl. Mossendjo commune ) 22,936; Nyanga 6,642; Yaya 3,213
-  Lékoumou: 5 districts and communes listed, making 100,559 of 100,559: Bambama 4,407; Komono 12,078; Mayéyé 13,239; Sibiti ( incl. Sibiti commune ) 54,254; Zanaga 16,581
-  Bouenza: 10 districts and communes listed, making 363,850 of 363,850: Boko-Songho 11,563; Kayes ( incl. Nkayi commune ) 114,622; Kingoué 14,399; Loudima 36,644; Mabombo 12,145; Madingou ( incl. Madingou commune ) 81,254; Mfouati 33,017; Mouyondzi 37,863; Tsiaki 10,966; Yamba 11,377
-  Pool: 13 districts and communes listed, making 394,532 of 394,532: Boko 15,330; Goma Tsé-Tsé 42,537; Ignié ( incl. Kintélé commune ) 108,294; Kimba 8,092; Kindamba 19,894; Kinkala ( incl. Kinkala commune ) 50,528; Louingui 11,933; Loumo 5,592; Mayama 5,893; Mbandza-Ndounga 10,003; Mindouli 63,954; Ngabé 45,442; Vindza 7,040
-  Plateaux: 11 districts and communes listed, making 283,421 of 283,421: Abala 13,326; Allembé 6,208; Djambala ( incl. Djambala commune ) 29,583; Gamboma 76,073; Lékana 15,257; Makotimpoko 41,242; Mbon 5,711; Mpouya 17,603; Ngo 34,183; Ollombo 26,854; Ongogni 17,381
-  Cuvette: 10 districts and communes listed, making 316,599 of 316,599: Bokoma 4,588; Boundji 27,577; Loukoléla 42,676; Makoua 40,004; Mossaka 46,605; Ngoko 5,103; Ntokou 5,909; Owando ( incl. Owando commune ) 64,358; Oyo 70,287; Tchikapika 9,492
-  Cuvette-Ouest: 6 districts and communes listed, making 119,328 of 119,328: Etoumbi 18,748; Ewo ( incl. Ewo commune ) 42,975; Kéllé 15,748; Mbama 12,619; Mbomo 13,197; Okoyo 16,041
-  Sangha: 6 districts and communes listed, making 209,701 of 209,701: Kabo ( incl. Pokola commune ) 38,443; Mokéko ( incl. Ouesso commune ) 108,808; Ngbala 9,019; Pikounda 9,418; Sembé 18,661; Souanké 25,352
-  Likouala: 7 districts and communes listed, making 355,570 of 355,570: Bétou 126,956; Bouanéla 16,359; Dongou 44,027; Enyellé 51,188; Epena 32,110; Impfondo ( incl. Impfondo commune ) 54,789; Liranga 30,141
-  Brazzaville: 2 districts and communes listed, making 2,145,783 of 2,145,783: Brazzaville 2,138,236; Ile Mbamou 7,547
-  Pointe-Noire: 2 districts and communes listed, making 1,420,612 of 1,420,612: Pointe-Noire 1,398,812; Tchiamba-Nzassi 21,800
-  the departments make 6,142,180
-  Tchiamba-Nzassi: 21,800 counted under Pointe-Noire, drawn in Kouilou; its men and women not given apart
-  Kouilou: 119,162 (52,111 men, 45,251 women); as counted 97,362
-  Niari: 334,863 (160,761 men, 174,102 women)
-  Lékoumou: 100,559 (50,313 men, 50,246 women)
-  Bouenza: 363,850 (180,914 men, 182,936 women)
-  Pool: 394,532 (197,707 men, 196,825 women)
-  Plateaux: 283,421 (137,918 men, 145,503 women)
-  Cuvette: 316,599 (153,648 men, 162,951 women)
-  Cuvette-Ouest: 119,328 (58,280 men, 61,048 women)
-  Sangha: 209,701 (113,359 men, 96,342 women)
-  Likouala: 355,570 (174,270 men, 181,300 women)
-  Brazzaville: 2,145,783 (1,061,708 men, 1,084,075 women)
-  Pointe-Noire: 1,398,812 (708,953 men, 711,659 women); as counted 1,420,612
-  46 second-level polygons given reasons
-  wrote data/processed/congo_census.json (152 kB)
+car_census: https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/fb2c7f59-3b51-4218-9049-2eddb61a404b/download/icasees_cartocensitaire2021_formatocha_public_v2.xlsx: 66,575 bytes, sha256 e7bc08f1f7fa2b5a8914089e0744ad07e9419fadeca018a982f495e8171b6274
+car_census: https://data.humdata.org/dataset/4f41a2c7-167f-4e60-8e90-dd282383dd90/resource/1670d3a6-a89f-40cd-80c9-bf580b27e08e/download/central_african_republic_uscb_202303.xlsx: 401,471 bytes, sha256 a8bda4dbb6baef97c7cc39ec8e3ea94c6a066a9d54072be0f0fa57f3071934dc
+  2025 resource: Projection population-2025.xlsx: Projection de la population 2025 en Admin2 (ICASEES)
+  dataset notes: Population projection based on the general census of 2003. Latest projection for 2025. See caveats. Data available for: 2025, 2022, 2021, 2015
+  dataset caveats: [Dataset title changed 2018 05 10] WARNING: The sex disaggregated data (SADD) provided at administrative levels 2 and 3 are derived from the actual administrative level 1 data ratios. While the lower level population data are valid, the sex data will under- or over-count the numbers of females and males. The age disaggregated data provided at administrative levels 1, 2, and 3 are derived from the actual administrative level 0 data ratios. While the lower level population data are valid, the age data will under- or over-count the numbers of children, adults, and elderly.
+car_census: ocha-car-projection-population-2025-icasees.xlsx: 22,728 bytes, sha256 1ce7104a08eb8fcd81962405ac6b68b3f280d676ffc749abfdcb2c024a36bbaf
+  Population_HNRP 2026: 85 sub-prefectures, 6,567,382 people for 2025
+PrevCommune: 178 communes of the 2003 frame, 6,091,097 people; the national line 6,091,097
+mapping table: 0 of 280 units depart from the fixed 49% share of men
+  the same count, 8,825, for Lissa (Grimari) and Pouyamba (Grimari)
+  the same count, 23,708, for Mobaye (Mobaye) and Haute-Kadéi (Dede Mocouba) (Dede-Makouba)
+  OCHA's table files Nola (Nola, 71,134) under Mbaïki's commune of the same name; the names place it here
+  2025: prefecture nanagribizi -> nanagrebizi (0.91)
+  2025: baminguibangoran: baminigui -> bamingui (0.94)
+  2025: bangui: 2025 rows not matched ['Bangui Centre', 'Bangui Fleuve', 'Bangui Kaga', 'Bangui Rapide']; mapping-table sub-prefectures without a 2025 row ['bangui', 'begoua', 'bimbo']
+  2025: hautekotto: 2025 rows not matched ['Ouandja Kotto']; mapping-table sub-prefectures without a 2025 row []
+  2025: hautmbomou: djemah -> djema (0.91)
+  2025: hautmbomou: 2025 rows not matched ['Mboki']; mapping-table sub-prefectures without a 2025 row []
+  2025: lobaye: 2025 rows not matched ['Moboma']; mapping-table sub-prefectures without a 2025 row []
+  2025: mamberekadei: dedemakouba -> dedemokouba (0.91)
+  2025: ouhamfafa: bantangafo -> batangafo (0.95)
+  2025: vakaga: 2025 rows not matched ['Am-Dafock', 'Ouandja']; mapping-table sub-prefectures without a 2025 row []
+  2025: Boali: 67,723 (Boali; 2021 62,071, +2.2% a year)
+  2025: Djoukou: 50,881 (Ndjoukou; 2021 46,627, +2.2% a year)
+  2025: Gamboula: 43,268 (Gamboula; 2021 41,196, +1.2% a year)
+  2025: Baboua: 82,555 (Baboua; 2021 77,278, +1.7% a year)
+  2025: Nola: 106,410 (Nola; 2021 95,550, +2.7% a year)
+  2025: Bria: hautekotto divided otherwise in 2025
+  2025: Batangafo: 95,085 (Batangafo; 2021 88,407, +1.8% a year)
+  2025: Dédé-Mokouba: 24,253 (Dédé Mokouba; 2021 23,708, +0.6% a year) -- 2021 count withheld
+  2025: Mongoumba: lobaye divided otherwise in 2025
+  2025: Carnot: 210,988 (Carnot + Senkpa-Mbaéré; 2021 178,257, +4.3% a year)
+  2025: Bozoum: 78,386 (Bozoum; 2021 75,139, +1.1% a year)
+  2025: Bouar: 197,498 (Bouar; 2021 175,054, +3.1% a year)
+  2025: Mbaïki: lobaye divided otherwise in 2025
+  2025: Bambouti: hautmbomou divided otherwise in 2025
+  2025: Mala: 21,469 (Mala; 2021 19,680, +2.2% a year)
+  2025: Zangba: 53,361 (Zangba; 2021 50,815, +1.2% a year)
+  2025: Ouanda-Djallé: vakaga divided otherwise in 2025
+  2025: Berbérati: 199,199 (Berbérati; 2021 189,813, +1.2% a year)
+  2025: Kembé: 47,999 (Kembé; 2021 46,050, +1.0% a year)
+  2025: Bambari: 227,806 (Bambari; 2021 216,534, +1.3% a year)
+  2025: Boganda: lobaye divided otherwise in 2025
+  2025: Bogangolo: 12,070 (Bogangolo; 2021 9,801, +5.3% a year)
+  2025: Rafaï: 23,534 (Rafaï; 2021 21,936, +1.8% a year)
+  2025: Zémio: hautmbomou divided otherwise in 2025
+  2025: Bamingui: 11,258 (Bamingui; 2021 10,284, +2.3% a year)
+  2025: Obo: hautmbomou divided otherwise in 2025
+  2025: Gadzi: 97,966 (Gadzi; 2021 72,071, +8.0% a year)
+  2025: Boganangone: lobaye divided otherwise in 2025
+  2025: Markounda: 41,875 (Markounda; 2021 37,399, +2.9% a year)
+  2025: Bayanga: 20,940 (Bayanga; 2021 18,556, +3.1% a year)
+  2025: Satéma: 39,457 (Satema; 2021 37,097, +1.6% a year)
+  2025: Ippy: 61,472 (Ippy; 2021 59,290, +0.9% a year)
+  2025: Mbrès: 37,754 (Mbrès; 2021 33,323, +3.2% a year)
+  2025: Bocaranga: 109,571 (Bocaranga; 2021 102,297, +1.7% a year)
+  2025: Birao: vakaga divided otherwise in 2025
+  2025: Kouango: 111,713 (Kouango; 2021 107,763, +0.9% a year)
+  2025: Gambo: 34,464 (Gambo; 2021 33,294, +0.9% a year)
+  2025: Bangui: bangui divided otherwise in 2025
+  2025: Bakouma: 30,410 (Bakouma; 2021 28,703, +1.5% a year)
+  2025: Baoro: 63,764 (Baoro; 2021 58,207, +2.3% a year)
+  2025: Bouca: 86,787 (Bouca; 2021 80,531, +1.9% a year)
+  2025: Dékoa: 61,285 (Dekoa; 2021 57,254, +1.7% a year)
+  2025: Alindao: 131,219 (Alindao; 2021 125,040, +1.2% a year)
+  2025: Amada-Gaza: 20,319 (Amada-Gaza; 2021 15,151, +7.6% a year)
+  2025: Nana-Bakassa: 61,816 (Nana-Bakassa; 2021 55,642, +2.7% a year)
+  2025: Ouango: 66,058 (Ouango; 2021 62,662, +1.3% a year)
+  2025: Sibut: 66,865 (Sibut; 2021 60,181, +2.7% a year)
+  2025: Mingala: 41,257 (Mingala; 2021 39,672, +1.0% a year)
+  2025: Koui: 44,669 (Koui; 2021 41,551, +1.8% a year)
+  2025: Bossembélé: 65,181 (Bossembele; 2021 58,504, +2.7% a year)
+  2025: Bossemtélé: 25,844 (Bossemptele; 2021 24,328, +1.5% a year)
+  2025: Yalinga: hautekotto divided otherwise in 2025
+  2025: Kabo: 60,873 (Kabo + Sido; 2021 56,541, +1.9% a year)
+  2025: Bangassou: 117,194 (Bangassou; 2021 111,208, +1.3% a year)
+  2025: Boda: lobaye divided otherwise in 2025
+  2025: Ndélé: 75,496 (Ndélé; 2021 71,824, +1.3% a year)
+  2025: Sosso-Nakombo: 18,785 (Sosso-Nakombo; 2021 18,449, +0.5% a year)
+  2025: Ouadda: hautekotto divided otherwise in 2025
+  2025: Bambio: 27,615 (Bambio; 2021 24,664, +2.9% a year)
+  2025: Yaloké: 90,123 (Yaloké; 2021 82,678, +2.2% a year)
+  2025: Bimbo: bangui divided otherwise in 2025
+  2025: Bossangoa: 188,751 (Bossangoa; 2021 167,214, +3.1% a year)
+  2025: Grimari: 53,088 (Grimari; 2021 51,275, +0.9% a year)
+  2025: Damara: 61,912 (Damara; 2021 56,755, +2.2% a year)
+  2025: Paoua: 244,426 (Paoua; 2021 307,172, -5.6% a year)
+  2025: Kaga-Bandoro: 197,936 (Kaga Bandoro + Nana-Outa; 2021 175,498, +3.1% a year)
+  2025: Ngaoundaye: 111,426 (Kodi + Ngaoundaye; 2021 134,979, -4.7% a year)
+  2025: Djéma: hautmbomou divided otherwise in 2025
+  2025: Bakala: 12,228 (Bakala; 2021 11,492, +1.6% a year)
+  2025: Abba: 33,625 (Aba; 2021 31,257, +1.8% a year)
+  2025: Mobaye: 85,883 (Mobaye; 2021 81,498, +1.3% a year)
+  2025: Nagha Boguila: 42,149 (Nanga-Boguila; 2021 37,649, +2.9% a year)
+  2025: prefecture Bamingui-Bangoran: 86,754
+  2025: prefecture Bangui: none (Bangui)
+  2025: prefecture Basse-Kotto: 399,176
+  2025: prefecture Haut-Mbomou: none (Bambouti, Djéma, Obo, Zémio)
+  2025: prefecture Haute-Kotto: none (Bria, Ouadda, Yalinga)
+  2025: prefecture Kémo: 200,501
+  2025: prefecture Lobaye: none (Boda, Boganangone, Boganda, Mbaïki, Mongoumba)
+  2025: prefecture Mambéré-Kadéï: 614,778
+  2025: prefecture Mbomou: 271,661
+  2025: prefecture Nana-Grébizi: 235,690
+  2025: prefecture Nana-Mambéré: 377,443
+  2025: prefecture Ombella-M'Poko: none (Bimbo)
+  2025: prefecture Ouaka: 466,306
+  2025: prefecture Ouham: 577,336
+  2025: prefecture Ouham-Pendé: 614,321
+  2025: prefecture Sangha-Mbaéré: 154,965
+  2025: prefecture Vakaga: none (Birao, Ouanda-Djallé)
+  2025 sexes: Bamingui-Bangoran: one share of men, 0.4988, for 2 sub-prefectures
+  2025 sexes: Bangui: one share of men, 0.4787, for 4 sub-prefectures
+  2025 sexes: Basse-Kotto: one share of men, 0.5027, for 6 sub-prefectures
+  2025 sexes: Haut-Mbomou: one share of men, 0.4993, for 5 sub-prefectures
+  2025 sexes: Haute-Kotto: one share of men, 0.4994, for 4 sub-prefectures
+  2025 sexes: Kémo: one share of men, 0.5000, for 4 sub-prefectures
+  2025 sexes: Lim-Pendé: one share of men, 0.4984, for 5 sub-prefectures
+  2025 sexes: Lobaye: one share of men, 0.4994, for 6 sub-prefectures
+  2025 sexes: Mambéré: one share of men, 0.5000, for 4 sub-prefectures
+  2025 sexes: Mambéré-Kadeï: one share of men, 0.4995, for 4 sub-prefectures
+  2025 sexes: Mbomou: one share of men, 0.5106, for 5 sub-prefectures
+  2025 sexes: Nana-Gribizi: one share of men, 0.5001, for 3 sub-prefectures
+  2025 sexes: Nana-Mambéré: one share of men, 0.5000, for 4 sub-prefectures
+  2025 sexes: Ombella-M'Poko: one share of men, 0.4998, for 5 sub-prefectures
+  2025 sexes: Ouaka: one share of men, 0.4976, for 5 sub-prefectures
+  2025 sexes: Ouham: one share of men, 0.5000, for 4 sub-prefectures
+  2025 sexes: Ouham-Fafa: one share of men, 0.5067, for 4 sub-prefectures
+  2025 sexes: Ouham-Pendé: one share of men, 0.4997, for 4 sub-prefectures
+  2025 sexes: Sangha-Mbaéré: one share of men, 0.5000, for 3 sub-prefectures
+  2025 sexes: Vakaga: one share of men, 0.5225, for 4 sub-prefectures
+  twins: 8,825 for Lissa (Grimari) and Pouyamba (Grimari)
+  twins: 23,708 for Haute-Kadéi (Dédé-Mokouba) and Mobaye (Mobaye)
+  Boali: 62,071 (1 communes of 2021)
+  Djoukou: 46,627 (2 communes of 2021)
+  Gamboula: 41,196 (1 communes of 2021)
+  Baboua: 77,278 (5 communes of 2021)
+  Nola: 95,550 (3 communes of 2021)
+  Bria: 102,356 (3 communes of 2021)
+  Batangafo: 88,407 (5 communes of 2021)
+  Dédé-Mokouba: 23,708 (1 communes of 2021) -- withheld
+  Mongoumba: 33,894 (1 communes of 2021)
+  Carnot: 178,257 (2 communes of 2021; 2021 sub-prefectures Carnot, Senkpa-Mbaéré)
+  Bozoum: 75,139 (5 communes of 2021)
+  Bouar: 175,054 (7 communes of 2021)
+  Mbaïki: 188,263 (8 communes of 2021)
+  Bambouti: 310 (1 communes of 2021)
+  Mala: 19,680 (1 communes of 2021)
+  Zangba: 50,815 (2 communes of 2021)
+  Ouanda-Djallé: 6,921 (1 communes of 2021)
+  Berbérati: 189,813 (5 communes of 2021)
+  Kembé: 46,050 (2 communes of 2021)
+  Bambari: 216,534 (5 communes of 2021)
+  Boganda: 19,823 (1 communes of 2021)
+  Bogangolo: 9,801 (1 communes of 2021)
+  Rafaï: 21,936 (1 communes of 2021)
+  Zémio: 29,420 (1 communes of 2021)
+  Bamingui: 10,284 (1 communes of 2021)
+  Obo: 20,100 (2 communes of 2021)
+  Gadzi: 72,071 (2 communes of 2021)
+  Boganangone: 39,115 (1 communes of 2021)
+  Markounda: 37,399 (1 communes of 2021)
+  Bayanga: 18,556 (1 communes of 2021)
+  Satéma: 37,097 (1 communes of 2021)
+  Ippy: 59,290 (3 communes of 2021)
+  Mbrès: 33,323 (1 communes of 2021)
+  Bocaranga: 102,297 (3 communes of 2021)
+  Birao: 76,267 (2 communes of 2021)
+  Kouango: 107,763 (3 communes of 2021)
+  Gambo: 33,294 (2 communes of 2021)
+  Bangui: 812,407 (8 communes of 2021)
+  Bakouma: 28,703 (1 communes of 2021)
+  Baoro: 58,207 (3 communes of 2021)
+  Bouca: 80,531 (4 communes of 2021)
+  Dékoa: 57,254 (3 communes of 2021)
+  Alindao: 125,040 (5 communes of 2021)
+  Amada-Gaza: 15,151 (1 communes of 2021)
+  Nana-Bakassa: 55,642 (1 communes of 2021)
+  Ouango: 62,662 (2 communes of 2021)
+  Sibut: 60,181 (2 communes of 2021)
+  Mingala: 39,672 (3 communes of 2021)
+  Koui: 41,551 (1 communes of 2021)
+  Bossembélé: 58,504 (2 communes of 2021)
+  Bossemtélé: 24,328 (1 communes of 2021)
+  Yalinga: 4,562 (1 communes of 2021)
+  Kabo: 56,541 (2 communes of 2021; 2021 sub-prefectures Kabo, Sido)
+  Bangassou: 111,208 (4 communes of 2021)
+  Boda: 64,013 (2 communes of 2021)
+  Ndélé: 71,824 (2 communes of 2021)
+  Sosso-Nakombo: 18,449 (1 communes of 2021)
+  Ouadda: 21,424 (2 communes of 2021)
+  Bambio: 24,664 (1 communes of 2021)
+  Yaloké: 82,678 (2 communes of 2021)
+  Bimbo: 612,869 (2 communes of 2021; 2021 sub-prefectures Bimbo, Bégoua)
+  Bossangoa: 167,214 (6 communes of 2021)
+  Grimari: 51,275 (4 communes of 2021)
+  Damara: 56,755 (1 communes of 2021)
+  Paoua: 307,172 (8 communes of 2021)
+  Kaga-Bandoro: 175,498 (5 communes of 2021; 2021 sub-prefectures Kaga Bandoro, Nana-Outa)
+  Ngaoundaye: 134,979 (4 communes of 2021; 2021 sub-prefectures Kodi, Ngaoundaye)
+  Djéma: 2,484 (1 communes of 2021)
+  Bakala: 11,492 (1 communes of 2021)
+  Abba: 31,257 (2 communes of 2021)
+  Mobaye: 81,498 (2 communes of 2021)
+  Nagha Boguila: 37,649 (1 communes of 2021)
+  prefecture Bamingui-Bangoran: 82,108; 2016: 948 men per 1,000 women, median 18.5
+  prefecture Bangui: 812,407; 2016: 991 men per 1,000 women, median 20.4
+  prefecture Basse-Kotto: 380,172; 2016: 948 men per 1,000 women, median 20.3
+  prefecture Haute-Kotto: 128,342; 2016: 1106 men per 1,000 women, median 23.5
+  prefecture Haut-Mbomou: 52,314; 2016: 939 men per 1,000 women, median 24.0
+  prefecture Kémo: 183,742; 2016: 951 men per 1,000 women, median 20.2
+  prefecture Lobaye: 345,108; 2016: 957 men per 1,000 women, median 20.0
+  prefecture Mambéré-Kadéï: 538,645; 2016: 1000 men per 1,000 women, median 20.2
+  prefecture Mbomou: 257,803; 2016: 956 men per 1,000 women, median 21.2
+  prefecture Nana-Grébizi: 208,821; 2016: 960 men per 1,000 women, median 20.2
+  prefecture Nana-Mambéré: 341,796; 2016: 973 men per 1,000 women, median 19.6
+  prefecture Ombella-M'Poko: 882,678; 2016: 980 men per 1,000 women, median 20.2
+  prefecture Ouaka: 446,354; 2016: 934 men per 1,000 women, median 20.1
+  prefecture Ouham: 523,383; 2016: 947 men per 1,000 women, median 19.5
+  prefecture Ouham-Pendé: 685,466; 2016: 926 men per 1,000 women, median 18.9
+  prefecture Sangha-Mbaéré: 138,770; 2016: 1008 men per 1,000 women, median 19.9
+  prefecture Vakaga: 83,188; 2016: 873 men per 1,000 women, median 17.8
+  17 prefectures and 72 sub-prefecture polygons written; 2025: 11 prefectures and 56 sub-prefectures
+  wrote data/processed/car_census.json (376 kB)
+  wrote data/processed/car_projection.json (138 kB)
