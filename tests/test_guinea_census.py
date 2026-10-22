@@ -284,8 +284,18 @@ class GuineaReads(unittest.TestCase):
         for rec in (region, conakry):
             self.assertEqual(rec["sources"][0]["field"], "population/sex_ratio/median_age note")
             self.assertIn("RGPH-4", rec["sources"][0]["name"])
-        self.assertEqual(by[("admin2", "Coyah")]["sources"][0]["field"], "population/sex_ratio")
-        self.assertNotIn("value", by[("admin2", "Coyah")]["median_age"])
+        coyah = by[("admin2", "Coyah")]
+        self.assertEqual(coyah["sources"][0]["field"],
+                         "population/sex_ratio/religion note/ethnicity note")
+        self.assertNotIn("value", coyah["median_age"])
+        # The prefectures say why they have no religion or ethnic group,
+        # citing the 2014 report they name; Conakry, its region's only
+        # prefecture, says nothing of the kind (it takes the region's).
+        self.assertIn("Tableau 5.10", coyah["religion"]["note"])
+        self.assertIn("no ethnic group", coyah["ethnicity"]["note"])
+        self.assertEqual(coyah["sources"][1]["field"], "religion note/ethnicity note")
+        self.assertEqual(coyah["sources"][1]["name"], gc.SOURCE_2014)
+        self.assertNotIn("note", conakry["religion"])
 
 
 if __name__ == "__main__":

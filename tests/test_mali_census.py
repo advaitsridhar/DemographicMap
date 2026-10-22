@@ -186,6 +186,16 @@ class MaliRegionsOfBefore(unittest.TestCase):
         self.assertEqual(cited[mc.TOME_1["name"]], ["median_age note"])
         self.assertEqual(cited[mc.SOURCE], ["median_age note", "sex_ratio note"])
         self.assertIn("Tome 1, Tableau P-2", tessalit["median_age"]["note"])
+        # The compositions say why there are none, citing the report on the
+        # census's cultural characteristics, which mali.py reads by region.
+        self.assertEqual(cited[mc.CULTURE_2022["name"]],
+                         ["religion note", "ethnicity note", "language note"])
+        self.assertEqual(tessalit["religion"]["note"],
+                         "The 2022 census tabulates religion by region only (Caractéristiques "
+                         "culturelles de la population), not by cercle.")
+        self.assertIn("mother tongue", tessalit["language"]["note"])
+        from scripts.fetch_census import mali as ml
+        self.assertEqual((mc.CULTURE_2022["name"], mc.CULTURE_2022["url"]), (ml.SOURCE, ml.URL))
 
     def test_bamako_drawn_as_one_cercle(self):
         data = {"regions": {}, "cercles": []}

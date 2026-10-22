@@ -715,6 +715,20 @@ NO_CERCLE_AGES = ("The 2022 census's reports give ages by region only (Tableaux 
                   "A.21), for the regions of 2023, and the 2009 census's final results tabulate "
                   "ages by region only (Tome 1, Tableau P-2); no median age is published for the "
                   "cercle.")
+# The 2022 census's report on the population's cultural characteristics
+# (mali.py's source), which tabulates religion, ethnic group and mother tongue
+# by region only: cited for the cercles' reasons that say so.
+CULTURE_2022: dict[str, Any] = {
+    "name": ("INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, "
+             "2022), rapport thématique Caractéristiques culturelles de la population"),
+    "url": ("https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/"
+            "rapport-caracteristiques-culturelles-population-rgph5_rpgh.pdf"),
+    "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+    "year": 2022}
+NO_CERCLE_COMPOSITION = ("The 2022 census tabulates {what} by region only (Caractéristiques "
+                         "culturelles de la population), not by cercle.")
+CERCLE_COMPOSITIONS = (("religion", "religion"), ("ethnicity", "ethnic group"),
+                       ("language", "mother tongue"))
 
 
 def read_projection(book) -> dict[str, Any]:
@@ -808,6 +822,8 @@ def projection_records(data: dict[str, Any] | None, admin1: list[dict[str, Any]]
             continue
         c = rows.get(shape["id"])
         fields: dict[str, Any] = {"median_age": gap(NOT_AVAILABLE, NO_CERCLE_AGES)}
+        for field, what in CERCLE_COMPOSITIONS:
+            fields[field] = gap(NOT_AVAILABLE, NO_CERCLE_COMPOSITION.format(what=what))
         f = counted.get(shape["id"])
         if f is not None:
             fields.update(
@@ -830,12 +846,15 @@ def projection_records(data: dict[str, Any] | None, admin1: list[dict[str, Any]]
         elif data is not None or final is not None:
             report.append(f"cercle polygon {shape['name']!r}: no row in Tableau P-1 or the 2018 "
                           "projection")
-        # The reasons quote the 2022 report (ages and sexes by region only) and
-        # Tome 1 of the 2009 results (Tableau P-2, ages by region only).
+        # The reasons quote the 2022 report (ages and sexes by region only),
+        # Tome 1 of the 2009 results (Tableau P-2, ages by region only) and the
+        # 2022 report on cultural characteristics (compositions by region only).
         fields["sources"] = [*fields.get("sources", []),
                              {**TOME_1, "field": "median_age note"},
                              *cite(report_2022(), ["median_age note"]
-                                   + (["sex_ratio note"] if "sex_ratio" in fields else []))]
+                                   + (["sex_ratio note"] if "sex_ratio" in fields else [])),
+                             {**CULTURE_2022, "field": "/".join(
+                                 f"{field} note" for field, _ in CERCLE_COMPOSITIONS)}]
         records.append(record(f"MLI-cercle-{key[0]}-{key[1]}", shape["name"], level="admin2",
                               parent="MLI", country="MLI", match_by="shape_id",
                               shape_id=shape["id"], **fields))

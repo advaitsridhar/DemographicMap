@@ -70,6 +70,20 @@ REPORTS = {
 PUBLISHER = "Agence Nationale de la Statistique et de la Démographie (ANSD)"
 YEAR = 2023
 LICENCE = "ANSD publication (reuse with attribution)"
+# The census's national report, read in full (probe 0dcbe45): it names religion
+# and ethnic group once, among its definitions, and tabulates neither; nor does
+# any of the fourteen regional reports.
+NATIONAL_REPORT = {"name": ("Agence Nationale de la Statistique et de la Démographie (ANSD), "
+                            "Cinquième Recensement Général de la Population et de l'Habitat "
+                            "(RGPH-5) 2023, Rapport définitif"),
+                   "url": ("https://www.ansd.sn/sites/default/files/recensements/rapport/"
+                           "rapport_national/Rapport-def-RGPH-5.pdf"),
+                   "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+                   "license": "ANSD publication (reuse with attribution)", "year": 2023}
+NO_RELIGION = ("The 2023 census's national and regional reports tabulate no religion, at any "
+               "level.")
+NO_ETHNICITY = ("The 2023 census's national and regional reports tabulate no ethnic group, at "
+                "any level.")
 OUT = "senegal_regional_reports.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 
@@ -434,9 +448,16 @@ def build(reports: list[dict[str, Any]], admin1: list[dict[str, Any]],
                 f"The 2023 census's report for the {rr['region']} region gives each "
                 "department's population in three broad age groups only (under 15, 15 to 64, "
                 "65 and over), from which no median age can be taken.")),
-            # The report is the source the note quotes, not of a figure shown.
-            sources=[{"field": "median_age note", "name": source_name(rr["region"], ""),
-                      "url": rr["url"], "page": PAGE, "license": LICENCE, "year": YEAR}]))
+            religion=gap(NOT_AVAILABLE, NO_RELIGION),
+            ethnicity=gap(NOT_AVAILABLE, NO_ETHNICITY),
+            language=gap(NOT_AVAILABLE, (
+                f"The 2023 census's report for the {rr['region']} region tabulates the "
+                "principal language spoken for the region only, not by department.")),
+            # The reports are the sources the notes quote, not of a figure shown.
+            sources=[{"field": "median_age note/religion note/ethnicity note/language note",
+                      "name": source_name(rr["region"], ""), "url": rr["url"], "page": PAGE,
+                      "license": LICENCE, "year": YEAR},
+                     {**NATIONAL_REPORT, "field": "religion note/ethnicity note"}]))
     return records, report
 
 

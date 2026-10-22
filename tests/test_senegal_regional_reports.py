@@ -89,6 +89,14 @@ Source : ANSD. RGPH-5, 2023
         # Dakar: the four departments drawn (Keur Massar, made in 2021, is not).
         self.assertEqual(len(depts), 4 + 3)
         self.assertIn("three broad age groups", depts[0]["median_age"]["note"])
+        # The departments say why they have no compositions, citing the reports.
+        self.assertEqual(depts[0]["religion"]["note"], sr.NO_RELIGION)
+        self.assertEqual(depts[0]["ethnicity"]["note"], sr.NO_ETHNICITY)
+        self.assertIn("for the region only", depts[0]["language"]["note"])
+        self.assertEqual([s["field"] for s in depts[0]["sources"]],
+                         ["median_age note/religion note/ethnicity note/language note",
+                          "religion note/ethnicity note"])
+        self.assertEqual(depts[0]["sources"][1]["name"], sr.NATIONAL_REPORT["name"])
         self.assertEqual(len(report), 12)
 
 

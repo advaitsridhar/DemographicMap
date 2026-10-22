@@ -60,7 +60,17 @@ import re
 import unicodedata
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, shares, write_json
+from ._shared import (
+    NOT_AVAILABLE,
+    PROCESSED,
+    gap,
+    http_get,
+    log,
+    measure,
+    record,
+    shares,
+    write_json,
+)
 
 URL_2025 = ("https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/"
             "RGPH-4/Resultats_preliminaires_rgph_4.pdf")
@@ -72,6 +82,15 @@ SOURCE_2014 = ("Institut National de la Statistique (INS) de Guinée, Troisième
                "de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la "
                "population (2017)")
 LICENCE = "INS Guinée publication (reuse with attribution)"
+# Why a prefecture has no religion or ethnic group: the 2014 census tabulates
+# religion by region only and no ethnic group, and the 2025 preliminary
+# results give the prefectures' counts by sex only.
+NO_PREFECTURE_RELIGION = ("The 2014 census tabulates religion by region only (Etat et structure "
+                          "de la population, Tableau 5.10), and the 2025 census's preliminary "
+                          "results give each prefecture's population by sex only.")
+NO_PREFECTURE_ETHNICITY = ("The 2014 census's report on the state and structure of the "
+                           "population tabulates no ethnic group, and the 2025 census's "
+                           "preliminary results give each prefecture's population by sex only.")
 YEAR_2025, YEAR_2014 = 2025, 2014
 NATIONAL_2025 = (8_452_911, 9_068_256, 17_521_167)
 NATIONAL_2014 = 10_523_261
@@ -550,6 +569,13 @@ def build(text_2025: str, layout_2025: str, text_2014: str, admin1: list[dict[st
             same = {"median_age": median,
                     "median_age_note": note + " The region is this one prefecture."}
             extra = [cited]
+        elif PREFECTURES[region] != [prefecture]:
+            # A region's only prefecture takes the region's shares; the others
+            # say why they have none, citing both censuses they name.
+            same = {"religion": gap(NOT_AVAILABLE, NO_PREFECTURE_RELIGION),
+                    "ethnicity": gap(NOT_AVAILABLE, NO_PREFECTURE_ETHNICITY)}
+            first += "/religion note/ethnicity note"
+            extra = [{**src_2014, "field": "religion note/ethnicity note"}]
         records.append(record(
             f"GIN-RGPH-{fold(prefecture)}", shape["name"], level="admin2", parent="GIN",
             country="GIN", match_by="shape_id", shape_id=shape["id"],
@@ -573,14 +599,14 @@ def fetch(url: str) -> bytes:
 
 
 def pdf_text(blob: bytes) -> str:
-    from pypdf import PdfReader                          # noqa: PLC0415
+    from pypdf import PdfReader  # noqa: PLC0415
     reader = PdfReader(io.BytesIO(blob))
     return "\f".join((page.extract_text() or "") for page in reader.pages)
 
 
 def laid_out_page(blob: bytes, title: str) -> str:
     """The page carrying ``title``, laid out by pdfplumber (columns kept)."""
-    import pdfplumber                                    # noqa: PLC0415
+    import pdfplumber  # noqa: PLC0415
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
         for page in pdf.pages:
             text = page.extract_text() or ""
