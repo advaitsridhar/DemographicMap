@@ -62,9 +62,17 @@ the reason, since they describe other ground.
 **Not written.** The fourteen outlines labelled Zemam Out -- the land outside
 the zimam, the bounds of the towns and villages, which no census table counts
 as a district -- and the port police districts, which CAPMAS lists without a
-population, say so. Hala'ib, the kism of the triangle north of 22°N that Egypt
-and Sudan both claim, is not drawn on Egypt's side; it is never written, and
-the Red Sea governorate is written without it.
+population, say so, citing the tables they speak of. Hala'ib, the kism of the
+triangle north of 22°N that Egypt and Sudan both claim, is not drawn on
+Egypt's side; it is never written, and the Red Sea governorate is written
+without it.
+
+**Names.** An outline is written under the name its notes give the units it
+holds -- CAPMAS's names today, as City Population writes them: the label
+"DuqqI" is the kism of Ad-Duqqī, "Paris Paris" the markaz of Bārīs -- and a
+kism and a markaz of one name in one governorate each say which they are. A
+governorate takes the English name its notes use ("Luxor Governorate" for
+the label "Luxor Governate"). Every label is kept as an alias.
 
 Usage:
     python -m scripts.fetch_census.egypt_census
@@ -86,6 +94,7 @@ from typing import Any
 from . import uscb
 from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record,
                       write_json)
+from common import as_drawn  # noqa: E402  (on the path through _shared)
 
 URL = "https://www.citypopulation.de/en/egypt/admin/"
 BASE = "https://www.citypopulation.de"
@@ -729,12 +738,27 @@ def page_url(unit: dict[str, Any]) -> str:
     return BASE + urllib.parse.quote(unit["href"])
 
 
+def cited(fields: dict[str, Any], *names: str) -> str:
+    """The fields a source entry is cited for, as the record holds them: a
+    figure by its name, a stated reason by its note ('sex_ratio note'), so
+    that a reason quoting a table's counts cites the table."""
+    return "/".join(n if "value" in (fields.get(n) or {}) else f"{n} note"
+                    for n in names if n in fields)
+
+
+# Every note of a unit no table counts, or counts with no one in it.
+NOTES = "population note/median_age note/sex_ratio note"
+
+
 def outline_record(shape: dict[str, Any], units: list[dict[str, Any]], plan: dict[str, Any],
                    pyramids: dict[str, list], hdx_url: str, hdx_licence: str,
                    keyed: list[dict[str, Any]] = ()) -> dict[str, Any]:
     """``keyed``: OCHA's sub-district rows of these units with three times as
     many women as men or more, which no village of Egypt holds; with one, the
-    2006 table's men and women for the unit are not used."""
+    2006 table's men and women for the unit are not used.
+
+    Every publication a note quotes is cited for that note: the 2017 count the
+    2023 estimate's note gives, the two tables of 2006 a reason compares."""
     parts = plan["parts"]
     wrong = "; ".join(f"{k['sub']} with {k['m']:,} men and {k['f']:,} women" for k in keyed)
     fields: dict[str, Any] = {"sources": []}
@@ -746,11 +770,17 @@ def outline_record(shape: dict[str, Any], units: list[dict[str, Any]], plan: dic
     if have_now:
         p2017 = sum(c["p2017"] for c in parts)
         since = ""
+        then: list[dict[str, Any]] = []
         if plan.get("renamed") and m is not None and f is not None:
             p2006 = sum(c["p2006"] or 0 for c in parts)
             ground = (f"{describe_parts(parts)}, which the 2006 census counted as {what} "
                       f"({plural(m, 'man', 'men')} and {plural(f, 'woman', 'women')}; CAPMAS's "
                       f"later tables put {plural(p2006, 'person', 'people')} there in 2006)")
+            # Both tables of 2006, which the note quotes.
+            then = [{"field": "population note", "name": SOURCE_2006, "url": hdx_url,
+                     "year": 2006, "license": hdx_licence},
+                    {"field": "population note", "name": SOURCE_2006_CP,
+                     "url": page_url(parts[0]), "year": 2006, "license": CP_LICENCE}]
         else:
             ground = f"{what} as drawn in 2006"
             if len(parts) > 1:
@@ -761,21 +791,26 @@ def outline_record(shape: dict[str, Any], units: list[dict[str, Any]], plan: dic
                                            source=SOURCE_2023)
             fields["population_note"] = (f"CAPMAS's estimate for 1 July 2023 of {ground}; the "
                                          f"2017 census counted {p2017:,}.{since}")
-            fields["sources"].append({"field": "population", "name": SOURCE_2023,
-                                      "url": page_url(parts[0]), "year": 2023,
-                                      "license": CP_LICENCE})
+            fields["sources"] += [{"field": "population", "name": SOURCE_2023,
+                                   "url": page_url(parts[0]), "year": 2023,
+                                   "license": CP_LICENCE},
+                                  {"field": "population note", "name": SOURCE_2017_COUNT,
+                                   "url": page_url(parts[0]), "year": 2017,
+                                   "license": CP_LICENCE}]
         else:
             fields["population"] = measure(p2017, year=2017, source=SOURCE_2017_COUNT)
             fields["population_note"] = f"The 2017 census count of {ground}.{since}"
             fields["sources"].append({"field": "population", "name": SOURCE_2017_COUNT,
                                       "url": page_url(parts[0]), "year": 2017,
                                       "license": CP_LICENCE})
+        fields["sources"] += then
         if all(pyr) and all(abs(sum(a + b for _, _, a, b in p) - c["p2017"]) <= 5
                             for p, c in zip(pyr, parts)):
-            fields.update(notes_2017(add(pyr)))
-            fields["sources"].append({"field": "median_age/sex_ratio", "name": SOURCE_2017,
-                                      "url": page_url(parts[0]), "year": 2017,
-                                      "license": CP_LICENCE})
+            got = notes_2017(add(pyr))
+            fields.update(got)
+            fields["sources"].append({"field": cited(got, "median_age", "sex_ratio"),
+                                      "name": SOURCE_2017, "url": page_url(parts[0]),
+                                      "year": 2017, "license": CP_LICENCE})
             return fields
         fields["median_age"] = gap(NOT_AVAILABLE, (
             "The 2017 census's count by age is not tabulated for this ground, and the 2006 "
@@ -801,19 +836,29 @@ def outline_record(shape: dict[str, Any], units: list[dict[str, Any]], plan: dic
         fields["median_age"] = gap(NOT_AVAILABLE, (
             "The 2006 census's tables by kism and markaz give no ages. "
             + later(parts, m + f, "the 2017 census's ages")))
-        fields["sources"].append({"field": "population", "name": SOURCE_2006,
+        # Where the two tables of 2006 are compared, both notes quote CAPMAS's
+        # later count beside this one ("put 69,616 people ... against 31,148").
+        compared = bool(parts) and all(c["p2006"] is not None for c in parts)
+        fields["sources"].append({"field": "population/median_age note" if compared
+                                  else "population", "name": SOURCE_2006,
                                   "url": hdx_url, "year": 2006, "license": hdx_licence})
-    # Men per 1,000 women from 2006, where 2017's cannot be used.
+        if compared:
+            fields["sources"].append({"field": "population note/median_age note",
+                                      "name": SOURCE_2006_CP, "url": page_url(parts[0]),
+                                      "year": 2006, "license": CP_LICENCE})
+    # Men per 1,000 women from 2006, where 2017's cannot be used; a reason
+    # given instead quotes the same table's men and women.
     if m is not None and f is not None and wrong:
         fields["sex_ratio"] = gap(NOT_AVAILABLE, (
             f"The 2006 census table's rows for {what} include {wrong}, which cannot both be "
             "right, so no ratio of men to women is given from it."))
+        fields["sources"].append({"field": "sex_ratio note", "name": SOURCE_2006,
+                                  "url": hdx_url, "year": 2006, "license": hdx_licence})
     elif m is not None and f is not None:
         got = ratio_fields(m, f, 2006, SOURCE_2006, f" in {what} as drawn then")
         fields.update(got)
-        if "sex_ratio_note" in got:
-            fields["sources"].append({"field": "sex_ratio", "name": SOURCE_2006,
-                                      "url": hdx_url, "year": 2006, "license": hdx_licence})
+        fields["sources"].append({"field": cited(got, "sex_ratio"), "name": SOURCE_2006,
+                                  "url": hdx_url, "year": 2006, "license": hdx_licence})
     return fields
 
 
@@ -850,38 +895,72 @@ def build(cp: dict[str, Any], districts: list[dict[str, Any]],
     plans = compose(bound, cp, provinces, report, units)
     pyramids = {code: parse_pyramid(html) for code, html in pages.items()}
     records = []
+    # Record id -> (governorate, the kinds of unit it holds, the outline's
+    # label), for each outline written under the name of the units it holds.
+    named: dict[str, tuple[str, str, str]] = {}
+
+    def outline(s: dict[str, Any], us: list[dict[str, Any]] | None = None,
+                parts: list[dict[str, Any]] = (), **fields: Any) -> dict[str, Any]:
+        """The record of outline ``s``, under the name its notes give the 2006
+        units it holds -- CAPMAS's names today, as City Population writes
+        them: 'DuqqI' is the kism of Ad-Duqqī, 'Paris Paris' the markaz of
+        Bārīs -- with its label kept as an alias. A unit renamed since goes by
+        today's name (Marina al-Alamein's kism is Al-'Alamayn's). Land outside
+        the zimam and the port police districts keep their labels: no table
+        names them."""
+        rid = f"EGY-CAPMAS-{s['id']}"
+        name = s["name"]
+        if us:
+            names: list[str] = []
+            for u in us:
+                names += ([clean(c["name"]) for c in parts] if lookup(RENAMED, u) and parts
+                          else [u["display"]])
+            name = listed(list(dict.fromkeys(names)))
+            named[rid] = (gov_of[s["id"]], listed(list(dict.fromkeys(kind_word(u) for u in us))),
+                          s["name"])
+        return record(rid, name, level="admin2", parent="EGY", country="EGY",
+                      match_by="shape_id", shape_id=s["id"],
+                      aliases=[s["name"]] if name != s["name"] else None, **fields)
+
     for s in admin2:
         label = latin(s["name"])
-        rid = f"EGY-CAPMAS-{s['id']}"
         if label == ZEMAM:
-            records.append(record(rid, s["name"], level="admin2", parent="EGY", country="EGY",
-                                  match_by="shape_id", shape_id=s["id"],
-                                  population=gap(NOT_AVAILABLE, ZEMAM_NOTE),
-                                  median_age=gap(NOT_AVAILABLE, ZEMAM_NOTE),
-                                  sex_ratio=gap(NOT_AVAILABLE, ZEMAM_NOTE)))
+            # The reason is about the census's tables: CAPMAS's units as City
+            # Population lists every one, and OCHA's of 2006, name no such unit.
+            records.append(outline(
+                s, population=gap(NOT_AVAILABLE, ZEMAM_NOTE),
+                median_age=gap(NOT_AVAILABLE, ZEMAM_NOTE),
+                sex_ratio=gap(NOT_AVAILABLE, ZEMAM_NOTE),
+                sources=[{"field": NOTES, "name": SOURCE_2017_COUNT, "url": URL, "year": 2017,
+                          "license": CP_LICENCE},
+                         {"field": NOTES, "name": SOURCE_2006, "url": hdx_url, "year": 2006,
+                          "license": hdx_licence}]))
             continue
         if s["id"] not in bound:
             continue
         us = bound[s["id"]]
         if all(u["key"][0] == "police" and u["t"] is None for u in us):
-            records.append(record(rid, s["name"], level="admin2", parent="EGY", country="EGY",
-                                  match_by="shape_id", shape_id=s["id"],
-                                  population=gap(NOT_AVAILABLE, PORT_NOTE),
-                                  median_age=gap(NOT_AVAILABLE, PORT_NOTE),
-                                  sex_ratio=gap(NOT_AVAILABLE, PORT_NOTE)))
+            # OCHA's table of 2006 lists the district with no count.
+            records.append(outline(
+                s, population=gap(NOT_AVAILABLE, PORT_NOTE),
+                median_age=gap(NOT_AVAILABLE, PORT_NOTE),
+                sex_ratio=gap(NOT_AVAILABLE, PORT_NOTE),
+                sources=[{"field": NOTES, "name": SOURCE_2006, "url": hdx_url, "year": 2006,
+                          "license": hdx_licence}]))
             continue
         plan = plans[s["id"]]
         if all(u["t"] == 0 for u in us) and not any(c["p2017"] for c in plan["parts"]):
             # OCHA's 2006 table carries 0 for the unit (New Tushka) and nothing
             # counts it since: CAPMAS's own 2006 count, where it has one.
+            zero = {"field": NOTES, "name": SOURCE_2006, "url": hdx_url, "year": 2006,
+                    "license": hdx_licence}
             other = [c for c in plan["parts"] if c["p2006"]]
             if other:
                 why = (f"CAPMAS's tables give {describe_parts(other)} a count at the 2006 census "
                        "without its sexes or ages, and no count since; OCHA's table of the 2006 "
                        "census carries 0 for it.")
-                records.append(record(
-                    rid, s["name"], level="admin2", parent="EGY", country="EGY",
-                    match_by="shape_id", shape_id=s["id"],
+                records.append(outline(
+                    s, us, plan["parts"],
                     codes={"capmas_2006": [c for u in us for c in u["codes"]],
                            "capmas": [c["code"] for c in other]},
                     population=measure(sum(c["p2006"] for c in other), year=2006,
@@ -890,26 +969,25 @@ def build(cp: dict[str, Any], districts: list[dict[str, Any]],
                                      "census; OCHA's table of the 2006 census carries 0 for it, "
                                      "and CAPMAS gives it no count since."),
                     median_age=gap(NOT_AVAILABLE, why), sex_ratio=gap(NOT_AVAILABLE, why),
-                    sources=[{"field": "population", "name": SOURCE_2006_CP,
-                              "url": page_url(other[0]), "year": 2006,
-                              "license": CP_LICENCE}]))
+                    sources=[{"field": "population/median_age note/sex_ratio note",
+                              "name": SOURCE_2006_CP, "url": page_url(other[0]), "year": 2006,
+                              "license": CP_LICENCE}, zero]))
                 continue
             none = (f"OCHA's table of the 2006 census carries 0 for {describe(us)}, and CAPMAS "
                     "gives it no count.")
-            records.append(record(rid, s["name"], level="admin2", parent="EGY", country="EGY",
-                                  match_by="shape_id", shape_id=s["id"],
-                                  population=gap(NOT_AVAILABLE, none),
-                                  median_age=gap(NOT_AVAILABLE, none),
-                                  sex_ratio=gap(NOT_AVAILABLE, none)))
+            records.append(outline(s, us, plan["parts"], population=gap(NOT_AVAILABLE, none),
+                                   median_age=gap(NOT_AVAILABLE, none),
+                                   sex_ratio=gap(NOT_AVAILABLE, none), sources=[zero]))
             continue
         if len(plan["parts"]) == 1 and plan["parts"][0]["p2017"] == 0 and not plan["t2006"]:
             empty = (f"The 2017 census counted no one in {describe(us)}, a city then still "
                      "being built, and CAPMAS gives it no estimate since.")
-            records.append(record(rid, s["name"], level="admin2", parent="EGY", country="EGY",
-                                  match_by="shape_id", shape_id=s["id"],
-                                  population=gap(NOT_AVAILABLE, empty),
-                                  median_age=gap(NOT_AVAILABLE, empty),
-                                  sex_ratio=gap(NOT_AVAILABLE, empty)))
+            records.append(outline(
+                s, us, plan["parts"], population=gap(NOT_AVAILABLE, empty),
+                median_age=gap(NOT_AVAILABLE, empty), sex_ratio=gap(NOT_AVAILABLE, empty),
+                sources=[{"field": NOTES, "name": SOURCE_2017_COUNT,
+                          "url": page_url(plan["parts"][0]), "year": 2017,
+                          "license": CP_LICENCE}]))
             continue
         if not plan["same"] and plan["t2006"] is None:
             # No 2006 count to test today's units against: a unit named
@@ -923,11 +1001,29 @@ def build(cp: dict[str, Any], districts: list[dict[str, Any]],
         if not fields.get("population"):
             report.append(f"  {s['name']!r}: nothing to write")
             continue
-        records.append(record(rid, s["name"], level="admin2", parent="EGY", country="EGY",
-                              match_by="shape_id", shape_id=s["id"],
-                              codes={"capmas_2006": [c for u in us for c in u["codes"]],
-                                     "capmas": [c["code"] for c in plan["parts"]]},
-                              **fields))
+        records.append(outline(s, us, plan["parts"],
+                               codes={"capmas_2006": [c for u in us for c in u["codes"]],
+                                      "capmas": [c["code"] for c in plan["parts"]]},
+                               **fields))
+    # A kism and a markaz named for one town are two outlines of one
+    # governorate under one name -- the boundary file labels them alike
+    # ("Aswan" twice) or apart ("Kesm Tahta", "Tahta") -- and each says which
+    # it is: "Ṭahṭā (kism)", "Ṭahṭā (markaz)".
+    alike: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for r in records:
+        if r["id"] in named:
+            alike[(named[r["id"]][0], r["name"])].append(r)
+    for (gov, name), same in sorted(alike.items()):
+        kinds = [named[r["id"]][1] for r in same]
+        if len(same) < 2:
+            continue
+        if len(set(kinds)) < len(kinds):
+            report.append(f"  {len(same)} outlines of governorate {gov} named {name!r}, "
+                          f"{kinds}: left alike")
+            continue
+        for r, kind in zip(same, kinds):
+            r["name"] = f"{name} ({kind})"
+            r["aliases"] = [named[r["id"]][2]]
     records += governorates(cp, gov_shape, pyramids, plans, report)
     return records, report
 
@@ -1024,21 +1120,28 @@ def governorates(cp: dict[str, Any], gov_shape: dict[str, dict[str, Any]],
         aswan = (" Egypt's count does not include Bir Tawil, the uninhabited land south of the "
                  "22nd parallel that neither Egypt nor Sudan claims." if gov == "28" else "")
         drawn, moved = drawn_text(gov, inn, lack)
+        # Each publication is cited for the notes that quote it: the 2017 count
+        # the population's note gives, and the 2023 estimate of a kism left
+        # out or of the units the outline holds or lacks, which the median's
+        # and the ratio's notes give too.
+        estimate = {"field": "population", "name": SOURCE_2023, "url": page_url(row),
+                    "year": 2023, "license": CP_LICENCE}
+        count_2017 = {"field": "population note", "name": SOURCE_2017_COUNT,
+                      "url": page_url(row), "year": 2017, "license": CP_LICENCE}
         fields: dict[str, Any] = {
             "population": measure(p2023, year=2023, source=SOURCE_2023),
             "population_note": (f"CAPMAS's estimate for 1 July 2023; the 2017 census counted "
                                 f"{p2017:,}.{less}{aswan}"),
-            "sources": [{"field": "population", "name": SOURCE_2023,
-                         "url": page_url(row), "year": 2023, "license": CP_LICENCE}]}
+            "sources": [estimate, count_2017]}
         if pyr and abs(sum(m + f for _, _, m, f in pyr) - p2017) <= 5:
             fields.update(notes_2017(pyr))
             if less:
                 for key in ("sex_ratio_note", "median_age_note"):
                     if key in fields:
                         fields[key] += less
-            fields["sources"].append({"field": "median_age/sex_ratio", "name": SOURCE_2017,
-                                      "url": page_url(row), "year": 2017,
-                                      "license": CP_LICENCE})
+            fields["sources"].append({"field": cited(fields, "median_age", "sex_ratio"),
+                                      "name": SOURCE_2017, "url": page_url(row),
+                                      "year": 2017, "license": CP_LICENCE})
         else:
             report.append(f"  governorate {row['name']}: no 2017 ages")
         if drawn and moved >= GOV_LARGE * p2023:
@@ -1061,22 +1164,51 @@ def governorates(cp: dict[str, Any], gov_shape: dict[str, dict[str, Any]],
                     f"The 2017 census counted {men:,} men and {women:,} women in "
                     f"{GOV_EN[gov]} governorate, {fields['sex_ratio']['value']:,} men per "
                     f"1,000 women, {other}"))
+            # Every reason quotes the 2023 estimate (the governorate's, or the
+            # units' it names), the population's the 2017 count too, the
+            # median's and the ratio's the 2017 census by age and sex. Cairo,
+            # Qalyubia, Damietta, Qena and Luxor cited none of them.
+            said = [k for k in ("population", "median_age", "sex_ratio") if k in refused]
+            refused["sources"] = [{**estimate, "field": "/".join(f"{k} note" for k in said)},
+                                  count_2017]
+            if said[1:]:
+                refused["sources"].append({"field": "/".join(f"{k} note" for k in said[1:]),
+                                           "name": SOURCE_2017, "url": page_url(row),
+                                           "year": 2017, "license": CP_LICENCE})
             report.append(f"  governorate {GOV_EN[gov]}: refused, the outline {drawn}")
             fields = refused
-        elif drawn:
-            said = (f" The outline drawn here is not quite the governorate's ground: it "
-                    f"{drawn}.")
-            for key in ("population_note", "median_age_note", "sex_ratio_note"):
-                if key in fields:
-                    fields[key] += said
-            report.append(f"  governorate {GOV_EN[gov]}: noted, the outline {drawn}")
-        out.append(record(f"EGY-CAPMAS-{gov}", shape["name"], level="admin1", parent="EGY",
+        else:
+            if drawn:
+                said = (f" The outline drawn here is not quite the governorate's ground: it "
+                        f"{drawn}.")
+                for key in ("population_note", "median_age_note", "sex_ratio_note"):
+                    if key in fields:
+                        fields[key] += said
+                report.append(f"  governorate {GOV_EN[gov]}: noted, the outline {drawn}")
+            if less or drawn:
+                estimate["field"] = "/".join(
+                    ["population"] + [f"{k} note" for k in ("median_age", "sex_ratio")
+                                      if f"{k}_note" in fields])
+        # Under the name its notes give it ('Luxor governorate'); the boundary
+        # file's label, misspelt for two ('Luxor Governate', 'Minya
+        # Governate'), is kept as an alias.
+        name = f"{GOV_EN[gov]} Governorate"
+        out.append(record(f"EGY-CAPMAS-{gov}", name, level="admin1", parent="EGY",
                           country="EGY", match_by="shape_id", shape_id=shape["id"],
+                          aliases=[shape["name"]] if shape["name"] != name else None,
                           codes={"capmas": gov}, **fields))
     return out
 
 
 # ------------------------------------------------------------------ main
+
+def drawn_units(level: str) -> list[dict[str, Any]]:
+    """The map's governorates or kisms and markazes under the boundary file's
+    own labels (common.as_drawn): the build names each outline as written
+    here, and the binding (UNCODED, the 2006 table's labels) matches the
+    labels."""
+    return as_drawn(json.loads((SITE / level / "EGY.units.json").read_text()))
+
 
 def fetch_pages(codes: list[str], hrefs: dict[str, str]) -> dict[str, str]:
     pages = {}
@@ -1128,8 +1260,7 @@ def main() -> int:
         if made != row["p2017"]:
             log(f"  governorate {row['name']}: its units make {made:,} in 2017 against "
                 f"{row['p2017']:,}")
-    admin1 = json.loads((SITE / "admin1" / "EGY.units.json").read_text())
-    admin2 = json.loads((SITE / "admin2" / "EGY.units.json").read_text())
+    admin1, admin2 = drawn_units("admin1"), drawn_units("admin2")
     # First pass without pages, to know which units' pages are wanted.
     records, report = build(cp, districts, provinces, admin1, admin2, {},
                             uscb.dataset_url(HDX_DATASET), hdx_licence, keyed)
