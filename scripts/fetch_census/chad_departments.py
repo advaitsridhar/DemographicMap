@@ -280,12 +280,14 @@ def build(adm1: list[dict[str, str]], seat_of: dict[str, str], admin1: list[dict
     seated = 0
     for u in admin2:
         if key(u["name"]) == "ndjamena":
-            # The capital's province is one department, the city itself.
+            # The capital's province is one department, the city itself, as
+            # OCHA's tables of the provinces and departments list it.
             records.append(record(
                 f"TCD-SEAT-{u['id']}", u["name"], level="admin2", parent="TCD", country="TCD",
                 match_by="shape_id", shape_id=u["id"], capital="N'Djamena",
                 capital_note=("N'Djamena province is a single department, the city of "
-                              "N'Djamena, whose seat is the city itself.")))
+                              "N'Djamena, whose seat is the city itself."),
+                sources=[{**cite[0], "field": "capital"}]))
             seated += 1
             continue
         seat = seat_of.get(key(u["name"]))
@@ -304,7 +306,8 @@ def build(adm1: list[dict[str, str]], seat_of: dict[str, str], admin1: list[dict
             records.append(record(
                 f"TCD-SEAT-{u['id']}", u["name"], level="admin2", parent="TCD", country="TCD",
                 match_by="shape_id", shape_id=u["id"],
-                capital=gap(NOT_AVAILABLE, why_not)))
+                capital=gap(NOT_AVAILABLE, why_not),
+                sources=[{**seat_cite, "field": "capital note"}]))
             continue
         records.append(record(
             f"TCD-SEAT-{u['id']}", u["name"], level="admin2", parent="TCD", country="TCD",

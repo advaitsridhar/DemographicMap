@@ -271,8 +271,9 @@ def build(found: list[dict[str, Any]], districts: int, admin1: list[dict[str, An
         if poly is None:
             raise SystemExit(f"congo_census: no polygon for department {dep['name']}")
         total, men, women, touching, sexed = shown_counts(dep, moved)
-        cite = [{"field": "population/sex_ratio", "name": SOURCE, "url": urls[dep["name"]],
-                 "year": YEAR, "license": LICENCE}]
+        # The median-age note rests on the same results, which give no ages.
+        cite = [{"field": "population/sex_ratio/median_age note", "name": SOURCE,
+                 "url": urls[dep["name"]], "year": YEAR, "license": LICENCE}]
         pop_note = (f"The population of {poly['name']} at the 2023 census, from its "
                     f"preliminary results.")
         ratio_note = (f"Men per 1,000 women among the people the 2023 census counted "

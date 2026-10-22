@@ -108,6 +108,8 @@ class Build(unittest.TestCase):
         # A district drawn as one polygon, its other municipalities inside it.
         self.assertEqual(by["COGO"]["population"]["value"], 29_341)
         self.assertIn("Cabo San Juan, Cogo and Corisco", by["COGO"]["population_note"])
+        # Its seat's reason rests on the yearbook, which names no seats.
+        self.assertTrue(any(s["field"].endswith("/capital note") for s in by["COGO"]["sources"]))
         self.assertEqual(by["ACURENAM"]["population"]["value"], 23_614)
         self.assertEqual(by["NSOC NSOMO"]["ethnicity_basis"], "nationality")
         for r in records:

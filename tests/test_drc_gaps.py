@@ -125,6 +125,8 @@ class Reasons(unittest.TestCase):
         self.assertIn("city administered apart", by["Beni"]["capital_note"])
         self.assertEqual(by["Oïcha"]["capital"]["status"], "not_available")
         self.assertIn("territory of Beni", by["Oïcha"]["capital"]["note"])
+        self.assertTrue(any(s["field"] == "capital note" and "Wikipedia" in s["name"]
+                            for s in by["Oïcha"]["sources"]))
         self.assertNotIn("capital", {k for k, v in by["Nowhere"].items()
                                      if isinstance(v, str)})
         self.assertTrue(any("Nowhere" in line and "no seat written" in line for line in report))

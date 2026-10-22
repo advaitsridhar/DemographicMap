@@ -114,6 +114,8 @@ class Moved(unittest.TestCase):
         self.assertEqual(by["Kouilou"]["sex_ratio"]["value"],
                          round(1000 * (52_111 + 10_500) / (45_251 + 10_112)))
         self.assertIn("Tchiamba-Nzassi", by["Kouilou"]["population_note"])
+        self.assertEqual(by["Kouilou"]["sources"][0]["field"],
+                         "population/sex_ratio/median_age note")
         self.assertIn("lies inside the polygon drawn as Kouilou",
                       by["Pointe-Noire"]["population_note"])
 

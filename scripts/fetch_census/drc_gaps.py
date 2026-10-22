@@ -307,6 +307,11 @@ def build(adm1: list[dict[str, str]], adm2: list[dict[str, str]], seat_of: dict[
             cities += 1
         elif name_key in NO_SEAT:
             fields["capital"] = gap(NOT_AVAILABLE, NO_SEAT[name_key])
+            # The note rests on OCHA's tables (which name the territory Oïcha)
+            # and on the article, which seats the territory of Beni at Beni.
+            sources = [{**src, "field": f"{src['field']}/capital note"}
+                       if src["name"] == OCHA else src for src in sources]
+            sources.append({**seat_cite, "field": "capital note"})
             report.append(f"  {shape['name']}: no seat written ({NO_SEAT[name_key][:60]}...)")
         elif seat:
             fields["capital"] = seat

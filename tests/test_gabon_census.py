@@ -61,6 +61,12 @@ class Seats(unittest.TestCase):
         self.assertEqual(by["Libreville"]["capital"], "Libreville")
         self.assertEqual(by["Libreville"]["sex_ratio"]["value"], round(1000 * 359_688 / 344_252))
         self.assertIn("2013 census", by["Libreville"]["population_note"])
+        # The median-age note rests on the whole publication; Libreville's seat on
+        # Tableau 6, which lists it as the commune it is.
+        cited = [s["field"] for s in by["Komo-Mondah"]["sources"]]
+        self.assertIn("median_age note", cited)
+        self.assertIn("population/sex_ratio/capital",
+                      [s["field"] for s in by["Libreville"]["sources"]])
 
 
 class Projection(unittest.TestCase):

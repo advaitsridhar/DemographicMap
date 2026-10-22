@@ -65,8 +65,9 @@ URL = "https://gabon.unfpa.org/sites/default/files/pub-pdf/Resultats%20Globaux%2
 YEAR = 2013
 OUT = "gabon_census.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
-SOURCE = ("Direction Générale de la Statistique du Gabon, Résultats globaux du Recensement "
-          "Général de la Population et des Logements de 2013 (RGPL-2013), Tableau 6")
+PUBLICATION = ("Direction Générale de la Statistique du Gabon, Résultats globaux du "
+               "Recensement Général de la Population et des Logements de 2013 (RGPL-2013)")
+SOURCE = PUBLICATION + ", Tableau 6"
 LICENCE = "Official statistics publication of the Gabonese Republic, as UNFPA Gabon publishes it"
 NATIONAL = 1_811_079
 OCHA_ADM1 = ("https://data.humdata.org/dataset/c751c169-512f-4070-8738-efca247e24ae/resource/"
@@ -214,7 +215,11 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
           seat_of: dict[str, tuple[str, int | None]] | None = None
           ) -> tuple[list[dict[str, Any]], list[str]]:
     report: list[str] = []
+    # Tableau 6 gives the counts by sex; the median-age note rests on the whole
+    # publication, whose ages stop at the country and its urban and rural areas.
     cite = [{"field": "population/sex_ratio", "name": SOURCE, "url": URL, "year": YEAR,
+             "license": LICENCE},
+            {"field": "median_age note", "name": PUBLICATION, "url": URL, "year": YEAR,
              "license": LICENCE}]
     parents = {u["id"]: u["name"] for u in admin1}
     first = {fold(u["name"]): u for u in admin1}
@@ -267,6 +272,9 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
             extra["capital"] = name
             extra["capital_note"] = (f"{name} is a commune drawn as a department of its own; its "
                                      f"seat is the city itself.")
+            # Tableau 6 lists it among the departments as the commune it is.
+            sources = [{**s, "field": s["field"] + "/capital"} if s["name"] == SOURCE else s
+                       for s in sources]
         elif found and found[0] and found[1] == counts[name][2] and found[0] not in ("s.o.", "-"):
             extra["capital"] = found[0]
             sources.append({"field": "capital", "name": f"French Wikipedia, {WIKI_TITLE}",
@@ -300,7 +308,9 @@ def projection(rows: list[dict[str, str]], admin1: list[dict[str, Any]]
             f"GAB-CODPS{OCHA_YEAR}-{poly['id']}", poly["name"], level="admin1", parent="GAB",
             country="GAB", match_by="shape_id", shape_id=poly["id"], sources=cite,
             population=measure(people, year=OCHA_YEAR, source=OCHA),
-            population_note=f"OCHA's projected population of {poly['name']} for {OCHA_YEAR}."))
+            # cod-ps-gab's methodology: "Projected by UNFPA from the 2013 census".
+            population_note=(f"The population of {poly['name']} projected for {OCHA_YEAR} by "
+                             f"UNFPA from the 2013 census (RGPL-2013), as OCHA publishes it.")))
         report.append(f"  2022: {poly['name']}: {people:,}")
     if len(records) != 9 or not 1_811_079 < total < 3_500_000:
         raise SystemExit(f"gabon_census: OCHA's 2022 table: {len(records)} provinces, {total:,}")

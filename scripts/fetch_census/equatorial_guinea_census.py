@@ -374,6 +374,9 @@ def build(provinces: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[
     for r in records:
         if r["level"] == "admin2" and not isinstance(r.get("capital"), str):
             r["capital"] = gap(NOT_AVAILABLE, SEAT_GAP)
+            # The reason rests on the yearbook's tables, which name no seats.
+            r["sources"] = [{**s, "field": s["field"] + "/capital note"}
+                            if s["name"].startswith(SOURCE) else s for s in r["sources"]]
     return records, report
 
 

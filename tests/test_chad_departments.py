@@ -68,6 +68,11 @@ class Seats(unittest.TestCase):
         self.assertIn("names this department but gives no seat",
                       by[("admin2", "Wadi Hawar")]["capital"]["note"])
         self.assertTrue(any("Fouli: no seat named" in line for line in report))
+        # Each reason cites the list it rests on; N'Djaména's seat OCHA's tables.
+        self.assertEqual([s["field"] for s in by[("admin2", "Fouli")]["sources"]],
+                         ["capital note"])
+        self.assertEqual([s["field"] for s in by[("admin2", "N'Djaména")]["sources"]],
+                         ["capital"])
 
     def test_too_few_people_refused(self):
         with self.assertRaises(SystemExit):
