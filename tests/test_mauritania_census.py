@@ -59,6 +59,13 @@ class MauritaniaLeaflet(unittest.TestCase):
         self.assertEqual(by[("admin2", "Amourj")]["sources"][0]["field"],
                          "population/sex_ratio/median_age note")
         self.assertEqual(by[("admin1", "Gorgol")]["sources"][0]["field"], "population/sex_ratio")
+        # The office's own file, as the Internet Archive keeps it, is what is cited.
+        gorgol = by[("admin1", "Gorgol")]["sources"][0]
+        self.assertEqual(gorgol["page"],
+                         "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf")
+        self.assertTrue(gorgol["url"].startswith("https://web.archive.org/web/20250925063203id_/"))
+        self.assertTrue(gorgol["url"].endswith(gorgol["page"]))
+        self.assertEqual(ksar["sources"][0]["page"], gorgol["page"])
 
 
 if __name__ == "__main__":

@@ -5,7 +5,10 @@ ANSADE's leaflet of the census's first results, *Population des Wilayas,
 Moughataa et Communes* (2024), prints everyone by sex for the 15 wilayas, the
 63 moughataas and every commune: 4,927,532 people counted between 25 December
 2023 and 8 January 2024. ansade.mr does not answer an automated client; the
-leaflet is read from the copy the Centre Rachad publishes.
+leaflet is read from ANSADE's own file (wp-content/uploads/2024/09) as the
+Internet Archive captured it on 25 September 2025, and cited so. Where the
+Archive refuses, the copy the Centre Rachad publishes stands in, and the
+source says whose copy it is; the run logs which was read and its sha256.
 
 **The ground the map draws.** The map draws 13 wilayas (Nouakchott as one) and
 57 moughataas on their lines of the 2013 census. OCHA's 2024 boundaries of the
@@ -53,12 +56,22 @@ from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, write_
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import fetch_blob, laid_out  # noqa: E402
 
-URL = "https://centre-rachad.org/wp-content/uploads/2024/10/Depliant-RGPH5_vf.pdf"
+# ANSADE's own file, and the Internet Archive's capture of it (eleven captures
+# from November 2024 to September 2025; CDX probe 0c45ffc).
+OFFICE = "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf"
+URL = "https://web.archive.org/web/20250925063203id_/" + OFFICE
+# The same leaflet as the Centre Rachad republishes it, read only where the
+# Archive refuses.
+MIRROR = "https://centre-rachad.org/wp-content/uploads/2024/10/Depliant-RGPH5_vf.pdf"
 SOURCE = ("Agence Nationale de la Statistique et de l'Analyse Démographique et Economique "
           "(ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), "
           "Population des Wilayas, Moughataa et Communes (2024)")
 LICENCE = "ANSADE publication (reuse with attribution)"
 YEAR = 2023
+# What every record cites: the office's file as the Archive keeps it; main()
+# names the Centre Rachad's copy instead where that is the one read.
+CITE: dict[str, Any] = {"name": SOURCE, "url": URL, "page": OFFICE, "license": LICENCE,
+                        "year": YEAR}
 NATIONAL = (2_375_470, 2_552_062, 4_927_532)
 OUT = "mauritania_census.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
@@ -306,9 +319,8 @@ def fields(figures: tuple[int, int, int], note: str, ages_noted: bool = False
             "population_note": note,
             "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
                                  year=YEAR, source=SOURCE),
-            "sources": [{"field": "population/sex_ratio"
-                         + ("/median_age note" if ages_noted else ""), "name": SOURCE,
-                         "url": URL, "license": LICENCE, "year": YEAR}]}
+            "sources": [{**CITE, "field": "population/sex_ratio"
+                         + ("/median_age note" if ages_noted else "")}]}
 
 
 def added(*parts: tuple[int, int, int]) -> tuple[int, int, int]:
@@ -367,8 +379,7 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                 median_age=gap(NOT_AVAILABLE, NO_AGES),
                 # The census the notes quote, not the source of a figure shown,
                 # and OCHA's boundaries, by which the reason measures the lines.
-                sources=[{"field": "population note/sex_ratio note/median_age note",
-                          "name": SOURCE, "url": URL, "license": LICENCE, "year": YEAR},
+                sources=[{**CITE, "field": "population note/sex_ratio note/median_age note"},
                          {**COD_AB, "field": "population note/sex_ratio note"}]))
             continue
         if k not in MOUGHATAAS:
@@ -410,10 +421,23 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
     ap.parse_args()
-    blob = fetch_blob(URL)
-    if not blob.startswith(b"%PDF"):
-        raise SystemExit(f"mauritania_census: {URL} is not a PDF: {blob[:60]!r}")
-    log(f"  read {URL}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
+    blob, read = b"", ""
+    for url in (URL, MIRROR):
+        try:
+            blob = fetch_blob(url)
+        except Exception as err:  # noqa: BLE001 -- the next copy is tried
+            log(f"  {url}: {type(err).__name__}: {err}")
+            continue
+        if blob.startswith(b"%PDF"):
+            read = url
+            break
+        log(f"  {url} is not a PDF: {blob[:60]!r}")
+    if not read:
+        raise SystemExit("mauritania_census: no copy of the leaflet could be read")
+    log(f"  read {read}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
+    if read == MIRROR:
+        CITE.update(name=SOURCE + ", as the Centre Rachad republishes it", url=MIRROR)
+        CITE.pop("page", None)
     text = laid_out(blob)
     table = parse(text)
     for wilaya in WILAYAS:
