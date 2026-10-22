@@ -70,6 +70,13 @@ SOMALIA = {
 # How far the regions may sum from the national row: the table rounds each
 # 2019 figure to the hundred, so eighteen of them drift by at most 900.
 SUM_SLACK = 0.001
+# The table's publisher by name, as egypt_census names it: the address is the
+# citation's url, and a name a visitor reads carries none.
+SOMALIA_SOURCE = "OCHA Somalia, 2019 calculation, as City Population tabulates it"
+SOMALIA_CITED = "City Population (Thomas Brinkhoff), after OCHA Somalia"
+SOMALIA_NOTE = ("An estimate, not a count: OCHA Somalia's Information Management Working "
+                "Group's calculation for 1 January 2019, for the eighteen pre-war regions, as "
+                "City Population tabulates it.")
 
 
 class Tables(HTMLParser):
@@ -212,17 +219,9 @@ def somalia(drawn: dict[str, str]) -> list[dict[str, Any]]:
         out.append(record(
             f"SOM-CP-{shape.replace(' ', '-')}", shape, level="admin1", parent="SOM",
             country="SOM", shape_id=drawn[shape], match_by="shape_id",
-            population=measure(
-                value, unit="people", year=SOMALIA_YEAR,
-                source="OCHA Somalia, 2019 calculation, as citypopulation.de tabulates it",
-                note=("An estimate, not a count: the calculation for 1 January 2019 by "
-                      "OCHA Somalia's Information Management Working Group, for the "
-                      "eighteen pre-war regions, from the citypopulation.de table the "
-                      "region's Wikipedia article cites. Read for every region from "
-                      "the one table, because several articles print figures that "
-                      "table does not give.")),
-            sources=[{"field": "population",
-                      "name": "citypopulation.de (Thomas Brinkhoff), after OCHA Somalia",
+            population=measure(value, unit="people", year=SOMALIA_YEAR,
+                               source=SOMALIA_SOURCE, note=SOMALIA_NOTE),
+            sources=[{"field": "population", "name": SOMALIA_CITED,
                       "url": SOMALIA_URL, "year": SOMALIA_YEAR,
                       "license": "citation of citypopulation.de required"}]))
     return out
@@ -306,9 +305,11 @@ def archived_text(url: str, transcript: Path, made: str) -> tuple[str, str]:
                 break
             log(f"  the archive did not answer ({exc}); waiting {wait}s")
             time.sleep(wait)
+    # The citation's note is printed under the source in the panel, so it says
+    # what was read and when, not which folder of this repository keeps it.
+    log(f"  read the transcript kept at {transcript.relative_to(ROOT)}")
     return (transcript.read_text(encoding="utf-8"),
-            f"a transcript of the Internet Archive's copy, {url}, made on {made} "
-            f"and kept at {transcript.relative_to(ROOT).parent}")
+            f"a transcript of the Internet Archive's copy, {url}, made on {made}")
 
 
 def bulletin_text() -> tuple[str, str]:

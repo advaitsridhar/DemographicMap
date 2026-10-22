@@ -188,16 +188,22 @@ def build(shares: dict[str, dict[str, float]], medians: dict[str, dict[str, int]
 
 
 def districts(admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """A stated reason for every district's population, median age and sex ratio."""
+    """A stated reason for every district's population, median age and sex ratio.
+
+    Each district is named as a sentence writes it: the boundary file labels the
+    districts in capitals ("BENDER BAYLA", "GALKAYU NORTH", "EYL"), and a record
+    bound by shape id names its polygon, so the capitals went onto the map. The
+    capitalised label stays searchable as the polygon's alias."""
     population = gap(NOT_AVAILABLE, DISTRICT_POPULATION)
     ages = gap(NOT_AVAILABLE, DISTRICT_AGES)
     cite = [{"field": "population note/median_age note/sex_ratio note", "name": SOURCE,
              "url": URL, "year": YEAR, "license": LICENCE},
             {"field": "median_age note/sex_ratio note", "name": SHDS, "url": SHDS_URL,
              "year": SHDS_YEAR, "license": SHDS_LICENCE}]
-    return [record(f"SOM-PESS-{s['id']}", s["name"].strip(), level="admin2", parent="SOM",
-                   country="SOM", match_by="shape_id", shape_id=s["id"], population=population,
-                   median_age=ages, sex_ratio=ages, sources=cite) for s in admin2]
+    return [record(f"SOM-PESS-{s['id']}", s["name"].strip().title(), level="admin2",
+                   parent="SOM", country="SOM", match_by="shape_id", shape_id=s["id"],
+                   population=population, median_age=ages, sex_ratio=ages, sources=cite)
+            for s in admin2]
 
 
 def read_text(blob: bytes) -> str:

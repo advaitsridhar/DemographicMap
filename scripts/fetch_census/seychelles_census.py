@@ -22,9 +22,10 @@ and over). The page lists the lines bottom up, the outer islands first.
 
 Written, at the first level: for the map's 26 districts (the 25 of Mahé and
 Praslin, La Digue and Inner Islands, and the Outer Islands), the census's
-count, the sex ratio (men per thousand women), the median age (interpolated
-within the age group that holds the middle person), first language at home and
-religion as counts. The census's 27th district, Ile Perseverance (5,410
+count, the sex ratio (men per thousand women, with the men and women counted
+beside any past two thousand), the median age (interpolated within the age
+group that holds the middle person), first language at home and religion as
+counts. The census's 27th district, Ile Perseverance (5,410
 people), is the reclaimed islands off Victoria, which no polygon of the map
 holds; its count is on none.
 
@@ -60,7 +61,7 @@ and the other tables place 87 people (77 men) differently, which the notes
 say. The other islands come out negative in no group.
 
 Usage:
-    python -m scripts.fetch_census.seychelles_census
+    python -m scripts.fetch_census.seychelles_census [--run LABEL]
 """
 
 from __future__ import annotations
@@ -73,6 +74,7 @@ from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json
 from .southern_africa_common import fetch, grouped_median, joined, key, sex_ratio, units
+from common import MISSPELLED, respell  # noqa: E402
 
 URL = ("https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/"
        "viewdocument/1555")
@@ -93,8 +95,10 @@ UNDRAWN = {"ileperseverance"}
 # Spellings of the tables, reduced, -> the district's reduced name.
 SPELLINGS = {"baiesteanne": "baiesainteanne", "ladigueinnerislands": "ladigueandinnerislands",
              "ladigueandinner": "ladigueandinnerislands"}
-# The map's names, reduced, -> the census's, where no prefix joins them.
-ALIASES = {"lariviere": "englishriver"}
+# The map's names, reduced, -> the census's, where no prefix joins them: the
+# boundary file's "La Rivière", cut at ten characters, and the name it is cut
+# from, La Rivière Anglaise.
+ALIASES = {"lariviere": "englishriver", "lariviereanglaise": "englishriver"}
 LANGUAGES = ("Seychellois Creole", "English", "French", "Gujarati", "Hindi", "Tamil",
              "Other languages", None, None, None)                # don't know, refusal, missing
 RELIGIONS = ("Catholic", "Anglican", "Islam", "Hindu", "Other Christian", None,
@@ -527,6 +531,35 @@ WORDS = {2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "e
          9: "nine"}
 
 
+def named(label: str) -> tuple[str, list[str]]:
+    """A district's name as the map writes it, and the boundary file's labels
+    for it. The file cuts fourteen of the 26 names at ten characters ("Anse
+    Boile", "La Digue a"), and a record bound by shape id names its polygon:
+    named by the label, the record put the cut name back on the map and into
+    its own notes. Where common.MISSPELLED declares what a label is cut from,
+    the record takes that name, and the cut labels stay as aliases: the build
+    refuses a second row on a polygon that shares no name with the first, and
+    the encyclopaedia's rows on these polygons are named by them."""
+    name = respell(label, "SYC")
+    cut = {c for (group, c), full in MISSPELLED.items() if group == "SYC" and full == name}
+    return name, sorted((cut | {label}) - {name})
+
+
+# A ratio past two men to every woman reads as a slip unless the census's own
+# counts are beside it: Cascade's 249 men per 100 women are its 4,751 men and
+# 1,908 women, the Outer Islands' 1,333 its 1,000 men and 75 women.
+LOPSIDED = 2_000                   # men per 1,000 women
+
+
+def counted(men: int, women: int, tables: str = TABLE_24) -> str | None:
+    """The note beside a sex ratio past LOPSIDED: the men and women it is
+    taken from, and the tables that count them. None beside any other."""
+    if not women or 1000 * men / women <= LOPSIDED:
+        return None
+    return (f"Men per 1,000 women among the people the 2022 census counted here: {men:,} men "
+            f"and {women:,} women ({tables}).")
+
+
 def build(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
           age: dict[str, dict[str, Any]] | None = None,
           a7: dict[str, dict[str, Any]] | None = None,
@@ -549,27 +582,28 @@ def build(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
         k = hits[0]
         used.append(k)
         d = table[k]
-        extra: dict[str, Any] = {}
+        name, labels = named(shape["name"])
+        extra: dict[str, Any] = {"aliases": labels} if labels else {}
         if age:
-            extra = {"median_age": measure(median(age[k]["groups"]), year=YEAR,
-                                           source=f"{SOURCE}, Table A2.1"),
-                     "median_age_note": moved_note(k, table, age)}
+            extra.update(median_age=measure(median(age[k]["groups"]), year=YEAR,
+                                            source=f"{SOURCE}, Table A2.1"),
+                         median_age_note=moved_note(k, table, age))
         comp = (garbled(table, evidence or {}) if k == OUTER else None) or compositions([d])
         cited = withheld if isinstance(comp.get("language"), dict) else sources
         if k in REGION_UNITS:
             ethnic = nationality(REGION_UNITS[k], d["religion_of"], a7,
-                                 f"{shape['name']} is one of the census's regions as well as "
-                                 f"a district")
+                                 f"{name} is one of the census's regions as well as a district")
             cited = cited + (sources_of(("ethnicity", "Table A7")) if ethnic else [])
         else:
             ethnic = no_nationality(k, a7)
             cited = cited + (sources_of(("ethnicity note", "Table A7")) if ethnic else [])
         out.append(record(
-            f"SYC-2022-{k}", shape["name"], level="admin1", parent="SYC", country="SYC",
+            f"SYC-2022-{k}", name, level="admin1", parent="SYC", country="SYC",
             match_by="shape_id", shape_id=shape["id"], sources=cited, **ethnic,
             population=measure(d["total"], year=YEAR, source=f"{SOURCE}, {TABLE_24}"),
             population_note=f"The 2022 census's count for {d['name']}.",
             sex_ratio=sex_ratio(d["men"], d["women"], year=YEAR, source=f"{SOURCE}, {TABLE_24}"),
+            sex_ratio_note=counted(d["men"], d["women"]),
             **comp, **extra))
     spare = sorted(set(table) - set(used) - UNDRAWN)
     if spare or len(set(used)) != len(used):
@@ -643,6 +677,7 @@ def build2(table: dict[str, dict[str, Any]], age: dict[str, dict[str, Any]],
                 population_note=(f"The 2022 census's counts for the {len(parts)} districts the map "
                                  f"draws as one added together: {joined(list(GROUPS2[k]))}."),
                 sex_ratio=sex_ratio(men, women, year=YEAR, source=f"{SOURCE}, {TABLE_24}"),
+                sex_ratio_note=counted(men, women),
                 median_age=measure(median(groups), year=YEAR, source=f"{SOURCE}, Table A2.1"),
                 median_age_note=MEDIAN_NOTE, **compositions(parts)))
         elif k in rest:
@@ -669,6 +704,8 @@ def build2(table: dict[str, dict[str, Any]], age: dict[str, dict[str, Any]],
                 population_note=what,
                 sex_ratio=sex_ratio(row["men"], row["total"] - row["men"], year=YEAR,
                                     source=f"{SOURCE}, Tables A2.1 and A2.2"),
+                sex_ratio_note=counted(row["men"], row["total"] - row["men"],
+                                       "Tables A2.1 and A2.2"),
                 median_age=measure(median(row["groups"]), year=YEAR,
                                    source=f"{SOURCE}, Table A2.1"),
                 median_age_note=MEDIAN_NOTE, **comp))
@@ -692,8 +729,10 @@ def texts_of(blob: bytes) -> tuple[str, str, str]:
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells two dispatches apart; ignored")
+    ap.parse_args()
     blob, where = fetch(URL, archive=ARCHIVE, office=False, expect=b"%PDF")
     log(f"  read {where}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
     text, both, men = texts_of(blob)

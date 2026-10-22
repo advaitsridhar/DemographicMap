@@ -8,8 +8,10 @@ National Statistics Office with Fafo, whose chapter 2 gives the household
 population by age, sex and residence -- for the country, its towns and its
 countryside -- and its regional tables are of fertility, mortality and health.
 So no figure exists for the ages or sexes of a region (zoba) or sub-region
-(subzoba), and every one of them says so. Nothing is read over the network; the
-survey's report is cited for the reader.
+(subzoba), and every one of them says so. None of the sources used gives a
+region's or sub-region's religion, language or ethnicity either, and each says
+that too, beside the census it has never had. Nothing is read over the network;
+the survey's report is cited for the reader.
 
 Usage:
     python -m scripts.fetch_census.eritrea_census
@@ -38,18 +40,27 @@ WHY = {
                "towns and its countryside, not by region or sub-region, so no figure exists "
                "for this sub-region's median age or sex ratio."),
 }
+# Religion, language and ethnicity: no source gives them for any region or
+# sub-region, and the build's general sentence for that case ends "That says
+# nothing about whether the census asks", beside notes saying there has never
+# been one. Each says so itself.
+COMPOSITION = ("Eritrea has never taken a national census, and none of the sources used for "
+               "this unit gives its {field}.")
 
 
 def build(units: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any]]:
     records = []
+    composition = {field: gap(NOT_AVAILABLE, COMPOSITION.format(field=field))
+                   for field in ("religion", "language", "ethnicity")}
     for level, shapes in units.items():
         stated = gap(NOT_AVAILABLE, WHY[level])
         for shape in shapes:
             records.append(record(
                 f"ERI-{shape['id']}", shape["name"].strip(), level=level, parent="ERI",
                 country="ERI", match_by="shape_id", shape_id=shape["id"],
-                median_age=stated, sex_ratio=stated,
-                sources=[{"field": "median_age note/sex_ratio note", "name": SURVEY, "url": URL,
+                median_age=stated, sex_ratio=stated, **composition,
+                sources=[{"field": "median_age note/sex_ratio note/religion note/language note/"
+                                   "ethnicity note", "name": SURVEY, "url": URL,
                           "year": 2010, "license": "National Statistics Office publication"}]))
     return records
 

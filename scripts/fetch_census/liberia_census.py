@@ -507,12 +507,13 @@ COMPOSITION_BY_COUNTY = ("The 2022 census asks {field}, and its published result
 
 def district_fields(name: str, t: tuple[int, int, int] | None, county_label: str,
                     why: str | None, note: str | None = None,
-                    then: int | None = None) -> dict[str, Any]:
+                    then: int | None = None, beside: str | None = None) -> dict[str, Any]:
     """A district's record: its 2022 count and sex ratio, or ``why`` there are
     none, and the reasons for the fields the census publishes by county only,
     each citing the publication it rests on. ``note`` replaces the count's
     note; ``then`` is the 2008 census's count of the district, given in the
-    note where the two are further apart than a population moves."""
+    note where the two are further apart than a population moves. ``beside``
+    is the reason as it reads beside another source's figure."""
     out: dict[str, Any] = {
         "median_age": gap(NOT_AVAILABLE, AGE_BY_COUNTY),
         "religion": gap(NOT_AVAILABLE, COMPOSITION_BY_COUNTY.format(field="religion")),
@@ -524,8 +525,17 @@ def district_fields(name: str, t: tuple[int, int, int] | None, county_label: str
                      "archived": FINAL_CAPTURE, "license": LICENCE, "year": YEAR}],
     }
     if t is None:
+        # A gap's reason goes where another file's figure fills the field, and
+        # OCHA's 2020 projection fills these districts: the reason is written
+        # beside the figure too, or 55 districts show a 2020 figure beside
+        # their neighbours' 2022 counts and never say why (Barclayville's
+        # 15,153 people, Bodae's 155 men per 100 women). The gaps stay for
+        # where OCHA gives nothing: its table of sexes has no Kpi or Wlogba.
         out["population"] = gap(NOT_AVAILABLE, why)
         out["sex_ratio"] = gap(NOT_AVAILABLE, why)
+        if beside:
+            out["population_note"] = out["sex_ratio_note"] = beside
+        out["sources"][1]["field"] = "population note/sex_ratio note"
         return out
     moved = change_note(name, county_label, then, t[0]) if then else None
     out.update({
@@ -540,6 +550,16 @@ def district_fields(name: str, t: tuple[int, int, int] | None, county_label: str
                                "year": 2008, "license": "Transcription of the census report; "
                                                         "terms of reuse not stated"})
     return out
+
+
+def not_the_drawn(c: str) -> tuple[str, str]:
+    """Why a county's districts carry no 2022 count (NOT_THE_DRAWN): as their
+    gaps say it, and as it reads beside the figure OCHA gives each district."""
+    table, holds = NOT_THE_DRAWN[c]
+    listed = f"LISGIS's 2022 Final Results (Appendix B, Table {table}) list {holds}"
+    return (f"{listed}, so no district's 2022 count is shown.",
+            f"{listed}, so no district's 2022 count can be given; the figure shown is OCHA's "
+            "projection for 2020.")
 
 
 def build(tables: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
@@ -597,10 +617,8 @@ def build(tables: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dic
                 raise SystemExit(f"liberia_census: {shape['name']!r} ({c}, {k}) matches "
                                  f"{found}")
         else:
-            table, holds = NOT_THE_DRAWN[c]
-            why = (f"LISGIS's 2022 Final Results (Appendix B, Table {table}) list {holds}, so "
-                   "no district's 2022 count is shown.")
-            fields = district_fields(shape["name"], None, where, why)
+            why, beside = not_the_drawn(c)
+            fields = district_fields(shape["name"], None, where, why, beside=beside)
         records.append(record(
             f"LBR-2022-{c}-{key(shape['name'])}", shape["name"], level="admin2", parent="LBR",
             country="LBR", match_by="shape_id", shape_id=shape["id"], **fields))

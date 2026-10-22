@@ -51,8 +51,10 @@ YEAR = 2023
 OUT = "congo_census.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 NATIONAL = 6_142_180
+# The tabulator by name, as egypt_census names it: its address is the url.
 SOURCE = ("Institut National de la Statistique (Congo), 5e Recensement Général de la Population "
-          "et de l'Habitation 2023, preliminary results, as tabulated by citypopulation.de")
+          "et de l'Habitation 2023, preliminary results, as City Population (Thomas Brinkhoff) "
+          "tabulates them")
 LICENCE = "citation of citypopulation.de required"
 
 # Polygon id -> (label, the largest GeoNames places inside it, with their department).

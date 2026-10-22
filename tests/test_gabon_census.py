@@ -56,7 +56,8 @@ class Seats(unittest.TestCase):
         by = {r["name"]: r for r in records}
         self.assertEqual(by["Komo-Mondah"]["population"]["value"], 169_396)   # with Owendo
         self.assertEqual(by["Komo-Mondah"]["capital"], "Ntoum")
-        self.assertEqual(by["Mouloundou"]["capital"], "Lastoursville")
+        # Drawn as Mouloundou; its record takes the census's name.
+        self.assertEqual(by["Mulundu"]["capital"], "Lastoursville")
         # The article's Akanda row carries Libreville's count; Libreville is its own seat.
         self.assertEqual(by["Libreville"]["capital"], "Libreville")
         self.assertEqual(by["Libreville"]["sex_ratio"]["value"], round(1000 * 359_688 / 344_252))

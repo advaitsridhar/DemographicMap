@@ -607,14 +607,22 @@ def area_note(a: dict[str, Any], drawn_name: str) -> str:
     return f"The 2006 census's count for this area, which it names {title(census_name)}."
 
 
-def fields(t: dict[str, Any], wrong: list[str] | None, note: str) -> dict[str, Any]:
+def fields(t: dict[str, Any], wrong: list[str] | None, note: str,
+           counted: str = "the local government area") -> dict[str, Any]:
+    """A table's count, sex ratio and median age, or why one is not taken.
+    ``counted`` says whose men and women the ratio is of."""
     total, men, women = t["total"]
+    # The men and women beside the ratio: two of Kano State's areas read 158
+    # (Gwale) and 152 (Garun Malam) men per 100 women, and a bare ratio that far
+    # from the country's reads as a slip where it is the census's own count.
+    counts = f"The 2006 census's count of {counted}: {men:,} men and {women:,} women."
     if t.get("from_vol3"):
         return {
             "population": measure(total, year=YEAR, source=SOURCE3),
             "population_note": note,
             "sex_ratio": measure(round(100 * men / women, 1), unit=UNIT, year=YEAR,
                                  source=SOURCE3),
+            "sex_ratio_note": counts,
             "median_age": gap(NOT_AVAILABLE, "The 2006 census's volume of ages by local "
                                              "government area (Priority Table Volume IV) "
                                              "prints no table for this area, so no median age "
@@ -636,6 +644,7 @@ def fields(t: dict[str, Any], wrong: list[str] | None, note: str) -> dict[str, A
     else:
         out["sex_ratio"] = measure(round(100 * men / women, 1), unit=UNIT, year=YEAR,
                                    source=SOURCE)
+        out["sex_ratio_note"] = counts
     if any("age" in p for p in wrong):
         out["median_age"] = gap(NOT_AVAILABLE, "The 2006 census's table for this area prints "
                                                "age groups that do not add up to its total, so "
@@ -728,7 +737,8 @@ def state_fields(t: dict[str, Any], wrong: list[str] | None, sk: str, unplaced: 
                              "up, so the state cannot be taken less Bakassi")
         t = without(t, bakassi)
         wrong = problems(t) or None
-    out = fields(t, wrong, f"The 2006 census's count for {state_name(t, sk)}.")
+    out = fields(t, wrong, f"The 2006 census's count for {state_name(t, sk)}.",
+                 state_name(t, sk))
     if bakassi is not None:
         _, m, f = bakassi["total"]
         out["population_note"] = CROSS_RIVER_COUNT.format(n=bakassi["total"][0])
@@ -740,8 +750,7 @@ def state_fields(t: dict[str, Any], wrong: list[str] | None, sk: str, unplaced: 
         extra = " " + UNPLACED_NOTE.format(n=unplaced)
         out["population_note"] += extra
         if "value" in out["sex_ratio"]:
-            out["sex_ratio_note"] = ("From the 2006 census's count of the state's men and "
-                                     "women." + extra)
+            out["sex_ratio_note"] += extra
         if "value" in out["median_age"]:
             out["median_age_note"] = MEDIAN_NOTE + extra
     return out

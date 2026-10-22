@@ -371,13 +371,16 @@ class LiberiaTest(unittest.TestCase):
         f = lb.district_fields("Klay", (25_720, 13_238, 12_482), "Bomi County", None)
         self.assertEqual(f["population"]["value"], 25_720)
         self.assertEqual(f["sex_ratio"]["value"], 106.1)
-        gap = lb.district_fields("Kpi", None, "Grand Kru County", "why")
+        gap = lb.district_fields("Kpi", None, "Grand Kru County", "why", beside="beside")
         self.assertEqual(gap["population"]["note"], "why")
+        # The reason beside OCHA's figures, which fill these districts.
+        self.assertEqual((gap["population_note"], gap["sex_ratio_note"]), ("beside", "beside"))
         self.assertIn("by county, not by district", gap["religion"]["note"])
-        # Every reason cites the publication it rests on.
+        # Every reason cites the publication it rests on, as a note: Appendix B
+        # gives no figure for these districts.
         cited = {s["field"]: s["name"] for s in gap["sources"]}
         self.assertIn("Thematic Report", cited["median_age/religion/ethnicity"])
-        self.assertIn("Appendix B", cited["population/sex_ratio"])
+        self.assertIn("Appendix B", cited["population note/sex_ratio note"])
 
     def test_a_district_further_from_2008_than_a_population_moves(self):
         f = lb.district_fields("Potupo", (31_533, 16_390, 15_143), "River Gee County", None,

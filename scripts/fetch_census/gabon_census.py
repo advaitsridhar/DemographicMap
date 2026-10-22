@@ -23,7 +23,9 @@ Owendo, made a department of its own before the census, is drawn inside
 Komo-Mondah (its town lies inside that polygon, 1 km from the shore), so that
 polygon takes both departments' counts and says so. Four names are spelled
 otherwise there (Mulundu as Mouloundou, Haut-Como as Haut-Komo, Douigny as
-Douigni, Doutsila as Doutsita).
+Douigni, Doutsila as Doutsita), and sixteen carry a grave accent where the
+census has an acute one or none (Lopè, Komo-Ocèan, Lèkoko): each department's
+record takes the census's spelling, which names its polygon.
 
 The report gives ages nationally and by residence only (Tableau 7), so no
 department or province has a median age from it.
@@ -59,6 +61,7 @@ from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, reco
 from .binding import bind, fold
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from common import as_drawn  # noqa: E402
 from probe_wikitable import tables  # noqa: E402
 
 URL = "https://gabon.unfpa.org/sites/default/files/pub-pdf/Resultats%20Globaux%20RGPL(1).pdf"
@@ -204,10 +207,14 @@ def seats(wikitext: str) -> dict[str, tuple[str, int | None]]:
 
 
 def figures_fields(men: int, women: int, total: int, note: str) -> dict[str, Any]:
+    # The counts beside the ratio, as Congo's notes give them: Haute-Banio's
+    # 261 men per 100 women is the census's 1,022 men and 391 women, and a
+    # bare ratio that far from the country's reads as a slip.
     return {"population": measure(total, year=YEAR, source=SOURCE), "population_note": note,
             "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
                                  year=YEAR, source=SOURCE),
-            "sex_ratio_note": "Men per 1,000 women among the residents the 2013 census counted.",
+            "sex_ratio_note": (f"Men per 1,000 women among the residents the 2013 census "
+                               f"counted ({men:,} men, {women:,} women)."),
             "median_age": gap(NOT_AVAILABLE, AGE_GAP)}
 
 
@@ -279,11 +286,15 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
             extra["capital"] = found[0]
             sources.append({"field": "capital", "name": f"French Wikipedia, {WIKI_TITLE}",
                             "url": WIKI_URL, "license": "CC BY-SA 4.0"})
-        records.append(record(f"GAB-RGPL2013-{sid}", shape["name"], level="admin2", parent="GAB",
+        # The department as Tableau 6 spells it: the record names its polygon,
+        # and the boundary file's labels put grave accents where the census
+        # has acute ones or none ("Lopè" for Lopé, "Komo-Ocèan" for
+        # Komo-Océan, "Lèkoko" for Lekoko). The label stays as an alias.
+        records.append(record(f"GAB-RGPL2013-{sid}", name, level="admin2", parent="GAB",
                               country="GAB", match_by="shape_id", shape_id=sid, sources=sources,
                               **figures_fields(men, women, total, note), **extra))
-        report.append(f"  {shape['name']}: {total:,} ({' + '.join(parts)}), seat "
-                      f"{extra.get('capital', '-')}")
+        report.append(f"  {name} (drawn as {shape['name']}): {total:,} ({' + '.join(parts)}), "
+                      f"seat {extra.get('capital', '-')}")
     return records, report
 
 
@@ -336,8 +347,11 @@ def main() -> int:
         log(f"  check: {p}")
     if problems:
         raise SystemExit("gabon_census: Tableau 6 does not add up as read")
-    admin1 = json.loads((SITE / "admin1" / "GAB.units.json").read_text())
-    admin2 = json.loads((SITE / "admin2" / "GAB.units.json").read_text())
+    # Under the boundary file's labels (common.as_drawn): the departments'
+    # records rename their polygons, Mouloundou to Mulundu among them, and
+    # ALIASES binds by the labels.
+    admin1 = as_drawn(json.loads((SITE / "admin1" / "GAB.units.json").read_text()))
+    admin2 = as_drawn(json.loads((SITE / "admin2" / "GAB.units.json").read_text()))
     wikitext, landed = wiki_fetch(WIKI_TITLE, "fr")
     seat_of = seats(wikitext)
     log(f"  {landed}: {len(seat_of)} departments with a seat")

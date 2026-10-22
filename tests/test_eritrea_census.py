@@ -24,9 +24,11 @@ class BuildTest(unittest.TestCase):
             for field in ("median_age", "sex_ratio"):
                 self.assertEqual(r[field]["status"], "not_available")
                 self.assertIn("never taken a national census", r[field]["note"])
-            # The survey gives no such figure: it is cited for the notes.
+            # The survey gives no such figure: it is cited for the notes, the
+            # compositions' among them.
             self.assertEqual([s["field"] for s in r["sources"]],
-                             ["median_age note/sex_ratio note"])
+                             ["median_age note/sex_ratio note/religion note/language note/"
+                              "ethnicity note"])
             self.assertNotIn("value", r["population"])
 
     def test_each_level_names_itself(self):

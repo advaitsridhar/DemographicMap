@@ -30,7 +30,7 @@ total; the regions make the census's 3,022,401; each region's age shares make
 total to within the same rounding.
 
 Usage:
-    python -m scripts.fetch_census.namibia_census
+    python -m scripts.fetch_census.namibia_census [--run LABEL]
 """
 
 from __future__ import annotations
@@ -42,7 +42,7 @@ import re
 from itertools import combinations
 from typing import Any
 
-from ._shared import PROCESSED, log, measure, record, write_json
+from ._shared import PROCESSED, log, measure, read_json, record, write_json
 from .southern_africa_common import fetch, key, sex_ratio, units
 
 URL = ("https://census.nsanamibia.com/wp-content/uploads/2024/10/"
@@ -57,6 +57,15 @@ REGIONS = ("//Kharas", "Erongo", "Hardap", "Kavango East", "Kavango West", "Khom
            "Ohangwena", "Omaheke", "Omusati", "Oshana", "Oshikoto", "Otjozondjupa", "Zambezi")
 # The map's first-level units (reduced) -> the census's regions.
 MAP = {"karas": ["//Kharas"], "caprivi": ["Zambezi"], "kavango": ["Kavango East", "Kavango West"]}
+# Regions whose constituencies all carry OCHA's projections, which add up well
+# short of the census's count, and whose note says what they add up to.
+# Oshikoto's ten make 227,737 for 2023 against the census's 257,302, 11.5%
+# less: too little for the build's own sentence on a region and its divisions,
+# which starts at 15%. The census's page of Oshikoto's constituencies does not
+# make the region (namibia_constituencies), so none of its counts stands on
+# them. The sum is taken from OCHA's table as cod_ps reads it (OCHA_FILE).
+OCHA_SUMMED = ("oshikoto",)
+OCHA_FILE = "cod_ps_admin2.json"
 
 DIGITS = r"\d{1,3}(?: \d{3})*"
 DEC = r"\d+\.\d"
@@ -162,7 +171,32 @@ def median_of(groups: list[tuple[int, int | None, float]]) -> float:
     raise SystemExit("namibia_census: no median")
 
 
-def build(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def ocha_sums(rows: list[dict[str, Any]]) -> dict[str, tuple[int, int, dict[str, Any]]]:
+    """{region (reduced): (its constituencies' projections added up, their year,
+    OCHA's citation for the note)} for OCHA_SUMMED, from OCHA's rows for
+    Namibia's constituencies. A region with a constituency OCHA gives no figure,
+    or two years, gets nothing."""
+    out: dict[str, tuple[int, int, dict[str, Any]]] = {}
+    for region in OCHA_SUMMED:
+        mine = [r for r in rows if r.get("country") == "NAM" and r.get("level") == "admin2"
+                and key(r.get("parent_name")) == region]
+        figures = [r.get("population") or {} for r in mine]
+        years = {f.get("year") for f in figures}
+        cite = next((s for s in (mine[0].get("sources") or []) if s.get("field") == "population"),
+                    None) if mine else None
+        if not mine or any("value" not in f for f in figures) or len(years) != 1 or not cite:
+            continue
+        out[region] = (sum(f["value"] for f in figures), years.pop(),
+                       {**cite, "field": "population note"})
+    return out
+
+
+def build(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
+          ocha: dict[str, tuple[int, int, dict[str, Any]]] | None = None
+          ) -> list[dict[str, Any]]:
+    """The regions' records; ``ocha`` is ocha_sums()'s, for the notes of the
+    regions it names."""
+    ocha = ocha or {}
     out = []
     used: list[str] = []
     sources = [{"field": "population/sex_ratio/median_age", "name": f"{SOURCE}, Tables 2.2 to 2.4",
@@ -184,9 +218,14 @@ def build(table: dict[str, dict[str, Any]], admin1: list[dict[str, Any]]) -> lis
                 f"map draws them as one region, as before 2013.")
         if len(regions) == 1 and key(regions[0]) != k:
             note = f"The 2023 census's count for {regions[0]}, drawn here as {shape['name']}."
+        cited = sources
+        if k in ocha:
+            made, year, cite = ocha[k]
+            note += f" OCHA's projections of its constituencies for {year} add up to {made:,}."
+            cited = sources + [cite]
         out.append(record(
             f"NAM-2023-region-{k}", shape["name"], level="admin1", parent="NAM", country="NAM",
-            match_by="shape_id", shape_id=shape["id"], sources=sources,
+            match_by="shape_id", shape_id=shape["id"], sources=cited,
             population=measure(total, year=YEAR, source=f"{SOURCE}, Table 2.2"),
             population_note=note,
             sex_ratio=sex_ratio(sum(r["men"] for r in rows), sum(r["women"] for r in rows),
@@ -210,13 +249,17 @@ def text_of(blob: bytes) -> str:
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells two dispatches apart; ignored")
+    ap.parse_args()
     blob, where = fetch(URL, archive=ARCHIVE, office=False, expect=b"%PDF")
     log(f"  read {where}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
     table = parse(text_of(blob))
     log(f"  the country's median age: {median_of(bands(table['Namibia']))}")
-    records = build(table, units("NAM", "admin1"))
+    ocha = ocha_sums(read_json(PROCESSED / OCHA_FILE, []))
+    log(f"  OCHA's constituencies added up: {({k: v[:2] for k, v in ocha.items()})}")
+    records = build(table, units("NAM", "admin1"), ocha)
     for r in records:
         log(f"  {r['name']}: {r['population']['value']:,}, ratio {r['sex_ratio']['value']}, "
             f"median {r['median_age']['value']}; {r['population_note']}")

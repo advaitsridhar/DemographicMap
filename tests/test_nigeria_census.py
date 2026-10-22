@@ -344,7 +344,9 @@ class StateTest(unittest.TestCase):
         self.assertEqual(f["sex_ratio"]["value"], 110.5)
         self.assertEqual(f["median_age"]["value"], 6.7)
         self.assertEqual(f["sources"][0]["field"], "population/sex_ratio/median_age")
-        self.assertNotIn("sex_ratio_note", f)
+        # The census's own men and women beside the ratio.
+        self.assertEqual(f["sex_ratio_note"],
+                         "The 2006 census's count of Lagos State: 210 men and 190 women.")
         fct = n.state_fields(dict(self.TABLE, name="FCT ABUJA"), None,
                              "abujafederalcapitalterritory", 0, None, {})
         self.assertEqual(fct["population_note"],

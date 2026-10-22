@@ -53,8 +53,9 @@ YEAR = 2024
 NATIONAL = 1_066_809
 SITE = PROCESSED.parent.parent / "site" / "data"
 URL = "https://www.citypopulation.de/en/djibouti/admin/"
+# The tabulator by name, as egypt_census names it: its address is the url.
 SOURCE = ("Institut National de la Statistique de Djibouti, Third General Census of Population "
-          "and Housing (RGPH-3), 20 May 2024, as City Population (citypopulation.de) tabulates "
+          "and Housing (RGPH-3), 20 May 2024, as City Population (Thomas Brinkhoff) tabulates "
           "it")
 LICENCE = "citation of citypopulation.de required"
 AGES = ("No count of people by age below the country has been found in the 2024 census's "

@@ -416,15 +416,22 @@ def wilaya_median(wilaya: str, ages: dict[str, list[tuple[int, int | None, int]]
                     f"from the 2023 census's count of {whose} (Thème 2, Tableau A.2.2).")
 
 
-def fields(figures: tuple[int, int, int], note: str, ages_noted: bool = False
+def fields(figures: tuple[int, int, int], note: str, counted: str, ages_noted: bool = False
            ) -> dict[str, Any]:
     """A unit's count and sex ratio, cited to the leaflet -- and its median-age
-    reason, which quotes the leaflet, where the unit carries one."""
+    reason, which quotes the leaflet, where the unit carries one. ``counted``
+    says whose men and women the ratio is of ("the moughataa")."""
     men, women, total = figures
     return {"population": measure(total, year=YEAR, source=SOURCE),
             "population_note": note,
             "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
                                  year=YEAR, source=SOURCE),
+            # The men and women beside the ratio, as Burkina Faso's and Niger's
+            # give them: the mining and garrison towns of the north read 480
+            # (F'Derick) and 417 (Benichab) men per 100 women, the census's own
+            # 9,151 men and 2,195 women at Benichab.
+            "sex_ratio_note": (f"The 2023 census's count of {counted}: {men:,} men and "
+                               f"{women:,} women."),
             "sources": [{**CITE, "field": "population/sex_ratio"
                          + ("/median_age note" if ages_noted else "")}]
             + ([{**AGES_CITE, "field": "median_age note"}] if ages_noted else [])}
@@ -454,21 +461,25 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
             note = ("The 2023 census's count for the three wilayas of Nouakchott together: "
                     + ", ".join(f"{w} {wil[w][2]:,}" for w in NOUAKCHOTT[:2])
                     + f" and {NOUAKCHOTT[2]} {wil[NOUAKCHOTT[2]][2]:,}.")
+            counted = "the three wilayas of Nouakchott together"
         elif wilaya == "Dakhlet Nouadhibou":
             figures = nouadhibou
             note = (f"The 2023 census counts {wil[wilaya][2]:,} people in the wilaya, with the "
                     f"moughataa of Chami ({chami[2]:,}); the map draws Chami in Inchiri, so "
                     "this is the moughataa of Nouadhibou, the rest of the wilaya.")
+            counted = "the moughataa of Nouadhibou"
         elif wilaya == "Inchiri":
             figures = added(wil[wilaya], chami)
             note = (f"The 2023 census's count for the wilaya ({wil[wilaya][2]:,}) and for the "
                     f"moughataa of Chami ({chami[2]:,}), which the census counts in Dakhlet "
                     "Nouadhibou and the map draws here.")
+            counted = "the wilaya and the moughataa of Chami together"
         else:
             figures = wil[wilaya]
             note = "The 2023 census's count for the wilaya."
+            counted = "the wilaya"
         seat: dict[str, Any] = {}
-        unit = fields(figures, note)
+        unit = fields(figures, note, counted)
         median = wilaya_median(wilaya, ages, wil) if ages else None
         if median:
             seat["median_age"] = measure(median[0], unit="years", year=YEAR, source=AGES_SOURCE)
@@ -510,11 +521,13 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
             continue
         used.update((wilaya, p) for p in parts)
         figures = added(*(f["figures"] for f in found))
+        counted = "the moughataa"
         if len(found) > 1:
             note = (f"Drawn on its outline from before the moughataa of {found[1]['name']} was "
                     f"made from it; the 2023 census counts the two apart, {found[0]['name']} "
                     f"{found[0]['figures'][2]:,} and {found[1]['name']} "
                     f"{found[1]['figures'][2]:,}, added here.")
+            counted = f"{found[0]['name']} and {found[1]['name']} together"
         elif k == "chami":
             note = ("The 2023 census's count for the moughataa of Chami, which it counts in "
                     "the wilaya of Dakhlet Nouadhibou.")
@@ -524,7 +537,7 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
         records.append(record(f"MRT-RGPH2023-{k}", shape["name"], level="admin2", parent="MRT",
                               country="MRT", match_by="shape_id", shape_id=shape["id"],
                               median_age=gap(NOT_AVAILABLE, NO_AGES),
-                              **fields(figures, note, ages_noted=True)))
+                              **fields(figures, note, counted, ages_noted=True)))
     left = sorted(f"{w}/{m['name']}" for w, ms in mou.items() if w not in NOUAKCHOTT
                   for p, m in ms.items() if (w, p) not in used and p != "ouadnaga")
     if left:
