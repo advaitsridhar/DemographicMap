@@ -1227,13 +1227,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1241,7 +1243,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1275,13 +1284,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1289,7 +1300,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1323,13 +1341,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1337,7 +1357,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1430,13 +1457,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1444,7 +1473,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1478,13 +1514,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1492,7 +1530,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1526,13 +1571,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1540,7 +1587,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1574,13 +1628,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1588,7 +1644,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1622,13 +1685,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1636,7 +1701,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1670,13 +1742,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1684,7 +1758,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1718,13 +1799,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1732,7 +1815,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1766,13 +1856,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1780,7 +1872,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1814,13 +1913,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1828,7 +1929,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1862,13 +1970,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1876,7 +1986,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1910,13 +2027,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1924,7 +2043,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -1958,13 +2084,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -1972,7 +2100,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2006,13 +2141,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2020,7 +2157,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2054,13 +2198,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2068,7 +2214,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2102,13 +2255,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2116,7 +2271,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2150,13 +2312,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2164,7 +2328,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2198,13 +2369,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2212,7 +2385,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2246,13 +2426,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2260,7 +2442,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2294,13 +2483,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2308,7 +2499,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2342,13 +2540,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2356,7 +2556,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2390,13 +2597,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2404,7 +2613,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2438,13 +2654,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2452,7 +2670,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2486,13 +2711,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2500,7 +2727,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2534,13 +2768,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2548,7 +2784,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2582,13 +2825,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2596,7 +2841,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2630,13 +2882,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2644,7 +2898,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2678,13 +2939,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2692,7 +2955,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2726,13 +2996,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2740,7 +3012,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2774,13 +3053,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2788,7 +3069,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
@@ -2822,13 +3110,15 @@
       "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
     },
     "sources": [
       {
@@ -2836,7 +3126,14 @@
         "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
         "license": "INS Guinée publication (reuse with attribution)",
         "year": 2025,
-        "field": "population/sex_ratio"
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "GIN",
