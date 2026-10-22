@@ -148,5 +148,43 @@ class SeatReasons(unittest.TestCase):
         self.assertFalse(be.say_why_no_capital(named, "ZMB"))
 
 
+class SeatFixes(unittest.TestCase):
+    """Three seats Wikidata gets wrong, five GeoNames gives where its seats are
+    not taken country-wide, and two labels that carry their disambiguation."""
+
+    def test_the_wrong_seats_leave_their_rows(self):
+        withdrawn = be.WITHDRAWN_FIELDS["wikidata_admin1.json"]
+        for row_id in ("LBY-WD-Q32845", "LBY-WD-Q26023", "DZA-WD-Q233645"):
+            self.assertEqual(set(withdrawn[row_id]), {"capital"})
+
+    def test_a_declared_seat_fills_a_bare_capital_and_nothing_else(self):
+        bare = {"id": "43142294B98309179755088", "capital": {"status": "not_available"}}
+        held = {"id": "46179711B78983565091897", "capital": "Tanta City"}
+        be.fill_capitals_from_geonames({"DZA": [bare], "EGY": [held]}, {})
+        self.assertEqual(bare["capital"], "Tizi Ouzou")
+        self.assertEqual(bare["sources"][-1]["name"], "GeoNames")
+        self.assertEqual(bare["sources"][-1]["field"], "capital")
+        self.assertEqual(held["capital"], "Tanta City")
+
+    def test_a_disambiguated_label_is_written_as_the_place_is_called(self):
+        import json
+        import tempfile
+        from pathlib import Path
+        from unittest import mock
+        rows = [{"id": "COG-WD-Q855327", "country": "COG", "name": "Kouilou Department",
+                 "level": "admin1", "capital": "Loango, Republic of Congo",
+                 "sources": [{"field": "population/capital/coordinates", "name": "Wikidata"}]},
+                {"id": "USA-WD-Q3551781", "country": "USA", "name": "District of Columbia",
+                 "level": "admin1", "capital": "Washington, D.C."}]
+        with tempfile.TemporaryDirectory() as tmp:
+            Path(tmp, "wikidata_admin1.json").write_text(json.dumps(rows))
+            with mock.patch.object(be, "PROCESSED", Path(tmp)), \
+                    mock.patch.object(be, "ADAPTER_FILES", ["wikidata_admin1.json"]), \
+                    mock.patch.object(be, "log", lambda *a, **k: None):
+                loaded = be.load_adapters()
+        self.assertEqual(loaded["COG"][0]["capital"], "Loango")
+        self.assertEqual(loaded["USA"][0]["capital"], "Washington, D.C.")
+
+
 if __name__ == "__main__":
     unittest.main()

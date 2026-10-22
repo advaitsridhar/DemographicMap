@@ -897,7 +897,8 @@ class WithdrawnFields(unittest.TestCase):
         # Wikidata's seat for Togo's Savanes is not its seat: the capital leaves
         # that row alone, and its citation, so GeoNames' Dapaong can stand.
         withdrawn = be.WITHDRAWN_FIELDS["wikidata_admin1.json"]
-        self.assertEqual(set(withdrawn), {"TGO-WD-Q279945", "SEN-WD-Q738061", "BEN-WD-Q29147"})
+        self.assertEqual(set(withdrawn), {"TGO-WD-Q279945", "SEN-WD-Q738061", "BEN-WD-Q29147",
+                                          "LBY-WD-Q32845", "LBY-WD-Q26023", "DZA-WD-Q233645"})
         row = {"id": "TGO-WD-Q279945", "country": "TGO", "name": "Savanes Region",
                "capital": "Durum Town", "population": {"value": 1, "year": 2022},
                "sources": [{"field": "population/capital/coordinates", "name": "Wikidata"}]}

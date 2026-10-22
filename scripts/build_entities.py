@@ -3587,6 +3587,12 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
 #        Benin's Atlantique has been Allada's since the decree of 2016 that
 #        made the twelve departments' seats, not Ouidah's. Taking the capital
 #        off the row lets GeoNames' seat stand (fill_capitals_from_geonames).
+#        North Africa has three more: Libya's Misrata District is given Al
+#        Bayda (in Arabic), the seat of Al Jabal al Akhdar 600 km east, and
+#        Marj District an "encampment of Al Marj", where GeoNames' PPLA inside
+#        each polygon is Misratah and Al Marj; Algeria's Tizi Ouzou Province
+#        is given Kouba (in Arabic), a commune of Algiers, and its seat is
+#        Tizi Ouzou (DECLARED_SEATS).
 WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
     "afrobarometer_region.json": {
         "NER": {"language": "Round 9's language codes for Niger look misassigned",
@@ -3596,6 +3602,21 @@ WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
         "TGO-WD-Q279945": {"capital": "the Savanes region's seat is Dapaong"},
         "SEN-WD-Q738061": {"capital": "the Louga region's seat is Louga"},
         "BEN-WD-Q29147": {"capital": "the Atlantique department's seat is Allada"},
+        "LBY-WD-Q32845": {"capital": "Misrata District's seat is Misrata, not Al Bayda"},
+        "LBY-WD-Q26023": {"capital": "Marj District's seat is the town of Al Marj"},
+        "DZA-WD-Q233645": {"capital": "Tizi Ouzou Province's seat is Tizi Ouzou, not Kouba"},
+    },
+}
+
+# A value whose label carries the source's disambiguation, which the place
+# itself is not called: Wikidata labels Kouilou's seat "Loango, Republic of
+# Congo" and Kamenica's "Kamenica, Kosovo", to tell them from places of the
+# same name elsewhere. Keyed by file, row id and field; the place's name is
+# written instead, still cited to the row's source.
+DISAMBIGUATED: dict[str, dict[str, dict[str, str]]] = {
+    "wikidata_admin1.json": {
+        "COG-WD-Q855327": {"capital": "Loango"},
+        "XKX-WD-Q2043136": {"capital": "Kamenica"},
     },
 }
 
@@ -3644,6 +3665,7 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
         placed_by_id = ROW_SHAPES.get(filename, {})
         notes = ROW_NOTES.get(filename, {})
         withdrawn = WITHDRAWN_FIELDS.get(filename, {})
+        disambiguated = DISAMBIGUATED.get(filename, {})
         # A row a declared union pools stays although its country's rows in
         # this file give way: the union names it by id, and the office's file
         # that supersedes the rest says the polygon is not one of its units.
@@ -3659,6 +3681,11 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
                 withdraw_fields(row, withdrawn[iso3])
             if row.get("id") in withdrawn:
                 withdraw_fields(row, withdrawn[row["id"]])
+            for field, name in disambiguated.get(row.get("id"), {}).items():
+                if not isinstance(row.get(field), str):
+                    raise SystemExit(f"DISAMBIGUATED: {filename} {row['id']} has no "
+                                     f"{field} to name")
+                row[field] = name
             if row.get("id") in aliases:
                 row["aliases"] = [*(row.get("aliases") or []), *aliases[row["id"]]]
             if row.get("id") in parents and not row.get("parent_name"):
@@ -8969,6 +8996,28 @@ GEONAMES_SOURCE = {"field": "largest settlement", "name": "GeoNames",
 GEONAMES_SEATS = PROCESSED / "geonames_seats.json"
 
 
+def declared_seat(name: str, geonameid: str, code: str, lon: float, lat: float) -> dict[str, Any]:
+    return {"name": name, "geonameid": geonameid, "feature_code": code,
+            "coordinates": [lon, lat], "source": "GeoNames (CC BY 4.0)"}
+
+
+# GeoNames seats for units in countries whose seats scripts/fetch_geonames.py
+# does not take wholesale (it takes a country's only where GeoNames' units are
+# the map's and their seats agree with the capitals other sources give). Each
+# is the first-order seat (PPLA; PPLC for a capital city) GeoNames files under
+# the unit, its point checked to lie inside the polygon, for a unit that
+# showed no seat or a wrong one (WITHDRAWN_FIELDS). Keyed by shapeID, in
+# geonames_seats.json's form; Tripoli is not here, its point lying 2 km
+# outside the outline labelled Tajura' wa an Nawahi al Arba.
+DECLARED_SEATS: dict[str, dict[str, Any]] = {
+    "46179711B78983565091897": declared_seat("Tanta", "347497", "PPLA", 31.00192, 30.78847),
+    "46179711B33216026370082": declared_seat("Marsá Maţrūḩ", "352733", "PPLA", 27.23725, 31.3529),
+    "43142294B44506325294932": declared_seat("Tipasa", "2476028", "PPLA", 2.44889, 36.58972),
+    "43142294B98309179755088": declared_seat("Tizi Ouzou", "2475744", "PPLA", 4.04591, 36.71182),
+    "48771326B10235544430886": declared_seat("Juba", "373303", "PPLC", 31.58247, 4.85165),
+}
+
+
 # Territories whose drawn unit has no seat both claimants recognise, where
 # GeoNames' seat inside the polygon would be read as its capital. Western
 # Sahara is drawn as one unit at both levels; the seat GeoNames puts in it is
@@ -8993,7 +9042,7 @@ def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
     an item with no English label) is a blank shown as a code, and is
     replaced too.
     """
-    seats = read_json(GEONAMES_SEATS, {}) or {}
+    seats = {**(read_json(GEONAMES_SEATS, {}) or {}), **DECLARED_SEATS}
     filled = 0
     for table in (admin1, admin2):
         for iso3, rows in table.items():
