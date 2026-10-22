@@ -1503,6 +1503,15 @@ FIELD_GAPS: dict[str, dict[str, str | dict[str, str]]] = {
                      "governorate or district has been found.",
     },
     "IRN": {"language": IRAN_LANGUAGE},
+    "SWZ": {
+        "ethnicity": {
+            "admin1": "Asked their ethnic group, 1,186 of the 1,200 people "
+                      "Afrobarometer's Round 9 (2021-2023) interviewed in Eswatini "
+                      "named only their national identity, or did not think of "
+                      "themselves in those terms, so the survey gives no shares of "
+                      "ethnic groups here.",
+        },
+    },
 }
 
 
@@ -3525,7 +3534,8 @@ ENGURI_VILLAGES = (
     "Tagiloni, Pichori and others), 12,000 or more people at their 2011 census, ")
 CABO_VERDE_ETHNICITY = (
     "Asked for their ethnic community or cultural group, most Cape Verdeans in the "
-    "survey named none, or an identity of another kind -- the part of the islands "
+    "survey named only their nationality, or none, or an identity of another kind -- "
+    "the part of the islands "
     "they come from (badiu, sampadjudu), their religion, occupation, class, race, "
     "gender, age or party -- and most of these shares count those answers rather "
     "than ethnic groups.")
@@ -3792,6 +3802,12 @@ FEW_INTERVIEWS = ("CLEAR Global's shares tabulate an Afrobarometer round that in
 # other fields. The field goes before any union is pooled, so a pooled row
 # never carries it, and a lower-ranked file's figure stands where this one's
 # would have.
+#   SWZ  Asked their ethnic group, 1,186 of the 1,200 people Round 9
+#        interviewed in Eswatini gave code 9990, "(national identity) only, or
+#        doesn't think of self in those terms": each region would show
+#        "National identity only" at 97 to 99.9%, and the country's sum would
+#        stand where the Factbook's ethnic groups do. FIELD_GAPS says why
+#        instead.
 #   NER  Afrobarometer Round 9's home languages for Niger contradict the same
 #        survey's ethnic groups: Tamasheq is 20.1% of Dosso's languages where
 #        no respondent gave Tuareg ethnicity, 26.2% of Niamey's against 1.9%
@@ -3850,6 +3866,7 @@ WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
     "afrobarometer_region.json": {
         "NER": {"language": "Round 9's language codes for Niger look misassigned",
                 "religion": "the 2012 census gives every polygon's religion"},
+        "SWZ": {"ethnicity": "1,186 of 1,200 respondents gave national identity only"},
     },
     "wikidata_admin1.json": {
         "TGO-WD-Q279945": {"capital": "the Savanes region's seat is Dapaong"},
@@ -7222,17 +7239,6 @@ def twin_population(first: dict[str, Any], second: dict[str, Any]
 # Country fields whose first-level divisions carry figures a sum cannot be
 # taken across, declared with the reason; the country keeps its own figure.
 COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
-    # Botswana's ten districts carry no census language: nine carry
-    # Afrobarometer's Round 8 or Round 9 shares and Chobe CLEAR Global's
-    # tabulation of Round 6 (2015), samples of a few dozen to a few hundred
-    # citizens each, which do not name the languages alike (Setswana beside
-    # Tswana). The 2022 census's district counts (botswana_census) brought the
-    # sum within the population gate, which is why this has to be said rather
-    # than left to the gate: a sum of surveys would replace the country's
-    # census-based figure (2011).
-    ("BWA", "language"): "its districts' language is survey estimates from three "
-                         "Afrobarometer rounds, which do not name the languages alike, "
-                         "and the country's figure is of 2011",
     # suriname_census gives seven districts the 2004 census's religion and the
     # three interior districts the 2012 census's denominations (the ABS's
     # District Results Volume III), each the newest their district has. Summed,
@@ -7376,12 +7382,18 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     # Southern Africa (kept together so that the reasons read alike): every
     # region of Namibia, and every province of Zimbabwe for ethnicity, carries
     # Afrobarometer's Round 9 shares, and so do Mauritius's districts for the
-    # ethnic group, which its census has not asked since 1972. Namibia's and
-    # Zimbabwe's sums were held back only by the population gate, against the
-    # Factbook's estimate, and with the census's count beside it
-    # (admin0_detail's check rows) they would pass; Mauritius's only by
-    # Plaines Wilhems, whose survey row joined nothing. A survey's sum would
-    # then stand where the country's own figure does.
+    # ethnic group, which its census has not asked since 1972, and nine of
+    # Botswana's ten districts for all three, each district's survey strata
+    # taken together (afrobarometer.POOLED; Chobe's 16 respondents are too
+    # few). Namibia's and Zimbabwe's sums were held back only by the
+    # population gate, against the Factbook's estimate, and with the census's
+    # count beside it (admin0_detail's check rows) they would pass; Botswana's
+    # 2022 district counts (botswana_census) brought its sums within the gate
+    # too; Mauritius's was held back only by Plaines Wilhems, whose survey row
+    # joined nothing. A survey's sum would then stand where the country's own
+    # figure does: Botswana's census figures of 2011, and for its ethnic groups
+    # the Tswana's own peoples (Mongwato, Mokwena) where the country's figure
+    # counts Tswana as one.
     ("NAM", "religion"): "its regions' shares are survey estimates, from Afrobarometer's "
                          "ninth round",
     ("NAM", "language"): "its regions' shares are survey estimates, from Afrobarometer's "
@@ -7393,6 +7405,13 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
                           "country only",
     ("MUS", "ethnicity"): "its districts' shares are survey estimates, from Afrobarometer's "
                           "ninth round, and Rodrigues' are the census's, by nationality",
+    ("BWA", "religion"): "its districts' shares are survey estimates, from Afrobarometer's "
+                         "ninth round, and the country's figure is of 2011",
+    ("BWA", "language"): "its districts' shares are survey estimates, from Afrobarometer's "
+                         "ninth round, and the country's figure is of 2011",
+    ("BWA", "ethnicity"): "its districts' shares are survey estimates, from Afrobarometer's "
+                          "ninth round, which name the Tswana's own peoples (Mongwato, "
+                          "Mokwena) where the country's figure counts Tswana as one",
 }
 
 
@@ -8624,8 +8643,6 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r"\bso this county's row may be short of the ground drawn here\."), r"so the yearbook's count for this county may not cover all the ground drawn here."),
     # build-words: PHL 100 religion notes: '... the alternative would decide, on this map's authority rather than the census's, which churches count as one religion.'
     (re.compile(r"\bthe alternative would decide, on this map's authority rather than the census's, which churches count as one religion\."), r"collapsing them would decide which churches count as one religion on the map's own judgment rather than the census's."),
-    # build-words: EGY 17 language notes: 'A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it.'
-    (re.compile(r"\bA variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it\."), r"A question with one answer for everyone is a constant, not a measured composition, so no shares are shown."),
     # file-names: BRB language notes: '(Census-2020-Tables.xlsx)' and '(Census-Tables-2010.xlsx)'
     (re.compile(r" \(Census-2020-Tables\.xlsx\)| \(Census-Tables-2010\.xlsx\)"), r""),
     # file-names: THA 928 districts' gap notes cite one province's workbook as though it were the district's own: '(Ranong: Malay 0.5%, Burmese and Mon 7.0%)', '(Ranong's tables, web.archive.org/...ranong1.xls)'
@@ -11902,11 +11919,6 @@ SOLE_CHILD_NOT_ITS_GROUND: dict[tuple[str, str], dict[str, Any]] = {
     # that figure is refused: the 2021 census's own row is the municipality's.
     ("CPV", "Tarrafal"): {"population": (30000, "its 30,000 is not the census's count "
                                                 "(18,565 in 2010)")},
-    # Afrobarometer's North East region leaves out Francistown, its own
-    # region in the survey, which lies inside this polygon.
-    ("BWA", "North-East District"): {
-        f: "its survey region leaves out Francistown, which this polygon holds"
-        for f in _SURVEY_FIELDS},
     # The census's settlement table puts North Abaco at 3,772 in 2010; only
     # the 9,578 is refused.
     ("BHS", "North Abaco"): {"population": (9578, "its 9,578 is not the census's count of "

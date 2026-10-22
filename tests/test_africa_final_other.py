@@ -237,7 +237,9 @@ class SeychellesDistricts(unittest.TestCase):
         self.assertEqual((again["a"]["name"], again["a"]["aliases"]),
                          ("Anse Boileau", ["Anse Boile"]))
         # Where nothing declares it, the label is the name, with no alias.
-        plain = {r["shape_id"]: r for r in sc.build(table, admin1, None, a7)}
+        undeclared = {k: v for k, v in common.MISSPELLED.items() if k[0] != "SYC"}
+        with mock.patch.dict(common.MISSPELLED, undeclared, clear=True):
+            plain = {r["shape_id"]: r for r in sc.build(table, admin1, None, a7)}
         self.assertEqual(plain["a"]["name"], "Anse Boile")
         self.assertNotIn("aliases", plain["a"])
 

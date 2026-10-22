@@ -245,5 +245,42 @@ class NotesSayWhatTheSurveyGives(unittest.TestCase):
                     self.assertNotIn(word, note, (row["id"], field))
 
 
+class TheBuildReadsThePooledDistricts(unittest.TestCase):
+    """What the build does with the districts and the national-identity answer."""
+
+    @classmethod
+    def setUpClass(cls):
+        from scripts import build_entities as be
+        cls.be = be
+
+    def test_north_east_district_takes_its_pooled_row(self):
+        # Francistown's stratum is in the district's row now, so the
+        # refusal on the district's sole child no longer holds.
+        self.assertNotIn(("BWA", "North-East District"), self.be.SOLE_CHILD_NOT_ITS_GROUND)
+
+    def test_botswana_keeps_its_own_figures(self):
+        for field in ("religion", "language", "ethnicity"):
+            reason = self.be.COUNTRY_NOT_SUMMED[("BWA", field)]
+            self.assertIn("survey estimates, from Afrobarometer's ninth round", reason)
+        self.assertIn("Mongwato", self.be.COUNTRY_NOT_SUMMED[("BWA", "ethnicity")])
+
+    def test_eswatini_says_why_it_shows_no_ethnic_groups(self):
+        self.assertIn("ethnicity", self.be.WITHDRAWN_FIELDS["afrobarometer_region.json"]["SWZ"])
+        reason = self.be.field_gap("SWZ", "ethnicity", "admin1")
+        self.assertIn("1,186 of the 1,200 people", reason)
+        self.assertIsNone(self.be.field_gap("SWZ", "religion", "admin1"))
+
+    def test_the_count_is_the_extract_s(self):
+        import csv
+        import gzip
+        path = ROOT / "data" / "raw" / "afrobarometer" / "r9_extract.csv.gz"
+        if not path.exists():
+            raise unittest.SkipTest("the Round 9 extract is not in this checkout")
+        with gzip.open(path, "rt") as fh:
+            eswatini = [r for r in csv.DictReader(fh) if float(r["country"]) == 10]
+        self.assertEqual(len(eswatini), 1200)
+        self.assertEqual(sum(float(r["ethnicity"]) == 9990 for r in eswatini), 1186)
+
+
 if __name__ == "__main__":
     unittest.main()
