@@ -3751,10 +3751,11 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
         # the port police district drawn under the city's name.
         "LBY-WD-Q2271093": "Tajura, a town of Tripoli District, not the outline",
         "EGY-WD-Q134509": "Port Said, the city, not the port police district",
-        # Tunisian towns whose items carry their delegation's names: written
-        # under the statistics institute's French names (tunisia_census), each
-        # delegation is named as the town is, and the town's item took the
-        # polygon from the delegation's, which reaches it by the same names.
+        # Tunisian towns and municipalities whose items carry their
+        # delegation's names: written under the statistics institute's French
+        # names (tunisia_census), each delegation is named as the town is, and
+        # the town's item took the polygon from the delegation's, which reaches
+        # it by the same names.
         "TUN-WD-Q816364": "Bembla, the town, not the delegation",
         "TUN-WD-Q816443": "Ben Arous, the town, not the delegation",
         "TUN-WD-Q3062876": "Ezzahra, the town, not the delegation",
@@ -3763,6 +3764,8 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
         "TUN-WD-Q867615": "Nabeul, the city, not the delegation",
         "TUN-WD-Q1020989": "Sahline Moôtmar, the town, not the delegation of Sahline",
         "TUN-WD-Q3574882": "Zarzouna, the town, not the delegation",
+        "TUN-WD-Q22948382": "Bembla-Mnara, the municipality, not the delegation of Bembla",
+        "TUN-WD-Q49364945": "Sahline, the municipality, not the delegation",
     },
     "wiki_population_admin1.json": {
         "MDG-WP-vatovavy-fitovinany": "Fitovinany's 2018 figure, three of the "
