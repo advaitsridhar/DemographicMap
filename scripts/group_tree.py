@@ -585,7 +585,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
     ),
     "Central Sudanic languages": ("Kresh", "Birri", "Sara", "Sara Proper",
                                   "Ngam (Sara)", "Yulu", "Runga", "Lugbara",
-                                  "Ma'di", "Bongo"),
+                                  "Ma'di", "Bongo",
+                                  # The DRC's Lese, of the Ituri forest (Mambasa).
+                                  "Lese"),
     "Surmic and Koman languages": (
         "Suri", "Suri (Suri)", "Mursi", "Me'en", "Me’en", "Murle", "Bodi",
         "Kwegu", "Kwegu (Kwegoi)", "Komo", "Komo (Sudan)", "Gumuz",
@@ -1771,6 +1773,8 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Bantu languages": (
         # CLEAR Global, DR Congo, Namibia, Uganda, Kenya and Malawi, at district level.
         "Yombe", "Tetela", "Nande", "Songe", "Budja", "Dengese",
+        # Ruund (Uruund), the Lunda language of Kapanga, and the Ngiri's Baloi.
+        "Ruund", "Baloi",
         "Bangala", "Bembe", "Havu", "Mashi", "Lambya", "Tooro", "Embu",
         "Diriku-Shambyu",
         "Ovambo", "Herero", "Kwangali", "Lozi", "Yeyi", "Mbukushu",

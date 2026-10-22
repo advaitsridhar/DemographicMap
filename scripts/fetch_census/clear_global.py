@@ -166,20 +166,28 @@ YEAR = re.compile(r"(1[89]\d\d|20\d\d)")
 # Nepal's 2021 census prints for "Khash" (Jumla 51.2%, Kalikot 26.2%, Mugu
 # 6.7%, Humla 5.7%), an Indo-Aryan language, so that is what it is written as.
 #
-# The DRC's file gives Lomami 12.4% and its territory of Kabinda 25.0% in
-# "Lander River Warlpiri" (Glottolog land1255, read from the CAID territory
-# data of 2016), an Aboriginal language of Australia's Northern Territory.
-# Which language of Lomami the source meant cannot be told from the file, so
-# the share is kept, unnamed, as the residual "Other languages" -- leaving it
-# out would shrink the units, and guessing a language would be inventing one.
+# Read against Glottolog's own table of languages (where each name in these
+# files comes from), the African files give a share to languages of other
+# continents, or of another end of Africa, that no household of the unit can
+# have as its main language.
 #
-# It is not the only one. Read against Glottolog's own table of languages
-# (where each name in these files comes from), the African files give a share
-# to languages of other continents, or of another end of Africa, that no
-# household of the unit can have as its main language: in the DRC Tamazola
-# Mixtec (Oaxaca, Mexico; Fizi 7.9%), Ibaloi (Luzon; Bomongo 5.0%), Mokilese
-# (a Micronesian atoll; Mambasa 5.5%) and Mpongmpong (south-eastern
-# Cameroon; Mambasa 3.5%); in Benin Central Malay (Ouaké 54.1%) and Tagwana
+# The DRC's are CLEAR Global's matches for the names its source, the CAID
+# territory data of 2016, gives -- a wide table published beside the long
+# one (cd_lang_admin2_v01.csv), whose rows show what each share was called
+# before it was matched: Kabinda's "Lander River Warlpiri" 25.0% (Australia)
+# is the source's "Lande" 0.5 of 2.0; Fizi's "Tamazola Mixtec" 7.9% (Oaxaca)
+# its "Zola" 0.15 of 1.9; Bomongo's "Ibaloi" 5.0% (Luzon) its "Baloi"; Mambasa's
+# "Mokilese" 5.5% (a Micronesian atoll) its "Kilese" and "Mpongmpong" 3.5%
+# (south-eastern Cameroon) its "Bombo"; and Kapanga's "Rundi" 88.9%, the
+# language of Burundi, its "Urund" -- Ruund, the Lunda language of Kapanga.
+# Each is written as the source names it: Kilese is Lese (Ki- is Swahili's
+# prefix for a language) and Urund is Ruund, Glottolog's names for them;
+# Lande, Zola, Bombo and Baloi stay as the source spells them.
+#
+# Elsewhere no table gives the source's own name, so the share is kept,
+# unnamed, as the residual "Other languages" -- leaving it out would shrink
+# the units, and guessing a language would be inventing one: in Benin Central
+# Malay (Ouaké 54.1%) and Tagwana
 # Senoufo (central Côte d'Ivoire; Djidja 8.0%); in Ghana Nyamal (the Pilbara;
 # the Upper West's districts, up to all of a district's interviews); in
 # Nigeria eleven names from Australia, the Pacific, Asia and the Andes, and
@@ -202,8 +210,8 @@ YEAR = re.compile(r"(1[89]\d\d|20\d\d)")
 OTHER = "Other languages"
 LANGUAGE_RELABEL: dict[str, dict[str, str]] = {
     "NPL": {"Khasi": "Khash"},
-    "COD": {"Lander River Warlpiri": OTHER, "Tamazola Mixtec": OTHER, "Ibaloi": OTHER,
-            "Mokilese": OTHER, "Mpongmpong": OTHER},
+    "COD": {"Lander River Warlpiri": "Lande", "Tamazola Mixtec": "Zola", "Ibaloi": "Baloi",
+            "Mokilese": "Lese", "Mpongmpong": "Bombo", "Rundi": "Ruund"},
     "BEN": {"Central Malay": OTHER, "Tagwana Senoufo": OTHER},
     "GHA": {"Nyamal": OTHER},
     "NGA": {"Kokata": OTHER, "Nguburindi": OTHER, "Chavacano": OTHER, "Sibalenhon": OTHER,
@@ -221,11 +229,6 @@ LANGUAGE_RELABEL: dict[str, dict[str, str]] = {
 # What each relabelled name was, said on the record of every unit whose
 # shares carry it: {(iso3, the file's name): sentence}.
 _FOREIGN = {
-    "COD": {"Lander River Warlpiri": "an Aboriginal language of Australia",
-            "Tamazola Mixtec": "a Mixtec language of Oaxaca, Mexico",
-            "Ibaloi": "a language of northern Luzon, in the Philippines",
-            "Mokilese": "a Micronesian language of Mokil atoll, in the Pacific",
-            "Mpongmpong": "a Bantu language of south-eastern Cameroon"},
     "BEN": {"Central Malay": "a Malay language of Sumatra and the Malay peninsula",
             "Tagwana Senoufo": "a Senufo language of central Côte d'Ivoire"},
     "GHA": {"Nyamal": "an Aboriginal language of the Pilbara, Australia"},
@@ -255,6 +258,23 @@ RELABEL_NOTES: dict[tuple[str, str], str] = {
                      "Global's table writes 'Yao'."),
     ("MWI", "Yao"): ("'Chiyao' is the Bantu language of the Yao people, which CLEAR "
                      "Global's table writes 'Yao'."),
+    # The DRC's source names these shares, where CLEAR Global's matches do not.
+    **{("COD", wrong): (f"'{named}' is the name the DRC's CAID territory data of 2016, "
+                        f"the source CLEAR Global's table tabulates, gives this share; CLEAR "
+                        f"Global's table writes it '{wrong}', {where}.")
+       for wrong, named, where in (
+           ("Lander River Warlpiri", "Lande", "an Aboriginal language of Australia"),
+           ("Tamazola Mixtec", "Zola", "a Mixtec language of Oaxaca, Mexico"),
+           ("Ibaloi", "Baloi", "a language of northern Luzon, in the Philippines"),
+           ("Mpongmpong", "Bombo", "a Bantu language of south-eastern Cameroon"))},
+    **{("COD", wrong): (f"'{named}' is {what}. The DRC's CAID territory data of 2016, the "
+                        f"source CLEAR Global's table tabulates, names it {source}; CLEAR "
+                        f"Global's table writes it '{wrong}', {where}.")
+       for wrong, named, what, source, where in (
+           ("Mokilese", "Lese", "the Central Sudanic language of the Ituri forest", "Kilese",
+            "a Micronesian language of Mokil atoll, in the Pacific"),
+           ("Rundi", "Ruund", "the Lunda language of Kapanga", "Urund",
+            "the language of Burundi"))},
     ("NAM", "Ndonga (R.20)"): (
         "'Oshiwambo' is the Oshiwambo languages, Oshikwanyama and Oshindonga among "
         "them, which CLEAR Global's table writes 'Ndonga (R.20)': one of their names "

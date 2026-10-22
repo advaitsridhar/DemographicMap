@@ -243,16 +243,21 @@ class CountryRecords(unittest.TestCase):
                 self.assertIn(name, cg.RELABEL_NOTES[(iso, name)], (iso, name))
                 # Whatever it becomes, the tree files it where it belongs:
                 # the residual, or a family of its own continent.
+                # (The DRC's Lande, Zola and Bombo, which nothing identifies
+                # beyond the source's name, are left unplaced.)
                 parent = gt.parent_of("language", target)
-                self.assertIsNotNone(parent, target)
+                if target not in ("Lande", "Zola", "Bombo"):
+                    self.assertIsNotNone(parent, target)
                 self.assertNotIn(parent, ("Hmong-Mien languages",
                                           "Indigenous languages of Australia"), target)
 
-    def test_two_names_kept_unnamed_in_one_unit_are_added_up_and_each_is_said(self):
-        # Fizi's Mexican and Bomongo's Philippine names, put in one unit.
+    def test_the_drc_s_names_are_its_source_s(self):
+        # Fizi's Mexican and Bomongo's Philippine names, put in one unit, and
+        # Kapanga's Burundian one: each is the CAID data's own name.
         rows = [row("CD62", "Sud-Kivu", "Bembe", 0.9), row("CD62", "Sud-Kivu", "Tamazola Mixtec", 0.06),
                 row("CD62", "Sud-Kivu", "Ibaloi", 0.04),
                 row("CD41", "Equateur", "Lingala", 0.95), row("CD41", "Equateur", "Ibaloi", 0.05),
+                row("CD72", "Lualaba", "Rundi", 0.889), row("CD72", "Lualaba", "Chokwe", 0.111),
                 row("CD54", "Ituri", "Swahili", 0.9996), row("CD54", "Ituri", "Mokilese", 0.0004)]
         self.serve(csv_text(rows))
         drc = dict(PACKAGE, name="democratic-republic-of-the-congo-languages",
@@ -260,14 +265,17 @@ class CountryRecords(unittest.TestCase):
         records, _ = quiet(cg.country_records, drc)
         by_name = {r["name"]: r for r in records}
         kivu = {g["group"]: g["pct"] for g in by_name["Sud-Kivu"]["language"]}
-        self.assertEqual(kivu, {"Bembe": 90.0, "Other languages": 10.0})
+        self.assertEqual(kivu, {"Bembe": 90.0, "Zola": 6.0, "Baloi": 4.0})
         note = by_name["Sud-Kivu"]["language_note"]
-        self.assertIn("Tamazola Mixtec, a Mixtec language of Oaxaca, Mexico", note)
-        self.assertIn("Ibaloi, a language of northern Luzon", note)
+        self.assertIn("writes it 'Tamazola Mixtec', a Mixtec language of Oaxaca, Mexico", note)
+        self.assertIn("writes it 'Ibaloi', a language of northern Luzon", note)
         self.assertNotIn("Tamazola", by_name["Equateur"]["language_note"])
-        self.assertIn("Ibaloi", by_name["Equateur"]["language_note"])
+        self.assertIn("'Baloi' is the name the DRC's CAID territory data", by_name["Equateur"]["language_note"])
+        lualaba = {g["group"]: g["pct"] for g in by_name["Lualaba"]["language"]}
+        self.assertEqual(lualaba, {"Ruund": 88.9, "Chokwe": 11.1})
+        self.assertIn("names it Urund", by_name["Lualaba"]["language_note"])
         # A share too small to show says nothing about the name it had.
-        self.assertNotIn("Other languages", {g["group"] for g in by_name["Ituri"]["language"]})
+        self.assertNotIn("Lese", {g["group"] for g in by_name["Ituri"]["language"]})
         self.assertNotIn("Mokilese", by_name["Ituri"]["language_note"])
 
     def test_names_kept_unnamed_in_one_unit_share_one_sentence(self):
@@ -336,9 +344,10 @@ class CountryRecords(unittest.TestCase):
                               records[0]["language_note"])
                 self.assertEqual(gt.parent_of("language", spelt), "Bantu languages")
 
-    def test_the_drc_s_australian_language_is_kept_unnamed_and_says_so(self):
+    def test_the_drc_s_australian_language_is_the_source_s_lande(self):
         # Lomami's 12.4% and Kabinda's 25.0%: a share of real households
-        # under the name of an Aboriginal language of Australia.
+        # under the name of an Aboriginal language of Australia, which the
+        # CAID data CLEAR Global matched it from calls Lande.
         rows = [row("CD81", "Lomami", "Luba-Lulua", 0.4), row("CD81", "Lomami", "Songe", 0.35),
                 row("CD81", "Lomami", "Lander River Warlpiri", 0.25),
                 row("CD82", "Sankuru", "Tetela", 1.0)]
@@ -348,12 +357,10 @@ class CountryRecords(unittest.TestCase):
         records, _ = quiet(cg.country_records, drc)
         by_name = {r["name"]: r for r in records}
         lomami = {g["group"]: g["pct"] for g in by_name["Lomami"]["language"]}
-        self.assertEqual(lomami, {"Luba-Lulua": 40.0, "Songe": 35.0, "Other languages": 25.0})
-        self.assertIn("Lander River Warlpiri, an Aboriginal language of Australia",
+        self.assertEqual(lomami, {"Luba-Lulua": 40.0, "Songe": 35.0, "Lande": 25.0})
+        self.assertIn("'Lander River Warlpiri', an Aboriginal language of Australia",
                       by_name["Lomami"]["language_note"])
         self.assertNotIn("Warlpiri", by_name["Sankuru"]["language_note"])
-        import canonical_groups
-        self.assertTrue(canonical_groups.is_residual("Other languages"))
 
     def test_the_tree_files_khash_with_the_indo_aryan_languages(self):
         import group_tree as gt
