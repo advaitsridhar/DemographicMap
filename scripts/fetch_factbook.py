@@ -214,7 +214,14 @@ def parse_major_urban(profile: dict[str, Any]) -> tuple[str | None, list[dict[st
         return None, []
     year = parse_year(raw)
     cities: list[dict[str, Any]] = []
-    for part in re.split(r",(?![^(]*\))", raw):
+    # Entries are separated by commas and, where the years differ, semicolons
+    # ("285,000 PORTO-NOVO (capital) (2018); 1.253 million Abomey-Calavi,
+    # 722,000 COTONOU ..."); a comma before three digits is a thousands
+    # separator, not a break. Split there, Benin's country panel read
+    # "PORTO-NOVO  ; 1.253 million Abomey-Calavi" and Cote d'Ivoire's and
+    # Tanzania's largest towns were their 231,000- and 262,000-person
+    # capitals, parsed as 0, ahead of Abidjan and Dar es Salaam.
+    for part in re.split(r"[;,](?!\d{3}\b)(?![^(]*\))", raw):
         part = part.strip()
         m = re.match(r"([\d.,]+)\s*(million|billion)?\s+(.+)$", part)
         if not m:
@@ -223,7 +230,12 @@ def parse_major_urban(profile: dict[str, Any]) -> tuple[str | None, list[dict[st
             value = float(m.group(1).replace(",", ""))
         except ValueError:
             continue
-        if m.group(2) == "million":
+        # A number written out with a thousands separator is a whole count
+        # already, and a "million" after it is the publication's slip: Saudi
+        # Arabia's list ends "872,000 million Hufuf-Mubarraz".
+        if "," in m.group(1):
+            pass
+        elif m.group(2) == "million":
             value *= 1e6
         elif m.group(2) == "billion":
             value *= 1e9
@@ -242,7 +254,9 @@ def parse_major_urban(profile: dict[str, Any]) -> tuple[str | None, list[dict[st
             "is_capital": is_capital,
             "year": year,
         })
-    largest = cities[0]["name"] if cities else None
+    # The most populous, which is not always the first listed: the Factbook
+    # puts a small capital first (Porto-Novo, Yamoussoukro, Dodoma).
+    largest = max(cities, key=lambda c: c["population"])["name"] if cities else None
     return largest, cities
 
 
