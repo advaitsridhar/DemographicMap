@@ -484,10 +484,12 @@ def fields(units: list[dict[str, Any]], note: str, source: str = SOURCE,
         "sources": [{"field": "population/median_age/sex_ratio", "name": source, "url": page,
                      "year": YEAR, "license": LICENCE}]}
     if not ODD_RATIO[0] <= ratio <= ODD_RATIO[1]:
+        # The country's ratio in the unit the map shows every ratio in (men per
+        # 100 women): a note that prints a ratio keeps its own unit.
         out["sex_ratio_note"] = (
             f"The census's own figures, {male:,} men and {female:,} women, which its "
-            "dashboard and its sub-county profile tables both give; the country counted 946 "
-            "men per 1,000 women.")
+            "dashboard and its sub-county profile tables both give; the country counted 94.6 "
+            "men per 100 women.")
         islands = [ISLANDS_2002[u["name"]] for u in units if u.get("name") in ISLANDS_2002]
         if islands:
             men, women = (sum(x) for x in zip(*islands))

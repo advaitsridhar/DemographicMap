@@ -399,6 +399,17 @@ class EthiopiaWeredaNames(unittest.TestCase):
         self.assertEqual(et.spoken("Bahirdar Zuria"), "Bahirdar Zuria")
 
 
+class UgandaRatios(unittest.TestCase):
+    """A lopsided county's note gives the country's ratio in the unit the map shows."""
+
+    def test_the_country_s_ratio_reads_per_100(self):
+        from scripts.fetch_census import uganda_census as ug
+        unit = {"name": "Bufumbira", "male": 251_631, "female": 182_031, "total": 433_662}
+        note = ug.fields([unit], "x")["sex_ratio_note"]
+        self.assertIn("the country counted 94.6 men per 100 women.", note)
+        self.assertTrue(be.PRINTED_RATIO.search(note))
+
+
 class VisitorText(unittest.TestCase):
     """What the new notes say is what a figure is and where it comes from."""
 
