@@ -495,7 +495,8 @@ def hpc_build(sums: dict[str, dict[str, Any]], adm2: list[dict[str, str]],
     for province, factor in sorted(factors.items()):
         report.append(f"  2024: {province}: every unit's 2020 estimate x{factor:.4f}")
     for province in sorted(set(pairs) - set(factors)):
-        report.append(f"  2024: {province}: its units' 2024/2020 ratios differ")
+        report.append(f"  2024: {province}: " + ("one unit" if len(pairs[province]) < 2 else
+                                                  "its units' 2024/2020 ratios differ"))
     records: list[dict[str, Any]] = []
     for old, sid, entry in chosen:
         name = shapes[sid]["name"]

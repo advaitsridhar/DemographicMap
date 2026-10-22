@@ -134,5 +134,99 @@ class Ages(unittest.TestCase):
         self.assertTrue(any("share one structure" in line for line in report))
 
 
+class Projection(unittest.TestCase):
+    """ICASEES's 2025 projection by 2020 sub-prefecture, on the 2003 polygons."""
+
+    def setUp(self):
+        def commune(pref, sp, name, total):
+            return {"pref": pref, "sp": sp, "name": name, "total": total}
+        # 2003 (prefecture, sub-prefecture) -> its 2021 communes, each with its
+        # 2020 prefecture and sub-prefecture.
+        self.placement = {
+            ("bassekotto", "alindao"): [commune("Basse-Kotto", "Alindao", "Alindao", 100_000),
+                                        commune("Basse-Kotto", "Alindao", "Datoko", 25_040)],
+            ("bassekotto", "mingala"): [commune("Basse-Kotto", "Mingala", "Mingala", 20_000)],
+            # 2020's Amada-Gaza is in two 2003 polygons.
+            ("mamberekadei", "amadagaza"): [commune("Mambéré", "Amada-Gaza", "Amada", 10_000)],
+            ("mamberekadei", "gamboula"): [commune("Mambéré", "Amada-Gaza", "Gaza", 5_151),
+                                          commune("Mambéré", "Gamboula", "Gamboula", 40_000)],
+            ("bangui", "bangui"): [commune("Bangui", "Bangui", "1er Arrondissement", 900_000)],
+            ("ombellampoko", "bimbo"): [commune("Bangui", "Bimbo", "Bimbo", 300_000)],
+        }
+        self.groups = {"p-alindao": [("bassekotto", "alindao")],
+                       "p-mingala": [("bassekotto", "mingala")],
+                       "p-amada": [("mamberekadei", "amadagaza")],
+                       "p-gamboula": [("mamberekadei", "gamboula")],
+                       "p-bangui": [("bangui", "bangui")],
+                       "p-bimbo": [("ombellampoko", "bimbo")]}
+        self.shapes = {sid: {"name": name} for sid, name in (
+            ("p-alindao", "Alindao"), ("p-mingala", "Mingala"), ("p-amada", "Amada-Gaza"),
+            ("p-gamboula", "Gamboula"), ("p-bangui", "Bangui"), ("p-bimbo", "Bimbo"))}
+        self.c21 = {"sps": {(fold(c["pref"]), fold(c["sp"])): {}
+                            for units in self.placement.values() for c in units}}
+        self.admin1 = [{"id": "BK", "name": "Basse-Kotto"}, {"id": "MK", "name": "Mambéré-Kadéï"},
+                       {"id": "BG", "name": "Bangui"}, {"id": "OM", "name": "Ombella-M'Poko"}]
+        self.rows = [{"pref": "Basse-Kotto", "sp": "Alindao", "code": "CF612", "value": 131_218.5},
+                     {"pref": "Basse-Kotto", "sp": "Mingala", "code": "CF613", "value": 21_000.2},
+                     {"pref": "Mambéré", "sp": "Amada-Gaza", "code": "CF242", "value": 20_319.3},
+                     {"pref": "Mambéré", "sp": "Gamboula", "code": "CF243", "value": 42_000.0},
+                     {"pref": "Bangui", "sp": "Bangui Centre", "code": "CF711", "value": 700_000.0},
+                     {"pref": "Bangui", "sp": "Bangui Kaga", "code": "CF712", "value": 786_900.0}]
+
+    def run_it(self):
+        totals = {sid: sum(u["total"] for k in keys for u in self.placement[k])
+                  for sid, keys in self.groups.items()}
+        return cc.projection(self.rows, self.c21, self.placement, self.groups, self.shapes,
+                             self.admin1, totals, "https://data.humdata.org/dataset/cod-ps-caf")
+
+    def test_whole_sub_prefectures_are_added_up(self):
+        records, reasons, pref_reasons, _ = self.run_it()
+        by = {r["shape_id"]: r for r in records}
+        self.assertEqual(by["p-alindao"]["population"]["value"], 131_218)
+        self.assertEqual(by["p-alindao"]["population"]["year"], 2025)
+        self.assertIn("The census mapping counted 125,040 people here on 1 March 2021",
+                      by["p-alindao"]["population_note"])
+        self.assertEqual(by["BK"]["population"]["value"], 152_219)
+        self.assertNotIn("sex_ratio", {k for k, v in by["p-alindao"].items()
+                                       if isinstance(v, dict) and "value" in v})
+
+    def test_a_sub_prefecture_on_two_polygons_gives_neither_a_figure(self):
+        records, reasons, pref_reasons, _ = self.run_it()
+        shown = {r["shape_id"] for r in records}
+        self.assertFalse({"p-amada", "p-gamboula", "MK"} & shown)
+        self.assertIn("the communes of Amada-Gaza (Amada-Gaza, Gamboula) lie partly in this "
+                      "sub-prefecture", reasons["p-amada"])
+        self.assertIn("gives no figure for Amada-Gaza and Gamboula", pref_reasons["MK"])
+
+    def test_a_withheld_count_gets_no_projection(self):
+        totals = {sid: sum(u["total"] for k in keys for u in self.placement[k])
+                  for sid, keys in self.groups.items()}
+        records, reasons, pref_reasons, _ = cc.projection(
+            self.rows, self.c21, self.placement, self.groups, self.shapes, self.admin1, totals,
+            "https://data.humdata.org/dataset/cod-ps-caf", {"p-mingala"})
+        self.assertNotIn("p-mingala", {r["shape_id"] for r in records})
+        # Mingala's 2025 figure grows from its count as Alindao's does (5%).
+        self.assertIn("gives it 21,000 people, the same 2021 count grown as its prefecture's "
+                      "other sub-prefectures grow", reasons["p-mingala"])
+        self.assertIn("gives no figure for Mingala", pref_reasons["BK"])
+
+    def test_one_share_of_men_per_prefecture(self):
+        rows = [{"pref": "Bangui", "men": 116_361.5, "women": 126_735.6},
+                {"pref": "Bangui", "men": 263_419.2, "women": 286_904.1},
+                {"pref": "Vakaga", "men": 5_625.9, "women": 5_142.2}]
+        copied, report = cc.one_sex_split(rows)
+        self.assertTrue(copied)
+        rows.append({"pref": "Vakaga", "men": 5_000.0, "women": 5_000.0})
+        self.assertFalse(cc.one_sex_split(rows)[0])
+
+    def test_a_prefecture_divided_otherwise(self):
+        records, reasons, _, report = self.run_it()
+        self.assertFalse({"p-bangui", "p-bimbo"} & {r["shape_id"] for r in records})
+        for sid in ("p-bangui", "p-bimbo"):
+            self.assertIn("divides Bangui prefecture, as the 2020 division draws it, into 2 "
+                          "units of its own (Bangui Centre, Bangui Kaga; 1,486,900 people)",
+                          reasons[sid])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -124,10 +124,15 @@ FIXED_SLACK = 0.0005
 
 SEX_GAP = ("The 2021 census mapping's table splits every unit's count into men and women in "
            "one fixed proportion (49 to 51), so it gives no sex ratio of this sub-prefecture's "
-           "own; the statistics office's 2016 estimates by sex stop at the prefecture.")
-AGE_GAP = ("The statistics office's 2016 estimates by age stop at the 17 prefectures and its "
-           "2021 mapping counts carry no ages, so no median age is published for the "
-           "sub-prefecture.")
+           "own; ICASEES's 2016 estimates by sex (Annuaire statistique de la République "
+           "Centrafricaine 2016) stop at the prefecture.")
+# Added where the 2025 table gives every sub-prefecture of a prefecture one
+# share of men (checked on each run, one_sex_split).
+SEX_GAP_2025 = (" ICASEES's projection for 2025 gives every sub-prefecture of a prefecture the "
+                "same proportion of men, so it gives none of this one's own either.")
+AGE_GAP = ("ICASEES's 2016 estimates by age (Annuaire statistique de la République "
+           "Centrafricaine 2016) stop at the 17 prefectures and its 2021 census mapping counts "
+           "carry no ages, so no median age is published for the sub-prefecture.")
 SEAT_GAP = ("No published list of the sub-prefectures' seats has been found, so none is "
             "shown; the census tables name the sub-prefectures and their communes, not their "
             "seats.")
@@ -360,19 +365,246 @@ def own_structures(ages: dict[str, dict[str, Any]]) -> tuple[set[str], list[str]
     return set(keys) - copied, report
 
 
-def ocha_workbook_url() -> str:
+def ocha_workbook_url(key: str = "cartocensitaire") -> str:
     body = http_json(f"{HDX_API}/package_show?id={OCHA_DATASET}")
     found = [r for r in body["result"].get("resources", [])
-             if "cartocensitaire" in str(r.get("name") or "").lower()]
+             if key in str(r.get("name") or "").lower()]
     if not found:
-        raise SystemExit(f"car_census: {OCHA_DATASET} no longer carries the 2021 mapping table")
+        raise SystemExit(f"car_census: {OCHA_DATASET} no longer carries a resource named {key}")
     return found[0]["url"]
+
+
+# ICASEES's projection for 2025 by sub-prefecture of the 2020 division, as OCHA
+# publishes it for humanitarian planning (ocha-car-projection-population-2025-
+# icasees.xlsx, sheet "Population_HNRP 2026", column Projection_2025_ic).
+PROJECTION_KEY = "projection-population-2025"
+PROJECTION_YEAR = 2025
+PROJECTION_OUT = "car_projection.json"
+PROJECTION_SOURCE = ("Institut Centrafricain des Statistiques et des Etudes Economiques et "
+                     "Sociales (ICASEES), projection of the population for 2025 by "
+                     "sub-prefecture, as OCHA publishes it for humanitarian planning "
+                     "(cod-ps-caf)")
+# The 2025 table's spellings of 2020 sub-prefectures the mapping table writes
+# otherwise (folded): (prefecture, sub-prefecture) -> the mapping table's.
+PROJECTION_ALIASES: dict[tuple[str, str], tuple[str, str]] = {}
+
+
+def projection_rows(rows: list[list[Any]]) -> list[dict[str, Any]]:
+    """The 2025 table's sub-prefectures: prefecture, sub-prefecture, code, figure,
+    and its men and women where the table gives them."""
+    head = [str(c or "").strip() for c in rows[0]]
+    at = {fold(h): i for i, h in enumerate(head)}
+    value = next((i for k, i in at.items() if k.startswith("projection2025")), None)
+    if value is None or "prefecture" not in at or "sousprefecture" not in at:
+        raise SystemExit(f"car_census: the 2025 table's columns are not as expected: {head}")
+    out = []
+    for row in rows[1:]:
+        figure = number(row[value]) if len(row) > value else None
+        name = str(row[at["sousprefecture"]] or "").strip()
+        if figure is None or not name:
+            continue
+        men = number(row[at["h2025"]]) if "h2025" in at and len(row) > at["h2025"] else None
+        women = number(row[at["f2025"]]) if "f2025" in at and len(row) > at["f2025"] else None
+        out.append({"pref": str(row[at["prefecture"]] or "").strip(), "sp": name,
+                    "code": str(row[at.get("admin2pcode", value)] or "").strip(),
+                    "value": float(figure), "men": men, "women": women})
+    return out
+
+
+# Two sub-prefectures whose shares of men in the 2025 table agree this closely
+# have one proportion applied to both.
+SHARE_TOLERANCE = 5e-4
+
+
+def one_sex_split(rows: list[dict[str, Any]]) -> tuple[bool, list[str]]:
+    """Whether the 2025 table gives every sub-prefecture of each prefecture the
+    same share of men (one proportion applied to all), and the report."""
+    by_pref: dict[str, list[float]] = defaultdict(list)
+    for row in rows:
+        if row.get("men") and row.get("women"):
+            by_pref[row["pref"]].append(row["men"] / (row["men"] + row["women"]))
+    report = []
+    copied = bool(by_pref)
+    for pref, shares in sorted(by_pref.items()):
+        spread = max(shares) - min(shares)
+        if len(shares) > 1 and spread > SHARE_TOLERANCE:
+            copied = False
+            report.append(f"  2025 sexes: {pref}: shares of men {min(shares):.4f}-"
+                          f"{max(shares):.4f} over {len(shares)} sub-prefectures")
+        else:
+            report.append(f"  2025 sexes: {pref}: one share of men, {shares[0]:.4f}, for "
+                          f"{len(shares)} sub-prefecture{'s' if len(shares) > 1 else ''}")
+    return copied, report
+
+
+def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
+               placement: dict[tuple[str, str], list[dict[str, Any]]],
+               groups: dict[str, list[tuple[str, str]]], shapes: dict[str, dict[str, Any]],
+               admin1: list[dict[str, Any]], totals: dict[str, int], url: str,
+               suspect: set[str] | None = None
+               ) -> tuple[list[dict[str, Any]], dict[str, str], dict[str, str], list[str]]:
+    """The 2025 figures on the 2003 polygons, where the 2020 sub-prefectures nest in them.
+
+    Each 2020 sub-prefecture lies where the commune crosswalk puts its communes;
+    a polygon takes the 2025 figures of the 2020 sub-prefectures it holds
+    whole, and only where it holds nothing of any other. A polygon whose 2021
+    count is withheld (``suspect``) gets no figure, and its sentence says
+    whether the 2025 figure grows from that count as its prefecture's others
+    grow from theirs. Returns the records (held behind the 2021 counts), the
+    sentence for each polygon and prefecture that gets none, and the report."""
+    suspect = suspect or set()
+    report: list[str] = []
+    # Each 2020 sub-prefecture's 2021 count and the polygons its communes are on.
+    sp_polys: dict[tuple[str, str], set[str]] = defaultdict(set)
+    sp_count: dict[tuple[str, str], int] = defaultdict(int)
+    sp_name: dict[tuple[str, str], str] = {}
+    for sid, keys in groups.items():
+        for key in keys:
+            for unit in placement[key]:
+                sp21 = (fold(unit["pref"]), fold(unit["sp"]))
+                sp_polys[sp21].add(sid)
+                sp_count[sp21] += unit["total"]
+                sp_name[sp21] = unit["sp"].title() if unit["sp"].isupper() else unit["sp"]
+    known = set(c21["sps"])
+    figures: dict[tuple[str, str], float] = {}
+    unmatched: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        key = (fold(row["pref"]), fold(row["sp"]))
+        key = PROJECTION_ALIASES.get(key, key)
+        if key in known:
+            figures[key] = figures.get(key, 0.0) + row["value"]
+        else:
+            unmatched[fold(row["pref"])].append(row)
+    for pref, found in sorted(unmatched.items()):
+        report.append(f"  2025: {', '.join(r['sp'] for r in found)} ({found[0]['pref']}): no "
+                      f"2020 sub-prefecture of the mapping table of that name; "
+                      f"{sum(r['value'] for r in found):,.0f} people")
+    # A 2020 prefecture any of whose 2025 rows names no 2020 sub-prefecture is
+    # divided otherwise in 2025: none of its sub-prefectures is placed.
+    divided = set(unmatched)
+    # Each 2020 prefecture's growth from 2021 to 2025, over its sub-prefectures
+    # the table names, the withheld ones left out.
+    growth: dict[str, list[float]] = defaultdict(list)
+    for key, value in figures.items():
+        if sp_count.get(key) and not any(s in suspect for s in sp_polys[key]):
+            growth[key[0]].append(value / sp_count[key])
+    reasons: dict[str, str] = {}
+    records: list[dict[str, Any]] = []
+    have: dict[str, float] = {}
+    for sid, keys in sorted(groups.items()):
+        members = sorted({(fold(u["pref"]), fold(u["sp"])) for key in keys
+                          for u in placement[key]})
+        name = shapes[sid]["name"]
+        whole = all(sp_polys[m] == {sid} for m in members)
+        cut = [m for m in members if m[0] in divided]
+        missing = [m for m in members if m not in figures and m[0] not in divided]
+        if cut:
+            found = unmatched[cut[0][0]]
+            units = ", ".join(r["sp"] for r in found)
+            reasons[sid] = (
+                f"ICASEES's projection for {PROJECTION_YEAR} divides {found[0]['pref']} "
+                f"prefecture, as the 2020 division draws it, into {len(found)} units of its own "
+                f"({units}; {sum(r['value'] for r in found):,.0f} people), which hold the "
+                f"communes of this sub-prefecture as the 2003 census drew it with others, so "
+                f"no {PROJECTION_YEAR} figure is shown here.")
+            report.append(f"  2025: {name}: {cut[0][0]} divided otherwise in 2025")
+            continue
+        if not whole:
+            spread = [f"{sp_name[m]} ({', '.join(sorted(shapes[s]['name'] for s in sp_polys[m]))})"
+                      for m in members if sp_polys[m] != {sid}]
+            reasons[sid] = (
+                f"ICASEES's projection for {PROJECTION_YEAR} is by sub-prefecture of the 2020 "
+                f"division, and the communes of "
+                + ", ".join(spread)
+                + f" lie partly in this sub-prefecture as the 2003 census drew it and partly in "
+                f"others, so no {PROJECTION_YEAR} figure describes it.")
+            report.append(f"  2025: {name}: not whole: {'; '.join(spread)}")
+            continue
+        if missing or not members:
+            report.append(f"  2025: {name}: no 2025 row for {missing or 'any of its units'}")
+            continue
+        value = sum(figures[m] for m in members)
+        made = sum(sp_count[m] for m in members)
+        parts = [sp_name[m] for m in members]
+        if sid in suspect:
+            others = sorted(growth.get(members[0][0], []))
+            ratio = value / made if made else 0.0
+            middle = others[len(others) // 2] if others else None
+            if middle and abs(ratio / middle - 1) <= 0.02:
+                reasons[sid] = (
+                    f"ICASEES's projection for {PROJECTION_YEAR} gives it {value:,.0f} people, "
+                    f"the same 2021 count grown as its prefecture's other sub-prefectures grow, "
+                    f"so it is not shown either.")
+            else:
+                reasons[sid] = (
+                    f"ICASEES's projection for {PROJECTION_YEAR} gives it {value:,.0f} people; "
+                    f"whether that figure rests on the same 2021 count cannot be told, so it is "
+                    f"not shown either.")
+            report.append(f"  2025: {name}: withheld; {value:,.0f} against the 2021 {made:,} "
+                          f"(x{ratio:.3f}; its prefecture's others x{middle or 0:.3f})")
+            continue
+        have[sid] = value
+        same = len(parts) == 1 and fold(parts[0]) == fold(name)
+        note = (f"ICASEES's projection of the population of {name} for {PROJECTION_YEAR}, as "
+                f"OCHA publishes it for humanitarian planning"
+                + ("" if same else
+                   f": the 2020 sub-prefectures of {' and '.join(parts)} added up, which lie in "
+                   f"{name} as the 2003 census drew it")
+                + f". The census mapping counted {totals.get(sid, made):,} people here on 1 March "
+                  f"2021.")
+        records.append(record(
+            f"CAF-PROJ{PROJECTION_YEAR}-{sid}", name, level="admin2", parent="CAF",
+            country="CAF", match_by="shape_id", shape_id=sid,
+            population=measure(round(value), year=PROJECTION_YEAR, source=PROJECTION_SOURCE),
+            population_note=note,
+            sources=[{"field": "population", "name": PROJECTION_SOURCE, "url": url,
+                      "year": PROJECTION_YEAR, "license": LICENCE},
+                     {"field": "population note", "name": COUNT_SOURCE_USCB,
+                      "url": dataset_url(USCB_DATASET), "year": COUNT_YEAR,
+                      "license": LICENCE}]))
+        rate = (value / made) ** (1 / (PROJECTION_YEAR - COUNT_YEAR)) - 1 if made else 0.0
+        report.append(f"  2025: {name}: {value:,.0f} ({' + '.join(parts)}; 2021 {made:,}, "
+                      f"{rate:+.1%} a year)")
+    # A prefecture all of whose polygons have a 2025 figure takes their sum.
+    pref_of: dict[str, str] = {sid: keys[0][0] for sid, keys in groups.items()}
+    pref_reasons: dict[str, str] = {}
+    for poly in admin1:
+        key = fold(poly["name"])
+        sids = [sid for sid, p in pref_of.items() if p == key]
+        if not sids:
+            continue
+        if all(sid in have for sid in sids):
+            value = sum(have[sid] for sid in sids)
+            records.append(record(
+                f"CAF-PROJ{PROJECTION_YEAR}-{poly['id']}", poly["name"], level="admin1",
+                parent="CAF", country="CAF", match_by="shape_id", shape_id=poly["id"],
+                population=measure(round(value), year=PROJECTION_YEAR, source=PROJECTION_SOURCE),
+                population_note=(
+                    f"ICASEES's projection of the population of {poly['name']} for "
+                    f"{PROJECTION_YEAR}, as OCHA publishes it for humanitarian planning: its "
+                    f"sub-prefectures' figures added up."),
+                sources=[{"field": "population", "name": PROJECTION_SOURCE, "url": url,
+                          "year": PROJECTION_YEAR, "license": LICENCE}]))
+            report.append(f"  2025: prefecture {poly['name']}: {value:,.0f}")
+        else:
+            lacking = sorted(shapes[sid]["name"] for sid in sids if sid not in have)
+            pref_reasons[poly["id"]] = (
+                f"ICASEES's projection for {PROJECTION_YEAR} gives no figure for "
+                f"{' and '.join(lacking)} as the 2003 census drew "
+                f"{'it' if len(lacking) == 1 else 'them'}, so none is shown for the prefecture.")
+            report.append(f"  2025: prefecture {poly['name']}: none ({', '.join(lacking)})")
+    return records, reasons, pref_reasons, report
 
 
 def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, str, str]],
           ages: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
-          admin2: list[dict[str, Any]], ocha_url: str, uscb_url: str
+          admin2: list[dict[str, Any]], ocha_url: str, uscb_url: str,
+          proj_rows: list[dict[str, Any]] | None = None, proj_url: str = "",
+          held: list[dict[str, Any]] | None = None
           ) -> tuple[list[dict[str, Any]], list[str]]:
+    """The 2021 counts and 2016 ages on the 2003 polygons; with ``proj_rows``,
+    the 2025 projection's records are added to ``held`` (car_projection.json)
+    and the polygons and prefectures it gives no figure say why."""
     report: list[str] = []
 
     def fail(message: str) -> None:
@@ -487,8 +719,31 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
                    "license": LICENCE},
                   {"field": "population", "name": COUNT_SOURCE_USCB,
                    "url": dataset_url(USCB_DATASET), "year": COUNT_YEAR, "license": LICENCE}]
+    # The sub-prefectures' notes on their sexes, ages and seats rest on the
+    # mapping table (its fixed split, no ages, no seats), on the 2016 yearbook
+    # (whose ages and sexes stop at the prefecture) and, for 2025, on ICASEES's
+    # projection.
+    cite_notes = [{"field": "sex_ratio note/median_age note/capital note",
+                   "name": COUNT_SOURCE_USCB, "url": dataset_url(USCB_DATASET),
+                   "year": COUNT_YEAR, "license": LICENCE},
+                  {"field": "sex_ratio note/median_age note", "name": AGE_SOURCE,
+                   "url": dataset_url(USCB_DATASET), "year": AGE_YEAR, "license": LICENCE}]
     records: list[dict[str, Any]] = []
     pref_totals: dict[str, int] = defaultdict(int)
+    reasons: dict[str, str] = {}
+    pref_reasons: dict[str, str] = {}
+    sexes_copied = False
+    if proj_rows:
+        # A polygon whose 2021 count is withheld (SUSPECT) gets no projection
+        # either; the sentence says what the 2025 figure is.
+        withheld = {sid for sid in groups if fold(shapes2[sid]["name"]) in SUSPECT}
+        made, reasons, pref_reasons, lines = projection(
+            proj_rows, c21, placement, groups, shapes2, admin1, totals, proj_url, withheld)
+        report += lines
+        sexes_copied, lines = one_sex_split(proj_rows)
+        report += lines
+        if held is not None:
+            held += made
     twins = twin_counts(groups, placement)
     for count, found in sorted(twins.items()):
         report.append(f"  twins: {count:,} for " + " and ".join(
@@ -536,12 +791,24 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
             twin = twin_sentence(sid, twins, shapes2, pref_poly, pref_of)
             if twin:
                 note = f"{note} {twin}"
+        if sid in reasons and note:
+            note = f"{note} {reasons[sid]}"
+        noted = list(cite_notes)
+        said = (["population note"] if sid in reasons else []) + (
+            ["sex_ratio note"] if sexes_copied else [])
+        if said and proj_rows:
+            noted.append({"field": "/".join(said), "name": PROJECTION_SOURCE,
+                          "url": proj_url or f"https://data.humdata.org/dataset/{OCHA_DATASET}",
+                          "year": PROJECTION_YEAR, "license": LICENCE})
+        if bangui2 and sid == bangui2["id"]:
+            noted = [{**src, "field": src["field"].replace("capital note", "capital")}
+                     for src in noted]
         records.append(record(
             f"CAF-RGPH4-{sid}", shape["name"], level="admin2", parent="CAF", country="CAF",
             match_by="shape_id", shape_id=sid, population=pop,
             **({"population_note": note} if note else {}),
-            sex_ratio=gap(NOT_AVAILABLE, SEX_GAP), median_age=gap(NOT_AVAILABLE, AGE_GAP),
-            sources=sources, **seat))
+            sex_ratio=gap(NOT_AVAILABLE, SEX_GAP + (SEX_GAP_2025 if sexes_copied else "")),
+            median_age=gap(NOT_AVAILABLE, AGE_GAP), sources=sources + noted, **seat))
         report.append(f"  {shape['name']}: {total:,} ({len(units)} communes of 2021"
                       + ("" if whole else f"; 2021 sub-prefectures {', '.join(sps21)}") + ")"
                       + (" -- withheld" if suspect else ""))
@@ -562,8 +829,14 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
             "population_note": (f"The people counted in {poly['name']} at the mapping stage of "
                                 f"the fourth general census (RGPH-4), 1 March 2021, on its ground "
                                 f"as the 2003 census drew it: the sum of its sub-prefectures' "
-                                f"counts in the table." + (f" {twin}" if twin else "")),
-            "sources": list(cite_count)}
+                                f"counts in the table." + (f" {twin}" if twin else "")
+                                + (f" {pref_reasons[poly['id']]}"
+                                   if poly["id"] in pref_reasons else "")),
+            "sources": list(cite_count) + (
+                [{"field": "population note", "name": PROJECTION_SOURCE,
+                  "url": proj_url or f"https://data.humdata.org/dataset/{OCHA_DATASET}",
+                  "year": PROJECTION_YEAR, "license": LICENCE}]
+                if poly["id"] in pref_reasons else [])}
         entry = ages.get(key)
         if entry:
             fields["sex_ratio"] = measure(round(1000 * entry["men"] / entry["women"]),
@@ -623,12 +896,36 @@ def main() -> int:
         return 0
     admin1 = json.loads((SITE / "admin1" / "CAF.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "CAF.units.json").read_text())
-    records, report = build(prev, c21, g03, ages, admin1, admin2, ocha_url, uscb_url)
+    proj_url = ocha_workbook_url(PROJECTION_KEY)
+    # What the dataset says of the projection (its base, its method), for the notes.
+    meta = http_json(f"{HDX_API}/package_show?id={OCHA_DATASET}")["result"]
+    for res in meta.get("resources", []):
+        if PROJECTION_KEY in str(res.get("name") or "").lower():
+            log(f"  2025 resource: {res.get('name')}: "
+                + " ".join(str(res.get('description') or '').split())[:600])
+    log("  dataset notes: " + " ".join(str(meta.get("notes") or "").split())[:900])
+    log("  dataset caveats: " + " ".join(str(meta.get("caveats") or "").split())[:900])
+    pblob = http_get(proj_url, binary=True, cache=False, timeout=300)
+    log(f"car_census: {proj_url.rsplit('/', 1)[-1]}: {len(pblob):,} bytes, sha256 "
+        f"{hashlib.sha256(pblob).hexdigest()}")
+    pbook = openpyxl.load_workbook(io.BytesIO(pblob), read_only=True, data_only=True)
+    sheet = next(ws for ws in pbook.worksheets
+                 if any("projection_2025" in str(c or "").lower()
+                        for c in next(ws.iter_rows(values_only=True), ())))
+    proj_rows = projection_rows([list(r) for r in sheet.iter_rows(values_only=True)])
+    log(f"  {sheet.title}: {len(proj_rows)} sub-prefectures, "
+        f"{sum(r['value'] for r in proj_rows):,.0f} people for {PROJECTION_YEAR}")
+    held: list[dict[str, Any]] = []
+    records, report = build(prev, c21, g03, ages, admin1, admin2, ocha_url, uscb_url,
+                            proj_rows, f"https://data.humdata.org/dataset/{OCHA_DATASET}", held)
     for line in report:
         log(line)
     log(f"  {sum(r['level'] == 'admin1' for r in records)} prefectures and "
-        f"{sum(r['level'] == 'admin2' for r in records)} sub-prefecture polygons written")
+        f"{sum(r['level'] == 'admin2' for r in records)} sub-prefecture polygons written; "
+        f"{PROJECTION_YEAR}: {sum(r['level'] == 'admin1' for r in held)} prefectures and "
+        f"{sum(r['level'] == 'admin2' for r in held)} sub-prefectures")
     write_json(PROCESSED / OUT, records)
+    write_json(PROCESSED / PROJECTION_OUT, held)
     return 0
 
 
