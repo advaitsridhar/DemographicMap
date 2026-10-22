@@ -11,9 +11,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1810366,
-      "year": 2009,
-      "source": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique, population by sex and five-year age group, as the US Census Bureau tabulates it for HDX"
+      "value": 2231344,
+      "year": 2018,
+      "source": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX"
     },
     "median_age": {
       "value": 19.1,
@@ -42,13 +42,35 @@
         "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
         "year": 2009,
         "license": "CC BY-IGO, published via HDX",
-        "field": "population/median_age/sex_ratio"
+        "field": "median_age/sex_ratio/population note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, population projection for 2018 from the 2009 census, by sex (OCHA, Mali - Subnational Population Statistics), as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/mali-subnational-population-and-housing-data-tables-with-administrative-boundaries",
+        "year": 2018,
+        "license": "CC BY-IGO, published via HDX",
+        "field": "population"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "population note/median_age note/sex_ratio note"
+      },
+      {
+        "name": "OCHA, Mali - Subnational Administrative Boundaries (COD-AB, 2025), the regions and cercles of 2023",
+        "url": "https://data.humdata.org/dataset/cod-ab-mli",
+        "license": "CC BY-IGO",
+        "year": 2025,
+        "field": "population note/median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
     "match_by": "shape_id",
     "shape_id": "92416918B70420899930674",
-    "population_note": "The 2009 census's count of the district as drawn here, as it stood before 2023. The 2022 census counts the regions of 2023, and their lines cross this district's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle.",
+    "population_note": "INSTAT's projection for 2018, made from the 2009 census, of the district as drawn here, as it stood before 2023; the 2009 census counted 1,810,366 people there. The 2022 census counts the regions of 2023, and their lines cross this district's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle.",
     "median_age_note": "The 2009 census's count of the district as drawn here, as it stood before 2023, by five-year age group: the median is interpolated within the group holding the middle person. The 2022 census counts the regions of 2023, and their lines cross this district's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle.",
     "sex_ratio_note": "The 2009 census's count of the district as drawn here, as it stood before 2023: 907,643 men and 902,723 women. The 2022 census counts the regions of 2023, and their lines cross this district's: the District of Bamako of 2023 is drawn by OCHA's boundaries of the 2023 units about three times the size of the district drawn here, over ground drawn here in the Kati cercle."
   },
@@ -255,6 +277,14 @@
         "year": 2009,
         "license": "CC BY-IGO, published via HDX",
         "field": "population/median_age/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "population note/median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -308,6 +338,14 @@
         "year": 2009,
         "license": "CC BY-IGO, published via HDX",
         "field": "population/median_age/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "population note/median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -361,6 +399,14 @@
         "year": 2009,
         "license": "CC BY-IGO, published via HDX",
         "field": "population/median_age/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "population note/median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -414,6 +460,14 @@
         "year": 2009,
         "license": "CC BY-IGO, published via HDX",
         "field": "population/median_age/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "population note/median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -516,6 +570,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -563,6 +632,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -610,6 +694,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -659,6 +758,21 @@
         "year": 2009,
         "license": "CC BY-IGO, published via HDX",
         "field": "median_age/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
+      },
+      {
+        "name": "OCHA, Mali - Subnational Administrative Boundaries (COD-AB, 2025), the regions and cercles of 2023",
+        "url": "https://data.humdata.org/dataset/cod-ab-mli",
+        "license": "CC BY-IGO",
+        "year": 2025,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -707,6 +821,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -754,6 +883,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -801,6 +945,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -848,6 +1007,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -895,6 +1069,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -942,6 +1131,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -989,6 +1193,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1036,6 +1255,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1083,6 +1317,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1130,6 +1379,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1177,6 +1441,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1224,6 +1503,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1271,6 +1565,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1318,6 +1627,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1365,6 +1689,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1412,6 +1751,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1459,6 +1813,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1506,6 +1875,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1553,6 +1937,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1600,6 +1999,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1647,6 +2061,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1694,6 +2123,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1741,6 +2185,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1788,6 +2247,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1835,6 +2309,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1882,6 +2371,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1929,6 +2433,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -1976,6 +2495,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2023,6 +2557,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2070,6 +2619,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2117,6 +2681,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2164,6 +2743,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2211,6 +2805,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2258,6 +2867,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2305,6 +2929,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2352,6 +2991,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2399,6 +3053,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2446,6 +3115,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2493,6 +3177,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2540,6 +3239,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2587,6 +3301,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2634,6 +3363,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2681,6 +3425,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2728,6 +3487,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2775,6 +3549,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
@@ -2822,6 +3611,21 @@
         "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
         "license": "Official statistics publication of the Institut National de la Statistique du Mali",
         "year": 2009
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série démographique (2011)",
+        "url": "https://www.instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2009,
+        "field": "median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INSTAT) du Mali, Cinquième Recensement Général de la Population et de l'Habitat (RGPH5) 2022, Rapport d'analyse, État et structure de la population (2024)",
+        "url": "https://instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf",
+        "page": "https://www.instat-mali.org/fr/publications/recensement-general-de-la-population-et-de-lhabitat-rgph",
+        "license": "Official statistics publication of the Institut National de la Statistique du Mali",
+        "year": 2022,
+        "field": "median_age note/sex_ratio note"
       }
     ],
     "country": "MLI",
