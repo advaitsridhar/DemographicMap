@@ -83,5 +83,70 @@ class ScalarReasons(unittest.TestCase):
         self.assertEqual(be.country_phrase("Kenya"), "Kenya")
 
 
+def shares(group):
+    return [{"group": group, "pct": 100.0, "count": 10}]
+
+
+class CompositionCitations(unittest.TestCase):
+    """A survey cited for religion, ethnicity and language, beside a census
+    that gives the first two, is cited for language alone."""
+
+    SURVEY = {"_source": "afrobarometer_region.json", "religion": shares("Survey"),
+              "ethnicity": shares("Survey"), "language": shares("Survey"),
+              "sources": [{"field": "religion/ethnicity/language", "name": "Afrobarometer"}]}
+    CENSUS = {"_source": "gambia_census.json", "religion": shares("Census"),
+              "ethnicity": shares("Census"),
+              "sources": [{"field": "religion/ethnicity", "name": "Gambia Bureau of Statistics"}]}
+
+    def cited(self, entity):
+        return {src["name"]: src["field"] for src in entity["sources"]}
+
+    def test_a_census_read_after_the_survey_takes_its_fields_from_the_citation(self):
+        entity = {"id": "x", "country": "GMB"}
+        be.merge_adapter(entity, dict(self.SURVEY))
+        be.merge_adapter(entity, dict(self.CENSUS))
+        self.assertEqual(entity["religion"][0]["group"], "Census")
+        self.assertEqual(self.cited(entity), {"Afrobarometer": "language",
+                                              "Gambia Bureau of Statistics": "religion/ethnicity"})
+
+    def test_a_survey_read_after_the_census_is_cited_for_what_it_gives(self):
+        # A *_survey.json is ranked behind any count whatever the order read
+        # (Afrobarometer's files are simply read first).
+        entity = {"id": "x", "country": "GMB"}
+        be.merge_adapter(entity, dict(self.CENSUS))
+        be.merge_adapter(entity, dict(self.SURVEY, _source="gambia_region_survey.json"))
+        self.assertEqual(entity["ethnicity"][0]["group"], "Census")
+        self.assertEqual(entity["language"][0]["group"], "Survey")
+        self.assertEqual(self.cited(entity)["Afrobarometer"], "language")
+
+    def test_an_entry_citing_only_what_was_replaced_goes(self):
+        self.assertIsNone(be.without_fields({"field": "religion"}, {"religion"}))
+        same = {"field": "religion note"}
+        self.assertIs(be.without_fields(same, {"religion"}), same)
+
+
+class SeatReasons(unittest.TestCase):
+    def test_where_seats_were_sought_a_bare_capital_says_so(self):
+        entity = {"id": "a", "level": "admin2", "capital": {"status": "not_available"}}
+        self.assertTrue(be.say_why_no_capital(entity, "ZMB"))
+        self.assertEqual(entity["capital"]["note"], be.NO_SEAT_NAMED)
+
+    def test_what_is_known_of_a_level_is_said_instead(self):
+        entity = {"id": "a", "level": "admin2", "capital": {"status": "not_available"}}
+        be.say_why_no_capital(entity, "KEN")
+        self.assertIn("electoral areas", entity["capital"]["note"])
+
+    def test_elsewhere_and_where_a_reason_or_a_seat_stands_nothing_changes(self):
+        bare = {"id": "a", "level": "admin2", "capital": {"status": "not_available"}}
+        self.assertFalse(be.say_why_no_capital(bare, "JPN"))
+        self.assertNotIn("note", bare["capital"])
+        stated = {"id": "b", "level": "admin2",
+                  "capital": {"status": "not_available", "note": "The seat is contested."}}
+        self.assertFalse(be.say_why_no_capital(stated, "SLE"))
+        self.assertEqual(stated["capital"]["note"], "The seat is contested.")
+        named = {"id": "c", "level": "admin2", "capital": "Kasama"}
+        self.assertFalse(be.say_why_no_capital(named, "ZMB"))
+
+
 if __name__ == "__main__":
     unittest.main()

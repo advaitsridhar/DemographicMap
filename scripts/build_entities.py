@@ -4146,6 +4146,16 @@ def year_of(container: dict[str, Any], key: str) -> int | None:
     return None
 
 
+def without_fields(src: dict[str, Any], gone: set[str]) -> dict[str, Any] | None:
+    """A source entry with ``gone`` taken out of its field list: the entry
+    itself when it cites none of them, None when it cites nothing else."""
+    parts = str(src.get("field") or "").split("/")
+    rest = [part for part in parts if part not in gone]
+    if rest == parts:
+        return src
+    return dict(src, field="/".join(rest)) if rest else None
+
+
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     """Adapter values override seeds; gap markers never overwrite real values.
 
@@ -4245,6 +4255,16 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
             if not (str(src.get("field") or "").split("/")
                     and all(part in replaced
                             for part in str(src.get("field") or "").split("/")))]
+        # And an entry cited for a composition another file now gives, beside
+        # fields it still gives, keeps only those: Afrobarometer's
+        # "religion/ethnicity/language" on The Gambia's areas, whose religion
+        # and ethnicity are now the census's, cites the survey for language
+        # alone. (A figure's citation is tidied the same way at the end, by
+        # tidy_citations, which also keeps an entry a note names.)
+        gone = replaced & set(COMPOSITION_FIELDS)
+        if gone:
+            entity["sources"] = [src for src in (without_fields(src, gone)
+                                                 for src in entity["sources"]) if src]
     for key, value in row.items():
         if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases",
                    "match_by", "shape_label", "_source", "_match", "_offer",
@@ -4256,6 +4276,13 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
             # on the record, so it is not added either.
             kept = [src for src in (value or [])
                     if not (held and set(str(src.get("field") or "").split("/")) <= held)]
+            # Nor is a composition held back cited among the fields of an
+            # entry that is added for others: Liberia's counties cited the
+            # survey for the religion and ethnicity the census shows.
+            held_shares = held & set(COMPOSITION_FIELDS)
+            if held_shares:
+                kept = [src for src in (without_fields(src, held_shares) for src in kept)
+                        if src]
             entity.setdefault("sources", []).extend(kept)
             continue
         if key in held or any(key == f"{f}{suffix}" for f in held for suffix in SATELLITES):
@@ -7228,6 +7255,44 @@ SCALAR_NOWHERE = (
     "None of the sources used for the units of {country} at this level "
     "({sources}) gives a {field} for them, and no figure has been found for "
     "this unit.")
+
+
+# The countries whose seats were looked for unit by unit (the Africa round,
+# October 2026): every source of seats this map reads, and the census
+# reports, OCHA's boundary sets and the lists of each country's units. Where
+# none names a unit's seat the panel says so; elsewhere nobody has looked
+# that hard, and a bare capital stays bare until someone does.
+SEATS_SOUGHT = frozenset(
+    "AGO BDI BEN BFA BWA CAF CIV CMR COD COG COM CPV DJI DZA EGY ERI ETH GAB GHA GIN GMB "
+    "GNB GNQ KEN LBR LBY LSO MAR MDG MLI MOZ MRT MUS MWI NAM NER NGA RWA SDN SEN SLE SOM "
+    "SSD STP SWZ SYC TCD TGO TUN TZA UGA ZAF ZMB ZWE".split())
+# What is known of a level's seats, where it is more than that no source names
+# them: Egypt's kisms are parts of towns, Kenya's constituencies electoral
+# areas.
+NO_SEAT_REASONS = {
+    ("EGY", "admin2"): (
+        "No seat is shown: CAPMAS's census tables name none. A kism is an urban police "
+        "district, part of a town, with no seat of its own; a markaz is named after the "
+        "town that is its seat."),
+    ("KEN", "admin2"): (
+        "No seat is shown: Kenya's constituencies are electoral areas, and neither the "
+        "2019 census reports nor Wikidata name a seat for them."),
+    ("TUN", "admin2"): (
+        "No seat is shown: the National Institute of Statistics' census tables name "
+        "none for the delegations, and no other source used here does."),
+}
+NO_SEAT_NAMED = "No seat is shown: none of the sources used here names one for this unit."
+
+
+def say_why_no_capital(entity: dict[str, Any], iso3: str) -> bool:
+    """Say why a unit in a country whose seats were looked for shows none."""
+    value = entity.get("capital")
+    if (iso3 not in SEATS_SOUGHT or entity.get("water") or entity.get("disputed")
+            or not (isinstance(value, dict) and value.get("status") and not value.get("note"))):
+        return False
+    entity["capital"] = gap(value["status"], NO_SEAT_REASONS.get(
+        (iso3, entity.get("level")), NO_SEAT_NAMED))
+    return True
 
 
 def say_why_scalar_empty(entity: dict[str, Any], country: str,
@@ -13517,12 +13582,14 @@ def main() -> int:
                 case = say_why_scalar_empty(entity, country_name.get(iso3, iso3), joined)
                 if case:
                     why_scalar[case] += 1
+                if say_why_no_capital(entity, iso3):
+                    why_scalar["no seat named"] += 1
     if why:
         log("  every bare composition field now says why: "
             + ", ".join(f"{n} units where {k}" for k, n in
                         sorted(why.items(), key=lambda kv: -kv[1])))
     if why_scalar:
-        log("  every bare population, median age and sex ratio now says why: "
+        log("  every bare population, median age and sex ratio (and capital, where seats were sought) now says why: "
             + ", ".join(f"{n} units where {k}" for k, n in
                         sorted(why_scalar.items(), key=lambda kv: -kv[1])))
     # After the reasons are written, since it reads them.
