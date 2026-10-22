@@ -133,7 +133,12 @@ class Declarations(unittest.TestCase):
             for row_id, aliases in by_id.items():
                 self.assertIn(row_id, data, f"{filename}: {row_id} is not in the file")
                 iso3 = row_id[:3]
-                labels = {u["name"] for u in shapes(iso3).values()}
+                # A polygon a bound row renames keeps the boundary file's label
+                # as shape_name, and rows read before the rename reach it by
+                # that label: Morocco's provinces, labelled in French and
+                # Arabic, are named in their Latin part by the 2024 census.
+                labels = {label for u in shapes(iso3).values()
+                          for label in (u["name"], u.get("shape_name")) if label}
                 if not labels:
                     continue
                 for alias in aliases:
