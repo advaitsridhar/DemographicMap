@@ -8,7 +8,8 @@ sex and five-year age group: every sector with its delegation and governorate,
 by code and by name in French and Arabic (sheet ``Population``, one row per
 sector, sex and age group). Added up, that is every delegation and every
 governorate: the head count, men per 1,000 women, and the median age
-interpolated within the five-year group holding the middle person.
+interpolated within the five-year group holding the middle person. The note
+beside each ratio gives the men and women it is taken from.
 
 **Checks before anything is written.** Every row is one sector, one sex and
 one age group, the groups running from 0 without a gap to an open last group;
@@ -31,6 +32,12 @@ which its note says -- the whole of a new delegation, or the part of it that
 had been the polygon's (El Hichria was made from sectors of both Sidi Bouzid
 Est and Sidi Bouzid Ouest). Everything left over is logged, both sides.
 
+**Names.** A delegation is written under INS's French name, the one its notes
+use, with the polygon's label kept as an alias, without its direction marks:
+the labels are Arabic, and some have lost a letter ("والد شامخ" for Ouled
+Chamekh) or carry the stray marks above. The governorates keep their French
+labels.
+
 Usage:
     python -m scripts.fetch_census.tunisia_census
 """
@@ -48,6 +55,7 @@ from difflib import SequenceMatcher
 from typing import Any
 
 from ._shared import PROCESSED, http_get, log, measure, record, write_json
+from common import as_drawn  # noqa: E402  (on the path through _shared)
 
 URL = ("https://www.ins.tn/sites/default/files-ftp3/files/2025-05/"
        "Population_Secteur_Age_Sexe_Dynamique.xlsx")
@@ -113,6 +121,14 @@ def fold(text: Any) -> str:
                   if c.isalnum() and not unicodedata.combining(c)
                   and unicodedata.category(c) != "Cf")
     return re.sub(r"(.)\1+", r"\1", out)
+
+
+def clean(label: Any) -> str:
+    """A label as it reads: without the direction marks seven delegation labels
+    carry -- a right-to-left embedding around 'المحرس', a left-to-right mark
+    after 'طبرقة' -- and with single spaces: the alias a delegation keeps."""
+    text = "".join(c for c in str(label or "") if unicodedata.category(c) != "Cf")
+    return " ".join(text.split())
 
 
 def latin(text: Any) -> str:
@@ -494,16 +510,22 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
         else:
             what, more = f"the delegation of {name}", ""
         records.append(unit_record(f"TUN-RGPH2024-{'-'.join(codes)}", labels[sid], "admin2",
-                                   unit, sources, what, more))
+                                   unit, sources, what, more, name=name))
     return records, report
 
 
 def unit_record(rid: str, shape: dict[str, Any], level: str, unit: dict[str, Any],
-                sources: list[dict[str, Any]], what: str, more: str = "") -> dict[str, Any]:
+                sources: list[dict[str, Any]], what: str, more: str = "",
+                name: str | None = None) -> dict[str, Any]:
+    """``name``: the name the unit is written under where it is not the
+    polygon's label, which is then kept as an alias as it reads (``clean``) --
+    a delegation's French name, 'Ouled Chamekh' for the label 'والد شامخ'."""
     f = figures(unit)
+    alias = clean(shape["name"])
     return record(
-        rid, shape["name"], level=level, parent="TUN", country="TUN",
+        rid, name or shape["name"], level=level, parent="TUN", country="TUN",
         match_by="shape_id", shape_id=shape["id"],
+        aliases=[alias] if name and alias != name else None,
         population=measure(unit["total"], year=YEAR, source=SOURCE),
         population_note=(f"The 2024 census count of {what}: {unit['M']:,} men and "
                          f"{unit['F']:,} women." + (f" {more}" if more else "")),
@@ -514,7 +536,20 @@ def unit_record(rid: str, shape: dict[str, Any], level: str, unit: dict[str, Any
                          "group."),
         sex_ratio=measure(f["ratio"], unit="males_per_1000_females", year=YEAR, source=SOURCE)
         if f["ratio"] is not None else None,
+        # The counts the ratio is taken from, as the population note gives
+        # them: a ratio far from the rest -- Ghomrassen's 739, from 6,951 men
+        # and 9,400 women -- shows on its own panel as the census's.
+        sex_ratio_note=(f"Men per 1,000 women at the 2024 census in {what}: {unit['M']:,} men "
+                        f"and {unit['F']:,} women.") if f["ratio"] is not None else None,
         sources=sources)
+
+
+def drawn_units(level: str) -> list[dict[str, Any]]:
+    """The map's governorates or delegations under the boundary file's own
+    labels (common.as_drawn): the build names a delegation's polygon after
+    the French name written here, and DELEGATIONS and the binding match the
+    labels."""
+    return as_drawn(json.loads((SITE / level / "TUN.units.json").read_text()))
 
 
 def main() -> int:
@@ -545,8 +580,7 @@ def main() -> int:
     sectors_2014 = read_2014([list(r) for r in sheet.iter_rows(values_only=True)])
     log(f"  2014: {sum(len(v) for v in sectors_2014.values()):,} sectors in "
         f"{len(sectors_2014)} governorates")
-    admin1 = json.loads((SITE / "admin1" / "TUN.units.json").read_text())
-    admin2 = json.loads((SITE / "admin2" / "TUN.units.json").read_text())
+    admin1, admin2 = drawn_units("admin1"), drawn_units("admin2")
     records, report = build(table, admin1, admin2, sectors_2014)
     for line in report:
         log(line)
