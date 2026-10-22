@@ -216,13 +216,29 @@ REGIONS: dict[tuple[str, str], str] = {
     ("UGA", "Tooro"): "Western Region", ("UGA", "Bunyoro"): "Western Region",
     ("UGA", "Buganda"): "Central Region", ("UGA", "Busoga"): "Eastern Region",
     # Côte d'Ivoire: the survey uses the 31-region layout, the file the 14
-    # districts those regions make up.
-    ("CIV", "Agneby-Tiassa"): "Lagunes", ("CIV", "Gbeke"): "Valle Du Bandama",
-    ("CIV", "Gontougo"): "Zanzan", ("CIV", "Guemon"): "Montagnes",
-    ("CIV", "Tonkpi"): "Montagnes", ("CIV", "Gôh"): "Goh-Djiboua",
+    # districts those regions make up -- every region of each, or a district
+    # stands for the one or two of its regions that happen to be listed, and
+    # the rest, each under the floor alone, are dropped (440 of the 1,200
+    # respondents were, until all 31 were here).
+    ("CIV", "Agneby-Tiassa"): "Lagunes", ("CIV", "Grands-Ponts"): "Lagunes",
+    ("CIV", "La Me"): "Lagunes",
+    ("CIV", "Gbeke"): "Valle Du Bandama", ("CIV", "Hambol"): "Valle Du Bandama",
+    ("CIV", "Gontougo"): "Zanzan", ("CIV", "Bounkani"): "Zanzan",
+    ("CIV", "Guemon"): "Montagnes", ("CIV", "Tonkpi"): "Montagnes",
+    ("CIV", "Cavally"): "Montagnes",
+    ("CIV", "Gôh"): "Goh-Djiboua", ("CIV", "Lôh-Djiboua"): "Goh-Djiboua",
     ("CIV", "Haut-Sassandra"): "Sassandra-Marahoue",
     ("CIV", "Marahoue"): "Sassandra-Marahoue",
-    ("CIV", "Nawa"): "Bas-Sassandra", ("CIV", "Poro"): "Savanes",
+    ("CIV", "Nawa"): "Bas-Sassandra", ("CIV", "San-Pedro"): "Bas-Sassandra",
+    ("CIV", "Gbôkle"): "Bas-Sassandra",
+    ("CIV", "Poro"): "Savanes", ("CIV", "Bagoue"): "Savanes",
+    ("CIV", "Tchologo"): "Savanes",
+    ("CIV", "Belier"): "Lacs", ("CIV", "Iffou"): "Lacs", ("CIV", "Moronou"): "Lacs",
+    ("CIV", "N'zi"): "Lacs",
+    ("CIV", "Indenie-Djuablin"): "Comoe", ("CIV", "Sud-Comoe"): "Comoe",
+    ("CIV", "Bere"): "Woroba", ("CIV", "Worodougou"): "Woroba",
+    ("CIV", "Bafing"): "Woroba",
+    ("CIV", "Kabadougou"): "Denguele", ("CIV", "Folon"): "Denguele",
 }
 
 # Countries whose survey stratum is *coarser* than the shapes the map draws.

@@ -232,5 +232,63 @@ class LanguagesPlaced(unittest.TestCase):
         self.assertIsNone(group_tree.parent_of("language", "Tal\u00e9"))
 
 
+def loaded(filename, rows):
+    """What load_adapters makes of ``rows`` as the file ``filename``."""
+    import json
+    import tempfile
+    from pathlib import Path
+    from unittest import mock
+    with tempfile.TemporaryDirectory() as tmp:
+        Path(tmp, filename).write_text(json.dumps(rows))
+        with mock.patch.object(be, "PROCESSED", Path(tmp)), \
+                mock.patch.object(be, "ADAPTER_FILES", [filename]), \
+                mock.patch.object(be, "log", lambda *a, **k: None):
+            return be.load_adapters()
+
+
+class SurveyRowsOnTheirOwnGround(unittest.TestCase):
+    """Survey rows that reached no unit, or a unit that is not their ground."""
+
+    def test_abidjan_s_respondents_reach_the_district(self):
+        rows = [{"id": "CIV-AB9-1260", "country": "CIV", "name": "Abidjan", "level": "admin1",
+                 "religion": [{"group": "Muslim", "pct": 33.4}]}]
+        got = loaded("afrobarometer_region.json", rows)["CIV"][0]
+        self.assertIn("District Autonome D'Abidjan", got["aliases"])
+
+    def test_cabo_verde_s_island_wide_rows_reach_no_municipality(self):
+        rows = [{"id": "CPV-AB9-224", "country": "CPV", "name": "Fogo", "level": "admin1"},
+                {"id": "CPV-AB9-223", "country": "CPV", "name": "Santiago - Praia",
+                 "level": "admin1", "ethnicity": [{"group": "No ethnic group", "pct": 35.1}]}]
+        got = loaded("afrobarometer_region.json", rows)["CPV"]
+        self.assertEqual([r["id"] for r in got], ["CPV-AB9-223"])
+        # And Praia's answers say what they are.
+        self.assertIn("badiu, sampadjudu", got[0]["ethnicity_note"])
+        clear = [{"id": f"CPV-CG-{code}", "country": "CPV", "name": name, "level": "admin1",
+                  "language": [{"group": "Kabuverdianu", "pct": 100.0}]}
+                 for code, name in (("CV07", "Praia"), ("CV10", "Ribeira Grande de Santiago"),
+                                    ("CV13", "Santa Catarina do Fogo"))]
+        got = loaded("clear_global_language.json", clear)["CPV"]
+        self.assertEqual([r["id"] for r in got], ["CPV-CG-CV07"])
+
+    def test_every_ivorian_survey_region_reaches_its_district(self):
+        import csv
+        import gzip
+        from pathlib import Path
+        from scripts.fetch_census import afrobarometer_r8 as r8
+        extract = Path(be.__file__).resolve().parent.parent / "data/raw/afrobarometer/r8_extract.csv.gz"
+        if not extract.exists():
+            self.skipTest("the Round 8 extract is not in this checkout")
+        with gzip.open(extract, "rt", encoding="utf-8") as f:
+            regions = {row["region"] for row in csv.DictReader(f)
+                       if row["country"] == "C\u00f4te d'Ivoire"}
+        districts = {"Bas-Sassandra", "Comoe", "Denguele", "Goh-Djiboua", "Lacs", "Lagunes",
+                     "Montagnes", "Sassandra-Marahoue", "Savanes", "Valle Du Bandama",
+                     "Woroba", "Zanzan"}
+        # The two autonomous districts are their own survey regions.
+        unmapped = {r for r in regions if ("CIV", r) not in r8.REGIONS}
+        self.assertEqual(unmapped, {"Autonome D'abidjan", "Yamoussoukro"})
+        self.assertEqual({r8.REGIONS[("CIV", r)] for r in regions - unmapped}, districts)
+
+
 if __name__ == "__main__":
     unittest.main()

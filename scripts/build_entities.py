@@ -3320,6 +3320,13 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "MRT-AB9-1885": ("Guidimaka",),
         "MRT-AB9-1886": ("Hodh ech Chargui",),
         "MRT-AB9-1887": ("Hodh el Gharbi",),
+        # Tiris Zemmour, which the survey spells Tiris Zemour. Abidjan, which
+        # the boundary file calls District Autonome D'Abidjan: the apostrophe
+        # folds "D'Abidjan" into one word, so the city's name alone never
+        # meets the district, and Round 9's 312 respondents there were shown
+        # nowhere while the district said the survey does not reach it.
+        "MRT-AB9-1891": ("Tiris Zemmour",),
+        "CIV-AB9-1260": ("District Autonome D'Abidjan",),
     },
     "clear_global_language.json": {
         "MAR-CG-MA001001": ("Province d'Azilal إقليم أزيلال",),
@@ -3472,6 +3479,12 @@ ENGURI_VILLAGES = (
     "The outline drawn here also takes in the villages along the Enguri that the de "
     "facto authorities in Abkhazia count in their Gal district (Chuburkhinji, Otobaia, "
     "Tagiloni, Pichori and others), 12,000 or more people at their 2011 census, ")
+CABO_VERDE_ETHNICITY = (
+    "Asked for their ethnic community or cultural group, most Cape Verdeans in the "
+    "survey named none, or an identity of another kind -- the part of the islands "
+    "they come from (badiu, sampadjudu), their religion, occupation, class, race, "
+    "gender, age or party -- and most of these shares count those answers rather "
+    "than ethnic groups.")
 ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
     "cod_ps_admin2.json": {
         "AGO-CODPS-AO09077": {"population": (
@@ -3490,6 +3503,11 @@ ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
     # Niger: Round 8 gives French as the home language of 12.5% of Tillabéri's
     # respondents and 6.8% of Maradi's; Round 9 gives 0.5% in each, and no
     # ethnic group answers to it (WITHDRAWN_FIELDS).
+    # Asked for their ethnic community or cultural group, most Cape Verdeans
+    # in Round 9 named none, or another kind of identity; the tree files those
+    # answers as unclassified, and the panel says what they are.
+    "afrobarometer_region.json": {
+        row: {"ethnicity": CABO_VERDE_ETHNICITY} for row in ("CPV-AB9-221", "CPV-AB9-223")},
     "afrobarometer_r8_language.json": {
         "NER-AB8-TILLABERI": {"language": (
             "Round 9 of the same survey (2021-2023) puts French at 0.5% of the region's "
@@ -3558,6 +3576,23 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
         # polygon, over the Kati cercle; the polygon's one cercle carries
         # OCHA's figure for the district of before.
         "MLI-WD-Q3703": "the District of Bamako of 2023, larger than the polygon",
+    },
+    # Cabo Verde's survey regions are islands, or halves of Santiago, and two
+    # of them reach one municipality by name or by CLEAR Global's code:
+    # Afrobarometer's "Fogo" (80 respondents) is the whole island -- Sao
+    # Filipe, Mosteiros and Santa Catarina do Fogo -- and CLEAR Global's
+    # tabulation of Round 8 gives its stratum Fogo the code of Santa Catarina
+    # do Fogo and its stratum Santiago - Interior, eight municipalities, the
+    # code of Ribeira Grande de Santiago (Santo Antao and Fogo answer 100%
+    # Crioulo in Round 8; CV10's Portuguese 0.2% is Santiago's interior).
+    "afrobarometer_region.json": {
+        "CPV-AB9-224": "the island of Fogo (Sao Filipe, Mosteiros and Santa Catarina "
+                       "do Fogo), not the municipality its name reaches",
+    },
+    "clear_global_language.json": {
+        "CPV-CG-CV13": "Afrobarometer Round 8's stratum Fogo, the whole island",
+        "CPV-CG-CV10": "Afrobarometer Round 8's stratum Santiago - Interior, eight "
+                       "municipalities",
     },
 }
 
