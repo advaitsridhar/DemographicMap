@@ -60,6 +60,12 @@ from .binding import bind, fold
 from .cod_ps_age import COPY_TOLERANCE, grouped_median, same_structure
 from .uscb import dataset_url, number, sheet_rows, workbook_url
 
+
+def series(names: list[str]) -> str:
+    """'A', 'A and B', 'A, B and C'."""
+    names = list(names)
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
 USCB_DATASET = "car-subnational-boundaries-and-tabular-data"
 OCHA_DATASET = "cod-ps-caf"
 HDX_API = "https://data.humdata.org/api/3/action"
@@ -578,7 +584,7 @@ def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
         note = (f"ICASEES's projection of the population of {name} for {PROJECTION_YEAR}, from "
                 f"the 2003 census, as OCHA publishes it for humanitarian planning"
                 + ("" if same else
-                   f": the 2020 sub-prefectures of {' and '.join(parts)} added up, which lie in "
+                   f": the 2020 sub-prefectures of {series(parts)} added up, which lie in "
                    f"{name} as the 2003 census drew it")
                 + "." + count)
         records.append(record(
@@ -620,7 +626,7 @@ def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
             lacking = sorted(shapes[sid]["name"] for sid in sids if sid not in have)
             pref_reasons[poly["id"]] = (
                 f"ICASEES's projection for {PROJECTION_YEAR} gives no figure for "
-                f"{' and '.join(lacking)} as the 2003 census drew "
+                f"{series(lacking)} as the 2003 census drew "
                 f"{'it' if len(lacking) == 1 else 'them'}, so none is shown for the prefecture.")
             report.append(f"  2025: prefecture {poly['name']}: none ({', '.join(lacking)})")
     return records, reasons, pref_reasons, report
@@ -819,7 +825,7 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
                         f"(RGPH-4), 1 March 2021, on {shape['name']}'s ground as the 2003 census "
                         f"drew it, its communes added up ({listed})"
                         + (f"; since 2020 this ground is the sub-prefectures of "
-                           f"{' and '.join(sps21)}." if len(sps21) > 1 else "."))
+                           f"{series(sps21)}." if len(sps21) > 1 else "."))
             twin = twin_sentence(sid, twins, shapes2, pref_poly, pref_of)
             if twin:
                 note = f"{note} {twin}"

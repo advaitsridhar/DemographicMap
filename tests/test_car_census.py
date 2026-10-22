@@ -239,5 +239,12 @@ class Projection(unittest.TestCase):
                           "the 2020 division", reasons[sid])
 
 
+class Wording(unittest.TestCase):
+    def test_names_in_a_series(self):
+        self.assertEqual(cc.series(["Boda"]), "Boda")
+        self.assertEqual(cc.series(["Boda", "Mbaïki"]), "Boda and Mbaïki")
+        self.assertEqual(cc.series(["Boda", "Boganda", "Mbaïki"]), "Boda, Boganda and Mbaïki")
+
+
 if __name__ == "__main__":
     unittest.main()
