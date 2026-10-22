@@ -278,10 +278,12 @@ def build(chart: dict[str, Any], table: dict[str, Any], admin1: list[dict[str, A
                 "make 100%: the rest have another mother tongue.")
             fields["sources"].append({"field": "language", "name": SOURCE_TONGUE,
                                       "url": LANDING, "license": LICENCE, "year": YEAR})
+        # The name the legal-population reader writes, its label kept as an
+        # alias: the three files name each polygon alike.
         out.append(record(
             f"MAR-RGPH2024-SEX-{code}", rec["name"], level=rec["level"], parent="MAR",
             country="MAR", match_by="shape_id", shape_id=rec["shape_id"],
-            codes={"hcp": str(code)}, **fields))
+            aliases=rec.get("aliases"), codes={"hcp": str(code)}, **fields))
     return out, report
 
 
@@ -319,9 +321,8 @@ def main() -> int:
                    or any(n in legal.key(r.get("libelle_commune")) for n in communes)]
     tongues = read_tongues(tongue_rows)
     log(f"  mother tongues for {len(tongues)} zones; the Kingdom {tongues.get((KINGDOM,))}")
-    admin1 = json.loads((legal.SITE / "admin1" / "MAR.units.json").read_text())
-    admin2 = json.loads((legal.SITE / "admin2" / "MAR.units.json").read_text())
-    records, report = build(chart, table, admin1, admin2, tongues)
+    records, report = build(chart, table, legal.drawn_units("admin1"),
+                            legal.drawn_units("admin2"), tongues)
     for line in report:
         log("  " + line)
     for r in records:

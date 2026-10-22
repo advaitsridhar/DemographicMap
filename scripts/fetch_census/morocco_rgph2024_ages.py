@@ -41,7 +41,6 @@ from __future__ import annotations
 
 import argparse
 import io
-import json
 import re
 from typing import Any
 
@@ -108,14 +107,17 @@ ANNEX_REGION = "Tanger-Tétouan-Al Hoceima"
 ANNEX_TITLE = ("RGPH 2024, caractéristiques démographiques et socioéconomiques de la population, "
                "notes provinciales de la région de Tanger-Tétouan-Al Hoceima, annexe")
 LANDING_DOWNLOADS = "https://www.hcp.ma/downloads/RGPH-2024_t22752.html"
-# A region whose published median counts ground across the Western Sahara line.
+# A region whose published median counts ground across the Western Sahara line,
+# and the note that publishes it (HCP's French edition), which the reason
+# quotes and so cites.
+SOUTH_TITLE = "Les provinces du Sud du Royaume: données démographiques, September 2025"
+SOUTH_URL = "https://www.hcp.ma/file/245583/"
 STATED = {
     "Guelmim-Oued Noun": (
-        "HCP's note on the southern provinces of the Kingdom (Les provinces du Sud du Royaume: "
-        "données démographiques, September 2025) puts the region's median age at 31.3 years in "
-        "2024, against 27.0 in 2014; that median counts the commune of Al Mahbass, which lies "
-        "south of the Western Sahara line and outside the region as drawn here, and no median "
-        "for the region without it is published, so none is shown."),
+        f"HCP's note on the southern provinces of the Kingdom ({SOUTH_TITLE}) puts the region's "
+        "median age at 31.3 years in 2024, against 27.0 in 2014; that median counts the commune "
+        "of Al Mahbass, which lies south of the Western Sahara line and outside the region as "
+        "drawn here, and no median for the region without it is published, so none is shown."),
 }
 # Said where none of HCP's national downloads or regional directorates' pages
 # (searched for the series above, October 2026) gives the unit's five-year ages.
@@ -308,7 +310,9 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
         stated = next((why for name, why in STATED.items()
                        if legal.key(name) == legal.key(row["name"])), None)
         if stated:
-            fields = {"median_age": gap(NOT_AVAILABLE, stated)}
+            fields = {"median_age": gap(NOT_AVAILABLE, stated),
+                      "sources": [{"field": "median_age note", "name": f"{HCP}, {SOUTH_TITLE}",
+                                   "url": SOUTH_URL, "license": LICENCE, "year": YEAR}]}
         elif found:
             value = median(found["groups"])
             fields = {
@@ -322,9 +326,11 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]], admin2: list[dict
         else:
             fields = {"median_age": gap(NOT_AVAILABLE, ONLY_SHARES)}
             report.append(f"{row['name']}: no five-year ages")
+        # The legal-population reader's name, its label kept as an alias.
         out.append(record(f"MAR-RGPH2024-AGE-{code}", rec["name"], level=rec["level"],
                           parent="MAR", country="MAR", match_by="shape_id",
-                          shape_id=rec["shape_id"], codes={"hcp": str(code)}, **fields))
+                          shape_id=rec["shape_id"], aliases=rec.get("aliases"),
+                          codes={"hcp": str(code)}, **fields))
     return out, report
 
 
@@ -436,9 +442,8 @@ def main() -> int:
             raise SystemExit(f"morocco_rgph2024_ages: the dashboard has no broad ages for {key}")
         broad_check(key, unit["groups"], broad[key])
     log(f"  {len(ages)} units' five-year shares agree with the dashboard's under 15 and 60+")
-    admin1 = json.loads((legal.SITE / "admin1" / "MAR.units.json").read_text())
-    admin2 = json.loads((legal.SITE / "admin2" / "MAR.units.json").read_text())
-    records, report = build(table, admin1, admin2, ages)
+    records, report = build(table, legal.drawn_units("admin1"), legal.drawn_units("admin2"),
+                            ages)
     for line in report:
         log("  " + line)
     shown = [r for r in records if "value" in (r.get("median_age") or {})]

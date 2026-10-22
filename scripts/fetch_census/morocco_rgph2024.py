@@ -19,6 +19,8 @@ provinces and prefectures, under a mix of French, English and Arabic labels
 "Prefecture of Casablanca"). A label is reduced to its Latin name without the
 kind of unit, and matched within its region, one to one; ALIASES holds the
 spellings no reduction joins. Everything left over is logged, both sides.
+Each unit is written under its label's Latin part, the whole label kept as an
+alias: the Arabic of "Province de Figuig إقليم الناظور" is Nador's name.
 
 **The Western Sahara line.** The boundary file draws Western Sahara apart, as
 disputed ground; the map's Laâyoune-Sakia El Hamra region is only the strip
@@ -57,6 +59,7 @@ from typing import Any
 
 from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares,
                       write_json)
+from common import as_drawn  # noqa: E402  (on the path through _shared)
 
 URL = "https://www.hcp.ma/file/242341/"
 LANDING = ("https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-"
@@ -124,6 +127,9 @@ FIELDS = ("population", "median_age", "sex_ratio", "religion", "language", "ethn
 KIND_WORDS = re.compile(
     r"(?i)\b(?:province|prefecture|préfecture|region|région|of|de|du|des|d|l|la|le|les|"
     r"arrondissements)\b")
+# The first Arabic or Tifinagh letter of a label, and everything after it.
+NON_LATIN = re.compile(r"\s*[\u0600-\u06ff\u0750-\u077f\u08a0-\u08ff\u2d30-\u2d7f"
+                       r"\ufb50-\ufdff\ufe70-\ufeff].*$", re.S)
 
 
 def latin(name: str) -> str:
@@ -134,6 +140,20 @@ def latin(name: str) -> str:
     text = text.replace("'", " ")
     text = KIND_WORDS.sub(" ", text)
     return "".join(c for c in text.lower() if c.isalpha())
+
+
+def written(label: str) -> str:
+    """The name a polygon is written under: its label's Latin part, as the label
+    gives it. 40 of the 72 province labels add the Arabic name, Ifrane's the
+    Tifinagh too ("Province d'Ifrane ⵜⴰⵙⴳⴰ ⵏ ⵉⴼⵔⴰⵏ إقليم إفران"), and Figuig's
+    Arabic is Nador's ("Province de Figuig إقليم الناظور"): the Latin part is
+    the unit's own name in every one."""
+    return NON_LATIN.sub("", str(label)).strip() or str(label)
+
+
+def label_alias(label: str) -> list[str] | None:
+    """The label whole, kept as an alias where the name written is only part of it."""
+    return [label] if written(label) != label else None
 
 
 def number(cell: Any) -> int | None:
@@ -266,12 +286,17 @@ def across_communes(table: dict[str, Any], province_code: int) -> list[dict[str,
 
 
 def stated(text: str) -> dict[str, Any]:
-    """The same stated reason on every field, displacing an encyclopaedia's figure."""
-    out = {}
+    """The same stated reason on every field, displacing an encyclopaedia's
+    figure, and HCP's workbook cited for each: the reason quotes its count of
+    the province or region whole, which nothing else on the unit cites
+    (Es-Semara's piece had no source at all)."""
+    out: dict[str, Any] = {}
     for field in FIELDS:
         why = gap(NOT_AVAILABLE, text)
         why["displaces_before"] = YEAR + 1
         out[field] = why
+    out["sources"] = [{"field": "/".join(f"{field} note" for field in FIELDS), "name": SOURCE,
+                       "url": LANDING, "license": LICENCE, "year": YEAR}]
     return out
 
 
@@ -335,6 +360,14 @@ def pair_by_spelling(shapes: list[dict[str, Any]],
     return pairs
 
 
+def drawn_units(level: str) -> list[dict[str, Any]]:
+    """The map's regions or provinces under the boundary file's own labels
+    (common.as_drawn): the build names a polygon after the name written here,
+    and the binding, ACROSS_THE_LINE and PART_ACROSS match the labels. The
+    readers of the sexes and the ages bind through this one."""
+    return as_drawn(json.loads((SITE / level / "MAR.units.json").read_text()))
+
+
 def build(table: dict[str, Any], admin1: list[dict[str, Any]],
           admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
     records: list[dict[str, Any]] = []
@@ -361,15 +394,17 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
             # off before writing, as it does a count NOT_THIS_GROUND refuses.
             why["population"]["refused_value"] = row["total"]
             records.append(record(
-                f"MAR-RGPH2024-{code}", shape["name"], level="admin1", parent="MAR",
-                country="MAR", match_by="shape_id", shape_id=shape["id"], **why))
+                f"MAR-RGPH2024-{code}", written(shape["name"]), level="admin1", parent="MAR",
+                country="MAR", match_by="shape_id", shape_id=shape["id"],
+                aliases=label_alias(shape["name"]), **why))
             report.append(f"region {shape['name']!r}: across the line, written as a gap")
             continue
         less = [c for p in sorted(table["provinces"]) if p // 1000 == code
                 for c in across_communes(table, p)]
-        records.append(record(f"MAR-RGPH2024-{code}", shape["name"], level="admin1",
+        records.append(record(f"MAR-RGPH2024-{code}", written(shape["name"]), level="admin1",
                               parent="MAR", country="MAR", match_by="shape_id",
-                              shape_id=shape["id"], **fields(row, row["name"], less)))
+                              shape_id=shape["id"], aliases=label_alias(shape["name"]),
+                              **fields(row, row["name"], less)))
     every = {key(p["name"]): p for p in table["provinces"].values()}
     used: set[int] = set()
     by_region: dict[int, list[dict[str, Any]]] = defaultdict(list)
@@ -385,8 +420,9 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                 row = every.get(key(province))
                 counted = f" ({row['total']:,} people)" if row else ""
                 records.append(record(
-                    f"MAR-RGPH2024-piece-{shape['id']}", shape["name"], level="admin2",
+                    f"MAR-RGPH2024-piece-{shape['id']}", written(shape["name"]), level="admin2",
                     parent="MAR", country="MAR", match_by="shape_id", shape_id=shape["id"],
+                    aliases=label_alias(shape["name"]),
                     **stated(f"This polygon is {piece}. The 2024 census counts {province} "
                              f"province whole{counted}, almost all of it across that line, "
                              "and no source counts this piece apart, so no figure is shown "
@@ -395,8 +431,9 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                 continue
             if shape["name"] in PART_ACROSS:
                 records.append(record(
-                    f"MAR-RGPH2024-part-{shape['id']}", shape["name"], level="admin2",
+                    f"MAR-RGPH2024-part-{shape['id']}", written(shape["name"]), level="admin2",
                     parent="MAR", country="MAR", match_by="shape_id", shape_id=shape["id"],
+                    aliases=label_alias(shape["name"]),
                     **stated(part_across(table, shape["name"]))))
                 report.append(f"{shape['name']!r}: part of a province across the line, written "
                               "as a gap")
@@ -410,9 +447,9 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                 continue
             code, row = hit
             used.add(code)
-            records.append(record(f"MAR-RGPH2024-{code}", shape["name"], level="admin2",
+            records.append(record(f"MAR-RGPH2024-{code}", written(shape["name"]), level="admin2",
                                   parent="MAR", country="MAR", match_by="shape_id",
-                                  shape_id=shape["id"],
+                                  shape_id=shape["id"], aliases=label_alias(shape["name"]),
                                   **fields(row, row["name"], across_communes(table, code))))
         spare = {k: v for k, v in provinces.items() if v[0] not in used}
         paired = pair_by_spelling(left, spare)
@@ -420,9 +457,9 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
             row = table["provinces"][code]
             used.add(code)
             report.append(f"{shape['name']!r} bound to {row['name']!r} by spelling")
-            records.append(record(f"MAR-RGPH2024-{code}", shape["name"], level="admin2",
+            records.append(record(f"MAR-RGPH2024-{code}", written(shape["name"]), level="admin2",
                                   parent="MAR", country="MAR", match_by="shape_id",
-                                  shape_id=shape["id"],
+                                  shape_id=shape["id"], aliases=label_alias(shape["name"]),
                                   **fields(row, row["name"], across_communes(table, code))))
         for shape in left:
             if all(shape is not s for s, _ in paired):
@@ -455,9 +492,8 @@ def main() -> int:
             if sum(1 for k, c in table["communes"].items()
                    if k // 10_000 in codes and name in latin(c["name"])) != 1:
                 raise SystemExit(f"morocco_rgph2024: no single commune {name!r} in {province}")
-    admin1 = json.loads((SITE / "admin1" / "MAR.units.json").read_text())
-    admin2 = json.loads((SITE / "admin2" / "MAR.units.json").read_text())
-    records, report = build(table, admin1, admin2)
+    admin2 = drawn_units("admin2")
+    records, report = build(table, drawn_units("admin1"), admin2)
     for line in report:
         log("  " + line)
     for code in (1405, 2411, 4501, 8201):
