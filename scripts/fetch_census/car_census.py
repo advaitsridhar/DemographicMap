@@ -385,8 +385,8 @@ PROJECTION_YEAR = 2025
 PROJECTION_OUT = "car_projection.json"
 PROJECTION_SOURCE = ("Institut Centrafricain des Statistiques et des Etudes Economiques et "
                      "Sociales (ICASEES), projection of the population for 2025 by "
-                     "sub-prefecture, as OCHA publishes it for humanitarian planning "
-                     "(cod-ps-caf)")
+                     "sub-prefecture from the 2003 census (RGPH 2003), as OCHA publishes it for "
+                     "humanitarian planning (cod-ps-caf)")
 # The 2025 table's spellings of 2020 sub-prefectures the mapping table writes
 # otherwise (folded): (prefecture, sub-prefecture) -> the mapping table's.
 PROJECTION_ALIASES: dict[tuple[str, str], tuple[str, str]] = {}
@@ -440,22 +440,52 @@ def one_sex_split(rows: list[dict[str, Any]]) -> tuple[bool, list[str]]:
     return copied, report
 
 
+# How alike two folded names must be to be one unit spelled two ways: Bantangafo
+# and Batangafo 0.95, Dede-Makouba and Dédé-Mokouba 0.91; Bangui Kaga, one of
+# Bangui's four 2025 units, and Bangui, the 2020 sub-prefecture, only 0.75.
+SPELLING_LIKENESS = 0.85
+
+
+def close_names(wanted: list[str], offered: list[str], least: float
+                ) -> tuple[dict[str, str], list[str]]:
+    """Each wanted name (folded) -> the one offered name (folded) it is closest to,
+    where that is at least ``least`` alike and no other wanted name is closer to
+    it: the 2025 table's spellings of the mapping table's units ("Bantangafo",
+    "Dede-Makouba", "Nana-Gribizi"). Returns the matches and the report."""
+    import difflib                                   # noqa: PLC0415
+    scores = sorted(((difflib.SequenceMatcher(None, w, o).ratio(), w, o)
+                     for w in wanted for o in offered), reverse=True)
+    out: dict[str, str] = {}
+    taken: set[str] = set()
+    report = []
+    for score, w, o in scores:
+        if score < least or w in out or o in taken:
+            continue
+        out[w] = o
+        taken.add(o)
+        report.append(f"{w} -> {o} ({score:.2f})")
+    return out, report
+
+
 def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
                placement: dict[tuple[str, str], list[dict[str, Any]]],
                groups: dict[str, list[tuple[str, str]]], shapes: dict[str, dict[str, Any]],
                admin1: list[dict[str, Any]], totals: dict[str, int], url: str,
-               suspect: set[str] | None = None
+               withheld: dict[str, str] | None = None
                ) -> tuple[list[dict[str, Any]], dict[str, str], dict[str, str], list[str]]:
     """The 2025 figures on the 2003 polygons, where the 2020 sub-prefectures nest in them.
 
-    Each 2020 sub-prefecture lies where the commune crosswalk puts its communes;
-    a polygon takes the 2025 figures of the 2020 sub-prefectures it holds
-    whole, and only where it holds nothing of any other. A polygon whose 2021
-    count is withheld (``suspect``) gets no figure, and its sentence says
-    whether the 2025 figure grows from that count as its prefecture's others
-    grow from theirs. Returns the records (held behind the 2021 counts), the
-    sentence for each polygon and prefecture that gets none, and the report."""
-    suspect = suspect or set()
+    The 2025 table's prefectures and sub-prefectures are those of the 2020
+    division as the mapping table names them, some spelled otherwise: a name
+    not found is matched to the closest one of its prefecture not otherwise
+    taken, and every such match is logged. Each 2020 sub-prefecture lies where
+    the commune crosswalk puts its communes; a polygon takes the 2025 figures of
+    the 2020 sub-prefectures it holds whole, and only where it holds nothing of
+    any other. ``withheld`` gives the polygons whose 2021 count is not shown
+    and why, which their 2025 note repeats in place of that count. Returns the
+    records (held behind the 2021 counts), the sentence for each polygon and
+    prefecture that gets none, and the report."""
+    withheld = withheld or {}
     report: list[str] = []
     # Each 2020 sub-prefecture's 2021 count and the polygons its communes are on.
     sp_polys: dict[tuple[str, str], set[str]] = defaultdict(set)
@@ -469,28 +499,39 @@ def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
                 sp_count[sp21] += unit["total"]
                 sp_name[sp21] = unit["sp"].title() if unit["sp"].isupper() else unit["sp"]
     known = set(c21["sps"])
+    prefs = sorted({p for p, _ in known})
+    # The 2025 table's prefectures, spelled as the mapping table spells them.
+    asked = sorted({fold(r["pref"]) for r in rows} - set(prefs))
+    pref_as, lines = close_names(asked, prefs, 0.8)
+    report += [f"  2025: prefecture {line}" for line in lines]
+    by_pref: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        p = fold(row["pref"])
+        by_pref[pref_as.get(p, p)].append(row)
     figures: dict[tuple[str, str], float] = {}
     unmatched: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for row in rows:
-        key = (fold(row["pref"]), fold(row["sp"]))
-        key = PROJECTION_ALIASES.get(key, key)
-        if key in known:
-            figures[key] = figures.get(key, 0.0) + row["value"]
-        else:
-            unmatched[fold(row["pref"])].append(row)
-    for pref, found in sorted(unmatched.items()):
-        report.append(f"  2025: {', '.join(r['sp'] for r in found)} ({found[0]['pref']}): no "
-                      f"2020 sub-prefecture of the mapping table of that name; "
-                      f"{sum(r['value'] for r in found):,.0f} people")
+    for pref, found in sorted(by_pref.items()):
+        mine = sorted(s for p, s in known if p == pref)
+        exact = {fold(r["sp"]) for r in found} & set(mine)
+        spelled, lines = close_names(sorted({fold(r["sp"]) for r in found} - exact),
+                                     sorted(set(mine) - exact), SPELLING_LIKENESS)
+        report += [f"  2025: {pref}: {line}" for line in lines]
+        for row in found:
+            sp = fold(row["sp"])
+            sp = sp if sp in exact else spelled.get(sp, "")
+            key = PROJECTION_ALIASES.get((pref, sp), (pref, sp))
+            if key in known:
+                figures[key] = figures.get(key, 0.0) + row["value"]
+            else:
+                unmatched[pref].append(row)
+        left = sorted(set(mine) - {s for p, s in figures if p == pref})
+        if unmatched.get(pref) or left:
+            report.append(f"  2025: {pref}: 2025 rows not matched "
+                          f"{[r['sp'] for r in unmatched.get(pref, [])]}; mapping-table "
+                          f"sub-prefectures without a 2025 row {left}")
     # A 2020 prefecture any of whose 2025 rows names no 2020 sub-prefecture is
     # divided otherwise in 2025: none of its sub-prefectures is placed.
     divided = set(unmatched)
-    # Each 2020 prefecture's growth from 2021 to 2025, over its sub-prefectures
-    # the table names, the withheld ones left out.
-    growth: dict[str, list[float]] = defaultdict(list)
-    for key, value in figures.items():
-        if sp_count.get(key) and not any(s in suspect for s in sp_polys[key]):
-            growth[key[0]].append(value / sp_count[key])
     reasons: dict[str, str] = {}
     records: list[dict[str, Any]] = []
     have: dict[str, float] = {}
@@ -506,10 +547,10 @@ def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
             units = ", ".join(r["sp"] for r in found)
             reasons[sid] = (
                 f"ICASEES's projection for {PROJECTION_YEAR} divides {found[0]['pref']} "
-                f"prefecture, as the 2020 division draws it, into {len(found)} units of its own "
-                f"({units}; {sum(r['value'] for r in found):,.0f} people), which hold the "
-                f"communes of this sub-prefecture as the 2003 census drew it with others, so "
-                f"no {PROJECTION_YEAR} figure is shown here.")
+                f"prefecture into units of its own ({units}; "
+                f"{sum(r['value'] for r in found):,.0f} people) that are not the sub-prefectures "
+                f"of the 2020 division whose communes make up this one as the 2003 census drew "
+                f"it, so no {PROJECTION_YEAR} figure is shown here.")
             report.append(f"  2025: {name}: {cut[0][0]} divided otherwise in 2025")
             continue
         if not whole:
@@ -529,32 +570,17 @@ def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
         value = sum(figures[m] for m in members)
         made = sum(sp_count[m] for m in members)
         parts = [sp_name[m] for m in members]
-        if sid in suspect:
-            others = sorted(growth.get(members[0][0], []))
-            ratio = value / made if made else 0.0
-            middle = others[len(others) // 2] if others else None
-            if middle and abs(ratio / middle - 1) <= 0.02:
-                reasons[sid] = (
-                    f"ICASEES's projection for {PROJECTION_YEAR} gives it {value:,.0f} people, "
-                    f"the same 2021 count grown as its prefecture's other sub-prefectures grow, "
-                    f"so it is not shown either.")
-            else:
-                reasons[sid] = (
-                    f"ICASEES's projection for {PROJECTION_YEAR} gives it {value:,.0f} people; "
-                    f"whether that figure rests on the same 2021 count cannot be told, so it is "
-                    f"not shown either.")
-            report.append(f"  2025: {name}: withheld; {value:,.0f} against the 2021 {made:,} "
-                          f"(x{ratio:.3f}; its prefecture's others x{middle or 0:.3f})")
-            continue
         have[sid] = value
         same = len(parts) == 1 and fold(parts[0]) == fold(name)
-        note = (f"ICASEES's projection of the population of {name} for {PROJECTION_YEAR}, as "
-                f"OCHA publishes it for humanitarian planning"
+        count = (f" {withheld[sid]}" if sid in withheld else
+                 f" The census mapping counted {totals.get(sid, made):,} people here on 1 March "
+                 f"2021.")
+        note = (f"ICASEES's projection of the population of {name} for {PROJECTION_YEAR}, from "
+                f"the 2003 census, as OCHA publishes it for humanitarian planning"
                 + ("" if same else
                    f": the 2020 sub-prefectures of {' and '.join(parts)} added up, which lie in "
                    f"{name} as the 2003 census drew it")
-                + f". The census mapping counted {totals.get(sid, made):,} people here on 1 March "
-                  f"2021.")
+                + "." + count)
         records.append(record(
             f"CAF-PROJ{PROJECTION_YEAR}-{sid}", name, level="admin2", parent="CAF",
             country="CAF", match_by="shape_id", shape_id=sid,
@@ -567,7 +593,8 @@ def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
                       "license": LICENCE}]))
         rate = (value / made) ** (1 / (PROJECTION_YEAR - COUNT_YEAR)) - 1 if made else 0.0
         report.append(f"  2025: {name}: {value:,.0f} ({' + '.join(parts)}; 2021 {made:,}, "
-                      f"{rate:+.1%} a year)")
+                      f"{rate:+.1%} a year)" + (" -- 2021 count withheld" if sid in withheld
+                                               else ""))
     # A prefecture all of whose polygons have a 2025 figure takes their sum.
     pref_of: dict[str, str] = {sid: keys[0][0] for sid, keys in groups.items()}
     pref_reasons: dict[str, str] = {}
@@ -584,8 +611,8 @@ def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
                 population=measure(round(value), year=PROJECTION_YEAR, source=PROJECTION_SOURCE),
                 population_note=(
                     f"ICASEES's projection of the population of {poly['name']} for "
-                    f"{PROJECTION_YEAR}, as OCHA publishes it for humanitarian planning: its "
-                    f"sub-prefectures' figures added up."),
+                    f"{PROJECTION_YEAR}, from the 2003 census, as OCHA publishes it for "
+                    f"humanitarian planning: its sub-prefectures' figures added up."),
                 sources=[{"field": "population", "name": PROJECTION_SOURCE, "url": url,
                           "year": PROJECTION_YEAR, "license": LICENCE}]))
             report.append(f"  2025: prefecture {poly['name']}: {value:,.0f}")
@@ -737,9 +764,11 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
     pref_reasons: dict[str, str] = {}
     sexes_copied = False
     if proj_rows:
-        # A polygon whose 2021 count is withheld (SUSPECT) gets no projection
-        # either; the sentence says what the 2025 figure is.
-        withheld = {sid for sid in groups if fold(shapes2[sid]["name"]) in SUSPECT}
+        # A polygon whose 2021 count is withheld (SUSPECT) takes the 2025 figure,
+        # which rests on the 2003 census, and its note says why the count is not
+        # shown.
+        withheld = {sid: SUSPECT[fold(shapes2[sid]["name"])] for sid in groups
+                    if fold(shapes2[sid]["name"]) in SUSPECT}
         made, reasons, pref_reasons, lines = projection(
             proj_rows, c21, placement, groups, shapes2, admin1, totals, proj_url, withheld)
         report += lines

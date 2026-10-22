@@ -198,17 +198,28 @@ class Projection(unittest.TestCase):
                       "sub-prefecture", reasons["p-amada"])
         self.assertIn("gives no figure for Amada-Gaza and Gamboula", pref_reasons["MK"])
 
-    def test_a_withheld_count_gets_no_projection(self):
+    def test_a_withheld_count_keeps_its_reason_beside_the_projection(self):
+        # The 2025 figure rests on the 2003 census, not on the 2021 count that is
+        # withheld; the note says why that count is not shown in its place.
         totals = {sid: sum(u["total"] for k in keys for u in self.placement[k])
                   for sid, keys in self.groups.items()}
         records, reasons, pref_reasons, _ = cc.projection(
             self.rows, self.c21, self.placement, self.groups, self.shapes, self.admin1, totals,
-            "https://data.humdata.org/dataset/cod-ps-caf", {"p-mingala"})
-        self.assertNotIn("p-mingala", {r["shape_id"] for r in records})
-        # Mingala's 2025 figure grows from its count as Alindao's does (5%).
-        self.assertIn("gives it 21,000 people, the same 2021 count grown as its prefecture's "
-                      "other sub-prefectures grow", reasons["p-mingala"])
-        self.assertIn("gives no figure for Mingala", pref_reasons["BK"])
+            "https://data.humdata.org/dataset/cod-ps-caf",
+            {"p-mingala": "The 2021 count is a copy of another commune's."})
+        mingala = next(r for r in records if r["shape_id"] == "p-mingala")
+        self.assertEqual(mingala["population"]["value"], 21_000)
+        self.assertTrue(mingala["population_note"].endswith(
+            "humanitarian planning. The 2021 count is a copy of another commune's."))
+        self.assertNotIn("20,000", mingala["population_note"])
+
+    def test_spellings_of_the_same_units(self):
+        self.rows[1]["sp"] = "Mingalla"
+        self.rows[0]["pref"] = self.rows[1]["pref"] = "Basse Koto"
+        records, _, _, report = self.run_it()
+        self.assertIn("p-mingala", {r["shape_id"] for r in records})
+        self.assertTrue(any("bassekoto -> bassekotto" in line for line in report))
+        self.assertTrue(any("mingalla -> mingala" in line for line in report))
 
     def test_one_share_of_men_per_prefecture(self):
         rows = [{"pref": "Bangui", "men": 116_361.5, "women": 126_735.6},
@@ -223,9 +234,9 @@ class Projection(unittest.TestCase):
         records, reasons, _, report = self.run_it()
         self.assertFalse({"p-bangui", "p-bimbo"} & {r["shape_id"] for r in records})
         for sid in ("p-bangui", "p-bimbo"):
-            self.assertIn("divides Bangui prefecture, as the 2020 division draws it, into 2 "
-                          "units of its own (Bangui Centre, Bangui Kaga; 1,486,900 people)",
-                          reasons[sid])
+            self.assertIn("divides Bangui prefecture into units of its own (Bangui Centre, "
+                          "Bangui Kaga; 1,486,900 people) that are not the sub-prefectures of "
+                          "the 2020 division", reasons[sid])
 
 
 if __name__ == "__main__":
