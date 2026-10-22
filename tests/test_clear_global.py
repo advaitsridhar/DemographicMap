@@ -232,7 +232,27 @@ class CountryRecords(unittest.TestCase):
         kept, _, _ = cg.compose(rows, 1, cg.LANGUAGE_RELABEL["NPL"])
         self.assertEqual({r["group"]: r["pct"] for r in kept["NP61"]["shares"]},
                          {"Khash": 50.0, "Nepali": 50.0})
-        self.assertEqual(cg.LANGUAGE_RELABEL, {"NPL": {"Khasi": "Khash"}})
+        self.assertEqual(cg.LANGUAGE_RELABEL, {"NPL": {"Khasi": "Khash"},
+                                               "COD": {"Lander River Warlpiri": "Other languages"}})
+
+    def test_the_drc_s_australian_language_is_kept_unnamed_and_says_so(self):
+        # Lomami's 12.4% and Kabinda's 25.0%: a share of real households
+        # under the name of an Aboriginal language of Australia.
+        rows = [row("CD81", "Lomami", "Luba-Lulua", 0.4), row("CD81", "Lomami", "Songe", 0.35),
+                row("CD81", "Lomami", "Lander River Warlpiri", 0.25),
+                row("CD82", "Sankuru", "Tetela", 1.0)]
+        self.serve(csv_text(rows))
+        drc = dict(PACKAGE, name="democratic-republic-of-the-congo-languages",
+                   groups=[{"name": "cod"}])
+        records, _ = quiet(cg.country_records, drc)
+        by_name = {r["name"]: r for r in records}
+        lomami = {g["group"]: g["pct"] for g in by_name["Lomami"]["language"]}
+        self.assertEqual(lomami, {"Luba-Lulua": 40.0, "Songe": 35.0, "Other languages": 25.0})
+        self.assertIn("Lander River Warlpiri, an Aboriginal language of Australia",
+                      by_name["Lomami"]["language_note"])
+        self.assertNotIn("Warlpiri", by_name["Sankuru"]["language_note"])
+        import canonical_groups
+        self.assertTrue(canonical_groups.is_residual("Other languages"))
 
     def test_the_tree_files_khash_with_the_indo_aryan_languages(self):
         import group_tree as gt

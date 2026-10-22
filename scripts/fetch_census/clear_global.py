@@ -157,14 +157,27 @@ YEAR = re.compile(r"(1[89]\d\d|20\d\d)")
 # of an Austroasiatic language of Meghalaya, in India. Its shares are those
 # Nepal's 2021 census prints for "Khash" (Jumla 51.2%, Kalikot 26.2%, Mugu
 # 6.7%, Humla 5.7%), an Indo-Aryan language, so that is what it is written as.
+#
+# The DRC's file gives Lomami 12.4% and its territory of Kabinda 25.0% in
+# "Lander River Warlpiri" (Glottolog land1255, read from the CAID territory
+# data of 2016), an Aboriginal language of Australia's Northern Territory.
+# Which language of Lomami the source meant cannot be told from the file, so
+# the share is kept, unnamed, as the residual "Other languages" -- leaving it
+# out would shrink the units, and guessing a language would be inventing one.
+# The file names no other language that way, so the residual is this one.
 LANGUAGE_RELABEL: dict[str, dict[str, str]] = {
     "NPL": {"Khasi": "Khash"},
+    "COD": {"Lander River Warlpiri": "Other languages"},
 }
 # Said on the record of every unit whose shares carry a relabelled name.
 RELABEL_NOTES: dict[tuple[str, str], str] = {
     ("NPL", "Khash"): ("'Khash' is the Khas language of Karnali, as Nepal's 2021 census "
                        "names it; CLEAR Global's table writes it 'Khasi', the name of a "
                        "different language, spoken in Meghalaya, India."),
+    ("COD", "Other languages"): (
+        "'Other languages' is the share CLEAR Global's table gives a language it names "
+        "Lander River Warlpiri, an Aboriginal language of Australia; which language "
+        "of this area is meant cannot be told, so it is not named."),
 }
 
 
