@@ -302,7 +302,7 @@ class CountryCounts(unittest.TestCase):
         rows = [r for r in json.loads(CURATED.read_text(encoding="utf-8"))["rows"]
                 if r["field"] == "population"]
         counts = [r for r in rows if "value" in r]
-        self.assertEqual(len(counts), 17)
+        self.assertEqual(len(counts), 19)
         for row in counts:
             self.assertEqual(row.get("use"), "check", row["country"])
             self.assertIn(f"{row['value']:,}", row["note"], row["country"])
@@ -587,7 +587,7 @@ class NotePopulationGaps(unittest.TestCase):
         # apart, under the gap a sum of many divisions is allowed.
         country = {"id": "ESH", "name": "Western Sahara", "population": {
             "value": 652_271, "year": 2020,
-            "source": "CIA World Factbook (public domain), factbook.json mirror"}}
+            "source": "CIA World Factbook (public domain)"}}
         sole = unit("DIS020", "Western Sahara", 565_581, 2021,
                     "English Wikipedia, Western Sahara (infobox, which displays the UN's "
                     "World Population Prospects figure)", parent="ESH")

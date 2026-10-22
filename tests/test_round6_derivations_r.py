@@ -30,7 +30,7 @@ GOOD = {"inside": 0.99, "share": 0.99, "spill": 0.0, "spill_by": None, "cover": 
         "peopled": False}
 OCHA = "OCHA, Common Operational Dataset -- population statistics (cod-ps-bfa), reference year 2023"
 WIKIPEDIA = "English Wikipedia, Kadiogo Region (infobox)"
-FACTBOOK = "CIA World Factbook (public domain), factbook.json mirror"
+FACTBOOK = "CIA World Factbook (public domain)"
 AFROBAROMETER = {"field": "religion/ethnicity/language", "name": "Afrobarometer Round 9",
                  "url": "https://www.afrobarometer.org/data/"}
 

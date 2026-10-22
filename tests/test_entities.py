@@ -229,7 +229,10 @@ class SettlementFiguresOnDistricts(unittest.TestCase):
         refused, pop = self.run_guard([["Q3957", "town"]])
         self.assertEqual(refused, 1)
         self.assertEqual(pop["status"], common.NOT_AVAILABLE)
-        self.assertIn("Q985548, is a town, and Wikidata calls it nothing else", pop["note"])
+        self.assertIn("item of this name is a town, and Wikidata calls it nothing else",
+                      pop["note"])
+        # The item is linked from the citation, not quoted by its code.
+        self.assertNotIn("Q985548", pop["note"])
         self.assertIn("7,739 (2012)", pop["note"])
 
     def test_a_town_that_is_also_a_municipality_is_kept(self):

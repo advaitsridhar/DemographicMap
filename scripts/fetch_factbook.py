@@ -78,6 +78,42 @@ ETHNIC_NAMES: dict[str, dict[str, str | dict[str, float]]] = {
 }
 
 
+# Misprints in the Factbook's own text, put right before it is parsed: {(ISO3,
+# field): ((as printed, as meant), ...)}. Each must still be in the text, so a
+# copy of the Factbook that has corrected one stops the run rather than leaving
+# an entry that does nothing.
+#   CMR  Ethnic groups: "Beti/Bassa, Mbam 13.1%" is one group with a comma in
+#        its name, and the comma split it, so Mbam alone took the 13.1% and
+#        Beti/Bassa none; "Adamawa-Ubangi, 9.8%" has a stray comma before its
+#        share, which was lost. The groups added up to 90.1%; put right, they
+#        add up to 99.9%. Religions: "Protestant 27.1% other Christian 6.1%"
+#        lacks the comma between them, and other Christian's 6.1% was lost
+#        (the shares added up to 94.0%).
+#   CAF  Ethnic groups: "non-Central African Republic ethnic groups .1%", a
+#        share written without its leading zero.
+#   COD  Religions: "Christian 93/1%", whose breakdown in the same entry
+#        (Roman Catholic 29.9%, Protestant 26.7%, other Christian 36.5%) makes
+#        93.1%. Read as no share at all, 93% of the bar was drawn as not
+#        accounted for.
+MISPRINTS: dict[tuple[str, str], tuple[tuple[str, str], ...]] = {
+    ("CMR", "ethnicity"): (("Beti/Bassa, Mbam 13.1%", "Beti/Bassa/Mbam 13.1%"),
+                           ("Adamawa-Ubangi, 9.8%", "Adamawa-Ubangi 9.8%")),
+    ("CMR", "religion"): (("Protestant 27.1% other Christian", "Protestant 27.1%, other Christian"),),
+    ("CAF", "ethnicity"): (("ethnic groups .1%", "ethnic groups 0.1%"),),
+    ("COD", "religion"): (("Christian 93/1%", "Christian 93.1%"),),
+}
+
+
+def corrected(iso3: str | None, field: str, text: str | None) -> str | None:
+    """The Factbook's text for a field with its declared misprints put right."""
+    for printed, meant in MISPRINTS.get((iso3 or "", field), ()):
+        if text is None or printed not in text:
+            raise SystemExit(f"fetch_factbook: {iso3}'s {field} no longer reads "
+                             f"{printed!r}; take that correction out of MISPRINTS")
+        text = text.replace(printed, meant)
+    return text
+
+
 def census_names(iso3: str | None, comp: Any) -> Any:
     """An ethnicity composition with the Factbook's words for a census's own."""
     names = ETHNIC_NAMES.get(iso3 or "")
@@ -470,7 +506,9 @@ class CountryResolver:
 
 def build_record(region: str, gec: str, profile: dict[str, Any],
                  iso3: str | None, iso2: str | None) -> dict[str, Any]:
-    src = "CIA World Factbook (public domain), factbook.json mirror"
+    # The source a visitor reads beside each figure. The copy it was read from
+    # is named in the record's citation (retrieved_via), not here.
+    src = "CIA World Factbook (public domain)"
     name = (text_at(profile, "Government", "Country name", "conventional short form")
             or text_at(profile, "Government", "Country name", "conventional long form")
             or gec.upper())
@@ -494,8 +532,9 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
     median_text = text_at(profile, "People and Society", "Median age", "total")
     area_text = text_at(profile, "Geography", "Area", "total ")or text_at(profile, "Geography", "Area", "total")
 
-    religion_text = text_at(profile, "People and Society", "Religions")
-    ethnic_text = text_at(profile, "People and Society", "Ethnic groups")
+    religion_text = corrected(iso3, "religion", text_at(profile, "People and Society", "Religions"))
+    ethnic_text = corrected(iso3, "ethnicity",
+                            text_at(profile, "People and Society", "Ethnic groups"))
 
     policy = NOT_COLLECTED_POLICY.get(iso3 or "", {})
 

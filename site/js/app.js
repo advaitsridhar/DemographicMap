@@ -1323,7 +1323,7 @@
       ["geoBoundaries (gbOpen / CGAZ)", "https://www.geoboundaries.org/",
        "CC BY 4.0 - boundaries at all three levels. A few countries inherit ODbL or CC-BY-SA from OpenStreetMap."],
       ["CIA World Factbook", "https://www.cia.gov/the-world-factbook/",
-       "Public domain - country religion, language, ethnicity, median age, sex ratio. Retired February 2026; read through the factbook/factbook.json mirror."],
+       "Public domain - country religion, language, ethnicity, median age, sex ratio. Retired in February 2026; the figures are from its last edition."],
       ["Natural Earth", "https://www.naturalearthdata.com/",
        "Public domain (CC0) - code concordance and largest-settlement points."],
       ["GeoNames", "https://www.geonames.org/",

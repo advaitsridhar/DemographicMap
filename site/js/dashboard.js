@@ -238,8 +238,14 @@ window.Dashboard = (function () {
    */
   function basisChip(total, value) {
     if (!value.length) return "";
-    if (total > 105) {
-      return `<span class="chip-basis" title="Shares sum to ${window.Fmt.pct1(total)}">
+    // A "<1%" row is an upper bound, not a share, and only shares can show
+    // that answers overlap: Libya's six religions under 1%, each kept as 1.0,
+    // took a 99.3% partition to 105.3% and read as more than one answer. Read
+    // from the rows before any are folded together, which keeps their bounds.
+    const measured = value.reduce((sum, r) =>
+      sum + (typeof r.pct === "number" && r.bound !== "<" ? r.pct : 0), 0);
+    if (measured > 105) {
+      return `<span class="chip-basis" title="Shares sum to ${window.Fmt.pct1(measured)}">
                 more than one answer allowed</span>`;
     }
     if (total < 95) {
@@ -356,7 +362,7 @@ window.Dashboard = (function () {
         (short ? `, not accounted for ${pct(100 - total)}` : "");
       parts.push(`<div class="stack-bar" role="img"
         aria-label="${esc(label)}">${segments}${remainder}</div>`);
-      const chip = basisChip(total, shown);
+      const chip = basisChip(total, value2);
       if (chip) parts.push(`<p class="basis-line">${chip}</p>`);
 
       parts.push(`<ul class="composition-list">` + shown.map((row, i) =>

@@ -1237,7 +1237,7 @@ class DisputedOutlines(unittest.TestCase):
         paracel = self.outline("Paracel Is")
         profile = {"id": "GEC-PF", "population": {
                        "value": 2_230, "year": 2024,
-                       "source": "CIA World Factbook (public domain), factbook.json mirror"},
+                       "source": "CIA World Factbook (public domain)"},
                    "sources": [{"field": "*", "name": "CIA World Factbook",
                                 "url": "pf.json"}]}
         be.disputed_record(paracel, {"GEC-PF": profile})

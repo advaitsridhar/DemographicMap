@@ -320,11 +320,17 @@ class EastTables(unittest.TestCase):
         none = "its seat Kibingo has no population in GeoNames"
         rwampara = {"id": "47994165B31232091804297", "capital": {"status": "not_available"}}
         self.assertEqual(be.no_place_reason(rwampara, none),
-                         "GeoNames gives no population for Kibingo, which stands inside this "
-                         "outline, so which place is largest cannot be told")
+                         "GeoNames gives no population for Kibingo, the seat of a division it "
+                         "places in this unit, so which place is the largest cannot be told")
         lobito = {"id": "x", "capital": "Lobito"}
-        self.assertIn("for Catumbela, which stands inside",
+        self.assertIn("for Catumbela, the seat of a division it places in this unit",
                       be.no_place_reason(lobito, "its seat Catumbela has no population in GeoNames"))
+        # A unit showing no seat does not call one its own either: Kindamba,
+        # whose capital says the town inside it is Divenié, was credited Nyanga.
+        kindamba = {"id": "w", "capital": {"status": "not_available",
+                                           "note": "The town inside is Divenié."}}
+        self.assertIn("for Nyanga, the seat of a division",
+                      be.no_place_reason(kindamba, "its seat Nyanga has no population in GeoNames"))
         # Where it is the seat the unit shows, or nothing says otherwise, as written.
         for entity in ({"id": "y", "capital": "Kibingo"}, {"id": "z"}):
             self.assertEqual(be.no_place_reason(entity, none), none)

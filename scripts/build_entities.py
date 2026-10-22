@@ -48,7 +48,7 @@ from common import (  # noqa: E402
     DERIVED, MODELLED, NOT_APPLICABLE, NOT_AVAILABLE, NOT_COLLECTED, PROCESSED,
     RAW, ROOT,
     apply_collection_policy, collection_gap, estimate, gap, is_estimate, is_gap,
-    known_as, log, measure, read_json, repair, respell, shard_path, write_json,
+    as_read, known_as, log, measure, read_json, shard_path, write_json,
 )
 
 SITE_DATA = ROOT / "site" / "data"
@@ -1496,11 +1496,11 @@ FIELD_GAPS: dict[str, dict[str, str | dict[str, str]]] = {
         },
         "language": "Afrobarometer asked about language in Egypt but coded every "
                     "one of its 2,388 Egyptian respondents, across both rounds, to a "
-                    "single value, so no composition is built from it, and no census "
-                    "table of language by governorate or district has been read.",
+                    "single value, so it gives no shares, and no census table of "
+                    "language by governorate or district has been found.",
         "ethnicity": "Afrobarometer did not ask about ethnicity in Egypt in either "
                      "round that surveyed it, and no census table of ethnicity by "
-                     "governorate or district has been read.",
+                     "governorate or district has been found.",
     },
     "IRN": {"language": IRAN_LANGUAGE},
 }
@@ -2126,8 +2126,7 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
                 continue
             point = geom.representative_point()
             bounds = geom.bounds
-            name = respell(repair((props.get("shapeName") or "").strip()),
-                           props.get("shapeGroup"))
+            name = as_read(props.get("shapeName"), props.get("shapeGroup"), level)
             row = {
                 "shape_id": props.get("shapeID") or props.get("shapeGroup"),
                 "name": name,
@@ -2769,6 +2768,18 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
     "79292919B30079585867882": ("SVN", "Vzhodna"),  # Postojna; by area in Zahodna
     "79292919B19554174708410": ("SVN", "Vzhodna"),  # Bloke; by area in Zahodna
     "79292919B16697278472922": ("SVN", "Vzhodna"),  # Cerknica; by area in Zahodna
+    # Egypt and Tunisia: a markaz, two of Port Said's districts and a
+    # delegation filed by area under the governorate beside the one that counts
+    # them. Birkat as-Sab' (CAPMAS 1705, 340,131 in 2023) is Monufia's, with 59%
+    # of its outline in Gharbiyya's; Al-Ganoub (0307, 42,035) and Al-Manasra
+    # (0306, 5,604) are Port Said's, with 54% and 56% of theirs in Dakahlia's;
+    # Ouled Chamekh (INS 3353, 23,893 in 2024) is Mahdia's, with 52% in
+    # Sousse's. Filed as counted, Monufia's twelve divisions make its 4,736,945,
+    # Mahdia's eleven its 449,985 and Sousse's sixteen its 762,281.
+    "37247803B30511282692114": ("EGY", "Monufia Governorate"),  # Birkat as-Sab'; by area in Gharbiyya
+    "37247803B91562573257971": ("EGY", "Port Said Governorate"),  # Al-Ganoub; by area in Dakahlia
+    "37247803B61040397145628": ("EGY", "Port Said Governorate"),  # Al-Manasra; by area in Dakahlia
+    "11933810B93469460723803": ("TUN", "Mahdia"),  # Ouled Chamekh; by area in Sousse
 }
 
 
@@ -3080,7 +3091,7 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
 # province the row itself names, from the same release as every sibling that
 # did join. Each was checked against the shapes of its province before it was
 # listed; none of the labels is used twice in its country.
-#   * Spellings: Quiculungo/Quiculongo, Nyarusange/Nyanrusang,
+#   * Spellings: Quiculungo/Quiculongo, Nyabitsunda/Nyabitsinda,
 #     Kourittenga/Kouritenga, Komandjari/Komonjdjari, Nangha/Nagha Boguila,
 #     Baraouéli/Baroueli, Ngwa/Nwga, Damban/Dambam, Igueben/Iguegben,
 #     Mbaitoli/Mbatoli, Bagudo/Bagudu, Wamako/Wamakko, Raja/Raga,
@@ -3122,13 +3133,13 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "BLR-WD-Q173822": ("Brest",),
         "BLR-WD-Q191061": ("Grodno",),
         "BLR-WD-Q189822": ("Mogilev",),
-        # Ethiopia's Benishangul-Gumuz (ISO ET-BE) and Harari regions, which
-        # the boundary file spells "Beneshangul Gumu" and "Hareri", and
-        # Somalia's Banaadir (SO-BN), its "Banadir": the three joined nothing
-        # and showed no capital. Their seats, Asosa, Harar and Mogadishu, stand
-        # inside the polygons (GeoNames points); the rows' populations are
-        # older than the counts the regions carry and fill nothing.
-        "ETH-WD-Q207635": ("Beneshangul Gumu",),
+        # Ethiopia's Harari region, which the boundary file spells "Hareri",
+        # and Somalia's Banaadir (SO-BN), its "Banadir": both joined nothing
+        # and showed no capital. Their seats, Harar and Mogadishu, stand inside
+        # the polygons (GeoNames points); the rows' populations are older than
+        # the counts the regions carry and fill nothing. (Benishangul-Gumuz,
+        # once "Beneshangul Gumu", is now spelt right where the shapes are read,
+        # common.MISSPELLED, and its row joins by its own name.)
         "ETH-WD-Q1033855": ("Hareri",),
         "SOM-WD-Q806070": ("Banadir",),
         # The boundary file spells Niger's Dosso region "Dossa".
@@ -3162,12 +3173,17 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
     "cod_ps_admin2.json": {
         "AGO-CODPS-AO06048": ("Quiculongo",),
         "AGO-CODPS-AO09073": ("Gambos(Chiange)",),
-        "BDI-CODPS-BDI006011": ("Nyanrusang",),
-        "BDI-CODPS-BDI016006": ("Nyabitsind",),
-        # Mugongomanga, Bujumbura Rural: OCHA spells it "Mugougomanga" and
-        # the boundary file cuts it to "Mugongoman", so neither name reached
-        # the other.
-        "BDI-CODPS-BDI002006": ("Mugongoman",),
+        # Nyabitsinda and Mugongomanga (Bujumbura Rural), which OCHA spells
+        # "Nyabitsunda" and "Mugougomanga". The boundary file cuts both at ten
+        # letters, and Nyarusange too, which common.MISSPELLED puts right
+        # where the shapes are read; Nyarusange then joins by OCHA's own name.
+        "BDI-CODPS-BDI016006": ("Nyabitsinda",),
+        "BDI-CODPS-BDI002006": ("Mugongomanga",),
+        # Eritrea's two subregions of the Southern Red Sea, which OCHA writes as
+        # the boundary file did ("Maekel Deb.Keih Bahri", "Debub Deb.Keih
+        # Bahri") before common.MISSPELLED gave them their names.
+        "ERI-CODPS-ER102": ("Central Denkalia",),
+        "ERI-CODPS-ER103": ("Southern Denkalia",),
         "BFA-CODPS-BF4803": ("Kouritenga",),
         "BFA-CODPS-BF5203": ("Komonjdjari",),
         "CAF-CODPS-CF324": ("Nagha Boguila",),
@@ -3224,19 +3240,19 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "TZA-CODPS-TZ0607": ("Kibaha Urban",),
         "TZA-CODPS-TZ0806": ("Lindi Urban",),
         "TZA-CODPS-TZ0905": ("Mtwara Urban",),
-        "TZA-CODPS-TZ0907": ("Masasi  Township Authority",),
+        "TZA-CODPS-TZ0907": ("Masasi Township Authority",),
         "TZA-CODPS-TZ1004": ("Songea Urban",),
         "TZA-CODPS-TZ1103": ("Iringa Urban",),
         "TZA-CODPS-TZ1304": ("Singida Urban",),
         "TZA-CODPS-TZ1406": ("Tabora Urban",),
         "TZA-CODPS-TZ1504": ("Sumbawanga Urban",),
-        "TZA-CODPS-TZ1604": ("Kigoma  Urban",),
+        "TZA-CODPS-TZ1604": ("Kigoma Urban",),
         "TZA-CODPS-TZ1608": ("Kasulu Township Authority",),
         "TZA-CODPS-TZ1701": ("Shinyanga Urban",),
         "TZA-CODPS-TZ1705": ("Kahama Township Authority",),
         "TZA-CODPS-TZ1806": ("Bukoba Urban",),
         "TZA-CODPS-TZ2005": ("Musoma Urban",),
-        "TZA-CODPS-TZ2106": ("Babati UrbanBabati Urban",),
+        "TZA-CODPS-TZ2106": ("Babati Urban",),
         "TZA-CODPS-TZ2201": ("Njombe Urban",),
         "TZA-CODPS-TZ2206": ("Makambako Township Authority",),
         "TZA-CODPS-TZ2301": ("Mpanda Urban",),
@@ -3277,7 +3293,7 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "NGA-CODPSAGE-NG033010": ("Emuoha",),
         "NGA-CODPSAGE-NG033015": ("Obio/Akpor",),
         "NGA-CODPSAGE-NG036015": ("Tarmuwa",),
-        # The same rows in the age file: the three Burundian communes, and six
+        # The same rows in the age file: the two Burundian communes, and six
         # Tanzanian towns whose counts joined through the labels above while
         # their medians and sex ratios stood unread beside them. The 2022 census
         # gives the towns none (tanzania_census.py holds them back: Kahama's and
@@ -3285,14 +3301,13 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         # other four fail its ratio test with the districts drawn beside them), so
         # the 2020 projection behind their head counts gives their ages too, as it
         # does for those districts.
-        "BDI-CODPSAGE-BDI006011": ("Nyanrusang",),
-        "BDI-CODPSAGE-BDI016006": ("Nyabitsind",),
-        "BDI-CODPSAGE-BDI002006": ("Mugongoman",),
+        "BDI-CODPSAGE-BDI016006": ("Nyabitsinda",),
+        "BDI-CODPSAGE-BDI002006": ("Mugongomanga",),
         "TZA-CODPSAGE-TZ0806": ("Lindi Urban",),
         "TZA-CODPSAGE-TZ1504": ("Sumbawanga Urban",),
         "TZA-CODPSAGE-TZ1608": ("Kasulu Township Authority",),
         "TZA-CODPSAGE-TZ1705": ("Kahama Township Authority",),
-        "TZA-CODPSAGE-TZ2106": ("Babati UrbanBabati Urban",),
+        "TZA-CODPSAGE-TZ2106": ("Babati Urban",),
         "TZA-CODPSAGE-TZ2301": ("Mpanda Urban",),
         # OCHA's age tables and Afrobarometer spell a few West African units another
         # way: Benin's Atacora and Couffo (Atakora, Kouffo), Mauritania's Hodh El
@@ -3330,6 +3345,21 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         # Nigeria's "FCT ABUJA", whose 24 respondents the survey's row says are
         # too few: the territory then says so, as Kwara and the rest do.
         "NGA-AB9-634": ("Abuja Federal Capital Territory",),
+        # Mauritius' Plaines Wilhems, which the survey writes "Plaine Wilhems":
+        # its 336 respondents reached no district, and the most populous one
+        # showed only the census's reason for giving no ethnic group.
+        "MUS-AB9-906": ("Plaines Wilhems",),
+    },
+    # Egypt's Minya, as the boundary file spells it now (common.MISSPELLED):
+    # Round 5's stratum carried the old spelling, "Minya Governate".
+    "afrobarometer_r56.json": {
+        "EGY-AB5-Minya Governate": ("Minya Governorate",),
+    },
+    # Amhara's Argoba special woreda, which the census tables write "Argoba
+    # Special Wereda" and which reached the polygon under its old label,
+    # "Special Woreda".
+    "ethiopia_region.json": {
+        "ETH-āmara-argoba-special-wereda": ("Argoba Special Woreda",),
     },
     "clear_global_language.json": {
         "MAR-CG-MA001001": ("Province d'Azilal إقليم أزيلال",),
@@ -3570,6 +3600,48 @@ ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
             "Round 9 of the same survey (2021-2023) puts French at 0.5% of the region's "
             "homes, against the 6.8% here.")},
     },
+    # Three cities of the DRC drawn apart from the territory around them, whose
+    # people OCHA's 2020 estimate counts in that territory (its note says so):
+    # the cities show Wikidata's figures, Kolwezi's with no date.
+    "wikidata_admin2.json": {
+        "COD-WD-Q271404": {"population": (
+            "Wikidata gives this figure without a date. OCHA's 2020 estimate for the "
+            "DRC counts the city's people within Mutshatsha territory's figure, so they "
+            "are counted in both.")},
+        "COD-WD-Q648298": {"population": (
+            "OCHA's 2020 estimate for the DRC counts the city's people within Irumu "
+            "territory's figure, so they are counted in both.")},
+        "COD-WD-Q277966": {"population": (
+            "OCHA's 2020 estimate for the DRC counts the city's people within Kamonia "
+            "territory's figure, so they are counted in both.")},
+    },
+    # Red Sea State keeps Wikidata's 2018 figure: its localities make no sum
+    # for it, Hala'ib's figure being withheld (NOT_THIS_GROUND).
+    "wikidata_admin1.json": {
+        "SDN-WD-Q310120": {"population": (
+            "OCHA's projection for 2025 gives the nine localities drawn here other than "
+            "Hala'ib 1,878,562 people; Hala'ib's 33,932 are not shown, Sudan drawing that "
+            "locality north across the 22nd parallel, so the localities make no figure "
+            "for the state.")},
+    },
+    # East Gonja's seat, which the outline drawn under its name does not hold.
+    "ghana_capitals.json": {
+        "GHA-SEAT-2480657B20562210440652": {"capital": (
+            "Salaga, the municipality's seat, stands outside the outline drawn here, 37 km "
+            "to the east-north-east, inside the one drawn as North East Gonja.")},
+    },
+    # Malawi's districts drawn with the city inside them (ROW_UNIONS): CLEAR
+    # Global gives the district and the city apart, and nothing to weigh them
+    # by; Blantyre's and Zomba's two rows meet on one name and neither is
+    # kept, and Mzimba's district row is withdrawn (WITHDRAWN_FIELDS).
+    "malawi_census.json": {
+        f"MWI-2018-{key}": {"language": (
+            f"CLEAR Global's tabulation of the 1998 census gives {district} district and "
+            f"{city} separately, with no counts or populations to weigh them by, so its "
+            f"shares are not combined for this polygon.")}
+        for key, district, city in (("mzimba", "Mzimba", "Mzuzu City"),
+                                    ("blantyre", "Blantyre", "Blantyre City"),
+                                    ("zomba", "Zomba", "Zomba City"))},
 }
 
 # The sources ROW_NOTES' sentences quote, cited on the row for its notes: Gal
@@ -3581,6 +3653,25 @@ GAL_VILLAGES_2011 = {
     "license": "Transcription of the census; terms of reuse not stated"}
 AFROBAROMETER_R9 = {"name": "Afrobarometer Round 9 (2021-2023)",
                     "url": "https://www.afrobarometer.org/data/", "year": 2023}
+# Written as the rows of cod_ps_admin2.json and clear_global_language.json cite
+# them, so that each merges with the unit's entry for the same source.
+OCHA_COD_2020 = {
+    "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cod), "
+            "reference year 2020",
+    "url": "https://data.humdata.org/dataset/cod-ps-cod", "year": 2020,
+    "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) "
+               "-- license_id='cc-by-igo', isopen=False"}
+OCHA_SDN_2025 = {
+    "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-sdn), "
+            "reference year 2025",
+    "url": "https://data.humdata.org/dataset/cod-ps-sdn", "year": 2025,
+    "license": "Creative Commons Attribution International (CC BY) -- license_id='cc-by', "
+               "isopen=True"}
+CLEAR_MALAWI = {"name": "CLEAR Global (formerly Translators without Borders), Malawi: "
+                        "Languages",
+                "url": "https://data.humdata.org/dataset/malawi-languages",
+                "license": "Creative Commons Attribution Share-Alike (CC BY-SA) -- "
+                           "license_id='cc-by-sa', isopen=True"}
 ROW_NOTE_SOURCES: dict[str, dict[str, list[dict[str, Any]]]] = {
     "afrobarometer_r8_language.json": {
         row: [{"field": "language note", **AFROBAROMETER_R9}]
@@ -3590,6 +3681,14 @@ ROW_NOTE_SOURCES: dict[str, dict[str, list[dict[str, Any]]]] = {
             {"field": f"{field} note", **GAL_VILLAGES_2011}
             for field in ("population", "median_age", "sex_ratio", "ethnicity")],
     },
+    "wikidata_admin2.json": {
+        row: [{"field": "population note", **OCHA_COD_2020}]
+        for row in ("COD-WD-Q271404", "COD-WD-Q648298", "COD-WD-Q277966")},
+    "wikidata_admin1.json": {
+        "SDN-WD-Q310120": [{"field": "population note", **OCHA_SDN_2025}]},
+    "malawi_census.json": {
+        f"MWI-2018-{key}": [{"field": "language note", **CLEAR_MALAWI}]
+        for key in ("mzimba", "blantyre", "zomba")},
 }
 
 # Rows that are not a unit of today's map, keyed by file and row id, with the
@@ -3625,6 +3724,11 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
         "SOM-WD-Q657428": "Merca, the city, not Marka District",
         "UGA-WD-Q49298225": "Moroto Municipality in Karamoja, not the Moroto County of "
                             "Alebtong District",
+        # Tajura, a town of Tripoli District 4.3 km outside the outline that
+        # carries its district's 2001 name; and Port Said, the city, which met
+        # the port police district drawn under the city's name.
+        "LBY-WD-Q2271093": "Tajura, a town of Tripoli District, not the outline",
+        "EGY-WD-Q134509": "Port Said, the city, not the port police district",
     },
     "wiki_population_admin1.json": {
         "MDG-WP-vatovavy-fitovinany": "Fitovinany's 2018 figure, three of the "
@@ -3654,6 +3758,12 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
     "afrobarometer_region.json": {
         "CPV-AB9-224": "the island of Fogo (Sao Filipe, Mosteiros and Santa Catarina "
                        "do Fogo), not the municipality its name reaches",
+        # Seychelles' Praslin, the census's region of two districts, reached
+        # Grand'Anse Praslin by its name and left the district the survey's
+        # note on ethnicity, which it did not ask, and its citation. The 2022
+        # census gives the region, drawn at the second level, all three fields.
+        "SYC-AB9-1684": "the Praslin region, Grand'Anse Praslin and Baie Sainte Anne, "
+                        "not the district its name reaches",
     },
     "clear_global_language.json": {
         "CPV-CG-CV13": "Afrobarometer Round 8's stratum Fogo, the whole island",
@@ -3713,11 +3823,22 @@ FEW_INTERVIEWS = ("CLEAR Global's shares tabulate an Afrobarometer round that in
 #        Rwanda's Northern Province "Byumba hospital", the building Wikidata's
 #        capital points to (Byumba); Gabon's Estuaire Akanda, a commune beside
 #        Libreville (Libreville); Angola's Bengo Dande, its municipality
-#        (Caxito, the town).
+#        (Caxito, the town). And four in its second pass: Zambia's Southern
+#        Province Livingstone, its seat until 2012 (Choma since); Namibia's
+#        Oshikoto Tsumeb, its largest town (Omuthiya, GeoNames' PPLA);
+#        Mauritius's Pamplemousses Triolet, a village of the district
+#        (Pamplemousses, the seat its second-level copy shows); and Morocco's
+#        Laâyoune-Sakia El Hamra Laâyoune, which lies south of 27°40'N in the
+#        polygon drawn as Western Sahara, outside this one (NO_SEAT_HERE says
+#        so on it).
+#   MWI  CLEAR Global's Mzimba is the district without Mzuzu City, which the
+#        polygon holds with it (ROW_UNIONS); its shares stood for both.
 WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
     "clear_global_language.json": {
         "UGA-CG-UG2063": {"language": "CLEAR Global's 'Tororo' row holds the Tooro "
                                       "sub-region's languages, not Tororo's"},
+        "MWI-CG-MW105": {"language": "Mzimba district without Mzuzu City, which the "
+                                     "polygon holds"},
         **{row: {"language": FEW_INTERVIEWS} for row in (
             "KEN-CG-KE004", "KEN-CG-KE005", "KEN-CG-KE006", "KEN-CG-KE008", "KEN-CG-KE010",
             "KEN-CG-KE011", "KEN-CG-KE013", "KEN-CG-KE025", "KEN-CG-KE028", "KEN-CG-KE031",
@@ -3742,6 +3863,14 @@ WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
         "RWA-WD-Q845807": {"capital": "the Northern Province's seat is Byumba, not its hospital"},
         "GAB-WD-Q281109": {"capital": "Estuaire Province's seat is Libreville, not Akanda"},
         "AGO-WD-Q191299": {"capital": "Bengo Province's seat is Caxito; Dande is its municipality"},
+        "ZMB-WD-Q738382": {"capital": "Southern Province's seat has been Choma since 2012, "
+                                      "not Livingstone"},
+        "NAM-WD-Q876512": {"capital": "Oshikoto Region's seat is Omuthiya (GeoNames PPLA), "
+                                      "not Tsumeb"},
+        "MUS-WD-Q934126": {"capital": "Pamplemousses District's seat is Pamplemousses "
+                                      "(GeoNames PPLA), as at the second level"},
+        "MAR-WD-Q19951088": {"capital": "the region's seat, Laâyoune, lies south of "
+                                        "27°40'N, in the polygon drawn as Western Sahara"},
     },
 }
 
@@ -3751,13 +3880,18 @@ WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
 # same name elsewhere. Keyed by file, row id and field; the place's name is
 # written instead, still cited to the row's source.
 DISAMBIGUATED: dict[str, dict[str, dict[str, str]]] = {
+    # And Zambia's Eastern Province's seat, labelled with its colonial name
+    # beside its own, "Chipata (Fort Jameson)".
     "wikidata_admin1.json": {
         "COG-WD-Q855327": {"capital": "Loango"},
         "XKX-WD-Q2043136": {"capital": "Kamenica"},
+        "ZMB-WD-Q823810": {"capital": "Chipata"},
     },
-    # Horo Guduru's seat, labelled "Shambu city".
+    # Horo Guduru's seat, labelled "Shambu city", and Akinyele's, a town north
+    # of Ibadan labelled "Moniya, Ibadan".
     "wikidata_admin2.json": {
         "ETH-WD-Q5904662": {"capital": "Shambu"},
+        "NGA-WD-Q4701091": {"capital": "Moniya"},
     },
 }
 
@@ -3818,6 +3952,13 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
                 continue
             if row.get("sources"):
                 row["sources"] = spell_fields(row["sources"])
+            # Wikidata's rows are cited for "population/capital/coordinates"
+            # whatever the item states. An item with no capital is not the
+            # source of the seat the unit shows: Al Kufrah's oasis item stood
+            # cited for the seat Kufra District's item names, and pushed that
+            # item's citation off the record (tidy_citations).
+            if filename.startswith("wikidata_") and is_gap(row.get("capital")):
+                withdraw_fields(row, {"capital"})
             if iso3 in withdrawn:
                 withdraw_fields(row, withdrawn[iso3])
             if row.get("id") in withdrawn:
@@ -5552,7 +5693,7 @@ def year_sort_key(year: Any) -> tuple[int, str]:
     return (int(m.group()) if m else 0, str(year))
 
 
-def counted_noun(basis: Any) -> str:
+def counted_noun(basis: Any, surveyed: bool = False) -> str:
     """What the divisions' own counts are counts of, for the roll-up's note.
 
     People, unless the basis every division counts on says otherwise.
@@ -5560,11 +5701,22 @@ def counted_noun(basis: Any) -> str:
     them, and the country's note read "the divisions' own counts, of 123,416
     people in 2004" above a sentence saying they are households. Gilgit-
     Baltistan's survey, which counts the language of each household's head,
-    counts households too.
+    counts households too. Where every division's figures are a survey's
+    (``surveyed``), its counts are the people it interviewed: Cameroon's
+    regions added up to "1,171 people", Afrobarometer's respondents there.
     """
     said = basis.casefold() if isinstance(basis, str) else ""
-    return ("households" if said.startswith("households") or "household head" in said
-            else "people")
+    if said.startswith("households") or "household head" in said:
+        return "households"
+    return "survey respondents" if surveyed else "people"
+
+
+def survey_shares(entity: dict[str, Any], field: str) -> bool:
+    """Whether a unit's figures for a composition are a survey's, by what its
+    note says of them: Afrobarometer's give the region's respondents, and
+    CLEAR Global's tabulations of its rounds name the survey."""
+    said = str(entity.get(f"{field}_note") or "").casefold()
+    return "respondents" in said or "afrobarometer" in said
 
 
 def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
@@ -5770,6 +5922,16 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                for c, pop, base in zip(children, kid_pop, bases)
                if pop and base is not None and base < SAMPLE_SHARE * pop]
     weighted = 0 < len(sampled) < len(children)
+    # The rest count people only where their source did: Kenya's counties
+    # that are not the survey's carried CLEAR Global's tabulations of the same
+    # Afrobarometer round, a survey's shares with no respondents given.
+    tabulated = sum(1 for c, pop, base in zip(children, kid_pop, bases)
+                    if not (pop and base is not None and base < SAMPLE_SHARE * pop)
+                    and survey_shares(c, field))
+    rest = (" and the rest give a survey's shares without its respondents"
+            if tabulated and tabulated == len(children) - len(sampled) else
+            f", {tabulated} give a survey's shares without its respondents and the rest "
+            f"count people" if tabulated else " and the rest count people")
     if weighted and unpriced:
         return (f"{field}: {len(sampled)} children count a survey's respondents "
                 f"and the rest count people, and {unpriced} have no population "
@@ -5864,9 +6026,8 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                                 "at this level in the country carries these "
                                 "figures, so these are certainly all of its "
                                 "children." if whole_country else
-                                "the sum was taken anyway because these are the "
-                                "country's own divisions and it publishes no "
-                                "shares of its own for the sum to overrule."))
+                                "these are the country's own divisions, and it "
+                                "publishes no shares of its own."))
 
     # Computed before the note, because a sum that carries no date owes the
     # reader the reason. Pakistan is the case: four provinces and Islamabad
@@ -6002,8 +6163,9 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
             and abs(denominator - total_pop) > ROLLUP_TOLERANCE * total_pop):
         when = (f" in {next(iter(years))}" if len(years) == 1 else
                 f", nearly all of them in {dated}" if dated is not None else "")
+        surveyed = all(survey_shares(c, field) for c in children)
         counted = (f" The figures added are the divisions' own counts, of "
-                   f"{denominator:,.0f} {counted_noun(usual)}{when}.")
+                   f"{denominator:,.0f} {counted_noun(usual, surveyed)}{when}.")
     parent[f"{field}_note"] = (
         f"Summed from {'all ' if not left_out else ''}{len(children)} {level} "
         # The semicolon introduces the clause that follows it, so a sum that
@@ -6038,7 +6200,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
              "the country has these figures, so these are all of its children.")
         + counted
         + (f" Weighted by population: {len(sampled)} of them count a survey's "
-           "respondents and the rest count people, so every division's shares "
+           f"respondents{rest}, so every division's shares "
            "are taken of its own published population." if weighted else
            f" {len(derived)} of them publish shares and no counts"
            f"{' (' + ', '.join(sorted(derived)[:3]) + ')' if len(derived) <= 3 else ''}"
@@ -6749,14 +6911,33 @@ def note_country_not_summed(admin0: list[dict[str, Any]]) -> list[str]:
         if is_gap(value) and isinstance(value, dict):
             note = value.get("note") or ""
             if sentence not in note:
-                country[field] = {**value, "note": f"{note} {sentence}".strip()}
+                country[field] = {**value, "note": f"{ended(note)} {sentence}".strip()}
         else:
             note = country.get(f"{field}_note") or ""
             if sentence in note:
                 continue
-            country[f"{field}_note"] = f"{note} {sentence}".strip()
+            country[f"{field}_note"] = f"{ended(note)} {sentence}".strip()
         said.append(f"{iso3} {field}")
     return said
+
+
+SENTENCE_END = re.compile(r"[.!?…][\"'”’)]*$")
+
+
+def ended(note: str) -> str:
+    """A note that another sentence can follow.
+
+    The Factbook's line for a country it describes only in words has no full
+    stop, and PLAIN_PATTERNS makes it a sentence only while it is the whole
+    note: Mauritius's ethnicity read "... Sino-Mauritian, Franco-Mauritian Its
+    first-level divisions are not added up into this figure". Put in plain
+    words first, then given a full stop if it still has none.
+    """
+    note = note.strip()
+    if not note or SENTENCE_END.search(note):
+        return note
+    note = plain_wording(note)
+    return note if SENTENCE_END.search(note) else f"{note}."
 
 
 # Sex ratios reach the build in three units -- males per 100 females (most
@@ -7192,6 +7373,26 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     ("MMR", "religion"): "its states' religion counts 49.0 million people; the census's "
                          "national table, which the country carries, counts 51.5 million, "
                          "with the 1.2 million it did not enumerate",
+    # Southern Africa (kept together so that the reasons read alike): every
+    # region of Namibia, and every province of Zimbabwe for ethnicity, carries
+    # Afrobarometer's Round 9 shares, and so do Mauritius's districts for the
+    # ethnic group, which its census has not asked since 1972. Namibia's and
+    # Zimbabwe's sums were held back only by the population gate, against the
+    # Factbook's estimate, and with the census's count beside it
+    # (admin0_detail's check rows) they would pass; Mauritius's only by
+    # Plaines Wilhems, whose survey row joined nothing. A survey's sum would
+    # then stand where the country's own figure does.
+    ("NAM", "religion"): "its regions' shares are survey estimates, from Afrobarometer's "
+                         "ninth round",
+    ("NAM", "language"): "its regions' shares are survey estimates, from Afrobarometer's "
+                         "ninth round",
+    ("NAM", "ethnicity"): "its regions' shares are survey estimates, from Afrobarometer's "
+                          "ninth round",
+    ("ZWE", "ethnicity"): "its provinces' shares are survey estimates, from Afrobarometer's "
+                          "ninth round; the 2022 census gives ethnic groups for the whole "
+                          "country only",
+    ("MUS", "ethnicity"): "its districts' shares are survey estimates, from Afrobarometer's "
+                          "ninth round, and Rodrigues' are the census's, by nationality",
 }
 
 
@@ -7685,21 +7886,50 @@ SEATS_SOUGHT = frozenset(
     "GNB GNQ KEN LBR LBY LSO MAR MDG MLI MOZ MRT MUS MWI NAM NER NGA RWA SDN SEN SLE SOM "
     "SSD STP SWZ SYC TCD TGO TUN TZA UGA ZAF ZMB ZWE".split())
 # What is known of a level's seats, where it is more than that no source names
-# them: Egypt's kisms are parts of towns, Kenya's constituencies electoral
-# areas.
+# them: Kenya's constituencies are electoral areas, and Algeria's second level
+# redraws its wilayas.
 NO_SEAT_REASONS = {
     ("EGY", "admin2"): (
-        "No seat is shown: CAPMAS's census tables name none. A kism is an urban police "
-        "district, part of a town, with no seat of its own; a markaz is named after the "
-        "town that is its seat."),
+        "No seat is shown: neither CAPMAS's census tables nor OCHA's table of the 2006 "
+        "census names a seat for a kism or a markaz."),
     ("KEN", "admin2"): (
         "No seat is shown: Kenya's constituencies are electoral areas, and neither the "
         "2019 census reports nor Wikidata name a seat for them."),
     ("TUN", "admin2"): (
         "No seat is shown: the National Institute of Statistics' census tables name "
         "none for the delegations, and no other source used here does."),
+    ("MAR", "admin2"): (
+        "No seat is shown: the High Commission for Planning's census tables name none "
+        "for the provinces and prefectures, and no other source used here does."),
+    ("SDN", "admin2"): (
+        "No seat is shown: the 2008 census tables, as the US Census Bureau tabulates "
+        "them, identify each locality only by its name and code, and no other source "
+        "used here names a seat."),
+    ("SSD", "admin2"): (
+        "No seat is shown: the 2008 census tables, as the US Census Bureau tabulates "
+        "them, identify each county only by its name and code, and no other source "
+        "used here names a seat."),
+    ("DZA", "admin2"): (
+        "No seat is shown: this outline draws the wilaya a second time, out of register "
+        "with the first level, where the wilaya's seat is shown."),
 }
 NO_SEAT_NAMED = "No seat is shown: none of the sources used here names one for this unit."
+
+# A polygon whose seat is known and stands outside it, by shapeID. The outline
+# labelled Tajura' wa an Nawahi al Arba, named Tripoli for the district it is
+# close to, is the city's outskirts: Tripoli stands 2.4 km north of it, on a
+# strip of coast no outline of Libya's divisions covers (the same id at both
+# levels). Laâyoune-Sakia El Hamra is drawn north of 27°40'N only; its seat,
+# Laâyoune, is 58 km south of the outline (WITHDRAWN_FIELDS).
+NO_SEAT_HERE = {
+    "10800210B53685260454781": (
+        "No seat is shown: the district's seat, Tripoli, stands on a strip of coast "
+        "north of the outline drawn here."),
+    "70788906B89532291078161": (
+        "No seat is shown: the region's seat, Laâyoune, lies south of 27°40'N in Western "
+        "Sahara, which the map draws apart as disputed ground; this polygon is the part "
+        "of the region north of that line."),
+}
 
 
 def say_why_no_capital(entity: dict[str, Any], iso3: str) -> bool:
@@ -7708,8 +7938,8 @@ def say_why_no_capital(entity: dict[str, Any], iso3: str) -> bool:
     if (iso3 not in SEATS_SOUGHT or entity.get("water") or entity.get("disputed")
             or not (isinstance(value, dict) and value.get("status") and not value.get("note"))):
         return False
-    entity["capital"] = gap(value["status"], NO_SEAT_REASONS.get(
-        (iso3, entity.get("level")), NO_SEAT_NAMED))
+    entity["capital"] = gap(value["status"], NO_SEAT_HERE.get(entity.get("id")) or
+                            NO_SEAT_REASONS.get((iso3, entity.get("level")), NO_SEAT_NAMED))
     return True
 
 
@@ -7811,7 +8041,11 @@ def say_why_empty(entity: dict[str, Any], country: str,
                 give="give" if len(carriers) > 1 else "gives",
                 n=f"{reach['n']:,}", country=country, units=f"{joined['units']:,}")
             case = "others at this level carry it"
-        elif entity.get("match"):
+        # A unit whose sources are named. One matched only by a row that cites
+        # nothing -- Libya's Tripoli, which holds only the 2006 census's
+        # reason it can give no count -- read "None of the sources used for
+        # this unit (an unnamed source)"; it takes the level's sentence below.
+        elif entity.get("match") and any(s.get("name") for s in entity.get("sources", [])):
             sources = listed(cited_names(entity.get("sources", [])))
             present = [f for f in COMPOSITION_FIELDS
                        if isinstance(entity.get(f), list)]
@@ -8538,6 +8772,22 @@ def tidy_citations(entity: dict[str, Any]) -> int:
             rest = [f for f in cites if f != field]
             sources[i] = dict(src, field="/".join(rest)) if rest else None
             changed += 1
+    # A Wikidata item cited for a capital or a population the unit shows none
+    # of, where no note on the cell names it: the Central African Republic's
+    # sub-prefectures cited it for a capital beside "No seat is shown: none of
+    # the sources used here names one". It stays cited for what it gives.
+    for field in ("capital", "population"):
+        value = entity.get(field)
+        if not (isinstance(value, dict) and is_gap(value)):
+            continue
+        said = notes_said(entity, field)
+        for i, src in enumerate(sources):
+            if (src is None or src.get("name") != "Wikidata"
+                    or field not in cited_fields(src) or named_in(src, said)):
+                continue
+            rest = [f for f in cited_fields(src) if f != field]
+            sources[i] = dict(src, field="/".join(rest)) if rest else None
+            changed += 1
     sources = [src for src in sources if src is not None]
     merged: list[dict[str, Any]] = []
     for src in sources:
@@ -9157,20 +9407,29 @@ GEONAMES_SOURCE = {"field": "largest settlement", "name": "GeoNames",
 GEONAMES_SEATS = PROCESSED / "geonames_seats.json"
 
 
-def declared_seat(name: str, geonameid: str, code: str, lon: float, lat: float) -> dict[str, Any]:
-    return {"name": name, "geonameid": geonameid, "feature_code": code,
+def declared_seat(name: str, geonameid: str, code: str, lon: float, lat: float,
+                  cite: dict[str, Any] | None = None) -> dict[str, Any]:
+    """A seat in geonames_seats.json's form; ``cite`` is the source that names
+    it where that is not GeoNames, whose point only places it."""
+    seat = {"name": name, "geonameid": geonameid, "feature_code": code,
             "coordinates": [lon, lat], "source": "GeoNames (CC BY 4.0)"}
+    if cite:
+        seat["cite"] = cite
+    return seat
 
 
 # GeoNames seats for units in countries whose seats scripts/fetch_geonames.py
 # does not take wholesale (it takes a country's only where GeoNames' units are
 # the map's and their seats agree with the capitals other sources give). Each
-# is the first-order seat (PPLA; PPLC for a capital city) GeoNames files under
-# the unit, its point checked to lie inside the polygon, for a unit that
-# showed no seat or a wrong one (WITHDRAWN_FIELDS). Keyed by shapeID, in
-# geonames_seats.json's form; Tripoli is not here, its point lying 2 km
-# outside the outline labelled Tajura' wa an Nawahi al Arba. A declared seat
-# stands over the one GeoNames' own file puts in the polygon.
+# is the seat GeoNames files under the unit -- the first-order seat (PPLA;
+# PPLC for a capital city), or for a second-level unit its own (PPLA2) -- its
+# point checked to lie inside the polygon, for a unit that showed no seat or a
+# wrong one (WITHDRAWN_FIELDS). Where GeoNames files none, or a village as the
+# seat, the seat is Wikidata's district item's, placed by GeoNames' point and
+# cited to Wikidata. Keyed by shapeID, in geonames_seats.json's form; Tripoli
+# is not here, its point lying 2 km outside the outline labelled Tajura' wa an
+# Nawahi al Arba (NO_SEAT_HERE). A declared seat stands over the one GeoNames'
+# own file puts in the polygon.
 DECLARED_SEATS: dict[str, dict[str, Any]] = {
     "46179711B78983565091897": declared_seat("Tanta", "347497", "PPLA", 31.00192, 30.78847),
     "46179711B33216026370082": declared_seat("Marsá Maţrūḩ", "352733", "PPLA", 27.23725, 31.3529),
@@ -9184,6 +9443,28 @@ DECLARED_SEATS: dict[str, dict[str, Any]] = {
     # Ouham as drawn, before Ouham-Fafa was cut from it in 2020: GeoNames'
     # seat inside it is Batangafo, Ouham-Fafa's; Ouham's is Bossangoa.
     "63714938B89906779781300": declared_seat("Bossangoa", "2388036", "PPLA", 17.45518, 6.49263),
+    # Analamanga holds Antananarivo, the country's capital, which GeoNames
+    # files under it as PPLC and no other seat.
+    "27540722B10144800929043": declared_seat("Antananarivo", "1070940", "PPLC", 47.53613,
+                                             -18.91368),
+    # Joe Gqabi District Municipality (DC14), a second-level unit: its seat,
+    # Barkly East, is GeoNames' PPLA2 for DC14 (with a second record at the same
+    # spot, Ekhephini, which carries no population).
+    "47623444B23123045321242": declared_seat("Barkly East", "1021046", "PPLA2", 27.59567,
+                                             -30.9683),
+    # Libya's Wadi al Shatii: GeoNames' first-order seat for it is Idrī, a
+    # village of 4,696; Wikidata's district item names Brak, the district's
+    # main town (16,200), whose point is used. Al Kufrah's second-level copy:
+    # Wikidata's Kufra District names Al Jawf, which the first level shows, and
+    # GeoNames files no first-order seat under the district, only towns.
+    "10800210B20515568933500": declared_seat(
+        "Brak", "2218478", "PPL", 14.27139, 27.54956,
+        cite={"field": "capital", "name": "Wikidata",
+              "url": "https://www.wikidata.org/wiki/Q48232", "license": "CC0"}),
+    "10800210B89898169718474": declared_seat(
+        "Al Jawf", "88962", "PPL", 23.29093, 24.1989,
+        cite={"field": "capital", "name": "Wikidata",
+              "url": "https://www.wikidata.org/wiki/Q48200", "license": "CC0"}),
 }
 
 # GeoNames seats that stand inside a polygon and are another unit's: the
@@ -9255,8 +9536,11 @@ def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                 if "name" not in seat or not (is_gap(held) or bare_id):
                     continue
                 entity["capital"] = seat["name"]
+                # A declared seat a source other than GeoNames names is cited
+                # to it: GeoNames files Brak as a plain town, and Idrī as the
+                # seat it is put in place of.
                 entity.setdefault("sources", []).append(
-                    {**GEONAMES_SOURCE, "field": "capital"})
+                    dict(seat.get("cite") or {**GEONAMES_SOURCE, "field": "capital"}))
                 filled += 1
     return filled
 
@@ -9276,6 +9560,130 @@ GEONAMES_ELSEWHERE: dict[tuple[str, str, str], str] = {
     # Dalseong-gun's own polygon holds no GeoNames place at all.
     ("KOR", "Dalseo-gu", "Hwawŏn"): "Dalseong-gun",
 }
+
+# GeoNames places credited to a unit whose town they are not, where the
+# sentence above -- a place just across a simplified line from the unit it
+# belongs to -- is not what happened: {shapeID: {place: what is said
+# instead}}. The sentence stands only while GeoNames still gives the unit
+# that place.
+#   LBY  The outline drawn as Tripoli (the boundary file's Tajura' wa an
+#        Nawahi al Arba) is the city's outskirts to the south and east:
+#        GeoNames' Tripoli stands 2.4 km north of it and Tajura 4.3 km, on a
+#        strip of coast of about 156 km2 that no first- or second-level
+#        outline covers. The same id is drawn at both levels.
+#   GHA  Salaga, East Gonja Municipal's seat, stands 37 km east of the outline
+#        drawn as East Gonja Municipal, inside the one drawn as North East
+#        Gonja, whose seat is Kpalbe.
+#   EGY  Six of the outlines of land outside the zimam hold a new town each:
+#        10th of Ramadan City (4.9 km from the kism drawn as 10 Ramadan 2),
+#        Al-'Ubur (2.1 km from Abour's), Wadi an-Natrun (2.8 km from its
+#        markaz's), 6th of October City (16.7 km from 6 October-2), New Minya
+#        (0.3 km from its kism) and Abu Simbel (78.7 km from the kism drawn
+#        under its name). The census counts each in a division of its own and
+#        none on the zimam's outside land.
+#   SYC  Perseverance stands 400 m outside Anse Etoile's outline, on Ile
+#        Perseverance, which the 2022 census counts as a district of its own
+#        (seychelles_census) and no polygon draws.
+ZIMAM_TOWN = ("No settlement is named: this is land outside the zimam, the bounds of the "
+              "governorate's towns and villages, and the town GeoNames places on it, "
+              "{town}, is counted by the census in a division of its own.")
+GEONAMES_NOT_ITS_TOWN: dict[str, dict[str, str]] = {
+    "10800210B53685260454781": {"Tripoli": (
+        "No settlement is named: Tripoli and Tajura stand on a strip of coast north of "
+        "this outline that no outline of Libya's divisions covers.")},
+    "2480657B30922977157044": {"Salaga": (
+        "No GeoNames place is named: the most populous place GeoNames puts inside this "
+        "outline, Salaga (25,472), is the seat of East Gonja Municipal, drawn as a unit "
+        "of its own.")},
+    **{shape_id: {town: ZIMAM_TOWN.format(town=town)} for shape_id, town in (
+        ("37247803B97784107411787", "Al ‘Āshir min Ramaḑān"),
+        ("37247803B42023857067519", "Al-'Ubūr"),
+        ("37247803B42276960376835", "Madīnat Wādī an Naţrūn"),
+        ("37247803B81980397210132", "6th of October City"),
+        ("37247803B6993574009783", "Al-Minyā al-Jadīdah"),
+        ("37247803B74353300773864", "Abu Simbel"))},
+    "4304713B87843643892528": {"Perseverance": (
+        "No GeoNames place is named: the nearest, Perseverance, stands on Ile "
+        "Perseverance, which the 2022 census counts as a district of its own and no "
+        "outline of the Seychelles' districts holds.")},
+}
+
+# GeoNames places named for a unit that are not its largest town, and the
+# GeoNames place that is: {shapeID: (the place GeoNames' placement names,
+# the geonameid of the one named instead)}. Each place named instead stands
+# inside the polygon and is the most populous one there but for the place it
+# replaces.
+#   *  A district's figure on a town, ranking it above the unit's largest
+#      town: Jirapa's 91,279 is Jirapa District's 2021 census count; Kom Ombo's
+#      409,311 and Esna's 462,787 are within 3% of the markazes of Kom Ombo and
+#      Isna (CAPMAS 2023, 420,790 and 475,034); Japekrom's 96,000 is near Jaman
+#      South Municipal's 109,768 (2021 census), and Winejok's 300,000 nearer
+#      Aweil East County's 395,769 (OCHA 2025) than any town's -- seven times
+#      Aweil's 38,745, the state's seat. In each the place named instead is
+#      the region's, governorate's or state's seat. (GEONAMES_DISTRICT_FIGURES
+#      keeps the figure off such a place wherever else it is named.)
+#   BWA  Francistown (103,417) and Gaborone (246,325), which GeoNames files
+#      under city councils of their own and fetch_geonames therefore passed
+#      over, stand inside the districts drawn around them, North-East and
+#      South-East, whose census counts include them; Tati Siding (12,404) and
+#      Tlokweng (55,508) were named instead.
+#   ZAF  Joe Gqabi: GeoNames holds its seat twice, as Barkly East (11,965) and,
+#      280 m away, as Ekhephini with no population, and that unsized seat kept
+#      any place from being named. Aliwal North (44,436) is the largest place
+#      in the district either way.
+GEONAMES_PASSED_OVER: dict[str, tuple[str, str]] = {
+    "69750345B48673213774244": ("Jirapa", "2294206"),        # Upper West: Wa
+    "69750345B13833050062966": ("Japekrom", "2295021"),      # Bono: Sunyani
+    "46179711B96058986091554": ("Kom Ombo", "359792"),       # Aswan: Aswān
+    "46179711B60822011452178": ("Esna", "350550"),           # Qena: Qina
+    "48771326B49579010016854": ("Winejok", "364367"),        # Northern Bahr el Ghazal: Aweil
+    "57670837B74109899498700": ("Tati Siding", "933778"),    # North-East District: Francistown
+    "57670837B20379019036464": ("Tlokweng", "933773"),       # South-East District: Gaborone
+    "47623444B23123045321242": ("Ekhephini", "1023309"),     # Joe Gqabi: Aliwal North
+}
+
+# GeoNames places whose figure is a district's or a local government area's
+# rather than the town's (above; Twifu Praso's 100,851 is Twifo Atti-Morkwa
+# District's 2021 count, Ikire's 222,160 and Igboho's 136,764 are within 2% of
+# Irewole's and Orelope's), by geonameid: named, where they are a unit's
+# largest place, without that figure.
+GEONAMES_DISTRICT_FIGURES = frozenset({
+    "2300068", "2300182", "353802", "355449", "363807", "2294308", "2338273", "2338711"})
+
+
+def town_named(town: dict[str, Any]) -> str | None:
+    """The place a GeoNames placement names, or the one its refusal is about."""
+    if town.get("name"):
+        return town["name"]
+    reason = town.get("none") or ""
+    spans = SPANS_REASON.match(reason) or SEAT_WITHOUT_PEOPLE.match(reason)
+    return spans["town"] if spans else None
+
+
+@lru_cache(maxsize=1)
+def geonames_places() -> dict[str, dict[str, Any]]:
+    """GeoNames' populated places by geonameid (fetch_geonames' file)."""
+    from fetch_geonames import PLACES, read_places
+
+    return {p["geonameid"]: p for p in read_places()} if PLACES.exists() else {}
+
+
+def placed_instead(shape_id: str, town: dict[str, Any] | None) -> dict[str, Any] | None:
+    """A unit's GeoNames place, with GEONAMES_PASSED_OVER's in place of the one
+    it replaces, and GEONAMES_DISTRICT_FIGURES' named without their figure."""
+    declared = GEONAMES_PASSED_OVER.get(shape_id)
+    if town and declared and town_named(town) == declared[0]:
+        place = geonames_places().get(declared[1])
+        if place is None:
+            raise SystemExit(f"GEONAMES_PASSED_OVER: {shape_id}'s place {declared[1]} is "
+                             f"not among GeoNames' places")
+        return {"name": place["name"], "population": place["population"],
+                "geonameid": place["geonameid"], "feature_code": place["code"],
+                "coordinates": [round(place["lon"], 5), round(place["lat"], 5)],
+                "source": "GeoNames (CC BY 4.0)"}
+    if town and town.get("geonameid") in GEONAMES_DISTRICT_FIGURES and "population" in town:
+        return {k: v for k, v in town.items() if k != "population"}
+    return town
 
 
 @lru_cache(maxsize=1)
@@ -9384,13 +9792,17 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
             seat = own_seats.get(sid)
             taken = ({seat["geonameid"]} if seat and held_by.get(seat["geonameid"], set()) - {sid}
                      else set())
-            placed[sid] = with_own_seat(towns.get(sid), seat, taken)
+            placed[sid] = placed_instead(sid, with_own_seat(towns.get(sid), seat, taken))
         moved: dict[tuple[str, str], dict[str, Any]] = {}
         for iso3, rows in table.items():
             for entity in rows:
                 town = placed.get(entity["id"])
                 # A lake is water whatever town stands on its islands or shore.
                 if not town or entity.get("water") or not is_gap(entity.get("largest_settlement")):
+                    continue
+                said = GEONAMES_NOT_ITS_TOWN.get(entity["id"], {}).get(town_named(town))
+                if said:
+                    entity["largest_settlement"] = gap(NOT_AVAILABLE, said)
                     continue
                 where = GEONAMES_ELSEWHERE.get((iso3, entity.get("name"), town.get("name")))
                 if where:
@@ -9421,21 +9833,50 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
 
 # scripts/fetch_geonames.py names no place where a seat inside the unit has no
 # population in GeoNames, since that seat may be the largest, and calls it the
-# unit's seat. Where it is not -- another unit's seat (NOT_ITS_SEAT), or not
-# the seat the unit shows -- the sentence says only what is known of it:
-# Angola's municipalities hold their comunas' seats, Rwampara Sheema's.
+# unit's seat. Where it is not -- another unit's seat (NOT_ITS_SEAT), not the
+# seat the unit shows, or the unit shows none -- the sentence says only what
+# is known of it: Angola's municipalities hold their comunas' seats (Lobito
+# shows Lobito and held Egito Praia), Rwampara Sheema's, and Congo's Kindamba,
+# whose own town is Divenié, was credited Nyanga, 1.7 km outside its outline.
 SEAT_WITHOUT_PEOPLE = re.compile(r"^its seat (?P<town>.+) has no population in GeoNames$")
+NO_GEONAMES_PLACE = "No GeoNames place is named: "
 
 
 def no_place_reason(entity: dict[str, Any], none: str) -> str:
-    """fetch_geonames' reason for naming no place, true of this unit."""
+    """fetch_geonames' reason for naming no place, true of this unit.
+
+    Read against the capital the unit finally shows (say_unsized_seats): "its
+    seat" stands only where that capital is the place named.
+    """
     seat = SEAT_WITHOUT_PEOPLE.match(none)
     capital = entity.get("capital")
     if seat and (entity.get("id") in NOT_ITS_SEAT
-                 or (isinstance(capital, str) and norm(capital) != norm(seat["town"]))):
-        return (f"GeoNames gives no population for {seat['town']}, which stands inside "
-                f"this outline, so which place is largest cannot be told")
+                 or (isinstance(capital, str) and norm(capital) != norm(seat["town"]))
+                 or (isinstance(capital, dict) and is_gap(capital))):
+        return (f"GeoNames gives no population for {seat['town']}, the seat of a "
+                f"division it places in this unit, so which place is the largest "
+                f"cannot be told")
     return none
+
+
+def say_unsized_seats(*tables: dict[str, list[dict[str, Any]]]) -> int:
+    """Say what is known of a seat GeoNames gives no population, once the
+    capitals are placed: fill_capitals_from_geonames runs after the
+    settlements, and a capital it places is the unit's own seat."""
+    said = 0
+    for table in tables:
+        for rows in table.values():
+            for entity in rows:
+                held = entity.get("largest_settlement")
+                note = held.get("note") if isinstance(held, dict) else None
+                if not (isinstance(note, str) and note.startswith(NO_GEONAMES_PLACE)):
+                    continue
+                reason = note[len(NO_GEONAMES_PLACE):].rstrip(".")
+                true = no_place_reason(entity, reason)
+                if true != reason:
+                    held["note"] = f"{NO_GEONAMES_PLACE}{true}."
+                    said += 1
+    return said
 
 
 def name_geonames_place(entity: dict[str, Any], town: dict[str, Any]) -> int:
@@ -9443,9 +9884,11 @@ def name_geonames_place(entity: dict[str, Any], town: dict[str, Any]) -> int:
     if "none" in town:
         held = entity.get("largest_settlement") or {}
         if not held.get("note"):
+            # As fetch_geonames gives it: whether a seat it names is the unit's
+            # is said once the capitals are placed (say_unsized_seats).
             entity["largest_settlement"] = gap(
                 held.get("status") or NOT_AVAILABLE,
-                f"No GeoNames place is named: {no_place_reason(entity, town['none'])}.")
+                f"{NO_GEONAMES_PLACE}{town['none']}.")
             # The one refusal that turns on the unit's population, which is
             # weighed again once the populations are final
             # (settle_geonames_spans).
@@ -9822,6 +10265,34 @@ NATURAL_EARTH_MISFILED: dict[tuple[str, str, str], str] = {
     ("TCD", "Mandoul", "Sarh"): "Moyen-Chari",
     ("TWN", "Chiayi", "Puzi"): "Chiayi County",
     ("TWN", "Hsinchu", "Zhubei"): "Hsinchu County",
+    # Filed under the 2001 district; its point is 2.4 km north of the outline
+    # that carries the district's name, on a strip of coast no first-level
+    # outline covers (GEONAMES_NOT_ITS_TOWN).
+    ("LBY", "Tajura' wa an Nawahi al Arba", "Tripoli"):
+        "the strip of coast no first-level outline covers",
+}
+
+# Natural Earth places joined by a first-level unit's name that are not its
+# largest town: a larger one stands inside the polygon -- the unit's seat in
+# most, Okene, Onitsha, Ganta and Khorixas elsewhere -- and GeoNames'
+# placement, which names it, fills the cell once the smaller place is left
+# out. (country, unit, place) -> the larger town, for the log. Ikare's
+# 1,099,931 is four times its local government area's 269,085 (OCHA 2020);
+# Natural Earth's points for "Karma" and "Taza" are Dongola's and Oujda's.
+NATURAL_EARTH_PASSED_OVER: dict[tuple[str, str, str], str] = {
+    ("SSD", "Central Equatoria", "Yei"): "Juba",
+    ("NGA", "Ondo", "Ikare"): "Akure",
+    ("NGA", "Adamawa", "Mubi"): "Yola",
+    ("NGA", "Kogi", "Idah"): "Okene",
+    ("NGA", "Anambra", "Awka"): "Onitsha",
+    ("SDN", "Northern", "Karma"): "Dongola",
+    ("MAR", "Oriental", "Taza"): "Oujda",
+    ("LBY", "Al Jabal al Akhdar", "Shahhat"): "Al Bayda",
+    ("LBR", "Nimba", "Sanniquellie"): "Ganta",
+    ("ZWE", "Mashonaland Central", "Shamva"): "Bindura",
+    ("NAM", "Oshana", "Ongwediva"): "Oshakati",
+    ("NAM", "Kunene", "Outjo"): "Khorixas",
+    ("SWZ", "Shiselweni", "Golela"): "Nhlangano",
 }
 
 # The words that make a unit's name the metropolitan government of a place,
@@ -9930,8 +10401,10 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
             what = (labels[0] if len(labels) == 1
                     else ", ".join(labels[:-1]) + " and " + labels[-1])
             article = "an" if what[0] in "aeiou" else "a"
+            # The item is linked from the unit's citation; its code in the
+            # sentence was one more thing to read past.
             entity["population"] = gap(NOT_AVAILABLE, (
-                f"Wikidata's item of this name, {entity['wikidata']}, is "
+                f"Wikidata's item of this name is "
                 f"{article} {what}, and Wikidata calls it nothing else -- no "
                 f"municipality or district; its "
                 f"{pop['value']:,}"
@@ -9987,6 +10460,21 @@ def settle_outline_mixtures(admin2: dict[str, list[dict[str, Any]]]) -> int:
             entity.pop("adapter_hint", None)
             for field in UNIT_FIELDS:
                 entity[field] = gap(NOT_AVAILABLE, note)
+                # And what the rows it took said about their figures, which is
+                # not about this ground: Endola and part of Omulonga kept CLEAR
+                # Global's sentence on its language and OCHA's on its median
+                # age, and both stayed cited, beside gaps saying no published
+                # figure describes it.
+                for suffix in SATELLITES:
+                    entity.pop(f"{field}{suffix}", None)
+            refused = set(UNIT_FIELDS)
+            kept = []
+            for src in entity.get("sources") or []:
+                rest = [f for f in cited_fields(src)
+                        if field_name(f.removesuffix(" note")).replace(" ", "_") not in refused]
+                if rest:
+                    kept.append({**src, "field": "/".join(rest)})
+            entity["sources"] = kept
             settled += 1
     return settled
 
@@ -10271,20 +10759,29 @@ def shares_of(rows: Any) -> list[tuple[str, float]]:
             and isinstance(e.get("pct"), (int, float))]
 
 
+# A survey's sentences on one region's size, which describe a part and not
+# the pool even where every part's reads the same: Vatovavy and Fitovinany
+# have 32 respondents each, and their union read "This region: 32
+# respondents. Fewer than 50 respondents, so this share is imprecise" of 64.
+PART_SIZE = re.compile(r"This region: [\d,]+ respondents\.(?: Fewer than 50 respondents"
+                       r"[^.]*\.)?\s*")
+
+
 def shared_sentences(notes: Sequence[Any]) -> str:
     """The whole sentences every part's note opens with, to keep on the pool.
 
     A survey's caveat -- "Regional shares are survey estimates, not census
     counts ..." -- is true of the pool too, and was being dropped with the
     parts' notes; the sentence that differs ("This region: 112 respondents")
-    describes one part and is left out.
+    describes one part and is left out, and so is it where it does not differ.
     """
     if not notes or not all(isinstance(n, str) and n for n in notes):
         return ""
     prefix = os.path.commonprefix(list(notes))
     cut = prefix.rfind(". ")
     if len(set(notes)) == 1:
-        return notes[0].rstrip() + " "
+        kept = PART_SIZE.sub("", notes[0]).rstrip()
+        return kept + " " if kept else ""
     return prefix[:cut + 2] if cut > 0 else ""
 
 
@@ -10828,6 +11325,46 @@ ROW_UNIONS.update({
         "shapes": (("admin1", "27767025B72594666306589"),),
         "note": "The survey samples Douala apart from the rest of the region; the two "
                 "together are the Littoral region."},
+})
+# Southern Africa (kept apart likewise). Each key is the polygon's own label,
+# since the pooled row, bound by id, names the polygon.
+#   BWA  OCHA's age table for 2023 counts Botswana's seven town and city
+#        councils apart from the ten districts, and the boundary file draws
+#        no town: Francistown lies inside North-East District's polygon,
+#        Gaborone and Lobatse inside South-East's, Selebi-Phikwe, Orapa and
+#        Sowa inside Central's and Jwaneng inside Southern's (GeoNames
+#        points), and the 2022 census's counts on those polygons add the towns
+#        in. The districts' medians without them were the ground less its
+#        towns: North-East's 24.6 is 26.4 with Francistown's age groups added.
+#   MDG  The polygon is Vatovavy-Fitovinany as it was before it was made two
+#        regions in 2021; Afrobarometer's ninth round samples Vatovavy and
+#        Fitovinany apart (32 respondents each), and neither row reached it.
+ROW_UNIONS.update({
+    ("BWA", "North-East District"): {
+        "parts": {"cod_ps_age.json": ("BWA-CODPSAGE-BW13", "BWA-CODPSAGE-BW02")},
+        "shapes": (("admin1", "57670837B74109899498700"),),
+        "note": "Francistown has no polygon of its own and lies inside this one."},
+    ("BWA", "South-East District"): {
+        "parts": {"cod_ps_age.json": ("BWA-CODPSAGE-BW09", "BWA-CODPSAGE-BW01",
+                                      "BWA-CODPSAGE-BW03")},
+        "shapes": (("admin1", "57670837B20379019036464"),),
+        "note": "Gaborone and Lobatse have no polygons of their own and lie inside this one."},
+    ("BWA", "Central District"): {
+        "parts": {"cod_ps_age.json": ("BWA-CODPSAGE-BW12", "BWA-CODPSAGE-BW04",
+                                      "BWA-CODPSAGE-BW05", "BWA-CODPSAGE-BW07")},
+        "shapes": (("admin1", "57670837B77729612727439"),),
+        "note": ("Selibe Phikwe, Orapa and Sowa have no polygons of their own and lie "
+                 "inside this one.")},
+    ("BWA", "Southern District"): {
+        "parts": {"cod_ps_age.json": ("BWA-CODPSAGE-BW08", "BWA-CODPSAGE-BW06")},
+        "shapes": (("admin1", "57670837B18017563073821"),),
+        "note": "Jwaneng has no polygon of its own and lies inside this one."},
+    ("MDG", "Vatovavy-Fitovinany"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("MDG-AB9-441", "MDG-AB9-442"),
+        "shapes": (("admin1", "27540722B59950383788875"),), "weigh": "respondents",
+        "note": ("The region as drawn is Vatovavy and Fitovinany, made two regions in "
+                 "2021, which the survey samples apart.")},
 })
 
 
@@ -13667,6 +14204,10 @@ def main() -> int:
         entity = blank(shape, "admin1", iso3)
         city = cities["by_admin1"].get(f"{iso3}||{norm_city(shape['name'])}")
         why = natural_earth_elsewhere(city, shape, held_by) if city and held_by else None
+        larger = (NATURAL_EARTH_PASSED_OVER.get((iso3, shape["name"], city["name"]))
+                  if city else None)
+        if larger:
+            why = f"smaller than {larger}, which stands inside it"
         if why:
             elsewhere.append(f"{iso3} {shape['name']}: {city['name']}, {why}")
             city = None
@@ -13679,7 +14220,8 @@ def main() -> int:
         adm1_index[iso3][norm(shape["name"])] = entity["id"]
     if elsewhere:
         log(f"  {len(elsewhere)} Natural Earth places filed under a first-level unit "
-            f"stand in another and are left to GeoNames: " + "; ".join(elsewhere))
+            f"stand in another, or are not its largest town, and are left to GeoNames: "
+            + "; ".join(elsewhere))
 
     for iso3, rows in curated_rows.items():
         prov = provenance.get(iso3, {})
@@ -13858,7 +14400,11 @@ def main() -> int:
                 # an alias added here would be overwritten a moment later and
                 # the boundary file's own spelling would become unsearchable.
                 label = entity.get("name")
-                wanted_name = row.get("name")
+                # Read as the label was: a record that copied a cut or garbled
+                # label ("Anse Boile", "Kigoma  Urban") would otherwise put it
+                # back on the polygon.
+                wanted_name = (as_read(row["name"], iso3, entity.get("level"))
+                               if row.get("name") else None)
                 if wanted_name and label and label != wanted_name:
                     entity["name"] = wanted_name
                     # An unnamed polygon's label is its id, not a spelling.
@@ -14062,6 +14608,10 @@ def main() -> int:
     placed_seats = fill_capitals_from_geonames(admin1_by_country, admin2_by_country)
     if placed_seats:
         log(f"  {placed_seats} capitals placed from GeoNames seats")
+    unsized = say_unsized_seats(admin1_by_country, admin2_by_country)
+    if unsized:
+        log(f"  {unsized} seats GeoNames gives no population said not to be the "
+            f"capital shown")
     fell_back = 0
     for table in (admin1_by_country, admin2_by_country):
         for rows in table.values():

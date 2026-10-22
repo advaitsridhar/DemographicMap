@@ -677,7 +677,9 @@ class RealRowsReachTheirPolygons(unittest.TestCase):
             self.skipTest("Ethiopia's census rows or the published build are not here")
         self.assertFalse(row.get("no_shape"))
         entity, _, names = join(copy.deepcopy(row), "ETH")
-        self.assertEqual((entity["name"], names[entity["parent"]]), ("Special Woreda", "Amhara"))
+        # The boundary file's "Special Woreda", read under the woreda's own name.
+        self.assertEqual((entity["name"], names[entity["parent"]]),
+                         ("Argoba Special Woreda", "Amhara"))
         self.assertTrue(data["ETH-āmara-bahir-dar-special-wereda"].get("no_shape"))
 
 
@@ -858,7 +860,7 @@ class SurveyCountsCutToWholeNumbers(unittest.TestCase):
         asked = {key for key, spec in be.ROW_UNIONS.items() if spec.get("weigh")}
         self.assertEqual(asked, {("CIV", "Goh-Djiboua"), ("CIV", "Sassandra-Marahoue"),
                                  ("NER", "Tahoua/Agadez"), ("NER", "Zinder/Diffa"),
-                                 ("TGO", "Maritime Region")})
+                                 ("TGO", "Maritime Region"), ("MDG", "Vatovavy-Fitovinany")})
         self.assertTrue(all(spec["weigh"] == "respondents" for key, spec in be.ROW_UNIONS.items()
                             if key in asked))
 
@@ -900,7 +902,8 @@ class WithdrawnFields(unittest.TestCase):
         self.assertEqual(set(withdrawn), {"TGO-WD-Q279945", "SEN-WD-Q738061", "BEN-WD-Q29147",
                                           "LBY-WD-Q32845", "LBY-WD-Q26023", "DZA-WD-Q233645",
                                           "ETH-WD-Q193494", "TZA-WD-Q498067", "RWA-WD-Q845807",
-                                          "GAB-WD-Q281109", "AGO-WD-Q191299"})
+                                          "GAB-WD-Q281109", "AGO-WD-Q191299", "ZMB-WD-Q738382",
+                                          "NAM-WD-Q876512", "MUS-WD-Q934126", "MAR-WD-Q19951088"})
         row = {"id": "TGO-WD-Q279945", "country": "TGO", "name": "Savanes Region",
                "capital": "Durum Town", "population": {"value": 1, "year": 2022},
                "sources": [{"field": "population/capital/coordinates", "name": "Wikidata"}]}

@@ -5990,6 +5990,60 @@
    "url": "https://www.citypopulation.de/en/djibouti/admin/",
    "license": "citation of citypopulation.de required",
    "note": "Men against women among the 1,066,809 people the 2024 census counted, its six regions added up: 530,362 men and 536,447 women. It stands in place of the Factbook's estimate of 83.0 males per 100 females."
+  },
+  {
+   "country": "COM",
+   "field": "ethnicity",
+   "year": 2017,
+   "basis": "nationality",
+   "source": "INSEED Comores, Recensement Général de la Population et de l'Habitat 2017, Rapport des résultats globaux, Tableau 3",
+   "url": "https://www.nada.inseed-comores.org/index.php/catalog/8/download/70",
+   "license": "INSEED Comores publication (reuse with attribution)",
+   "groups": [
+    {
+     "group": "Comorian nationals",
+     "pct": 99.5,
+     "count": 754608
+    },
+    {
+     "group": "Foreign nationals",
+     "pct": 0.5,
+     "count": 3708
+    }
+   ],
+   "note": "Nationality, not ethnicity: the 2017 census records no ethnic group. Its report counts 3,708 foreign residents among the 758,316 people it enumerated (Tableau 3); the rest are Comorian nationals."
+  },
+  {
+   "country": "COM",
+   "field": "language",
+   "year": 2017,
+   "basis": "languages spoken (multi-response)",
+   "source": "INSEED Comores, Recensement Général de la Population et de l'Habitat 2017, Rapport des résultats globaux, Tableau 4",
+   "url": "https://www.nada.inseed-comores.org/index.php/catalog/8/download/70",
+   "license": "INSEED Comores publication (reuse with attribution)",
+   "note": "How many of the 758,316 residents the 2017 census enumerated speak each of six languages, several answers allowed, so the shares add up to more than 100. The report prints the country's own column (Tableau 4: Comorian 677,246, French 254,813); its three islands' rows add up to it within one person."
+  },
+  {
+   "country": "ZWE",
+   "field": "population",
+   "use": "check",
+   "value": 15178957,
+   "year": 2022,
+   "source": "ZIMSTAT, 2022 Population and Housing Census: Population Distribution by District, Ward, Sex and Number of Households",
+   "url": "https://www.zimstat.co.zw/wp-content/uploads//Census/2022_Population_Distribution_by_District_Ward_SexandHouseholds_23012023.pdf",
+   "license": "Official statistics publication of the Zimbabwe National Statistics Agency",
+   "note": "The Factbook's estimate for 2025, 15% above the 2022 census's count three years earlier: 15,178,957 people in Zimbabwe's ten provinces, which carry that census."
+  },
+  {
+   "country": "NAM",
+   "field": "population",
+   "use": "check",
+   "value": 3022401,
+   "year": 2023,
+   "source": "Namibia Statistics Agency, 2023 Population and Housing Census Main Report, Table 2.2",
+   "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+   "license": "Namibia Statistics Agency publication (reuse with attribution)",
+   "note": "The Factbook's estimate for 2025, below the 2023 census's count two years earlier: 3,022,401 people in Namibia's fourteen regions, which the map draws as thirteen and which carry that census."
   }
  ]
 }
