@@ -510,6 +510,15 @@ def listed(names: list[str]) -> str:
     return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
 
 
+def spoken(name: str) -> str:
+    """A wereda's name as a note writes it. OCHA's table tells namesakes apart
+    by the region's code in brackets ("Dera (AM)", Amhara's, beside Oromia's
+    "Dera (OR)") and prints one alternative name with a stray bracket ("Malka
+    Jabti /M.Jebdu)"); a note about one zone needs neither."""
+    text = re.sub(r"\s*\([A-Z]{2}\)$", "", name)
+    return re.sub(r"\s*/[^/()]*\)$", "", text).strip()
+
+
 def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, dict[str, Any]],
                        page: str, admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
                        areas: dict[str, float] | None = None
@@ -682,6 +691,11 @@ def projection_records(regions: dict[str, dict[str, Any]], weredas: dict[str, di
             continue
         named_in = [weredas[c]["name"] for n, c in taken_in if n > NAMED * total]
         named_out = [weredas[c]["name"] for n, c in beyond if n > NAMED * total]
+        # As a note writes them, unless two namesakes meet in the one note
+        # (Oromia's and the Somali region's Gursum), where the brackets stay.
+        said = [spoken(w) for w in named_in + named_out]
+        if len(set(said)) == len(said):
+            named_in, named_out = said[:len(named_in)], said[len(named_in):]
         note = ("The statistics office's projection for July 2022, from the 2007 census, for "
                 "the one wereda that lies within the zone as drawn." if len(codes) == 1 else
                 f"The statistics office's projections for July 2022, from the 2007 census, for "

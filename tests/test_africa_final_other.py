@@ -19,6 +19,7 @@ from scripts.fetch_census import cited_sources as cs
 from scripts.fetch_census import congo_census as cg
 from scripts.fetch_census import djibouti_census as dj
 from scripts.fetch_census import eritrea_census as er
+from scripts.fetch_census import ethiopia_census as et
 from scripts.fetch_census import gabon_census as gc
 from scripts.fetch_census import liberia_census as lb
 from scripts.fetch_census import mauritania_census as mc
@@ -387,6 +388,15 @@ class NigeriaSexes(unittest.TestCase):
         f = ng.fields(self.TABLE, ["men 210 and women 190 make 400, not the total 401"], "note")
         self.assertEqual(f["sex_ratio"]["status"], "not_available")
         self.assertNotIn("sex_ratio_note", f)
+
+
+class EthiopiaWeredaNames(unittest.TestCase):
+    """A zone's note names a wereda without the marks OCHA's table tells namesakes apart by."""
+
+    def test_the_region_s_code_and_the_stray_bracket_come_off(self):
+        self.assertEqual(et.spoken("Dera (AM)"), "Dera")
+        self.assertEqual(et.spoken("Malka Jabti /M.Jebdu)"), "Malka Jabti")
+        self.assertEqual(et.spoken("Bahirdar Zuria"), "Bahirdar Zuria")
 
 
 class VisitorText(unittest.TestCase):
