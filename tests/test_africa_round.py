@@ -313,5 +313,42 @@ class EthiopiaLanguagesNamed(unittest.TestCase):
         self.assertNotIn("this map", note)
 
 
+class EastTables(unittest.TestCase):
+    """The final sweep's east fixes that are tables of the build's."""
+
+    def test_a_seat_that_is_not_the_unit_s_is_not_called_its_seat(self):
+        none = "its seat Kibingo has no population in GeoNames"
+        rwampara = {"id": "47994165B31232091804297", "capital": {"status": "not_available"}}
+        self.assertEqual(be.no_place_reason(rwampara, none),
+                         "GeoNames gives no population for Kibingo, which stands inside this "
+                         "outline, so which place is largest cannot be told")
+        lobito = {"id": "x", "capital": "Lobito"}
+        self.assertIn("for Catumbela, which stands inside",
+                      be.no_place_reason(lobito, "its seat Catumbela has no population in GeoNames"))
+        # Where it is the seat the unit shows, or nothing says otherwise, as written.
+        for entity in ({"id": "y", "capital": "Kibingo"}, {"id": "z"}):
+            self.assertEqual(be.no_place_reason(entity, none), none)
+
+    def test_too_few_interviews_withdraw_a_whole_level(self):
+        rows = [{"id": "GHA-CG-GH1302", "country": "GHA", "name": "Jirapa", "level": "admin2",
+                 "language": [{"group": "Dagaare", "pct": 100.0}]},
+                {"id": "GHA-CG-GH13", "country": "GHA", "name": "Upper West", "level": "admin1",
+                 "language": [{"group": "Dagaare", "pct": 89.0}]},
+                {"id": "KEN-CG-KE025", "country": "KEN", "name": "Samburu", "level": "admin1",
+                 "language": [{"group": "Turkana", "pct": 100.0}]}]
+        got = loaded("clear_global_language.json", rows)
+        self.assertNotIn("language", got["GHA"][0])
+        self.assertIn("language", got["GHA"][1])
+        self.assertNotIn("language", got["KEN"][0])
+
+    def test_uganda_s_counties_take_their_names(self):
+        rows = [{"id": "UGA-2024-47994165B34585576880018", "country": "UGA", "name": "Bujumbura",
+                 "level": "admin2", "match_by": "shape_id",
+                 "shape_id": "47994165B34585576880018", "population": {"value": 206860}}]
+        got = loaded("uganda_census.json", rows)["UGA"][0]
+        self.assertEqual(got["name"], "Rujumbura")
+        self.assertIn("Bujumbura", got["aliases"])
+
+
 if __name__ == "__main__":
     unittest.main()

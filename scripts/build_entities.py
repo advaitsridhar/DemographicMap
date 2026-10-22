@@ -3435,6 +3435,17 @@ ROW_PARENTS: dict[str, dict[str, str]] = {
 # Ntahangwa, and together they make the city (1,117,744 in 2022, their medians
 # weighted to the city row's 21.0).
 ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
+    # Uganda's census rows are bound to their counties already; these give four
+    # of them their names in place of the boundary file's: a second "Soroti"
+    # north of Amuria, which is Kapelebyong County (its row's note says so),
+    # "Bujumbura" (Burundi's capital) for Rukungiri's Rujumbura, "Bukuto" for
+    # Bukoto and "Bughendra" for Bughendera.
+    "uganda_census.json": {
+        "UGA-2024-47994165B8099782863608": ("47994165B8099782863608", "Kapelebyong"),
+        "UGA-2024-47994165B34585576880018": ("47994165B34585576880018", "Rujumbura"),
+        "UGA-2024-47994165B51876264217150": ("47994165B51876264217150", "Bukoto"),
+        "UGA-2024-47994165B11452154134589": ("47994165B11452154134589", "Bughendera"),
+    },
     "cod_ps_admin2.json": {
         "TZA-CODPS-TZ0203": ("72390352B90906351205470", "Arusha Urban"),
         "TZA-CODPS-TZ1208": ("72390352B25057310038558", "Mbeya Urban"),
@@ -3485,7 +3496,47 @@ CABO_VERDE_ETHNICITY = (
     "they come from (badiu, sampadjudu), their religion, occupation, class, race, "
     "gender, age or party -- and most of these shares count those answers rather "
     "than ethnic groups.")
+TURKANA_ILEMI = (
+    "The outline drawn here takes in part of the Ilemi Triangle, which Kenya administers "
+    "and South Sudan claims; the rest of the triangle, around Kibish, is drawn in South "
+    "Sudan. The 2019 census counted Turkana County as Kenya administers it, the whole "
+    "triangle included.")
+
+
+def before_rumonge(province: str, communes: str, when: str) -> str:
+    """Burundi's survey shares for a province as it was before Rumonge was cut from it."""
+    return (f"Afrobarometer interviewed here in {when}, when {province} still held "
+            f"{communes}, which became part of Rumonge province in 2015; these are the "
+            f"shares of the province as it then was.")
+
+
+BURURI_COMMUNES = "the communes of Burambi, Buyengero and Rumonge"
+BUJUMBURA_RURAL_COMMUNES = "the communes of Bugarama and Muhuta"
 ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
+    "kenya_census.json": {
+        "KEN-2019-32016919B72266624462344": {
+            field: TURKANA_ILEMI
+            for field in ("population", "median_age", "sex_ratio", "religion")},
+    },
+    "afrobarometer_r56.json": {
+        "BDI-AB6-Bururi": {
+            "religion": before_rumonge("Bururi", BURURI_COMMUNES, "October 2014"),
+            "language": before_rumonge("Bururi", BURURI_COMMUNES, "October 2014"),
+            "ethnicity": before_rumonge("Bururi", BURURI_COMMUNES, "November 2012")},
+        "BDI-AB6-Bujumbura Rural": {
+            "religion": before_rumonge("Bujumbura Rural", BUJUMBURA_RURAL_COMMUNES,
+                                       "October 2014"),
+            "language": before_rumonge("Bujumbura Rural", BUJUMBURA_RURAL_COMMUNES,
+                                       "October 2014"),
+            "ethnicity": before_rumonge("Bujumbura Rural", BUJUMBURA_RURAL_COMMUNES,
+                                        "November 2012")},
+    },
+    "clear_global_language.json": {
+        "BDI-CG-BDI003": {"language": before_rumonge("Bururi", BURURI_COMMUNES,
+                                                     "October 2014")},
+        "BDI-CG-BDI002": {"language": before_rumonge("Bujumbura Rural",
+                                                     BUJUMBURA_RURAL_COMMUNES, "October 2014")},
+    },
     "cod_ps_admin2.json": {
         "AGO-CODPS-AO09077": {"population": (
             "The map draws no polygon for Cacula, the municipality to the "
@@ -3559,6 +3610,18 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
         "ETH-WD-Q126285407": "Southern Sidama Zone of Sidama Region, not Tigray's Southern zone",
         "ETH-WD-Q126280182": "Central Sidama Zone of Sidama Region, not Tigray's Central zone",
         "ETH-WD-Q2864413": "Arsi Negele, a wereda of West Arsi Zone, not the Arsi zone",
+        # Items for a larger or another unit, reaching a constituency, a district
+        # or a county by its name: Kenya's Nandi Hills wore Nandi County's seat
+        # (Kapsabet, 6.9 km outside it) and Makueni constituency the county's
+        # population; Somalia's Marka, the city's 2014 figure where the
+        # district's item, which has none, was refused; Uganda's Moroto County
+        # in Lango, Karamoja's Moroto Municipality.
+        "KEN-WD-Q1964569": "Nandi County, not the Nandi Hills constituency",
+        "KEN-WD-Q473717": "Makueni County, not the Makueni constituency",
+        "KEN-WD-Q1852189": "Malindi District before 2010, not the Malindi constituency",
+        "SOM-WD-Q657428": "Merca, the city, not Marka District",
+        "UGA-WD-Q49298225": "Moroto Municipality in Karamoja, not the Moroto County of "
+                            "Alebtong District",
     },
     "wiki_population_admin1.json": {
         "MDG-WP-vatovavy-fitovinany": "Fitovinany's 2018 figure, three of the "
@@ -3597,8 +3660,21 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
 }
 
 
+# CLEAR Global's tabulations of Afrobarometer rounds, read where the survey
+# interviewed too few people for shares: the map reads the survey itself only
+# where a region holds 25 respondents, and the same interviews tabulated by
+# another hand are no larger. Kenya's ten counties, Tanzania's Katavi and
+# Kusini Unguja, the Republic of the Congo's Cuvette-Ouest and Sangha,
+# Botswana's Chobe and Nigeria's six states where Afrobarometer is CLEAR's only
+# source (Yobe's rows draw on REACH's assessment too) each say, in the survey's
+# own row, that it interviewed 8 to 24 people there; Samburu showed "Turkana
+# 100%" from eight.
+FEW_INTERVIEWS = ("CLEAR Global's shares tabulate an Afrobarometer round that interviewed "
+                  "too few people here for shares")
+
 # Fields of a file's rows that are not used, keyed by file, then a country (all
-# its rows) or one row's id, then field, with the reason; the rows keep their
+# its rows), a country's level ("GHA/admin2") or one row's id, then field, with
+# the reason; the rows keep their
 # other fields. The field goes before any union is pooled, so a pooled row
 # never carries it, and a lower-ranked file's figure stands where this one's
 # would have.
@@ -3635,6 +3711,23 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
 #        Libreville (Libreville); Angola's Bengo Dande, its municipality
 #        (Caxito, the town).
 WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
+    "clear_global_language.json": {
+        "UGA-CG-UG2063": {"language": "CLEAR Global's 'Tororo' row holds the Tooro "
+                                      "sub-region's languages, not Tororo's"},
+        **{row: {"language": FEW_INTERVIEWS} for row in (
+            "KEN-CG-KE004", "KEN-CG-KE005", "KEN-CG-KE006", "KEN-CG-KE008", "KEN-CG-KE010",
+            "KEN-CG-KE011", "KEN-CG-KE013", "KEN-CG-KE025", "KEN-CG-KE028", "KEN-CG-KE031",
+            "TZA-CG-TZ23", "TZA-CG-TZ52", "COG-CG-CG04", "COG-CG-CG12",
+            "BWA-CG-BW15", "BWA-CG-BW1501",
+            "NGA-CG-NG006", "NGA-CG-NG011", "NGA-CG-NG015", "NGA-CG-NG024", "NGA-CG-NG026",
+            "NGA-CG-NG035")},
+        # Districts and constituencies, below the regions the survey samples:
+        # one to three areas of eight interviews each (half of Ghana's 147
+        # district rows are a single answer or multiples of 12.5%), and Ghana's
+        # file names the Upper West's Dagaare "Nyamal".
+        "GHA/admin2": {"language": FEW_INTERVIEWS},
+        "NAM/admin2": {"language": FEW_INTERVIEWS},
+    },
     "afrobarometer_region.json": {
         "NER": {"language": "Round 9's language codes for Niger look misassigned",
                 "religion": "the 2012 census gives every polygon's religion"},
@@ -3663,6 +3756,10 @@ DISAMBIGUATED: dict[str, dict[str, dict[str, str]]] = {
     "wikidata_admin1.json": {
         "COG-WD-Q855327": {"capital": "Loango"},
         "XKX-WD-Q2043136": {"capital": "Kamenica"},
+    },
+    # Horo Guduru's seat, labelled "Shambu city".
+    "wikidata_admin2.json": {
+        "ETH-WD-Q5904662": {"capital": "Shambu"},
     },
 }
 
@@ -3725,6 +3822,8 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
                 row["sources"] = spell_fields(row["sources"])
             if iso3 in withdrawn:
                 withdraw_fields(row, withdrawn[iso3])
+            if f"{iso3}/{row.get('level')}" in withdrawn:
+                withdraw_fields(row, withdrawn[f"{iso3}/{row.get('level')}"])
             if row.get("id") in withdrawn:
                 withdraw_fields(row, withdrawn[row["id"]])
             for field, name in disambiguated.get(row.get("id"), {}).items():
@@ -9082,7 +9181,8 @@ DECLARED_SEATS: dict[str, dict[str, Any]] = {
     "43142294B44506325294932": declared_seat("Tipasa", "2476028", "PPLA", 2.44889, 36.58972),
     "43142294B98309179755088": declared_seat("Tizi Ouzou", "2475744", "PPLA", 4.04591, 36.71182),
     "48771326B10235544430886": declared_seat("Juba", "373303", "PPLC", 31.58247, 4.85165),
-    "75662566B25357223982520": declared_seat("Semera", "6913519", "PPLA", 41.00578, 11.79342),
+    # Semera, which GeoNames, and so the largest settlement beside it, calls Samara.
+    "75662566B25357223982520": declared_seat("Samara", "6913519", "PPLA", 41.00578, 11.79342),
     "98808126B6174087794558": declared_seat("Libreville", "2399697", "PPLC", 9.45356, 0.39241),
     "26408823B1629995979425": declared_seat("Caxito", "2242001", "PPLA", 13.66425, -8.57848),
     # Ouham as drawn, before Ouham-Fafa was cut from it in 2020: GeoNames'
@@ -9323,6 +9423,25 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
     return filled
 
 
+# scripts/fetch_geonames.py names no place where a seat inside the unit has no
+# population in GeoNames, since that seat may be the largest, and calls it the
+# unit's seat. Where it is not -- another unit's seat (NOT_ITS_SEAT), or not
+# the seat the unit shows -- the sentence says only what is known of it:
+# Angola's municipalities hold their comunas' seats, Rwampara Sheema's.
+SEAT_WITHOUT_PEOPLE = re.compile(r"^its seat (?P<town>.+) has no population in GeoNames$")
+
+
+def no_place_reason(entity: dict[str, Any], none: str) -> str:
+    """fetch_geonames' reason for naming no place, true of this unit."""
+    seat = SEAT_WITHOUT_PEOPLE.match(none)
+    capital = entity.get("capital")
+    if seat and (entity.get("id") in NOT_ITS_SEAT
+                 or (isinstance(capital, str) and norm(capital) != norm(seat["town"]))):
+        return (f"GeoNames gives no population for {seat['town']}, which stands inside "
+                f"this outline, so which place is largest cannot be told")
+    return none
+
+
 def name_geonames_place(entity: dict[str, Any], town: dict[str, Any]) -> int:
     """Name a GeoNames place as the unit's largest settlement, or say why none is."""
     if "none" in town:
@@ -9330,7 +9449,7 @@ def name_geonames_place(entity: dict[str, Any], town: dict[str, Any]) -> int:
         if not held.get("note"):
             entity["largest_settlement"] = gap(
                 held.get("status") or NOT_AVAILABLE,
-                f"No GeoNames place is named: {town['none']}.")
+                f"No GeoNames place is named: {no_place_reason(entity, town['none'])}.")
             # The one refusal that turns on the unit's population, which is
             # weighed again once the populations are final
             # (settle_geonames_spans).
