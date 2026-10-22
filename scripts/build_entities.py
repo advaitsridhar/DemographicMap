@@ -839,6 +839,40 @@ ADAPTER_FILES = [
     # Likewise after Afrobarometer: Angola's 18 provinces carried the survey
     # and now carry the 2024 census for all three fields.
     "angola_province.json",
+    # Central Africa's offices, after cod_ps_admin2.json and cod_ps_age.json so
+    # each count stands in front of OCHA's projection for the same unit, and
+    # after Afrobarometer so a census composition replaces the survey's: the
+    # Central African Republic's 2021 census-mapping count on the 2003
+    # sub-prefectures with the 2016 yearbook's prefecture ages (car_census),
+    # Sao Tome and Principe's 2012 census by district (sao_tome_census), and
+    # Gabon's 2013 census by department (gabon_census).
+    "car_census.json", "sao_tome_census.json", "gabon_census.json",
+    # Cameroon's 2005 census by department (BUCREP), Equatorial Guinea's 2015
+    # census by province and district (INEGE's yearbook), the Republic of the
+    # Congo's 2023 census by department, Chad's provinces for 2023 (OCHA, after
+    # cod_ps_admin2 so the provinces stop showing their departments' 2021
+    # total), and the seats of Chad's departments and Angola's municipalities.
+    # drc_gaps writes no figure: why the DRC's provinces and territories show no
+    # median age or sex ratio (OCHA's ratios are the province's) and why fifteen
+    # towns show nothing (OCHA counts them in a territory).
+    "cameroon_census.json", "equatorial_guinea_census.json", "congo_census.json",
+    "chad_departments.json", "angola_seats.json", "drc_gaps.json",
+    # Angola's 2024 census on the 2016 municipalities the map draws, from the
+    # provincial reports (after cod_ps_admin2 and cod_ps_age, whose 2024
+    # projections it stands in front of; after angola_province, whose national
+    # report's compositions stay on the provinces).
+    "angola_municipios.json",
+    # OCHA's newer tables for units the censuses above count: Cameroon's
+    # regions, Wouri and Mfoundi for 2025 and Gabon's provinces for 2022, the
+    # newest figures for those units (the censuses keep the sex ratios and the
+    # regions' medians); and the DRC's territories and cities for 2024 (the
+    # humanitarian planning projection by health zone, added up) and Chad's
+    # departments for 2024, held behind OCHA's 2020 and 2021 rows, and the
+    # Central African Republic's sub-prefectures and prefectures for 2025
+    # (ICASEES's projection, added up where its 2020 sub-prefectures lie whole
+    # in the 2003 ones), held behind the 2021 census mapping (HELD_ROWS).
+    "cameroon_projection.json", "gabon_projection.json", "drc_hpc.json",
+    "chad_departments_2024.json", "car_projection.json",
     # Likewise: Zimbabwe's provinces and Burkina Faso's regions carried the
     # survey and now carry their census for the fields it publishes by region.
     "zimbabwe_province.json", "burkina_region.json",
@@ -3310,6 +3344,44 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
     },
 }
 
+# Central Africa (kept apart from the table above so that it merges into it):
+#   * OCHA's age tables name three units as its population tables do: the
+#     Angolan spelling above, Gambos (ex-Chiange), is the same row's in
+#     cod_ps_age.json; Chad's "Barh-El-Gazel" is the boundary file's "Bahr el
+#     Gazel", Cameroon's "Adamawa" its "Adamaoua". (Quiculungo's age row is not
+#     bound: the polygon drawn as Quiculongo is only half Quiculungo, and
+#     NOT_THIS_GROUND states so on it.)
+#   * OCHA's 2022 row for Principe, "Região Autónoma do Príncipe", is the
+#     island the map draws as its one district, Pagué; and the Central African
+#     Republic's 2015 row "Dédé Mokoumba" is the sub-prefecture drawn as
+#     Dédé-Mokouba.
+#   * Afrobarometer's Round 9 strata in Cameroon are the regions in French,
+#     and seven reach no polygon: Est, Extreme- Nord, Nord, Nord Ouest,
+#     Ouest, Sud and Sud Ouest are the boundary file's East, Far North,
+#     North, North-West, West, South and South-West (Round 8's own rows,
+#     read in English, join every one).
+for _file, _rows in {
+    "cod_ps_admin2.json": {
+        "STP-CODPS-ST0101": ("Pagué",),
+        "CAF-CODPS-CF216": ("Dédé-Mokouba",),
+    },
+    "cod_ps_age.json": {
+        "AGO-CODPSAGE-AO09073": ("Gambos(Chiange)",),
+        "TCD-CODPSAGE-TD19": ("Bahr el Gazel",),
+        "CMR-CODPSAGE-CM001": ("Adamaoua",),
+    },
+    "afrobarometer_region.json": {
+        "CMR-AB9-1224": ("East",),
+        "CMR-AB9-1225": ("Far North",),
+        "CMR-AB9-1227": ("North",),
+        "CMR-AB9-1228": ("North-West",),
+        "CMR-AB9-1229": ("West",),
+        "CMR-AB9-1230": ("South",),
+        "CMR-AB9-1231": ("South-West",),
+    },
+}.items():
+    ROW_ALIASES.setdefault(_file, {}).update(_rows)
+
 # Rows whose name is drawn more than once in their country and which do not
 # say which province they are in, keyed by file and row id, with the province
 # the row's own code names. Cambodia draws two Samraongs, Takeo's district and
@@ -3620,25 +3692,30 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
     return by_country
 
 
-# What a held row keeps besides its population (load_adapters): what places it.
+# What a held row keeps besides its population (load_adapters): what places it,
+# and the note on that population, which goes with the figure wherever it is
+# shown (Chad's 2024 departments say by what proportion OCHA's table raised
+# their province's 2021 figures).
 HELD_KEYS = frozenset({"id", "level", "name", "parent", "parent_name", "parent_aliases",
                        "country", "match_by", "shape_id", "shape_label", "no_shape",
-                       "aliases", "wikidata", "sources", "_source"})
+                       "aliases", "wikidata", "sources", "_source", "population_note"})
 
 
 def offer_only(row: dict[str, Any]) -> dict[str, Any]:
-    """A HELD_ROWS row as it is read: what places it, its population and that
-    figure's citation, marked as an offer (``_offer``), which merge_adapter
-    holds behind whatever the unit carries.
+    """A HELD_ROWS row as it is read: what places it, its population, the note
+    on it and that figure's citation, marked as an offer (``_offer``), which
+    merge_adapter holds behind whatever the unit carries.
 
-    The note beside the population goes with it, as merge_adapter keeps any
-    held figure's (``unit_note``), and is shown where the figure is taken:
-    Sierra Leone's 2021 mid-term counts say they are the mid-term census's and
-    that its results were disputed, and Kambia's 367,699 stood without it."""
+    The note goes with the figure, as merge_adapter keeps any held figure's
+    (``unit_note``), and is shown where the figure is taken: Sierra Leone's
+    2021 mid-term counts say they are the mid-term census's and that its
+    results were disputed, and Kambia's 367,699 stood without it."""
     kept = {key: value for key, value in row.items()
-            if key in HELD_KEYS or key in ("population", "population_note")}
+            if key in HELD_KEYS or key == "population"}
+    # The note goes with the figure, and so does what the note cites.
     kept["sources"] = [src for src in row.get("sources") or []
-                       if set(str(src.get("field") or "").split("/")) <= {"population"}]
+                       if set(str(src.get("field") or "").split("/"))
+                       <= {"population", "population note"}]
     kept["_offer"] = True
     return kept
 
@@ -4120,6 +4197,25 @@ HELD_ROWS: dict[str, dict[str, str]] = {
     # figure shown one a population makes, and names it otherwise.
     "sierra_leone_mtphc.json": {"SLE": "sierra_leone_census.json"},
 }
+# Central Africa (kept apart from the table above so that it merges into it):
+# three newer tables held behind older rows for the same units, which stand as
+# the units' figures where the newer one is not the same ground.
+#   COD  drc_hpc.json, OCHA's humanitarian planning projection for 2024 by
+#        health zone, added up to 164 of the territories and cities the map
+#        draws, against cod_ps_admin2's 2020 rows.
+#   TCD  chad_departments_2024.json, OCHA's 2024 table of the departments,
+#        against cod_ps_admin2's 2021 rows: it raises all but one province's
+#        departments by one proportion (11.0%) and Sila's by 48.7%, which the
+#        departments' notes say.
+#   CAF  car_projection.json, ICASEES's projection for 2025 by sub-prefecture
+#        of the 2020 division (OCHA's humanitarian table), added up on the 2003
+#        sub-prefectures that hold its units whole, against car_census's 2021
+#        census-mapping counts.
+HELD_ROWS.update({
+    "drc_hpc.json": {"COD": "cod_ps_admin2.json"},
+    "chad_departments_2024.json": {"TCD": "cod_ps_admin2.json"},
+    "car_projection.json": {"CAF": "car_census.json"},
+})
 
 
 def is_fill_only(source: str | None, iso3: str | None) -> bool:
@@ -4198,6 +4294,14 @@ COMPOSED_COUNT = re.compile(
 # ... unless the clause says there is none: China's county notes say "its
 # prefecture lists no development zone counted apart".
 COMPOSED_DENIED = re.compile(r"\bno\b", re.I)
+
+# Files whose figure for a polygon is itself put together for it, the units of
+# a newer table that make up the polygon's ground added up, so that their offer
+# may stand in front of a count put together the same way: the Central African
+# Republic's 2025 projection on the 2003 sub-prefectures (car_projection),
+# where a 2021 count is the communes of several 2020 sub-prefectures added up
+# (Carnot is Carnot and Senkpa-Mbaéré, and so is its 2025 figure).
+COMPOSED_OFFERS = frozenset({"car_projection.json"})
 
 
 def composed(said: str) -> bool:
@@ -4363,8 +4467,11 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
             entity.setdefault("_held", {}).setdefault(key, []).append({
                 "value": row[key], "wikidata": row.get("wikidata"),
                 "file": row.get("_source"), "match": row.get("_match"),
+                # The figure's citations, and its note's: the DRC's 2024
+                # territories say their figure is OCHA's 2020 estimate times a
+                # factor, and cite that estimate for it.
                 "sources": [src for src in row.get("sources") or []
-                            if key in str(src.get("field") or "").split("/")],
+                            if {key, f"{key} note"} & set(str(src.get("field") or "").split("/"))],
                 "row": row.get("id"),
                 # The note beside the figure goes with it, to wherever it is
                 # later shown: a union's says what was added up.
@@ -4405,9 +4512,13 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
             continue
         if key == "sources":
             # A citation for a figure that was held back describes nothing
-            # on the record, so it is not added either.
+            # on the record, so it is not added either; nor one for the note
+            # beside it, which is held with the figure (unit_note) and comes
+            # with it if it is ever shown. Matadi's 2024 offer is not shown,
+            # and its note's citation of OCHA's 2020 table stood on the unit.
+            covered = held | {f"{field} note" for field in held}
             kept = [src for src in (value or [])
-                    if not (held and set(str(src.get("field") or "").split("/")) <= held)]
+                    if not (held and set(str(src.get("field") or "").split("/")) <= covered)]
             # Nor is a composition held back cited among the fields of an
             # entry that is added for others: Liberia's counties cited the
             # survey for the religion and ethnicity the census shows.
@@ -8509,7 +8620,8 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
                 together = composed(said)
                 best = None
                 for held in (entity.get("_held") or {}).get("population", []):
-                    if together and "-POOL-" not in str(held.get("row") or ""):
+                    if (together and "-POOL-" not in str(held.get("row") or "")
+                            and held.get("file") not in COMPOSED_OFFERS):
                         continue
                     offered, when = published(held.get("value")), vintage(held.get("value"))
                     if (not is_fill_only(held.get("file"), iso3) or not offered
@@ -8609,6 +8721,9 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
             # show the census "where no newer figure is published", and
             # Farwaniya's and Jahra's are published and were not taken.
             entity["_not_taken"] = {"shown": published(shown), "offer": best["value"],
+                                    "sources": [src for src in best.get("sources") or []
+                                                if "population" in str(src.get("field") or "")
+                                                .split("/")],
                                     "sentence": (
                 f"A newer figure is not shown: {published(best['value']):,.0f} for "
                 f"{vintage(best['value'])} from "
@@ -8622,18 +8737,21 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
         # citing the population alone is held with the count, and one citing
         # other fields too stays for those alone, its population held. Mexico's
         # 2,234 municipios cited INEGI's 2020 census for "population/sex
-        # ratio/religion/language" beside OCHA's 2024 figure.
+        # ratio/religion/language" beside OCHA's 2024 figure. The count's note
+        # goes with it (unit_note), and so do the note's citations.
+        moving = {"population", "population note"}
         cited: list[dict[str, Any]] = []
         kept_sources: list[dict[str, Any]] = []
         for src in entity.get("sources") or []:
             cites = str(src.get("field") or "").split("/")
-            if "population" not in cites:
+            mine = [f for f in cites if f in moving]
+            if not mine:
                 kept_sources.append(src)
                 continue
-            cited.append(dict(src, field="population") if len(cites) > 1 else src)
-            if len(cites) > 1:
-                kept_sources.append(dict(src, field="/".join(f for f in cites
-                                                             if f != "population")))
+            rest = [f for f in cites if f not in moving]
+            cited.append(dict(src, field="/".join(mine)) if rest else src)
+            if rest:
+                kept_sources.append(dict(src, field="/".join(rest)))
         held_list = entity["_held"]["population"]
         held_list.remove(best)
         # Held as the count it is, not as a figure of the item the unit is
@@ -8679,6 +8797,13 @@ def say_newer_not_taken(*tables: dict[str, list[dict[str, Any]]]) -> int:
                 entity["population_note"] = (f"{note} {why['sentence']}" if note
                                              else why["sentence"])
                 said += 1
+                # The figure the sentence names is cited for the note: Matadi's
+                # 662,833 for 2024 is OCHA's projection, not the 2020 table the
+                # figure shown is from.
+                for src in why.get("sources") or []:
+                    entry = dict(src, field="population note")
+                    if entry not in entity.setdefault("sources", []):
+                        entity["sources"].append(entry)
                 # A median or ratio from the same table as the figure not
                 # shown says so: 52 of Mexico's municipios show OCHA's 2024
                 # median age, worked out from the age groups whose total is
@@ -10276,6 +10401,10 @@ ROW_UNIONS: dict[tuple[str, str], dict[str, Any]] = {
         "file": "afrobarometer_region.json",
         "rows": ("MOZ-AB9-540", "MOZ-AB9-541"),
         "shapes": (("admin1", "27363107B47421408423272"),)},
+    # Pooled where its parts stood (first_place), so the 2012 census's
+    # religion and languages for the island (sao_tome_census, read later)
+    # stand in front of the survey's, as they do on Príncipe, and the
+    # country's sum of its two provinces reads one source's labels.
     ("STP", "São Tomé Province"): {
         "file": "afrobarometer_region.json",
         "rows": ("STP-AB9-1660", "STP-AB9-1661", "STP-AB9-1662"),
@@ -10432,6 +10561,24 @@ ROW_UNIONS: dict[tuple[str, str], dict[str, Any]] = {
         "shapes": (("admin2", "50627088B55174657645518"),),
         "note": "Puerto Morelos has no outline of its own and lies inside this one."},
 }
+# Cameroon (kept apart from the table above so that it merges into it):
+# Afrobarometer's Round 9 samples Yaoundé and Douala as strata of their own,
+# beside the Centre and Littoral strata that hold the rest of each region, so
+# each region's row alone describes the region without its capital.
+ROW_UNIONS.update({
+    ("CMR", "Centre"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("CMR-AB9-1223", "CMR-AB9-1220"),
+        "shapes": (("admin1", "27767025B11866847137657"),),
+        "note": "The survey samples Yaoundé apart from the rest of the region; the two "
+                "together are the Centre region."},
+    ("CMR", "Littoral"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("CMR-AB9-1226", "CMR-AB9-1221"),
+        "shapes": (("admin1", "27767025B72594666306589"),),
+        "note": "The survey samples Douala apart from the rest of the region; the two "
+                "together are the Littoral region."},
+})
 
 
 def union_groups(spec: dict[str, Any]) -> list[tuple[str, tuple[str, ...]]]:
@@ -12633,6 +12780,94 @@ NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
             "for which no count has been read, so the figure is left out.")),
     },
 }
+# Angola (kept apart from the table above so that it merges into it): the
+# polygons that OCHA's boundaries of the 2016 municipalities (cod-ab-ago),
+# measured against the CGAZ polygons, show are not the municipality of their
+# name -- less than 70% of the one lying inside the other -- or hold part of
+# Cacula, which is drawn nowhere. Any figure published for the municipality of
+# the polygon's name, the 2024 census's or OCHA's 2024 projection, describes
+# other ground, whichever file carries it (angola_municipios gives the same
+# reasons on the compositions):
+#   AGO  Caluquembe, Quilengues, Quipungo and Lubango hold 28%, 19%, 11% and
+#        16% of their ground in Cacula; Pango-Aluquem is 39% Pango Aluquém and
+#        48% Cambambe (and OCHA's row for it is Bengo's Pango Aluquém);
+#        Quiculongo is 53% Quiculungo; a third of Cambundi-Catembo lies in the
+#        polygon drawn as Xá-Muteba, 27% of which is Cambundi-Catembo; Luanda's
+#        Belas is 63% Belas and 30% Viana, Cacuaco 40% Cacuaco and 36% Dande,
+#        and Luanda 55% the municipality of Luanda and 18% Cazenga (Viana and
+#        Cazenga have no polygon).
+NOT_THIS_GROUND.update({
+    ("AGO", shape_id): {field: (None, note)
+                        for field in ("population", "median_age", "sex_ratio")}
+    for shape_id, note in (
+        # Caluquembe
+        ("91424787B79663411061170", (
+            "About 28% of this polygon lies in the municipality of Cacula, which has no "
+            "polygon of its own, so no figure published for Caluquembe, whether the "
+            "2024 census's or a projection, describes it; nor do Cacula's, which cover "
+            "the rest of Cacula as well.")),
+        # Quilengues
+        ("91424787B76902935205568", (
+            "About 19% of this polygon lies in the municipality of Cacula, which has no "
+            "polygon of its own, so no figure published for Quilengues, whether the "
+            "2024 census's or a projection, describes it; nor do Cacula's, which cover "
+            "the rest of Cacula as well.")),
+        # Quipungo
+        ("91424787B65395745560852", (
+            "About 11% of this polygon, a quarter of Cacula, lies in the municipality "
+            "of Cacula, which has no polygon of its own, so no figure published for "
+            "Quipungo, whether the 2024 census's or a projection, describes it; nor do "
+            "Cacula's, which cover the rest of Cacula as well.")),
+        # Lubango
+        ("91424787B12923410016524", (
+            "About 16% of this polygon lies in the municipality of Cacula, whose seat "
+            "is inside it and which has no polygon of its own, so no figure published "
+            "for Lubango, whether the 2024 census's or a projection, describes it; nor "
+            "do Cacula's, which cover the rest of Cacula as well.")),
+        # Pango-Aluquem
+        ("91424787B4488869677577", (
+            "Only about 39% of this polygon lies in Pango Aluquém as OCHA's boundaries "
+            "of the municipalities draw it, and about 48% in Cambambe, so no figure "
+            "published for Pango Aluquém, whether the 2024 census's or a projection, "
+            "describes it.")),
+        # Quiculongo
+        ("91424787B64555741816921", (
+            "Only about 53% of this polygon lies in Quiculungo as OCHA's boundaries of "
+            "the municipalities draw it, and the rest in Banga and Samba Cajú, so no "
+            "figure published for Quiculungo, whether the 2024 census's or a "
+            "projection, describes it.")),
+        # Cambundi-Catembo
+        ("91424787B22609176467527", (
+            "About a third of Cambundi-Catembo, as OCHA's boundaries of the "
+            "municipalities draw it, lies outside this polygon, most of it in the "
+            "polygon drawn as Xá-Muteba, so no figure published for Cambundi-Catembo, "
+            "whether the 2024 census's or a projection, describes it.")),
+        # Xa-Muteba
+        ("91424787B55001564307677", (
+            "About 27% of this polygon lies in Cambundi-Catembo, in Malanje, as OCHA's "
+            "boundaries of the municipalities draw it, so no figure published for "
+            "Xá-Muteba, whether the 2024 census's or a projection, describes it.")),
+        # Belas
+        ("91424787B66059706224288", (
+            "About 63% of this polygon lies in Belas as OCHA's boundaries of the "
+            "municipalities draw it, and about 30% in Viana, which has no polygon of "
+            "its own, so no figure published for Belas, whether the 2024 census's or a "
+            "projection, describes it.")),
+        # Cacuaco
+        ("91424787B14243133178966", (
+            "Only about 40% of this polygon lies in Cacuaco as OCHA's boundaries of the "
+            "municipalities draw it, about 36% in Dande, in Bengo, and about 22% in "
+            "Viana, so no figure published for Cacuaco, whether the 2024 census's or a "
+            "projection, describes it.")),
+        # Luanda
+        ("91424787B55521153380221", (
+            "About 55% of this polygon lies in the municipality of Luanda as OCHA's "
+            "boundaries of the municipalities draw it, and most of the rest in Cazenga, "
+            "which has no polygon of its own, Belas and Cacuaco, so no figure published "
+            "for the municipality of Luanda, whether the 2024 census's or a projection, "
+            "describes it.")),
+    )
+})
 
 
 def refuse_not_this_ground(admin1: dict[str, list[dict[str, Any]]],

@@ -123,6 +123,10 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Church of Jesus Christ in Madagascar/Malagasy Lutheran Church/Anglican Church",
         "Awakening Churches/Christian Revival", "Apostolic Sect",
         "Universal Kingdom of God", "Worship Centre",
+        # Sao Tome and Principe's 2012 census names three Pentecostal churches
+        # of Brazilian and Portuguese origin among its thirteen answers.
+        "Universal Church of the Kingdom of God", "God Is Love Pentecostal Church",
+        "Maná Church",
         "United Church", "United Church of Zambia or UCZ",
         "United Church of Zambia", "New Apostolic Church",
         "Christian mission in many lands (CMML)",

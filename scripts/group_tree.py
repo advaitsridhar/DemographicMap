@@ -88,6 +88,9 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
     "East Asian religions": (
         "Taoism", "Confucianism", "Shinto", "Caodaism", "Chondogyo",
         "Cheondoism", "Tenrikyo", "Buddhist or Taoist",
+        # The Church of World Messianity (Sekai Kyūseikyō), a Japanese new
+        # religion that Sao Tome and Principe's 2012 census counts by name.
+        "Church of World Messianity",
     ),
     "African diaspora religions": ("Spiritism and Afro-Brazilian religions",
                                   # Jamaica's Revival, which its census
@@ -546,6 +549,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Seychellois Creole", "Krio", "Patois", "Jamaican Patois",
         "Antillean Creole", "Guianese Creole", "Pidgin", "Nigerian Pidgin",
         "Sango creole",
+        # The Portuguese creoles of the Gulf of Guinea, as Sao Tome and
+        # Principe's 2012 census names them (sao_tome_census).
+        "Forro", "Angolar", "Lung'ie",
     ),
     "Sign languages": ("Sign language", "Auslan", "New Zealand Sign Language",
                        "British Sign Language", "American Sign Language"),
@@ -2290,7 +2296,7 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Cameroon, Gabon and the Republic of the Congo. The Grassfields
         # peoples are Bantoid rather than narrow Bantu, and are filed here
         # for the same reason Bamileke already is.
-        "Bafia", "Bafut", "Balikumbat", "Bamoun", "Bamum", "Bangwa",
+        "Bafia", "Bafut", "Balikumbat", "Batibo", "Bamoun", "Bamum", "Bangwa",
         "Batanga", "Bayangi", "Bakweri", "Mbo", "Nso", "Njikwa", "Mbam",
         "Mbamois", "Grassfields", "Sawa", "Kako", "Meka", "Makaa",
         "Myene", "Kele", "Tsogho", "Okande", "Shira", "Eshira", "Echira",
@@ -2423,7 +2429,7 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Northern Cameroon, whose peoples are Adamawa and Chadic rather
         # than Bantu, and the Ubangian and Central Sudanic peoples of the
         # Congo's north-east.
-        "Dii", "Biu-Mandara", "Mayogo", "Mba", "Mbandja", "Mono",
+        "Dii", "Biu-Mandara", "Mafa", "Mayogo", "Mba", "Mbandja", "Mono",
         "Lendu", "Logo", "Mamvu", "Mangbetu",
         # The Central Sudanic peoples of the West Nile, who are the same
         # cluster as Lendu, Logo and Mamvu above and live on the other side

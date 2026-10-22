@@ -665,6 +665,93 @@ class HeldRows(unittest.TestCase):
                              filename)
 
 
+class HeldFiguresNotesAndTheirCitations(unittest.TestCase):
+    """A held figure's note goes with the figure, and so does what the note
+    cites; a newer figure not shown is cited for the sentence that names it.
+    The DRC's 2024 territories say their figure is OCHA's 2020 estimate times
+    a factor, and lost that estimate's citation when the figure was shown."""
+
+    def setUp(self):
+        patcher = mock.patch.dict(be.HELD_ROWS, {"projection.json": {"XYZ": "office_census.json"}})
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def offer(self, value):
+        return be.offer_only({
+            "id": "XYZ-PROJ", "country": "XYZ", "level": "admin2",
+            "_source": "projection.json", "_match": "shape_id",
+            "population": {"value": value, "year": 2024, "source": "OCHA projection"},
+            "population_note": "The 2020 estimate times the province's factor.",
+            "median_age": {"value": 17.0, "year": 2024, "source": "OCHA projection"},
+            "sources": [{"field": "population", "name": "OCHA projection"},
+                        {"field": "population note", "name": "OCHA 2020 table"},
+                        {"field": "median_age", "name": "OCHA projection"}]})
+
+    def districts(self, offers, note="The census count."):
+        out = []
+        for i, value in enumerate(offers):
+            entity = {"id": f"D{i}", "name": f"District {i}", "level": "admin2",
+                      "country": "XYZ"}
+            be.merge_adapter(entity, {
+                "_source": "office_census.json", "_match": "shape_id",
+                "population": {"value": 50_000, "year": 2020, "source": CENSUS},
+                "population_note": note,
+                "sources": [{"field": "population", "name": CENSUS},
+                            {"field": "population note", "name": "Census report"}]})
+            be.merge_adapter(entity, self.offer(value))
+            out.append(entity)
+        return out
+
+    def test_an_offer_keeps_its_notes_citation_and_nothing_else(self):
+        self.assertEqual([(s["name"], s["field"]) for s in self.offer(54_000)["sources"]],
+                         [("OCHA projection", "population"), ("OCHA 2020 table", "population note")])
+
+    def test_held_its_note_and_its_notes_citation_stay_off_the_unit(self):
+        entity = self.districts([54_000])[0]
+        self.assertEqual(entity["population_note"], "The census count.")
+        self.assertEqual([s["name"] for s in entity["sources"]], [CENSUS, "Census report"])
+        self.assertEqual([s["name"] for s in entity["_held"]["population"][0]["sources"]],
+                         ["OCHA projection", "OCHA 2020 table"])
+
+    def test_shown_its_note_comes_with_its_citation(self):
+        units = self.districts([round(50_000 * 1.02 ** 4)] * 5)
+        taken, kept = be.prefer_newer_figures({}, country(*units))
+        self.assertEqual((len(taken), len(kept)), (5, 0))
+        self.assertEqual(units[0]["population_note"],
+                         "The 2020 estimate times the province's factor.")
+        self.assertEqual(sorted((s["name"], s["field"]) for s in units[0]["sources"]),
+                         [("OCHA 2020 table", "population note"),
+                          ("OCHA projection", "population")])
+        # The count's note and its citation are held with the count.
+        held = units[0]["_held"]["population"][0]
+        self.assertEqual(held["unit_note"], "The census count.")
+        self.assertEqual(sorted((s["name"], s["field"]) for s in held["sources"]),
+                         [("Census report", "population note"), (CENSUS, "population")])
+
+    def test_not_shown_the_figure_its_sentence_names_is_cited(self):
+        units = self.districts([round(50_000 * 1.02 ** 4)] * 5 + [round(50_000 * 1.2 ** 4)])
+        taken, kept = be.prefer_newer_figures({}, country(*units))
+        self.assertEqual((len(taken), len(kept)), (5, 1))
+        be.say_newer_not_taken({}, country(*units))
+        far = units[-1]
+        self.assertIn("A newer figure is not shown: 103,680 for 2024", far["population_note"])
+        self.assertEqual([(s["name"], s["field"]) for s in far["sources"]],
+                         [(CENSUS, "population"), ("Census report", "population note"),
+                          ("OCHA projection", "population note")])
+
+    def test_a_count_put_together_gives_way_to_a_projection_of_the_same_units(self):
+        # Kabo's 2021 count is the communes of two 2020 sub-prefectures added
+        # up, and ICASEES's 2025 projection of the same two, added up, is the
+        # same ground (COMPOSED_OFFERS); an offer from any other file is not.
+        def taken(files):
+            units = self.districts([round(50_000 * 1.02 ** 4)] * 5,
+                                   note="Its communes added up (Kabo 30,000, Sido 20,000).")
+            with mock.patch.object(be, "COMPOSED_OFFERS", frozenset(files)):
+                return be.prefer_newer_figures({}, country(*units))[0]
+        self.assertEqual(taken(set()), [])
+        self.assertEqual(len(taken({"projection.json"})), 5)
+
+
 OCHA = "OCHA, Common Operational Dataset -- population statistics (cod-ps-lao), reference year 2024"
 
 
