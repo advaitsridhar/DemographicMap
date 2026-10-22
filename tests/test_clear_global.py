@@ -232,8 +232,59 @@ class CountryRecords(unittest.TestCase):
         kept, _, _ = cg.compose(rows, 1, cg.LANGUAGE_RELABEL["NPL"])
         self.assertEqual({r["group"]: r["pct"] for r in kept["NP61"]["shares"]},
                          {"Khash": 50.0, "Nepali": 50.0})
-        self.assertEqual(cg.LANGUAGE_RELABEL, {"NPL": {"Khasi": "Khash"},
-                                               "COD": {"Lander River Warlpiri": "Other languages"}})
+        self.assertEqual(kept["NP61"]["relabelled"], ["Khasi"])
+        self.assertEqual(cg.LANGUAGE_RELABEL["NPL"], {"Khasi": "Khash"})
+
+    def test_every_relabelled_name_says_what_it_was(self):
+        import group_tree as gt
+        for iso, names in cg.LANGUAGE_RELABEL.items():
+            for name, target in names.items():
+                self.assertIn((iso, name), cg.RELABEL_NOTES, (iso, name))
+                self.assertIn(name, cg.RELABEL_NOTES[(iso, name)], (iso, name))
+                # Whatever it becomes, the tree files it where it belongs:
+                # the residual, or a family of its own continent.
+                parent = gt.parent_of("language", target)
+                self.assertIsNotNone(parent, target)
+                self.assertNotIn(parent, ("Hmong-Mien languages",
+                                          "Indigenous languages of Australia"), target)
+
+    def test_two_names_kept_unnamed_in_one_unit_are_added_up_and_each_is_said(self):
+        # Fizi's Mexican and Bomongo's Philippine names, put in one unit.
+        rows = [row("CD62", "Sud-Kivu", "Bembe", 0.9), row("CD62", "Sud-Kivu", "Tamazola Mixtec", 0.06),
+                row("CD62", "Sud-Kivu", "Ibaloi", 0.04),
+                row("CD41", "Equateur", "Lingala", 0.95), row("CD41", "Equateur", "Ibaloi", 0.05),
+                row("CD54", "Ituri", "Swahili", 0.9996), row("CD54", "Ituri", "Mokilese", 0.0004)]
+        self.serve(csv_text(rows))
+        drc = dict(PACKAGE, name="democratic-republic-of-the-congo-languages",
+                   groups=[{"name": "cod"}])
+        records, _ = quiet(cg.country_records, drc)
+        by_name = {r["name"]: r for r in records}
+        kivu = {g["group"]: g["pct"] for g in by_name["Sud-Kivu"]["language"]}
+        self.assertEqual(kivu, {"Bembe": 90.0, "Other languages": 10.0})
+        note = by_name["Sud-Kivu"]["language_note"]
+        self.assertIn("Tamazola Mixtec, a Mixtec language of Oaxaca, Mexico", note)
+        self.assertIn("Ibaloi, a language of northern Luzon", note)
+        self.assertNotIn("Tamazola", by_name["Equateur"]["language_note"])
+        self.assertIn("Ibaloi", by_name["Equateur"]["language_note"])
+        # A share too small to show says nothing about the name it had.
+        self.assertNotIn("Other languages", {g["group"] for g in by_name["Ituri"]["language"]})
+        self.assertNotIn("Mokilese", by_name["Ituri"]["language_note"])
+
+    def test_malawi_s_and_mozambique_s_yao_are_the_bantu_language(self):
+        import group_tree as gt
+        rows = [row("MW301", "Mangochi", "Yao", 0.7), row("MW301", "Mangochi", "Nyanja", 0.3),
+                row("MW302", "Machinga", "Yao", 0.56), row("MW302", "Machinga", "Nyanja", 0.44)]
+        for iso, spelt in (("MWI", "Chiyao"), ("MOZ", "Ciyao")):
+            with self.subTest(iso=iso):
+                self.serve(csv_text(rows))
+                package = dict(PACKAGE, name=f"{iso.lower()}-languages",
+                               groups=[{"name": iso.lower()}])
+                records, _ = quiet(cg.country_records, package)
+                groups = {g["group"] for r in records for g in r["language"]}
+                self.assertEqual(groups, {spelt, "Nyanja"})
+                self.assertIn("which CLEAR Global's table writes 'Yao'",
+                              records[0]["language_note"])
+                self.assertEqual(gt.parent_of("language", spelt), "Bantu languages")
 
     def test_the_drc_s_australian_language_is_kept_unnamed_and_says_so(self):
         # Lomami's 12.4% and Kabinda's 25.0%: a share of real households
@@ -304,6 +355,11 @@ class Written(unittest.TestCase):
             if r["country"] != "NPL":
                 self.assertNotIn("Khash", {g["group"] for g in r["language"]}, r["id"])
                 self.assertNotIn("Karnali", r["language_note"], r["id"])
+
+    def test_no_record_carries_a_name_its_country_s_relabel_replaces(self):
+        for r in self.rows:
+            replaced = set(cg.LANGUAGE_RELABEL.get(r["country"], {}))
+            self.assertFalse(replaced & {g["group"] for g in r["language"]}, r["id"])
 
     def test_no_country_says_the_same_thing_in_every_unit(self):
         by_country: dict[str, set] = {}

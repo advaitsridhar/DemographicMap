@@ -1871,8 +1871,11 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Nilo-Saharan languages": ("Songhai", "Zarma", "Kanuri", "Fur", "Gula",
                                "Dendi"),
     "Gur languages": (
-        # CLEAR Global, Benin and Ghana.
-        "Kusaal", "Yom", "Biali", "Waama", "Talni", "Mamara Senoufo","Gurma", "Bwamu", "Lobi", "Dagara",
+        # CLEAR Global, Benin and Ghana. Syenara is a Senufo language of
+        # Mali, Burkina Faso and Côte d'Ivoire, a tenth of a percent of
+        # Benin's towns and border markets, as Mamara is of Mali's.
+        "Kusaal", "Yom", "Biali", "Waama", "Talni", "Mamara Senoufo", "Syenara Senoufo",
+        "Gurma", "Bwamu", "Lobi", "Dagara",
                       # Togo's Lama (Lamba), a Gur language of the Kara
                       # region, not Zambia's Bantu Lamba.
                       "Lama, Lamba",
@@ -2900,7 +2903,8 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     # deliberately NOT folded to "Yao": that name already resolves to the
     # Hmong-Mien Yao of southern China, and folding Malawi's Bantu Ciyao into
     # it would put a Mozambican border district in the wrong language family.
-    "Haoussa": "Hausa", "Fongbé": "Fon", "Soussou": "Susu",
+    # Malawi's spelling of the same Bantu language is Chiyao.
+    "Haoussa": "Hausa", "Fongbé": "Fon", "Soussou": "Susu", "Chiyao": "Ciyao",
     # Ethiopia's 2007 census tables, as the US Census Bureau prepared them,
     # name Silt'e "Shetagna": 96.9% of Selti zone, whose people are 97.3%
     # Silt'e by ethnic group in the same census.
