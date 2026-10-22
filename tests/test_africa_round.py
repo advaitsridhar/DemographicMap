@@ -329,17 +329,14 @@ class EastTables(unittest.TestCase):
         for entity in ({"id": "y", "capital": "Kibingo"}, {"id": "z"}):
             self.assertEqual(be.no_place_reason(entity, none), none)
 
-    def test_too_few_interviews_withdraw_a_whole_level(self):
-        rows = [{"id": "GHA-CG-GH1302", "country": "GHA", "name": "Jirapa", "level": "admin2",
-                 "language": [{"group": "Dagaare", "pct": 100.0}]},
-                {"id": "GHA-CG-GH13", "country": "GHA", "name": "Upper West", "level": "admin1",
-                 "language": [{"group": "Dagaare", "pct": 89.0}]},
-                {"id": "KEN-CG-KE025", "country": "KEN", "name": "Samburu", "level": "admin1",
-                 "language": [{"group": "Turkana", "pct": 100.0}]}]
-        got = loaded("clear_global_language.json", rows)
-        self.assertNotIn("language", got["GHA"][0])
-        self.assertIn("language", got["GHA"][1])
-        self.assertNotIn("language", got["KEN"][0])
+    def test_too_few_interviews_withdraw_the_row_s_language(self):
+        rows = [{"id": "KEN-CG-KE025", "country": "KEN", "name": "Samburu", "level": "admin1",
+                 "language": [{"group": "Turkana", "pct": 100.0}]},
+                {"id": "KEN-CG-KE001", "country": "KEN", "name": "Mombasa", "level": "admin1",
+                 "language": [{"group": "Swahili", "pct": 60.0}]}]
+        got = loaded("clear_global_language.json", rows)["KEN"]
+        self.assertNotIn("language", got[0])
+        self.assertIn("language", got[1])
 
     def test_uganda_s_counties_take_their_names(self):
         rows = [{"id": "UGA-2024-47994165B34585576880018", "country": "UGA", "name": "Bujumbura",

@@ -305,6 +305,27 @@ class CountryRecords(unittest.TestCase):
                       note)
         self.assertIn("which languages of this area are meant cannot be told", note)
 
+    def test_a_level_too_thin_for_shares_says_why_in_every_unit(self):
+        rows = [row("GH13", "Upper West", "Dagaare", 1.0),
+                row("GH06", "Eastern", "Akan", 1.0),
+                row("GH1302", "Jirapa", "Nyamal", 1.0, level="2"),
+                row("GH0902", "Chereponi", "Unknown", 1.0, level="2"),
+                row("GH0101", "Asunafo North", "Akan", 0.9, level="2"),
+                row("GH0101", "Asunafo North", "Ewe", 0.1, level="2")]
+        self.serve(csv_text(rows))
+        ghana = dict(PACKAGE, name="ghana-languages", groups=[{"name": "gha"}])
+        records, _ = quiet(cg.country_records, ghana, 2)
+        self.assertEqual(sorted(r["name"] for r in records),
+                         ["Asunafo North", "Chereponi", "Jirapa"])
+        for r in records:
+            self.assertEqual(r["language"], {"status": "not_available",
+                                             "note": cg.SMALL_SAMPLE[("GHA", 2)]})
+            self.assertEqual(r["sources"][0]["field"], "language note")
+        # The regions, which the survey samples, keep their shares.
+        records, _ = quiet(cg.country_records, ghana, 1)
+        self.assertEqual({r["name"]: r["language"][0]["group"] for r in records},
+                         {"Upper West": "Dagaare", "Eastern": "Akan"})
+
     def test_a_guthrie_code_is_not_part_of_the_name(self):
         rows = [row("BI01", "Bujumbura Mairie", "Swahili (G.40)", 0.4),
                 row("BI01", "Bujumbura Mairie", "Kirundi", 0.6),
@@ -398,14 +419,32 @@ class Written(unittest.TestCase):
         import json
         self.rows = json.loads(self.PATH.read_text(encoding="utf-8"))
 
+    def shares(self):
+        """The rows that carry shares; a level too thin for them carries a reason."""
+        return [r for r in self.rows if isinstance(r["language"], list)]
+
     def test_every_record_carries_a_language_a_year_and_a_licence(self):
         for row_ in self.rows:
+            self.assertTrue(row_["sources"][0]["license"], row_["id"])
+            if isinstance(row_["language"], dict):
+                self.assertTrue(row_["language"]["note"], row_["id"])
+                self.assertEqual(row_["sources"][0]["field"], "language note", row_["id"])
+                continue
             self.assertTrue(row_["language"], row_["id"])
             self.assertIsInstance(row_["language_year"], int, row_["id"])
-            self.assertTrue(row_["sources"][0]["license"], row_["id"])
+
+    def test_ghana_s_and_namibia_s_second_levels_say_why_they_show_none(self):
+        for iso in ("GHA", "NAM"):
+            thin = [r for r in self.rows if r["country"] == iso and r["level"] == "admin2"]
+            self.assertTrue(thin, iso)
+            for r in thin:
+                self.assertEqual(r["language"]["note"], cg.SMALL_SAMPLE[(iso, 2)], r["id"])
+            # The first level, which the survey samples, keeps its shares.
+            self.assertTrue(all(isinstance(r["language"], list) for r in self.rows
+                                if r["country"] == iso and r["level"] == "admin1"), iso)
 
     def test_no_unit_claims_more_than_a_whole_population(self):
-        for row_ in self.rows:
+        for row_ in self.shares():
             total = sum(r["pct"] for r in row_["language"])
             self.assertLessEqual(total, 100.6, f"{row_['id']}: {total}")
 
@@ -422,23 +461,23 @@ class Written(unittest.TestCase):
         self.assertEqual(next(g["pct"] for g in jumla["language"] if g["group"] == "Khash"), 51.2)
         self.assertIn("Meghalaya", jumla["language_note"])
         # The relabel is Nepal's alone: no other country's record says it.
-        for r in self.rows:
+        for r in self.shares():
             if r["country"] != "NPL":
                 self.assertNotIn("Khash", {g["group"] for g in r["language"]}, r["id"])
                 self.assertNotIn("Karnali", r["language_note"], r["id"])
 
     def test_no_record_carries_a_name_its_country_s_relabel_replaces(self):
-        for r in self.rows:
+        for r in self.shares():
             replaced = set(cg.LANGUAGE_RELABEL.get(r["country"], {}))
             self.assertFalse(replaced & {g["group"] for g in r["language"]}, r["id"])
 
     def test_no_country_says_the_same_thing_in_every_unit(self):
         by_country: dict[str, set] = {}
-        for row_ in self.rows:
+        for row_ in self.shares():
             key = tuple(sorted((r["group"], r["pct"]) for r in row_["language"]))
             by_country.setdefault(row_["parent"], set()).add(key)
         for iso, signatures in by_country.items():
-            if len([r for r in self.rows if r["parent"] == iso]) > 1:
+            if len([r for r in self.shares() if r["parent"] == iso]) > 1:
                 self.assertGreater(len(signatures), 1, iso)
 
 

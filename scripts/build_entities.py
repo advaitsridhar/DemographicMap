@@ -3327,6 +3327,9 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         # nowhere while the district said the survey does not reach it.
         "MRT-AB9-1891": ("Tiris Zemmour",),
         "CIV-AB9-1260": ("District Autonome D'Abidjan",),
+        # Nigeria's "FCT ABUJA", whose 24 respondents the survey's row says are
+        # too few: the territory then says so, as Kwara and the rest do.
+        "NGA-AB9-634": ("Abuja Federal Capital Territory",),
     },
     "clear_global_language.json": {
         "MAR-CG-MA001001": ("Province d'Azilal إقليم أزيلال",),
@@ -3665,16 +3668,17 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
 # where a region holds 25 respondents, and the same interviews tabulated by
 # another hand are no larger. Kenya's ten counties, Tanzania's Katavi and
 # Kusini Unguja, the Republic of the Congo's Cuvette-Ouest and Sangha,
-# Botswana's Chobe and Nigeria's six states where Afrobarometer is CLEAR's only
+# Botswana's Chobe and Nigeria's seven states where Afrobarometer is CLEAR's only
 # source (Yobe's rows draw on REACH's assessment too) each say, in the survey's
 # own row, that it interviewed 8 to 24 people there; Samburu showed "Turkana
-# 100%" from eight.
+# 100%" from eight. (Ghana's districts and Namibia's constituencies, tabulated
+# below the regions the survey samples, are written with the reason by the
+# reader itself: clear_global.SMALL_SAMPLE.)
 FEW_INTERVIEWS = ("CLEAR Global's shares tabulate an Afrobarometer round that interviewed "
                   "too few people here for shares")
 
 # Fields of a file's rows that are not used, keyed by file, then a country (all
-# its rows), a country's level ("GHA/admin2") or one row's id, then field, with
-# the reason; the rows keep their
+# its rows) or one row's id, then field, with the reason; the rows keep their
 # other fields. The field goes before any union is pooled, so a pooled row
 # never carries it, and a lower-ranked file's figure stands where this one's
 # would have.
@@ -3719,14 +3723,8 @@ WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
             "KEN-CG-KE011", "KEN-CG-KE013", "KEN-CG-KE025", "KEN-CG-KE028", "KEN-CG-KE031",
             "TZA-CG-TZ23", "TZA-CG-TZ52", "COG-CG-CG04", "COG-CG-CG12",
             "BWA-CG-BW15", "BWA-CG-BW1501",
-            "NGA-CG-NG006", "NGA-CG-NG011", "NGA-CG-NG015", "NGA-CG-NG024", "NGA-CG-NG026",
-            "NGA-CG-NG035")},
-        # Districts and constituencies, below the regions the survey samples:
-        # one to three areas of eight interviews each (half of Ghana's 147
-        # district rows are a single answer or multiples of 12.5%), and Ghana's
-        # file names the Upper West's Dagaare "Nyamal".
-        "GHA/admin2": {"language": FEW_INTERVIEWS},
-        "NAM/admin2": {"language": FEW_INTERVIEWS},
+            "NGA-CG-NG006", "NGA-CG-NG011", "NGA-CG-NG015", "NGA-CG-NG016", "NGA-CG-NG024",
+            "NGA-CG-NG026", "NGA-CG-NG035")},
     },
     "afrobarometer_region.json": {
         "NER": {"language": "Round 9's language codes for Niger look misassigned",
@@ -3822,8 +3820,6 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
                 row["sources"] = spell_fields(row["sources"])
             if iso3 in withdrawn:
                 withdraw_fields(row, withdrawn[iso3])
-            if f"{iso3}/{row.get('level')}" in withdrawn:
-                withdraw_fields(row, withdrawn[f"{iso3}/{row.get('level')}"])
             if row.get("id") in withdrawn:
                 withdraw_fields(row, withdrawn[row["id"]])
             for field, name in disambiguated.get(row.get("id"), {}).items():

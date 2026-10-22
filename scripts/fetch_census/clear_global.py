@@ -90,7 +90,7 @@ import urllib.parse
 import urllib.request
 from typing import Any
 
-from ._shared import PROCESSED, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, write_json
 
 API = "https://data.humdata.org/api/3/action"
 ORG = "clear"
@@ -224,6 +224,27 @@ LANGUAGE_RELABEL: dict[str, dict[str, str]] = {
     "MWI": {"Yao": "Chiyao"},
     "NAM": {"Ndonga (R.20)": "Oshiwambo"},
     "AGO": {"Ndonga (R.20)": "Ovambo"},
+}
+
+# Levels where CLEAR Global's tabulation is of a survey's interviews too few in
+# each unit for shares -- the map reads Afrobarometer itself only where a region
+# holds 25 respondents. Each unit the file names there is written with this
+# reason in place of its shares, so it says why it shows none rather than take
+# a sentence about how far the country's sources reach. Ghana's 147 district
+# rows tabulate Round 5 (2012): 50 give one language at 100% and 39 more only
+# multiples of 12.5%, one area's eight interviews, and the file grades them
+# below a 95% confidence level or above a 10% margin of error. Namibia's 88
+# constituency rows tabulate Round 6 (2014), 1,200 interviews over 121
+# constituencies, graded the same way.
+SMALL_SAMPLE: dict[tuple[str, int], str] = {
+    ("GHA", 2): ("CLEAR Global tabulates Ghana's districts from Afrobarometer's Round 5 "
+                 "interviews of 2012, a handful in each district, which it grades below a "
+                 "95% confidence level or above a 10% margin of error: too few to estimate "
+                 "shares from, so none are shown."),
+    ("NAM", 2): ("CLEAR Global tabulates Namibia's constituencies from Afrobarometer's "
+                 "Round 6 interviews of 2014, a handful in each constituency, which it grades "
+                 "below a 95% confidence level or above a 10% margin of error: too few to "
+                 "estimate shares from, so none are shown."),
 }
 
 # A name the file gets wrong in one unit and right in another, keyed by the
@@ -689,6 +710,29 @@ def country_records(package: dict[str, Any], level: int = 1
             f"it has no {', '.join(missing)}")
         log(f"      its columns are: {', '.join(columns)}")
         return []
+
+    thin = SMALL_SAMPLE.get((iso, level))
+    if thin:
+        # Every unit the file names at the level, those whose only answer is
+        # "Unknown" too: each says why, in place of shares.
+        named: dict[str, str] = {}
+        for row in rows:
+            if str(row.get("location_level", "")).strip() not in LEVEL_NAMES[level]:
+                continue
+            code = (row.get("location_code") or "").strip()
+            name = (row.get("location_name") or "").strip()
+            if (code and name and not UNKNOWN_UNIT.search(name)
+                    and not code.upper().endswith("XXX")):
+                named.setdefault(code, name)
+        log(f"    level {level}: {len(named)} unit(s) written with the reason in place of "
+            f"their shares: the interviews behind them are too few")
+        return [record(f"{iso}-CG-{code}", name, level=f"admin{level}", parent=iso,
+                       country=iso, language=gap(NOT_AVAILABLE, thin),
+                       sources=[{"field": "language note",
+                                 "name": f"{PUBLISHER}, {package.get('title')}",
+                                 "url": DATASET_PAGE.format(stub=stub),
+                                 "license": licence(package)}])
+                for code, name in sorted(named.items())]
 
     relabel = LANGUAGE_RELABEL.get(iso, {})
     kept, refused, unnamed = compose(rows, level, relabel, UNIT_RELABEL.get(iso))
