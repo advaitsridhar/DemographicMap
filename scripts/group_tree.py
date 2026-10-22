@@ -411,14 +411,20 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Nyankole", "Soga", "Fipa", "Kota", "Ciyao", "Mijikenda", "Jaruo",
         # The Comoros' own language (Shikomori), Sabaki Bantu like Swahili.
         "Comorian",
+        # Subiya (Ikuhane), Zone K of Bantu, the first language of Namibia's
+        # Zambezi region beside Lozi.
+        "Subiya",
     ),
     # Tiv and Berom are Benue-Congo rather than Volta-Niger proper; this tree
     # does not separate the two at branch level and Bantu already occupies the
     # other half of Benue-Congo, so they sit with their nearest neighbours
-    # here and take the right family colour.
+    # here and take the right family colour. So does the Basa of central
+    # Nigeria (CLEAR Global's "Basa (Nigeria)", the Abuja territory's largest
+    # language), a Kainji language of Benue-Congo.
     "Volta-Niger languages": ("Yoruba", "Igbo", "Ewe", "Fon", "Edo", "Idoma",
                               "Igala", "Nupe", "Gun", "Aja", "Tiv", "Berom",
-                              "Urhobo", "Ibibio", "Efik", "Esan", "Tarok"),
+                              "Urhobo", "Ibibio", "Efik", "Esan", "Tarok",
+                              "Basa (Nigeria)"),
     "Kwa languages": ("Akan", "Twi", "Fante", "Ga", "Baoulé", "Anyi",
                       "Guang", "Dangme", "Gonja"),
     # Gio is Dan under Liberia's name for it and Lorma is Loma: both Mande,
@@ -2895,6 +2901,10 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     # Hmong-Mien Yao of southern China, and folding Malawi's Bantu Ciyao into
     # it would put a Mozambican border district in the wrong language family.
     "Haoussa": "Hausa", "Fongbé": "Fon", "Soussou": "Susu",
+    # Ethiopia's 2007 census tables, as the US Census Bureau prepared them,
+    # name Silt'e "Shetagna": 96.9% of Selti zone, whose people are 97.3%
+    # Silt'e by ethnic group in the same census.
+    "Shetagna": "Silt'e",
     "Fufuldé": "Fulfulde", "\u200eFulfudé": "Fulfulde", "Fulfudé": "Fulfulde",
     # "Songhai", not "Songhay": the latter is itself a variant of it, and
     # variants do not chain.

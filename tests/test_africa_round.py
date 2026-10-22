@@ -207,5 +207,18 @@ class DisputedAndUnrecognisedSeats(unittest.TestCase):
         self.assertNotIn("note", admin0[2]["capital"])
 
 
+class LanguagesPlaced(unittest.TestCase):
+    """Three languages that led a unit with no family to colour it."""
+
+    def test_each_takes_its_family(self):
+        import group_tree
+        for name, parent in (("Subiya", "Bantu languages"),
+                             ("Basa (Nigeria)", "Volta-Niger languages"),
+                             ("Shetagna", "Semitic languages")):
+            self.assertEqual(group_tree.parent_of("language", name), parent, name)
+        # Talé is still not reliably one family.
+        self.assertIsNone(group_tree.parent_of("language", "Tal\u00e9"))
+
+
 if __name__ == "__main__":
     unittest.main()
