@@ -339,7 +339,11 @@ def build(retab: dict[str, Any], ages: dict[str, dict[str, Any]],
                 f"from the 2008 census's table of the state's people by five-year age group "
                 f"({p01['total']:,} people of the {unit['total']:,} it counted; the state "
                 f"then as now).{unstated}")
-            fields["sources"].append({**age_src, "field": "median_age"})
+            # The note sets Table P01's people against the retabulation's
+            # count of the state (Khartoum's 5,181,186 of 5,274,321), so the
+            # retabulation is cited for the note as well as the ratio.
+            fields["sources"] = [{**retab_src, "field": "sex_ratio/median_age note"},
+                                 {**age_src, "field": "median_age"}]
             report.append(f"  state {unit['name']}: unchanged since 2008 "
                           f"({p01['total']:,} in P01 of {unit['total']:,}); median {median}")
         else:
@@ -371,8 +375,10 @@ def build(retab: dict[str, Any], ages: dict[str, dict[str, Any]],
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    parser = argparse.ArgumentParser(description=__doc__,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--run", help="a label that tells one dispatch from another; not used")
+    parser.parse_args()
     import openpyxl                                 # noqa: PLC0415
     blob = http_get(uscb.workbook_url(DATASET), binary=True, cache=False, timeout=180)
     book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)

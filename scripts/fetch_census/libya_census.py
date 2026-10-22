@@ -24,7 +24,9 @@ Benghazi; Al Jabal al Akhdar holds Al Abraq (the census's Darnah); Al Marqab
 holds Zliten (the census's Misrata); Az Zawiyah holds Janzur, Al Mayah, Az
 Zahra and As Sawani (the census's Al Jafarah); and the outline labelled
 Tajura' wa an Nawahi al Arba holds Garabulli and Qasr Khiyar (the census's Al
-Marqab) and Qasr bin Ghashir (Al Jafarah) besides Tripoli.
+Marqab) and Qasr bin Ghashir (Al Jafarah). It is the outskirts south and east
+of Tripoli: the city itself and Tajura stand on a strip of coast that no
+outline at either level covers (``SHOWN``).
 
 **What is written.** Every area is the sum of the census's baladiyat whose
 seats lie in it, age group by age group (``MOVED`` declares the baladiyat
@@ -38,7 +40,7 @@ shabiyat keeps the 2006 count, since the estimate is for other ground. Two
 areas are left without figures and say why (``UNSURE``): the outline
 labelled Tajura' wa an Nawahi al Arba and Al Jifarah, between which three
 baladiyat of the census's Al Jafarah (Sidi as Sayih, Suq al Khamis, As
-Sabiah) cannot be placed.
+Sabiah) cannot be placed. Their reasons quote the census and cite it.
 
 **Checks before anything is written.** Every row's age groups and its men and
 women make its total; the 22 shabiyat make the national row, 5,657,692; each
@@ -61,6 +63,7 @@ from typing import Any
 from . import uscb
 from ._shared import (PROCESSED, NOT_AVAILABLE, gap, http_get, log, measure, record, shares,
                       write_json)
+from common import as_drawn  # noqa: E402  (on the path through _shared)
 
 DATASET = "libya-subnational-boundaries-and-tabular-data"
 YEAR = 2006
@@ -112,6 +115,16 @@ RELABELLED: dict[str, tuple[str, str]] = {
     "tarabulus": ("Tripoli", "Tripoli with Tajura and its outskirts"),
     "aljabalalgharbi": ("Al Jabal al Gharbi", "Gharyan, Yafran and Mizda"),
     "nalut": ("Nalut", "Nalut and Ghadames"),
+}
+# What the area shown is, where it is not even close to the shabiyah it is
+# named for. The outline labelled Tajura' wa an Nawahi al Arba (about 2,480
+# km², 32.33-32.88N) is the outskirts of Tripoli: GeoNames' Tripoli (32.887N
+# 13.187E) and Tajura (32.882N 13.351E) lie 2.4 and 4.2 km outside it, on a
+# strip of coast of about 155 km² (13.11-13.54E, 32.82-32.92N) inside the
+# country's outline and no district's, at either level.
+SHOWN: dict[str, str] = {
+    "tarabulus": ("the outskirts south and east of Tripoli: the city itself and Tajura stand "
+                  "on a strip of coast, about 155 km², that the map draws in no district"),
 }
 # Baladiyat whose seat lies in an area other than their census shabiyah's,
 # by GeoNames' point for the seat: (shabiyah, baladiyah), folded -> the
@@ -336,6 +349,16 @@ def listed(items: list[str]) -> str:
     return items[0] if len(items) == 1 else ", ".join(items[:-1]) + " and " + items[-1]
 
 
+def drawn_units(level: str) -> list[dict[str, Any]]:
+    """The map's areas at one level under the boundary file's own labels
+    (common.as_drawn). The build names an outline after the shabiyah written
+    here -- "Al Qubbah" shows as Darnah -- and a re-run that read the new
+    names would write "Darnah, a name this area is also given" and drop the
+    label the other readers bind the outline by (Wikipedia's table names it
+    Al Qubbah), which the build refuses as a second place on one shape."""
+    return as_drawn(json.loads((SITE / level / "LBY.units.json").read_text()))
+
+
 def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]],
           estimates: dict[str, int] | None = None, source_2020: str = "",
           nationality: dict[tuple[str, str], tuple[int, int]] | None = None
@@ -360,19 +383,28 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]],
         lost = [b for b in table["baladiyat"] if fold(b["shabiyah"]) == key
                 and all(b is not p for p in parts)]
         recomposed = bool(gained or lost) or key in UNSURE
-        # An area that is not its census shabiyah exactly is only close to it.
+        # An area that is not its census shabiyah exactly is only close to it,
+        # and one that is not even that says what it is (SHOWN).
+        shown = (f"is {SHOWN[key]}" if key in SHOWN else
+                 f"{'is close to' if recomposed else 'is'} the shabiyah of {name} as drawn in "
+                 f"2007, which holds {held}")
         where = (f" {labels[sid]}, a name this area is also given, was a district of the "
-                 f"2001 division; the area shown {'is close to' if recomposed else 'is'} the "
-                 f"shabiyah of {name} as drawn in 2007, which holds {held}." if held else "")
+                 f"2001 division; the area shown {shown}." if held else "")
         if key in UNSURE:
-            fields = {f: gap(NOT_AVAILABLE, UNSURE[key] + where)
-                      for f in ("population", "median_age", "sex_ratio", "ethnicity")}
+            notes = ("population", "median_age", "sex_ratio", "ethnicity")
+            fields = {f: gap(NOT_AVAILABLE, UNSURE[key] + where) for f in notes}
             # The encyclopaedia's figures on these two outlines are for other
             # ground (Jafara's 2020 548,855 counts Janzur and the baladiyat
             # around it, which lie in Az Zawiyah's outline; the undated 267,031
             # is the 2001 district of Tajura' alone): the reason displaces them.
             fields["population"]["displaces_before"] = DISPLACES_BEFORE
             fields["population"]["displaces_undated"] = True
+            # The reason quotes the census's baladiyat and their people, and
+            # cites it: the Tripoli outline had no other source, and its
+            # empty religion and language said "an unnamed source".
+            fields["sources"] = [{"field": "/".join(f"{f} note" for f in notes),
+                                  "name": SOURCE, "url": uscb.dataset_url(DATASET),
+                                  "year": YEAR, "license": LICENCE}]
         else:
             unit = merged(parts)
             if gained or lost:
@@ -424,11 +456,12 @@ def build(table: dict[str, Any], drawn: dict[str, list[dict[str, Any]]],
                     f"The Bureau of Statistics and Census's estimate for {ESTIMATE_YEAR} of the "
                     f"shabiyah of {name}; the 2006 census counted {unit['total']:,}, "
                     f"{counted}.{where}")
+                # The census stays cited for the count the note quotes.
                 fields["sources"] = [
                     {"field": "population", "name": source_2020,
                      "url": uscb.dataset_url(DATASET), "year": ESTIMATE_YEAR,
                      "license": LICENCE},
-                    {"field": "median_age/sex_ratio", "name": SOURCE,
+                    {"field": "population note/median_age/sex_ratio", "name": SOURCE,
                      "url": uscb.dataset_url(DATASET), "year": YEAR, "license": LICENCE}]
             elif key in estimates:
                 fields["population_note"] += (
@@ -504,8 +537,7 @@ def main() -> int:
         if lib and sum(lib) != b["total"]:
             log(f"  {b['name']}: Libyans and non-Libyans make {sum(lib):,}, the age table "
                 f"{b['total']:,}")
-    drawn = {level: json.loads((SITE / level / "LBY.units.json").read_text())
-             for level in ("admin1", "admin2")}
+    drawn = {level: drawn_units(level) for level in ("admin1", "admin2")}
     records = build(table, drawn, estimates, source_2020, nationality)
     log(f"  {len(table['shabiyat'])} shabiyat making {table['national']['total']:,}; "
         f"{len(records)} records")
