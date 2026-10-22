@@ -30,11 +30,25 @@ source says whose copy it is; the run logs which was read and its sha256.
   boundaries, which the reason measures them by.
 
 Written for every other wilaya and moughataa: population and sex ratio (men
-per 1,000 women), 2023. The leaflet gives no ages: each moughataa says so.
+per 1,000 women), 2023.
+
+**Ages.** The leaflet gives no ages. ANSADE's report on the census's structure
+by sex and age (*Thème 2 : Structure par sexe et par âge de la population*,
+2024, on admin.ansade.mr, which answers a script where ansade.mr does not)
+gives every wilaya's population by five-year age group in its annex (Tableau
+A.2.2), and no moughataa's. Each wilaya the map draws on the census's ground
+takes the median interpolated from that table, Nouakchott's three wilayas
+added group by group: the census's median, in front of OCHA's projection for
+2022. Inchiri and Dakhlet Nouadhibou do not: the table counts Chami in Dakhlet
+Nouadhibou and gives it no ages apart, and the map draws Chami in Inchiri.
+Each moughataa says the census tabulates ages by wilaya only, citing both.
 
 **Checks before anything is written.** Every row's men and women make its
 total; each moughataa's communes make it; each wilaya's moughataas make the
 wilaya's total row and the first page's table; the wilayas make 4,927,532.
+In the age table, each wilaya's eighteen groups make its total row, and the
+leaflet's count, within the table's rounding (three people); the country's
+column is 4,927,532, and its median (18.7) the report's 18 in whole years.
 
 Usage:
     python -m scripts.fetch_census.mauritania_census
@@ -52,6 +66,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, measure, record, write_json
+from .cod_ps_age import grouped_median
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import fetch_blob, laid_out  # noqa: E402
@@ -72,6 +87,23 @@ YEAR = 2023
 # names the Centre Rachad's copy instead where that is the one read.
 CITE: dict[str, Any] = {"name": SOURCE, "url": URL, "page": OFFICE, "license": LICENCE,
                         "year": YEAR}
+# ANSADE's report on the census's structure by sex and age, on the office's
+# own site: its annex's Tableau A.2.2 gives every wilaya by age group.
+AGES_URL = "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf"
+AGES_SOURCE = ("Agence Nationale de la Statistique et de l'Analyse Démographique et Economique "
+               "(ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), "
+               "Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2")
+AGES_CITE: dict[str, Any] = {"name": AGES_SOURCE, "url": AGES_URL, "license": LICENCE,
+                             "year": YEAR}
+# The table's rows: under one year, 1-4, then five-year groups to 80 and over.
+AGE_BOUNDS: list[tuple[int, int | None]] = (
+    [(0, 0), (1, 4)] + [(low, low + 4) for low in range(5, 80, 5)] + [(80, None)])
+# The report's median for the country, in whole years (Tableau 2.6).
+NATIONAL_MEDIAN = 18
+# Wilayas the map draws on other ground than the census's: the table counts
+# Chami in Dakhlet Nouadhibou, with no ages of its own, and the map draws it
+# in Inchiri.
+NO_CENSUS_MEDIAN = {"Dakhlet Nouadhibou", "Inchiri"}
 NATIONAL = (2_375_470, 2_552_062, 4_927_532)
 OUT = "mauritania_census.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
@@ -168,8 +200,9 @@ EDGE = {
     "selibabi": (" The town of Sélibaby, the moughataa's seat, is drawn about 5 km outside this "
                  "polygon, in the one drawn as Ghabou."),
 }
-NO_AGES = ("The 2023 census's results published so far give each moughataa's population by "
-           "sex, not by age.")
+NO_AGES = ("The 2023 census's results give each moughataa's population by sex, not by age: "
+           "its report on the population's structure by sex and age tabulates ages by wilaya "
+           "only.")
 # OCHA's boundaries of the census's units, by which the reasons of Nouakchott's
 # moughataas and Ouad Naga measure the lines drawn here: cited for those notes.
 COD_AB = {"name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
@@ -310,6 +343,79 @@ def parse(text: str) -> dict[str, Any]:
     return {"wilayas": summary, "moughataas": moughataas}
 
 
+def parse_ages(text: str) -> dict[str, list[tuple[int, int | None, int]]]:
+    """Each census wilaya's population by age group (Tableau A.2.2), with the
+    country's as "Total", every column checked against its total row."""
+    # The table's own title, not the text's mention of it ("le tableau A.2.2").
+    title = re.search(r"Tableau A\.2\.2\s*:", text)
+    if title is None:
+        raise SystemExit("mauritania_census: the age report has no Tableau A.2.2")
+    start = title.start()
+    columns = len(WILAYAS) + 1
+    rows: list[tuple[str, list[int]]] = []
+    total: list[int] | None = None
+    for line in text[start:].splitlines()[1:]:
+        if line.strip().startswith("Source"):
+            break
+        tokens = line.split()
+        figures: list[int] = []
+        while tokens and tokens[-1].isdigit():
+            figures.insert(0, int(tokens.pop()))
+        if len(figures) != columns:
+            continue
+        label = " ".join(tokens)
+        if fold(label).startswith("total"):
+            total = figures
+        else:
+            rows.append((label, figures))
+    if total is None or len(rows) != len(AGE_BOUNDS):
+        raise SystemExit(f"mauritania_census: Tableau A.2.2 reads {len(rows)} age groups and "
+                         f"{'a' if total else 'no'} total row")
+    for (label, _), (low, high) in zip(rows[1:], AGE_BOUNDS[1:]):
+        bounds = [int(n) for n in re.findall(r"\d+", label)]
+        if bounds != ([low, high] if high is not None else [low]):
+            raise SystemExit(f"mauritania_census: Tableau A.2.2's row {label!r} where "
+                             f"{low}-{high} was expected")
+    if total[-1] != NATIONAL[2]:
+        raise SystemExit(f"mauritania_census: Tableau A.2.2's country is {total[-1]:,}")
+    ages: dict[str, list[tuple[int, int | None, int]]] = {}
+    for i, name in enumerate([*WILAYAS, "Total"]):
+        groups = [(low, high, figures[i]) for (low, high), (_, figures) in zip(AGE_BOUNDS, rows)]
+        made = sum(n for _, _, n in groups)
+        if abs(made - total[i]) > 3:
+            raise SystemExit(f"mauritania_census: {name}'s age groups make {made:,}, not its "
+                             f"{total[i]:,}")
+        ages[name] = groups
+    median = grouped_median(ages["Total"])
+    if median is None or not NATIONAL_MEDIAN <= median < NATIONAL_MEDIAN + 1:
+        raise SystemExit(f"mauritania_census: the country's median comes to {median}, the "
+                         f"report's {NATIONAL_MEDIAN}")
+    return ages
+
+
+def wilaya_median(wilaya: str, ages: dict[str, list[tuple[int, int | None, int]]],
+                  counts: dict[str, tuple[int, int, int]]) -> tuple[float, str] | None:
+    """The census's median for a wilaya as drawn, and its note; None where the map
+    draws the wilaya on other ground."""
+    if wilaya in NO_CENSUS_MEDIAN:
+        return None
+    parts = NOUAKCHOTT if wilaya == "Nouakchott" else [wilaya]
+    for part in parts:
+        made = sum(n for _, _, n in ages[part])
+        if abs(made - counts[part][2]) > 3:
+            raise SystemExit(f"mauritania_census: {part}'s age groups make {made:,}, the "
+                             f"leaflet's count {counts[part][2]:,}")
+    groups = [(low, high, sum(ages[part][i][2] for part in parts))
+              for i, (low, high) in enumerate(AGE_BOUNDS)]
+    median = grouped_median(groups)
+    if median is None:
+        return None
+    whose = ("the three wilayas of Nouakchott, added group by group"
+             if wilaya == "Nouakchott" else "the wilaya")
+    return median, ("Interpolated within the five-year age group that holds the middle person, "
+                    f"from the 2023 census's count of {whose} by age (Thème 2, Tableau A.2.2).")
+
+
 def fields(figures: tuple[int, int, int], note: str, ages_noted: bool = False
            ) -> dict[str, Any]:
     """A unit's count and sex ratio, cited to the leaflet -- and its median-age
@@ -320,7 +426,8 @@ def fields(figures: tuple[int, int, int], note: str, ages_noted: bool = False
             "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
                                  year=YEAR, source=SOURCE),
             "sources": [{**CITE, "field": "population/sex_ratio"
-                         + ("/median_age note" if ages_noted else "")}]}
+                         + ("/median_age note" if ages_noted else "")}]
+            + ([{**AGES_CITE, "field": "median_age note"}] if ages_noted else [])}
 
 
 def added(*parts: tuple[int, int, int]) -> tuple[int, int, int]:
@@ -328,7 +435,9 @@ def added(*parts: tuple[int, int, int]) -> tuple[int, int, int]:
 
 
 def build(table: dict[str, Any], admin1: list[dict[str, Any]],
-          admin2: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+          admin2: list[dict[str, Any]],
+          ages: dict[str, list[tuple[int, int | None, int]]] | None = None
+          ) -> tuple[list[dict[str, Any]], list[str]]:
     wil, mou = table["wilayas"], table["moughataas"]
     chami = mou["Dakhlet Nouadhibou"]["chami"]["figures"]
     nouadhibou = mou["Dakhlet Nouadhibou"]["nouadhibou"]["figures"]
@@ -358,7 +467,13 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
         else:
             figures = wil[wilaya]
             note = "The 2023 census's count for the wilaya."
-        seat = {}
+        seat: dict[str, Any] = {}
+        unit = fields(figures, note)
+        median = wilaya_median(wilaya, ages, wil) if ages else None
+        if median:
+            seat["median_age"] = measure(median[0], unit="years", year=YEAR, source=AGES_SOURCE)
+            seat["median_age_note"] = median[1]
+            unit["sources"].append({**AGES_CITE, "field": "median_age"})
         if wilaya == "Nouakchott":
             seat["capital"] = gap(NOT_AVAILABLE, (
                 "The polygon is the city of Nouakchott, three wilayas since 2014 "
@@ -366,7 +481,7 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                 "its own."))
         records.append(record(f"MRT-RGPH2023-{fold(wilaya)}", shape["name"], level="admin1",
                               parent="MRT", country="MRT", match_by="shape_id",
-                              shape_id=shape["id"], **seat, **fields(figures, note)))
+                              shape_id=shape["id"], **seat, **unit))
     used: set[tuple[str, str]] = set()
     for shape in admin2:
         k = fold(shape["name"])
@@ -380,6 +495,7 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                 # The census the notes quote, not the source of a figure shown,
                 # and OCHA's boundaries, by which the reason measures the lines.
                 sources=[{**CITE, "field": "population note/sex_ratio note/median_age note"},
+                         {**AGES_CITE, "field": "median_age note"},
                          {**COD_AB, "field": "population note/sex_ratio note"}]))
             continue
         if k not in MOUGHATAAS:
@@ -444,9 +560,20 @@ def main() -> int:
         log(f"  {wilaya}: {table['wilayas'][wilaya][2]:,}; "
             + ", ".join(f"{m['name']} {m['figures'][2]:,}"
                         for m in table["moughataas"][wilaya].values()))
+    ages_blob = fetch_blob(AGES_URL)
+    if not ages_blob.startswith(b"%PDF"):
+        raise SystemExit(f"mauritania_census: {AGES_URL} is not a PDF: {ages_blob[:60]!r}")
+    log(f"  read {AGES_URL}: {len(ages_blob):,} bytes, "
+        f"sha256 {hashlib.sha256(ages_blob).hexdigest()}")
+    ages = parse_ages(laid_out(ages_blob))
+    log(f"  the country's median from Tableau A.2.2: {grouped_median(ages['Total'])}")
     admin1 = json.loads((SITE / "admin1" / "MRT.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "MRT.units.json").read_text())
-    records, report = build(table, admin1, admin2)
+    records, report = build(table, admin1, admin2, ages)
+    for r in records:
+        if r["level"] == "admin1":
+            m = r["median_age"]
+            log(f"  {r['name']}: median {m.get('value', '(none: other ground)')}")
     for line in report:
         log("  " + line)
     n1 = sum(1 for r in records if r["level"] == "admin1")

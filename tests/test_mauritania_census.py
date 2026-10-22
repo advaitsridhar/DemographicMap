@@ -54,8 +54,11 @@ class MauritaniaLeaflet(unittest.TestCase):
         self.assertIn("OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga",
                       ksar["population"]["note"])
         self.assertNotIn("Toujounine", ksar["population"]["note"])
-        self.assertEqual([(s["name"], s["field"]) for s in ksar["sources"]][1],
+        self.assertEqual([(s["name"], s["field"]) for s in ksar["sources"]][-1],
                          (mc.COD_AB["name"], "population note/sex_ratio note"))
+        # The age report is cited for the reason that quotes it.
+        self.assertIn((mc.AGES_SOURCE, "median_age note"),
+                      [(s["name"], s["field"]) for s in ksar["sources"]])
         self.assertEqual(by[("admin2", "Amourj")]["sources"][0]["field"],
                          "population/sex_ratio/median_age note")
         self.assertEqual(by[("admin1", "Gorgol")]["sources"][0]["field"], "population/sex_ratio")
@@ -66,6 +69,59 @@ class MauritaniaLeaflet(unittest.TestCase):
         self.assertTrue(gorgol["url"].startswith("https://web.archive.org/web/20250925063203id_/"))
         self.assertTrue(gorgol["url"].endswith(gorgol["page"]))
         self.assertEqual(ksar["sources"][0]["page"], gorgol["page"])
+
+
+
+# Tableau A.2.2 of ANSADE's Thème 2 (2024) as the runner printed it (run 2fddaac).
+AGES = "Tableau A.2.2 : Répartition de la population par âge selon la Wilaya, RGPH-5\nWilaya\nGroupe\nH H. El Dakhlett Tiris- Nouakchott- Nouakchott- Nouakchott-\nd’âges Assaba Gorgol Brakna Trarza Adrar Tagant Guidimakha Inchiri Total\nChargui Gharbi Nouadhibou Zemmour Ouest Nord Sud\n- d'1 an 16281 11312 12401 12396 10833 6963 1801 3697 3400 9866 1676 488 3829 13152 13656 121752\n1-4 85478 52988 59989 58648 49778 33754 7299 17195 14329 48919 7221 2195 18359 61603 62448 580204\n5-9 98299 63418 71686 70697 59396 42670 9105 20105 17074 57606 8212 2660 20523 74305 74170 689924\n10-14 85540 56061 66525 66708 56174 42817 9336 20171 15664 54341 7960 2773 20923 74071 75523 654585\n15-19 67297 45697 53016 53828 45120 37163 8172 19576 13516 44951 7622 2701 21377 69788 73224 563050\n20-24 49842 30214 34283 34559 28644 25885 5416 18407 8445 30605 8491 2813 21357 58862 62750 420572\n25-29 40292 24544 25571 26658 23772 21933 4752 17363 7098 22764 8528 2822 19336 49720 53059 348210\n30-34 34002 21350 24187 23451 21054 18954 4241 14762 6228 19499 6801 2512 16275 42967 44358 300641\n35-39 28559 17162 19111 18481 17850 17430 3816 12957 4821 15471 5907 2529 14007 38459 39107 255667\n40-44 24309 15748 15940 14953 14255 14064 2989 10369 4270 12313 4349 2042 11488 30681 31242 209012\n45-49 20023 13229 14161 13049 12992 12724 2972 8464 4266 10560 3466 1749 9512 26087 25731 178985\n50-54 19907 12850 14171 12489 11905 11127 2871 6851 3571 8818 2581 1260 7458 21551 20922 158330\n55-59 13984 10258 10670 10460 10949 10566 2533 5519 3432 8205 2226 979 7257 18610 17997 133645\n60-64 14628 9543 9683 8507 8614 8583 1962 3502 2811 6251 1377 664 4903 13703 13395 108127\n65-69 8959 6748 7525 6443 7388 7524 1906 2760 2415 5046 1219 567 3904 10004 9493 81901\n70-74 8182 4785 5074 4449 5805 5601 1117 1429 1404 3279 667 329 2176 5432 5308 55037\n75-79 3726 2580 2845 2578 2822 2608 584 689 883 1946 354 185 1107 2632 2362 27903\n80+ 6335 4604 4966 4138 3959 3538 750 642 1132 2634 472 218 1089 2839 2671 39988\nTotale 625644 403091 451804 442490 391310 323903 71623 184459 114759 363075 79129 29483 204881 614465 627415 4927532\nSource : ANSADE, RGPH 2023\n"
+
+
+class MauritaniaAges(unittest.TestCase):
+    """The census's medians for the wilayas, from Thème 2's Tableau A.2.2."""
+
+    def setUp(self):
+        self.ages = mc.parse_ages(AGES)
+        self.table = mc.parse(LEAFLET + "\n" + SYNTHETIC)
+
+    def test_parse(self):
+        self.assertEqual(len(self.ages), len(mc.WILAYAS) + 1)
+        self.assertEqual(self.ages["Gorgol"][0], (0, 0, 12396))
+        self.assertEqual(self.ages["Gorgol"][-1], (80, None, 4138))
+        self.assertEqual(sum(n for _, _, n in self.ages["Total"]), 4_927_533)
+        # The country's median is the report's 18 years, in whole years.
+        self.assertEqual(mc.grouped_median(self.ages["Total"]), 18.7)
+
+    def test_a_misread_column_stops_the_run(self):
+        broken = AGES.replace("16281 11312", "16281 21312")
+        with self.assertRaises(SystemExit):
+            mc.parse_ages(broken)
+
+    def test_wilayas_on_the_census_ground_take_its_median(self):
+        records, report = mc.build(self.table, ADMIN1, ADMIN2, self.ages)
+        self.assertEqual(report, [])
+        by = {(r["level"], r["name"]): r for r in records}
+        gorgol = by[("admin1", "Gorgol")]
+        self.assertEqual(gorgol["median_age"]["value"], 16.2)
+        self.assertEqual(gorgol["median_age"]["year"], 2023)
+        self.assertIn("Tableau A.2.2", gorgol["median_age_note"])
+        self.assertIn({**mc.AGES_CITE, "field": "median_age"}, gorgol["sources"])
+        nouakchott = by[("admin1", "Nouakchott")]
+        self.assertEqual(nouakchott["median_age"]["value"], 21.6)
+        self.assertIn("three wilayas of Nouakchott", nouakchott["median_age_note"])
+        # The census counts Chami in Dakhlet Nouadhibou and gives it no ages;
+        # the map draws it in Inchiri: neither takes the census's median.
+        for name in ("Inchiri", "Dakhlet Nouadhibou"):
+            self.assertNotIn("value", by[("admin1", name)]["median_age"])
+            self.assertNotIn("median_age", " ".join(s["field"]
+                                                    for s in by[("admin1", name)]["sources"]))
+        # The moughataas' reason names the wilayas' table and cites it.
+        amourj = by[("admin2", "Amourj")]
+        self.assertIn("by wilaya only", amourj["median_age"]["note"])
+        self.assertIn({**mc.AGES_CITE, "field": "median_age note"}, amourj["sources"])
+
+    def test_without_the_age_table_no_wilaya_has_a_median(self):
+        records, _ = mc.build(self.table, ADMIN1, ADMIN2)
+        self.assertFalse(any("value" in r["median_age"] for r in records))
 
 
 if __name__ == "__main__":
