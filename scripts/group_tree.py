@@ -1476,6 +1476,9 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
         # Bhutan's census counts citizenship (bhutan.py, Table 2.2) and the
         # Maldives' nationality (maldives_census.py): the home row of each.
         "Bhutanese", "Maldivian",
+        # Rwanda's 2022 census counts nationality, Rwandan or foreign, and
+        # asks no ethnicity (rwanda_census.py, Main Indicators Table 6).
+        "Rwandan",
     ),
 }
 

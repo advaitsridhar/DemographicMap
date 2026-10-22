@@ -756,10 +756,70 @@ ADAPTER_FILES = [
     "liberia_census.json", "gambia_census.json", "ghana_capitals.json",
     "sierra_leone_capitals.json", "nigeria_capitals.json", "gambia_capitals.json",
     "liberia_capitals.json",
+    # Ethiopia's 2007 census by region and zone (count, men per 1,000 women,
+    # median age from five-year groups), the special weredas it counted apart
+    # added to the zone polygons that hold them; then the statistics office's
+    # projection for July 2022 by region and by zone, summed from the weredas
+    # that lie in each zone as drawn, for the zones that are whole weredas but
+    # for slivers of the weredas straddling their lines, in people or in area
+    # (a 2022 zone that is a drawn zone's ground, East Gojam, Siti, Majang,
+    # South Omo or West Gojam, is its weredas' sum here: 56 of the 74).
+    # The projection is newer, so it gives the population where it is
+    # written; OCHA's zone table, on 2022's redrawn zones, gives way to it
+    # (SUPERSEDED_ROWS).
+    "ethiopia_census.json", "ethiopia_projection.json",
+    # Uganda's 2024 census from the Bureau's dashboard: regions as the sums of
+    # their districts, and the 151 counties as drawn (around 2002) as the sums
+    # of the 2024 counties, cities and municipalities that make them, measured
+    # from the 2024 outlines (84 polygons), or of whole counties and
+    # sub-counties (2, from the 2024 sub-county tables); the 65 whose line a
+    # 2024 unit's ground crosses by more than 2 km say why they have none.
+    # OCHA's table is by district and stood on county polygons of the same
+    # names; its rows give way (SUPERSEDED_ROWS).
+    "uganda_census.json",
+    # Uganda's 2002 census, its last to publish religion below the country: the
+    # regions, and the drawn counties that were a district on their own in
+    # 2002 and are whole 2024 districts still (Kampala, Buruli, Samia-Bugwe,
+    # Bufumbira, Kinkiizi); the other five of the ten such counties say why
+    # not. uganda_census.json states no religion for these ten.
+    "uganda_2002.json",
+    # Rwanda's 2022 census by province and district: count, sex ratio, the
+    # Institute's median age in whole years, religion from the district
+    # profiles (provinces as their districts' sums), nationality by province
+    # under ethnicity_basis "nationality". OCHA's table projects the 2012
+    # census to 2023, and gives way (SUPERSEDED_ROWS).
+    "rwanda_census.json",
+    # Djibouti's 2024 census by region, as citypopulation.de tabulates it (the
+    # city's 767,250 where Wikipedia's 776,966 overran the national total, and
+    # Obock's 2024 count where 2009's stood), with each region's men per 1,000
+    # women from its men and women, and stated reasons for the second level
+    # (an older division, whose units the census's sub-prefectures are not
+    # shown to make) and for ages, which no region's results give.
+    "djibouti_census.json",
+    # Stated reasons where nothing measures: Eritrea, which has taken no
+    # census, for median age and sex ratio at both levels; Somalia's 118
+    # districts, for which no survey published an estimate.
+    "eritrea_census.json", "somalia_districts.json",
+    # Somalia's 2014 Population Estimation Survey by region (median age, sex
+    # ratio): a survey, fill-only behind any count (FILL_ONLY).
+    "somalia_survey.json",
+    # Burundi's 2008 census: men per 1,000 women for the 18 provinces and 119
+    # communes as drawn (Bujumbura's three communes as its communes of 2008,
+    # now their zones). A census's sex ratio stands in front of OCHA's 2022
+    # projection's, which is fill-only (cod_ps_age.json); the projection keeps
+    # the head counts and medians, the census having published no ages below
+    # the country.
+    "burundi_census.json",
     # After Afrobarometer, which is first: Kenya's counties carried the survey
     # and now carry the 2019 census, and merge_adapter lets the count win the
     # religion field while the survey keeps any field the census did not ask.
     "kenya_county.json",
+    # Kenya's 2019 census by county (Volume I's count with intersex persons,
+    # men per 1,000 women, median age from single years) and by constituency
+    # where its ground is one sub-county or a set of whole ones (131 of 290);
+    # after kenya_county.json, whose county totals are Volume IV's religion
+    # table's, a little short of Volume I's.
+    "kenya_census.json",
     # Likewise after Afrobarometer: Angola's 18 provinces carried the survey
     # and now carry the 2024 census for all three fields.
     "angola_province.json",
@@ -2562,6 +2622,10 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
     # polygon takes in the south of Lake Malawi, and by area 76.7% of it lay
     # in the Northern Region's.
     "42251766B89682559169951": ("MWI", "Southern Region"),  # Mangochi; by area in Northern Region
+    # Burundi: Muha is one of Bujumbura Mairie's three communes (OCHA's
+    # cod-ps-bdi, BDI017014, with Mukaza and Ntahangwa; ROW_SHAPES); by area
+    # 53.8% of it lay in Bujumbura Rural's polygon.
+    "21766830B84199363749171": ("BDI", "Bujumbura Mairie"),  # Muha; by area in Bujumbura Rural
     # Madagascar: Vohipeno is Vatovavy-Fitovinany's (OCHA's cod-ps-mdg);
     # by area 91.2% of it lay in Atsimo-Atsinanana.
     "10022922B81120329184352": ("MDG", "Vatovavy-Fitovinany"),  # Vohipeno; by area in Atsimo-Atsinanana
@@ -2856,6 +2920,9 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 #        and a stated reason on the 11 drawn as they were before a district
 #        was cut from them; OCHA's 2023 figures are projections made before
 #        that count, a median 31% above it.
+#   RWA  rwanda_census.json, the 2022 census's count of the 30 districts.
+#        OCHA's table is for 2023, projected from the 2012 census, and puts
+#        Nyagatare at 917,054 where the census counted 653,861.
 #   CRI  costa_rica_census.json, the 2011 census of the 83 cantons as drawn.
 #        OCHA's 2021 figures are INEC's projection from that census, and the
 #        2022 census, which the provinces show, counted fewer: Heredia's
@@ -2867,6 +2934,26 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # municipalities it can place are for 2026, OCHA's for 2014, and these stood
 # on four of the 13 it cannot place (Khobi, Lanchkhuti, Terjola, Tkibuli),
 # whose polygons hold Poti's or Kutaisi's ground or none of it.
+# Two are other units' figures under the same names:
+#   ETH  ethiopia_projection.json. OCHA's table is the office's July 2022
+#        projection by the zones of 2022, which split, merged and renamed the
+#        74 zones of 2007 the map draws: its Bale is without East Bale, the
+#        zone it calls Nogob lies mostly in the drawn Shabelle (the drawn
+#        Nogob is today's Erer), its Southern Tigray is without Mekelle and
+#        South Eastern. The projection file sums the same
+#        projection's weredas into the zones as drawn where they are whole
+#        weredas but for slivers of those straddling a line (so a 2022 zone
+#        that is a drawn zone's ground -- East Gojam, Siti, Eastern, the
+#        Oromo zone, Majang, Sheka, South Omo, West Gojam -- is its weredas'
+#        sum there), and every zone has the 2007 census's count besides; the
+#        rows it does not replace are other ground (Basketo's 2022 outline
+#        lies a quarter outside the drawn polygon; West and South West Shewa
+#        of 2022 leave out the weredas of the zone around Addis Ababa).
+#   UGA  uganda_census.json. OCHA's table is by district (135 for 2022), and
+#        54 of its figures stood on county polygons of the same names --
+#        Mityana's with Busujju in it, Serere's with Kasilo. The census file
+#        gives the counties as drawn from the 2024 census, or says why not.
+#        Its medians and sex ratios (cod_ps_age.json) go the same way.
 # Myanmar is not listed although its 2014 census file binds all 74
 # districts: its states and the composed districts (sea_composed.json) carry
 # the same OCHA table for 2023, so the projection is one vintage at both
@@ -2876,11 +2963,17 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
     "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
                            "CRI": "costa_rica_census.json",
                            "DOM": "dominican_census.json",
+                           "ETH": "ethiopia_projection.json",
                            "GEO": "georgia.json",
                            "GTM": "guatemala_census.json",
                            "PRY": "paraguay_census.json",
+                           "RWA": "rwanda_census.json",
                            "SLB": "solomon_census.json",
-                           "THA": "wikidata_admin2.json"},
+                           "THA": "wikidata_admin2.json",
+                           "UGA": "uganda_census.json"},
+    # Uganda's: OCHA's district medians and sex ratios stood on the county
+    # polygons of the same names, as its head counts did.
+    "cod_ps_age.json": {"UGA": "uganda_census.json"},
     "wiki_population_admin1.json": {"AFG": "afghanistan_estimates.json",
                                     "KIR": "kiribati_census.json"},
 }
@@ -2941,17 +3034,50 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "BLR-WD-Q173822": ("Brest",),
         "BLR-WD-Q191061": ("Grodno",),
         "BLR-WD-Q189822": ("Mogilev",),
+        # Ethiopia's Benishangul-Gumuz (ISO ET-BE) and Harari regions, which
+        # the boundary file spells "Beneshangul Gumu" and "Hareri", and
+        # Somalia's Banaadir (SO-BN), its "Banadir": the three joined nothing
+        # and showed no capital. Their seats, Asosa, Harar and Mogadishu, stand
+        # inside the polygons (GeoNames points); the rows' populations are
+        # older than the counts the regions carry and fill nothing.
+        "ETH-WD-Q207635": ("Beneshangul Gumu",),
+        "ETH-WD-Q1033855": ("Hareri",),
+        "SOM-WD-Q806070": ("Banadir",),
     },
     "wikidata_admin2.json": {
         "THA-WD-Q1019417": ("Vadhana",),
         "THA-WD-Q475772": ("Khwao Sin Rin",),
         "THA-WD-Q476889": ("Tap Khlo",),
+        # Ethiopian zones Wikidata labels in Amharic (Mirab "west", Misraq
+        # "east", Semien "north", Debub "south", Mehakelegnaw "central",
+        # Semien Mi'irabawi "north-western") or spells otherwise (Illubabor,
+        # Silt'e, Horo Gudru Welega; Gabi Rasu is Afar's Zone 3), where the
+        # boundary file draws the 2007 census's zones by their English names.
+        # Each is the drawn zone, and each seat it names stands inside the
+        # zone's polygon (GeoNames points); none of them joined, so the zones
+        # showed no capital.
+        "ETH-WD-Q646859": ("Arsi",),
+        "ETH-WD-Q1709377": ("West Wellega",),
+        "ETH-WD-Q1109870": ("East Wellega",),
+        "ETH-WD-Q768586": ("Ilubabor",),
+        "ETH-WD-Q2916300": ("North Wollo",),
+        "ETH-WD-Q7449411": ("North Western",),
+        "ETH-WD-Q2902680": ("Central",),
+        "ETH-WD-Q7515593": ("Selti",),
+        "ETH-WD-Q1070736": ("West Gojam",),
+        "ETH-WD-Q5904662": ("Horo Guduru",),
+        "ETH-WD-Q3020952": ("South Omo",),
+        "ETH-WD-Q3444674": ("Zone 3",),
     },
     "cod_ps_admin2.json": {
         "AGO-CODPS-AO06048": ("Quiculongo",),
         "AGO-CODPS-AO09073": ("Gambos(Chiange)",),
         "BDI-CODPS-BDI006011": ("Nyanrusang",),
         "BDI-CODPS-BDI016006": ("Nyabitsind",),
+        # Mugongomanga, Bujumbura Rural: OCHA spells it "Mugougomanga" and
+        # the boundary file cuts it to "Mugongoman", so neither name reached
+        # the other.
+        "BDI-CODPS-BDI002006": ("Mugongoman",),
         "BFA-CODPS-BF4803": ("Kouritenga",),
         "BFA-CODPS-BF5203": ("Komonjdjari",),
         "CAF-CODPS-CF324": ("Nagha Boguila",),
@@ -3061,6 +3187,23 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "NGA-CODPSAGE-NG033010": ("Emuoha",),
         "NGA-CODPSAGE-NG033015": ("Obio/Akpor",),
         "NGA-CODPSAGE-NG036015": ("Tarmuwa",),
+        # The same rows in the age file: the three Burundian communes, and six
+        # Tanzanian towns whose counts joined through the labels above while
+        # their medians and sex ratios stood unread beside them. The 2022 census
+        # gives the towns none (tanzania_census.py holds them back: Kahama's and
+        # Katavi's councils were split along lines the map does not draw, and the
+        # other four fail its ratio test with the districts drawn beside them), so
+        # the 2020 projection behind their head counts gives their ages too, as it
+        # does for those districts.
+        "BDI-CODPSAGE-BDI006011": ("Nyanrusang",),
+        "BDI-CODPSAGE-BDI016006": ("Nyabitsind",),
+        "BDI-CODPSAGE-BDI002006": ("Mugongoman",),
+        "TZA-CODPSAGE-TZ0806": ("Lindi Urban",),
+        "TZA-CODPSAGE-TZ1504": ("Sumbawanga Urban",),
+        "TZA-CODPSAGE-TZ1608": ("Kasulu Township Authority",),
+        "TZA-CODPSAGE-TZ1705": ("Kahama Township Authority",),
+        "TZA-CODPSAGE-TZ2106": ("Babati UrbanBabati Urban",),
+        "TZA-CODPSAGE-TZ2301": ("Mpanda Urban",),
     },
     "clear_global_language.json": {
         "MAR-CG-MA001001": ("Province d'Azilal إقليم أزيلال",),
@@ -3120,6 +3263,16 @@ ROW_PARENTS: dict[str, dict[str, str]] = {
 # of the two polygons and outside the other (measured on the boundary file):
 # Q475250, 48,065 in 2018, at 14.21N 100.50E in บางไทร's, and Q475251, 19,366,
 # at 14.32N 100.30E in บางซ้าย's.
+#
+# Bujumbura Mairie has been three communes since 2014, Muha, Mukaza and
+# Ntahangwa, made from the city's thirteen former communes, now its zones.
+# OCHA's table has three rows for the city, BDI017014 to BDI017016, labelled
+# with one zone of each -- "Kanyosha", "Buyenzi", "Buterere" -- so none
+# reached a polygon (and the boundary file files Muha under Bujumbura Rural).
+# They are the three communes: their P-codes run in the communes' alphabetical
+# order, Kanyosha is a zone of Muha, Buyenzi of Mukaza and Buterere of
+# Ntahangwa, and together they make the city (1,117,744 in 2022, their medians
+# weighted to the city row's 21.0).
 ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
     "cod_ps_admin2.json": {
         "TZA-CODPS-TZ0203": ("72390352B90906351205470", "Arusha Urban"),
@@ -3127,6 +3280,14 @@ ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
         "LAO-CODPS-LA0610": ("54806243B97421577673591", "Viengkham"),
         "LAO-CODPS-LA0612": ("54806243B14812805317737", "Phonthong"),
         "LAO-CODPS-LA1606": ("54806243B67434402908614", "Phonthong"),
+        "BDI-CODPS-BDI017014": ("21766830B84199363749171", "Muha"),
+        "BDI-CODPS-BDI017015": ("21766830B10562197966638", "Mukaza"),
+        "BDI-CODPS-BDI017016": ("21766830B87038696970617", "Ntahangwa"),
+    },
+    "cod_ps_age.json": {
+        "BDI-CODPSAGE-BDI017014": ("21766830B84199363749171", "Muha"),
+        "BDI-CODPSAGE-BDI017015": ("21766830B10562197966638", "Mukaza"),
+        "BDI-CODPSAGE-BDI017016": ("21766830B87038696970617", "Ntahangwa"),
     },
     "wikidata_admin2.json": {
         "THA-WD-Q475250": ("78962969B26505935473539", "Bang Sai"),
@@ -3201,6 +3362,15 @@ ROW_NOTE_SOURCES: dict[str, dict[str, list[dict[str, Any]]]] = {
 DROPPED_ROWS: dict[str, dict[str, str]] = {
     "wikidata_admin2.json": {
         "THA-WD-Q6580711": "Thonburi Province, merged into Bangkok in 1971",
+        # Sidama Region's Southern Sidama Zone (seat Aleta Wendo), which joined
+        # Tigray's Southern zone by its short name and gave it Aleta Wendo as
+        # its capital; its Central Sidama Zone, which joined Tigray's Central
+        # zone the same way and cited itself as the zone's Wikidata item.
+        # Arsi Negele, a wereda of West Arsi, met the Arsi Zone item on Arsi's
+        # polygon by its first word, and neither was placed.
+        "ETH-WD-Q126285407": "Southern Sidama Zone of Sidama Region, not Tigray's Southern zone",
+        "ETH-WD-Q126280182": "Central Sidama Zone of Sidama Region, not Tigray's Central zone",
+        "ETH-WD-Q2864413": "Arsi Negele, a wereda of West Arsi Zone, not the Arsi zone",
     },
     "wiki_population_admin1.json": {
         "MDG-WP-vatovavy-fitovinany": "Fitovinany's 2018 figure, three of the "
@@ -3737,7 +3907,11 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "sea_cod_ps_age.json",
                        # Yemen's median ages from the CSO's 2017 district
                        # projection: a projection never replaces a count.
-                       "yemen_census_age.json"})
+                       "yemen_census_age.json",
+                       # Somalia's 2014 Population Estimation Survey: a
+                       # survey's median age and sex ratio rank below every
+                       # count, as its compositions do.
+                       "somalia_survey.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
 # A file's rows for a country, held behind the statistics office's own count
@@ -10444,9 +10618,6 @@ SOLE_CHILD_DECLARED: dict[tuple[str, str], tuple[str, str, bool]] = {
            ("São Vicente", "Nossa Senhora da Luz"),
            ("Tarrafal", "Santo Amaro Abade"),
            ("Tarrafal de São Nicolau", "Sao Francisco de Assis"))},
-    # The boundary file spells Ali Sabieh region "Ali Sabeh" at the second level.
-    ("DJI", "Ali Sabieh"): ("Ali Sabeh", "Ali Sabeh is Ali Sabieh as the boundary file "
-                                         "spells it", False),
     # Qatar's zones are numbered, and zone 71 is all of Umm Salal municipality.
     ("QAT", "Umm Slal"): ("71", "zone 71 is the whole of Umm Salal municipality", False),
     # Bangui is one commune with no sub-prefecture (car_prefecture lists it
@@ -10496,6 +10667,12 @@ SOLE_CHILD_NOT_ITS_GROUND: dict[tuple[str, str], dict[str, Any]] = {
     # counts the two apart: ET1501 and ET1502).
     ("ETH", "Dire Dawa"): {"population": "its figure is the city's alone, without the "
                                           "administration's rural part"},
+    # The second level's "Ali Sabeh" is an older division's unit drawn larger
+    # than Ali Sabieh region: about 2,150 km2 against the region's 1,830, some
+    # 390 km2 of it outside the region's polygon (equal-area measures on the
+    # boundary file), so the region's figures are not its own.
+    ("DJI", "Ali Sabieh"): {"*": "the polygon called Ali Sabeh is drawn larger than the "
+                                 "region, some 390 km2 of it outside the region's outline"},
     # The census's own Central Andros district files Fresh Creek, the
     # local-government district's seat, under North Andros.
     ("BHS", "Central Andros"): {"population": "the census's Central Andros is not the "
