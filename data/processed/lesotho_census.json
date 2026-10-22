@@ -96,58 +96,6 @@
     "shape_id": "5366337B11591763594047"
   },
   {
-    "id": "LSO-2016-leribe-mamafubelu",
-    "level": "admin2",
-    "name": "'Maoa-Mafubelu",
-    "parent": "LSO",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 28068,
-      "year": 2016,
-      "source": "Lesotho Bureau of Statistics, 2016 Population and Housing Census Village List"
-    },
-    "median_age": {
-      "status": "not_available",
-      "note": "The 2016 census's village list gives each village's households, men and women, not their ages, so no median age is published for this council."
-    },
-    "sex_ratio": {
-      "value": 969,
-      "unit": "males_per_1000_females",
-      "year": 2016,
-      "source": "Lesotho Bureau of Statistics, 2016 Population and Housing Census Village List"
-    },
-    "religion": {
-      "status": "not_available",
-      "note": "The 2016 census's village list, the census table that reaches this council, gives each village's households, men and women and nothing else."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "The 2016 census's village list, the census table that reaches this council, gives each village's households, men and women and nothing else."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "The 2016 census's village list, the census table that reaches this council, gives each village's households, men and women and nothing else."
-    },
-    "sources": [
-      {
-        "field": "population/sex_ratio",
-        "name": "Lesotho Bureau of Statistics, 2016 Population and Housing Census Village List",
-        "url": "https://www.bos.gov.ls/New%20Folder/Copy%20of%20Demography/2016%20POPULATION%20CENSUS%20VILLAGE%20LIST.zip",
-        "license": "Lesotho Bureau of Statistics publication (reuse with attribution)",
-        "year": 2016
-      }
-    ],
-    "country": "LSO",
-    "match_by": "shape_id",
-    "shape_id": "5366337B41194073686106",
-    "population_note": "The 2016 census's count for Mamafubelu council (Leribe district), drawn here as 'Maoa-Mafubelu: its 58 enumeration areas and 120 villages added up."
-  },
-  {
     "id": "LSO-2016-thabatseka-bokong",
     "level": "admin2",
     "name": "Bokong",
@@ -1604,6 +1552,58 @@
     "population_note": "The 2016 census's count for Manonyane council (Maseru district): its 96 enumeration areas and 148 villages added up."
   },
   {
+    "id": "LSO-2016-leribe-mamafubelu",
+    "level": "admin2",
+    "name": "Maoa-Mafubelu",
+    "parent": "LSO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 28068,
+      "year": 2016,
+      "source": "Lesotho Bureau of Statistics, 2016 Population and Housing Census Village List"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2016 census's village list gives each village's households, men and women, not their ages, so no median age is published for this council."
+    },
+    "sex_ratio": {
+      "value": 969,
+      "unit": "males_per_1000_females",
+      "year": 2016,
+      "source": "Lesotho Bureau of Statistics, 2016 Population and Housing Census Village List"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2016 census's village list, the census table that reaches this council, gives each village's households, men and women and nothing else."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2016 census's village list, the census table that reaches this council, gives each village's households, men and women and nothing else."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2016 census's village list, the census table that reaches this council, gives each village's households, men and women and nothing else."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "Lesotho Bureau of Statistics, 2016 Population and Housing Census Village List",
+        "url": "https://www.bos.gov.ls/New%20Folder/Copy%20of%20Demography/2016%20POPULATION%20CENSUS%20VILLAGE%20LIST.zip",
+        "license": "Lesotho Bureau of Statistics publication (reuse with attribution)",
+        "year": 2016
+      }
+    ],
+    "country": "LSO",
+    "match_by": "shape_id",
+    "shape_id": "5366337B41194073686106",
+    "population_note": "The 2016 census's count for Mamafubelu council (Leribe district), drawn here as Maoa-Mafubelu: its 58 enumeration areas and 120 villages added up."
+  },
+  {
     "id": "LSO-2016-berea-mapoteng",
     "level": "admin2",
     "name": "Mapoteng",
@@ -1710,7 +1710,7 @@
   {
     "id": "LSO-2016-berea-maseru",
     "level": "admin2",
-    "name": "Maseru (Berea Distict)",
+    "name": "Maseru (Berea District)",
     "parent": "LSO",
     "capital": {
       "status": "not_available"
