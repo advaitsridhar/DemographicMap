@@ -477,7 +477,7 @@ def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
                placement: dict[tuple[str, str], list[dict[str, Any]]],
                groups: dict[str, list[tuple[str, str]]], shapes: dict[str, dict[str, Any]],
                admin1: list[dict[str, Any]], totals: dict[str, int], url: str,
-               withheld: dict[str, str] | None = None
+               withheld: dict[str, str] | None = None, twinned: dict[str, str] | None = None
                ) -> tuple[list[dict[str, Any]], dict[str, str], dict[str, str], list[str]]:
     """The 2025 figures on the 2003 polygons, where the 2020 sub-prefectures nest in them.
 
@@ -488,10 +488,13 @@ def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
     the commune crosswalk puts its communes; a polygon takes the 2025 figures of
     the 2020 sub-prefectures it holds whole, and only where it holds nothing of
     any other. ``withheld`` gives the polygons whose 2021 count is not shown
-    and why, which their 2025 note repeats in place of that count. Returns the
-    records (held behind the 2021 counts), the sentence for each polygon and
-    prefecture that gets none, and the report."""
+    and why, which their 2025 note repeats in place of that count; ``twinned``
+    what a polygon's 2021 count says of a commune in it that the table gives
+    another commune's count (Mobaye, Grimari), which the 2025 note repeats
+    beside that count. Returns the records (held behind the 2021 counts), the
+    sentence for each polygon and prefecture that gets none, and the report."""
     withheld = withheld or {}
+    twinned = twinned or {}
     report: list[str] = []
     # Each 2020 sub-prefecture's 2021 count and the polygons its communes are on.
     sp_polys: dict[tuple[str, str], set[str]] = defaultdict(set)
@@ -580,7 +583,7 @@ def projection(rows: list[dict[str, Any]], c21: dict[str, Any],
         same = len(parts) == 1 and fold(parts[0]) == fold(name)
         count = (f" {withheld[sid]}" if sid in withheld else
                  f" The census mapping counted {totals.get(sid, made):,} people here on 1 March "
-                 f"2021.")
+                 f"2021." + (f" {twinned[sid]}" if twinned.get(sid) else ""))
         note = (f"ICASEES's projection of the population of {name} for {PROJECTION_YEAR}, from "
                 f"the 2003 census, as OCHA publishes it for humanitarian planning"
                 + ("" if same else
@@ -769,24 +772,28 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
     reasons: dict[str, str] = {}
     pref_reasons: dict[str, str] = {}
     sexes_copied = False
-    if proj_rows:
-        # A polygon whose 2021 count is withheld (SUSPECT) takes the 2025 figure,
-        # which rests on the 2003 census, and its note says why the count is not
-        # shown.
-        withheld = {sid: SUSPECT[fold(shapes2[sid]["name"])] for sid in groups
-                    if fold(shapes2[sid]["name"]) in SUSPECT}
-        made, reasons, pref_reasons, lines = projection(
-            proj_rows, c21, placement, groups, shapes2, admin1, totals, proj_url, withheld)
-        report += lines
-        sexes_copied, lines = one_sex_split(proj_rows)
-        report += lines
-        if held is not None:
-            held += made
     twins = twin_counts(groups, placement)
     for count, found in sorted(twins.items()):
         report.append(f"  twins: {count:,} for " + " and ".join(
             f"{u['name'].title()} ({shapes2[sid]['name']})" for sid, u in found))
     pref_of = {sid: keys[0][0] for sid, keys in groups.items()}
+    if proj_rows:
+        # A polygon whose 2021 count is withheld (SUSPECT) takes the 2025 figure,
+        # which rests on the 2003 census, and its note says why the count is not
+        # shown; one whose count holds a commune the table gives another's count
+        # says so beside the count, as the count's own note does.
+        withheld = {sid: SUSPECT[fold(shapes2[sid]["name"])] for sid in groups
+                    if fold(shapes2[sid]["name"]) in SUSPECT}
+        twinned = {sid: twin_sentence(sid, twins, shapes2, pref_poly, pref_of)
+                   for sid in groups}
+        made, reasons, pref_reasons, lines = projection(
+            proj_rows, c21, placement, groups, shapes2, admin1, totals, proj_url, withheld,
+            twinned)
+        report += lines
+        sexes_copied, lines = one_sex_split(proj_rows)
+        report += lines
+        if held is not None:
+            held += made
     for sid, keys in sorted(groups.items()):
         shape = shapes2[sid]
         units = [u for key in keys for u in placement[key]]

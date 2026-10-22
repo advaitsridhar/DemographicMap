@@ -213,6 +213,22 @@ class Projection(unittest.TestCase):
             "humanitarian planning. The 2021 count is a copy of another commune's."))
         self.assertNotIn("20,000", mingala["population_note"])
 
+    def test_a_count_holding_a_twin_says_so_beside_the_projection(self):
+        # Mobaye's 2025 note repeats its 2021 count, which holds Mobaye commune's
+        # 23,708, the count the table also gives Haute-Kadéi: it says so there too.
+        totals = {sid: sum(u["total"] for k in keys for u in self.placement[k])
+                  for sid, keys in self.groups.items()}
+        twin = ("The 2021 mapping's table gives its commune of Datoko exactly the count it "
+                "gives Haute-Kadéi.")
+        records, _, _, _ = cc.projection(
+            self.rows, self.c21, self.placement, self.groups, self.shapes, self.admin1, totals,
+            "https://data.humdata.org/dataset/cod-ps-caf", None, {"p-alindao": twin, "p-mingala": ""})
+        by = {r["shape_id"]: r for r in records}
+        self.assertTrue(by["p-alindao"]["population_note"].endswith(
+            "The census mapping counted 125,040 people here on 1 March 2021. " + twin))
+        self.assertTrue(by["p-mingala"]["population_note"].endswith("on 1 March 2021."))
+        self.assertIn("population note", [s["field"] for s in by["p-alindao"]["sources"]])
+
     def test_spellings_of_the_same_units(self):
         self.rows[1]["sp"] = "Mingalla"
         self.rows[0]["pref"] = self.rows[1]["pref"] = "Basse Koto"
