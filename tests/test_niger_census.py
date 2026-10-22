@@ -83,11 +83,13 @@ class NigerReads(unittest.TestCase):
         self.assertIn("no table of language", city["language"]["note"])
         self.assertIn("nationality", city["ethnicity"]["note"])
         # The cities of Maradi and Zinder, which OCHA projected apart, keep their
-        # medians there: their reason is only the census's, and OCHA is not cited.
+        # medians there: they carry no age reason the map would not show, and
+        # cite the report for their sexes and compositions only.
         for name in ("Maradi", "Zinder"):
             own = by[("admin2", name)]
-            self.assertEqual(own["median_age"]["note"], nc.NO_CITY_AGES)
-            self.assertEqual(len(own["sources"]), 1)
+            self.assertNotIn("note", own["median_age"])
+            self.assertEqual([s["field"] for s in own["sources"]],
+                             ["sex_ratio/religion note/language note/ethnicity note"])
         self.assertNotIn("note", one["religion"])
 
 

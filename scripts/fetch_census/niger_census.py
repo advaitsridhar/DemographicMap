@@ -84,9 +84,8 @@ NO_DEPARTMENT_AGES = ("The 2012 census publishes ages by region only, and OCHA's
                       "projection gives nearly every department of Niger the same age "
                       "proportions, so neither gives a median age of the department's own.")
 # The cities of Maradi and Zinder are the two OCHA projected apart (their own
-# age proportions, so cod_ps_age keeps their medians): only the census's part
-# of the reason holds for them.
-NO_CITY_AGES = "The 2012 census publishes ages by region only, not for the city."
+# age proportions, so cod_ps_age keeps their medians): they carry no age
+# reason, which the map would not show, and do not cite the report for one.
 # What the 2012 report tabulates of the compositions: religion by region
 # (Tableau A 11), nationality (foreigners by region, Tableau 23), no language.
 NO_DEPARTMENT_COMPOSITIONS = {
@@ -371,12 +370,12 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
         else:
             # A department's compositions say what the report tabulates; the
             # region's census religion and survey shares stay on the region.
-            age_fields = {"median_age": gap(NOT_AVAILABLE,
-                                            NO_CITY_AGES if city else NO_DEPARTMENT_AGES),
+            age_fields = {**({} if city else {
+                              "median_age": gap(NOT_AVAILABLE, NO_DEPARTMENT_AGES)}),
                           **{field: gap(NOT_AVAILABLE, why)
                              for field, why in NO_DEPARTMENT_COMPOSITIONS.items()}}
-            cited = [{**src, "field": "sex_ratio/median_age note/religion note/language note/"
-                                      "ethnicity note"}]
+            cited = [{**src, "field": "sex_ratio" + ("" if city else "/median_age note")
+                      + "/religion note/language note/ethnicity note"}]
             if not city:
                 cited.append({**COD_PS, "field": "median_age note"})
         records.append(record(

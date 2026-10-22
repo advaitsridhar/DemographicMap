@@ -716,8 +716,10 @@ NO_CERCLE_AGES = ("The 2022 census's reports give ages by region only (Tableaux 
                   "ages by region only (Tome 1, Tableau P-2); no median age is published for the "
                   "cercle.")
 # The 2022 census's report on the population's cultural characteristics
-# (mali.py's source), which tabulates religion, ethnic group and mother tongue
-# by region only: cited for the cercles' reasons that say so.
+# (mali.py's source), which tabulates religion and ethnic group by region only:
+# cited for the cercles' reasons that say so. Language has no such reason:
+# CLEAR Global's tabulation of the 2009 census gives 46 cercles' languages,
+# and a reason cited there would cite a note the map does not show.
 CULTURE_2022: dict[str, Any] = {
     "name": ("INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, "
              "2022), rapport thématique Caractéristiques culturelles de la population"),
@@ -727,8 +729,7 @@ CULTURE_2022: dict[str, Any] = {
     "year": 2022}
 NO_CERCLE_COMPOSITION = ("The 2022 census tabulates {what} by region only (Caractéristiques "
                          "culturelles de la population), not by cercle.")
-CERCLE_COMPOSITIONS = (("religion", "religion"), ("ethnicity", "ethnic group"),
-                       ("language", "mother tongue"))
+CERCLE_COMPOSITIONS = (("religion", "religion"), ("ethnicity", "ethnic group"))
 
 
 def read_projection(book) -> dict[str, Any]:

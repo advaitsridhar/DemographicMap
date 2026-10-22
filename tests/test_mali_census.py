@@ -188,12 +188,13 @@ class MaliRegionsOfBefore(unittest.TestCase):
         self.assertIn("Tome 1, Tableau P-2", tessalit["median_age"]["note"])
         # The compositions say why there are none, citing the report on the
         # census's cultural characteristics, which mali.py reads by region.
-        self.assertEqual(cited[mc.CULTURE_2022["name"]],
-                         ["religion note", "ethnicity note", "language note"])
+        self.assertEqual(cited[mc.CULTURE_2022["name"]], ["religion note", "ethnicity note"])
         self.assertEqual(tessalit["religion"]["note"],
                          "The 2022 census tabulates religion by region only (Caractéristiques "
                          "culturelles de la population), not by cercle.")
-        self.assertIn("mother tongue", tessalit["language"]["note"])
+        # Language is left alone: CLEAR Global gives most cercles' languages,
+        # and a reason there would cite a note the map does not show.
+        self.assertNotIn("note", tessalit["language"])
         from scripts.fetch_census import mali as ml
         self.assertEqual((mc.CULTURE_2022["name"], mc.CULTURE_2022["url"]), (ml.SOURCE, ml.URL))
 

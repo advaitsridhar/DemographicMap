@@ -450,11 +450,11 @@ def build(reports: list[dict[str, Any]], admin1: list[dict[str, Any]],
                 "65 and over), from which no median age can be taken.")),
             religion=gap(NOT_AVAILABLE, NO_RELIGION),
             ethnicity=gap(NOT_AVAILABLE, NO_ETHNICITY),
-            language=gap(NOT_AVAILABLE, (
-                f"The 2023 census's report for the {rr['region']} region tabulates the "
-                "principal language spoken for the region only, not by department.")),
             # The reports are the sources the notes quote, not of a figure shown.
-            sources=[{"field": "median_age note/religion note/ethnicity note/language note",
+            # Language has no reason here: CLEAR Global's tabulation of the 2013
+            # census gives 18 departments' languages and its own reason for
+            # three more, and a reason cited there would cite a note not shown.
+            sources=[{"field": "median_age note/religion note/ethnicity note",
                       "name": source_name(rr["region"], ""), "url": rr["url"], "page": PAGE,
                       "license": LICENCE, "year": YEAR},
                      {**NATIONAL_REPORT, "field": "religion note/ethnicity note"}]))
