@@ -1,22 +1,224 @@
-== grep https://data.humdata.org/api/3/action/package_show?id=cod-ps-cmr (methodology|caveats|notes|description) 14 450
-  HTTP 200 application/json;charset=utf-8 65,152 bytes
-  ~ d": "e8db7923-6cd2-4974-ad57-14a157978cfd", "is_requestdata_type": false, "isopen": true, "last_modified": "2025-12-30T14:17:26.751815", "license_id": "cc-by", "license_title": "Creative Commons Attribution International (CC BY)", "license_url": "http://www.opendefinition.org/licenses/cc-by", "maintainer": "198f456b-7afb-40c8-b368-62c5a34822e0", "metadata_created": "2022-06-29T16:29:37.127513", "metadata_modified": "2026-05-07T14:34:31.833299", "methodology": "Other", "methodology_other": "See attached Explanatory Technical Note (.pdf file).", "name": "cod-ps-cmr", "notes": "Cameroon population statistics disaggregated by administrative levels (0-2), sex and age, projected for the year 2025. The dataset also includes historical data.\r\n\r\nREFERENCE YEAR 2025\r\n\r\nThese tables are suitable for database or GIS linkage to the [Cameroon - Subnational Administrative Boundaries](https://data.humdata.
-  ~ 7:26.751815", "license_id": "cc-by", "license_title": "Creative Commons Attribution International (CC BY)", "license_url": "http://www.opendefinition.org/licenses/cc-by", "maintainer": "198f456b-7afb-40c8-b368-62c5a34822e0", "metadata_created": "2022-06-29T16:29:37.127513", "metadata_modified": "2026-05-07T14:34:31.833299", "methodology": "Other", "methodology_other": "See attached Explanatory Technical Note (.pdf file).", "name": "cod-ps-cmr", "notes": "Cameroon population statistics disaggregated by administrative levels (0-2), sex and age, projected for the year 2025. The dataset also includes historical data.\r\n\r\nREFERENCE YEAR 2025\r\n\r\nThese tables are suitable for database or GIS linkage to the [Cameroon - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-cmr) and [Cameroon - Subnational Edge-matched Administrative Boundaries](https://data.humdata.org/
-  ~ or database or GIS linkage to the [Cameroon - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-cmr) and [Cameroon - Subnational Edge-matched Administrative Boundaries](https://data.humdata.org/dataset/cod-em-cmr) layers using the ADM0, and ADM1_PCODE fields.", "num_resources": 19, "num_tags": 5, "organization": {"id": "95aa8d05-b110-4607-9330-f2a779885493", "name": "unfpa", "title": "UNFPA", "type": "organization", "description": "UNFPA, the United Nations Population Fund, works globally to ensure universal access to sexual and reproductive health, prevent and respond to gender-based violence, collect and use population data, and promote gender equality and the empowerment of women and youth across the humanitarian/development continuum.", "image_url": "", "created": "2016-03-28T16:36:48.790190", "is_organization": true, "approval_status": "approved", "state": "active"
-== grep https://data.humdata.org/api/3/action/package_show?id=cod-ps-gab (methodology|caveats|notes|description) 14 450
-  HTTP 200 application/json;charset=utf-8 9,713 bytes
-  ~ {"help": "https://data.humdata.org/api/3/action/help_show?name=package_show", "success": true, "result": {"archived": false, "batch": "d5019248-cbd5-42fa-91e4-1696b3a8cb2d", "caveats": "The source data distinguished data for Libreville from the remainder of Estuaire (which contains Libreville). This is reflected in the \"gab_adminpop_special_2022\" table. The true Estuaire data is consolidated in the \"gab_adminpop_adm1_2022\" table.\r\n\r\n", "cod_level": "cod-enhanced", "creator_user_id": "9429fda5-d84f-42e4-890d-e03bf8297f7b", "data_update_frequency": "365", "dataset_date": "[2022-01-01T00:00:00 TO 2022-12-31T23:59:59]"
-  ~  "is_requestdata_type": false, "isopen": false, "last_modified": "2022-06-30T16:17:55.119932", "license_id": "cc-by-igo", "license_title": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)", "license_url": "http://creativecommons.org/licenses/by/3.0/igo/legalcode", "maintainer": "198f456b-7afb-40c8-b368-62c5a34822e0", "metadata_created": "2022-06-29T13:50:33.982095", "metadata_modified": "2026-04-14T10:42:05.022578", "methodology": "Other", "methodology_other": "Projected by UNFPA from the 2013 census by UNFPA", "name": "cod-ps-gab", "notes": "Gabon administrative level 0-2 sex and age disaggregated projected 2022 population statistics\r\n\r\nREFERENCE YEAR: 2022\r\n\r\nThese tables are suitable for database or GIS linkage to the [Gabon - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-gab) layers using the ADM0 and ADM1_PCODE fields.", "n
-  ~ ", "license_title": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)", "license_url": "http://creativecommons.org/licenses/by/3.0/igo/legalcode", "maintainer": "198f456b-7afb-40c8-b368-62c5a34822e0", "metadata_created": "2022-06-29T13:50:33.982095", "metadata_modified": "2026-04-14T10:42:05.022578", "methodology": "Other", "methodology_other": "Projected by UNFPA from the 2013 census by UNFPA", "name": "cod-ps-gab", "notes": "Gabon administrative level 0-2 sex and age disaggregated projected 2022 population statistics\r\n\r\nREFERENCE YEAR: 2022\r\n\r\nThese tables are suitable for database or GIS linkage to the [Gabon - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-gab) layers using the ADM0 and ADM1_PCODE fields.", "num_resources": 4, "num_tags": 1, "organization": {"id": "95aa8d05-b110-4607-9330-f2a779885493", "name": "unfpa", 
-  ~ age disaggregated projected 2022 population statistics\r\n\r\nREFERENCE YEAR: 2022\r\n\r\nThese tables are suitable for database or GIS linkage to the [Gabon - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-gab) layers using the ADM0 and ADM1_PCODE fields.", "num_resources": 4, "num_tags": 1, "organization": {"id": "95aa8d05-b110-4607-9330-f2a779885493", "name": "unfpa", "title": "UNFPA", "type": "organization", "description": "UNFPA, the United Nations Population Fund, works globally to ensure universal access to sexual and reproductive health, prevent and respond to gender-based violence, collect and use population data, and promote gender equality and the empowerment of women and youth across the humanitarian/development continuum.", "image_url": "", "created": "2016-03-28T16:36:48.790190", "is_organization": true, "approval_status": "approved", "state": "active"
-== grep https://data.humdata.org/api/3/action/package_show?id=cod-ps-tcd (methodology|caveats|notes|description) 14 450
-  HTTP 200 application/json;charset=utf-8 26,944 bytes
-  ~  "is_requestdata_type": false, "isopen": false, "last_modified": "2024-09-18T13:53:02.511109", "license_id": "cc-by-igo", "license_title": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)", "license_url": "http://creativecommons.org/licenses/by/3.0/igo/legalcode", "maintainer": "198f456b-7afb-40c8-b368-62c5a34822e0", "metadata_created": "2017-06-15T11:17:31.507027", "metadata_modified": "2026-04-14T10:43:33.751516", "methodology": "Other", "methodology_other": "See metadata tab in spreadsheet.", "name": "cod-ps-tcd", "notes": "Chad administrative level 0-1 sex and age disaggregated 2023 projected population statistics\r\n\r\nREFERENCE YEAR: 2023\r\n\r\n\r\nThese table are suitable for database or GIS linkage to the [Chad - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-tcd).\r\n", "num_resources": 8, "num_tags": 3, "organization": {"id":
-  ~ _id": "cc-by-igo", "license_title": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)", "license_url": "http://creativecommons.org/licenses/by/3.0/igo/legalcode", "maintainer": "198f456b-7afb-40c8-b368-62c5a34822e0", "metadata_created": "2017-06-15T11:17:31.507027", "metadata_modified": "2026-04-14T10:43:33.751516", "methodology": "Other", "methodology_other": "See metadata tab in spreadsheet.", "name": "cod-ps-tcd", "notes": "Chad administrative level 0-1 sex and age disaggregated 2023 projected population statistics\r\n\r\nREFERENCE YEAR: 2023\r\n\r\n\r\nThese table are suitable for database or GIS linkage to the [Chad - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-tcd).\r\n", "num_resources": 8, "num_tags": 3, "organization": {"id": "95aa8d05-b110-4607-9330-f2a779885493", "name": "unfpa", "title": "UNFPA", "type": "organization
-  ~ Chad administrative level 0-1 sex and age disaggregated 2023 projected population statistics\r\n\r\nREFERENCE YEAR: 2023\r\n\r\n\r\nThese table are suitable for database or GIS linkage to the [Chad - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-tcd).\r\n", "num_resources": 8, "num_tags": 3, "organization": {"id": "95aa8d05-b110-4607-9330-f2a779885493", "name": "unfpa", "title": "UNFPA", "type": "organization", "description": "UNFPA, the United Nations Population Fund, works globally to ensure universal access to sexual and reproductive health, prevent and respond to gender-based violence, collect and use population data, and promote gender equality and the empowerment of women and youth across the humanitarian/development continuum.", "image_url": "", "created": "2016-03-28T16:36:48.790190", "is_organization": true, "approval_status": "approved", "state": "active"
-== grep https://data.humdata.org/api/3/action/package_show?id=cod-ps-caf (methodology|caveats|notes|description) 14 450
-  HTTP 200 application/json;charset=utf-8 22,708 bytes
-  ~ {"help": "https://data.humdata.org/api/3/action/help_show?name=package_show", "success": true, "result": {"archived": false, "caveats": "[Dataset title changed 2018 05 10]\r\n\r\nWARNING: The sex disaggregated data (SADD) provided at administrative levels 2 and 3 are derived from the actual administrative level 1 data ratios. While the lower level population data are valid, the sex data will under- or over-count the numbers of females and males.\r\n\r\nThe age disaggregated data provided at administrative levels 1, 2, and 3 are derived from the actual administrative level 0 
-  ~  "is_requestdata_type": false, "isopen": false, "last_modified": "2025-11-19T03:55:58.334937", "license_id": "cc-by-igo", "license_title": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)", "license_url": "http://creativecommons.org/licenses/by/3.0/igo/legalcode", "maintainer": "84e567b6-1d09-4f7e-96f5-b69c09028cbc", "metadata_created": "2016-02-15T15:10:49.977418", "metadata_modified": "2026-02-06T13:40:46.969540", "methodology": "Census", "name": "cod-ps-caf", "notes": "Population projection based on the general census of 2003. Latest projection for 2025.\r\n\r\nSee caveats.\r\nData available for: 2025, 2022, 2021, 2015\r\n", "num_resources": 8, "num_tags": 3, "organization": {"id": "eabb59ef-4082-4c7a-9c08-0f57eed970d8", "name": "ocha-car", "title": "OCHA Central African Republic", "type": "organization", "description": "UN Office for the Coordination of Humanitaria
-  ~  "last_modified": "2025-11-19T03:55:58.334937", "license_id": "cc-by-igo", "license_title": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)", "license_url": "http://creativecommons.org/licenses/by/3.0/igo/legalcode", "maintainer": "84e567b6-1d09-4f7e-96f5-b69c09028cbc", "metadata_created": "2016-02-15T15:10:49.977418", "metadata_modified": "2026-02-06T13:40:46.969540", "methodology": "Census", "name": "cod-ps-caf", "notes": "Population projection based on the general census of 2003. Latest projection for 2025.\r\n\r\nSee caveats.\r\nData available for: 2025, 2022, 2021, 2015\r\n", "num_resources": 8, "num_tags": 3, "organization": {"id": "eabb59ef-4082-4c7a-9c08-0f57eed970d8", "name": "ocha-car", "title": "OCHA Central African Republic", "type": "organization", "description": "UN Office for the Coordination of Humanitarian Affairs (OCHA) country office in the Ce
-  ~ tadata_modified": "2026-02-06T13:40:46.969540", "methodology": "Census", "name": "cod-ps-caf", "notes": "Population projection based on the general census of 2003. Latest projection for 2025.\r\n\r\nSee caveats.\r\nData available for: 2025, 2022, 2021, 2015\r\n", "num_resources": 8, "num_tags": 3, "organization": {"id": "eabb59ef-4082-4c7a-9c08-0f57eed970d8", "name": "ocha-car", "title": "OCHA Central African Republic", "type": "organization", "description": "UN Office for the Coordination of Humanitarian Affairs (OCHA) country office in the Central African Republic.", "image_url": "", "created": "2015-10-15T14:52:47.551790", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "eabb59ef-4082-4c7a-9c08-0f57eed970d8", "package_creator": "belmondb", "pageviews_last_14_days": 58, "private": false, "qa_completed": false, "solr_additions": "{\"countries\": [\"Central
+car_census: https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/fb2c7f59-3b51-4218-9049-2eddb61a404b/download/icasees_cartocensitaire2021_formatocha_public_v2.xlsx: 66,575 bytes, sha256 e7bc08f1f7fa2b5a8914089e0744ad07e9419fadeca018a982f495e8171b6274
+car_census: https://data.humdata.org/dataset/4f41a2c7-167f-4e60-8e90-dd282383dd90/resource/1670d3a6-a89f-40cd-80c9-bf580b27e08e/download/central_african_republic_uscb_202303.xlsx: 401,471 bytes, sha256 a8bda4dbb6baef97c7cc39ec8e3ea94c6a066a9d54072be0f0fa57f3071934dc
+  2025 resource: Projection population-2025.xlsx: Projection de la population 2025 en Admin2 (ICASEES)
+  dataset notes: Population projection based on the general census of 2003. Latest projection for 2025. See caveats. Data available for: 2025, 2022, 2021, 2015
+  dataset caveats: [Dataset title changed 2018 05 10] WARNING: The sex disaggregated data (SADD) provided at administrative levels 2 and 3 are derived from the actual administrative level 1 data ratios. While the lower level population data are valid, the sex data will under- or over-count the numbers of females and males. The age disaggregated data provided at administrative levels 1, 2, and 3 are derived from the actual administrative level 0 data ratios. While the lower level population data are valid, the age data will under- or over-count the numbers of children, adults, and elderly.
+car_census: ocha-car-projection-population-2025-icasees.xlsx: 22,728 bytes, sha256 1ce7104a08eb8fcd81962405ac6b68b3f280d676ffc749abfdcb2c024a36bbaf
+  Population_HNRP 2026: 85 sub-prefectures, 6,567,382 people for 2025
+PrevCommune: 178 communes of the 2003 frame, 6,091,097 people; the national line 6,091,097
+mapping table: 0 of 280 units depart from the fixed 49% share of men
+  the same count, 8,825, for Lissa (Grimari) and Pouyamba (Grimari)
+  the same count, 23,708, for Mobaye (Mobaye) and Haute-Kadéi (Dede Mocouba) (Dede-Makouba)
+  OCHA's table files Nola (Nola, 71,134) under Mbaïki's commune of the same name; the names place it here
+  2025: Baminigui (Bamingui-Bangoran): no 2020 sub-prefecture of the mapping table of that name; 11,258 people
+  2025: Bangui Centre, Bangui Fleuve, Bangui Kaga, Bangui Rapide (Bangui): no 2020 sub-prefecture of the mapping table of that name; 1,486,900 people
+  2025: Ouandja Kotto (Haute-Kotto): no 2020 sub-prefecture of the mapping table of that name; 15,104 people
+  2025: Djemah, Mboki (Haut-Mbomou): no 2020 sub-prefecture of the mapping table of that name; 10,224 people
+  2025: Moboma (Lobaye): no 2020 sub-prefecture of the mapping table of that name; 50,370 people
+  2025: Dede-Makouba (Mambéré-Kadeï): no 2020 sub-prefecture of the mapping table of that name; 24,253 people
+  2025: Kaga-Bandoro, Mbrès, Nana-Outa (Nana-Gribizi): no 2020 sub-prefecture of the mapping table of that name; 235,690 people
+  2025: Bantangafo (Ouham-Fafa): no 2020 sub-prefecture of the mapping table of that name; 95,085 people
+  2025: Am-Dafock, Ouandja (Vakaga): no 2020 sub-prefecture of the mapping table of that name; 61,240 people
+  2025: Boali: 67,723 (Boali; 2021 62,071, +2.2% a year)
+  2025: Djoukou: 50,881 (Ndjoukou; 2021 46,627, +2.2% a year)
+  2025: Gamboula: mamberekadei divided otherwise in 2025
+  2025: Baboua: 82,555 (Baboua; 2021 77,278, +1.7% a year)
+  2025: Nola: 106,410 (Nola; 2021 95,550, +2.7% a year)
+  2025: Bria: hautekotto divided otherwise in 2025
+  2025: Batangafo: ouhamfafa divided otherwise in 2025
+  2025: Dédé-Mokouba: mamberekadei divided otherwise in 2025
+  2025: Mongoumba: lobaye divided otherwise in 2025
+  2025: Carnot: 210,988 (Carnot + Senkpa-Mbaéré; 2021 178,257, +4.3% a year)
+  2025: Bozoum: 78,386 (Bozoum; 2021 75,139, +1.1% a year)
+  2025: Bouar: 197,498 (Bouar; 2021 175,054, +3.1% a year)
+  2025: Mbaïki: lobaye divided otherwise in 2025
+  2025: Bambouti: hautmbomou divided otherwise in 2025
+  2025: Mala: 21,469 (Mala; 2021 19,680, +2.2% a year)
+  2025: Zangba: 53,361 (Zangba; 2021 50,815, +1.2% a year)
+  2025: Ouanda-Djallé: vakaga divided otherwise in 2025
+  2025: Berbérati: mamberekadei divided otherwise in 2025
+  2025: Kembé: 47,999 (Kembé; 2021 46,050, +1.0% a year)
+  2025: Bambari: 227,806 (Bambari; 2021 216,534, +1.3% a year)
+  2025: Boganda: lobaye divided otherwise in 2025
+  2025: Bogangolo: 12,070 (Bogangolo; 2021 9,801, +5.3% a year)
+  2025: Rafaï: 23,534 (Rafaï; 2021 21,936, +1.8% a year)
+  2025: Zémio: hautmbomou divided otherwise in 2025
+  2025: Bamingui: baminguibangoran divided otherwise in 2025
+  2025: Obo: hautmbomou divided otherwise in 2025
+  2025: Gadzi: 97,966 (Gadzi; 2021 72,071, +8.0% a year)
+  2025: Boganangone: lobaye divided otherwise in 2025
+  2025: Markounda: 41,875 (Markounda; 2021 37,399, +2.9% a year)
+  2025: Bayanga: 20,940 (Bayanga; 2021 18,556, +3.1% a year)
+  2025: Satéma: 39,457 (Satema; 2021 37,097, +1.6% a year)
+  2025: Ippy: 61,472 (Ippy; 2021 59,290, +0.9% a year)
+  2025: Mbrès: no 2025 row for [('nanagrebizi', 'mbres')]
+  2025: Bocaranga: 109,571 (Bocaranga; 2021 102,297, +1.7% a year)
+  2025: Birao: vakaga divided otherwise in 2025
+  2025: Kouango: 111,713 (Kouango; 2021 107,763, +0.9% a year)
+  2025: Gambo: 34,464 (Gambo; 2021 33,294, +0.9% a year)
+  2025: Bangui: bangui divided otherwise in 2025
+  2025: Bakouma: 30,410 (Bakouma; 2021 28,703, +1.5% a year)
+  2025: Baoro: 63,764 (Baoro; 2021 58,207, +2.3% a year)
+  2025: Bouca: ouhamfafa divided otherwise in 2025
+  2025: Dékoa: 61,285 (Dekoa; 2021 57,254, +1.7% a year)
+  2025: Alindao: 131,219 (Alindao; 2021 125,040, +1.2% a year)
+  2025: Amada-Gaza: 20,319 (Amada-Gaza; 2021 15,151, +7.6% a year)
+  2025: Nana-Bakassa: 61,816 (Nana-Bakassa; 2021 55,642, +2.7% a year)
+  2025: Ouango: 66,058 (Ouango; 2021 62,662, +1.3% a year)
+  2025: Sibut: 66,865 (Sibut; 2021 60,181, +2.7% a year)
+  2025: Mingala: 41,257 (Mingala; 2021 39,672, +1.0% a year)
+  2025: Koui: 44,669 (Koui; 2021 41,551, +1.8% a year)
+  2025: Bossembélé: 65,181 (Bossembele; 2021 58,504, +2.7% a year)
+  2025: Bossemtélé: 25,844 (Bossemptele; 2021 24,328, +1.5% a year)
+  2025: Yalinga: hautekotto divided otherwise in 2025
+  2025: Kabo: ouhamfafa divided otherwise in 2025
+  2025: Bangassou: 117,194 (Bangassou; 2021 111,208, +1.3% a year)
+  2025: Boda: lobaye divided otherwise in 2025
+  2025: Ndélé: baminguibangoran divided otherwise in 2025
+  2025: Sosso-Nakombo: mamberekadei divided otherwise in 2025
+  2025: Ouadda: hautekotto divided otherwise in 2025
+  2025: Bambio: 27,615 (Bambio; 2021 24,664, +2.9% a year)
+  2025: Yaloké: 90,123 (Yaloké; 2021 82,678, +2.2% a year)
+  2025: Bimbo: bangui divided otherwise in 2025
+  2025: Bossangoa: 188,751 (Bossangoa; 2021 167,214, +3.1% a year)
+  2025: Grimari: 53,088 (Grimari; 2021 51,275, +0.9% a year)
+  2025: Damara: 61,912 (Damara; 2021 56,755, +2.2% a year)
+  2025: Paoua: 244,426 (Paoua; 2021 307,172, -5.6% a year)
+  2025: Kaga-Bandoro: no 2025 row for [('nanagrebizi', 'kagabandoro'), ('nanagrebizi', 'nanaouta')]
+  2025: Ngaoundaye: 111,426 (Kodi + Ngaoundaye; 2021 134,979, -4.7% a year)
+  2025: Djéma: hautmbomou divided otherwise in 2025
+  2025: Bakala: 12,228 (Bakala; 2021 11,492, +1.6% a year)
+  2025: Abba: 33,625 (Aba; 2021 31,257, +1.8% a year)
+  2025: Mobaye: 85,883 (Mobaye; 2021 81,498, +1.3% a year)
+  2025: Nagha Boguila: 42,149 (Nanga-Boguila; 2021 37,649, +2.9% a year)
+  2025: prefecture Bamingui-Bangoran: none (Bamingui, Ndélé)
+  2025: prefecture Bangui: none (Bangui)
+  2025: prefecture Basse-Kotto: 399,176
+  2025: prefecture Haut-Mbomou: none (Bambouti, Djéma, Obo, Zémio)
+  2025: prefecture Haute-Kotto: none (Bria, Ouadda, Yalinga)
+  2025: prefecture Kémo: 200,501
+  2025: prefecture Lobaye: none (Boda, Boganangone, Boganda, Mbaïki, Mongoumba)
+  2025: prefecture Mambéré-Kadéï: none (Berbérati, Dédé-Mokouba, Gamboula, Sosso-Nakombo)
+  2025: prefecture Mbomou: 271,661
+  2025: prefecture Nana-Grébizi: none (Kaga-Bandoro, Mbrès)
+  2025: prefecture Nana-Mambéré: 377,443
+  2025: prefecture Ombella-M'Poko: none (Bimbo)
+  2025: prefecture Ouaka: 466,306
+  2025: prefecture Ouham: none (Batangafo, Bouca, Kabo)
+  2025: prefecture Ouham-Pendé: 614,321
+  2025: prefecture Sangha-Mbaéré: 154,965
+  2025: prefecture Vakaga: none (Birao, Ouanda-Djallé)
+  2025 sexes: Bamingui-Bangoran: one share of men, 0.4988, for 2 sub-prefectures
+  2025 sexes: Bangui: one share of men, 0.4787, for 4 sub-prefectures
+  2025 sexes: Basse-Kotto: one share of men, 0.5027, for 6 sub-prefectures
+  2025 sexes: Haut-Mbomou: one share of men, 0.4993, for 5 sub-prefectures
+  2025 sexes: Haute-Kotto: one share of men, 0.4994, for 4 sub-prefectures
+  2025 sexes: Kémo: one share of men, 0.5000, for 4 sub-prefectures
+  2025 sexes: Lim-Pendé: one share of men, 0.4984, for 5 sub-prefectures
+  2025 sexes: Lobaye: one share of men, 0.4994, for 6 sub-prefectures
+  2025 sexes: Mambéré: one share of men, 0.5000, for 4 sub-prefectures
+  2025 sexes: Mambéré-Kadeï: one share of men, 0.4995, for 4 sub-prefectures
+  2025 sexes: Mbomou: one share of men, 0.5106, for 5 sub-prefectures
+  2025 sexes: Nana-Gribizi: one share of men, 0.5001, for 3 sub-prefectures
+  2025 sexes: Nana-Mambéré: one share of men, 0.5000, for 4 sub-prefectures
+  2025 sexes: Ombella-M'Poko: one share of men, 0.4998, for 5 sub-prefectures
+  2025 sexes: Ouaka: one share of men, 0.4976, for 5 sub-prefectures
+  2025 sexes: Ouham: one share of men, 0.5000, for 4 sub-prefectures
+  2025 sexes: Ouham-Fafa: one share of men, 0.5067, for 4 sub-prefectures
+  2025 sexes: Ouham-Pendé: one share of men, 0.4997, for 4 sub-prefectures
+  2025 sexes: Sangha-Mbaéré: one share of men, 0.5000, for 3 sub-prefectures
+  2025 sexes: Vakaga: one share of men, 0.5225, for 4 sub-prefectures
+  twins: 8,825 for Lissa (Grimari) and Pouyamba (Grimari)
+  twins: 23,708 for Haute-Kadéi (Dédé-Mokouba) and Mobaye (Mobaye)
+  Boali: 62,071 (1 communes of 2021)
+  Djoukou: 46,627 (2 communes of 2021)
+  Gamboula: 41,196 (1 communes of 2021)
+  Baboua: 77,278 (5 communes of 2021)
+  Nola: 95,550 (3 communes of 2021)
+  Bria: 102,356 (3 communes of 2021)
+  Batangafo: 88,407 (5 communes of 2021)
+  Dédé-Mokouba: 23,708 (1 communes of 2021) -- withheld
+  Mongoumba: 33,894 (1 communes of 2021)
+  Carnot: 178,257 (2 communes of 2021; 2021 sub-prefectures Carnot, Senkpa-Mbaéré)
+  Bozoum: 75,139 (5 communes of 2021)
+  Bouar: 175,054 (7 communes of 2021)
+  Mbaïki: 188,263 (8 communes of 2021)
+  Bambouti: 310 (1 communes of 2021)
+  Mala: 19,680 (1 communes of 2021)
+  Zangba: 50,815 (2 communes of 2021)
+  Ouanda-Djallé: 6,921 (1 communes of 2021)
+  Berbérati: 189,813 (5 communes of 2021)
+  Kembé: 46,050 (2 communes of 2021)
+  Bambari: 216,534 (5 communes of 2021)
+  Boganda: 19,823 (1 communes of 2021)
+  Bogangolo: 9,801 (1 communes of 2021)
+  Rafaï: 21,936 (1 communes of 2021)
+  Zémio: 29,420 (1 communes of 2021)
+  Bamingui: 10,284 (1 communes of 2021)
+  Obo: 20,100 (2 communes of 2021)
+  Gadzi: 72,071 (2 communes of 2021)
+  Boganangone: 39,115 (1 communes of 2021)
+  Markounda: 37,399 (1 communes of 2021)
+  Bayanga: 18,556 (1 communes of 2021)
+  Satéma: 37,097 (1 communes of 2021)
+  Ippy: 59,290 (3 communes of 2021)
+  Mbrès: 33,323 (1 communes of 2021)
+  Bocaranga: 102,297 (3 communes of 2021)
+  Birao: 76,267 (2 communes of 2021)
+  Kouango: 107,763 (3 communes of 2021)
+  Gambo: 33,294 (2 communes of 2021)
+  Bangui: 812,407 (8 communes of 2021)
+  Bakouma: 28,703 (1 communes of 2021)
+  Baoro: 58,207 (3 communes of 2021)
+  Bouca: 80,531 (4 communes of 2021)
+  Dékoa: 57,254 (3 communes of 2021)
+  Alindao: 125,040 (5 communes of 2021)
+  Amada-Gaza: 15,151 (1 communes of 2021)
+  Nana-Bakassa: 55,642 (1 communes of 2021)
+  Ouango: 62,662 (2 communes of 2021)
+  Sibut: 60,181 (2 communes of 2021)
+  Mingala: 39,672 (3 communes of 2021)
+  Koui: 41,551 (1 communes of 2021)
+  Bossembélé: 58,504 (2 communes of 2021)
+  Bossemtélé: 24,328 (1 communes of 2021)
+  Yalinga: 4,562 (1 communes of 2021)
+  Kabo: 56,541 (2 communes of 2021; 2021 sub-prefectures Kabo, Sido)
+  Bangassou: 111,208 (4 communes of 2021)
+  Boda: 64,013 (2 communes of 2021)
+  Ndélé: 71,824 (2 communes of 2021)
+  Sosso-Nakombo: 18,449 (1 communes of 2021)
+  Ouadda: 21,424 (2 communes of 2021)
+  Bambio: 24,664 (1 communes of 2021)
+  Yaloké: 82,678 (2 communes of 2021)
+  Bimbo: 612,869 (2 communes of 2021; 2021 sub-prefectures Bimbo, Bégoua)
+  Bossangoa: 167,214 (6 communes of 2021)
+  Grimari: 51,275 (4 communes of 2021)
+  Damara: 56,755 (1 communes of 2021)
+  Paoua: 307,172 (8 communes of 2021)
+  Kaga-Bandoro: 175,498 (5 communes of 2021; 2021 sub-prefectures Kaga Bandoro, Nana-Outa)
+  Ngaoundaye: 134,979 (4 communes of 2021; 2021 sub-prefectures Kodi, Ngaoundaye)
+  Djéma: 2,484 (1 communes of 2021)
+  Bakala: 11,492 (1 communes of 2021)
+  Abba: 31,257 (2 communes of 2021)
+  Mobaye: 81,498 (2 communes of 2021)
+  Nagha Boguila: 37,649 (1 communes of 2021)
+  prefecture Bamingui-Bangoran: 82,108; 2016: 948 men per 1,000 women, median 18.5
+  prefecture Bangui: 812,407; 2016: 991 men per 1,000 women, median 20.4
+  prefecture Basse-Kotto: 380,172; 2016: 948 men per 1,000 women, median 20.3
+  prefecture Haute-Kotto: 128,342; 2016: 1106 men per 1,000 women, median 23.5
+  prefecture Haut-Mbomou: 52,314; 2016: 939 men per 1,000 women, median 24.0
+  prefecture Kémo: 183,742; 2016: 951 men per 1,000 women, median 20.2
+  prefecture Lobaye: 345,108; 2016: 957 men per 1,000 women, median 20.0
+  prefecture Mambéré-Kadéï: 538,645; 2016: 1000 men per 1,000 women, median 20.2
+  prefecture Mbomou: 257,803; 2016: 956 men per 1,000 women, median 21.2
+  prefecture Nana-Grébizi: 208,821; 2016: 960 men per 1,000 women, median 20.2
+  prefecture Nana-Mambéré: 341,796; 2016: 973 men per 1,000 women, median 19.6
+  prefecture Ombella-M'Poko: 882,678; 2016: 980 men per 1,000 women, median 20.2
+  prefecture Ouaka: 446,354; 2016: 934 men per 1,000 women, median 20.1
+  prefecture Ouham: 523,383; 2016: 947 men per 1,000 women, median 19.5
+  prefecture Ouham-Pendé: 685,466; 2016: 926 men per 1,000 women, median 18.9
+  prefecture Sangha-Mbaéré: 138,770; 2016: 1008 men per 1,000 women, median 19.9
+  prefecture Vakaga: 83,188; 2016: 873 men per 1,000 women, median 17.8
+  17 prefectures and 72 sub-prefecture polygons written; 2025: 7 prefectures and 45 sub-prefectures
+  wrote data/processed/car_census.json (379 kB)
+  wrote data/processed/car_projection.json (103 kB)
