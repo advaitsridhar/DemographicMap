@@ -1,79 +1,88 @@
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/worksheet/header_footer.py:48: UserWarning: Cannot parse header or footer so it will be ignored
-  warn("""Cannot parse header or footer so it will be ignored""")
-  P01 GEZIRA: its age groups make 3,549,025 of 3,549,026 (rounding)
-  P01 KASSALA: its age groups make 1,769,886 of 1,769,887 (rounding)
-  P01 KHARTOUM: 2,725,185 men and 2,456,002 women against 5,181,186 (rounding)
-  P01 KHARTOUM: its age groups make 5,181,187 of 5,181,186 (rounding)
-  P01 NORTH DARFUR: its age groups make 2,089,799 of 2,089,801 (rounding)
-  P01 NORTH KORDOFAN: its age groups make 2,888,970 of 2,888,969 (rounding)
-  P01 RED SEA: its age groups make 1,368,329 of 1,368,330 (rounding)
-  P01 SENNAR: its age groups make 1,272,765 of 1,272,766 (rounding)
-  P01 SOUTH DARFUR: 2,104,363 men and 1,950,239 women against 4,054,603 (rounding)
-  P01 SOUTH DARFUR: its age groups make 4,054,602 of 4,054,603 (rounding)
-  P01 SOUTH KORDOFAN: its age groups make 1,389,075 of 1,389,076 (rounding)
-  P01 WHITE NILE: 834,286 men and 879,073 women against 1,713,360 (rounding)
-  retabulation: 18 states, 173 localities, 30,894,000 people; P01: 15 states of 2008
-  state BLUE NILE: unchanged since 2008 (816,048 in P01 of 832,112); median 16.1
-  BLUE NILE: 6 localities in 2008, 7 drawn; divided since, none written
-  state CENTRAL DARFUR: 553,515 as drawn in 2020, none in P01; no census median
-  CENTRAL DARFUR: 7 localities in 2008, 9 drawn; divided since, none written
-  state EAST DARFUR: 1,216,719 as drawn in 2020, none in P01; no census median
-  EAST DARFUR: 9 localities, 9 polygons
-    ADEELA -> 'Adila' by spelling (0.73)
-    AL FIRDOSE -> 'Al Firdous' by spelling (0.89)
-    ASALAYA -> 'Assalaya' by spelling (0.93)
-    SHIAIRYYA -> "Shia'ria" by spelling (0.75)
-  state GEDAREF: unchanged since 2008 (1,334,947 in P01 of 1,348,378); median 16.6
-  GEDAREF: 12 localities, 12 polygons
-    AL FASHAQAA -> 'Al Fashaga' by spelling (0.84)
-    AL FĀW -> 'Al Fao' by spelling (0.80)
-    AL MAFĀZAH -> 'Al Mafaza' by spelling (0.94)
-    ALRRAHA -> 'Ar Rahad' by spelling (0.86)
-    BASUNDA -> 'Basundah' by spelling (0.93)
-    QALA‘ AN NAḨL -> "Gala'a Al Nahal" by spelling (0.73)
-  state GEZIRA: unchanged since 2008 (3,549,026 in P01 of 3,575,280); median 19.3
-  GEZIRA: 7 localities in 2008, 8 drawn; divided since, none written
-  state KASSALA: unchanged since 2008 (1,769,887 in P01 of 1,789,806); median 19.0
-  KASSALA: 11 localities, 11 polygons
-    HALFĀ AL GADĪDAH -> 'Halfa Aj Jadeedah' by spelling (0.76)
-    NAHR ATBARA -> 'Reifi Nahr Atbara' by spelling (0.80)
-  state KHARTOUM: unchanged since 2008 (5,181,186 in P01 of 5,274,321); median 22.0
-  KHARTOUM: 7 localities, 7 polygons
-    KARARI -> 'Karrari' by spelling (0.92)
-    OMDURMAN -> 'Um Durman' by spelling (0.88)
-    SHAREQ AL NEEL -> 'Sharg An Neel' by spelling (0.78)
-    UMM BADDA -> 'Um Bada' by spelling (0.86)
-  state NORTH DARFUR: unchanged since 2008 (2,089,801 in P01 of 2,113,626); median 17.0
-  NORTH DARFUR: 14 localities in 2008, 17 drawn; divided since, none written
-  state NORTHERN: unchanged since 2008 (686,098 in P01 of 699,065); median 22.2
-  NORTHERN: 7 localities, 7 polygons
-  state NORTH KORDOFAN: 2,039,495 as drawn in 2020, 2888969 in P01; no census median
-  NORTH KORDOFAN: 8 localities, 8 polygons
-    BĀRAH -> 'Bara' by spelling (0.89)
-    OM DAMA HAJ AHMAD -> 'Um Dam Haj Ahmed' by spelling (0.81)
-    SHEEKAN -> 'Sheikan' by spelling (0.86)
-    UMM RUWABA -> 'Um Rawaba' by spelling (0.82)
-  RED SEA: written without the claimed ['ḨALĀ’IB']
-  state RED SEA: P01 counts it with ḨALĀ’IB; no census median
-  RED SEA: 9 localities, 9 polygons
-    AL GHANIB -> 'Al Ganab' by spelling (0.80)
-    TOKĀR -> 'Tawkar' by spelling (0.73)
-  state RIVER NILE: unchanged since 2008 (1,097,356 in P01 of 1,120,441); median 21.5
-  RIVER NILE: 6 localities in 2008, 7 drawn; divided since, none written
-  state SENNAR: unchanged since 2008 (1,272,766 in P01 of 1,285,058); median 17.9
-  SENNAR: 7 localities, 7 polygons
-    AD DINDAR -> 'Ad Dinder' by spelling (0.88)
-    SINGA -> 'Sinja' by spelling (0.80)
-  state SOUTH DARFUR: 2,876,875 as drawn in 2020, 4054603 in P01; no census median
-  SOUTH DARFUR: 20 localities in 2008, 21 drawn; divided since, none written
-  state SOUTH KORDOFAN: 867,918 as drawn in 2020, 1389076 in P01; no census median
-  SOUTH KORDOFAN: 15 localities in 2008, 17 drawn; divided since, none written
-  state WEST DARFUR: 754,710 as drawn in 2020, 1292714 in P01; no census median
-  WEST DARFUR: 7 localities in 2008, 8 drawn; divided since, none written
-  WEST KORDOFAN: written without the claimed ['ABYEI']
-  state WEST KORDOFAN: 1,419,983 as drawn in 2020, none in P01; no census median
-  WEST KORDOFAN: 11 localities in 2008, 13 drawn; divided since, none written
-  state WHITE NILE: unchanged since 2008 (1,713,360 in P01 of 1,730,588); median 18.3
-  WHITE NILE: 8 localities in 2008, 9 drawn; divided since, none written
-  18 states and 70 of 189 localities bound
-  wrote data/processed/sudan_census.json (150 kB)
+/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
+  warn(f"Print area cannot be set to Defined name: {defn.value}.")
+  Région de Rabat-Salé-Kénitra: median 31.6 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
+  Province de Kénitra: median 28.8 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
+  Province de Khémisset: median 32.9 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
+  Préfecture de Rabat: median 39.2 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
+  Préfecture de Salé: median 32.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
+  Province de Sidi Kacem: median 29.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
+  Province de Sidi Slimane: median 28.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
+  Préfecture de Skhirate-Témara: median 31.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
+  Région de Fès-Meknès: median 31.4 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
+  Préfecture de Meknès: median 32.9 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
+  Province de Boulemane: median 29.1 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
+  Province d'El Hajeb: median 31.3 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
+  Préfecture de Fès: median 31.4 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
+  Province d'Ifrane: median 32.8 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
+  Province de Sefrou: median 33.0 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
+  Province de Taounate: median 29.3 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
+  Province de Taza: median 32.9 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
+  Province de Moulay Yacoub: median 26.2 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
+  Province de Tétouan: median 31.2; the region 29.7
+  Province d'Ouezzane: median 33.0; the region 29.7
+  Province de Larache: median 29.7; the region 29.7
+  Préfecture de Tanger-Assilah: median 29.3; the region 29.7
+  Préfecture de M'diq-Fnideq: median 29.7; the region 29.7
+  Région de Souss-Massa: median 31.2 (https://www.hcp.ma/region-agadir/attachment/2802780/)
+  Préfecture d'Agadir-Ida-Ou-Tanane: median 31.6 (https://www.hcp.ma/region-agadir/attachment/2802781/)
+  Préfecture d'Inezgane-Aït Melloul: median 30.3 (https://www.hcp.ma/region-agadir/attachment/2802782/)
+  Province de Chtouka-Aït Baha: median 29.3 (https://www.hcp.ma/region-agadir/attachment/2802783/)
+  Province de Taroudannt: median 31.7 (https://www.hcp.ma/region-agadir/attachment/2802784/)
+  Province de Tata: median 31.6 (https://www.hcp.ma/region-agadir/attachment/2802862/)
+  Province de Tiznit: median 37.1 (https://www.hcp.ma/region-agadir/attachment/2802786/)
+  31 units' five-year shares agree with the dashboard's under 15 and 60+
+  region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
+  'Taroudant Province' bound to 'Province de Taroudannt' by spelling
+  'Oued Ed-Dahab Province': a piece across the line, written as a gap
+  "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
+  'Tarfaya Province': part of a province across the line, written as a gap
+  HCP provinces not drawn: []
+  Région de Béni Mellal-Khénifra: no five-year ages
+  Région de Casablanca-Settat: no five-year ages
+  Région de Drâa-Tafilalet: no five-year ages
+  Région de Marrakech-Safi: no five-year ages
+  Région de l'Oriental: no five-year ages
+  Province d'Al Hoceima: no five-year ages
+  Province de Chefchaouen: no five-year ages
+  Province de Fahs-Anjra: no five-year ages
+  Province de Berkane: no five-year ages
+  Province de Driouch: no five-year ages
+  Province de Figuig: no five-year ages
+  Province de Guercif: no five-year ages
+  Province de Jerada: no five-year ages
+  Province de Nador: no five-year ages
+  Province de Taourirt: no five-year ages
+  Préfecture d'Oujda-Angad: no five-year ages
+  Province d'Azilal: no five-year ages
+  Province de Béni Mellal: no five-year ages
+  Province de Fquih Ben Salah: no five-year ages
+  Province de Khouribga: no five-year ages
+  Province de Khénifra: no five-year ages
+  Province de Berrechid: no five-year ages
+  Province d'El Jadida: no five-year ages
+  Province de Médiouna: no five-year ages
+  Province de Nouaceur: no five-year ages
+  Préfecture de Casablanca: no five-year ages
+  Préfecture de Mohammadia: no five-year ages
+  Province de Benslimane: no five-year ages
+  Province de Sidi Bennour: no five-year ages
+  Province de Settat: no five-year ages
+  Province d'Al Haouz: no five-year ages
+  Province de Chichaoua: no five-year ages
+  Province d'Essaouira: no five-year ages
+  Province d'El Kelâa Des-Sraghna: no five-year ages
+  Province de Safi: no five-year ages
+  Province de Youssoufia: no five-year ages
+  Préfecture de Marrakech: no five-year ages
+  Province de Rehamna: no five-year ages
+  Province d'Ouarzazate: no five-year ages
+  Province d'Errachidia: no five-year ages
+  Province de Midelt: no five-year ages
+  Province de Tinghir: no five-year ages
+  Province de Zagora: no five-year ages
+  Province d'Assa-Zag: no five-year ages
+  Province de Guelmim: no five-year ages
+  Province de Tan-Tan: no five-year ages
+  Province de Sidi Ifni: no five-year ages
+  79 records: 31 medians (4 regions, 27 provinces); the rest say why
+  wrote data/processed/morocco_rgph2024_ages.json (102 kB)

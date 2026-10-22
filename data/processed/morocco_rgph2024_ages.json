@@ -192,7 +192,15 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "median_age note",
+        "name": "Haut-Commissariat au Plan (HCP), Les provinces du Sud du Royaume: données démographiques, September 2025",
+        "url": "https://www.hcp.ma/file/245583/",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "70788906B64069740334949",
@@ -638,7 +646,7 @@
   {
     "id": "MAR-RGPH2024-AGE-1405",
     "level": "admin2",
-    "name": "Province d'Ouezzane إقليم وزان",
+    "name": "Province d'Ouezzane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -679,6 +687,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B93440982531475",
+    "aliases": [
+      "Province d'Ouezzane إقليم وزان"
+    ],
     "codes": {
       "hcp": "1405"
     },
@@ -687,7 +698,7 @@
   {
     "id": "MAR-RGPH2024-AGE-1573",
     "level": "admin2",
-    "name": "Préfecture de M'diq-Fnideq عمالة المضيق الفنيدق",
+    "name": "Préfecture de M'diq-Fnideq",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -728,6 +739,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B89687162507810",
+    "aliases": [
+      "Préfecture de M'diq-Fnideq عمالة المضيق الفنيدق"
+    ],
     "codes": {
       "hcp": "1573"
     },
@@ -785,7 +799,7 @@
   {
     "id": "MAR-RGPH2024-AGE-2113",
     "level": "admin2",
-    "name": "Province de Berkane إقليم بركان",
+    "name": "Province de Berkane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -816,6 +830,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B69343874835814",
+    "aliases": [
+      "Province de Berkane إقليم بركان"
+    ],
     "codes": {
       "hcp": "2113"
     }
@@ -823,7 +840,7 @@
   {
     "id": "MAR-RGPH2024-AGE-2167",
     "level": "admin2",
-    "name": "Province de Driouch إقليم الدريوش",
+    "name": "Province de Driouch",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -854,6 +871,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B88930410593624",
+    "aliases": [
+      "Province de Driouch إقليم الدريوش"
+    ],
     "codes": {
       "hcp": "2167"
     }
@@ -861,7 +881,7 @@
   {
     "id": "MAR-RGPH2024-AGE-2251",
     "level": "admin2",
-    "name": "Province de Figuig إقليم الناظور",
+    "name": "Province de Figuig",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -892,6 +912,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B25874170222857",
+    "aliases": [
+      "Province de Figuig إقليم الناظور"
+    ],
     "codes": {
       "hcp": "2251"
     }
@@ -899,7 +922,7 @@
   {
     "id": "MAR-RGPH2024-AGE-2265",
     "level": "admin2",
-    "name": "Province de Guercif إقليم جرسيف",
+    "name": "Province de Guercif",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -930,6 +953,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B63064605054668",
+    "aliases": [
+      "Province de Guercif إقليم جرسيف"
+    ],
     "codes": {
       "hcp": "2265"
     }
@@ -937,7 +963,7 @@
   {
     "id": "MAR-RGPH2024-AGE-2275",
     "level": "admin2",
-    "name": "Province de Jerada إقليم جرادة",
+    "name": "Province de Jerada",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -968,6 +994,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B21390270390615",
+    "aliases": [
+      "Province de Jerada إقليم جرادة"
+    ],
     "codes": {
       "hcp": "2275"
     }
@@ -975,7 +1004,7 @@
   {
     "id": "MAR-RGPH2024-AGE-2381",
     "level": "admin2",
-    "name": "Province de Nador إقليم الناظور",
+    "name": "Province de Nador",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1006,6 +1035,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B25654465299878",
+    "aliases": [
+      "Province de Nador إقليم الناظور"
+    ],
     "codes": {
       "hcp": "2381"
     }
@@ -1013,7 +1045,7 @@
   {
     "id": "MAR-RGPH2024-AGE-2533",
     "level": "admin2",
-    "name": "Province de Taourirt إقليم تاوريرت",
+    "name": "Province de Taourirt",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1044,6 +1076,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B4563753155162",
+    "aliases": [
+      "Province de Taourirt إقليم تاوريرت"
+    ],
     "codes": {
       "hcp": "2533"
     }
@@ -1051,7 +1086,7 @@
   {
     "id": "MAR-RGPH2024-AGE-2411",
     "level": "admin2",
-    "name": "Préfecture d'Oujda-Angad عمالة وجدة - أنجاد",
+    "name": "Préfecture d'Oujda-Angad",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1082,6 +1117,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B53695376753874",
+    "aliases": [
+      "Préfecture d'Oujda-Angad عمالة وجدة - أنجاد"
+    ],
     "codes": {
       "hcp": "2411"
     }
@@ -1089,7 +1127,7 @@
   {
     "id": "MAR-RGPH2024-AGE-3061",
     "level": "admin2",
-    "name": "Prefecture de Meknès عمالة مكناس",
+    "name": "Prefecture de Meknès",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1130,6 +1168,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B60043813814440",
+    "aliases": [
+      "Prefecture de Meknès عمالة مكناس"
+    ],
     "codes": {
       "hcp": "3061"
     },
@@ -1138,7 +1179,7 @@
   {
     "id": "MAR-RGPH2024-AGE-3171",
     "level": "admin2",
-    "name": "Province d'El Hajeb إقليم الحاجب",
+    "name": "Province d'El Hajeb",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1179,6 +1220,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B90056368806308",
+    "aliases": [
+      "Province d'El Hajeb إقليم الحاجب"
+    ],
     "codes": {
       "hcp": "3171"
     },
@@ -1187,7 +1231,7 @@
   {
     "id": "MAR-RGPH2024-AGE-3271",
     "level": "admin2",
-    "name": "Province d'Ifrane ⵜⴰⵙⴳⴰ ⵏ ⵉⴼⵔⴰⵏ إقليم إفران",
+    "name": "Province d'Ifrane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1228,6 +1272,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B64717664824106",
+    "aliases": [
+      "Province d'Ifrane ⵜⴰⵙⴳⴰ ⵏ ⵉⴼⵔⴰⵏ إقليم إفران"
+    ],
     "codes": {
       "hcp": "3271"
     },
@@ -1236,7 +1283,7 @@
   {
     "id": "MAR-RGPH2024-AGE-3131",
     "level": "admin2",
-    "name": "Province de Boulemane إقليم بولمان",
+    "name": "Province de Boulemane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1277,6 +1324,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B81090244987905",
+    "aliases": [
+      "Province de Boulemane إقليم بولمان"
+    ],
     "codes": {
       "hcp": "3131"
     },
@@ -1285,7 +1335,7 @@
   {
     "id": "MAR-RGPH2024-AGE-3591",
     "level": "admin2",
-    "name": "Province de Moulay Yacoub إقليم مولاي يعقوب",
+    "name": "Province de Moulay Yacoub",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1326,6 +1376,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B42104761334354",
+    "aliases": [
+      "Province de Moulay Yacoub إقليم مولاي يعقوب"
+    ],
     "codes": {
       "hcp": "3591"
     },
@@ -1334,7 +1387,7 @@
   {
     "id": "MAR-RGPH2024-AGE-3451",
     "level": "admin2",
-    "name": "Province de Sefrou إقليم صفرو",
+    "name": "Province de Sefrou",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1375,6 +1428,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B1478822582790",
+    "aliases": [
+      "Province de Sefrou إقليم صفرو"
+    ],
     "codes": {
       "hcp": "3451"
     },
@@ -1383,7 +1439,7 @@
   {
     "id": "MAR-RGPH2024-AGE-3531",
     "level": "admin2",
-    "name": "Province de Taounate إقليم تاونات",
+    "name": "Province de Taounate",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1424,6 +1480,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B36967765471663",
+    "aliases": [
+      "Province de Taounate إقليم تاونات"
+    ],
     "codes": {
       "hcp": "3531"
     },
@@ -1432,7 +1491,7 @@
   {
     "id": "MAR-RGPH2024-AGE-3561",
     "level": "admin2",
-    "name": "Province de Taza اقليم تازة",
+    "name": "Province de Taza",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1473,6 +1532,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B85287588144355",
+    "aliases": [
+      "Province de Taza اقليم تازة"
+    ],
     "codes": {
       "hcp": "3561"
     },
@@ -1481,7 +1543,7 @@
   {
     "id": "MAR-RGPH2024-AGE-3231",
     "level": "admin2",
-    "name": "Préfecture de Fès عمالة فاس",
+    "name": "Préfecture de Fès",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1522,6 +1584,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B2759448404756",
+    "aliases": [
+      "Préfecture de Fès عمالة فاس"
+    ],
     "codes": {
       "hcp": "3231"
     },
@@ -1628,7 +1693,7 @@
   {
     "id": "MAR-RGPH2024-AGE-4281",
     "level": "admin2",
-    "name": "Province de Kenitra إقليم القنيطرة",
+    "name": "Province de Kenitra",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1669,6 +1734,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B12662883146655",
+    "aliases": [
+      "Province de Kenitra إقليم القنيطرة"
+    ],
     "codes": {
       "hcp": "4281"
     },
@@ -1677,7 +1745,7 @@
   {
     "id": "MAR-RGPH2024-AGE-4291",
     "level": "admin2",
-    "name": "Province de Khémisset إقليم الخميسات",
+    "name": "Province de Khémisset",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1718,6 +1786,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B24539393832458",
+    "aliases": [
+      "Province de Khémisset إقليم الخميسات"
+    ],
     "codes": {
       "hcp": "4291"
     },
@@ -1726,7 +1797,7 @@
   {
     "id": "MAR-RGPH2024-AGE-4481",
     "level": "admin2",
-    "name": "Province de Sidi Kacem إقليم سيدي قاسم",
+    "name": "Province de Sidi Kacem",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1767,6 +1838,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B9718685225615",
+    "aliases": [
+      "Province de Sidi Kacem إقليم سيدي قاسم"
+    ],
     "codes": {
       "hcp": "4481"
     },
@@ -1775,7 +1849,7 @@
   {
     "id": "MAR-RGPH2024-AGE-4491",
     "level": "admin2",
-    "name": "Province de Sidi Slimane إقليم سيدي سليمان",
+    "name": "Province de Sidi Slimane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1816,6 +1890,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B64432809888793",
+    "aliases": [
+      "Province de Sidi Slimane إقليم سيدي سليمان"
+    ],
     "codes": {
       "hcp": "4491"
     },
@@ -1824,7 +1901,7 @@
   {
     "id": "MAR-RGPH2024-AGE-4501",
     "level": "admin2",
-    "name": "Préfecture de Skhirate-Témara عمالة الصخيرات-تمارة",
+    "name": "Préfecture de Skhirate-Témara",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1865,6 +1942,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B91342156363380",
+    "aliases": [
+      "Préfecture de Skhirate-Témara عمالة الصخيرات-تمارة"
+    ],
     "codes": {
       "hcp": "4501"
     },
@@ -1873,7 +1953,7 @@
   {
     "id": "MAR-RGPH2024-AGE-5081",
     "level": "admin2",
-    "name": "Province d'Azilal إقليم أزيلال",
+    "name": "Province d'Azilal",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1904,6 +1984,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B10773066300421",
+    "aliases": [
+      "Province d'Azilal إقليم أزيلال"
+    ],
     "codes": {
       "hcp": "5081"
     }
@@ -1911,7 +1994,7 @@
   {
     "id": "MAR-RGPH2024-AGE-5091",
     "level": "admin2",
-    "name": "Province de Beni Mellal إقليم بني ملال",
+    "name": "Province de Beni Mellal",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1942,6 +2025,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B40957387644980",
+    "aliases": [
+      "Province de Beni Mellal إقليم بني ملال"
+    ],
     "codes": {
       "hcp": "5091"
     }
@@ -1949,7 +2035,7 @@
   {
     "id": "MAR-RGPH2024-AGE-5255",
     "level": "admin2",
-    "name": "Province de Fquih Ben Saleh إقليم الفقيه بن صالح",
+    "name": "Province de Fquih Ben Saleh",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1980,6 +2066,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B50122508033550",
+    "aliases": [
+      "Province de Fquih Ben Saleh إقليم الفقيه بن صالح"
+    ],
     "codes": {
       "hcp": "5255"
     }
@@ -1987,7 +2076,7 @@
   {
     "id": "MAR-RGPH2024-AGE-5311",
     "level": "admin2",
-    "name": "Province de Khouribga إقليم خريبكة",
+    "name": "Province de Khouribga",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2018,6 +2107,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B15248572972708",
+    "aliases": [
+      "Province de Khouribga إقليم خريبكة"
+    ],
     "codes": {
       "hcp": "5311"
     }
@@ -2025,7 +2117,7 @@
   {
     "id": "MAR-RGPH2024-AGE-5301",
     "level": "admin2",
-    "name": "Province de Khénifra إقليم خنيفرة",
+    "name": "Province de Khénifra",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2056,6 +2148,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B52871738396395",
+    "aliases": [
+      "Province de Khénifra إقليم خنيفرة"
+    ],
     "codes": {
       "hcp": "5301"
     }
@@ -2291,7 +2386,7 @@
   {
     "id": "MAR-RGPH2024-AGE-6111",
     "level": "admin2",
-    "name": "Province de Benslimane إقليم بن سليمان",
+    "name": "Province de Benslimane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2322,6 +2417,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B34372354169334",
+    "aliases": [
+      "Province de Benslimane إقليم بن سليمان"
+    ],
     "codes": {
       "hcp": "6111"
     }
@@ -2329,7 +2427,7 @@
   {
     "id": "MAR-RGPH2024-AGE-6467",
     "level": "admin2",
-    "name": "Province de Sidi Bennour إقليم سيدي بنور",
+    "name": "Province de Sidi Bennour",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2360,6 +2458,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B30309850889145",
+    "aliases": [
+      "Province de Sidi Bennour إقليم سيدي بنور"
+    ],
     "codes": {
       "hcp": "6467"
     }
@@ -2519,7 +2620,7 @@
   {
     "id": "MAR-RGPH2024-AGE-7191",
     "level": "admin2",
-    "name": "Province d'El Kelâat Es-Sraghna إقليم قلعة السراغنة",
+    "name": "Province d'El Kelâat Es-Sraghna",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2550,6 +2651,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B21870556317795",
+    "aliases": [
+      "Province d'El Kelâat Es-Sraghna إقليم قلعة السراغنة"
+    ],
     "codes": {
       "hcp": "7191"
     }
@@ -2557,7 +2661,7 @@
   {
     "id": "MAR-RGPH2024-AGE-7431",
     "level": "admin2",
-    "name": "Province de Safi إقليم أسفي",
+    "name": "Province de Safi",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2588,6 +2692,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B23117375948520",
+    "aliases": [
+      "Province de Safi إقليم أسفي"
+    ],
     "codes": {
       "hcp": "7431"
     }
@@ -2595,7 +2702,7 @@
   {
     "id": "MAR-RGPH2024-AGE-7585",
     "level": "admin2",
-    "name": "Province de Youssoufia إقليم اليوسفية",
+    "name": "Province de Youssoufia",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2626,6 +2733,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B54259280648674",
+    "aliases": [
+      "Province de Youssoufia إقليم اليوسفية"
+    ],
     "codes": {
       "hcp": "7585"
     }
@@ -2633,7 +2743,7 @@
   {
     "id": "MAR-RGPH2024-AGE-7351",
     "level": "admin2",
-    "name": "Préfecture de Marrakech عمالة مراكش",
+    "name": "Préfecture de Marrakech",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2664,6 +2774,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B80339347175881",
+    "aliases": [
+      "Préfecture de Marrakech عمالة مراكش"
+    ],
     "codes": {
       "hcp": "7351"
     }
@@ -2747,7 +2860,7 @@
   {
     "id": "MAR-RGPH2024-AGE-8201",
     "level": "admin2",
-    "name": "Province d'Errachidia إقليم الرشيدية",
+    "name": "Province d'Errachidia",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2778,6 +2891,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B35891480133263",
+    "aliases": [
+      "Province d'Errachidia إقليم الرشيدية"
+    ],
     "codes": {
       "hcp": "8201"
     }
@@ -2785,7 +2901,7 @@
   {
     "id": "MAR-RGPH2024-AGE-8363",
     "level": "admin2",
-    "name": "Province de Midelt إقليم ميدلت",
+    "name": "Province de Midelt",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2816,6 +2932,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B71822601453569",
+    "aliases": [
+      "Province de Midelt إقليم ميدلت"
+    ],
     "codes": {
       "hcp": "8363"
     }
@@ -2823,7 +2942,7 @@
   {
     "id": "MAR-RGPH2024-AGE-8577",
     "level": "admin2",
-    "name": "Province de Tinghir إقليم تنغير",
+    "name": "Province de Tinghir",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2854,6 +2973,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B39685617616684",
+    "aliases": [
+      "Province de Tinghir إقليم تنغير"
+    ],
     "codes": {
       "hcp": "8577"
     }
@@ -3269,7 +3391,7 @@
   {
     "id": "MAR-RGPH2024-AGE-10521",
     "level": "admin2",
-    "name": "Province de Tan-Tan إقليم طانطان",
+    "name": "Province de Tan-Tan",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -3300,6 +3422,9 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B8060198419886",
+    "aliases": [
+      "Province de Tan-Tan إقليم طانطان"
+    ],
     "codes": {
       "hcp": "10521"
     }
