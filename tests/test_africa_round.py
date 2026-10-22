@@ -154,7 +154,8 @@ class SeatFixes(unittest.TestCase):
 
     def test_the_wrong_seats_leave_their_rows(self):
         withdrawn = be.WITHDRAWN_FIELDS["wikidata_admin1.json"]
-        for row_id in ("LBY-WD-Q32845", "LBY-WD-Q26023", "DZA-WD-Q233645"):
+        for row_id in ("LBY-WD-Q32845", "LBY-WD-Q26023", "DZA-WD-Q233645", "ETH-WD-Q193494",
+                       "TZA-WD-Q498067", "RWA-WD-Q845807", "GAB-WD-Q281109", "AGO-WD-Q191299"):
             self.assertEqual(set(withdrawn[row_id]), {"capital"})
 
     def test_a_declared_seat_fills_a_bare_capital_and_nothing_else(self):
@@ -165,6 +166,17 @@ class SeatFixes(unittest.TestCase):
         self.assertEqual(bare["sources"][-1]["name"], "GeoNames")
         self.assertEqual(bare["sources"][-1]["field"], "capital")
         self.assertEqual(held["capital"], "Tanta City")
+
+    def test_a_declared_seat_stands_over_another_unit_s_seat_in_the_polygon(self):
+        # Ouham as drawn holds Batangafo, Ouham-Fafa's seat since 2020.
+        ouham = {"id": "63714938B89906779781300", "capital": {"status": "not_available"}}
+        be.fill_capitals_from_geonames({"CAF": [ouham]}, {})
+        self.assertEqual(ouham["capital"], "Bossangoa")
+
+    def test_a_seat_that_is_another_unit_s_is_not_worn(self):
+        rwampara = {"id": "47994165B31232091804297", "capital": {"status": "not_available"}}
+        be.fill_capitals_from_geonames({}, {"UGA": [rwampara]})
+        self.assertIn("Kibingo, is the seat of Sheema District", rwampara["capital"]["note"])
 
     def test_a_disambiguated_label_is_written_as_the_place_is_called(self):
         import json

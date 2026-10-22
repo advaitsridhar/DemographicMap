@@ -898,7 +898,9 @@ class WithdrawnFields(unittest.TestCase):
         # that row alone, and its citation, so GeoNames' Dapaong can stand.
         withdrawn = be.WITHDRAWN_FIELDS["wikidata_admin1.json"]
         self.assertEqual(set(withdrawn), {"TGO-WD-Q279945", "SEN-WD-Q738061", "BEN-WD-Q29147",
-                                          "LBY-WD-Q32845", "LBY-WD-Q26023", "DZA-WD-Q233645"})
+                                          "LBY-WD-Q32845", "LBY-WD-Q26023", "DZA-WD-Q233645",
+                                          "ETH-WD-Q193494", "TZA-WD-Q498067", "RWA-WD-Q845807",
+                                          "GAB-WD-Q281109", "AGO-WD-Q191299"})
         row = {"id": "TGO-WD-Q279945", "country": "TGO", "name": "Savanes Region",
                "capital": "Durum Town", "population": {"value": 1, "year": 2022},
                "sources": [{"field": "population/capital/coordinates", "name": "Wikidata"}]}

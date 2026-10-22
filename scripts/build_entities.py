@@ -3592,7 +3592,13 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
 #        Marj District an "encampment of Al Marj", where GeoNames' PPLA inside
 #        each polygon is Misratah and Al Marj; Algeria's Tizi Ouzou Province
 #        is given Kouba (in Arabic), a commune of Algiers, and its seat is
-#        Tizi Ouzou (DECLARED_SEATS).
+#        Tizi Ouzou (DECLARED_SEATS). The final sweep found five more:
+#        Ethiopia's Afar is given Asaita, its seat until 2007 (Semera since);
+#        Tanzania's South Pemba Mkoani, a district town (Chake Chake);
+#        Rwanda's Northern Province "Byumba hospital", the building Wikidata's
+#        capital points to (Byumba); Gabon's Estuaire Akanda, a commune beside
+#        Libreville (Libreville); Angola's Bengo Dande, its municipality
+#        (Caxito, the town).
 WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
     "afrobarometer_region.json": {
         "NER": {"language": "Round 9's language codes for Niger look misassigned",
@@ -3605,6 +3611,11 @@ WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
         "LBY-WD-Q32845": {"capital": "Misrata District's seat is Misrata, not Al Bayda"},
         "LBY-WD-Q26023": {"capital": "Marj District's seat is the town of Al Marj"},
         "DZA-WD-Q233645": {"capital": "Tizi Ouzou Province's seat is Tizi Ouzou, not Kouba"},
+        "ETH-WD-Q193494": {"capital": "Afar Region's seat has been Semera since 2007"},
+        "TZA-WD-Q498067": {"capital": "South Pemba Region's seat is Chake Chake, not Mkoani"},
+        "RWA-WD-Q845807": {"capital": "the Northern Province's seat is Byumba, not its hospital"},
+        "GAB-WD-Q281109": {"capital": "Estuaire Province's seat is Libreville, not Akanda"},
+        "AGO-WD-Q191299": {"capital": "Bengo Province's seat is Caxito; Dande is its municipality"},
     },
 }
 
@@ -9028,13 +9039,30 @@ def declared_seat(name: str, geonameid: str, code: str, lon: float, lat: float) 
 # the unit, its point checked to lie inside the polygon, for a unit that
 # showed no seat or a wrong one (WITHDRAWN_FIELDS). Keyed by shapeID, in
 # geonames_seats.json's form; Tripoli is not here, its point lying 2 km
-# outside the outline labelled Tajura' wa an Nawahi al Arba.
+# outside the outline labelled Tajura' wa an Nawahi al Arba. A declared seat
+# stands over the one GeoNames' own file puts in the polygon.
 DECLARED_SEATS: dict[str, dict[str, Any]] = {
     "46179711B78983565091897": declared_seat("Tanta", "347497", "PPLA", 31.00192, 30.78847),
     "46179711B33216026370082": declared_seat("Marsá Maţrūḩ", "352733", "PPLA", 27.23725, 31.3529),
     "43142294B44506325294932": declared_seat("Tipasa", "2476028", "PPLA", 2.44889, 36.58972),
     "43142294B98309179755088": declared_seat("Tizi Ouzou", "2475744", "PPLA", 4.04591, 36.71182),
     "48771326B10235544430886": declared_seat("Juba", "373303", "PPLC", 31.58247, 4.85165),
+    "75662566B25357223982520": declared_seat("Semera", "6913519", "PPLA", 41.00578, 11.79342),
+    "98808126B6174087794558": declared_seat("Libreville", "2399697", "PPLC", 9.45356, 0.39241),
+    "26408823B1629995979425": declared_seat("Caxito", "2242001", "PPLA", 13.66425, -8.57848),
+    # Ouham as drawn, before Ouham-Fafa was cut from it in 2020: GeoNames'
+    # seat inside it is Batangafo, Ouham-Fafa's; Ouham's is Bossangoa.
+    "63714938B89906779781300": declared_seat("Bossangoa", "2388036", "PPLA", 17.45518, 6.49263),
+}
+
+# GeoNames seats that stand inside a polygon and are another unit's: the
+# polygon says so rather than wear it. Uganda's Rwampara holds Kibingo, 1.2 km
+# inside its outline, which GeoNames files as the seat of Sheema District
+# (its second-order code H6) beside it.
+NOT_ITS_SEAT: dict[str, str] = {
+    "47994165B31232091804297": (
+        "No seat is shown: the one GeoNames places inside this outline, Kibingo, is "
+        "the seat of Sheema District beside it."),
 }
 
 
@@ -9070,6 +9098,9 @@ def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                 seat = seats.get(entity["id"])
                 held = entity.get("capital")
                 if not seat or entity.get("water"):
+                    continue
+                if entity["id"] in NOT_ITS_SEAT and (is_gap(held) or held == seat.get("name")):
+                    entity["capital"] = gap(NOT_AVAILABLE, NOT_ITS_SEAT[entity["id"]])
                     continue
                 if iso3 in NO_SEAT and (is_gap(held) or held == seat.get("name")):
                     entity["capital"] = gap(NOT_AVAILABLE, NO_SEAT[iso3])
