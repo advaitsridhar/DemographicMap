@@ -1,8 +1,6 @@
-== grep https://data.humdata.org/api/3/action/package_show?id=ghana-languages https://data.humdata.org/dataset/[^,]{10,200}admin[12][.]csv 6 0
-  HTTP 200 application/json;charset=utf-8 23,315 bytes
-  ~ https://data.humdata.org/dataset/d4d15ef4-216e-47a5-a30e-98f18c4015ce/resource/cc976d32-462d-4d2b-8ff4-74c0a26db007/download/clearglobal_language_use_gha_admin1.csv
-  ~ https://data.humdata.org/dataset/d4d15ef4-216e-47a5-a30e-98f18c4015ce/resource/e8a8ff99-9539-4989-ad66-0db40ec4baa5/download/clearglobal_language_use_gha_admin2.csv
-== grep https://data.humdata.org/api/3/action/package_show?id=benin-languages https://data.humdata.org/dataset/[^,]{10,200}admin[12][.]csv 6 0
-  HTTP 200 application/json;charset=utf-8 23,216 bytes
-  ~ https://data.humdata.org/dataset/98815a13-d214-4e54-897b-d9a6f330b977/resource/10ea8a9b-3615-4836-a3b4-57cf7be4fcb1/download/clearglobal_language_use_ben_admin1.csv
-  ~ https://data.humdata.org/dataset/98815a13-d214-4e54-897b-d9a6f330b977/resource/8d2712d2-fcdb-4ee4-901f-ecb4ab758853/download/clearglobal_language_use_ben_admin2.csv
+== grep https://data.humdata.org/dataset/d4d15ef4-216e-47a5-a30e-98f18c4015ce/resource/e8a8ff99-9539-4989-ad66-0db40ec4baa5/download/clearglobal_language_use_gha_admin2.csv Jirapa[^n]{0,40}Nyamal 3 260
+  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/e8a8ff99-9539-4989-ad66-0db40ec4baa5/clearglobal_language_use_gha_admin2.csv text/csv 93,006 bytes
+  (no match)
+== grep https://data.humdata.org/dataset/98815a13-d214-4e54-897b-d9a6f330b977/resource/8d2712d2-fcdb-4ee4-901f-ecb4ab758853/download/clearglobal_language_use_ben_admin2.csv Central.Malay 2 260
+  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/8d2712d2-fcdb-4ee4-901f-ecb4ab758853/clearglobal_language_use_ben_admin2.csv text/csv 561,155 bytes
+  ~ u,2,miyo1238,Miyobe,13,0.011707109408258833,0.77532,Benin Census 2013 (IPUMS extract),https://api.ipums.org/downloads/ipumsi/api/v1/extracts/2404371/ipumsi_00294.sav.gz,IPUMS International,12-31-2013,01-29-2025 11:49:05,very_high BJ0206,Natitingou,2,mala1479,Central Malay,12,0.01181353767560664,0.77532,Benin Census 2013 (IPUMS extract),https://api.ipums.org/downloads/ipumsi/api/v1/extracts/2404371/ipumsi_00294.sav.gz,IPUMS International,12-31-2013,01-29-2025 11:49:05,very_high BJ0206,Natitingou,2,stan1290,French,7,0.020327799
