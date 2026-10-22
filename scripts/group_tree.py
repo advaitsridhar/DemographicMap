@@ -2320,6 +2320,10 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Lephuthing", "Tsoeneng", "Thepu", "Nareng", "Kubung", "Mosiea",
         "Kwena", "Ngwato", "Ngwaketse", "Rolong", "Tswapong", "Kgalagadi",
         "Hurutshe", "Khurutshe", "Yeyi", "Mbukushu", "Birwa", "Mmirwa",
+        # Botswana's districts as Afrobarometer's Round 9 pools them: the
+        # Tlharo of Kgalagadi and the Tawana of Ngamiland, Tswana peoples,
+        # and the Ngologa, a Kgalagadi people.
+        "Tlharo", "Tawana", "Ngologa",
         # Namibia, Angola and Zimbabwe.
         "Subia", "Zezuru", "Kwanyama", "Humbi", "Fiote", "Luvale",
         "Lunda", "Ndau", "Nambya",
