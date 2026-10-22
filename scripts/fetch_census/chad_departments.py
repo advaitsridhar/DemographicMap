@@ -3,7 +3,8 @@
 
 * **Provinces.** OCHA's Common Operational Dataset for Chad (cod-ps-tcd) gives
   each of the 23 provinces' projected population for 2023 (tcd_admpop_adm1_2023,
-  the national statistics office's projection from the 2009 census). The
+  INSEED's projection from the 2009 census, RGPH2, as the dataset's metadata
+  sheet and quality note say; each province's note names both). The
   departments' figures are OCHA's for 2021, so without this the provinces
   show their departments' 2021 total, and N'Djamena, whose one department is
   drawn askew of the province (its polygon covers 284 of the province's 378
@@ -267,8 +268,9 @@ def build(adm1: list[dict[str, str]], seat_of: dict[str, str], admin1: list[dict
             f"TCD-CODPS2023-{poly['id']}", poly["name"], level="admin1", parent="TCD",
             country="TCD", match_by="shape_id", shape_id=poly["id"], sources=sources,
             population=measure(people, year=YEAR, source=OCHA),
-            population_note=(f"The projected population of {poly['name']} for 2023, from OCHA's "
-                             f"population statistics for Chad."), **fields))
+            population_note=(f"INSEED's projection of the population of {poly['name']} for "
+                             f"2023, from the 2009 census (RGPH2), as OCHA publishes it."),
+            **fields))
         report.append(f"  {poly['name']}: {people:,}"
                       + (f" ({', '.join(fields)} withdrawn)" if fields else ""))
     if len(records) != len(admin1) or total < NATIONAL_MIN:

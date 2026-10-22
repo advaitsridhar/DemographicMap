@@ -90,6 +90,12 @@ SOURCE = ("INE Angola, Recenseamento Geral da População e Habitação 2024, Re
 # One province's report, as a citation names it.
 SOURCE_ONE = "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos"
 LICENCE = "Official statistics publication of the Instituto Nacional de Estatística de Angola"
+# The census's national report (angola_province.json), which a note cites where
+# it sets a province's composition beside the provincial report's.
+NATIONAL_URL = "https://censo2024.ine.gov.ao/Relatorio_Geral_Angola_Censo2024.pdf"
+NATIONAL_SOURCE = ("INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório "
+                   "dos Resultados Definitivos")
+NATIONAL_QUADROS = {"ethnicity": "6.1", "language": "6.2", "religion": "7.1"}
 
 # Report file stem -> the map's province (the 2016 division) it lies in.
 REPORTS: dict[str, str] = {
@@ -1510,6 +1516,19 @@ def cite(reps: list[Report], given: list[str], noted: list[str], quadros: list[s
     return out
 
 
+def national_cite(compared: list[str]) -> list[dict[str, Any]]:
+    """The national report, for the notes that set a province's composition in the
+    provincial report beside the national report's (as "<field> note")."""
+    if not compared:
+        return []
+    fields = [f for f in FIELD_ORDER if f in compared]
+    numbers = [NATIONAL_QUADROS[f] for f in fields]
+    tables = f"Quadro {numbers[0]}" if len(numbers) == 1 else f"Quadros {listed(numbers)}"
+    return [{"field": "/".join(f"{f} note" for f in fields),
+             "name": f"{NATIONAL_SOURCE}: {tables}", "url": NATIONAL_URL, "year": YEAR,
+             "license": LICENCE}]
+
+
 def unmatched(name: str, residents: int, sets: list[tuple[list[str], int]]) -> str:
     """Why a municipality as it stood under Lei n.º 18/16 has no ethnic group,
     mother tongue or religion: the municipalities of 2024 do not make it in one
@@ -1871,11 +1890,14 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
         keys = [k for u in units for k in u["keys"]]
         rows = [r for u in units for r in u["rows"]]
         made = sum(u["made"] for u in units)
+        compared: list[str] = []
         if not all(u["resolved"] for u in units):
             open_unit = next(u for u in units if not u["resolved"])
             note = unmatched(open_unit["name"], open_unit["counts"][0],
                              rep.candidates.get(open_unit["key"], []))
             parts, keys, rows = [], [], []
+            # The note sets the municipalities of 2024 (Quadro 10) against this one.
+            quadros.append("new")
             for name in NOTES:
                 fields[name] = gap(NOT_AVAILABLE, note)
                 noted.append(name)
@@ -1907,6 +1929,11 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
                     fields[name] = gap(NOT_AVAILABLE, why_not(
                         rep, name, keys, labels, names, stood, drawn_in, refused, national))
                     noted.append(name)
+                    # The note speaks of the field's own table, and of the
+                    # national report where the two disagree.
+                    quadros.append(name)
+                    if (drawn_in, name) in refused:
+                        compared.append(name)
                     continue
                 total = sum(r[name]["TOTAL"] for r in rows)
                 counts: dict[str, int] = defaultdict(int)
@@ -1922,12 +1949,15 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
                                           + apart.get((drawn_in, name), ""))
                 given.append(name)
                 quadros.append(name)
+                if (drawn_in, name) in apart:
+                    compared.append(name)
             median_fields(rep, units, parts, keys, rows, names, stood, share, tail, usable,
                           labels, sizes, fields, given, quadros, log_lines, poly["name"],
                           noted)
         records.append(record(f"AGO-RGPH2024-{sid}", poly["name"], level="admin2", parent="AGO",
                               country="AGO", match_by="shape_id", shape_id=sid,
-                              sources=cite([rep], given, noted, quadros), **fields))
+                              sources=cite([rep], given, noted, quadros) + national_cite(compared),
+                              **fields))
         log_lines.append(f"  {poly['name']}: {t:,} ({' + '.join(names)}; from "
                          f"{', '.join(parts) or '-'}; {', '.join(sorted(usable)) or 'no tables'}"
                          f"; median {fields.get('median_age', {}).get('value', '-')}"

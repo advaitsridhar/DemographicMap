@@ -874,22 +874,25 @@ def build(prev: list[dict[str, Any]], c21: dict[str, Any], g03: list[tuple[str, 
             fields["sex_ratio"] = measure(round(1000 * entry["men"] / entry["women"]),
                                           unit="males_per_1000_females", year=AGE_YEAR,
                                           source=AGE_SOURCE)
-            fields["sex_ratio_note"] = ("Men per 1,000 women in the statistics office's "
-                                        "administrative population at 31 December 2016, an "
-                                        "estimate rather than a count.")
+            fields["sex_ratio_note"] = ("Men per 1,000 women in ICASEES's administrative "
+                                        "population at 31 December 2016 (Annuaire statistique "
+                                        "de la République Centrafricaine 2016), an estimate "
+                                        "rather than a count.")
             median = grouped_median([tuple(g) for g in entry["groups"]]) if key in own else None
             if median is not None:
                 fields["median_age"] = {"value": median, "unit": "years", "year": AGE_YEAR,
                                         "source": AGE_SOURCE}
                 fields["median_age_note"] = (
                     "Interpolated within the five-year age group that holds the middle person, "
-                    "from the statistics office's administrative population by age at 31 "
-                    "December 2016, an estimate rather than a count.")
+                    "from ICASEES's administrative population by age at 31 December 2016 "
+                    "(Annuaire statistique de la République Centrafricaine 2016), an estimate "
+                    "rather than a count.")
             else:
                 fields["median_age"] = gap(NOT_AVAILABLE, (
-                    "The statistics office's 2016 estimates give this prefecture the same age "
-                    "proportions as another prefecture or the country, so no median age of its "
-                    "own can be taken from them."))
+                    "ICASEES's 2016 estimates by age (Annuaire statistique de la République "
+                    "Centrafricaine 2016) give this prefecture the same age proportions as "
+                    "another prefecture or the country, so no median age of its own can be "
+                    "taken from them."))
             fields["sources"] += cite_age
         records.append(record(f"CAF-RGPH4-{poly['id']}", poly["name"], level="admin1",
                               parent="CAF", country="CAF", match_by="shape_id",

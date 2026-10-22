@@ -446,6 +446,11 @@ class National(unittest.TestCase):
         self.assertIsInstance(dande["religion"], list)
         self.assertIn("ethnicity note", dande["sources"][0]["field"])
         self.assertNotIn("/ethnicity/", dande["sources"][0]["field"] + "/")
+        # The note rests on the provincial table and on the national report: both cited.
+        self.assertIn(rep.quadros["ethnicity"], dande["sources"][0]["name"])
+        self.assertEqual(dande["sources"][1]["field"], "ethnicity note")
+        self.assertEqual(dande["sources"][1]["url"], am.NATIONAL_URL)
+        self.assertTrue(dande["sources"][1]["name"].endswith("Resultados Definitivos: Quadro 6.1"))
 
     def test_only_provinces_known_to_lack_the_2016_table_say_so(self):
         pages, texts = report_pages()
@@ -736,6 +741,8 @@ class Settling(unittest.TestCase):
         records, _ = am.build([rep], ADMIN1, ADMIN2, set(), apart)
         dande = next(r for r in records if r["name"] == "Dande")
         self.assertIn(f"{total['Bakongo'] * 2:,}", dande["ethnicity_note"])
+        # The figure the note quotes is the national report's, which it cites.
+        self.assertEqual([s["field"] for s in dande["sources"]][1:], ["ethnicity note"])
 
 
 class Resuming(unittest.TestCase):
@@ -1204,6 +1211,10 @@ class ReviewRound(unittest.TestCase):
                          "are not printed by municipality, so the religion figures for Dembos as "
                          "it stood under Lei n.º 18/16 are not shown.")
         self.assertIsInstance(dembos["ethnicity"], list)
+        # The note cites the table it speaks of.
+        (cited,) = dembos["sources"]
+        self.assertTrue(cited["field"].endswith("/religion note"))
+        self.assertIn("7.1", cited["name"])
 
     def test_province_total_printed_elsewhere(self):
         pages, texts = report_pages()

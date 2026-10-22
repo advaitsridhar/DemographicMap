@@ -141,6 +141,12 @@ class Projection(unittest.TestCase):
         wouri = by[("admin2", "Wouri")]
         self.assertEqual(wouri["population"]["value"], sum(city))
         self.assertIn("city of Douala", wouri["population_note"])
+        # Each projection names its maker and the census it starts from.
+        self.assertIn("BUCREP's projection", wouri["population_note"])
+        self.assertIn("from the 2005 census (3e RGPH)", wouri["population_note"])
+        self.assertIn("from the 2005 census", wouri["median_age_note"])
+        self.assertIn("from the 2005 census (3e RGPH)",
+                      by[("admin1", "Centre")]["population_note"])
         self.assertIn("value", wouri["median_age"])
         # The census's sex ratio stands: none is written from the projection.
         self.assertNotIn("value", wouri["sex_ratio"])

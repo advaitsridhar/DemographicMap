@@ -60,6 +60,9 @@ class Seats(unittest.TestCase):
         by = {(r["level"], r["name"]): r for r in records}
         self.assertEqual(by[("admin1", "Salamat")]["population"]["value"], 496_719)
         self.assertEqual(by[("admin1", "Salamat")]["population"]["year"], 2023)
+        self.assertEqual(by[("admin1", "Salamat")]["population_note"],
+                         "INSEED's projection of the population of Salamat for 2023, from the "
+                         "2009 census (RGPH2), as OCHA publishes it.")
         self.assertEqual(by[("admin2", "Bahr-Azoum")]["capital"], "Am Timan")
         self.assertEqual(by[("admin2", "N'Djaména")]["capital"], "N'Djamena")
         # A department the list leaves out, and one it names without a seat.

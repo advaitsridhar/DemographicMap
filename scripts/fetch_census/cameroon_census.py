@@ -26,7 +26,9 @@ department's seat (*préfecture*); it is read for the capital alone.
 The table gives no ages, so no department has a median age from it.
 
 **2025.** OCHA's Common Operational Dataset for Cameroon (cod-ps-cmr) gives
-the ten regions' projected population for 2025 (cmr_admpop_adm1_2025) and the
+the ten regions' projected population for 2025 (cmr_admpop_adm1_2025: BUCREP's
+projection from the 2005 census, as the dataset's explanatory note says, which
+each note names) and the
 two metropolises' (cmr_admpop_met_2025: the city of Douala, which is Wouri,
 and the city of Yaoundé, which is Mfoundi, bound by their P-codes CM005004
 and CM002007), with five-year age groups by sex. They are written to
@@ -407,8 +409,9 @@ def projection(adm1_rows: list[dict[str, str]], met_rows: list[dict[str, str]],
             f"CMR-CODPS{OCHA_YEAR}-{poly['id']}", poly["name"], level="admin1", parent="CMR",
             country="CMR", match_by="shape_id", shape_id=poly["id"], sources=cite,
             population=measure(people, year=OCHA_YEAR, source=OCHA),
-            population_note=(f"OCHA's projected population of the {name} region for "
-                             f"{OCHA_YEAR}.")))
+            population_note=(f"BUCREP's projection of the population of the {name} region "
+                             f"for {OCHA_YEAR}, from the 2005 census (3e RGPH), as OCHA "
+                             f"publishes it.")))
         report.append(f"  2025: {name}: {people:,}")
     if len(records) != 10 or not 20_000_000 < total < 45_000_000:
         raise SystemExit(f"cameroon_census: OCHA's 2025 table: {len(records)} regions, {total:,}")
@@ -428,8 +431,9 @@ def projection(adm1_rows: list[dict[str, str]], met_rows: list[dict[str, str]],
         people = int(float(row["T_TL"]))
         fields: dict[str, Any] = {
             "population": measure(people, year=OCHA_YEAR, source=OCHA),
-            "population_note": (f"OCHA's projected population of the city of {city} for "
-                                f"{OCHA_YEAR}; the city is the {dep} department.")}
+            "population_note": (f"BUCREP's projection of the population of the city of "
+                                f"{city} for {OCHA_YEAR}, from the 2005 census (3e RGPH), as "
+                                f"OCHA publishes it; the city is the {dep} department.")}
         found = unit_figures(row, cols2)[0] if cols2 else None
         region = regions.get(str(row.get("ADM1_PCODE") or "").strip())
         sources = list(cite)
@@ -438,8 +442,9 @@ def projection(adm1_rows: list[dict[str, str]], met_rows: list[dict[str, str]],
                                     "year": OCHA_YEAR, "source": OCHA}
             fields["median_age_note"] = (
                 f"Interpolated within the five-year age group that holds the middle person, "
-                f"from OCHA's projected population of the city of {city} by age for "
-                f"{OCHA_YEAR}: a projection, not a count.")
+                f"from BUCREP's projection of the population of the city of {city} by age "
+                f"for {OCHA_YEAR}, from the 2005 census, as OCHA publishes it: a projection, "
+                f"not a count.")
             sources = [{**cite[0], "field": "population/median_age"}]
             report.append(f"  2025: {dep} ({city}): {people:,}, median {found['median']}")
         else:
