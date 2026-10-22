@@ -1,36 +1,598 @@
-  district-autonome-abidjan-mono: recalled; its reading of 2026-10-18 kept: 6,321,017 (3,210,983 men), seat Abidjan, mean age 25, Ivorians None
-  district-autonome-yamoussoukro-mono: recalled; its reading of 2026-10-18 kept: 422,072 (217,176 men), seat Yamoussoukro, mean age 25, Ivorians (88.4, 11.6)
-  mono-region-gbokle: recalled; its reading of 2026-10-18 kept: 460,980 (250,395 men), seat Sassandra, mean age 22, Ivorians None
-  mono-region-nawa: recalled; its reading of 2026-10-18 kept: 1,165,472 (620,869 men), seat Soubre, mean age 21, Ivorians None
-  mono-region-de-san-pedro: recalled; its reading of 2026-10-18 kept: 1,060,724 (570,701 men), seat San-Pedro, mean age 22, Ivorians (59.9, 40.1)
-  region-indenie-djuablin-mono: recalled; its reading of 2026-10-18 kept: 716,443 (381,684 men), seat Abengourou, mean age 23, Ivorians None
-  region-sud-comoe-mono: recalled; its reading of 2026-10-18 kept: 784,893 (407,615 men), seat Aboisso, mean age 24, Ivorians None
-  region-folon-mono: recalled; its reading of 2026-10-18 kept: 146,209 (75,902 men), seat Minignan, mean age 20, Ivorians None
-  region-kabadougou-mono: recalled; its reading of 2026-10-18 kept: 289,806 (151,394 men), seat Odienne, mean age 21, Ivorians None
-  region-goh-mono: recalled; its reading of 2026-10-18 kept: 985,282 (515,602 men), seat Gagnoa, mean age 23, Ivorians None
-  region-loh-djiboua-mono: recalled; its reading of 2026-10-18 kept: 1,103,158 (577,653 men), seat Divo, mean age 23, Ivorians None
-  region-belier-mono: recalled; its reading of 2026-10-18 kept: 415,593 (213,448 men), seat Toumodi, mean age 25, Ivorians (92.1, 7.9)
-  region-iffou-mono: recalled; its reading of 2026-10-18 kept: 378,560 (196,717 men), seat Daoukro, mean age 24, Ivorians None
-  region-moronou-mono: recalled; its reading of 2026-10-18 kept: 439,755 (237,458 men), seat Bongouanou, mean age 26, Ivorians None
-  region-nzi-mono: recalled; its reading of 2026-10-18 kept: 254,623 (129,386 men), seat Dimbokro, mean age 25, Ivorians None
-  region-agneby-tiassa-mono: recalled; its reading of 2026-10-18 kept: 865,951 (458,756 men), seat Agboville, mean age 24, Ivorians (79.7, 20.3)
-  region-grands-ponts-mono: recalled; its reading of 2026-10-18 kept: 450,007 (235,759 men), seat Dabou, mean age 24, Ivorians None
-  region-la-me-mono: recalled; its reading of 2026-10-18 kept: 726,665 (382,827 men), seat Adzope, mean age 25, Ivorians None
-  region-cavally-mono: recalled; its reading of 2026-10-18 kept: 708,241 (394,576 men), seat Guiglo, mean age 22, Ivorians None
-  region-guemon-mono: recalled; its reading of 2026-10-18 kept: 930,873 (503,870 men), seat Duekoue, mean age 23, Ivorians None
-  region-tonkpi-mono: recalled; its reading of 2026-10-18 kept: 1,387,909 (740,936 men), seat Man, mean age 22, Ivorians (85.38, 14.62)
-  region-haut-sassandra-mono: recalled; its reading of 2026-10-18 kept: 1,739,697 (920,422 men), seat Daloa, mean age 22, Ivorians None
-  region-marahoue-mono: recalled; its reading of 2026-10-18 kept: 981,179 (521,475 men), seat Bouafle, mean age 23.2, Ivorians None
-  region-bagoue-mono: recalled; its reading of 2026-10-18 kept: 515,890 (265,229 men), seat Boundiali, mean age 21, Ivorians (88.1, 11.9)
-  region-poro-mono: recalled; its reading of 2026-10-18 kept: 1,040,461 (524,531 men), seat Korhogo, mean age 22, Ivorians (91.1, 8.9)
-  region-tchologo-mono: recalled; its reading of 2026-10-18 kept: 603,084 (309,037 men), seat Ferkessedougou, mean age 22.2, Ivorians None
-  region-gbeke-mono: recalled; its reading of 2026-10-18 kept: 1,352,900 (699,816 men), seat Bouaké, mean age 26, Ivorians (91.1, 8.9)
-  region-hambol-mono: recalled; its reading of 2026-10-18 kept: 612,029 (321,767 men), seat Katiola, mean age 23, Ivorians None
-  region-bafing-mono: recalled; its reading of 2026-10-18 kept: 262,850 (136,919 men), seat Touba, mean age 23, Ivorians (83.0, 17.0)
-  region-bere-mono: recalled; its reading of 2026-10-18 kept: 492,151 (256,585 men), seat Mankono, mean age 21, Ivorians None
-  region-du-worodougou-mono: recalled; its reading of 2026-10-18 kept: 429,812 (225,557 men), seat Seguela, mean age 21, Ivorians None
-  region-bounkani-mono: recalled; its reading of 2026-10-18 kept: 427,037 (216,310 men), seat Bouna, mean age 22, Ivorians None
-  region-gontougo-mono: recalled; its reading of 2026-10-18 kept: 917,828 (473,635 men), seat Bondoukou, mean age 24, Ivorians None
-  wrote data/processed/cote_divoire_census_pages.json (9 kB)
-  33 of 33 pages read; they make 29,389,151 against the country's 29,389,150
-  wrote data/processed/cote_divoire_census.json (95 kB)
+probe_page: https://web.archive.org/cdx/search/cdx?url=admin.ansade.mr/wp-content/*&fl=original,timestamp,mimetype,length&filter=mimetype:application/pdf&limit=3000
+  19 lines:
+        0  https://admin.ansade.mr/wp-content/uploads/2026/01/Atlas-Demographique-1.pdf 20260710081144 application/pdf 8016902
+        1  https://admin.ansade.mr/wp-content/uploads/2026/01/Theme-10-Caracteristiques-de-lhabitat.pdf 20260321185820 application/pdf 1348514
+        2  https://admin.ansade.mr/wp-content/uploads/2026/01/Theme-16-Population-etrangere-vivant-en-Mauritanie.pdf 20260906210644 application/pdf 826565
+        3  https://admin.ansade.mr/wp-content/uploads/2026/01/THeme-4-Natalite-et-Fecondite-Final-FR_10-09-2025.pdf 20260710081036 application/pdf 1291231
+        4  https://admin.ansade.mr/wp-content/uploads/2026/01/Theme-5-MORTALITE_version-finale-MMD.pdf 20260306223818 application/pdf 1089370
+        5  https://admin.ansade.mr/wp-content/uploads/2026/01/Theme-6-Alphabetisation-instruction-et-frequentation-scolaire.pdf 20260318093618 application/pdf 931251
+        6  https://admin.ansade.mr/wp-content/uploads/2026/01/Theme-7-Caracteristiques-socioeconomiques-DV.pdf 20260710081027 application/pdf 1153619
+        7  https://admin.ansade.mr/wp-content/uploads/2026/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%B8%D8%B1%D9%81-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A-%D8%A7%D9%84%D8%B1%D8%A8%D8%B9-4-2025.pdf 20260331020734 application/pdf 475843
+        8  https://admin.ansade.mr/wp-content/uploads/2026/03/Bulletin-de-conjoncture-No-82.pdf 20260330231815 application/pdf 1446271
+        9  https://admin.ansade.mr/wp-content/uploads/2026/03/Note_CNT_4t-2025-ar.pdf 20260331185042 application/pdf 749105
+       10  https://admin.ansade.mr/wp-content/uploads/2026/03/Note_CNT_4t-2025-ar.pdf?fbclid=IwY2xjawQ4qtdleHRuA2FlbQIxMQBzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEe0kG8q-QMwq-lTzScDRsPoZhNVqtMDd8HiSCjfw_k9safRVdrOyb-sjoyseQ_aem_w_UvlcrcKBXAZXkIUxsN0A 20260331165145 application/pdf 749241
+       11  https://admin.ansade.mr/wp-content/uploads/2026/03/Note_CNT_4t-2025-fr.pdf 20260331161347 application/pdf 684697
+       12  https://admin.ansade.mr/wp-content/uploads/2026/04/Annuaire-des-statistique-du-commerce-exterieur-2025-1.pdf 20260407215314 application/pdf 1858564
+       13  https://admin.ansade.mr/wp-content/uploads/2026/04/Annuaire-des-statistique-du-commerce-exterieur-2025.pdf 20260407212234 application/pdf 1858636
+       14  https://admin.ansade.mr/wp-content/uploads/2026/06/%D8%A7%D9%84%D9%86%D8%AA%D8%A7%D8%A6%D8%AC-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9-%D9%84%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%85%D9%86-%D8%B3%D9%86%D8%A9-2026-.pdf 20260828221147 application/pdf 686283
+       15  https://admin.ansade.mr/wp-content/uploads/2026/08/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-2026.pdf 20260828221146 application/pdf 4490100
+       16  https://admin.ansade.mr/wp-content/uploads/2026/08/%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D8%B4%D9%87%D8%B1%D9%8A%D8%A9-%D9%84%D9%84%D9%85%D8%A4%D8%B4%D8%B1-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A-%D9%84%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%87%D9%84%D8%A7%D9%83-%D9%8A%D9%88%D9%84%D9%8A%D9%88-2026.pdf 20260828221147 application/pdf 2471763
+       17  https://admin.ansade.mr/wp-content/uploads/2026/08/%D9%85%D8%B0%D9%83%D9%80%D9%80%D9%80%D9%80%D8%B1%D8%A9-%D8%AD%D9%88%D9%84-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A-%D9%84%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%85%D9%86-%D8%B3%D9%86%D8%A9-2026.pdf 20260828221147 application/pdf 833486
+       18  https://admin.ansade.mr/wp-content/uploads/2026/08/Annuaire-des-Statistiques-Economiques-2025.pdf 20260915062700 application/pdf 3211899
+probe_page: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2024/*&fl=original,timestamp,mimetype,length&limit=3000
+  507 lines:
+        0  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar-480x69.png 20240726081825 image/png 21677
+        1  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar-480x69.png 20250625023049 image/png 21699
+        2  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar-480x69.png 20250712122552 image/png 21699
+        3  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar-480x69.png 20250719010749 warc/revisit 728
+        4  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar-980x141.png 20240726081824 image/png 62402
+        5  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar-980x141.png 20250625023048 image/png 62421
+        6  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar-980x141.png 20250712122550 image/png 62423
+        7  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar-980x141.png 20250719010748 warc/revisit 729
+        8  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar.png 20240712141950 image/png 45460
+        9  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar.png 20240725092452 warc/revisit 648
+       10  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar.png 20250620033404 image/png 45469
+       11  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar.png 20250711170846 image/png 45471
+       12  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Ar.png 20250718042711 warc/revisit 720
+       13  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Fr-480x72.png 20240727054305 image/png 21480
+       14  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Fr-480x72.png 20250721152714 warc/revisit 729
+       15  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Fr-980x148.png 20240727054304 image/png 56766
+       16  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Fr-980x148.png 20250721152712 warc/revisit 727
+       17  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Fr.png 20240727054253 image/png 30978
+       18  https://ansade.mr/wp-content/uploads/2024/01/INPC-JANVIER-24-Fr.png 20250721152648 warc/revisit 717
+       19  https://ansade.mr/wp-content/uploads/2024/01/Note-INPC-Decembre-2023_AR_VF-1.pdf 20240727120040 application/pdf 2725147
+       20  https://ansade.mr/wp-content/uploads/2024/01/Note-INPC-Decembre-2023_AR_VF-1.pdf 20250627132048 application/pdf 2725168
+       21  https://ansade.mr/wp-content/uploads/2024/01/Note-INPC-Decembre-2023_AR_VF-1.pdf 20250713213022 application/pdf 2725155
+       22  https://ansade.mr/wp-content/uploads/2024/01/Note-INPC-Decembre-2023_AR_VF-1.pdf 20250720104206 warc/revisit 729
+       23  https://ansade.mr/wp-content/uploads/2024/01/Note-INPC-Decembre-2023_FR_VF.pdf 20240728171644 application/pdf 1706578
+       24  https://ansade.mr/wp-content/uploads/2024/01/Note-INPC-Decembre-2023_FR_VF.pdf 20250722170454 warc/revisit 727
+       25  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_AR_VF.pdf 20240712141140 application/pdf 1948938
+       26  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_AR_VF.pdf 20240725091114 warc/revisit 653
+       27  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_AR_VF.pdf 20250627131957 application/pdf 1948940
+       28  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_AR_VF.pdf 20250713213002 application/pdf 1948944
+       29  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_AR_VF.pdf 20250720104143 warc/revisit 726
+       30  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_FR_VF.pdf 20240728055304 application/pdf 1341550
+       31  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_FR_VF.pdf 20250714163325 application/pdf 1341553
+       32  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_FR_VF.pdf 20250721061040 warc/revisit 724
+       33  https://ansade.mr/wp-content/uploads/2024/02/Note-INPC-Janvier-2024_AR_VF-1.pdf 20240727115925 application/pdf 2776457
+       34  https://ansade.mr/wp-content/uploads/2024/02/Note-INPC-Janvier-2024_AR_VF-1.pdf 20250625022648 application/pdf 2776465
+       35  https://ansade.mr/wp-content/uploads/2024/02/Note-INPC-Janvier-2024_AR_VF-1.pdf 20250713212714 application/pdf 2776458
+       36  https://ansade.mr/wp-content/uploads/2024/02/Note-INPC-Janvier-2024_AR_VF-1.pdf 20250720103903 warc/revisit 731
+       37  https://ansade.mr/wp-content/uploads/2024/02/Note-INPC-Janvier-2024_FR_VF.pdf 20240728171623 application/pdf 1747299
+       38  https://ansade.mr/wp-content/uploads/2024/02/Note-INPC-Janvier-2024_FR_VF.pdf 20250722141158 warc/revisit 728
+       39  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-2023-AR.pdf 20240712141121 application/pdf 2111921
+       40  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-2023-AR.pdf 20240725091054 warc/revisit 650
+       41  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-2023-AR.pdf 20250620041803 application/pdf 2111932
+       42  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-2023-AR.pdf 20250712063045 application/pdf 2111936
+       43  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-2023-AR.pdf 20250718190706 warc/revisit 726
+       44  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-en-2023-FR.pdf 20240727054644 application/pdf 1720774
+       45  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-en-2023-FR.pdf 20250612140930 application/pdf 1720796
+       46  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-en-2023-FR.pdf 20250713161653 application/pdf 1720797
+       47  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-en-2023-FR.pdf 20250720052234 warc/revisit 721
+       48  https://ansade.mr/wp-content/uploads/2024/02/Note-trimestrielle-du-commerce-exterieur-N%C2%B063.pdf 20240728055806 application/pdf 4488073
+       49  https://ansade.mr/wp-content/uploads/2024/02/Note-trimestrielle-du-commerce-exterieur-N%C2%B063.pdf 20250722023747 warc/revisit 743
+       50  https://ansade.mr/wp-content/uploads/2024/02/PAA-du-1er-Fevrier-2024-1.pdf 20240712140944 application/pdf 1351432
+       51  https://ansade.mr/wp-content/uploads/2024/02/PAA-du-1er-Fevrier-2024-1.pdf 20240725090846 warc/revisit 649
+       52  https://ansade.mr/wp-content/uploads/2024/02/PAA-du-1er-Fevrier-2024-1.pdf 20250625023058 application/pdf 1351442
+       53  https://ansade.mr/wp-content/uploads/2024/02/PAA-du-1er-Fevrier-2024-1.pdf 20250713212919 application/pdf 1351445
+       54  https://ansade.mr/wp-content/uploads/2024/02/PAA-du-1er-Fevrier-2024-1.pdf 20250720104104 warc/revisit 723
+       55  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB-2023.pdf 20240727115945 application/pdf 2610427
+       56  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB-2023.pdf 20250625022902 application/pdf 2610429
+       57  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB-2023.pdf 20250713212815 application/pdf 2610427
+       58  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB-2023.pdf 20250720104001 warc/revisit 794
+       59  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-2023.pdf 20240712141104 application/pdf 3142938
+       60  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-2023.pdf 20240725091031 warc/revisit 726
+       61  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-2023.pdf 20250625022944 application/pdf 3142958
+       62  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-2023.pdf 20250713212839 application/pdf 3142953
+       63  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-2023.pdf 20250720104023 warc/revisit 801
+       64  https://ansade.mr/wp-content/uploads/2024/03/%D9%86%D8%B4%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-1.pdf 20240712141046 application/pdf 1569103
+       65  https://ansade.mr/wp-content/uploads/2024/03/%D9%86%D8%B4%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-1.pdf 20240725091011 warc/revisit 708
+       66  https://ansade.mr/wp-content/uploads/2024/03/%D9%86%D8%B4%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-1.pdf 20250625022528 application/pdf 1569122
+       67  https://ansade.mr/wp-content/uploads/2024/03/%D9%86%D8%B4%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-1.pdf 20250713212633 application/pdf 1569110
+       68  https://ansade.mr/wp-content/uploads/2024/03/%D9%86%D8%B4%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-1.pdf 20250720103824 warc/revisit 780
+       69  https://ansade.mr/wp-content/uploads/2024/03/ANNUAIRE-STATISTIQUES-2022-VF.pdf 20240728113106 application/pdf 3148846
+       70  https://ansade.mr/wp-content/uploads/2024/03/ANNUAIRE-STATISTIQUES-2022-VF.pdf 20250721110548 warc/revisit 728
+       71  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-1024x718.jpg 20240726081648 image/jpeg 86756
+       72  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-1024x718.jpg 20250625022250 image/jpeg 86777
+       73  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-1024x718.jpg 20250712122349 image/jpeg 86778
+       74  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-1024x718.jpg 20250719010505 warc/revisit 730
+       75  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-1280x898.jpg 20240726081707 image/jpeg 114724
+       76  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-1280x898.jpg 20250625022324 image/jpeg 114747
+       77  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-1280x898.jpg 20250712122401 image/jpeg 114746
+       78  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-1280x898.jpg 20250719010523 warc/revisit 731
+       79  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-480x337.jpg 20240726081711 image/jpeg 39603
+       80  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-480x337.jpg 20250625022328 image/jpeg 39625
+       81  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-480x337.jpg 20250712122404 image/jpeg 39626
+       82  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-480x337.jpg 20250719010530 warc/revisit 731
+       83  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-980x688.jpg 20240726081709 image/jpeg 82158
+       84  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-980x688.jpg 20250625022326 image/jpeg 82182
+       85  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-980x688.jpg 20250712122403 image/jpeg 82183
+       86  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-980x688.jpg 20250719010527 warc/revisit 728
+       87  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-scaled.jpg 20240712141930 image/jpeg 290316
+       88  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-scaled.jpg 20240725092421 warc/revisit 654
+       89  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-scaled.jpg 20250620033301 image/jpeg 290323
+       90  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-scaled.jpg 20250711170800 image/jpeg 290324
+       91  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-AR-scaled.jpg 20250718042625 warc/revisit 725
+       92  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-FR-1024x718.jpg 20240729134703 image/jpeg 93606
+       93  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-FR-1024x718.jpg 20250724034926 warc/revisit 727
+       94  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-FR-1280x898.jpg 20240729134722 image/jpeg 121747
+       95  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-FR-1280x898.jpg 20250724034954 warc/revisit 725
+       96  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-FR-480x337.jpg 20240729134726 image/jpeg 41278
+       97  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-FR-480x337.jpg 20250724034958 warc/revisit 726
+       98  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-FR-980x688.jpg 20240729134724 image/jpeg 87666
+       99  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-FR-980x688.jpg 20250724034956 warc/revisit 725
+      100  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-FR-scaled.jpg 20240729134705 image/jpeg 304939
+      101  https://ansade.mr/wp-content/uploads/2024/03/INPC-en-image-FR-scaled.jpg 20250724034927 warc/revisit 726
+      102  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4-2023.pdf 20240727054751 application/pdf 2674691
+      103  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4-2023.pdf 20250714162820 application/pdf 2674695
+      104  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4-2023.pdf 20250715123015 application/pdf 2674695
+      105  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4-2023.pdf 20250721060522 warc/revisit 711
+      106  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4_2023_Ar.pdf 20240712140813 application/pdf 2932370
+      107  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4_2023_Ar.pdf 20240725090713 warc/revisit 645
+      108  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4_2023_Ar.pdf 20250625022812 application/pdf 2932372
+      109  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4_2023_Ar.pdf 20250713212752 application/pdf 2932384
+      110  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4_2023_Ar.pdf 20250720103940 warc/revisit 719
+      111  https://ansade.mr/wp-content/uploads/2024/03/Note-de-conjoncture-No-74-1.pdf 20240728061516 application/pdf 2577472
+      112  https://ansade.mr/wp-content/uploads/2024/03/Note-de-conjoncture-No-74-1.pdf 20250721062303 warc/revisit 721
+      113  https://ansade.mr/wp-content/uploads/2024/03/Note-de-conjoncture-No-74.pdf 20240728001935 application/pdf 5306066
+      114  https://ansade.mr/wp-content/uploads/2024/03/Note-de-conjoncture-No-74.pdf 20250714162350 application/pdf 5306058
+      115  https://ansade.mr/wp-content/uploads/2024/03/Note-de-conjoncture-No-74.pdf 20250721015707 warc/revisit 719
+      116  https://ansade.mr/wp-content/uploads/2024/03/Note-INPC-fevr-2024_AR_VF.pdf 20240727115446 application/pdf 2415678
+      117  https://ansade.mr/wp-content/uploads/2024/03/Note-INPC-fevr-2024_AR_VF.pdf 20250625022340 application/pdf 2415696
+      118  https://ansade.mr/wp-content/uploads/2024/03/Note-INPC-fevr-2024_AR_VF.pdf 20250713212547 application/pdf 2415705
+      119  https://ansade.mr/wp-content/uploads/2024/03/Note-INPC-fevr-2024_AR_VF.pdf 20250720103739 warc/revisit 723
+      120  https://ansade.mr/wp-content/uploads/2024/03/Note-INPC-fevr-2024_FR_VF.pdf 20240728001306 application/pdf 1792820
+      121  https://ansade.mr/wp-content/uploads/2024/03/Note-INPC-fevr-2024_FR_VF.pdf 20250722170436 warc/revisit 729
+      122  https://ansade.mr/wp-content/uploads/2024/03/Note-sur-la-croissance-4T2023.pdf 20240726004955 application/pdf 758105
+      123  https://ansade.mr/wp-content/uploads/2024/03/Note-sur-la-croissance-4T2023.pdf 20250722052555 warc/revisit 723
+      124  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-1280x898.jpg 20240726081644 image/jpeg 80156
+      125  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-1280x898.jpg 20250625022247 image/jpeg 80171
+      126  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-1280x898.jpg 20250712122346 image/jpeg 80170
+      127  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-1280x898.jpg 20250719010502 warc/revisit 731
+      128  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-480x337.jpg 20240726081647 image/jpeg 21819
+      129  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-480x337.jpg 20250625022250 image/jpeg 21832
+      130  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-480x337.jpg 20250712122348 image/jpeg 21833
+      131  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-480x337.jpg 20250719010504 warc/revisit 727
+      132  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-980x687.jpg 20240726081646 image/jpeg 55765
+      133  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-980x687.jpg 20250625022249 image/jpeg 55780
+      134  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-980x687.jpg 20250712122347 image/jpeg 55782
+      135  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24-980x687.jpg 20250719010503 warc/revisit 727
+      136  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24.jpg 20240712141925 image/jpeg 170537
+      137  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24.jpg 20240725092417 warc/revisit 646
+      138  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24.jpg 20250620033249 image/jpeg 170550
+      139  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24.jpg 20250711170754 image/jpeg 170553
+      140  https://ansade.mr/wp-content/uploads/2024/04/INPC-Ar-mars-24.jpg 20250718042607 warc/revisit 722
+      141  https://ansade.mr/wp-content/uploads/2024/04/INPC-fr-mars-24-1280x898.jpg 20240727054246 image/jpeg 85726
+      142  https://ansade.mr/wp-content/uploads/2024/04/INPC-fr-mars-24-1280x898.jpg 20250721152639 warc/revisit 725
+      143  https://ansade.mr/wp-content/uploads/2024/04/INPC-fr-mars-24-480x337.jpg 20240727054248 image/jpeg 22740
+      144  https://ansade.mr/wp-content/uploads/2024/04/INPC-fr-mars-24-480x337.jpg 20250721152642 warc/revisit 724
+      145  https://ansade.mr/wp-content/uploads/2024/04/INPC-fr-mars-24-980x687.jpg 20240727054247 image/jpeg 59929
+      146  https://ansade.mr/wp-content/uploads/2024/04/INPC-fr-mars-24-980x687.jpg 20250721152640 warc/revisit 724
+      147  https://ansade.mr/wp-content/uploads/2024/04/INPC-fr-mars-24.jpg 20240727054235 image/jpeg 180000
+      148  https://ansade.mr/wp-content/uploads/2024/04/INPC-fr-mars-24.jpg 20250721152617 warc/revisit 719
+      149  https://ansade.mr/wp-content/uploads/2024/04/Mise-a-jour-des-indicateurs-de-politique-de-population-et-des-agendas-internationaux-ODD.pdf 20240726004933 application/pdf 2872082
+      150  https://ansade.mr/wp-content/uploads/2024/04/Mise-a-jour-des-indicateurs-de-politique-de-population-et-des-agendas-internationaux-ODD.pdf 20250722053852 warc/revisit 760
+      151  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_AR_VF.pdf 20240712140829 application/pdf 2297150
+      152  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_AR_VF.pdf 20240725090730 warc/revisit 650
+      153  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_AR_VF.pdf 20250625022138 application/pdf 2297157
+      154  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_AR_VF.pdf 20250713212446 application/pdf 2297161
+      155  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_AR_VF.pdf 20250720103640 warc/revisit 722
+      156  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_FR_VF.pdf 20240726004457 application/pdf 1434765
+      157  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_FR_VF.pdf 20250714163306 application/pdf 1434777
+      158  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_FR_VF.pdf 20250721061018 warc/revisit 722
+      159  https://ansade.mr/wp-content/uploads/2024/04/Note-INPC-mars-2024_AR_VF.pdf 20240727115636 application/pdf 2818256
+      160  https://ansade.mr/wp-content/uploads/2024/04/Note-INPC-mars-2024_AR_VF.pdf 20250625022435 application/pdf 2818265
+      161  https://ansade.mr/wp-content/uploads/2024/04/Note-INPC-mars-2024_AR_VF.pdf 20250713212610 application/pdf 2818261
+      162  https://ansade.mr/wp-content/uploads/2024/04/Note-INPC-mars-2024_AR_VF.pdf 20250720103801 warc/revisit 722
+      163  https://ansade.mr/wp-content/uploads/2024/04/Note-INPC-mars-2024_FR_VF.pdf 20240728001248 application/pdf 1768796
+      164  https://ansade.mr/wp-content/uploads/2024/04/Note-INPC-mars-2024_FR_VF.pdf 20250722141339 warc/revisit 725
+      165  https://ansade.mr/wp-content/uploads/2024/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2024T1.pdf 20240712141029 application/pdf 2987318
+      166  https://ansade.mr/wp-content/uploads/2024/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2024T1.pdf 20240725090951 warc/revisit 720
+      167  https://ansade.mr/wp-content/uploads/2024/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2024T1.pdf 20250625022053 application/pdf 2987343
+      168  https://ansade.mr/wp-content/uploads/2024/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2024T1.pdf 20250713212425 application/pdf 2987339
+      169  https://ansade.mr/wp-content/uploads/2024/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2024T1.pdf 20250720103619 warc/revisit 797
+      170  https://ansade.mr/wp-content/uploads/2024/05/Appel-a-candidature-RGE-Ar.pdf 20240712140928 application/pdf 402194
+      171  https://ansade.mr/wp-content/uploads/2024/05/Appel-a-candidature-RGE-Ar.pdf 20240725090829 warc/revisit 651
+      172  https://ansade.mr/wp-content/uploads/2024/05/Appel-a-candidature-RGE-Ar.pdf 20250714023606 application/pdf 402211
+      173  https://ansade.mr/wp-content/uploads/2024/05/Appel-a-candidature-RGE-Ar.pdf 20250720155008 warc/revisit 721
+      174  https://ansade.mr/wp-content/uploads/2024/05/Appel-a-candidature-RGE-Fr.pdf 20240726004616 application/pdf 433042
+      175  https://ansade.mr/wp-content/uploads/2024/05/Appel-a-candidature-RGE-Fr.pdf 20250723045132 warc/revisit 722
+      176  https://ansade.mr/wp-content/uploads/2024/05/Bulletin-de-conjoncture-No-75.pdf 20240726004840 application/pdf 4498813
+      177  https://ansade.mr/wp-content/uploads/2024/05/Bulletin-de-conjoncture-No-75.pdf 20250714162330 application/pdf 4498825
+      178  https://ansade.mr/wp-content/uploads/2024/05/Bulletin-de-conjoncture-No-75.pdf 20250721015648 warc/revisit 724
+      179  https://ansade.mr/wp-content/uploads/2024/05/IPI_T1-2024.pdf 20240726004436 application/pdf 1372508
+      180  https://ansade.mr/wp-content/uploads/2024/05/IPI_T1-2024.pdf 20250714162804 application/pdf 1372520
+      181  https://ansade.mr/wp-content/uploads/2024/05/IPI_T1-2024.pdf 20250715122937 application/pdf 1372520
+      182  https://ansade.mr/wp-content/uploads/2024/05/IPI_T1-2024.pdf 20250721060505 warc/revisit 716
+      183  https://ansade.mr/wp-content/uploads/2024/05/Note-de-conjoncture-No-75.pdf 20240726004821 application/pdf 2483660
+      184  https://ansade.mr/wp-content/uploads/2024/05/Note-de-conjoncture-No-75.pdf 20250721062244 warc/revisit 721
+      185  https://ansade.mr/wp-content/uploads/2024/05/Note-INPC-avril-2024_AR_VF.pdf 20240712140754 application/pdf 2694328
+      186  https://ansade.mr/wp-content/uploads/2024/05/Note-INPC-avril-2024_AR_VF.pdf 20240725090653 warc/revisit 659
+      187  https://ansade.mr/wp-content/uploads/2024/05/Note-INPC-avril-2024_AR_VF.pdf 20250721230335 warc/revisit 727
+      188  https://ansade.mr/wp-content/uploads/2024/05/Note-INPC-avril-2024_FR_VF.pdf 20240726004414 application/pdf 1718564
+      189  https://ansade.mr/wp-content/uploads/2024/05/Note-INPC-avril-2024_FR_VF.pdf 20250722084547 warc/revisit 729
+      190  https://ansade.mr/wp-content/uploads/2024/05/Note-trimestrielle-du-commerce-exterieur-N%C2%B064.pdf 20240726004907 application/pdf 2913579
+      191  https://ansade.mr/wp-content/uploads/2024/05/Note-trimestrielle-du-commerce-exterieur-N%C2%B064.pdf 20250714163853 application/pdf 2913574
+      192  https://ansade.mr/wp-content/uploads/2024/05/Note-trimestrielle-du-commerce-exterieur-N%C2%B064.pdf 20250721061706 warc/revisit 746
+      193  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE-480x147.png 20240605152702 image/png 8460
+      194  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE-480x147.png 20240710015042 image/png 8456
+      195  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE-480x147.png 20240723044330 warc/revisit 649
+      196  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE-480x147.png 20240923110921 warc/revisit 648
+      197  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE-480x147.png 20250712174128 image/png 8472
+      198  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE-480x147.png 20250719065217 warc/revisit 722
+      199  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE.png 20240605152701 image/png 8946
+      200  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE.png 20240710015033 image/png 8945
+      201  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE.png 20240723044321 warc/revisit 643
+      202  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE.png 20240923110919 warc/revisit 644
+      203  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE.png 20250711171428 image/png 8958
+      204  https://ansade.mr/wp-content/uploads/2024/05/Recrutement-RGE.png 20250718043328 warc/revisit 713
+      205  https://ansade.mr/wp-content/uploads/2024/06/Etude-sur-les-determinants-de-linflation_version_finale.pdf 20240726004800 application/pdf 2521845
+      206  https://ansade.mr/wp-content/uploads/2024/06/Etude-sur-les-determinants-de-linflation_version_finale.pdf 20250722084529 warc/revisit 740
+      207  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-1024x718.jpg 20240710015002 image/jpeg 87394
+      208  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-1024x718.jpg 20240724155547 warc/revisit 655
+      209  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-1024x718.jpg 20250721152111 warc/revisit 723
+      210  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-1280x898.jpg 20240710015013 image/jpeg 114345
+      211  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-1280x898.jpg 20240724155604 warc/revisit 656
+      212  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-1280x898.jpg 20250721152136 warc/revisit 726
+      213  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-480x337.jpg 20240710015015 image/jpeg 39740
+      214  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-480x337.jpg 20240724155608 warc/revisit 653
+      215  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-480x337.jpg 20250721152139 warc/revisit 724
+      216  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-980x688.jpg 20240710015014 image/jpeg 82348
+      217  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-980x688.jpg 20240724155606 warc/revisit 653
+      218  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-980x688.jpg 20250721152137 warc/revisit 723
+      219  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-scaled.jpg 20240710015003 image/jpeg 290128
+      220  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-scaled.jpg 20240724155549 warc/revisit 652
+      221  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-AR-scaled.jpg 20250721152112 warc/revisit 719
+      222  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-1024x718.jpg 20240711061452 image/jpeg 92986
+      223  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-1024x718.jpg 20240725011050 warc/revisit 654
+      224  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-1024x718.jpg 20250721152513 warc/revisit 725
+      225  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-1280x898.jpg 20240711061502 image/jpeg 120830
+      226  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-1280x898.jpg 20240725011107 warc/revisit 656
+      227  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-1280x898.jpg 20250721152539 warc/revisit 723
+      228  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-480x337.jpg 20240711061505 image/jpeg 40942
+      229  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-480x337.jpg 20240725011110 warc/revisit 654
+      230  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-480x337.jpg 20250721152543 warc/revisit 724
+      231  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-980x688.jpg 20240711061503 image/jpeg 87102
+      232  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-980x688.jpg 20240725011109 warc/revisit 655
+      233  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-980x688.jpg 20250721152541 warc/revisit 725
+      234  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-scaled.jpg 20240711061453 image/jpeg 302766
+      235  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-scaled.jpg 20240725011052 warc/revisit 656
+      236  https://ansade.mr/wp-content/uploads/2024/06/INPC-en-image-FR-scaled.jpg 20250721152515 warc/revisit 721
+      237  https://ansade.mr/wp-content/uploads/2024/06/Note-INPC-mai-2024_AR_VF.pdf 20240712140846 application/pdf 2565846
+      238  https://ansade.mr/wp-content/uploads/2024/06/Note-INPC-mai-2024_AR_VF.pdf 20240726005034 warc/revisit 656
+      239  https://ansade.mr/wp-content/uploads/2024/06/Note-INPC-mai-2024_AR_VF.pdf 20250721230309 warc/revisit 720
+      240  https://ansade.mr/wp-content/uploads/2024/06/Note-INPC-mai-2024_FR_VF.pdf 20240726080405 application/pdf 1756611
+      241  https://ansade.mr/wp-content/uploads/2024/06/Note-INPC-mai-2024_FR_VF.pdf 20250722141320 warc/revisit 724
+      242  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Ar-06-1024x718.jpg 20240723044242 image/jpeg 87799
+      243  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Ar-06-1024x718.jpg 20250721152035 warc/revisit 725
+      244  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Ar-06-1280x898.jpg 20240723044258 image/jpeg 114524
+      245  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Ar-06-1280x898.jpg 20250721152100 warc/revisit 731
+      246  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Ar-06-480x337.jpg 20240723044301 image/jpeg 39797
+      247  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Ar-06-480x337.jpg 20250721152102 warc/revisit 729
+      248  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Ar-06-980x688.jpg 20240723044259 image/jpeg 82542
+      249  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Ar-06-980x688.jpg 20250721152101 warc/revisit 729
+      250  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Ar-06-scaled.jpg 20240723044244 image/jpeg 291104
+      251  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Ar-06-scaled.jpg 20250721152037 warc/revisit 728
+      252  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Fr-06-1024x718.jpg 20240724063104 image/jpeg 92990
+      253  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Fr-06-1024x718.jpg 20250721152437 warc/revisit 725
+      254  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Fr-06-1280x898.jpg 20240724063118 image/jpeg 120664
+      255  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Fr-06-1280x898.jpg 20250721152503 warc/revisit 727
+      256  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Fr-06-480x337.jpg 20240724063122 image/jpeg 40943
+      257  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Fr-06-480x337.jpg 20250721152507 warc/revisit 726
+      258  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Fr-06-980x688.jpg 20240724063119 image/jpeg 87117
+      259  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Fr-06-980x688.jpg 20250721152504 warc/revisit 728
+      260  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Fr-06-scaled.jpg 20240724063106 image/jpeg 303651
+      261  https://ansade.mr/wp-content/uploads/2024/07/INPC-en-image-Fr-06-scaled.jpg 20250721152438 warc/revisit 723
+      262  https://ansade.mr/wp-content/uploads/2024/07/mission2-480x480.jpg 20250722225531 image/jpeg 30589
+      263  https://ansade.mr/wp-content/uploads/2024/07/mission2-980x980.jpg 20250722225530 image/jpeg 95284
+      264  https://ansade.mr/wp-content/uploads/2024/07/mission2.jpg 20250722225505 image/jpeg 71563
+      265  https://ansade.mr/wp-content/uploads/2024/07/mission3-480x480.jpg 20250722225534 image/jpeg 24347
+      266  https://ansade.mr/wp-content/uploads/2024/07/mission3-980x980.jpg 20250722225533 image/jpeg 66700
+      267  https://ansade.mr/wp-content/uploads/2024/07/mission3.jpg 20250722225507 image/jpeg 46817
+      268  https://ansade.mr/wp-content/uploads/2024/07/Note-1T2024_AR-1-1.pdf 20240725090935 application/pdf 1359389
+      269  https://ansade.mr/wp-content/uploads/2024/07/Note-1T2024_AR-1-1.pdf 20250721193355 warc/revisit 717
+      270  https://ansade.mr/wp-content/uploads/2024/07/Note-1T2024_FR-.pdf 20240726004740 application/pdf 555265
+      271  https://ansade.mr/wp-content/uploads/2024/07/Note-1T2024_FR-.pdf 20250721111027 warc/revisit 712
+      272  https://ansade.mr/wp-content/uploads/2024/07/Note-ICC-2T-2024_AR_VF.pdf 20250721153242 application/pdf 2538821
+      273  https://ansade.mr/wp-content/uploads/2024/07/Note-ICC-2T-2024_FR_VF.pdf 20250714163249 application/pdf 1432961
+      274  https://ansade.mr/wp-content/uploads/2024/07/Note-ICC-2T-2024_FR_VF.pdf 20250721061001 application/pdf 1433010
+      275  https://ansade.mr/wp-content/uploads/2024/07/Note-INPC-Juin-2024_AR_VF.pdf 20240725090745 application/pdf 2839029
+      276  https://ansade.mr/wp-content/uploads/2024/07/Note-INPC-Juin-2024_AR_VF.pdf 20250721230248 warc/revisit 723
+      277  https://ansade.mr/wp-content/uploads/2024/07/Note-INPC-Juin-2024_FR_VF.pdf 20240726004519 application/pdf 1775921
+      278  https://ansade.mr/wp-content/uploads/2024/07/Note-INPC-Juin-2024_FR_VF.pdf 20250722141300 warc/revisit 727
+      279  https://ansade.mr/wp-content/uploads/2024/08/%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D8%AC-%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A-%D8%A7%D9%84%D8%A5%D8%AC%D9%85%D8%A7%D9%84%D9%8A-%D8%A8%D8%A7%D9%84%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9.xlsx 20250721193327 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 19257
+      280  https://ansade.mr/wp-content/uploads/2024/08/%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D8%AC-%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A-%D8%A7%D9%84%D8%A5%D8%AC%D9%85%D8%A7%D9%84%D9%8A-%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D8%A8%D8%A7%D9%84%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9.xlsx 20250721193329 application/vnd.openxmlformats-officedocument.spreads
+      281  https://ansade.mr/wp-content/uploads/2024/08/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D8%B3%D9%86%D9%88%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-2023.pdf 20250721192614 application/pdf 3782018
+      282  https://ansade.mr/wp-content/uploads/2024/08/%D9%85%D8%B3%D8%A7%D9%87%D9%85%D8%A7%D8%AA-%D9%82%D8%B7%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7-%D9%81%D9%8A-%D9%86%D9%85%D9%88-%D8%A7%D9%84%D9%86%D8%A7%D8%AA%D8%AC-%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A.xlsx 20250721193330 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 19324
+      283  https://ansade.mr/wp-content/uploads/2024/08/%D9%85%D8%B9%D8%AF%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D9%84%D9%85%D8%AC%D8%A7%D9%85%D9%8A%D8%B9-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A8%D8%A7%D9%84%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D8%AB%D8%A7%D8%A8%D8%AA%D8%A9.xlsx 20250721193332 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 12894
+      284  https://ansade.mr/wp-content/uploads/2024/08/%D9%85%D8%B9%D8%AF%D9%84-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A-%D8%AD%D8%B3%D8%A8-%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9.xlsx 20250721193331 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 19332
+      285  https://ansade.mr/wp-content/uploads/2024/08/1.PIB-Courant-par-branche-dactivite-de-1998-a-2023.xlsx 20250721110108 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 20034
+      286  https://ansade.mr/wp-content/uploads/2024/08/2.Croissance-du-PIB-reel-par-branche-dactivite-de-1998-a-2023-1.xlsx 20250721110110 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 20748
+      287  https://ansade.mr/wp-content/uploads/2024/08/3.Contribution-a-la-croissance-du-PIB-reel-de-1998-a-2023.xlsx 20250721110112 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 19720
+      288  https://ansade.mr/wp-content/uploads/2024/08/4.Emplois-du-PIB-aux-prix-courants-en-millions-de-MRU-de-1998-a-2023.xlsx 20250721110113 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 13488
+      289  https://ansade.mr/wp-content/uploads/2024/08/5.Croissance-reelle-des-emplois-de-1998-a-2023.xlsx 20250721110115 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 13404
+      290  https://ansade.mr/wp-content/uploads/2024/08/Bulletin-de-conjoncture-No-76.pdf 20250714162306 application/pdf 3470390
+      291  https://ansade.mr/wp-content/uploads/2024/08/Bulletin-de-conjoncture-No-76.pdf 20250721015627 application/pdf 3470386
+      292  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-1280x898.jpg 20250721152026 image/jpeg 80743
+      293  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-480x337.jpg 20250721152030 image/jpeg 22083
+      294  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-980x687.jpg 20250721152028 image/jpeg 56373
+      295  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr-1280x898.jpg 20250712231543 image/jpeg 80784
+      296  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr-1280x898.jpg 20250713110156 image/jpeg 80787
+      297  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr-1280x898.jpg 20250719235740 image/jpeg 80865
+      298  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr-480x337.jpg 20250712231549 image/jpeg 21697
+      299  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr-480x337.jpg 20250713110200 image/jpeg 21700
+      300  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr-480x337.jpg 20250719235743 image/jpeg 21775
+      301  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr-980x687.jpg 20250712231545 image/jpeg 56497
+      302  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr-980x687.jpg 20250713110158 image/jpeg 56499
+      303  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr-980x687.jpg 20250719235741 image/jpeg 56569
+      304  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr.jpg 20250712231513 image/jpeg 171094
+      305  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr.jpg 20250713110132 image/jpeg 171096
+      306  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24-Fr.jpg 20250719235716 image/jpeg 171163
+      307  https://ansade.mr/wp-content/uploads/2024/08/INPC-Juillet-24.jpg 20250721152000 image/jpeg 173291
+      308  https://ansade.mr/wp-content/uploads/2024/08/IPI_T1_2024_AR-1.pdf 20250713162431 application/pdf 3534012
+      309  https://ansade.mr/wp-content/uploads/2024/08/IPI_T1_2024_AR-1.pdf 20250720053051 application/pdf 3534039
+      310  https://ansade.mr/wp-content/uploads/2024/08/Note-annuelle-du-commerce-exterieur.pdf 20250714163817 application/pdf 2232300
+      311  https://ansade.mr/wp-content/uploads/2024/08/Note-annuelle-du-commerce-exterieur.pdf 20250715125000 application/pdf 2232303
+      312  https://ansade.mr/wp-content/uploads/2024/08/Note-annuelle-du-commerce-exterieur.pdf 20250721061624 application/pdf 2232389
+      313  https://ansade.mr/wp-content/uploads/2024/08/Note-annuelle-du-commerce-exterieur.pdf 20251124221526 application/pdf 2227915
+      314  http://ansade.mr/wp-content/uploads/2024/08/Note-annuelle-du-commerce-exterieur.pdf 20251124222426 text/html 348
+      315  https://ansade.mr/wp-content/uploads/2024/08/Note-INPC-juillet-2024_AR_VF.pdf 20250713211538 application/pdf 3159441
+      316  https://ansade.mr/wp-content/uploads/2024/08/Note-INPC-juillet-2024_AR_VF.pdf 20250721230226 application/pdf 3159498
+      317  https://ansade.mr/wp-content/uploads/2024/08/Note-INPC-juillet-2024_FR_VF.pdf 20250722141239 application/pdf 1823434
+      318  https://ansade.mr/wp-content/uploads/2024/08/Note-sur-la-croissance-economique-2023-Ar.pdf 20250721193334 application/pdf 2877586
+      319  https://ansade.mr/wp-content/uploads/2024/08/Note-sur-la-croissance-economique-2023-Fr.pdf 20250721110116 application/pdf 866038
+      320  https://ansade.mr/wp-content/uploads/2024/08/Note-trimestrielle-du-commerce-exterieur-N%C2%B065.pdf 20250714163834 application/pdf 2976325
+      321  https://ansade.mr/wp-content/uploads/2024/08/Note-trimestrielle-du-commerce-exterieur-N%C2%B065.pdf 20250715125052 application/pdf 2976323
+      322  https://ansade.mr/wp-content/uploads/2024/08/Note-trimestrielle-du-commerce-exterieur-N%C2%B065.pdf 20250721061645 application/pdf 2976355
+      323  https://ansade.mr/wp-content/uploads/2024/08/Series-de-Donnees-de-la-Sante-par-Indicateur-1995-2024.pdf 20250721110507 application/pdf 1177326
+      324  https://ansade.mr/wp-content/uploads/2024/08/Series-de-Donners-dEducation-par-Indicateur-1995-2024.pdf 20250721110447 application/pdf 793349
+      325  https://ansade.mr/wp-content/uploads/2024/09/%D9%86%D8%B4%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A-%D9%84%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A_VF.pdf 20250721193307 application/pdf 4079929
+      326  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20241103213748 application/pdf 2701626
+      327  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20241122231755 application/pdf 2804384
+      328  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20241203215205 application/pdf 2804389
+      329  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250115181101 application/pdf 2804383
+      330  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250124205708 warc/revisit 646
+      331  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250206002149 application/pdf 2804385
+      332  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250318022428 application/pdf 2765818
+      333  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250407172059 warc/revisit 652
+      334  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250420091353 application/pdf 2806494
+      335  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250503033629 warc/revisit 774
+      336  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250510210447 application/pdf 2806497
+      337  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250610233038 warc/revisit 778
+      338  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250712125200 application/pdf 2806497
+      339  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250722083302 application/pdf 2765865
+      340  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250813154302 warc/revisit 844
+      341  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250925063203 application/pdf 2804524
+      342  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20260418041346 text/html 2573
+      343  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20260629083235 text/html 1606
+      344  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20260814173807 text/html 1608
+      345  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20261014144443 text/html 1609
+      346  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf"%7D 20260225115326 text/html 2536
+      347  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-1024x718.jpg 20250712231012 image/jpeg 88514
+      348  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-1024x718.jpg 20250713105759 image/jpeg 88520
+      349  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-1024x718.jpg 20250719235334 image/jpeg 88604
+      350  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-1280x898.jpg 20250712231028 image/jpeg 115863
+      351  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-1280x898.jpg 20250713105826 image/jpeg 115859
+      352  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-1280x898.jpg 20250719235357 image/jpeg 115950
+      353  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-480x337.jpg 20250712231034 image/jpeg 40304
+      354  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-480x337.jpg 20250713105829 image/jpeg 40303
+      355  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-480x337.jpg 20250719235400 image/jpeg 40386
+      356  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-980x688.jpg 20250713105827 image/jpeg 83280
+      357  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-980x688.jpg 20250719235359 image/jpeg 83357
+      358  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-scaled.jpg 20250713105801 image/jpeg 293757
+      359  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Ar-scaled.jpg 20250719235335 image/jpeg 293850
+      360  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-1024x718.jpg 20250712231430 image/jpeg 91521
+      361  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-1024x718.jpg 20250713110100 image/jpeg 91520
+      362  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-1024x718.jpg 20250719235641 image/jpeg 91606
+      363  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-1280x898.jpg 20250712231457 image/jpeg 118759
+      364  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-1280x898.jpg 20250713110123 image/jpeg 118761
+      365  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-1280x898.jpg 20250719235704 image/jpeg 118843
+      366  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-480x337.jpg 20250712231501 image/jpeg 40663
+      367  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-480x337.jpg 20250713110126 image/jpeg 40663
+      368  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-480x337.jpg 20250719235708 image/jpeg 40746
+      369  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-980x688.jpg 20250712231459 image/jpeg 85473
+      370  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-980x688.jpg 20250713110125 image/jpeg 85472
+      371  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-980x688.jpg 20250719235706 image/jpeg 85552
+      372  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-scaled.jpg 20250712231431 image/jpeg 297894
+      373  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-scaled.jpg 20250713110101 image/jpeg 297888
+      374  https://ansade.mr/wp-content/uploads/2024/09/INPC-en-image-Fr-scaled.jpg 20250719235643 image/jpeg 297976
+      375  https://ansade.mr/wp-content/uploads/2024/09/IPI_T2-2024.pdf 20250714162747 application/pdf 1601067
+      376  https://ansade.mr/wp-content/uploads/2024/09/IPI_T2-2024.pdf 20250715122910 application/pdf 1601065
+      377  https://ansade.mr/wp-content/uploads/2024/09/IPI_T2-2024.pdf 20250721060447 application/pdf 1601118
+      378  https://ansade.mr/wp-content/uploads/2024/09/Note-de-croissance-economique-2T2024-1.pdf 20250721110048 application/pdf 653120
+      379  https://ansade.mr/wp-content/uploads/2024/09/Note-INPC-aout-2024_AR_VF-1.pdf 20250713211452 application/pdf 2722427
+      380  https://ansade.mr/wp-content/uploads/2024/09/Note-INPC-aout-2024_AR_VF-1.pdf 20250720102404 application/pdf 2722488
+      381  https://ansade.mr/wp-content/uploads/2024/09/Note-INPC-aout-2024_FR_VF.pdf 20250722022234 application/pdf 1176796
+      382  https://ansade.mr/wp-content/uploads/2024/09/Note_de_conjoncture-76.pdf 20250721062225 application/pdf 2423319
+      383  https://ansade.mr/wp-content/uploads/2024/09/PGMO-DU-PROJET-PRCSM-VP.pdf 20250722225758 application/pdf 1386289
+      384  https://ansade.mr/wp-content/uploads/2024/09/PMPP-DU-PROJET-PRCSM-VP-JUIN-2023.pdf 20250723045010 application/pdf 1135020
+      385  https://ansade.mr/wp-content/uploads/2024/10/%D8%A7%D9%84%D9%85%D8%A4%D8%B4%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D9%8A%D9%85%D9%88%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A%D8%A9-%D8%AD%D8%B3%D8%A8-%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA.xlsx 20250926110651 application
+      386  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-1024x718.jpg 20250712230937 image/jpeg 96809
+      387  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-1024x718.jpg 20250713105725 image/jpeg 96810
+      388  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-1024x718.jpg 20250719235253 image/jpeg 96892
+      389  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-1280x898.jpg 20250712230955 image/jpeg 126028
+      390  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-1280x898.jpg 20250713105749 image/jpeg 126032
+      391  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-1280x898.jpg 20250719235324 image/jpeg 126113
+      392  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-480x337.jpg 20250712231000 image/jpeg 43432
+      393  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-480x337.jpg 20250713105753 image/jpeg 43430
+      394  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-480x337.jpg 20250719235327 image/jpeg 43520
+      395  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-980x688.jpg 20250712230958 image/jpeg 90445
+      396  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-980x688.jpg 20250713105751 image/jpeg 90446
+      397  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-980x688.jpg 20250719235325 image/jpeg 90531
+      398  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-scaled.jpg 20250712230939 image/jpeg 319846
+      399  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-scaled.jpg 20250713105727 image/jpeg 319846
+      400  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-AR-scaled.jpg 20250719235255 image/jpeg 319934
+      401  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-1024x718.jpg 20250712231400 image/jpeg 102739
+      402  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-1024x718.jpg 20250713110028 image/jpeg 102739
+      403  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-1024x718.jpg 20250719235606 image/jpeg 102831
+      404  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-1280x898.jpg 20250712231415 image/jpeg 134747
+      405  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-1280x898.jpg 20250713110052 image/jpeg 134742
+      406  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-1280x898.jpg 20250719235632 image/jpeg 134830
+      407  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-480x337.jpg 20250712231421 image/jpeg 45222
+      408  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-480x337.jpg 20250713110055 image/jpeg 45218
+      409  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-480x337.jpg 20250719235635 image/jpeg 45301
+      410  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-980x688.jpg 20250712231418 image/jpeg 97358
+      411  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-980x688.jpg 20250713110053 image/jpeg 97356
+      412  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-980x688.jpg 20250719235634 image/jpeg 97441
+      413  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-scaled.jpg 20250712231402 image/jpeg 336629
+      414  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-scaled.jpg 20250713110030 image/jpeg 336627
+      415  https://ansade.mr/wp-content/uploads/2024/10/INPC-en-image-FR-scaled.jpg 20250719235608 image/jpeg 336705
+      416  https://ansade.mr/wp-content/uploads/2024/10/IPI_T2_2024_AR.pdf 20250713162415 application/pdf 4232823
+      417  https://ansade.mr/wp-content/uploads/2024/10/IPI_T2_2024_AR.pdf 20250720053029 application/pdf 4232951
+      418  https://ansade.mr/wp-content/uploads/2024/10/Note-ICC-3T-2024_AR_VF.pdf 20250721153221 application/pdf 1732472
+      419  https://ansade.mr/wp-content/uploads/2024/10/Note-ICC-3T-2024_FR_VF.pdf 20250714163234 application/pdf 454575
+      420  https://ansade.mr/wp-content/uploads/2024/10/Note-ICC-3T-2024_FR_VF.pdf 20250721060945 application/pdf 454632
+      421  https://ansade.mr/wp-content/uploads/2024/10/Note-INPC-sept-2024_AR_VF.pdf 20250713211431 application/pdf 2884106
+      422  https://ansade.mr/wp-content/uploads/2024/10/Note-INPC-sept-2024_AR_VF.pdf 20250720102341 application/pdf 2884166
+      423  https://ansade.mr/wp-content/uploads/2024/10/Note-INPC-sept-2024_FR_VF.pdf 20250722022211 application/pdf 1257059
+      424  https://ansade.mr/wp-content/uploads/2024/10/Repertoire-des-localites-habitees-en-Mauritanie_RGPH-2023-compresse-1.pdf 20250714114716 application/pdf 4072456
+      425  https://ansade.mr/wp-content/uploads/2024/10/Repertoire-des-localites-habitees-en-Mauritanie_RGPH-2023-compresse-1.pdf 20250721013732 application/pdf 4072512
+      426  https://ansade.mr/wp-content/uploads/2024/11/%D8%A7%D9%84%D9%85%D8%B0%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%D8%A9-%D8%AD%D9%88%D9%84-%D8%A7%D9%84%D8%AD%D8%B3%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A%D8%A9-%D8%A7%D9%84%D8%AE%D8%AA%D8%A7%D9%85%D9%8A%D8%A9-2022.pdf 20250721193246 application/pdf 4505219
+      427  https://ansade.mr/wp-content/uploads/2024/11/Annuaire-Socio-demographique-Edition-2024-2.pdf 20250721110526 application/pdf 6966221
+      428  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-1024x718.jpg 20250712230914 image/jpeg 92621
+      429  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-1024x718.jpg 20250713105652 image/jpeg 92618
+      430  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-1024x718.jpg 20250719235211 image/jpeg 92705
+      431  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-1280x898.jpg 20250712230926 image/jpeg 121210
+      432  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-1280x898.jpg 20250713105718 image/jpeg 121209
+      433  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-1280x898.jpg 20250719235241 image/jpeg 121294
+      434  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-480x337.jpg 20250712230929 image/jpeg 41732
+      435  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-480x337.jpg 20250713105720 image/jpeg 41732
+      436  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-480x337.jpg 20250719235245 image/jpeg 41817
+      437  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-980x687.jpg 20250713105719 image/jpeg 87114
+      438  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-980x687.jpg 20250719235243 image/jpeg 87199
+      439  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-scaled.jpg 20250712230916 image/jpeg 305806
+      440  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-scaled.jpg 20250713105653 image/jpeg 305802
+      441  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Ar-scaled.jpg 20250719235212 image/jpeg 305895
+      442  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-1024x718.jpg 20250712231329 image/jpeg 102460
+      443  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-1024x718.jpg 20250713105950 image/jpeg 102457
+      444  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-1024x718.jpg 20250719235527 image/jpeg 102545
+      445  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-1280x898.jpg 20250712231348 image/jpeg 135056
+      446  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-1280x898.jpg 20250713110017 image/jpeg 135057
+      447  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-1280x898.jpg 20250719235553 image/jpeg 135147
+      448  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-480x337.jpg 20250712231353 image/jpeg 44680
+      449  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-480x337.jpg 20250713110021 image/jpeg 44679
+      450  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-480x337.jpg 20250719235557 image/jpeg 44762
+      451  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-980x687.jpg 20250712231351 image/jpeg 94937
+      452  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-980x687.jpg 20250713110019 image/jpeg 94934
+      453  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-980x687.jpg 20250719235555 image/jpeg 95017
+      454  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-scaled.jpg 20250712231334 image/jpeg 338168
+      455  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-scaled.jpg 20250713105951 image/jpeg 338165
+      456  https://ansade.mr/wp-content/uploads/2024/11/INPC-en-image-Fr-scaled.jpg 20250719235528 image/jpeg 338249
+      457  https://ansade.mr/wp-content/uploads/2024/11/IPI_T3-2024_FR.pdf 20250714162731 application/pdf 670034
+      458  https://ansade.mr/wp-content/uploads/2024/11/IPI_T3-2024_FR.pdf 20250715122836 application/pdf 670035
+      459  https://ansade.mr/wp-content/uploads/2024/11/IPI_T3-2024_FR.pdf 20250721060429 application/pdf 670103
+      460  https://ansade.mr/wp-content/uploads/2024/11/Note-finale-sur-les-comptes-nationaux-definitifs-2022.pdf 20250721110026 application/pdf 1617268
+      461  https://ansade.mr/wp-content/uploads/2024/11/Note-INPC-oct-2024_AR_VF.pdf 20250713211413 application/pdf 1125701
+      462  https://ansade.mr/wp-content/uploads/2024/11/Note-INPC-oct-2024_AR_VF.pdf 20250720054333 application/pdf 1125744
+      463  https://ansade.mr/wp-content/uploads/2024/11/Note-INPC-oct-2024_FR_VF.pdf 20250722022152 application/pdf 545883
+      464  https://ansade.mr/wp-content/uploads/2024/11/Note-trimestrielle-du-commerce-exterieur-N%C2%B066-1.pdf 20250714163801 application/pdf 2090123
+      465  https://ansade.mr/wp-content/uploads/2024/11/Note-trimestrielle-du-commerce-exterieur-N%C2%B066-1.pdf 20250715124906 application/pdf 2090128
+      466  https://ansade.mr/wp-content/uploads/2024/11/Note-trimestrielle-du-commerce-exterieur-N%C2%B066-1.pdf 20250721061604 application/pdf 2090180
+      467  https://ansade.mr/wp-content/uploads/2024/12/ANNUAIRE-DES-STATISTIQUES-ECONOMIQUES-2023-1.pdf 20250721110007 application/pdf 1831439
+      468  https://ansade.mr/wp-content/uploads/2024/12/Avis-Ar-1280x1657.jpg 20250721194744 image/jpeg 122788
+      469  https://ansade.mr/wp-content/uploads/2024/12/Avis-Ar-480x621.jpg 20250721225937 image/jpeg 28983
+      470  https://ansade.mr/wp-content/uploads/2024/12/Avis-Ar-791x1024.jpg 20250721194717 image/jpeg 59509
+      471  https://ansade.mr/wp-content/uploads/2024/12/Avis-Ar-980x1268.jpg 20250721225934 image/jpeg 81765
+      472  https://ansade.mr/wp-content/uploads/2024/12/Avis-Ar-scaled.jpg 20250721194718 image/jpeg 232799
+      473  https://ansade.mr/wp-content/uploads/2024/12/Avis-Fr-480x679.jpg 20250722141539 image/jpeg 36907
+      474  https://ansade.mr/wp-content/uploads/2024/12/Avis-Fr.jpg 20250722141514 image/jpeg 87692
+      475  https://ansade.mr/wp-content/uploads/2024/12/Bulletin-de-conjoncture-N%C2%B0-77.pdf 20250714162243 application/pdf 3756721
+      476  https://ansade.mr/wp-content/uploads/2024/12/Bulletin-de-conjoncture-N%C2%B0-77.pdf 20250721015608 application/pdf 3756781
+      477  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-1280x897.jpeg 20250712230900 image/jpeg 89558
+      478  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-1280x897.jpeg 20250713105641 image/jpeg 89560
+      479  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-1280x897.jpeg 20250719235159 image/jpeg 89633
+      480  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-480x336.jpeg 20250712230906 image/jpeg 24400
+      481  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-480x336.jpeg 20250713105644 image/jpeg 24400
+      482  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-480x336.jpeg 20250719235203 image/jpeg 24478
+      483  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-980x687.jpeg 20250712230903 image/jpeg 62879
+      484  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-980x687.jpeg 20250713105643 image/jpeg 62877
+      485  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-980x687.jpeg 20250719235201 image/jpeg 62956
+      486  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr-1280x897.jpeg 20250712231314 image/jpeg 96855
+      487  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr-1280x897.jpeg 20250713105940 image/jpeg 96859
+      488  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr-1280x897.jpeg 20250719235516 image/jpeg 96936
+      489  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr-480x336.jpeg 20250712231321 image/jpeg 23823
+      490  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr-480x336.jpeg 20250713105944 image/jpeg 23824
+      491  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr-480x336.jpeg 20250719235520 image/jpeg 23897
+      492  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr-980x687.jpeg 20250712231318 image/jpeg 70504
+      493  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr-980x687.jpeg 20250713105942 image/jpeg 70504
+      494  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr-980x687.jpeg 20250719235517 image/jpeg 70580
+      495  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr.jpeg 20250712231301 image/jpeg 203039
+      496  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr.jpeg 20250713105917 image/jpeg 203037
+      497  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24-Fr.jpeg 20250719235452 image/jpeg 203126
+      498  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24.jpeg 20250712230845 image/jpeg 186921
+      499  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24.jpeg 20250713105618 image/jpeg 186921
+      500  https://ansade.mr/wp-content/uploads/2024/12/INPC-Nov-24.jpeg 20250719235136 image/jpeg 186988
+      501  https://ansade.mr/wp-content/uploads/2024/12/Note-de-conjoncture-N%C2%B0-77.pdf 20250721062205 application/pdf 810910
+      502  https://ansade.mr/wp-content/uploads/2024/12/Note-INPC-nov-2024_AR_VF.pdf 20250713211354 application/pdf 711358
+      503  https://ansade.mr/wp-content/uploads/2024/12/Note-INPC-nov-2024_AR_VF.pdf 20250720054314 application/pdf 711388
+      504  https://ansade.mr/wp-content/uploads/2024/12/Note-INPC-nov-2024_FR_VF.pdf 20250722022135 application/pdf 548383
+      505  https://ansade.mr/wp-content/uploads/2024/12/Note_3T2024_Ar.pdf 20250721193226 application/pdf 2947338
+      506  https://ansade.mr/wp-content/uploads/2024/12/Note_3T2024_Fr.pdf 20250721105948 application/pdf 492419
+probe_page: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2025/*&fl=original,timestamp,mimetype,length&limit=3000
+  retry 1/4 after 2s :: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2025/*&fl=original,timestamp,mimetype,length&limit=3000 :: HTTP Error 503: Service Unavailable
+  retry 2/4 after 4s :: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2025/*&fl=original,timestamp,mimetype,length&limit=3000 :: <urlopen error [Errno 111] Connection refused>
+  retry 3/4 after 8s :: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2025/*&fl=original,timestamp,mimetype,length&limit=3000 :: <urlopen error [Errno 111] Connection refused>
+  retry 4/4 after 16s :: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2025/*&fl=original,timestamp,mimetype,length&limit=3000 :: <urlopen error [Errno 111] Connection refused>
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1361, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1351, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1397, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1346, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1106, in _send_output
+    self.send(msg)
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1044, in send
+    self.connect()
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1516, in connect
+    super().connect()
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/http/client.py", line 1010, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/socket.py", line 863, in create_connection
+    raise exceptions[0]
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/socket.py", line 848, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1052, in http_get
+    with opener(req, timeout=timeout) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1404, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/urllib/request.py", line 1364, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 191, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 179, in main
+    body = http_get(url)
+           ^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 1073, in http_get
+    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
+RuntimeError: GET failed after 4 retries: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2025/*&fl=original,timestamp,mimetype,length&limit=3000
