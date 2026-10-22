@@ -7719,7 +7719,7 @@ class ASurveyIsNotACount(unittest.TestCase):
     def test_the_rounds_run_oldest_first(self):
         """Each round fills what the newer ones are short of, never the reverse.
 
-        Round 9 is the newest and reaches 442 regions in 39 countries against
+        Round 9 is the newest and reaches 435 regions in 39 countries against
         Round 8's 356 in 34; Rounds 5 and 6 are older still and are read only
         for the two countries Round 9 does not survey. A later file wins, so
         the oldest goes first.

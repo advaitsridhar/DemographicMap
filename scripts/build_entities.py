@@ -79,7 +79,7 @@ ADAPTER_FILES = [
     # a survey ranks below a count whatever happens to be present.
     "afrobarometer_r56.json",
     # Then Round 8, for language alone. Round 9 is two years newer and
-    # reaches 442 regions in 39 countries against Round 8's 356 in 34, so
+    # reaches 435 regions in 39 countries against Round 8's 356 in 34, so
     # Round 8 fills a region Round 9 is short of and overwrites none.
     "afrobarometer_r8_language.json",
     "afrobarometer_region.json",
