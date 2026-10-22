@@ -6641,7 +6641,10 @@ name each says which it is (20 pairs, as "Aswān (kism)" and "Aswān
 BAYLA") and are written as a sentence would write them; Gabon's departments
 take the census's Tableau 6 spelling (Lopé, Komo-Océan, Lekoko, and Mulundu
 where the outline is labelled Mouloundou). Every earlier label stays a second
-name, so no row stops reaching its outline.
+name, so no row stops reaching its outline. Ten Tunisian delegations then bore
+the names of the towns in them, and the towns' Wikidata items (Bembla,
+Monastir, Nabeul, Sahline and the rest) took the polygons from the
+delegations' items; the towns' items leave the delegations (`DROPPED_ROWS`).
 
 **Notes that cite what they quote.** Where a note quotes a figure, the unit now
 cites the publication it comes from: Egypt's 2017 count beside a 2023
