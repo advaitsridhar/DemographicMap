@@ -3699,8 +3699,13 @@ ROW_NOTE_SOURCES: dict[str, dict[str, list[dict[str, Any]]]] = {
             for field in ("population", "median_age", "sex_ratio", "ethnicity")],
     },
     "wikidata_admin2.json": {
-        row: [{"field": "population note", **OCHA_COD_2020}]
-        for row in ("COD-WD-Q271404", "COD-WD-Q648298", "COD-WD-Q277966")},
+        **{row: [{"field": "population note", **OCHA_COD_2020}]
+           for row in ("COD-WD-Q271404", "COD-WD-Q648298", "COD-WD-Q277966")},
+        # Hala'ib's three notes quote OCHA's 2025 projection for the locality
+        # (NOT_THIS_GROUND); its Wikidata item is the row that reaches it.
+        "SDN-WD-Q796684": [{"field": "population note/median_age note/sex_ratio note",
+                            **OCHA_SDN_2025}],
+    },
     "wikidata_admin1.json": {
         "SDN-WD-Q310120": [{"field": "population note", **OCHA_SDN_2025}]},
     "malawi_census.json": {
