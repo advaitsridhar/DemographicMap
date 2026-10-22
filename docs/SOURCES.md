@@ -6501,25 +6501,28 @@ The build already gave every bare religion, language and ethnicity the reason
 the sources used allow (`say_why_empty`). A bare population, median age or sex
 ratio went out with a status and nothing else: 5,700 median ages, 5,300 sex
 ratios and 850 populations before this round, nearly all of them in Africa.
-`say_why_scalar_empty` now gives each one of three sentences, chosen by what the
-sources used for the unit's country give at its level:
+The regions' readers now give most of these a reason of their own -- what the
+census tabulates and at which level, or why its figure is not this unit's.
+`say_why_scalar_empty` gives every one still bare, last of all, one of three
+sentences, chosen by what the sources used for the unit's country give at its
+level:
 
 * where other units of that country and level carry the figure -- "No median
-  age figure has been found for this unit. OCHA, Common Operational Dataset --
-  population statistics (cod-ps-ken), reference year 2019 gives it for 2 of the
-  3 units of Kenya at this level, not for this one.";
-* where none of them does -- "None of the sources used for the units of Kenya
-  at this level (…) gives a sex ratio for them, and no figure has been found
-  for this unit.";
+  age figure has been found for this unit. OCHA's common operational dataset
+  gives it for 4 of the 25 units of Botswana at this level, not for this
+  one.";
+* where none of them does -- "None of the sources used for the units of
+  Andorra at this level (GeoNames, Govern d'Andorra and Wikidata) gives a
+  median age for them, and no figure has been found for this unit.";
 * where no source reaches the level at all, the sentence the compositions
   already use, and on disputed ground the disputed sentence.
 
 None of them claims that a census did not count ages or sexes -- every census
-does -- only where the figures shown come from and how far they reach. It runs
-last, after every adapter and every derived value, and never touches a figure,
-a status or a note something earlier wrote. The same pass reaches the few bare
-cells outside Africa (Andorra, Greenland, Monaco, the Bahamas, the Vatican,
-some of Mexico's and Ecuador's units).
+does -- only where the figures shown come from and how far they reach. It never
+touches a figure, a status or a note something earlier wrote. In Africa it
+speaks for Eswatini's tinkhundla, 21 of Botswana's districts and one Comorian
+unit; elsewhere for the few bare cells of Andorra, Greenland, Monaco, the
+Bahamas, the Vatican and some of Mexico's and Ecuador's units.
 
 **Seats.** In Africa's 54 countries the seats were looked for unit by unit --
 the census reports, OCHA's boundary sets, Wikidata and GeoNames, and the lists
