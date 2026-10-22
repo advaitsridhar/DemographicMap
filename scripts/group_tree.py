@@ -406,6 +406,8 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Ganda", "Gikuyu", "Luba-Kasai", "Mwani", "Rundi (Kirundi)",
         "Kinyarwanda (Rwanda)", "Bobangi", "Babango", "Mpiemo",
         "Nyankole", "Soga", "Fipa", "Kota", "Ciyao", "Mijikenda", "Jaruo",
+        # The Comoros' own language (Shikomori), Sabaki Bantu like Swahili.
+        "Comorian",
     ),
     # Tiv and Berom are Benue-Congo rather than Volta-Niger proper; this tree
     # does not separate the two at branch level and Bantu already occupies the

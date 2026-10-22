@@ -826,6 +826,30 @@ ADAPTER_FILES = [
     # Likewise: Zimbabwe's provinces and Burkina Faso's regions carried the
     # survey and now carry their census for the fields it publishes by region.
     "zimbabwe_province.json", "burkina_region.json",
+    # Southern Africa and the Indian Ocean, each office's own count after
+    # cod_ps_admin2.json and cod_ps_age.json, so it stands in front of a
+    # projection for the same unit and year (one from an older census is
+    # dropped outright: SUPERSEDED_ROWS): Zimbabwe's 2022 census by district
+    # and province (ZIMSTAT's ward tables; Harare Rural is the ward the
+    # preliminary report names so), Malawi's 2018 census by district and
+    # region (sex ratio, median age, religion, tribe), Mozambique's 2017 census
+    # by district and province (INE's archived quadros; religion and mother
+    # tongue by province), Lesotho's 2016 village list by council, Madagascar's
+    # 2018 census by district and region (Tome 2: Tableau 8's sexes, the
+    # health age bands' medians by region), the Comoros' 2017 census by island
+    # and prefecture (the islands' nationality and languages spoken too),
+    # Namibia's 2023 census by region (count, sex ratio, median age) and by
+    # constituency where a polygon is the census's ground (the census site's
+    # region pages; OCHA's projections, of the 2003-2013 constituencies the
+    # polygons follow, stay elsewhere), Mauritius' 2022 census by district and
+    # island (Rodrigues' nationality too), Seychelles' 2022 census by district
+    # and by the larger polygons of its second level (whole districts, La Digue
+    # island, the other islands; nationality where a polygon is a census
+    # region), and Botswana's 2022 census by district.
+    "zimbabwe_districts.json", "malawi_census.json", "mozambique_census.json",
+    "lesotho_census.json", "madagascar_census.json", "comoros_census.json",
+    "namibia_census.json", "namibia_constituencies.json", "mauritius_census.json",
+    "seychelles_census.json", "botswana_census.json",
     "thailand_province.json",
     # Papua New Guinea's own office, two of its publications: the 2024 census's
     # head count and sex ratio for the 22 provinces and all 87 district shapes, and
@@ -2923,6 +2947,16 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 #   RWA  rwanda_census.json, the 2022 census's count of the 30 districts.
 #        OCHA's table is for 2023, projected from the 2012 census, and puts
 #        Nyagatare at 917,054 where the census counted 653,861.
+#   ZWE  zimbabwe_districts.json, the 2022 census's count of all 91 districts
+#        (ZIMSTAT's ward tables); OCHA's 2023 figures are a projection from the
+#        2012 census and make 17,408,564 against the count's 15,178,957.
+#   MDG  madagascar_census.json, the 2018 census's count of the districts
+#        (RGPH-3 Tome 2, Tableau 8); OCHA's figures for the same year are a
+#        projection made before that count, 10.8% above it in Ambatondrazaka
+#        and 17.3% below it in Andilamena, and put Antananarivo's six
+#        arrondissements at 1,587,779 where the census counts the district they
+#        make, Antananarivo Renivohitra, at 1,274,225 (the arrondissements say
+#        so instead of carrying a figure).
 #   CRI  costa_rica_census.json, the 2011 census of the 83 cantons as drawn.
 #        OCHA's 2021 figures are INEC's projection from that census, and the
 #        2022 census, which the provinces show, counted fewer: Heredia's
@@ -2966,11 +3000,13 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
                            "ETH": "ethiopia_projection.json",
                            "GEO": "georgia.json",
                            "GTM": "guatemala_census.json",
+                           "MDG": "madagascar_census.json",
                            "PRY": "paraguay_census.json",
                            "RWA": "rwanda_census.json",
                            "SLB": "solomon_census.json",
                            "THA": "wikidata_admin2.json",
-                           "UGA": "uganda_census.json"},
+                           "UGA": "uganda_census.json",
+                           "ZWE": "zimbabwe_districts.json"},
     # Uganda's: OCHA's district medians and sex ratios stood on the county
     # polygons of the same names, as its head counts did.
     "cod_ps_age.json": {"UGA": "uganda_census.json"},
@@ -6567,6 +6603,17 @@ def twin_population(first: dict[str, Any], second: dict[str, Any]
 # Country fields whose first-level divisions carry figures a sum cannot be
 # taken across, declared with the reason; the country keeps its own figure.
 COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
+    # Botswana's ten districts carry no census language: nine carry
+    # Afrobarometer's Round 8 or Round 9 shares and Chobe CLEAR Global's
+    # tabulation of Round 6 (2015), samples of a few dozen to a few hundred
+    # citizens each, which do not name the languages alike (Setswana beside
+    # Tswana). The 2022 census's district counts (botswana_census) brought the
+    # sum within the population gate, which is why this has to be said rather
+    # than left to the gate: a sum of surveys would replace the country's
+    # census-based figure (2011).
+    ("BWA", "language"): "its districts' language is survey estimates from three "
+                         "Afrobarometer rounds, which do not name the languages alike, "
+                         "and the country's figure is of 2011",
     # suriname_census gives seven districts the 2004 census's religion and the
     # three interior districts the 2012 census's denominations (the ABS's
     # District Results Volume III), each the newest their district has. Summed,
@@ -9756,6 +9803,13 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
         "level": parts[0].get("level") or "admin1", "name": name,
         "parent": parts[0].get("parent") or iso3, "country": iso3,
         "_source": filename, "sources": []}
+    # Rows held behind an office's count (HELD_ROWS) are offers, and so is
+    # their sum: it waits for prefer_newer_figures like each of its parts,
+    # wherever it stands among the country's rows. OCHA's 2024 figures for
+    # Mexico's municipios drawn with those made out of them are weighed so
+    # against the 2020 census's sums for the same polygons.
+    if all(part.get("_offer") for part in parts):
+        pooled["_offer"] = True
     seen: set[tuple[Any, ...]] = set()
     for part in parts:
         for src in part.get("sources", []) or []:
@@ -9898,11 +9952,27 @@ def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
                     f"{', '.join(missing)}, not pooled")
                 continue
             pooled = pool_rows(shape_name, [found[p] for p in part_names], iso3, filename)
+            at = first_place(rows, [found[p] for p in part_names])
             for p in part_names:
                 rows.remove(found[p])
-            rows.append(pooled)
+            rows.insert(at, pooled)
             done.append(f"{iso3} {shape_name} from {' + '.join(part_names)} ({filename})")
     return done
+
+
+def first_place(rows: list[dict[str, Any]], parts: list[dict[str, Any]]) -> int:
+    """Where the first of ``parts`` stands among ``rows``, which is where the row
+    pooled from them goes.
+
+    load_adapters keeps a country's rows in authority order, later files
+    winning, and a pooled row has its parts' file, so it takes their place
+    rather than the end of the list. Appended, it stood in front of every
+    row of the same year bound to the same polygon, whatever their files:
+    OCHA's projections for Namibia's Epukiro and Otjinene, summed, over the
+    2023 census's count, and Afrobarometer's respondents in Maputo City and
+    Province, pooled, over the 2017 census's religion and mother tongue.
+    """
+    return min(i for i, row in enumerate(rows) if any(row is part for part in parts))
 
 
 # Unions of named rows of one file, pooled onto the polygon given by its id.
@@ -10155,13 +10225,14 @@ def pool_row_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
                         value["note"] = f"{value['note']} {extra}"
                     elif pooled.get(f"{key}_note"):
                         pooled[f"{key}_note"] = f"{pooled[f'{key}_note']} {extra}"
+            at = first_place(rows, parts)
             for part in parts:
                 rows.remove(part)
-            for level, shape_id in spec["shapes"]:
-                rows.append({**copy.deepcopy(pooled), "level": level,
-                             "id": f"{pooled['id']}-{level}", "match_by": "shape_id",
-                             "shape_id": shape_id,
-                             "aliases": [p["name"] for p in parts]})
+            for k, (level, shape_id) in enumerate(spec["shapes"]):
+                rows.insert(at + k, {**copy.deepcopy(pooled), "level": level,
+                                     "id": f"{pooled['id']}-{level}", "match_by": "shape_id",
+                                     "shape_id": shape_id,
+                                     "aliases": [p["name"] for p in parts]})
             done.append(f"{iso3} {shape_name} from {' + '.join(wanted)} ({filename})")
     return done
 

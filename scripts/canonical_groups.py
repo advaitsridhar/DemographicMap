@@ -63,6 +63,10 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Protestant (Mixed)", "Mixed Catholic / Protestant",
         "Non-denominational Christian", "Christian Fellowship Church",
         "Independent", "African Independent Church",
+        # Mozambique's census counts the Zionist churches (Zione/Sião) as one
+        # class beside the Catholic, Anglican and Evangelical/Pentecostal:
+        # African-initiated churches of many names, Christian and no more.
+        "Zionist churches",
         # The Pacific censuses' rows for the churches they do not name
         # (Vanuatu, Samoa), and the smaller bodies Samoa's, Tonga's and
         # Nauru's censuses do name whose tradition their tables do not state:
