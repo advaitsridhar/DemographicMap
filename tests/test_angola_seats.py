@@ -45,6 +45,10 @@ class Seats(unittest.TestCase):
         self.assertEqual(by["Pango-Aluquem"], "Pango Aluquém")     # filed under another province
         self.assertEqual(by["Luena"], "Luena")
         self.assertIn("no one seat", by["Luanda"]["note"])
+        # The reason rests on the law, which gives each of the city's municipalities a seat.
+        luanda = next(r for r in records if r["name"] == "Luanda")
+        self.assertEqual([s["field"] for s in luanda["sources"]], ["capital note"])
+        self.assertEqual(luanda["sources"][0]["year"], 2016)
         self.assertTrue(any("several municipalities" in line for line in report))
 
 

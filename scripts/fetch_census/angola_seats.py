@@ -109,7 +109,8 @@ def build(found: dict[str, dict[str, str]], admin1: list[dict[str, Any]],
                 capital=gap(NOT_AVAILABLE, (
                     "This polygon is drawn over Luanda municipality and parts of the city's "
                     "other municipalities, each with a seat of its own under Lei n.º 18/16, so "
-                    "no one seat is shown."))))
+                    "no one seat is shown.")),
+                sources=[{**cite[0], "field": "capital note"}]))
             continue
         laws = found.get(provinces.get(u["parent"], ""), {})
         hits = {k: v for k, v in laws.items() if k in keys}
