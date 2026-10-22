@@ -722,6 +722,22 @@ ADAPTER_FILES = [
     "guinea_bissau_census.json", "tanzania_census.json", "ghana_census.json",
     "south_africa_districts.json", "cabo_verde_parishes.json",
     "philippines_province.json", "ethiopia_region.json",
+    # North Africa's own counts, likewise after the COD-PS tables: Tunisia's
+    # 2024 census by governorate and delegation (the 15 delegations made since
+    # 2014 added to the polygons they were carved from); Algeria's 2008 census
+    # by wilaya; Libya's 2006 census by area, put together from its baladiyat
+    # (Tripoli and Al Jifarah say why they carry none); Egypt's 2017 census and
+    # 2023 estimate on the kisms and markazes of 2006 whose ground is unchanged,
+    # the 2006 census where redrawn; Sudan's 2008 census (sex ratio, and the
+    # median of the states not divided since) and South Sudan's (median and sex
+    # ratio by state and county, Warrap without Abyei); and Morocco's 2024
+    # census for the regions and provinces morocco_rgph2024.json binds: by sex
+    # and mother tongue (without Al Mahbass, across the Western Sahara line),
+    # and the median age where HCP's regional directorates publish five-year
+    # ages, the rest saying why.
+    "tunisia_census.json", "algeria_census.json", "libya_census.json",
+    "egypt_census.json", "sudan_census.json", "south_sudan_census.json",
+    "morocco_rgph2024_sexes.json", "morocco_rgph2024_ages.json",
     # After Afrobarometer, which is first: Kenya's counties carried the survey
     # and now carry the 2019 census, and merge_adapter lets the count win the
     # religion field while the survey keeps any field the census did not ask.
@@ -8312,6 +8328,19 @@ GEONAMES_SOURCE = {"field": "largest settlement", "name": "GeoNames",
 GEONAMES_SEATS = PROCESSED / "geonames_seats.json"
 
 
+# Territories whose drawn unit has no seat both claimants recognise, where
+# GeoNames' seat inside the polygon would be read as its capital. Western
+# Sahara is drawn as one unit at both levels; the seat GeoNames puts in it is
+# Bir Ghandouz, a rural commune's seat near the Mauritanian border.
+NO_SEAT = {
+    "ESH": ("Western Sahara has no capital that both its claimants recognise: Morocco "
+            "administers Laâyoune as the seat of one of its regions, and the Sahrawi Arab "
+            "Democratic Republic, which names Laâyoune its capital, holds Tifariti as its "
+            "provisional capital and governs from the refugee camps near Tindouf in "
+            "Algeria."),
+}
+
+
 def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                                 admin2: dict[str, list[dict[str, Any]]]) -> int:
     """Each unit's seat from GeoNames, where no source named its capital.
@@ -8326,11 +8355,14 @@ def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
     seats = read_json(GEONAMES_SEATS, {}) or {}
     filled = 0
     for table in (admin1, admin2):
-        for rows in table.values():
+        for iso3, rows in table.items():
             for entity in rows:
                 seat = seats.get(entity["id"])
                 held = entity.get("capital")
                 if not seat or entity.get("water"):
+                    continue
+                if iso3 in NO_SEAT and (is_gap(held) or held == seat.get("name")):
+                    entity["capital"] = gap(NOT_AVAILABLE, NO_SEAT[iso3])
                     continue
                 # A capital the unit's own seat contradicts, and that names a
                 # town elsewhere in the country (Central Kalimantan's
@@ -11813,6 +11845,22 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
 #        by island and supervisory district); the polygon is the 189 km2
 #        local-government district, and Grand Cay is drawn apart.
 NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
+    # SDN "Hala'ib" is Sudan's locality of Halaib as Sudan draws it, north
+    # across 22°N over the Hala'ib triangle, which Egypt and Sudan both claim
+    # and Egypt administers: 17,964 of its 40,553 km2 lie north of the
+    # parallel. Sudan's counts, and OCHA's 2025 projection from them, reach
+    # only the part south of it.
+    ("SDN", "16777658B65142556264342"): {
+        field: (source, (
+            "OCHA's 2025 projection gives Sudan's locality of Halaib 33,932 people. Sudan "
+            "draws the locality north across the 22nd parallel over the Hala'ib triangle, "
+            "which Egypt and Sudan both claim and Egypt administers (about 18,000 of its "
+            "40,600 km²), and Sudan's counts reach only the part south of the parallel, so "
+            "no figure describes this outline."))
+        for field, source in (("population", "cod_ps_admin2.json"),
+                              ("median_age", "cod_ps_age.json"),
+                              ("sex_ratio", "cod_ps_age.json"))
+    },
     ("MAR", "70788906B89532291078161"): {
         "population": (None, (
             "The figure published for the Laâyoune-Sakia El Hamra region, 451,028 "
