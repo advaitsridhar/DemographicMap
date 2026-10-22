@@ -367,8 +367,11 @@ def own_structures(ages: dict[str, dict[str, Any]]) -> tuple[set[str], list[str]
 
 def ocha_workbook_url(key: str = "cartocensitaire") -> str:
     body = http_json(f"{HDX_API}/package_show?id={OCHA_DATASET}")
+    # By the resource's name or its file's: the 2025 table's name is not its
+    # file's (ocha-car-projection-population-2025-icasees.xlsx).
     found = [r for r in body["result"].get("resources", [])
-             if key in str(r.get("name") or "").lower()]
+             if key in str(r.get("name") or "").lower()
+             or key in str(r.get("url") or "").lower().rsplit("/", 1)[-1]]
     if not found:
         raise SystemExit(f"car_census: {OCHA_DATASET} no longer carries a resource named {key}")
     return found[0]["url"]
@@ -900,7 +903,7 @@ def main() -> int:
     # What the dataset says of the projection (its base, its method), for the notes.
     meta = http_json(f"{HDX_API}/package_show?id={OCHA_DATASET}")["result"]
     for res in meta.get("resources", []):
-        if PROJECTION_KEY in str(res.get("name") or "").lower():
+        if res.get("url") == proj_url:
             log(f"  2025 resource: {res.get('name')}: "
                 + " ".join(str(res.get('description') or '').split())[:600])
     log("  dataset notes: " + " ".join(str(meta.get("notes") or "").split())[:900])
