@@ -285,11 +285,10 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "ethnic religionist", "African traditionalist",
         "traditional African religion", "customary beliefs", "folk",
         # Census 2022 heads the column "Traditional African" and calls it
-        # "Traditional African religion" in the prose on the same page. The
-        # Factbook string is the tail of "ancestral, tribal, animist, or other
-        # traditional African religions", which its parser leaves cut in half.
+        # "Traditional African religion" in the prose on the same page; the
+        # Factbook names it in full.
         "Traditional African", "Traditional African religion",
-        "or other traditional African religions",
+        "ancestral, tribal, animist, or other traditional African religions",
         "Shaman", "shamanist", "Badimo", "Modekngei", "Mana",
         "Traditional/Ethnic religion", "Traditional/ethnic religion",
         # Brazil's 2022 column for the religions of its indigenous peoples.

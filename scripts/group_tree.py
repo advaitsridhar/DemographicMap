@@ -1634,8 +1634,8 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     "other Liberian ethnic group", "other Togolese", "and other", "none",
     "Other Malian ethnic group",
     # Botswana's Factbook "other, including Kgalagadi and people of European
-    # ancestry", as its row keeps it without the "other".
-    "including Kgalagadi and people of European ancestry",
+    # ancestry", a residual however much it names.
+    "other, including Kgalagadi and people of European ancestry",
     # A person counted as not being from here, which says nothing about
     # where they are from.
     "Foreign", "foreign", "foreign population", "non-Gambian",
@@ -2458,8 +2458,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Mesmedje/Massalat/Kadjakse",
         # Northern Cameroon, whose peoples are Adamawa and Chadic rather
         # than Bantu, and the Ubangian and Central Sudanic peoples of the
-        # Congo's north-east.
-        "Dii", "Biu-Mandara", "Mafa", "Mayogo", "Mba", "Mbandja", "Mono",
+        # Congo's north-east. The Factbook's Cameroon names the first two
+        # by their language groups.
+        "Dii", "Biu-Mandara", "Adamawa-Ubangi", "Mafa", "Mayogo", "Mba", "Mbandja", "Mono",
         "Lendu", "Logo", "Mamvu", "Mangbetu",
         # The Central Sudanic peoples of the West Nile, who are the same
         # cluster as Lendu, Logo and Mamvu above and live on the other side
