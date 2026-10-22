@@ -290,5 +290,28 @@ class SurveyRowsOnTheirOwnGround(unittest.TestCase):
         self.assertEqual({r8.REGIONS[("CIV", r)] for r in regions - unmapped}, districts)
 
 
+class EthiopiaLanguagesNamed(unittest.TestCase):
+    """The workbook's Bolivian and Burkinabe names for Ethiopian languages."""
+
+    def test_each_is_written_as_the_language_the_census_counts_and_placed(self):
+        import group_tree
+        from scripts.fetch_census import uscb
+        self.assertEqual(uscb.ETHIOPIA.relabel, {"Ignaciano": "Opuuo", "Mossi": "Mosiye",
+                                                 "Suri (Suri)": "Suri"})
+        for name, parent in (("Opuuo", "Surmic and Koman languages"),
+                             ("Mosiye", "Cushitic languages"),
+                             ("Suri", "Surmic and Koman languages")):
+            self.assertEqual(group_tree.parent_of("language", name), parent, name)
+        # Burkina Faso's Mossi is still Gur.
+        self.assertEqual(group_tree.parent_of("language", "Mossi"), "Gur languages")
+
+    def test_the_drc_s_survey_does_not_claim_to_be_the_only_one(self):
+        from scripts.fetch_census import uscb
+        note = uscb.DEMOCRATIC_REPUBLIC_OF_THE_CONGO.note
+        self.assertTrue(note.startswith("Enquête 1-2-3, pooling the 2005 and 2012 rounds: "
+                                        "a household survey, not a census."))
+        self.assertNotIn("this map", note)
+
+
 if __name__ == "__main__":
     unittest.main()

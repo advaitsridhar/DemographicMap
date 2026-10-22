@@ -374,7 +374,7 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Somali", "Oromo", "Afar", "Sidamo", "Sidama", "Beja", "Saho",
         "Agaw", "Hadiyya", "Kambaata", "Konso", "Gedeo", "Bilen", "Awngi",
         "Agew-Kamyrnya", "Kemant", "Libido", "Alaba-K'abeena", "Burji",
-        "Daasanach", "Arbore", "Tsamai", "Baiso", "Dirasha", "Bussa",
+        "Daasanach", "Arbore", "Tsamai", "Baiso", "Dirasha", "Bussa", "Mosiye",
     ),
     "Chadic languages": ("Hausa", "Bura", "Marghi", "Kanakuru"),
     "Omotic languages": ("Wolaytta", "Wolayita", "Gamo", "Dawro", "Kafa",
