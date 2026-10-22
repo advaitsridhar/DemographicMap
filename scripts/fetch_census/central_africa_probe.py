@@ -70,46 +70,6 @@ def pages_of(spec: str, count: int) -> list[int]:
     return [p for p in out if 1 <= p <= count]
 
 
-# Query parameters that carry a signed credential: HDX answers a download with
-# a redirect to a presigned S3 address (AWSAccessKeyId, Signature,
-# x-amz-security-token), and the log this prints is committed. Those
-# parameters never reach the log; the address without them still says which
-# file was served.
-CREDENTIALS = re.compile(
-    r"(?i)^(x-amz-[\w-]+|awsaccesskeyid|signature|expires|x-goog-[\w-]+|googleaccessid"
-    r"|sig|se|sp|sv|sr|st|skoid|sktid|skt|ske|sks|skv|token|access_token|security[-_]token)$")
-
-
-def safe(url: str) -> str:
-    """An address as it may be printed: any signed credential in its query removed."""
-    if not url or "?" not in url:
-        return url
-    parts = urllib.parse.urlsplit(url)
-    pairs = urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
-    kept = [(k, v) for k, v in pairs if not CREDENTIALS.match(k)]
-    if len(kept) == len(pairs):
-        return url
-    return urllib.parse.urlunsplit(parts._replace(query=urllib.parse.urlencode(kept)))
-
-
-_fetch = base.fetch
-
-
-def fetch(url: str, *args, **kwargs) -> tuple[int, str, dict, bytes]:
-    """surveys_probe.fetch, whose final address comes back without credentials, and
-    whose Location header likewise: whatever a mode prints from them is safe."""
-    status, final, headers, body = _fetch(url, *args, **kwargs)
-    headers = dict(headers or {})
-    if headers.get("Location"):
-        headers["Location"] = safe(headers["Location"])
-    return status, safe(final), headers, body
-
-
-# Every mode run through this module fetches through the safe wrapper,
-# surveys_probe's own modes included (they look the name up at call time).
-base.fetch = fetch
-
-
 def get(url: str, timeout: int = 300) -> tuple[int, str, dict, bytes]:
     status, final, headers, body = base.fetch(url, timeout=timeout)
     base.summary(url, status, final, headers, body)
