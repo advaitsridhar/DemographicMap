@@ -154,7 +154,7 @@ clear_global: 55 dataset(s) from CLEAR Global (formerly Translators without Bord
     dropped ashanti: level 2 unknown (GH02XXX): the file does not say which unit this is
     dropped westernnorth: level 2 unknown (GH16XXX): the file does not say which unit this is
     dropped greateraccra: level 2 unknown (GH07XXX): the file does not say which unit this is
-    level 2: 147 unit(s) written, 0 not a composition, 9 unnamed, year 2012, Other
+    level 2: 141 unit(s) written, 0 not a composition, 15 unnamed, year 2012, Other
   guatemala-languages (GTM): Guatemala: Languages
     licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
     level 1: 22 unit(s) written, 0 not a composition, 0 unnamed, year 2002, Census
@@ -262,8 +262,9 @@ clear_global: 55 dataset(s) from CLEAR Global (formerly Translators without Bord
     licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
     dropped kavangoeast: level 2 unknown (NA05XXX): the file does not say which unit this is
     dropped kavangowest: level 2 unknown (NA14XXX): the file does not say which unit this is
+    dropped Kongola (NA0104): the file names no language for it, only 'Unknown'
     dropped hardap: level 2 unknown (NA03XXX): the file does not say which unit this is
-    level 2: 88 unit(s) written, 0 not a composition, 3 unnamed, year 2015, Other
+    level 2: 87 unit(s) written, 0 not a composition, 4 unnamed, year 2015, Other
   nepal-languages (NPL): Nepal: Languages
     licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
     level 1: 7 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Census
@@ -424,5 +425,5 @@ clear_global: 55 dataset(s) from CLEAR Global (formerly Translators without Bord
   zimbabwe-languages (ZWE): Zimbabwe: Languages
     licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
     refused: no level-2 file on this dataset
-  662 first-level and 2081 second-level units in 47 countries: AGO:18, ARM:11, BLR:86, BEN:89, BOL:121, BWA:38, BFA:13, BDI:17, CPV:4, KHM:137, COG:12, COD:140, SLV:14, SWZ:4, ETH:51, GMB:13, GHA:163, GTM:114, GIN:42, HTI:10, IDN:203, IRQ:88, KEN:47, KGZ:58, MWI:33, MLI:55, MUS:10, MAR:77, MOZ:11, NAM:102, NPL:84, NER:8, NGA:168, PAK:5, PRY:31, PER:155, PHL:103, SEN:30, SLE:21, SOM:74, ZAF:19, SDN:2, UGA:7, UKR:164, TZA:31, ZMB:50, ZWE:10
-  wrote data/processed/clear_global_language.json (5094 kB)
+  662 first-level and 2074 second-level units in 47 countries: AGO:18, ARM:11, BLR:86, BEN:89, BOL:121, BWA:38, BFA:13, BDI:17, CPV:4, KHM:137, COG:12, COD:140, SLV:14, SWZ:4, ETH:51, GMB:13, GHA:157, GTM:114, GIN:42, HTI:10, IDN:203, IRQ:88, KEN:47, KGZ:58, MWI:33, MLI:55, MUS:10, MAR:77, MOZ:11, NAM:101, NPL:84, NER:8, NGA:168, PAK:5, PRY:31, PER:155, PHL:103, SEN:30, SLE:21, SOM:74, ZAF:19, SDN:2, UGA:7, UKR:164, TZA:31, ZMB:50, ZWE:10
+  wrote data/processed/clear_global_language.json (5079 kB)
