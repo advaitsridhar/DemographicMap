@@ -1,158 +1,395 @@
-probe_page: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2025/*&fl=original,timestamp,mimetype&filter=mimetype:application/pdf&limit=2000
-  retry 1/4 after 2s :: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2025/*&fl=original,timestamp,mimetype&filter=mimetype:application/pdf&limit=2000 :: HTTP Error 503: Service Unavailable
-  155 lines:
-        0  https://ansade.mr/wp-content/uploads/2025/01/Adrar-En-Chiffres-AR-2023-Info.pdf 20250721193016 application/pdf
-        1  https://ansade.mr/wp-content/uploads/2025/01/Adrar-En-Chiffres-FR-2023-Info.pdf 20250721105526 application/pdf
-        2  https://ansade.mr/wp-content/uploads/2025/01/Assaba-En-Chiffres-AR-2023-Info.pdf 20250721193035 application/pdf
-        3  https://ansade.mr/wp-content/uploads/2025/01/Assaba-En-Chiffres-FR-2023-Info.pdf 20250721193851 application/pdf
-        4  https://ansade.mr/wp-content/uploads/2025/01/Brakna-En-Chiffres-AR-2023-Info.pdf 20250721193054 application/pdf
-        5  https://ansade.mr/wp-content/uploads/2025/01/Brakna-En-Chiffres-FR-2023-Info.pdf 20250721105433 application/pdf
-        6  https://ansade.mr/wp-content/uploads/2025/01/El-Hodh-El-Charghi-en-chiffres-AR-2023-Info.pdf 20250722054245 application/pdf
-        7  https://ansade.mr/wp-content/uploads/2025/01/El-Hodh-El-Charghi-en-chiffres-FR-2023-Info.pdf 20250721105118 application/pdf
-        8  https://ansade.mr/wp-content/uploads/2025/01/El-Hodh-El-Charghi-en-chiffres-FR-2023.pdf 20250721193705 application/pdf
-        9  https://ansade.mr/wp-content/uploads/2025/01/El-Hodh-El-Gharbi-en-chiffres-AR-2023-Info.pdf 20250721192957 application/pdf
-       10  https://ansade.mr/wp-content/uploads/2025/01/Gorgol-En-Chiffres-AR-2023-Info.pdf 20250721192838 application/pdf
-       11  https://ansade.mr/wp-content/uploads/2025/01/Gorgol-En-Chiffres-FR-2023-Info.pdf 20250721105303 application/pdf
-       12  https://ansade.mr/wp-content/uploads/2025/01/Guidimagha-En-Chiffres-AR-2023-Info.pdf 20250721192820 application/pdf
-       13  https://ansade.mr/wp-content/uploads/2025/01/Guidimagha-En-Chiffres-FR-2023-Info.pdf 20250721193826 application/pdf
-       14  https://ansade.mr/wp-content/uploads/2025/01/IPI_T3_2024_AR-1.pdf 20250622154218 application/pdf
-       15  https://ansade.mr/wp-content/uploads/2025/01/IPI_T3_2024_AR-1.pdf 20250712121202 application/pdf
-       16  https://ansade.mr/wp-content/uploads/2025/01/IPI_T3_2024_AR-1.pdf 20250718191535 application/pdf
-       17  https://ansade.mr/wp-content/uploads/2025/01/Note-ICC-4T-2024_AR.pdf 20250721153204 application/pdf
-       18  https://ansade.mr/wp-content/uploads/2025/01/Note-ICC-4T-2024_FR.pdf 20250714163217 application/pdf
-       19  https://ansade.mr/wp-content/uploads/2025/01/Note-ICC-4T-2024_FR.pdf 20250721060928 application/pdf
-       20  https://ansade.mr/wp-content/uploads/2025/01/Note-INPC-dec-2024_AR.pdf 20250713211331 application/pdf
-       21  https://ansade.mr/wp-content/uploads/2025/01/Note-INPC-dec-2024_AR.pdf 20250720054252 application/pdf
-       22  https://ansade.mr/wp-content/uploads/2025/01/Note-INPC-dec-2024_FR.pdf 20250622153314 application/pdf
-       23  https://ansade.mr/wp-content/uploads/2025/01/Note-INPC-dec-2024_FR.pdf 20250722022119 application/pdf
-       24  https://ansade.mr/wp-content/uploads/2025/01/Nouadhibou-En-Chiffres-AR-2023-Info.pdf 20250721192801 application/pdf
-       25  https://ansade.mr/wp-content/uploads/2025/01/Nouadhibou-En-Chiffres-FR-2023-Info.pdf 20250721193759 application/pdf
-       26  https://ansade.mr/wp-content/uploads/2025/01/Tagant-En-Chiffres-AR-2023-Info.pdf 20250721153048 application/pdf
-       27  https://ansade.mr/wp-content/uploads/2025/01/Tagant-En-Chiffres-FR-2023-Info.pdf 20250721105659 application/pdf
-       28  https://ansade.mr/wp-content/uploads/2025/01/Trarza-En-Chiffres-AR-2023-Info.pdf 20250722054229 application/pdf
-       29  https://ansade.mr/wp-content/uploads/2025/01/Trarza-En-Chiffres-FR-2023-Info.pdf 20250721193734 application/pdf
-       30  https://ansade.mr/wp-content/uploads/2025/02/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB-2024.pdf 20250721192557 application/pdf
-       31  https://ansade.mr/wp-content/uploads/2025/02/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-2024-%D8%B1%D9%82%D9%85-65.pdf 20250721192637 applicat
-       32  https://ansade.mr/wp-content/uploads/2025/02/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-2024.pdf 20250617162140 application/pdf
-       33  https://ansade.mr/wp-content/uploads/2025/02/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-2024.pdf 20250721192540 application/pdf
-       34  https://ansade.mr/wp-content/uploads/2025/02/IPI_T4-2024_FR.pdf 20250610015417 application/pdf
-       35  https://ansade.mr/wp-content/uploads/2025/02/IPI_T4-2024_FR.pdf 20250713161745 application/pdf
-       36  https://ansade.mr/wp-content/uploads/2025/02/IPI_T4-2024_FR.pdf 20250720052328 application/pdf
-       37  https://ansade.mr/wp-content/uploads/2025/02/IPI_T4_2024_AR-1.pdf 20250622154134 application/pdf
-       38  https://ansade.mr/wp-content/uploads/2025/02/IPI_T4_2024_AR-1.pdf 20250712121147 application/pdf
-       39  https://ansade.mr/wp-content/uploads/2025/02/IPI_T4_2024_AR-1.pdf 20250718191512 application/pdf
-       40  https://ansade.mr/wp-content/uploads/2025/02/Note-INPC-janv-2025_AR_VF.pdf 20250617162055 application/pdf
-       41  https://ansade.mr/wp-content/uploads/2025/02/Note-INPC-janv-2025_AR_VF.pdf 20250713162941 application/pdf
-       42  https://ansade.mr/wp-content/uploads/2025/02/Note-INPC-janv-2025_AR_VF.pdf 20250720054234 application/pdf
-       43  https://ansade.mr/wp-content/uploads/2025/02/Note-INPC-janv-2025_FR_VF.pdf 20250622153243 application/pdf
-       44  https://ansade.mr/wp-content/uploads/2025/02/Note-INPC-janv-2025_FR_VF.pdf 20250722084254 application/pdf
-       45  https://ansade.mr/wp-content/uploads/2025/02/Note-sur-linflation-en-2024-AR-1.pdf 20250713162925 application/pdf
-       46  https://ansade.mr/wp-content/uploads/2025/02/Note-sur-linflation-en-2024-AR-1.pdf 20250715123710 application/pdf
-       47  https://ansade.mr/wp-content/uploads/2025/02/Note-sur-linflation-en-2024-AR-1.pdf 20250720053949 application/pdf
-       48  https://ansade.mr/wp-content/uploads/2025/02/Note-sur-linflation-en-2024-FR-1.pdf 20250612140238 application/pdf
-       49  https://ansade.mr/wp-content/uploads/2025/02/Note-sur-linflation-en-2024-FR-1.pdf 20250714115639 application/pdf
-       50  https://ansade.mr/wp-content/uploads/2025/02/Note-sur-linflation-en-2024-FR-1.pdf 20250721014836 application/pdf
-       51  https://ansade.mr/wp-content/uploads/2025/02/Note-trimestrielle-du-commerce-exterieur-N%C2%B067.pdf 20250714163743 application/pdf
-       52  https://ansade.mr/wp-content/uploads/2025/02/Note-trimestrielle-du-commerce-exterieur-N%C2%B067.pdf 20250715124752 application/pdf
-       53  https://ansade.mr/wp-content/uploads/2025/02/Note-trimestrielle-du-commerce-exterieur-N%C2%B067.pdf 20250721061545 application/pdf
-       54  https://ansade.mr/wp-content/uploads/2025/02/PAA-ANSADE-2025.pdf 20250722225717 application/pdf
-       55  https://ansade.mr/wp-content/uploads/2025/03/Bulletin-de-conjoncture-No-78.pdf 20250612140127 application/pdf
-       56  https://ansade.mr/wp-content/uploads/2025/03/Bulletin-de-conjoncture-No-78.pdf 20250714162223 application/pdf
-       57  https://ansade.mr/wp-content/uploads/2025/03/Bulletin-de-conjoncture-No-78.pdf 20250721015550 application/pdf
-       58  https://ansade.mr/wp-content/uploads/2025/03/Note-de-conjoncture-No-78.pdf 20250612140045 application/pdf
-       59  https://ansade.mr/wp-content/uploads/2025/03/Note-de-conjoncture-No-78.pdf 20250712062341 application/pdf
-       60  https://ansade.mr/wp-content/uploads/2025/03/Note-de-conjoncture-No-78.pdf 20250721062145 application/pdf
-       61  https://ansade.mr/wp-content/uploads/2025/03/Note-INPC-fevr-2025_AR_VF.pdf 20250713162908 application/pdf
-       62  https://ansade.mr/wp-content/uploads/2025/03/Note-INPC-fevr-2025_AR_VF.pdf 20250715123632 application/pdf
-       63  https://ansade.mr/wp-content/uploads/2025/03/Note-INPC-fevr-2025_AR_VF.pdf 20250720053929 application/pdf
-       64  https://ansade.mr/wp-content/uploads/2025/03/Note-INPC-fevr-2025_FR_VF.pdf 20250612140204 application/pdf
-       65  https://ansade.mr/wp-content/uploads/2025/03/Note-INPC-fevr-2025_FR_VF.pdf 20250714115621 application/pdf
-       66  https://ansade.mr/wp-content/uploads/2025/03/Note-INPC-fevr-2025_FR_VF.pdf 20250721014817 application/pdf
-       67  https://ansade.mr/wp-content/uploads/2025/03/Note_-4T2024-Ar.pdf 20250617163724 application/pdf
-       68  https://ansade.mr/wp-content/uploads/2025/03/Note_-4T2024-Ar.pdf 20250721193208 application/pdf
-       69  https://ansade.mr/wp-content/uploads/2025/03/Note_-4T2024-Fr.pdf 20250612140006 application/pdf
-       70  https://ansade.mr/wp-content/uploads/2025/03/Note_-4T2024-Fr.pdf 20250712062321 application/pdf
-       71  https://ansade.mr/wp-content/uploads/2025/03/Note_-4T2024-Fr.pdf 20250718185910 application/pdf
-       72  https://ansade.mr/wp-content/uploads/2025/04/Adrar-En-Chiffres-2024-Bilingue.pdf 20250610015757 application/pdf
-       73  https://ansade.mr/wp-content/uploads/2025/04/Adrar-En-Chiffres-2024-Bilingue.pdf 20250711170015 application/pdf
-       74  https://ansade.mr/wp-content/uploads/2025/04/Adrar-En-Chiffres-2024-Bilingue.pdf 20250718042144 application/pdf
-       75  https://ansade.mr/wp-content/uploads/2025/04/Assaba-En-Chiffres-2024-Bilingue.pdf 20250610015719 application/pdf
-       76  https://ansade.mr/wp-content/uploads/2025/04/Assaba-En-Chiffres-2024-Bilingue.pdf 20250711165953 application/pdf
-       77  https://ansade.mr/wp-content/uploads/2025/04/Assaba-En-Chiffres-2024-Bilingue.pdf 20250718042123 application/pdf
-       78  https://ansade.mr/wp-content/uploads/2025/04/Avis-EPCV-2025-Ar.pdf 20250713162836 application/pdf
-       79  https://ansade.mr/wp-content/uploads/2025/04/Avis-EPCV-2025-Ar.pdf 20250721230014 application/pdf
-       80  https://ansade.mr/wp-content/uploads/2025/04/Avis-EPCV-2025-Fr.pdf 20250715124203 application/pdf
-       81  https://ansade.mr/wp-content/uploads/2025/04/Avis-EPCV-2025-Fr.pdf 20250722141627 application/pdf
-       82  https://ansade.mr/wp-content/uploads/2025/04/Brakna-En-Chiffres-2024-Bilingue-1.pdf 20250610015639 application/pdf
-       83  https://ansade.mr/wp-content/uploads/2025/04/Brakna-En-Chiffres-2024-Bilingue-1.pdf 20250711165933 application/pdf
-       84  https://ansade.mr/wp-content/uploads/2025/04/Brakna-En-Chiffres-2024-Bilingue-1.pdf 20250718042059 application/pdf
-       85  https://ansade.mr/wp-content/uploads/2025/04/Dakhlet-Nouadhibou-En-Chiffres-2024-Bilingue.pdf 20250612135721 application/pdf
-       86  https://ansade.mr/wp-content/uploads/2025/04/Dakhlet-Nouadhibou-En-Chiffres-2024-Bilingue.pdf 20250711170132 application/pdf
-       87  https://ansade.mr/wp-content/uploads/2025/04/Dakhlet-Nouadhibou-En-Chiffres-2024-Bilingue.pdf 20250718042302 application/pdf
-       88  https://ansade.mr/wp-content/uploads/2025/04/Gorgol-En-Chiffres-2024-Bilingue.pdf 20250612135548 application/pdf
-       89  https://ansade.mr/wp-content/uploads/2025/04/Gorgol-En-Chiffres-2024-Bilingue.pdf 20250711170053 application/pdf
-       90  https://ansade.mr/wp-content/uploads/2025/04/Gorgol-En-Chiffres-2024-Bilingue.pdf 20250718042223 application/pdf
-       91  https://ansade.mr/wp-content/uploads/2025/04/Gudimagha-En-Chiffres-2024-Bilingue.pdf 20250612135638 application/pdf
-       92  https://ansade.mr/wp-content/uploads/2025/04/Gudimagha-En-Chiffres-2024-Bilingue.pdf 20250711170112 application/pdf
-       93  https://ansade.mr/wp-content/uploads/2025/04/Gudimagha-En-Chiffres-2024-Bilingue.pdf 20250718042241 application/pdf
-       94  https://ansade.mr/wp-content/uploads/2025/04/Hodh-Chargui-En-Chiffres-2024-Bilingue-1.pdf 20250610013636 application/pdf
-       95  https://ansade.mr/wp-content/uploads/2025/04/Hodh-Chargui-En-Chiffres-2024-Bilingue-1.pdf 20250711165914 application/pdf
-       96  https://ansade.mr/wp-content/uploads/2025/04/Hodh-Chargui-En-Chiffres-2024-Bilingue-1.pdf 20250718042038 application/pdf
-       97  https://ansade.mr/wp-content/uploads/2025/04/Hodh-El-Gharbi-En-Chiffres-2024-Bilingue.pdf 20250612135503 application/pdf
-       98  https://ansade.mr/wp-content/uploads/2025/04/Hodh-El-Gharbi-En-Chiffres-2024-Bilingue.pdf 20250711170034 application/pdf
-       99  https://ansade.mr/wp-content/uploads/2025/04/Hodh-El-Gharbi-En-Chiffres-2024-Bilingue.pdf 20250718042204 application/pdf
-      100  https://ansade.mr/wp-content/uploads/2025/04/Note-INPC-mars-2025_AR_VF.pdf 20250617163643 application/pdf
-      101  https://ansade.mr/wp-content/uploads/2025/04/Note-INPC-mars-2025_AR_VF.pdf 20250713162852 application/pdf
-      102  https://ansade.mr/wp-content/uploads/2025/04/Note-INPC-mars-2025_AR_VF.pdf 20250720053909 application/pdf
-      103  https://ansade.mr/wp-content/uploads/2025/04/Note-INPC-mars-2025_FR_VF.pdf 20250612135925 application/pdf
-      104  https://ansade.mr/wp-content/uploads/2025/04/Note-INPC-mars-2025_FR_VF.pdf 20250712062259 application/pdf
-      105  https://ansade.mr/wp-content/uploads/2025/04/Note-INPC-mars-2025_FR_VF.pdf 20250718185845 application/pdf
-      106  https://ansade.mr/wp-content/uploads/2025/04/PMPP_MRT-PSE-1.pdf 20250715124119 application/pdf
-      107  https://ansade.mr/wp-content/uploads/2025/04/PMPP_MRT-PSE-1.pdf 20250722141608 application/pdf
-      108  https://ansade.mr/wp-content/uploads/2025/04/Tagant-En-Chiffres-2024-Bilingue-1.pdf 20250617163542 application/pdf
-      109  https://ansade.mr/wp-content/uploads/2025/04/Tagant-En-Chiffres-2024-Bilingue-1.pdf 20250711170150 application/pdf
-      110  https://ansade.mr/wp-content/uploads/2025/04/Tagant-En-Chiffres-2024-Bilingue-1.pdf 20250718042323 application/pdf
-      111  https://ansade.mr/wp-content/uploads/2025/04/Trarza-En-Chiffres-2024-Bilingue-2-1.pdf 20250612135841 application/pdf
-      112  https://ansade.mr/wp-content/uploads/2025/04/Trarza-En-Chiffres-2024-Bilingue-2-1.pdf 20250712062239 application/pdf
-      113  https://ansade.mr/wp-content/uploads/2025/04/Trarza-En-Chiffres-2024-Bilingue-2-1.pdf 20250718185813 application/pdf
-      114  https://ansade.mr/wp-content/uploads/2025/04/Trarza-En-Chiffres-2024-Bilingue.pdf 20250617163557 application/pdf
-      115  https://ansade.mr/wp-content/uploads/2025/04/Trarza-En-Chiffres-2024-Bilingue.pdf 20250711170212 application/pdf
-      116  https://ansade.mr/wp-content/uploads/2025/04/Trarza-En-Chiffres-2024-Bilingue.pdf 20250721194528 application/pdf
-      117  https://ansade.mr/wp-content/uploads/2025/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2025-1.pdf 20250617162818 application/pdf
-      118  https://ansade.mr/wp-content/uploads/2025/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2025-1.pdf 20250711165853 application/pdf
-      119  https://ansade.mr/wp-content/uploads/2025/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2025-1.pdf 20250718042016 application/pdf
-      120  https://ansade.mr/wp-content/uploads/2025/05/IPI_T1-2025_FR.pdf 20250620035726 application/pdf
-      121  https://ansade.mr/wp-content/uploads/2025/05/IPI_T1-2025_FR.pdf 20250712061612 application/pdf
-      122  https://ansade.mr/wp-content/uploads/2025/05/IPI_T1-2025_FR.pdf 20250718121229 application/pdf
-      123  https://ansade.mr/wp-content/uploads/2025/05/Note-ICC-1T-2025_FR.pdf 20250610013537 application/pdf
-      124  https://ansade.mr/wp-content/uploads/2025/05/Note-ICC-1T-2025_FR.pdf 20250712061634 application/pdf
-      125  https://ansade.mr/wp-content/uploads/2025/05/Note-ICC-1T-2025_FR.pdf 20250718121249 application/pdf
-      126  https://ansade.mr/wp-content/uploads/2025/05/Note-ICC-4T-2024_AR-1.pdf 20250617162219 application/pdf
-      127  https://ansade.mr/wp-content/uploads/2025/05/Note-ICC-4T-2024_AR-1.pdf 20250711102441 application/pdf
-      128  https://ansade.mr/wp-content/uploads/2025/05/Note-ICC-4T-2024_AR-1.pdf 20250717213748 application/pdf
-      129  https://ansade.mr/wp-content/uploads/2025/05/Note-INPC-avril-2025_AR_VF.pdf 20250617162259 application/pdf
-      130  https://ansade.mr/wp-content/uploads/2025/05/Note-INPC-avril-2025_AR_VF.pdf 20250711165833 application/pdf
-      131  https://ansade.mr/wp-content/uploads/2025/05/Note-INPC-avril-2025_AR_VF.pdf 20250718041951 application/pdf
-      132  https://ansade.mr/wp-content/uploads/2025/05/Note-INPC-avril-2025_FR_VF.pdf 20250610015238 application/pdf
-      133  https://ansade.mr/wp-content/uploads/2025/05/Note-INPC-avril-2025_FR_VF.pdf 20250712061912 application/pdf
-      134  https://ansade.mr/wp-content/uploads/2025/05/Note-INPC-avril-2025_FR_VF.pdf 20250718185414 application/pdf
-      135  https://ansade.mr/wp-content/uploads/2025/05/Note-trimestrielle-du-commerce-exterieur-N%C2%B068.pdf 20250610013416 application/pdf
-      136  https://ansade.mr/wp-content/uploads/2025/05/Note-trimestrielle-du-commerce-exterieur-N%C2%B068.pdf 20250712061933 application/pdf
-      137  https://ansade.mr/wp-content/uploads/2025/05/Note-trimestrielle-du-commerce-exterieur-N%C2%B068.pdf 20250718185433 application/pdf
-      138  https://ansade.mr/wp-content/uploads/2025/06/Bulletin-de-conjoncture-No-79.pdf 20250712061851 application/pdf
-      139  https://ansade.mr/wp-content/uploads/2025/06/Bulletin-de-conjoncture-No-79.pdf 20250718185333 application/pdf
-      140  https://ansade.mr/wp-content/uploads/2025/06/IPI_T1_2025_AR-1.pdf 20250625022015 application/pdf
-      141  https://ansade.mr/wp-content/uploads/2025/06/IPI_T1_2025_AR-1.pdf 20250711102421 application/pdf
-      142  https://ansade.mr/wp-content/uploads/2025/06/IPI_T1_2025_AR-1.pdf 20250717213724 application/pdf
-      143  https://ansade.mr/wp-content/uploads/2025/06/Note-de-conjoncture-No-79.pdf 20250712061834 application/pdf
-      144  https://ansade.mr/wp-content/uploads/2025/06/Note-de-conjoncture-No-79.pdf 20250718185315 application/pdf
-      145  https://ansade.mr/wp-content/uploads/2025/06/Note-INPC-mai-2025_AR_VF.pdf 20250711102357 application/pdf
-      146  https://ansade.mr/wp-content/uploads/2025/06/Note-INPC-mai-2025_AR_VF.pdf 20250715123332 application/pdf
-      147  https://ansade.mr/wp-content/uploads/2025/06/Note-INPC-mai-2025_AR_VF.pdf 20250718041927 application/pdf
-      148  https://ansade.mr/wp-content/uploads/2025/06/Note-INPC-mai-2025_FR_VF.pdf 20250712061551 application/pdf
-      149  https://ansade.mr/wp-content/uploads/2025/06/Note-INPC-mai-2025_FR_VF.pdf 20250715124353 application/pdf
-      150  https://ansade.mr/wp-content/uploads/2025/06/Note-INPC-mai-2025_FR_VF.pdf 20250718185353 application/pdf
-      151  https://ansade.mr/wp-content/uploads/2025/07/Note-INPC-juin-2025_AR_VF.pdf 20250717213703 application/pdf
-      152  https://ansade.mr/wp-content/uploads/2025/07/Note-INPC-juin-2025_FR_VF.pdf 20250713212303 application/pdf
-      153  https://ansade.mr/wp-content/uploads/2025/07/Note-INPC-juin-2025_FR_VF.pdf 20250718121210 application/pdf
-      154  https://ansade.mr/wp-content/uploads/2025/09/Theme-7-Caracteristiques-socioeconomiques-DV.pdf 20251211085335 application/pdf
+== Uige@2: Publicacao_639120325078684256.pdf, 9,994,014 bytes
+== Uige_copy2: 251 pages
+   p1 596x842: ,,,
+   p2 596x842: 
+   p3 596x842: RESULTADOS DEFINITIVOS RECENSEAMENTO GERAL DA POPULAÇÃO E HABITAÇÃO 2024 PROVÍNCIA DO UÍGE
+   p4 596x842: FICHA TÉCNICA Supervisão Joel Futi Director-Geral Coordenação Teresa Spínola Anália Silva Directoras-Gerais Adjuntas Equipa Técnica Ezequiel Luís Patrick Pedro 
+   p5 596x842: ÍNDICE PREÂMBULO ...............................................................................................................................................
+   p6 596x842: 7.11. Religião .................................................................................................................................................
+   p7 596x842: LISTA DE MAPAS, CARTOGRAMAS, QUADROS E GRÁFICOS MAPAS Mapa 1 - Municípios, Comunas e Localidades à luz da Lei 14/24, de 05 de Setembro .........................
+   p8 596x842: Quadro 25 - População com 5-18 anos fora do sistema de ensino por grupos etários, segundo o sexo, 2024 .........................................................
+   p9 596x842: Gráfico 24 – Percentagem da população com 5 ou mais anos que nunca frequentou a escola, por município, 2024 ....................................................
+   p10 596x842: LISTA DOS PRINCIPAIS QUADROS DE RESULTADOS 1. POPULAÇÃO Quadro 1.1 - População por área de residência e província, 2024 ........................................
+   p11 596x842: 6. LÍNGUA MATERNA Quadro 6.1 - População de 2 ou mais anos por residência, município e comuna, segundo os grupos étinicos tribos, 2024 .........................
+   p12 596x842: Quadro 8.16 - Taxa líquida de frequência do ensino primário por área de residência, município e comuna, segundo o sexo, 2024 ...................................
+   p13 596x842: Quadro 9.20 - Agregados familiares por área de residência e município, segundo o tamanho e média de pessoas por agregado .......................................
+   p14 596x842: Resultados Definitivos do RGPH 2024 - Província do Cunene 14 PREÂMBULO
+   p15 596x842: Resultados Definitivos do RGPH 2024 - Província do Cunene 15
+   p16 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 16 PREFÁCIO O Instituto Nacional de Estatística (INE), órgão executivo central do Sistema Estatístico Na
+   p17 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 17 1. NOTA INTRODUTÓRIA Os Censos servem de mecanismo para um país avaliar os números da sua população e
+   p18 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 18 municípios à luz da Lei n.º 18/16, de 17 de Outubro, e em 44 Comunas à luz da Lei n.º 14/24, de 5 de 
+   p19 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 19 2. SUMÁRIO EXECUTIVO 1. Os Resultados Definitivos do Censo 2024 mostram que a população residente na 
+   p20 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 20 3. SÍNTESE DOS PRINCIPAIS INDICADORES Quadro 1 - Síntese dos principais indicadores, 2014 e 2024 N.º 
+   p21 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 21 Quadro 2 - Síntese dos principais indicadores, 2024 N.º INDICADORES Angola Área de Residência Sexo Ur
+   p22 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 22 4. ASPECTOS METODOLÓGICOS 4.1 Enquadramento legal O Censo é um projecto do Governo e é a operação est
+   p23 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 23 das tarefas e os perfis definidos. Estas formações realizaram -se em 9 ciclos, sendo a formação dos m
+   p24 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 24 O uso de novas soluções tecnológicas tem vantagens, mas implica alguns riscos e desafios, entre os qu
+   p25 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 25 As estimativas derivadas do Inquérito de Cobertura, por se basearem numa amostra, exigem a atribuição
+   p26 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 26 ii. Unidades estatísticas que foram erroneamente recenseadas; iii. Unidades estatísticas que foram du
+   p27 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 27 O Inquérito de Cobertura apurou que a taxa de subcobertura nacional de agregados familiares é de 29,2
+   p28 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 28 Os resultados mostram que o Censo omitiu um total estimado de 11,80 milhões de pessoas. Dessas, 9,72 
+   p29 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 29 5. QUESTÕES OPERACIONAIS DO CENSO Foi um grande desafio para o Instituto Nacional de Estatística (INE
+   p30 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 30 6. DIVISÃO POLÍTICA-ADMINISTRATIVA A Divisão Político -Administrativa (DPA) de Angola possui três nív
+   p31 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 31 Quadro 8 - Número de municípios, comunas e localidades por província à luz da Lei 14/24 de 05 de Sete
+   p32 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 32 7. POPULAÇÃO 7.1 População total O Censo 2024 fornece um quadro detalhado da população, refletindo a 
+   p33 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 33 Gráfico 2 - Distribuição percentual da população residente por município, segundo o sexo, 2024 7.1.1 
+   p34 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 34 Gráfico 3 - Distribuição percentual da população residente por município, 2024 O quadro abaixo aprese
+   p35 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 35 Cartograma 1 - Distribuição da população residente por municípios, 2024 7.1.2 Densidade demográfica O
+   p36 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 36 7.1.3 Índice de masculinidade A nível da província do Uíge, o índice de masculinidade é de 98,5, isto
+   p37 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 37 7.2. População por grupos etários A estrutura etária da população caracteriza-se por uma população ma
+   p38 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 38 7.2.1 Idade média e mediana da população A idade média corresponde ao valor médio das idades das pess
+   p39 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 39 7.2.2 População jovem e idosa O quadro abaixo apresenta a distribuição da população residente segundo
+   p40 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 40 Cartograma 4 - População com 0-14 anos de idade, 2024 Observa-se no gráfico abaixo, que a população i
+   p41 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 41 7.3 Estado civil A pergunta sobre o estado civil é dirigida a todas as pessoas com 12 ou mais anos de
+   p42 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 42 7.4. Registo civil O processo de registo de nascimento é fundamental para estabelecer a identidade le
+   p43 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 43 Gráfico 14 - Proporção da população de 0-4 anos com registo de nascimento, por município, 2024 Cartog
+   p44 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 44 aqueles com 25 anos ou mais. Estes resultados evidenciam uma tendência de crescimento progressivo na 
+   p45 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 45 O Sistema Nacional de Acção Social é constituído por órgãos, instituições, serviços e equipamentos qu
+   p46 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 46 mental ou psicológica, ou a uma deficiência em qualquer parte do corpo, incluindo ausência ou limitaç
+   p47 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 47 Em 2024, entre as 1 039 319 crianças com idades entre 0 - 17 anos, 85 866 são órfãs, correspondendo a
+   p48 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 48 Gráfico 18 – Línguas maternas mais faladas, 2024 7.9. Grupo étnico A Província do Uíge caracteriza -s
+   p49 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 49 O albinismo é uma doença genética hereditária, em que as células do corpo não conseguem produzir mela
+   p50 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 50 4F 5Gráfico 20 – Principais religiões praticadas, 2014 e 2024 7.12. Educação O Sistema de Educação e 
+   p51 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 51 Nota-se diferenças na taxa de alfabetismo entre os municípios do Uíge (83,8%), Negage (69,3%) e Dange
+   p52 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 52 7.12.2 Frequência escolar da população com 5 ou mais anos de idade No Censo 2024 analisou -se a situa
+   p53 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 53 Ao observar o nível de escolaridade concluído da população com 18 ou mais anos de idade, verifica - s
+   p54 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 54 8. AGREGADOS FAMILIARES 8.1. Tipo de agregado familiar Os resultados do Censo 2024 indicam que, na pr
+   p55 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 55 Gráfico 28 - Distribuição percentual dos chefes dos agregados familiares por sexo, 2024 Os resultados
+   p56 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 56 enquanto que o grupo etário menor de 24 anos de idade possuem a menor percentagem com 10,3%. Gráfico 
+   p57 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 57 Gráfico 30 – Tipo de núcleo familiar 8.3. Instalações sanitárias Considera-se saneamento apropriado o
+   p58 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 58 Gráfico 31 - Distribuição percentual dos agregados familiares segundo a principal fonte de abastecime
+   p59 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 59 Em 2014, apenas 14,3% dos agregados familiares tiveram acesso à energia eléctrica da rede pública par
+   p60 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 60 Na Província do Uíge os bens que os agregados familiares mais possuem destacam-se: rádio, televisão e
+   p61 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 61 9. HABITAÇÕES FAMILIARES 9.1. Tipo de habitações familiares Habitações familiares são todo o espaço f
+   p62 595x842: 
+   p63 595x842: Resultados Definitivos do RGPH 2024 - Província do Uíge 62 PRINCIPAIS QUADROS
+   p64 595x842: 
+   p65 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 64 1. População
+   p66 595x842: 
+   p67 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 66 Quadro 1.1 - População por área de residência e província, 2024 Área de residência, municípios e comu
+   p68 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 67 Quadro 1.1 - População por área de residência e província, 2024 Área de residência, municípios e comu
+   p69 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 68 Quadro 1.2 - População por idades simples, 2024 Total Homens Mulheres Uíge 2017921 1001154 1016767 Id
+   p70 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 69 Quadro 1.3 - População por grupos etários quinquenais, 2024 Área de residência e grupos quinquenais T
+   p71 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 70 Quadro 1.4 - População por província, segundo grandes grupos etários, 2024 Área de residência Municíp
+   p72 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 71 Quadro 1.4 - População por província, segundo grandes grupos etários, 2024 Área de residência Municíp
+   p73 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 72 Quadro 1.5 - População por município, segundo outros grupos etários, 2024 Total 0 - 19 anos 20 - 29 a
+   p74 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 73 Quadro 1.5 - População por município, segundo outros grupos etários, 2024 Total 0 - 19 anos 20 - 29 a
+   p75 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 74 Quadro 1.6 - População por município e área de residência, 2024 Área de residência, municípios e comu
+   p76 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 75 Quadro 1.6 - População por município e área de residência, 2024 Área de residência, municípios e comu
+   p77 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 76 Quadro 1.6 - População por município e área de residência, 2024 Área de residência, municípios e comu
+   p78 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 77 Quadro 1.7 - Idade média e mediana da população por área de residência e sexo Média Mediana Uíge 22,4
+   p79 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 78 2. Estado Civil
+   p80 595x842: 
+   p81 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 80 Quadro 2.1 - População com 12 ou mais anos por área de residência, município e comuna, segundo o esta
+   p82 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 81 Quadro 2.1 - População com 12 ou mais anos por área de residência, município e comuna, segundo o esta
+   p83 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 82 3. Registro Civil
+   p84 595x842: 
+   p85 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 84 Quadro 3.1 - População residente com registo de nascimento por província e área de residência, segund
+   p86 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 85 Quadro 3.1 - População residente com registo de nascimento por província e área de residência, segund
+   p87 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 86 Quadro 3.2 - População com registo de nascimento por grupos etários e área de residência, 2024 Total 
+   p88 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 87 Quadro 3.4 - População com bilhete de identidade, por província e área de residência, 2024 Total Popu
+   p89 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 88 Quadro 3.4 - População com bilhete de identidade, por província e área de residência, 2024 Total Popu
+   p90 595x842: 
+   p91 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 90 4. Deficiência e Albinismo
+   p92 595x842: 
+   p93 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 92 Quadro 4.1 - População com 5 ou mais anos por tipo de domínio funcional e grau de dificuldade, 2024 D
+   p94 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 93 Quadro 4.2 - População com albinismo por municípios, comunas e área de residência, 2024 Área de resid
+   p95 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 94 Quadro 4.2 - População com albinismo por municípios, comunas e área de residência, 2024 Área de resid
+   p96 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 95 Quadro 4.3 - Pessoas que têm albinismo por municípios, comunas e área de residência, segundo grupo et
+   p97 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 96 Quadro 4.3 - Pessoas que têm albinismo por municípios, comunas e área de residência, segundo grupo et
+   p98 595x842: 
+   p99 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 98 5 . orfandade
+   p100 595x842: 
+   p101 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 100 Quadro 5.1 - Crianças com 0-17 anos que não vivem com os pais por província e área de residência, 20
+   p102 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 101 Quadro 5.1 - Crianças com 0-17 anos que não vivem com os pais por província e área de residência, 20
+   p103 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 102 Quadro 5.2 - Crianças órfãos com 0-17 anos por área de residência e grupos etários, segundo o tipo e
+   p104 842x595: 
+   p105 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 104 6. Língua e Etnia
+   p106 595x842: 
+   p107 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 106 Quadro 6.1 - População de 2 ou mais anos por residência, município e comuna, segundo os grupos étnic
+   p108 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 107 Quadro 6.2 - População por município, comuna e área de residência, segundo a língua materna, 2024 Nú
+   p109 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 108 7. Religião
+   p110 595x842: 
+   p111 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 110 Quadro 7.1 - População com 2 ou mais anos por área de residência e município, segundo a religião ou 
+   p112 842x595: 
+   p113 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 112 8. Educação
+   p114 595x842: 
+   p115 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 114 Quadro 8.1 - População com 15 ou mais anos que sabe ler e escrever por município e área de residênci
+   p116 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 115 Quadro 8.1 - População com 15 ou mais anos que sabe ler e escrever por município e área de residênci
+   p117 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 116 Quadro 8.2 - População com 15 ou mais anos que sabe ler e escrever por grupo etário e área de residê
+   p118 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 117 Quadro 8.2 - População com 15 ou mais anos que sabe ler e escrever por grupo etário e área de residê
+   p119 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 118 Quadro 8.3 - População com 15-24 anos que sabe ler e escrever por área de residência, município e co
+   p120 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 119 Quadro 8.3 - População com 15-24 anos que sabe ler e escrever por área de residência, município e co
+   p121 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 120 Quadro 8.4 - População com 5 ou mais anos por área de residência, município e comuna, segundo a situ
+   p122 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 121 Quadro 8.4 - População com 5 ou mais anos por área de residência, município e comuna, segundo a situ
+   p123 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 122 Quadro 8.5 - População com 5-11 anos fora do sistema de ensino por área de residência, município e c
+   p124 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 123 Quadro 8.5 - População com 5-11 anos fora do sistema de ensino por área de residência, município e c
+   p125 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 124 Quadro 8.6 - População com 12-14 anos fora do sistema de ensino por área de residência, município e 
+   p126 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 125 Quadro 8.6 - População com 12-14 anos fora do sistema de ensino por área de residência, município e 
+   p127 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 126 Quadro 8.7 - População com 15-18 anos por município, comuna e área de residência fora do sistema de 
+   p128 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 127 Quadro 8.7 - População com 15-18 anos por município, comuna e área de residência fora do sistema de 
+   p129 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 128 Quadro 8.8 - População com 5 ou mais anos por área de residência e grupos etários, segundo a situaçã
+   p130 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 129 Quadro 8.8 - População com 5 ou mais anos por área de residência e grupos etários, segundo a situaçã
+   p131 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 130 Quadro 8.9 - População com 5-18 anos por província e área de residência fora do sistema de ensino, 2
+   p132 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 131 Quadro 8.9 - População com 5-18 anos por província e área de residência fora do sistema de ensino, 2
+   p133 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 132 Quadro 8.10 - População com 5-18 anos por área de residência, município e comuna, segundo a situação
+   p134 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 133 Quadro 8.10 - População com 5-18 anos por área de residência, município e comuna, segundo a situação
+   p135 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 134 Quadro 8.11 - População com 5-11 anos por área de residência, município e comuna, segundo a situação
+   p136 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 135 Quadro 8.11 - População com 5-11 anos por área de residência, município e comuna, segundo a situação
+   p137 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 136 Quadro 8.12 - População com 5 ou mais anos por área de residência, município e comuna, segundo o nív
+   p138 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 137 Quadro 8.12 - População com 5 ou mais anos por área de residência, município e comuna, segundo o nív
+   p139 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 138 Quadro 8.13 - População com 12-14 anos por área de residência, município e comuna, segundo a situaçã
+   p140 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 139 Quadro 8.13 - População com 12-14 anos por área de residência, município e comuna, segundo a situaçã
+   p141 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 140 Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o ní
+   p142 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 141 Quadro 8.14 - População com 18 ou mais anos por área de residência, município e comuna, segundo o ní
+   p143 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 142 Quadro 8.15 - População com 18 ou mais anos por área de residência, município e comuna, segundo o ní
+   p144 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 143 Quadro 8.15 - População com 18 ou mais anos por área de residência, município e comuna, segundo o ní
+   p145 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 144 Quadro 8.16 - Taxa líquida de frequência do ensino primário por área de residência, município e comu
+   p146 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 145 Quadro 8.16 - Taxa líquida de frequência do ensino primário por área de residência, município e comu
+   p147 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 146 Quadro 8.17 - Taxa líquida de frequência do ensino secundário por área de residência, município e co
+   p148 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 147 Quadro 8.17 - Taxa líquida de frequência do ensino secundário por área de residência, município e co
+   p149 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 148 9. Agregado Familiar
+   p150 595x842: 
+   p151 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 150 Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal ti
+   p152 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 151 Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal ti
+   p153 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 152 Quadro 9.1 - Agregados familiares por área de residência, município e comuna, segundo o principal ti
+   p154 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 153 Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fo
+   p155 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 154 Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fo
+   p156 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 155 Quadro 9.2 - Agregados familiares por área de residência, município e comuna, segundo a principal fo
+   p157 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 156 Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sani
+   p158 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 157 Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sani
+   p159 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 158 Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sani
+   p160 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 159 Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sani
+   p161 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 160 Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sani
+   p162 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 161 Quadro 9.3 - Agregados familiares por área de residência, município e comuna, segundo o tipo de sani
+   p163 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 162 Quadro 9.4 -Agregados familiares por área de residência, município e comuna, segundo o modo de trata
+   p164 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 163 Quadro 9.4 -Agregados familiares por área de residência, município e comuna, segundo o modo de trata
+   p165 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 164 Quadro 9.4 -Agregados familiares por área de residência, município e comuna, segundo o modo de trata
+   p166 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 165 Quadro 9.5 - Agregados familiares por área de residência, município e comuna, segundo a situação de 
+   p167 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 166 Quadro 9.5 - Agregados familiares por área de residência, município e comuna, segundo a situação de 
+   p168 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 167 Quadro 9.6 -Agregados familiares por área de residência, município e comuna, segundo o acesso a água
+   p169 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 168 Quadro 9.6 -Agregados familiares por área de residência, município e comuna, segundo o acesso a água
+   p170 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 169 Quadro 9.7 - Agregados familiares por área de residência, município e comuna, segundo situação se a 
+   p171 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 170 Quadro 9.7 - Agregados familiares por área de residência, município e comuna, segundo situação se a 
+   p172 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 171 Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fo
+   p173 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 172 Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fo
+   p174 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 173 Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fo
+   p175 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 174 Quadro 9.8 - Agregados familiares por área de residência, município e comuna, segundo a principal fo
+   p176 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 175 Quadro 9.9 - Agregados familiares por área de residência, município e comuna, segundo a posse de par
+   p177 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 176 Quadro 9.9 - Agregados familiares por área de residência, município e comuna, segundo a posse de par
+   p178 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 177 Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de o
+   p179 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 178 Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de o
+   p180 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 179 Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de o
+   p181 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 180 Quadro 9.10 - Agregados familiares por área de residência, município e comuna, segundo o regime de o
+   p182 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 181 Quadro 9.11 - Agregados familiares por área de residência, município e comuna, segundo a situação de
+   p183 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 182 Quadro 9.11 - Agregados familiares por área de residência, município e comuna, segundo a situação de
+   p184 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 183 Quadro 9.12 - Agregados familiares criadores de animais por área de residência, município e comuna, 
+   p185 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 184 Quadro 9.12 - Agregados familiares criadores de animais por área de residência, município e comuna, 
+   p186 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 185 Quadro 9.13 - Agregados familiares por área de residência, município e comuna, segundo o tipo de act
+   p187 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 186 Quadro 9.13 - Agregados familiares por área de residência, município e comuna, segundo o tipo de act
+   p188 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 187 Quadro 9.14 - Agregados familiares por área de residência, municípios e comunas, segundo a posse de 
+   p189 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 188 Quadro 9.14 - Agregados familiares por área de residência, municípios e comunas, segundo a posse de 
+   p190 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 189 Quadro 9.15 - Agregados familiares por área de residência, municípios e comunas, segundo o apoio soc
+   p191 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 190 Quadro 9.15 - Agregados familiares por área de residência, municípios e comunas, segundo o apoio soc
+   p192 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 191 Quadro 9.16 - Agregados familiares por área de residência, município e comuna, segundo a entidade qu
+   p193 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 192 Quadro 9.16 - Agregados familiares por área de residência, município e comuna, segundo a entidade qu
+   p194 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 193 Quadro 9.17 - Agregados familiares por área de residência, município e comuna, segundo o sexo do che
+   p195 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 194 Quadro 9.17 - Agregados familiares por área de residência, município e comuna, segundo o sexo do che
+   p196 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 195 Quadro 9.18 - Agregados familiares por área de residência e município, segundo o tipo de núcleo Muni
+   p197 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 196 Quadro 9.19 - Agregados familiares por grupo étário, segundo o sexo do chefe, 2024 Total de agregado
+   p198 596x842: 
+   p199 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 198 10. Habitação
+   p200 596x842: 
+   p201 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 200 Quadro 10.1 - População recenseada por área de residência, município e comuna, segundo grupos etário
+   p202 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 201 Quadro 10.1 - População recenseada por área de residência, município e comuna, segundo grupos etário
+   p203 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 202 Quadro 10.2 - Habitações familiares por área de residência, município e comuna, segundo o tipo de ha
+   p204 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 203 Quadro 10.2 - Habitações familiares por área de residência, município e comuna, segundo o tipo de ha
+   p205 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 204 Quadro 10.3 - Habitações familiares por área de residência, município e comuna, segundo o estado de 
+   p206 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 205 Quadro 10.3 - Habitações familiares por área de residência, município e comuna, segundo o estado de 
+   p207 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 206 Quadro 10.4 - Habitações familiares por e área de residência, município e comuna, segundo o tipo de 
+   p208 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 207 Quadro 10.4 - Habitações familiares por e área de residência, município e comuna, segundo o tipo de 
+   p209 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 208 Quadro 10.4 - Habitações familiares por e área de residência, município e comuna, segundo o tipo de 
+   p210 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 209 Quadro 10.5 - Habitações familiares por área de residência, município e comuna, segundo o tipo de ma
+   p211 595x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 210 Quadro 10.5 - Habitações familiares por área de residência, município e comuna, segundo o tipo de ma
+   p212 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 211 Quadro 10.6 - Habitações familiares por área de residência, município e comuna, segundo o tipo de ma
+   p213 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 212 Quadro 10.6 - Habitações familiares por área de residência, município e comuna, segundo o tipo de ma
+   p214 842x595: Resultados Definitivos do RGPH 2024 – Província do Uíge 213 Quadro 10.6 - Habitações familiares por área de residência, município e comuna, segundo o tipo de ma
+   p215 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 214 Quadro 10.7 - Habitações familiares por área de residência, município e comuna, segundo a médias div
+   p216 596x842: 
+   p217 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 216 PRINCIPAIS CONCEITOS
+   p218 596x842: 
+   p219 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 218 PRINCIPAIS CONCEITOS Visando assegurar a compreensão da informação produzida, os conceitos a seguir 
+   p220 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 219 inquérito, é indicada como tal pelos restantes membros. Listagem das Habitações: processo de registo
+   p221 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 220 NOTAS EXPLICATIVAS Contexto 1. Angola realiza o Censo populacional e habitacional a cada dez anos, a
+   p222 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 221 Suposições da Estimativa por Sistema Duplo (DSE) 4. A metodologia da Estimativa por Sistema Duplo (D
+   p223 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 222 Notas Técnicas O Inquérito de Cobertura de 2024 estima o número total de pessoas e agregados familia
+   p224 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 223 Quadro 16: Tamanho das secções por províncias Quadro 15 - Taxa de resposta a nível de agregados fami
+   p225 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 224 h = estrato; i = segmentoo I − ésimo no estrato; j = O agregado j − ésimo dentro do segmento i − ési
+   p226 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 225 Taxa de cobertura (TC) A taxa de cobertura (TC) é o complemento da taxa de omissão (OR) e pode ser c
+   p227 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 226 A estimativa final do tamanho real da população (TPF) é o produto entre o factor de ajuste refinado 
+   p228 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 227 𝑻𝒂𝒙𝒂 𝒍í𝒒𝒖𝒊𝒅𝒂 𝒅𝒆 𝒅𝒊𝒇𝒆𝒓𝒆𝒏ç𝒂 (𝑻𝑳𝑫) = (𝒀.𝒊 − 𝒀𝒊.) 𝒏 ∗ 𝟏𝟎𝟎 𝑝𝑎𝑟𝑎 𝑖 = 1, … … , 𝐶 onde: • 𝑌.𝑖= número não po
+   p229 596x842: Resultados Definitivos do RGPH 2024 – Província do Uíge 228 Critérios para a interpretação dos diferentes índices de erro de conteúdo: Uma baixa taxa de concord
+   p230 596x842: 
+   p231 596x842: ANEXO – QUESTIONÁRIOS
+   p232 596x842: 
+   p233 596x842: 
+   p234 596x842: 
+   p235 596x842: 
+   p236 596x842: 
+   p237 596x842: 
+   p238 596x842: 
+   p239 596x842: 
+   p240 596x842: 
+   p241 596x842: 
+   p242 596x842: 
+   p243 596x842: 
+   p244 596x842: 
+   p245 596x842: 
+   p246 596x842: 
+   p247 596x842: 
+   p248 596x842: 
+   p249 596x842: 
+   p250 596x842: 
+   p251 596x842: 
+  retry 1/4 after 2s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 2/4 after 4s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 3/4 after 8s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 4/4 after 16s :: https://censo2024.ine.gov.ao/U%C3%ADge.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 1/4 after 2s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 2/4 after 4s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 3/4 after 8s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+  retry 4/4 after 16s :: https://censo2024.ine.gov.ao/U%C3%8DGE.pdf :: HTTP Error 500: ( The request was rejected by the HTTP filter. Contact the server administrator.  )
+== Uige p73: 595x842 points, rotate 0; pypdf text 2640 characters; pdfplumber 2585 characters (2585 upright), 0 pictures, 162 rectangles, 945 lines, 0 curves
+   text: Resultados Definitivos do RGPH 2024 – Província do Uíge 72 Quadro 1.5 - População por município, segundo outros grupos etários, 2024 Total 0 - 19 anos 20 - 29 anos 30 - 54 anos 55 - 64 anos 65 - 74 anos 75 - ou mais anos Uíge 2 017 921 1 127 314 312 850 415 668 78 117 53 164 30 808 Área de residência Urbana 1 042 302 592 632 170 166 211 351 34 229 21 915 12 009 Rural 975 620 534 682 142 685 204 31
+   row 'Quadro 1.5 - População por município, segundo outros grupos etários,' @61: 2024@454  [Quadro@140 1.5@174 -@189 População@194 por@240 município,@256 segundo@302 outros@340 grupos@369 etários,@400]
+   row '20 - 29 30 - 54 55 - 64 65 - 74 75 - ou' @75:   [20@282 -@292 29@296 30@330 -@340 54@344 55@378 -@388 64@392 65@426 -@436 74@440 75@474 -@484 ou@488]
+   row 'Total 0 - 19 anos' @79:   [Total@189 0@227 -@233 19@237 anos@247]
+   row 'anos anos anos anos mais anos' @84:   [anos@285 anos@333 anos@381 anos@429 mais@469 anos@486]
+   row 'Uíge' @96: 2017921@216 1127314@264 312850@312 415668@360 78117@408 53164@456 30808@504  [Uíge@91]
+   row 'Área de residência' @109:   [Área@91 de@108 residência@118]
+   row 'Urbana' @123: 1042302@216 592632@264 170166@312 211351@360 34229@408 21915@456 12009@504  [Urbana@99]
+   row 'Rural' @136: 975620@216 534682@264 142685@312 204317@360 43888@408 31249@456 18799@504  [Rural@99]
+   row 'Municípios' @149:   [Municípios@91]
+   row 'Dange Quitexe' @162: 40044@216 21783@264 6189@312 8655@360 1629@408 1202@456 586@504  [Dange@91 Quitexe@114]
+   row 'Quitexe' @176: 31141@216 16870@264 4805@312 6776@360 1312@408 923@456 455@504  [Quitexe@99]
+   row 'Aldeia Viçosa' @189: 8903@216 4912@264 1384@312 1879@360 317@408 279@456 131@504  [Aldeia@99 Viçosa@121]
+   row 'Bungo' @202: 60462@216 36813@264 7305@312 10743@360 2515@408 1958@456 1128@504  [Bungo@91]
+   row 'Bungo' @215: 60462@216 36813@264 7305@312 10743@360 2515@408 1958@456 1128@504  [Bungo@99]
+   row 'Ambuila' @228: 21499@216 11914@264 3209@312 4303@360 990@408 704@456 380@504  [Ambuila@99]
+   row 'Ambuila' @242: 21499@216 11914@264 3209@312 4303@360 990@408 704@456 380@504  [Ambuila@91]
+   row 'Negage' @255: 188767@216 109883@264 30618@312 34544@360 7002@408 4350@456 2369@504  [Negage@91]
+   row 'Negage' @268: 148016@216 87020@264 24530@312 26662@360 5099@408 3060@456 1645@504  [Negage@99]
+   row 'Dimuca' @282: 19803@216 10988@264 2934@312 3982@360 895@408 616@456 388@504  [Dimuca@99]
+   row 'Quisseque' @295: 20949@216 11876@264 3154@312 3901@360 1009@408 675@456 335@504  [Quisseque@99]
+   row 'Puri' @308: 49839@216 29406@264 6071@312 9761@360 2131@408 1487@456 984@504  [Puri@91]
+   row 'Puri' @321: 49839@216 29406@264 6071@312 9761@360 2131@408 1487@456 984@504  [Puri@91]
+   row 'Maquela do Zombo' @335: 112438@216 57084@264 19456@312 27252@360 4418@408 2784@456 1444@504  [Maquela@91 do@122 Zombo@132]
+   row 'Maquela do Zombo' @348: 97130@216 49722@264 16868@312 23346@360 3720@408 2314@456 1161@504  [Maquela@99 do@129 Zombo@139]
+   row 'Quibocolo' @361: 15308@216 7362@264 2588@312 3906@360 698@408 470@456 284@504  [Quibocolo@99]
+   row 'Damba' @374: 59745@216 29852@264 9429@312 13751@360 3051@408 2378@456 1285@504  [Damba@91]
+   row 'Damba' @388: 37098@216 18200@264 6172@312 8582@360 1918@408 1425@456 800@504  [Damba@99]
+   row 'Camatambo' @401: 4801@216 2620@264 707@312 964@360 204@408 205@456 100@504  [Camatambo@99]
+   row 'Lêmboa' @414: 4332@216 2283@264 550@312 940@360 241@408 220@456 97@504  [Lêmboa@99]
+   row 'Petecusso' @427: 13515@216 6749@264 2000@312 3264@360 688@408 527@456 286@504  [Petecusso@99]
+   row 'Sanza Pombo' @441: 76802@216 44375@264 10041@312 14719@360 3328@408 2466@456 1872@504  [Sanza@91 Pombo@111]
+   row 'Sanza Pombo' @454: 52834@216 31278@264 6773@312 9782@360 2159@408 1608@456 1235@504  [Sanza@99 Pombo@119]
+   row 'Alfândega' @467: 5577@216 3393@264 663@312 1033@360 238@408 146@456 103@504  [Alfândega@99]
+   row 'Cuílo Pombo' @480: 6550@216 3401@264 998@312 1390@360 331@408 244@456 186@504  [Cuílo@99 Pombo@117]
+   row 'Uamba' @494: 11841@216 6304@264 1607@312 2513@360 600@408 468@456 349@504  [Uamba@99]
+   row 'Bembe' @507: 27283@216 13704@264 3586@312 6009@360 1601@408 1443@456 941@504  [Bembe@91]
+   row 'Bembe' @520: 18507@216 9370@264 2345@312 4144@360 1054@408 954@456 639@504  [Bembe@99]
+   row 'Mabaia' @533: 8776@216 4333@264 1242@312 1864@360 546@408 489@456 301@504  [Mabaia@99]
+   row 'Milunga' @547: 48160@216 28063@264 6947@312 9329@360 1779@408 1184@456 858@504  [Milunga@91]
+   row 'Milunga' @560: 16697@216 9399@264 2478@312 3533@360 605@408 396@456 286@504  [Milunga@99]
+   row 'Macocola' @573: 31463@216 18665@264 4469@312 5797@360 1174@408 789@456 571@504  [Macocola@99]
+   row 'Songo' @586: 93217@216 53780@264 13100@312 18678@360 3685@408 2705@456 1270@504  [Songo@91]
+   row 'Songo' @600: 78901@216 46254@264 11173@312 15336@360 2950@408 2177@456 1012@504  [Songo@99]
+   row 'Quivuenga' @613: 14316@216 7526@264 1927@312 3341@360 735@408 529@456 258@504  [Quivuenga@99]
+   row 'Quimbele' @626: 75338@216 39678@264 11647@312 16262@360 3664@408 2445@456 1642@504  [Quimbele@91]
+   row 'Quimbele' @639: 58999@216 31386@264 8931@312 12626@360 2841@408 1899@456 1316@504  [Quimbele@99]
+   row 'Icoca' @653: 16339@216 8292@264 2715@312 3637@360 823@408 546@456 326@504  [Icoca@99]
+   row 'Cangola' @666: 84647@216 48721@264 11338@312 16592@360 4008@408 2397@456 1592@504  [Cangola@91]
+   row 'Cangola' @679: 43810@216 24835@264 6197@312 8855@360 2045@408 1167@456 712@504  [Cangola@99]
+   row 'Bengo' @692: 17216@216 9716@264 2491@312 3311@360 884@408 462@456 351@504  [Bengo@99]
+   row 'Caiongo' @706: 23621@216 14170@264 2651@312 4425@360 1079@408 768@456 529@504  [Caiongo@99]
+   row 'Continua na página seguinte' @719:   [Continua@422 na@449 página@458 seguinte@479]
+   row 'Resultados Definitivos do RGPH 2024 – Província do Uíge' @796: 72@521  [Resultados@85 Definitivos@131 do@176 RGPH@189 2024@214 –@237 Província@244 do@284 Uíge@296]
+   not drawn: ZeroDivisionError: integer division or modulo by zero
+== Uige p74: 595x842 points, rotate 0; pypdf text 1752 characters; pdfplumber 1707 characters (1707 upright), 0 pictures, 74 rectangles, 645 lines, 0 curves
+   text: Resultados Definitivos do RGPH 2024 – Província do Uíge 73 Quadro 1.5 - População por município, segundo outros grupos etários, 2024 Total 0 - 19 anos 20 - 29 anos 30 - 54 anos 55 - 64 anos 65 - 74 anos 75 - ou mais anos Uíge 773 099 432 557 128 656 160 850 25 116 16 505 9 416 Uíge 622 039 347 780 106 201 129 284 19 597 12 152 7 025 Cancungo 73 330 41 212 11 124 15 662 2 497 1 837 998 Casseche 39 
+   row 'Quadro 1.5 - População por município, segundo outros grupos etários,' @61: 2024@454  [Quadro@140 1.5@174 -@189 População@194 por@240 município,@256 segundo@302 outros@340 grupos@369 etários,@400]
+   row '20 - 29 30 - 54 55 - 64 65 - 74 75 - ou' @75:   [20@282 -@292 29@296 30@330 -@340 54@344 55@378 -@388 64@392 65@426 -@436 74@440 75@474 -@484 ou@488]
+   row 'Total 0 - 19 anos' @79:   [Total@189 0@227 -@233 19@237 anos@247]
+   row 'anos anos anos anos mais anos' @84:   [anos@285 anos@333 anos@381 anos@429 mais@469 anos@486]
+   row 'Uíge' @96: 773099@216 432557@264 128656@312 160850@360 25116@408 16505@456 9416@504  [Uíge@91]
+   row 'Uíge' @109: 622039@216 347780@264 106201@312 129284@360 19597@408 12152@456 7025@504  [Uíge@99]
+   row 'Cancungo' @122: 73330@216 41212@264 11124@312 15662@360 2497@408 1837@456 998@504  [Cancungo@99]
+   row 'Casseche' @135: 39918@216 22782@264 5910@312 8222@360 1312@408 1152@456 539@504  [Casseche@99]
+   row 'Luanga' @149: 37813@216 20783@264 5421@312 7682@360 1709@408 1365@456 854@504  [Luanga@99]
+   row 'Mucaba' @160: 59467@216 35554@264 7366@312 11096@360 2479@408 1963@456 1010@504  [Mucaba@91]
+   row 'Mucaba' @174: 52454@216 31467@264 6455@312 9773@360 2190@408 1717@456 852@504  [Mucaba@99]
+   row 'Uando Mucaba' @187: 7013@216 4087@264 911@312 1323@360 289@408 245@456 158@504  [Uando@99 Mucaba@122]
+   row 'Nova Esperança' @200: 70778@216 42083@264 9537@312 13079@360 2715@408 2008@456 1356@504  [Nova@91 Esperança@110]
+   row 'Nova Esperança' @213: 44136@216 26601@264 6110@312 7833@360 1665@408 1174@456 753@504  [Nova@99 Esperança@117]
+   row 'Buenga-Sul' @227: 15985@216 9524@264 1952@312 3028@360 648@408 493@456 340@504  [Buenga-Sul@99]
+   row 'Cuílo Camboso' @240: 10657@216 5958@264 1475@312 2218@360 402@408 341@456 263@504  [Cuílo@99 Camboso@117]
+   row 'Sacandica' @253: 53940@216 26792@264 10147@312 12908@360 2190@408 1295@456 608@504  [Sacandica@91]
+   row 'Sacandica' @266: 9691@216 4555@264 2138@312 2272@360 396@408 242@456 89@504  [Sacandica@99]
+   row 'Béu' @280: 39295@216 20170@264 7149@312 9343@360 1429@408 817@456 387@504  [Béu@99]
+   row 'Cuilo Futa' @293: 4954@216 2066@264 860@312 1293@360 365@408 236@456 133@504  [Cuilo@99 Futa@117]
+   row 'Quipedro' @306: 7524@216 4040@264 1070@312 1636@360 354@408 272@456 154@504  [Quipedro@91]
+   row 'Quipedro' @319: 7524@216 4040@264 1070@312 1636@360 354@408 272@456 154@504  [Quipedro@91]
+   row 'Alto Zaza' @333: 27782@216 14086@264 4919@312 6578@360 1227@408 594@456 378@504  [Alto@91 Zaza@106]
+   row 'Alto Zaza' @346: 17805@216 9029@264 2995@312 4323@360 821@408 394@456 242@504  [Alto@99 Zaza@114]
+   row 'Cuango Calumbo' @359: 9977@216 5057@264 1924@312 2255@360 406@408 199@456 136@504  [Cuango@99 Calumbo@125]
+   row 'Massau' @372: 14046@216 8105@264 1957@312 2912@360 595@408 312@456 165@504  [Massau@91]
+   row 'Massau' @386: 8257@216 4794@264 1178@312 1698@360 325@408 168@456 93@504  [Massau@99]
+   row 'Macolo' @399: 5789@216 3311@264 779@312 1214@360 270@408 143@456 72@504  [Macolo@99]
+   row 'Nsosso' @412: 58210@216 31595@264 8328@312 12464@360 2709@408 2079@456 1035@504  [Nsosso@91]
+   row 'Nsosso' @425: 33933@216 17677@264 4695@312 7712@360 1756@408 1397@456 696@504  [Nsosso@99]
+   row 'Vista Alegre' @439: 17106@216 9816@264 2451@312 3440@360 668@408 478@456 253@504  [Vista@99 Alegre@116]
+   row 'Cambamba' @452: 7171@216 4102@264 1183@312 1311@360 284@408 204@456 87@504  [Cambamba@99]
+   row 'Lucunga' @465: 14832@216 7448@264 1935@312 3549@360 933@408 632@456 335@504  [Lucunga@91]
+   row 'Lucunga' @478: 14832@216 7448@264 1935@312 3549@360 933@408 632@456 335@504  [Lucunga@99]
+   row 'Resultados Definitivos do RGPH 2024 – Província do Uíge' @796: 73@521  [Resultados@85 Definitivos@131 do@176 RGPH@189 2024@214 –@237 Província@244 do@284 Uíge@296]
+   not drawn: ZeroDivisionError: integer division or modulo by zero
+== Uige p108: 842x595 points, rotate 0; pypdf text 2785 characters; pdfplumber 2743 characters (2743 upright), 0 pictures, 325 rectangles, 1175 lines, 0 curves
+   text: Resultados Definitivos do RGPH 2024 – Província do Uíge 105 Quadro 6.2 - População por município, comuna e área de residência, segundo a língua materna, 2024 Número de pessoas com 2 ou mais anos Língua materna agrupada Português Kimbundu Umbundu Cokue (Chokwe/ Kioko) Kikongo Olunyaneka (Nhaneka) Nganguela Oxikwanhama (Kwanhama) Ifyoti (Fiote) Muhumbi Luvale Khoisan Línguas estrangeiras Outras líng
+   row 'Quadro 6.2 - População por município, comuna e área de residência, segundo a língua materna,' @59: 2024@642  [Quadro@228 6.2@262 -@277 População@282 por@323 município,@340 comuna@386 e@422 área@429 de@450 residência,@462 segundo@509 a@547 língua@554 materna,@581]
+   row 'Língua materna agrupada' @73:   [Língua@469 materna@491 agrupada@519]
+   row 'Número de' @77:   [Número@146 de@173]
+   row 'Cokue' @84:   [Cokue@337]
+   row 'pessoas com 2 Olunyaneka Oxikwanhama Ifyoti Línguas Outras Não' @86:   [pessoas@141 com@167 2@182 Olunyaneka@424 Oxikwanhama@517 Ifyoti@576 Línguas@721 Outras@767 Não@805]
+   row 'Português Kimbundu Umbundu (Chokwe/ Kikongo Nganguela Muhumbi Luvale Khoisan' @93:   [Português@200 Kimbundu@242 Umbundu@285 (Chokwe/@332 Kikongo@383 Nganguela@473 Muhumbi@603 Luvale@645 Khoisan@676]
+   row 'ou mais anos (Nhaneka) (Kwanhama) (Fiote) estrangeiras línguas sabe' @96:   [ou@143 mais@153 anos@169 (Nhaneka)@427 (Kwanhama)@519 (Fiote)@572 estrangeiras@714 línguas@767 sabe@803]
+   row 'Kioko)' @102:   [Kioko)@337]
+   row 'Cunene' @113: 1895001@189 924899@231 104216@274 2666@316 581@368 851336@409 608@462 101@506 362@562 299@593 16@634 12@665 42@701 7683@754 473@789 1710@818  [Cunene@52]
+   row 'Área de residência' @125:   [Área@52 de@69 residência@78]
+   row 'Urbana' @138: 983256@189 573196@231 33441@274 1997@316 471@368 366581@414 256@462 76@506 221@562 252@593 15@634 9@665 28@701 5278@754 311@789 1122@818  [Urbana@61]
+   row 'Rural' @150: 911745@189 351703@231 70775@274 668@316 110@368 484755@414 352@462 24@506 141@562 47@593 1@634 3@665 14@701 2405@754 161@789 587@818  [Rural@61]
+   row 'Municípios/Comunas' @163:   [Municípios/Comunas@52]
+   row 'Dange Quitexe' @175: 37289@189 19419@231 9630@274 239@316 12@368 7852@414 32@462 1@506 8@561 26@593 1@634 0@665 1@701 8@754 9@789 23@818  [Dange@61 Quitexe@82]
+   row 'Bungo' @188: 56230@189 31885@231 144@274 15@316 5@368 24129@414 3@462 1@506 7@561 0@593 0@634 0@665 0@701 43@754 30@789 4@818  [Bungo@61]
+   row 'Ambuíla' @200: 20105@189 8634@231 95@274 42@316 11254@414 0@462 0@506 3@561 0@593 0@634 0@665 1@701 167@754 72@789 304@818  [Ambuíla@61]
+   row 'Negage' @213: 176980@189 86879@231 34383@274 741@316 123@368 54120@414 101@462 16@506 23@561 42@593 3@634 1@665 4@701 4@754 5@789 211@818  [Negage@61]
+   row 'Puri' @225: 46493@189 24391@231 272@274 20@316 8@368 21575@414 3@462 0@506 3@561 0@593 0@634 0@665 0@701 5566@754 59@789 190@818  [Puri@61]
+   row 'Maquela do Zombo' @238: 106323@189 33451@231 1428@274 360@316 75@368 64996@414 59@462 31@506 72@561 26@593 0@634 3@665 7@701 131@754 16@789 8@818  [Maquela@61 do@90 Zombo@99]
+   row 'Damba' @250: 56491@189 17822@231 229@274 11@316 5@368 38261@414 3@462 0@506 3@561 1@593 0@634 0@665 1@701 13@754 22@789 29@818  [Damba@61]
+   row 'Sanza Pombo' @262: 71731@189 32609@231 370@274 20@316 1@368 38630@414 19@462 3@506 12@561 1@593 0@634 0@665 1@701 21@754 1@789 4@818  [Sanza@61 Pombo@80]
+   row 'Bembe' @275: 25542@189 6826@231 100@274 19@316 14@368 18553@414 4@462 0@506 0@561 0@593 0@634 0@665 0@701 14@754 3@789 12@818  [Bembe@61]
+   row 'Milunga' @287: 45077@189 18100@231 246@274 6@316 16@368 26663@414 11@462 0@506 7@561 0@593 0@634 0@665 0@701 56@754 11@789 8@818  [Milunga@61]
+   row 'Songo' @300: 86422@189 49941@231 285@274 38@316 9@368 36060@414 5@462 3@506 6@561 0@593 0@634 0@665 0@701 12@754 4@789 37@818  [Songo@61]
+   row 'Quimbele' @312: 70782@189 11310@231 262@274 23@316 4@368 59109@414 3@462 0@506 16@561 1@593 0@634 0@665 0@701 13@754 7@789 24@818  [Quimbele@61]
+   row 'Cangola' @325: 78972@189 20665@231 43128@274 34@316 3@368 14887@414 197@462 0@506 13@561 0@593 0@634 0@665 0@701 1450@754 207@789 683@818  [Cangola@61]
+   row 'Uíge' @337: 730906@189 482326@231 6888@274 1039@316 284@368 237502@414 124@462 44@506 136@562 187@593 12@634 7@665 17@701 5@754 0@789 8@818  [Uíge@61]
+   row 'Mucaba' @350: 55337@189 19415@231 278@274 4@316 5@368 35603@414 5@462 0@506 7@561 1@593 0@634 0@665 4@701 5@754 4@789 26@818  [Mucaba@61]
+   row 'Nova Esperança' @362: 65962@189 10796@231 368@274 8@316 1@368 54732@414 8@462 0@506 12@561 1@593 0@634 0@665 0@701 51@754 1@789 17@818  [Nova@61 Esperança@79]
+   row 'Sacandica' @374: 50159@189 18832@231 273@274 0@316 9@368 30937@414 15@462 0@506 9@561 11@593 0@634 1@665 0@701 0@754 1@789 1@818  [Sacandica@61]
+   row 'Quipedro' @387: 6933@189 1981@231 54@274 16@316 0@368 4872@414 0@462 0@506 4@561 0@593 0@634 0@665 3@701 9@754 1@789 19@818  [Quipedro@61]
+   row 'Alto Zaza' @399: 26135@189 5560@231 121@274 1@316 0@368 20413@414 5@462 0@506 3@561 1@593 0@634 0@665 0@701 14@754 3@789 4@818  [Alto@61 Zaza@75]
+   row 'Massau' @412: 13011@189 1922@231 52@274 4@316 0@368 11011@414 0@462 0@506 1@561 0@593 0@634 0@665 0@701 28@754 1@789 16@818  [Massau@61]
+   row 'Nsosso' @423: 32186@189 7414@231 140@274 0@316 1@368 24572@414 0@462 0@506 12@561 0@593 0@634 0@665 1@701 4@754 5@789 23@818  [Nsosso@61]
+   row 'Vista Alegre' @435: 21970@189 11396@231 5423@274 23@316 3@368 5084@414 5@462 1@506 1@561 0@593 0@634 0@665 0@701 46@754 3@789 16@818  [Vista@61 Alegre@78]
+   row 'Lucunga' @448: 13965@189 3323@231 47@274 0@316 0@368 10522@414 4@462 0@506 4@561 0@593 0@634 0@665 0@701 0@754 0@789 0@818  [Lucunga@61]
+   row 'Resultados Definitivos do RGPH 2024 – Província do Uíge' @550: 105@774  [Resultados@85 Definitivos@131 do@176 RGPH@189 2024@214 –@237 Província@244 do@284 Uíge@296]
+   not drawn: ZeroDivisionError: integer division or modulo by zero
