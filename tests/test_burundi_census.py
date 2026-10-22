@@ -138,14 +138,14 @@ class BuildTest(unittest.TestCase):
         self.assertIn("2008 census", cendajuru["sex_ratio_note"])
         self.assertIn("(15,887 men and 16,571 women)", cendajuru["sex_ratio_note"])
         self.assertEqual(self.by[("admin2", "Mabanda")]["sex_ratio"]["value"], 999)
-        self.assertEqual(self.by[("admin2", "Mpinga-Kay")]["sex_ratio"]["value"], 923)
+        self.assertEqual(self.by[("admin2", "Mpinga-Kayove")]["sex_ratio"]["value"], 923)
         self.assertEqual([s["field"] for s in cendajuru["sources"]], ["sex_ratio"])
 
     def test_bujumbura_communes_are_their_zones_of_2008_added_up(self):
         muha = self.by[("admin2", "Muha")]
         self.assertEqual(muha["sex_ratio"]["value"], round(1000 * 68_728 / 56_108))
         self.assertIn("Kanyosha, Kinindo and Musaga", muha["sex_ratio_note"])
-        rural = self.by[("admin2", "Kanyosha1")]
+        rural = self.by[("admin2", "Kanyosha")]
         self.assertEqual(rural["sex_ratio"]["value"], round(1000 * 38_203 / 40_620))
 
     def test_provinces_are_the_communes_that_make_them_as_drawn(self):

@@ -244,7 +244,7 @@ class PlanTest(unittest.TestCase):
 
     def test_the_chartered_cities_and_snnpr_have_seats(self):
         self.assertEqual(self.by[("admin1", "Addis Ababa")]["capital"], "Addis Ababa")
-        self.assertEqual(self.by[("admin2", "Region 14")]["capital"], "Addis Ababa")
+        self.assertEqual(self.by[("admin2", "Addis Ababa")]["capital"], "Addis Ababa")
         self.assertEqual(self.by[("admin1", "Dire Dawa")]["capital"], "Dire Dawa")
         self.assertEqual(self.by[("admin2", "Hareri")]["capital"], "Harar")
         snnpr = self.by[("admin1", "SNNPR")]

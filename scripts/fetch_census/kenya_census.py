@@ -64,6 +64,7 @@ from collections import defaultdict
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
+from common import as_read  # noqa: E402
 from .binding import fold
 from .cod_ps_age import grouped_median
 
@@ -105,8 +106,9 @@ COD_AB = "cod-ab-ken"
 # few hundred people are the rest).
 PARTITION = 0.995
 
-# The map's county label where it is not the census's name folded.
-COUNTY_ALIASES = {"tharakanithi": "Tharaka", "taitataveta": "Taita Taveta"}
+# The map's county label where it is not the census's name folded. The
+# boundary file's "Tharaka" is read as Tharaka-Nithi (common.as_read).
+COUNTY_ALIASES = {"taitataveta": "Taita Taveta"}
 # Constituencies whose ground is one census sub-county or a set of whole ones,
 # by county: {county fold: {constituency label: [sub-county folds, or
 # "county/sub-county" for another county's]}}. The evidence is the land area
@@ -703,8 +705,12 @@ def main() -> int:
     for entry in vol3.values():
         for line in entry["unread"]:
             log(f"  ages not read for {entry['name']}, {line}")
-    admin1 = json.loads((SITE / "admin1" / "KEN.units.json").read_text())
-    admin2 = json.loads((SITE / "admin2" / "KEN.units.json").read_text())
+    # Under the names the map reads them by, whether or not the site was built
+    # since the boundary file's labels were corrected.
+    admin1, admin2 = (
+        [{**u, "name": as_read(u["name"], "KEN", level)}
+         for u in json.loads((SITE / level / "KEN.units.json").read_text())]
+        for level in ("admin1", "admin2"))
     records, shape_of = county_records(vol1, vol3, admin1)
     plans, report = constituency_plans(vol3, admin2, shape_of)
     for line in report:

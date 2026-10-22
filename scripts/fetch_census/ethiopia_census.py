@@ -24,8 +24,8 @@ Peoples' Region in 2007, is a region of its own, and SNNPR's row is the rest.
 The map draws SNNPR as it was before Sidama left it, so its polygon is the two
 rows added together, age group by age group, and the map's Sidama zone under
 SNNPR is the workbook's Sidama zone. Addis Ababa's ten sub-cities are its
-zone-level rows; the map draws one zone-level polygon there ("Region 14"),
-which is the region entire.
+zone-level rows; the map draws one zone-level polygon there (Addis Ababa,
+which the boundary file labels "Region 14"), which is the region entire.
 
 Special weredas and town administrations were counted apart from the zones
 around them. Where the town and the land the census gave it stand inside one
@@ -82,6 +82,7 @@ from . import uscb
 from ._shared import PROCESSED, http_get, log, measure, record, write_json
 from .binding import fold
 from .cod_ps_age import grouped_median
+from common import as_read  # noqa: E402
 
 OUT = "ethiopia_census.json"
 YEAR = 2007
@@ -99,7 +100,7 @@ REGIONS = {
     "Addis Ababa": ["adisabeba"],
     "Afar": ["afar"],
     "Amhara": ["amara"],
-    "Beneshangul Gumu": ["binshangulgumuz"],
+    "Benishangul-Gumuz": ["binshangulgumuz"],
     "Dire Dawa": ["diredawa"],
     "Gambela": ["gambelahizboch"],
     "Hareri": ["harerihizb"],
@@ -108,17 +109,19 @@ REGIONS = {
     "Somali": ["sumale"],
     "Tigray": ["tigray"],
 }
-# A zone polygon's label -> the workbook's zone of another name (folded), in
-# the workbook's area(s) that make the polygon's region.
+# A zone polygon's label, as the map reads it (common.as_read: the boundary
+# file's "North Shewa(R3)", "KT" and "Special Woreda" under their names) -> the
+# workbook's zone of another name (folded), in the workbook's area(s) that make
+# the polygon's region.
 ZONES = {
-    "North Shewa(R3)": "northshewa", "North Shewa(R4)": "northshewa",
-    "Oromia": "oromiya", "Special Woreda": "argobaspecialwereda", "Majang": "mezhenger",
-    "Hareri": "harari", "Kelem Wellega": "kellemwellega",
-    "South West Shewa": "southwestshuwa", "KT": "kembatatembaro",
+    "North Shewa (Amhara)": "northshewa", "North Shewa (Oromia)": "northshewa",
+    "Oromia": "oromiya", "Argoba Special Woreda": "argobaspecialwereda",
+    "Majang": "mezhenger", "Hareri": "harari", "Kelem Wellega": "kellemwellega",
+    "South West Shewa": "southwestshuwa", "Kembata Tembaro": "kembatatembaro",
     "Basketo": "basketospecialwereda", "Wolayita": "welayita",
 }
 # The one zone-level polygon that is a whole first-order area.
-WHOLE = {"Region 14": "adisabeba"}
+WHOLE = {"Addis Ababa": "adisabeba"}
 # Special weredas and town administrations counted apart, by the zone polygon
 # that holds the town and its land (each placed by the town's coordinates and
 # the area around it against the boundary file's polygons).
@@ -161,7 +164,7 @@ CAPITALS: dict[tuple[str, str], tuple[str, str, dict[str, str]]] = {
     ("admin1", "Addis Ababa"): (
         "Addis Ababa", "Addis Ababa is a chartered city, whose seat is the city itself.",
         {"name": "Wikidata", "url": WIKIDATA + "Q3624", "license": "CC0"}),
-    ("admin2", "Region 14"): (
+    ("admin2", "Addis Ababa"): (
         "Addis Ababa", "Addis Ababa, a chartered city, is drawn as this one zone; its seat is "
                        "the city itself.",
         {"name": "Wikidata", "url": WIKIDATA + "Q3624", "license": "CC0"}),
@@ -440,7 +443,7 @@ PROJECTION_SOURCE = ("Ethiopian Statistics Service, population projection for Ju
 # The map's region -> the projection's regions (folded) it holds.
 PROJECTION_REGIONS = {
     "Addis Ababa": ["addisababa"], "Afar": ["afar"], "Amhara": ["amhara"],
-    "Beneshangul Gumu": ["benishangulgumz"], "Dire Dawa": ["diredawa"], "Gambela": ["gambela"],
+    "Benishangul-Gumuz": ["benishangulgumz"], "Dire Dawa": ["diredawa"], "Gambela": ["gambela"],
     "Hareri": ["harari"], "Oromia": ["oromia"],
     "SNNPR": ["snnp", "sidama", "southwestethiopia"], "Somali": ["somali"],
     "Tigray": ["tigray"],
@@ -489,11 +492,11 @@ def projection_tables() -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, 
 # South West Ethiopia (ET11) and South Ethiopia (ET08), and kept ET07 in Central.
 REGION_FAMILY = {"ET01": {"ET01", "ET99"}, "ET07": {"ET07", "ET08", "ET11", "ET16"}}
 # Zones the map draws that are a whole region: {zone label: projection regions}.
-PROJECTION_WHOLE = {"Region 14": ["addisababa"], "Dire Dawa": ["diredawa"],
+PROJECTION_WHOLE = {"Addis Ababa": ["addisababa"], "Dire Dawa": ["diredawa"],
                     "Hareri": ["harari"]}
 # The projection's region codes within each region the map draws.
 REGION_CODES = {"Tigray": {"ET01"}, "Afar": {"ET02"}, "Amhara": {"ET03"}, "Oromia": {"ET04"},
-                "Somali": {"ET05"}, "Beneshangul Gumu": {"ET06"},
+                "Somali": {"ET05"}, "Benishangul-Gumuz": {"ET06"},
                 "SNNPR": {"ET07", "ET11", "ET16"}, "Gambela": {"ET12"}, "Hareri": {"ET13"},
                 "Addis Ababa": {"ET14"}, "Dire Dawa": {"ET15"}}
 
@@ -508,6 +511,17 @@ def bare(name: str) -> str:
 
 def listed(names: list[str]) -> str:
     return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def drawn(level: str) -> list[dict[str, Any]]:
+    """The map's polygons at a level, each under its label as the map reads it.
+
+    The build corrects the boundary file's coded and cut labels where it reads
+    the shapes ("KT" is Kembata Tembaro), so the tables above are keyed by the
+    corrected forms; reading a site built before the corrections, the labels
+    are corrected here the same way."""
+    units = json.loads((SITE / level / "ETH.units.json").read_text())
+    return [{**u, "name": as_read(u["name"].strip(), "ETH", level)} for u in units]
 
 
 def spoken(name: str) -> str:
@@ -757,8 +771,7 @@ def main() -> int:
     log(f"  {len(table['regions'])} first-order areas and {len(table['zones'])} zones, making "
         f"{NATIONAL:,}, every row's groups and sexes making its total; listed without a "
         f"count: {table['missing']}")
-    admin1 = json.loads((SITE / "admin1" / "ETH.units.json").read_text())
-    admin2 = json.loads((SITE / "admin2" / "ETH.units.json").read_text())
+    admin1, admin2 = drawn("admin1"), drawn("admin2")
     records, report = plan(table, admin1, admin2)
     for line in report:
         log("  " + line)

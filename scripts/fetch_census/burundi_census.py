@@ -45,6 +45,7 @@ from typing import Any
 
 from ._shared import PROCESSED, http_get, log, measure, record, write_json
 from .binding import fold
+from common import as_read  # noqa: E402
 
 OUT = "burundi_census.json"
 YEAR = 2008
@@ -67,10 +68,10 @@ MAIRIE = {
 # Rumonge province (2015): its communes and the provinces of 2008 they were in.
 RUMONGE = {"BUGARAMA": "BUJUMBURA RURAL", "MUHUTA": "BUJUMBURA RURAL",
            "BURAMBI": "BURURI", "BUYENGERO": "BURURI", "RUMONGE": "BURURI"}
-# The boundary file's spelling of a commune -> the census's, where neither is
-# the other's beginning (the boundary file cuts names at ten letters).
-SPELLING = {"Kanyosha1": "KANYOSHA", "Nyanrusang": "NYARUSANGE", "Buhiga": "BUHUGA",
-            "Mpinga-Kay": "MPINGA"}
+# A commune's name as the map reads it -> the census's, where neither is the
+# other's beginning. The boundary file cuts names at ten letters ("Mpinga-Kay",
+# "Nyanrusang", "Kanyosha1"), and the map reads them whole (common.as_read).
+SPELLING = {"Buhiga": "BUHUGA", "Mpinga-Kayove": "MPINGA"}
 # The boundary file's spelling of a province -> the census's.
 PROVINCE_SPELLING = {"Karuzi": "KARUSI"}
 # Rows the workbook mislabels, by (province, label, men, women): the name the
@@ -305,8 +306,12 @@ def main() -> int:
     log(f"  Tableau 1.6: {len(table)} provinces and "
         f"{sum(len(p['communes']) for p in table.values())} communes making "
         f"{NATIONAL[2]:,}, each province's communes making its row; Tableau 1.4 agrees")
-    admin1 = json.loads((SITE / "admin1" / "BDI.units.json").read_text())
-    admin2 = json.loads((SITE / "admin2" / "BDI.units.json").read_text())
+    # Under the names the map reads them by, whether or not the site was built
+    # since the cut labels were declared.
+    admin1, admin2 = (
+        [{**u, "name": as_read(u["name"].strip(), "BDI", level)}
+         for u in json.loads((SITE / level / "BDI.units.json").read_text())]
+        for level in ("admin1", "admin2"))
     records, report = build(table, admin1, admin2)
     for line in report:
         log("  " + line)
