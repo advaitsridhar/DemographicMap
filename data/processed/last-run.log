@@ -1,83 +1,158 @@
-
-=== HDX search: 'Mauritanie' ===
-    284 dataset(s), showing 80
-    -     fewsnet                      mauritania-acute-food-insecurity-classification-april-2023-september-2023
-    xlsx  ocha-fiss                    cod-ab-mrt
-    -     worldpop                     worldpop-population-counts-for-mauritania
-    -     healthsites                  mauritania-healthsites
-    -     world-bank-group             world-bank-infrastructure-indicators-for-mauritania
-    -     world-bank-group             world-bank-education-indicators-for-mauritania
-    -     ocha-rowca                   mauritania-water-courses
-    -     worldpop                     worldpop-age-and-gender-structures-for-mauritania
-    -     unesco                       unesco-data-for-mauritania
-    -     world-bank-group             world-bank-gender-indicators-for-mauritania
-    -     wfp                          wfp-food-prices-for-mauritania
-    -     ocha-rowca                   mauritania-roads
-    -     worldpop                     worldpop-population-density-for-mauritania
-    xlsx  ocha-rowca                   mrt-settlements
-    -     worldpop                     worldpop-births-for-mauritania
-    -     cerf                         cerf-allocations-mrt
-    -     world-health-organization    who-data-for-mrt
-    -     world-bank-group             world-bank-poverty-indicators-for-mauritania
-    xlsx  acled                        mauritania-acled-conflict-data
-    -     hot                          hotosm_mrt_railways
-    -     hot                          hotosm_mrt_waterways
-    -     heidelberg-institute-for-geoinformation-technology mauritania-accessibility-indicators
-    -     hot                          hotosm_mrt_roads
-    -     dhs                          dhs-subnational-data-for-mauritania
-    xlsx  ocha-rowca                   mauritania-affected-persons-locations-0
-    xlsx  unfpa                        cod-ps-mrt
-    -     hot                          hotosm_mrt_buildings
-    -     heidelberg-institute-for-geoinformation-technology mauritania---risk-assessment-indicators
-    -     worldpop                     worldpop-pregnancies-for-mauritania
-    -     geoboundaries                geoboundaries-admin-boundaries-for-mauritania
-    -     dhs                          dhs-data-for-mauritania
-    -     ocha-rowca                   mauritania-affected-persons-locations
-    -     world-bank-group             world-bank-environment-indicators-for-mauritania
-    -     hot                          hotosm_mrt_sea_ports
-    -     hot                          hotosm_mrt_financial_services
-    -     ourairports                  ourairports-mrt
-    xlsx  ocha-rowca                   mauritania-other-0
-    -     hot                          hotosm_mrt_populated_places
-    -     ocha-rowca                   mauritania-railways
-    xlsx  wfp                          wfp_ica_mrt_2017
-    -     ifrc                         ifrc-appeals-data-for-mauritania
-    -     world-bank-group             world-bank-urban-development-indicators-for-mauritania
-    xlsx  hera-humanitarian-emergency-response-africa mauritania_covid19_subnational
-    xlsx  ocha-rowca                   mauritania-food-security-0
-    -     world-bank-group             world-bank-external-debt-indicators-for-mauritania
-    -     world-bank-group             world-bank-financial-sector-indicators-for-mauritania
-    -     hot                          hotosm_mrt_cultural_places
-    -     oxford-poverty-human-development-initiative mauritania-mpi
-    -     world-bank-group             world-bank-trade-indicators-for-mauritania
-    xlsx  ocha-fiss                    cod-em-mrt
-    -     world-bank-group             world-bank-health-indicators-for-mauritania
-    -     glide-initiative             mrt-glide-events
-    -     worldpop                     worldpop-age-and-gender-structures-2015-2030-mrt
-    -     undp-human-development-reports-office hdro-data-for-mauritania
-    -     heidelberg-institute-for-geoinformation-technology mauritania-road-surface-data
-    -     hot                          hotosm_mrt_education_facilities
-    xlsx  cred                         emdat-country-profiles-mrt
-    xlsx  hera-humanitarian-emergency-response-africa mauritania-coronavirus-covid-19-city-level
-    -     world-bank-group             world-bank-social-development-indicators-for-mauritania
-    -     hdx-hapi                     hdx-hapi-mrt
-    -     world-bank-group             world-bank-millenium-development-goals-indicators-for-mauritania
-    -     world-bank-group             world-bank-climate-change-indicators-for-mauritania
-    -     world-bank-group             mauritania-real-time-prices
-    xlsx  ocha-rowca                   mauritania-acute-malnutrition-2006-2015
-    -     transparencyinternational    mrt-corruption-perceptions-index
-    xlsx  ocha-rowca                   mauritania-nutrition-0-0
-    xlsx  ocha-rowca                   mauritania-other-0-0-0
-    -     ocha-fts                     mrt-requirements-and-funding-data
-    -     ipc                          mauritania-acute-food-insecurity-country-data
-    -     world-bank-group             world-bank-science-and-technology-indicators-for-mauritania
-    -     hot                          hotosm_mrt_airports
-    -     hot                          hotosm_mrt_health_facilities
-    -     world-bank-group             world-bank-economy-and-growth-indicators-for-mauritania
-    -     worldpop                     worldpop-population-counts-2015-2030-mrt
-    -     world-bank-group             world-bank-aid-effectiveness-indicators-for-mauritania
-    -     iati                         iati-mrt
-    -     international-displacement-monitoring-centre-idmc mrt-idmc-idu-events
-    -     ocha-rowca                   mauritania-elevation-model
-    -     world-bank-group             world-bank-public-sector-indicators-for-mauritania
-    -     meta                         highresolutionpopulationdensitymaps-mrt
+probe_page: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2024/*&fl=original,timestamp,mimetype&filter=mimetype:application/pdf&limit=2000
+  retry 1/4 after 2s :: https://web.archive.org/cdx/search/cdx?url=ansade.mr/wp-content/uploads/2024/*&fl=original,timestamp,mimetype&filter=mimetype:application/pdf&limit=2000 :: HTTP Error 503: Service Unavailable
+  155 lines:
+        0  https://ansade.mr/wp-content/uploads/2024/01/Note-INPC-Decembre-2023_AR_VF-1.pdf 20240727120040 application/pdf
+        1  https://ansade.mr/wp-content/uploads/2024/01/Note-INPC-Decembre-2023_AR_VF-1.pdf 20250627132048 application/pdf
+        2  https://ansade.mr/wp-content/uploads/2024/01/Note-INPC-Decembre-2023_AR_VF-1.pdf 20250713213022 application/pdf
+        3  https://ansade.mr/wp-content/uploads/2024/01/Note-INPC-Decembre-2023_FR_VF.pdf 20240728171644 application/pdf
+        4  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_AR_VF.pdf 20240712141140 application/pdf
+        5  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_AR_VF.pdf 20250627131957 application/pdf
+        6  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_AR_VF.pdf 20250713213002 application/pdf
+        7  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_FR_VF.pdf 20240728055304 application/pdf
+        8  https://ansade.mr/wp-content/uploads/2024/02/Note-ICC-4T-2023_FR_VF.pdf 20250714163325 application/pdf
+        9  https://ansade.mr/wp-content/uploads/2024/02/Note-INPC-Janvier-2024_AR_VF-1.pdf 20240727115925 application/pdf
+       10  https://ansade.mr/wp-content/uploads/2024/02/Note-INPC-Janvier-2024_AR_VF-1.pdf 20250625022648 application/pdf
+       11  https://ansade.mr/wp-content/uploads/2024/02/Note-INPC-Janvier-2024_AR_VF-1.pdf 20250713212714 application/pdf
+       12  https://ansade.mr/wp-content/uploads/2024/02/Note-INPC-Janvier-2024_FR_VF.pdf 20240728171623 application/pdf
+       13  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-2023-AR.pdf 20240712141121 application/pdf
+       14  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-2023-AR.pdf 20250620041803 application/pdf
+       15  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-2023-AR.pdf 20250712063045 application/pdf
+       16  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-en-2023-FR.pdf 20240727054644 application/pdf
+       17  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-en-2023-FR.pdf 20250612140930 application/pdf
+       18  https://ansade.mr/wp-content/uploads/2024/02/Note-sur-linflation-en-2023-FR.pdf 20250713161653 application/pdf
+       19  https://ansade.mr/wp-content/uploads/2024/02/Note-trimestrielle-du-commerce-exterieur-N%C2%B063.pdf 20240728055806 application/pdf
+       20  https://ansade.mr/wp-content/uploads/2024/02/PAA-du-1er-Fevrier-2024-1.pdf 20240712140944 application/pdf
+       21  https://ansade.mr/wp-content/uploads/2024/02/PAA-du-1er-Fevrier-2024-1.pdf 20250625023058 application/pdf
+       22  https://ansade.mr/wp-content/uploads/2024/02/PAA-du-1er-Fevrier-2024-1.pdf 20250713212919 application/pdf
+       23  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB-2023.pdf 20240727115945 application/pdf
+       24  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB-2023.pdf 20250625022902 application/pdf
+       25  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB-2023.pdf 20250713212815 application/pdf
+       26  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-2023.pdf 20240712141104 application/pdf
+       27  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-2023.pdf 20250625022944 application/pdf
+       28  https://ansade.mr/wp-content/uploads/2024/03/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-2023.pdf 20250713212839 application/pdf
+       29  https://ansade.mr/wp-content/uploads/2024/03/%D9%86%D8%B4%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-1.pdf 20240712141046 application/pdf
+       30  https://ansade.mr/wp-content/uploads/2024/03/%D9%86%D8%B4%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-1.pdf 20250625022528 application/pdf
+       31  https://ansade.mr/wp-content/uploads/2024/03/%D9%86%D8%B4%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B9-1.pdf 20250713212633 application/pdf
+       32  https://ansade.mr/wp-content/uploads/2024/03/ANNUAIRE-STATISTIQUES-2022-VF.pdf 20240728113106 application/pdf
+       33  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4-2023.pdf 20240727054751 application/pdf
+       34  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4-2023.pdf 20250714162820 application/pdf
+       35  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4-2023.pdf 20250715123015 application/pdf
+       36  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4_2023_Ar.pdf 20240712140813 application/pdf
+       37  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4_2023_Ar.pdf 20250625022812 application/pdf
+       38  https://ansade.mr/wp-content/uploads/2024/03/IPI_T4_2023_Ar.pdf 20250713212752 application/pdf
+       39  https://ansade.mr/wp-content/uploads/2024/03/Note-de-conjoncture-No-74-1.pdf 20240728061516 application/pdf
+       40  https://ansade.mr/wp-content/uploads/2024/03/Note-de-conjoncture-No-74.pdf 20240728001935 application/pdf
+       41  https://ansade.mr/wp-content/uploads/2024/03/Note-de-conjoncture-No-74.pdf 20250714162350 application/pdf
+       42  https://ansade.mr/wp-content/uploads/2024/03/Note-INPC-fevr-2024_AR_VF.pdf 20240727115446 application/pdf
+       43  https://ansade.mr/wp-content/uploads/2024/03/Note-INPC-fevr-2024_AR_VF.pdf 20250625022340 application/pdf
+       44  https://ansade.mr/wp-content/uploads/2024/03/Note-INPC-fevr-2024_AR_VF.pdf 20250713212547 application/pdf
+       45  https://ansade.mr/wp-content/uploads/2024/03/Note-INPC-fevr-2024_FR_VF.pdf 20240728001306 application/pdf
+       46  https://ansade.mr/wp-content/uploads/2024/03/Note-sur-la-croissance-4T2023.pdf 20240726004955 application/pdf
+       47  https://ansade.mr/wp-content/uploads/2024/04/Mise-a-jour-des-indicateurs-de-politique-de-population-et-des-agendas-internationaux-ODD.pdf 20240726004933 application/pdf
+       48  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_AR_VF.pdf 20240712140829 application/pdf
+       49  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_AR_VF.pdf 20250625022138 application/pdf
+       50  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_AR_VF.pdf 20250713212446 application/pdf
+       51  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_FR_VF.pdf 20240726004457 application/pdf
+       52  https://ansade.mr/wp-content/uploads/2024/04/Note-ICC-1T-2024_FR_VF.pdf 20250714163306 application/pdf
+       53  https://ansade.mr/wp-content/uploads/2024/04/Note-INPC-mars-2024_AR_VF.pdf 20240727115636 application/pdf
+       54  https://ansade.mr/wp-content/uploads/2024/04/Note-INPC-mars-2024_AR_VF.pdf 20250625022435 application/pdf
+       55  https://ansade.mr/wp-content/uploads/2024/04/Note-INPC-mars-2024_AR_VF.pdf 20250713212610 application/pdf
+       56  https://ansade.mr/wp-content/uploads/2024/04/Note-INPC-mars-2024_FR_VF.pdf 20240728001248 application/pdf
+       57  https://ansade.mr/wp-content/uploads/2024/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2024T1.pdf 20240712141029 application/pdf
+       58  https://ansade.mr/wp-content/uploads/2024/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2024T1.pdf 20250625022053 application/pdf
+       59  https://ansade.mr/wp-content/uploads/2024/05/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B5%D9%84%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%A3%D9%88%D9%84-2024T1.pdf 20250713212425 application/pdf
+       60  https://ansade.mr/wp-content/uploads/2024/05/Appel-a-candidature-RGE-Ar.pdf 20240712140928 application/pdf
+       61  https://ansade.mr/wp-content/uploads/2024/05/Appel-a-candidature-RGE-Ar.pdf 20250714023606 application/pdf
+       62  https://ansade.mr/wp-content/uploads/2024/05/Appel-a-candidature-RGE-Fr.pdf 20240726004616 application/pdf
+       63  https://ansade.mr/wp-content/uploads/2024/05/Bulletin-de-conjoncture-No-75.pdf 20240726004840 application/pdf
+       64  https://ansade.mr/wp-content/uploads/2024/05/Bulletin-de-conjoncture-No-75.pdf 20250714162330 application/pdf
+       65  https://ansade.mr/wp-content/uploads/2024/05/IPI_T1-2024.pdf 20240726004436 application/pdf
+       66  https://ansade.mr/wp-content/uploads/2024/05/IPI_T1-2024.pdf 20250714162804 application/pdf
+       67  https://ansade.mr/wp-content/uploads/2024/05/IPI_T1-2024.pdf 20250715122937 application/pdf
+       68  https://ansade.mr/wp-content/uploads/2024/05/Note-de-conjoncture-No-75.pdf 20240726004821 application/pdf
+       69  https://ansade.mr/wp-content/uploads/2024/05/Note-INPC-avril-2024_AR_VF.pdf 20240712140754 application/pdf
+       70  https://ansade.mr/wp-content/uploads/2024/05/Note-INPC-avril-2024_FR_VF.pdf 20240726004414 application/pdf
+       71  https://ansade.mr/wp-content/uploads/2024/05/Note-trimestrielle-du-commerce-exterieur-N%C2%B064.pdf 20240726004907 application/pdf
+       72  https://ansade.mr/wp-content/uploads/2024/05/Note-trimestrielle-du-commerce-exterieur-N%C2%B064.pdf 20250714163853 application/pdf
+       73  https://ansade.mr/wp-content/uploads/2024/06/Etude-sur-les-determinants-de-linflation_version_finale.pdf 20240726004800 application/pdf
+       74  https://ansade.mr/wp-content/uploads/2024/06/Note-INPC-mai-2024_AR_VF.pdf 20240712140846 application/pdf
+       75  https://ansade.mr/wp-content/uploads/2024/06/Note-INPC-mai-2024_FR_VF.pdf 20240726080405 application/pdf
+       76  https://ansade.mr/wp-content/uploads/2024/07/Note-1T2024_AR-1-1.pdf 20240725090935 application/pdf
+       77  https://ansade.mr/wp-content/uploads/2024/07/Note-1T2024_FR-.pdf 20240726004740 application/pdf
+       78  https://ansade.mr/wp-content/uploads/2024/07/Note-ICC-2T-2024_AR_VF.pdf 20250721153242 application/pdf
+       79  https://ansade.mr/wp-content/uploads/2024/07/Note-ICC-2T-2024_FR_VF.pdf 20250714163249 application/pdf
+       80  https://ansade.mr/wp-content/uploads/2024/07/Note-ICC-2T-2024_FR_VF.pdf 20250721061001 application/pdf
+       81  https://ansade.mr/wp-content/uploads/2024/07/Note-INPC-Juin-2024_AR_VF.pdf 20240725090745 application/pdf
+       82  https://ansade.mr/wp-content/uploads/2024/07/Note-INPC-Juin-2024_FR_VF.pdf 20240726004519 application/pdf
+       83  https://ansade.mr/wp-content/uploads/2024/08/%D8%A7%D9%84%D9%86%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D8%B3%D9%86%D9%88%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D9%84%D9%85%D9%88%D8%B1%D9%8A%D8%AA%D8%A7%D9%86%D9%8A%D8%A7-2023.pdf 20250721192614 application/pdf
+       84  https://ansade.mr/wp-content/uploads/2024/08/Bulletin-de-conjoncture-No-76.pdf 20250714162306 application/pdf
+       85  https://ansade.mr/wp-content/uploads/2024/08/Bulletin-de-conjoncture-No-76.pdf 20250721015627 application/pdf
+       86  https://ansade.mr/wp-content/uploads/2024/08/IPI_T1_2024_AR-1.pdf 20250713162431 application/pdf
+       87  https://ansade.mr/wp-content/uploads/2024/08/IPI_T1_2024_AR-1.pdf 20250720053051 application/pdf
+       88  https://ansade.mr/wp-content/uploads/2024/08/Note-annuelle-du-commerce-exterieur.pdf 20250714163817 application/pdf
+       89  https://ansade.mr/wp-content/uploads/2024/08/Note-annuelle-du-commerce-exterieur.pdf 20250715125000 application/pdf
+       90  https://ansade.mr/wp-content/uploads/2024/08/Note-annuelle-du-commerce-exterieur.pdf 20250721061624 application/pdf
+       91  https://ansade.mr/wp-content/uploads/2024/08/Note-annuelle-du-commerce-exterieur.pdf 20251124221526 application/pdf
+       92  https://ansade.mr/wp-content/uploads/2024/08/Note-INPC-juillet-2024_AR_VF.pdf 20250713211538 application/pdf
+       93  https://ansade.mr/wp-content/uploads/2024/08/Note-INPC-juillet-2024_AR_VF.pdf 20250721230226 application/pdf
+       94  https://ansade.mr/wp-content/uploads/2024/08/Note-INPC-juillet-2024_FR_VF.pdf 20250722141239 application/pdf
+       95  https://ansade.mr/wp-content/uploads/2024/08/Note-sur-la-croissance-economique-2023-Ar.pdf 20250721193334 application/pdf
+       96  https://ansade.mr/wp-content/uploads/2024/08/Note-sur-la-croissance-economique-2023-Fr.pdf 20250721110116 application/pdf
+       97  https://ansade.mr/wp-content/uploads/2024/08/Note-trimestrielle-du-commerce-exterieur-N%C2%B065.pdf 20250714163834 application/pdf
+       98  https://ansade.mr/wp-content/uploads/2024/08/Note-trimestrielle-du-commerce-exterieur-N%C2%B065.pdf 20250715125052 application/pdf
+       99  https://ansade.mr/wp-content/uploads/2024/08/Note-trimestrielle-du-commerce-exterieur-N%C2%B065.pdf 20250721061645 application/pdf
+      100  https://ansade.mr/wp-content/uploads/2024/08/Series-de-Donnees-de-la-Sante-par-Indicateur-1995-2024.pdf 20250721110507 application/pdf
+      101  https://ansade.mr/wp-content/uploads/2024/08/Series-de-Donners-dEducation-par-Indicateur-1995-2024.pdf 20250721110447 application/pdf
+      102  https://ansade.mr/wp-content/uploads/2024/09/%D9%86%D8%B4%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D9%88-%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A-%D9%84%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A_VF.pdf 20250721193307 application/pdf
+      103  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20241103213748 application/pdf
+      104  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20241122231755 application/pdf
+      105  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20241203215205 application/pdf
+      106  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250115181101 application/pdf
+      107  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250206002149 application/pdf
+      108  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250318022428 application/pdf
+      109  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250420091353 application/pdf
+      110  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250510210447 application/pdf
+      111  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250712125200 application/pdf
+      112  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250722083302 application/pdf
+      113  https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf 20250925063203 application/pdf
+      114  https://ansade.mr/wp-content/uploads/2024/09/IPI_T2-2024.pdf 20250714162747 application/pdf
+      115  https://ansade.mr/wp-content/uploads/2024/09/IPI_T2-2024.pdf 20250715122910 application/pdf
+      116  https://ansade.mr/wp-content/uploads/2024/09/IPI_T2-2024.pdf 20250721060447 application/pdf
+      117  https://ansade.mr/wp-content/uploads/2024/09/Note-de-croissance-economique-2T2024-1.pdf 20250721110048 application/pdf
+      118  https://ansade.mr/wp-content/uploads/2024/09/Note-INPC-aout-2024_AR_VF-1.pdf 20250713211452 application/pdf
+      119  https://ansade.mr/wp-content/uploads/2024/09/Note-INPC-aout-2024_AR_VF-1.pdf 20250720102404 application/pdf
+      120  https://ansade.mr/wp-content/uploads/2024/09/Note-INPC-aout-2024_FR_VF.pdf 20250722022234 application/pdf
+      121  https://ansade.mr/wp-content/uploads/2024/09/Note_de_conjoncture-76.pdf 20250721062225 application/pdf
+      122  https://ansade.mr/wp-content/uploads/2024/09/PGMO-DU-PROJET-PRCSM-VP.pdf 20250722225758 application/pdf
+      123  https://ansade.mr/wp-content/uploads/2024/09/PMPP-DU-PROJET-PRCSM-VP-JUIN-2023.pdf 20250723045010 application/pdf
+      124  https://ansade.mr/wp-content/uploads/2024/10/IPI_T2_2024_AR.pdf 20250713162415 application/pdf
+      125  https://ansade.mr/wp-content/uploads/2024/10/IPI_T2_2024_AR.pdf 20250720053029 application/pdf
+      126  https://ansade.mr/wp-content/uploads/2024/10/Note-ICC-3T-2024_AR_VF.pdf 20250721153221 application/pdf
+      127  https://ansade.mr/wp-content/uploads/2024/10/Note-ICC-3T-2024_FR_VF.pdf 20250714163234 application/pdf
+      128  https://ansade.mr/wp-content/uploads/2024/10/Note-ICC-3T-2024_FR_VF.pdf 20250721060945 application/pdf
+      129  https://ansade.mr/wp-content/uploads/2024/10/Note-INPC-sept-2024_AR_VF.pdf 20250713211431 application/pdf
+      130  https://ansade.mr/wp-content/uploads/2024/10/Note-INPC-sept-2024_AR_VF.pdf 20250720102341 application/pdf
+      131  https://ansade.mr/wp-content/uploads/2024/10/Note-INPC-sept-2024_FR_VF.pdf 20250722022211 application/pdf
+      132  https://ansade.mr/wp-content/uploads/2024/10/Repertoire-des-localites-habitees-en-Mauritanie_RGPH-2023-compresse-1.pdf 20250714114716 application/pdf
+      133  https://ansade.mr/wp-content/uploads/2024/10/Repertoire-des-localites-habitees-en-Mauritanie_RGPH-2023-compresse-1.pdf 20250721013732 application/pdf
+      134  https://ansade.mr/wp-content/uploads/2024/11/%D8%A7%D9%84%D9%85%D8%B0%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%D8%A9-%D8%AD%D9%88%D9%84-%D8%A7%D9%84%D8%AD%D8%B3%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A%D8%A9-%D8%A7%D9%84%D8%AE%D8%AA%D8%A7%D9%85%D9%8A%D8%A9-2022.pdf 20250721193246 application/pdf
+      135  https://ansade.mr/wp-content/uploads/2024/11/Annuaire-Socio-demographique-Edition-2024-2.pdf 20250721110526 application/pdf
+      136  https://ansade.mr/wp-content/uploads/2024/11/IPI_T3-2024_FR.pdf 20250714162731 application/pdf
+      137  https://ansade.mr/wp-content/uploads/2024/11/IPI_T3-2024_FR.pdf 20250715122836 application/pdf
+      138  https://ansade.mr/wp-content/uploads/2024/11/IPI_T3-2024_FR.pdf 20250721060429 application/pdf
+      139  https://ansade.mr/wp-content/uploads/2024/11/Note-finale-sur-les-comptes-nationaux-definitifs-2022.pdf 20250721110026 application/pdf
+      140  https://ansade.mr/wp-content/uploads/2024/11/Note-INPC-oct-2024_AR_VF.pdf 20250713211413 application/pdf
+      141  https://ansade.mr/wp-content/uploads/2024/11/Note-INPC-oct-2024_AR_VF.pdf 20250720054333 application/pdf
+      142  https://ansade.mr/wp-content/uploads/2024/11/Note-INPC-oct-2024_FR_VF.pdf 20250722022152 application/pdf
+      143  https://ansade.mr/wp-content/uploads/2024/11/Note-trimestrielle-du-commerce-exterieur-N%C2%B066-1.pdf 20250714163801 application/pdf
+      144  https://ansade.mr/wp-content/uploads/2024/11/Note-trimestrielle-du-commerce-exterieur-N%C2%B066-1.pdf 20250715124906 application/pdf
+      145  https://ansade.mr/wp-content/uploads/2024/11/Note-trimestrielle-du-commerce-exterieur-N%C2%B066-1.pdf 20250721061604 application/pdf
+      146  https://ansade.mr/wp-content/uploads/2024/12/ANNUAIRE-DES-STATISTIQUES-ECONOMIQUES-2023-1.pdf 20250721110007 application/pdf
+      147  https://ansade.mr/wp-content/uploads/2024/12/Bulletin-de-conjoncture-N%C2%B0-77.pdf 20250714162243 application/pdf
+      148  https://ansade.mr/wp-content/uploads/2024/12/Bulletin-de-conjoncture-N%C2%B0-77.pdf 20250721015608 application/pdf
+      149  https://ansade.mr/wp-content/uploads/2024/12/Note-de-conjoncture-N%C2%B0-77.pdf 20250721062205 application/pdf
+      150  https://ansade.mr/wp-content/uploads/2024/12/Note-INPC-nov-2024_AR_VF.pdf 20250713211354 application/pdf
+      151  https://ansade.mr/wp-content/uploads/2024/12/Note-INPC-nov-2024_AR_VF.pdf 20250720054314 application/pdf
+      152  https://ansade.mr/wp-content/uploads/2024/12/Note-INPC-nov-2024_FR_VF.pdf 20250722022135 application/pdf
+      153  https://ansade.mr/wp-content/uploads/2024/12/Note_3T2024_Ar.pdf 20250721193226 application/pdf
+      154  https://ansade.mr/wp-content/uploads/2024/12/Note_3T2024_Fr.pdf 20250721105948 application/pdf
