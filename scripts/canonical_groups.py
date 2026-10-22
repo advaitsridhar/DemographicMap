@@ -1290,6 +1290,9 @@ RESIDUAL: frozenset[str] = frozenset({
     "other or not stated", "none or not stated", "Other and unspecified",
     "Other or unspecified", "other/not stated", "Other/not stated",
     "No ethnic group", "Unknown ethnicity", "Not declared",
+    # Afrobarometer's respondents who name only their nationality: an
+    # answer, and not an ethnic group, so it does not lead where one does.
+    "National identity only",
     # The Nordic membership registers' rows for everyone outside one church
     # (Denmark), outside every registered body (Norway), or inside some body
     # other than the Church of Norway: 51% of Copenhagen is the first, and none

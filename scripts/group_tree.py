@@ -375,6 +375,8 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Agaw", "Hadiyya", "Kambaata", "Konso", "Gedeo", "Bilen", "Awngi",
         "Agew-Kamyrnya", "Kemant", "Libido", "Alaba-K'abeena", "Burji",
         "Daasanach", "Arbore", "Tsamai", "Baiso", "Dirasha", "Bussa", "Mosiye",
+        # Tanzania's Iraqw, of the Southern Cushitic languages of the Rift.
+        "Iraqw",
     ),
     "Chadic languages": ("Hausa", "Bura", "Marghi", "Kanakuru"),
     "Omotic languages": ("Wolaytta", "Wolayita", "Gamo", "Dawro", "Kafa",
@@ -1595,6 +1597,11 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     # nationally only: everyone the indigenous question does not count.
     "Not indigenous",
     "Other ethnicity", "Ethnicity not stated", "No ethnic group",
+    # Afrobarometer's answer for a respondent who names only their
+    # nationality, or does not think of themselves in those terms: 99% of
+    # Eswatini's respondents. An answer, but not an ethnic group, so filed
+    # beside the censuses' "No ethnic group" rather than under any people.
+    "National identity only",
     "No ethnicity data", "Other Central Africa",
     "Unknown ethnicity", "Not declared", "Not classified", "No ethnicity",
     "Some other race (non-Hispanic)", "Some other race", "Other",
@@ -1818,7 +1825,15 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
                         # Guinea's 2014 census (the Konyanka of the forest
                         # region) and Benin's Boo, the Boko of Segbana;
                         # Burkina Faso's Samo (San) of the Sourou.
-                        "Konyanka", "Boo", "Samo"),
+                        "Konyanka", "Boo", "Samo",
+                        # Afrobarometer, Guinea: Jahanka, a Manding language
+                        # of the Diakhanké, as both rounds now spell it.
+                        "Diakanké"),
+    # Afrobarometer Round 9, Madagascar: the official language and its
+    # regional varieties, in English (afrobarometer.RELABEL); the survey's
+    # French had filed both under Malagasy by its first word, and the second
+    # in English was read as a sibling of it.
+    "Malagasy": ("Official Malagasy", "Malagasy (regional variety)"),
     "Indo-Aryan languages": (
         "Halabi", "Avadhi", "Sarnami Hindustani",
         # ALI, Iran: an Indo-Aryan island on the Hormozgān coast,
@@ -2605,11 +2620,12 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # together, so two of its four are a faith. Reading "Hindou" as South
     # Asian ancestry would be the likelier guess and still a guess: the
     # census asks about religion there, and the honest answer is to say the
-    # category is not an ancestry rather than to pick one for it.
+    # category is not an ancestry rather than to pick one for it. The survey
+    # writes the two in French and the map in English (afrobarometer.RELABEL).
     "Unclassified ethnicity answers": (
         # Côte d'Ivoire's other nationals, a remainder that names no state.
         "Non-Ivorian",
-        "Hindou", "Musulman",
+        "Hindou", "Musulman", "Hindu community", "Muslim community",
                                        # Registers' residual rows: STATEC's
                                        # unknown and stateless, CBS's other
                                        # migration background.
@@ -2860,8 +2876,8 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Mauritius's community of African and Malagasy descent, the census
         # category beside "Euro-Mauricien (Blanc)" below. Its bracketed
         # "Creole" had filed it with the Afro-descendant peoples of the
-        # Americas.
-        "Afro-Mauricien (Creole)",
+        # Americas, and does so in English too.
+        "Afro-Mauricien (Creole)", "Afro-Mauritian (Creole)",
         # Honduras's P06 "Otro" for someone who told P05 they are
         # Afro-Honduran or Black: of no people the form lists, neither
         # Garifuna nor the English-speaking Black people of the Bay Islands.
@@ -2892,8 +2908,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Mauritius's fourth community, and the bands the small European
         # territories write for "somewhere else in Europe", which sit beside
         # "Other European" already in this category.
-        "Euro-Mauricien (Blanc)", "other Europe", "other EU", "other Nordic",
-        "other Nordic peoples", "other Crown Dependencies",
+        "Euro-Mauricien (Blanc)", "Euro-Mauritian (White)", "other Europe",
+        "other EU", "other Nordic", "other Nordic peoples",
+        "other Crown Dependencies",
     ),
     "Pacific Islander (census category)": (
         "Other Native Hawaiian and Other Pacific Islander",
@@ -2929,6 +2946,11 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     "Tigirigna": "Tigrinya", "Themne": "Temne", "Sénoufo": "Senufo",
     "Somaligna": "Somali", "Oromiffa": "Oromo", "Afarigna": "Afar",
     "Amazigh": "Tamazight", "Runyankole": "Nyankole", "Lusoga": "Soga",
+    # Three languages Afrobarometer's two rounds now write alike
+    # (afrobarometer_r8.SPELLING, afrobarometer.LABEL_TYPOS): Runyankore,
+    # Ngakarimojong (the Karamojong's name for their language) and Kiiraqw
+    # (Iraqw with the Swahili ki- prefix).
+    "Runyankore": "Nyankole", "Ngakarimojong": "Karamojong", "Kiiraqw": "Iraqw",
     "Ateso": "Teso", "Masai/Samburu": "Maasai", "Makua": "Makhuwa",
     "Changana": "Tsonga", "Kifipa": "Fipa", "Gulmacema": "Gurma",
     "Ditamari": "Ditammari", "Koulango": "Kulango", "Ben, Moba": "Moba",
