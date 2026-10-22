@@ -7383,6 +7383,13 @@ def disputed_record(entity: dict[str, Any], profiles: dict[str, dict[str, Any]])
         value = entity.get(field)
         if isinstance(value, dict) and value.get("status") and not value.get("note"):
             entity[field] = gap(value["status"], DISPUTED_GAP)
+    # Its seat and largest settlement went out bare (Abyei, Koualou, the Gaza
+    # Strip and the rest): they say the same, in words for a place.
+    for field, what in (("capital", "a seat"), ("largest_settlement", "a largest settlement")):
+        value = entity.get(field)
+        if isinstance(value, dict) and value.get("status") and not value.get("note"):
+            entity[field] = gap(value["status"],
+                                f"{DISPUTED_NOTE} No source used here names {what} for it.")
 
 
 def mark_disputed_or_hint(entity: dict[str, Any], group: str) -> None:
@@ -7563,6 +7570,19 @@ def say_why_no_capital(entity: dict[str, Any], iso3: str) -> bool:
     entity["capital"] = gap(value["status"], NO_SEAT_REASONS.get(
         (iso3, entity.get("level")), NO_SEAT_NAMED))
     return True
+
+
+def say_why_no_country_seat(admin0: list[dict[str, Any]]) -> int:
+    """A country with no seat both claimants recognise says so at the country
+    too, in the words its units already use (Western Sahara)."""
+    said = 0
+    for entity in admin0:
+        value = entity.get("capital")
+        if (entity.get("id") in NO_SEAT and isinstance(value, dict)
+                and value.get("status") and not value.get("note")):
+            entity["capital"] = gap(value["status"], NO_SEAT[entity["id"]])
+            said += 1
+    return said
 
 
 def say_why_scalar_empty(entity: dict[str, Any], country: str,
@@ -14056,6 +14076,9 @@ def main() -> int:
                     why_scalar[case] += 1
                 if say_why_no_capital(entity, iso3):
                     why_scalar["no seat named"] += 1
+    said = say_why_no_country_seat(admin0)
+    if said:
+        why_scalar["no seat both claimants recognise"] += said
     if why:
         log("  every bare composition field now says why: "
             + ", ".join(f"{n} units where {k}" for k, n in

@@ -186,5 +186,26 @@ class SeatFixes(unittest.TestCase):
         self.assertEqual(loaded["USA"][0]["capital"], "Washington, D.C.")
 
 
+class DisputedAndUnrecognisedSeats(unittest.TestCase):
+    def test_a_disputed_polygon_says_why_it_has_no_seat_or_largest_settlement(self):
+        entity = {"id": "111", "name": "Abyei", "level": "admin0",
+                  "capital": {"status": "not_available"},
+                  "largest_settlement": {"status": "not_available"},
+                  "population": {"status": "not_available"}}
+        be.disputed_record(entity, {})
+        self.assertTrue(entity["capital"]["note"].endswith("No source used here names a seat for it."))
+        self.assertIn("names a largest settlement", entity["largest_settlement"]["note"])
+        self.assertEqual(entity["population"]["note"], be.DISPUTED_GAP)
+
+    def test_western_sahara_says_at_the_country_what_its_units_say(self):
+        admin0 = [{"id": "ESH", "capital": {"status": "not_available"}},
+                  {"id": "MAR", "capital": "Rabat"},
+                  {"id": "TKL", "capital": {"status": "not_available"}}]
+        self.assertEqual(be.say_why_no_country_seat(admin0), 1)
+        self.assertEqual(admin0[0]["capital"]["note"], be.NO_SEAT["ESH"])
+        self.assertEqual(admin0[1]["capital"], "Rabat")
+        self.assertNotIn("note", admin0[2]["capital"])
+
+
 if __name__ == "__main__":
     unittest.main()
