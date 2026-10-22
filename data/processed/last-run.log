@@ -1,22 +1,54 @@
-angola_seats: 1,522,816 characters; 18 provinces, 164 municipalities with a seat
-  bengo: ambriz -> Ambriz; bulaatumba -> Bula Atumba; dande -> Caxito; dembosquibaxe -> Quibaxe; nambuangongo -> Muxaluando; pangoaluquem -> Pango Aluquém
-  benguela: baiafarta -> Baía Farta; balombo -> Balombo; benguela -> Benguela; bocoio -> Bocoio; caimbambo -> Caimbambo; catumbela -> Catumbela; chongoroi -> Chongorói; cubal -> Cubal; ganda -> Ganda; lobito -> Lobito
-  bie: andulo -> Andulo; camacupa -> Camacupa; catabola -> Catabola; chinguar -> Chinguar; chitembo -> Chitembo; cuemba -> Cuemba; cuito -> Cuito; cunhinga -> Cunhinga; nharea -> Nharêa
-  cabinda: belize -> Belize; bucozau -> Buco Zau; cabinda -> Cabinda; cacongo -> Lândana
-  cuandocubango: calai -> Calai; cuangar -> Cuangar; cuchi -> Cuchi; cuitocuanavale -> Cuito Cuanavale; dirico -> Dirico; mavinga -> Mavinga; menongue -> Menongue; nancova -> Nancova; rivungo -> Rivungo
-  cuanzanorte: ambaca -> Camabatela; banga -> Banga; bolongongo -> Bolongongo; cambambe -> Dondo; cazengo -> Ndalatando; golungoalto -> Golungo Alto; lucala -> Lucala; ngonguembo -> Quilombo dos Dembos; quiculongo -> Quiculungo; sambacaju -> Samba Cajú
-  cuanzasul: amboim -> Gabela; cassongue -> Cassongue; cela -> Wacu Kungo; conda -> Conda; ebo -> Ebo; libolo -> Calulo; mussende -> Mussende; portoamboim -> Porto Amboim; quibala -> Quibala; quilenda -> Quilenda; seles -> Seles; sumbe -> Sumbe
-  cunene: cahama -> Cahama; cuanhama -> Ondjiva; curoca -> Oncócua; cuvelai -> Mukolongodjo; namacunde -> Namacunde; ombadja -> Xangongo
-  huambo: bailundo -> Bailundo; caala -> Caála; catchiungo -> Cachiungo; ecunha -> Ecunha; huambo -> Huambo; londuimbale -> Londuimbali; longonjo -> Longonjo; mungo -> Mungo; tchikalatcholohanga -> Chicala; tchinjenje -> Chinjenje; ukuma -> Ucuma
-  huila: caconda -> Caconda; cacula -> Cacula; caluquembe -> Caluquembe; chibia -> Chibia; chicomba -> Chicomba; chipindo -> Chipindo; cuvango -> Cuvango; gambos -> Chiange; humpata -> Humpata; jamba -> Jamba; lubango -> Lubango; matala -> Matala; quilengues -> Quilengues; quipungo -> Quipungo
-  luanda: belas -> Belas; cacuaco -> Cacuaco; cazenga -> Cazenga; icoloebengo -> Catete; kilambakiaxi -> Kilamba Kiaxi; luanda -> Ingombota; quissama -> Muxima; talatona -> Talatona; viana -> Viana
-  lundanorte: cambulo -> Cambulo; capendacamulemba -> Capenda Camulemba; caungula -> Caungula; chitato -> Dundo; cuango -> Cuango; cuilo -> Cuilo; lovua -> Lóvua; lubalo -> Lubalo; lucapa -> Lucapa; xamuteba -> Xá Muteba
-  lundasul: cacolo -> Cacolo; dala -> Dala; muconda -> Muconda; saurimo -> Saurimo
-  malanje: cacuso -> Cacuso; cahombo -> Cahombo; calandula -> Calandula; cambundicatembo -> Cambundi Catembo; cangandala -> Cangandala; cundadiabaze -> Kunda dya Baze; kiuabanzoji -> Kiwaba Nzoji; luquembo -> Luquembo; malanje -> Malanje; marimba -> Marimba; massango -> Massango; mucari -> Caculama; quela -> Quela; quirima -> Quirima
-  moxico: altozambeze -> Cazombo; bundas -> Lumbala Nguimbo; camanongue -> Camanongue; cameia -> Lumege; leua -> Léua; luacano -> Luacano; luau -> Luau; luchazes -> Cangamba; luena -> Luena
-  namibe: bibala -> Bibala; camucuio -> Camucuio; namibe -> Moçâmedes; tombwa -> Tômbwa; virei -> Virei
-  uige: ambuila -> Nova Ambuíla; bembe -> Bembe; buengas -> Nova Esperança; bungo -> Bungo; cangola -> Cangola; damba -> Damba; maqueladozombo -> Maquela do Zombo; milunga -> Milunga; mucaba -> Mucaba; negage -> Negage; puri -> Puri; quimbele -> Quimbele; quitexe -> Quitexe; sanzapombo -> Sanza Pombo; songo -> Songo; uige -> Uíge
-  zaire: cuimba -> Cuimba; mbanzacongo -> Mbanza Kongo; noqui -> Nóqui; nzeto -> Nzeto; soyo -> Soyo; tomboco -> Tomboco
-  156 of 157 municipality polygons given a seat
-    Luanda: drawn over several municipalities; left out
-  wrote data/processed/angola_seats.json (166 kB)
+drc_gaps: OCHA's tables: 26 provinces, 189 territories, cities and towns
+  Territoire (république démocratique du Congo): 145 territories with a seat
+  Oïcha: no seat written (This polygon is the territory of Beni, which OCHA's populati...)
+  164 territories and cities given reasons (144 territories with a seat, 19 cities)
+  town Aba: counted in Faradje
+  town Ariwara: counted in Aru
+  town Bangu: counted in Songololo
+  town Baraka: counted in Fizi
+  town Bena-Dibele: counted in Kole
+  town Dibaya-Lubwe: counted in Idiofa
+  town Ingbokolo: counted in Aru
+  town Inkisi: counted in Madimba
+  town Isiro: counted in Rungu
+  town Kalima: counted in Pangi
+  town Kamituga: counted in Mwenga
+  town Mangai: counted in Idiofa
+  town Mongwalu: counted in Djugu
+  town Namoya: counted in Kabambare
+  town Tshumbe: counted in Kole
+  city Bunia: counted in Irumu
+  city Kolwezi: counted in Mutshatsha
+  city Tshikapa: counted in Kamonia
+  wrote data/processed/drc_gaps.json (393 kB)
+  26 provinces and 189 second-level polygons written
+  001_population_health_zone_zs: 519 health zones in 164 territories and cities, 117,808,872 people
+  2024: CD3106 Kasongo-Lunda (Kwango) is the 2020 table's CD3107 Kasongo-Lunda, matched by name in its province
+  2024: Bas-Uele: every unit's 2020 estimate x1.1353
+  2024: Equateur: every unit's 2020 estimate x0.8355
+  2024: Haut-Katanga: every unit's 2020 estimate x1.1268
+  2024: Haut-Lomami: every unit's 2020 estimate x1.0805
+  2024: Haut-Uele: every unit's 2020 estimate x1.2866
+  2024: Ituri: every unit's 2020 estimate x0.8198
+  2024: Kasaï: every unit's 2020 estimate x0.8546
+  2024: Kasaï-Central: every unit's 2020 estimate x0.9445
+  2024: Kasaï-Oriental: every unit's 2020 estimate x0.8241
+  2024: Kongo-Central: every unit's 2020 estimate x1.9493
+  2024: Kwango: every unit's 2020 estimate x1.1501
+  2024: Kwilu: every unit's 2020 estimate x1.4704
+  2024: Lomami: every unit's 2020 estimate x0.8750
+  2024: Lualaba: every unit's 2020 estimate x1.6306
+  2024: Maniema: every unit's 2020 estimate x1.2317
+  2024: Maï-Ndombe: every unit's 2020 estimate x1.2953
+  2024: Mongala: every unit's 2020 estimate x0.9258
+  2024: Nord-Kivu: every unit's 2020 estimate x0.9096
+  2024: Nord-Ubangi: every unit's 2020 estimate x1.0846
+  2024: Sankuru: every unit's 2020 estimate x1.4645
+  2024: Sud-Kivu: every unit's 2020 estimate x1.1318
+  2024: Sud-Ubangi: every unit's 2020 estimate x1.1474
+  2024: Tanganyika: every unit's 2020 estimate x1.4533
+  2024: Tshopo: every unit's 2020 estimate x0.9377
+  2024: Tshuapa: every unit's 2020 estimate x0.9980
+  2024: Kinshasa: one unit
+  2024: 164 territories and cities, 117,808,872 people
+  wrote data/processed/drc_hpc.json (301 kB)

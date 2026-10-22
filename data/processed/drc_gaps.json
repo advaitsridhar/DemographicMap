@@ -5448,11 +5448,17 @@
     },
     "sources": [
       {
-        "field": "median_age note/sex_ratio note",
+        "field": "median_age note/sex_ratio note/capital note",
         "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cod), reference year 2020",
         "url": "https://data.humdata.org/dataset/cod-ps-cod",
         "year": 2020,
         "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+      },
+      {
+        "field": "capital note",
+        "name": "French Wikipedia, Territoire (république démocratique du Congo)",
+        "url": "https://fr.wikipedia.org/wiki/Territoire_(r%C3%A9publique_d%C3%A9mocratique_du_Congo)",
+        "license": "CC BY-SA 4.0"
       }
     ],
     "country": "COD",
