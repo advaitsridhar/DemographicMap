@@ -2512,7 +2512,8 @@ of them at once, which is asserted by a test rather than assumed.
 
 ### The Democratic Republic of the Congo: the first source here that is not a census
 
-Everything else on this map is a census. This is the *Enquête 1-2-3*, and it is
+When it was added, everything else on this map was a census. This is the
+*Enquête 1-2-3*, and it is
 reported differently for that reason -- because the difference is invisible
 once a figure is drawn on a shape.
 
@@ -6547,7 +6548,7 @@ Misrata Al Bayda (the seat of Al Jabal al Akhdar, 600 km east) and Marj an
 "encampment of Al Marj", and Algeria's Tizi Ouzou Kouba (a commune of
 Algiers). Each is withdrawn from its row (`WITHDRAWN_FIELDS`), so GeoNames'
 seat inside the polygon stands. Five units in countries whose GeoNames seats
-are not taken wholesale -- Egypt's Gharbiyya and Matrouh, Algeria's Tipaza and
+are not taken wholesale -- Egypt's Gharbia and Matrouh, Algeria's Tipaza and
 Tizi Ouzou, South Sudan's Central Equatoria -- take GeoNames' seat by shape,
 each point checked to lie inside its polygon (`DECLARED_SEATS`; Tripoli's
 point lies 2 km outside the outline drawn for it and is left out). And two
@@ -6567,6 +6568,184 @@ the end, it stood in front of every row of the same year on the same polygon,
 whatever its file: OCHA's projections for Namibia's Epukiro and Otjinene,
 summed, over the 2023 census's count, and Afrobarometer's respondents in Maputo
 City and Province, pooled, over the 2017 census's religion and mother tongue.
+
+### The built map, swept once more
+
+When the six regions were integrated and built, every African country was
+read once more as a visitor sees it -- each panel at both levels, the colours
+of each layer, the names on the shapes -- and every fault the sweep claimed was
+put to a second reader whose job was to refute it before it was fixed. What
+that found, and what was done:
+
+**Languages from other continents.** CLEAR Global's files gave shares to
+languages no household of the unit can speak (the DRC's Mexican, Philippine,
+Micronesian and Burundian names beside the Australian one already caught,
+Benin's "Central Malay", Ghana's "Nyamal", thirteen names in Nigeria's North
+East, Somalia's sign language, Senegal's Chadian creole) and the US Census Bureau's
+workbook of Ethiopia's 2007 census two more: "Ignaciano", a language of
+Bolivia, which follows the Opuuo people wherever they are counted (Gambela
+999 speakers to 990 people), and "Mossi", Burkina Faso's Mooré, which follows
+the Dullay peoples of the south, where the census counts the Mossiye. The
+DRC's are written under its source's own names and the rest are kept unnamed
+(see CLEAR Global above); the Ethiopian two are written
+Opuuo (Surmic) and Mosiye (Cushitic), and "Suri (Suri)" as Suri. Malawi's and
+Mozambique's Yao, filed by its bare name under the Yao (Mien) of China, is
+written Chiyao and Ciyao, and Namibia's "Ndonga (R.20)" is the Oshiwambo group
+it stands for.
+
+**Survey shares on the wrong ground, or too thin.** Afrobarometer Round 9's
+312 respondents in Abidjan reached no unit -- the apostrophe folds "D'Abidjan"
+into one word, so the city's name never met "District Autonome D'Abidjan" --
+and the district said the survey did not reach it (`ROW_ALIASES`). Round 8's
+reader mapped 10 of Côte d'Ivoire's 31 survey regions to their districts and
+dropped the rest one by one under the floor, 440 of 1,200 respondents, so
+Lagunes was Agnéby-Tiassa's 32 people and Lacs, Comoé and Woroba showed
+nothing; all 31 are mapped now. Cabo Verde's survey regions are islands: the
+whole island of Fogo, and CLEAR Global's stratum of Santiago's interior (eight
+municipalities), no longer stand on one municipality each, and Praia's and São
+Vicente's ethnicity answers -- mostly none, or the part of the islands people
+come from -- say what they are. CLEAR Global's tabulations of Afrobarometer
+where the survey interviewed too few people are withdrawn (see above).
+
+**Wrong items and wrong seats.** Wikidata items for a larger or another unit
+leave the units they reached by name: Nandi and Makueni counties on two of
+Kenya's constituencies, Malindi District before 2010, Marka's city figure on
+the district, Karamoja's Moroto Municipality on Lango's Moroto County.
+Afar's seat is written as GeoNames and the largest settlement beside it write
+it (Samara), Horo Guduru's without "city".
+
+**Names.** Uganda's census rows give four counties their names in place of
+the boundary file's: Kapelebyong, not a second "Soroti"; Rujumbura, not
+"Bujumbura"; Bukoto; Bughendera.
+
+**What a figure is.** Turkana says its outline takes in part of the Ilemi
+Triangle, which Kenya administers and South Sudan claims, and that the 2019
+census counted the county as Kenya administers it. Bururi and Bujumbura Rural
+say their survey shares are of the provinces before Rumonge was cut from them
+in 2015. Djibouti's country sex ratio is its 2024 census's, its six regions
+added up (98.9 men per 100 women, not the Factbook's 83.0). The DRC's
+Enquête 1-2-3 no longer calls itself "the only source on this map that is a
+survey". A GeoNames seat that is not the unit's own is no longer called its
+seat where the panel says why no largest settlement is named.
+
+**Names as the sources write them.** Tunisia's 264 delegations were labelled
+in Arabic script alone; they are written under the statistics institute's
+French names (La Medina, Bab El Bhar), the Arabic kept as a second name.
+Morocco's provinces carried French and Arabic in one label ("Province de
+Berkane إقليم بركان") and keep the Latin part. Egypt's governorates are
+"{name} Governorate" throughout (Sharqia and Gharbia, not "Al Sharqia" and
+"Gharbiyya"; Minya and Luxor, not "Governate"), its districts take the names
+their notes use, and where a governorate holds a kism and a markaz of one
+name each says which it is (20 pairs, as "Aswān (kism)" and "Aswān
+(markaz)"). Somalia's 118 districts were labelled in capitals ("BENDER
+BAYLA") and are written as a sentence would write them; Gabon's departments
+take the census's Tableau 6 spelling (Lopé, Komo-Océan, Lekoko, and Mulundu
+where the outline is labelled Mouloundou). Every earlier label stays a second
+name, so no row stops reaching its outline.
+
+**Notes that cite what they quote.** Where a note quotes a figure, the unit now
+cites the publication it comes from: Egypt's 2017 count beside a 2023
+estimate, both 2006 tables where they are compared, and the governorates the
+2023 estimates leave out; Morocco's reasons, the statistics office's workbook
+and, for Guelmim's median age, its note on the southern provinces of
+September 2025; Sudan's state medians, the retabulation of 2008 they are
+read from; and Tripoli's and Al Jifarah's reasons, the 2006 census. Somalia's
+regional figures are written as what they are, OCHA Somalia's calculation for
+1 January 2019 for the eighteen pre-war regions, as City Population tabulates
+it; Djibouti's and the Republic of the Congo's censuses name City Population's
+compiler rather than its web address.
+
+**A sex ratio far from its country's says whose men and women it is.**
+Tunisia's governorates and delegations, Gabon's provinces and departments,
+Mauritania's and Nigeria's units, and Seychelles' units past two men to a
+woman give the men and women counted beside the ratio ("at the 2023 census
+of the moughataa: 9,151 men and 2,195 women", Benichab). Uganda's sixteen
+lopsided counties compared themselves with "946 men per 1,000 women" beside
+ratios shown per 100; the country's figure reads 94.6 per 100.
+
+**Reasons that stand beside another source's figure.** Liberia's 55 districts
+that the 2022 tables cannot be placed on say so beside OCHA's 2020 figures.
+Oshikoto says what OCHA's projections of its constituencies add up to
+(227,737, against the census's 257,302 for the region). Eritrea's regions and
+sub-regions say themselves why they show no religion, language or ethnic
+group: the country has never taken a census, and no source read gives them.
+Ethiopia's zone notes name the weredas they are added up from without the
+marks OCHA's table tells namesakes apart by ("Dera", not "Dera (AM)").
+
+**Afrobarometer, read again.** Botswana's survey regions are the 24 strata
+Afrobarometer samples, from Barolong to Selibe Phikwe, and Round 9's reached
+five districts by name and no other: North-East's without Francistown and
+South-East's without Gaborone and Lobatse, though each polygon holds them. Each
+district now takes its strata together, 32 to 352 respondents (Chobe's 16 too
+few), and the country keeps its census-based figures (`COUNTRY_NOT_SUMMED`).
+Code 9990, which the codebook gives as "(national identity) only, or doesn't
+think of self in those terms", is written "National identity only", not "No
+ethnic group"; Eswatini's regions, where 1,186 of the 1,200 respondents gave
+it, say so in place of shares, and the country keeps its own figure. Madagascar's, Mauritius's and Namibia's answers are in English (Official
+Malagasy, the Hindu and Muslim communities, Afrikaner), misspellings in the
+codebook are corrected ("IIa" is Ila), and Round 8's spellings follow Round 9's
+so one language is not two. Zambézia listed Lomwe twice in the codebook, and the
+second code overwrote the first: Lomwe is 34.6% of the region, its largest
+language, not 5.2%.
+
+**Labels as read.** The boundary file's cut, coded or garbled names are put
+right where the shapes are read (`common.as_read`, `MISSPELLED`), and again
+where a record bound to its polygon by id renames it: Seychelles' fourteen
+districts, cut at ten letters ("Anse Boile", "La Digue a"), Burundi's seven
+communes, Ethiopia's zones under codes ("KT", "Region 14") and its two North
+Shewas, now North Shewa (Amhara) and North Shewa (Oromia), Argoba Special
+Woreda, Eritrea's two Denkalias, Tanzania's doubled Babati, Djibouti's Dikhil
+and Yoboki, Lesotho's Maseru (Berea District) and Maoa-Mafubelu, Egypt's Luxor
+and Minya ("Governate"), and Kenya's Tharaka-Nithi at the first level only.
+Doubled spaces ("Bolga  East", "Kigoma  Urban") and invisible direction marks
+(one followed Bordj Bou Arreridj into a search box) go from every label.
+
+**Seats.** Brak, Wadi al Shatii's main town (GeoNames' seat for the district is
+Idrī, a village of 4,696), and Al Jawf, on Al Kufrah's second-level copy, are
+declared and cited to Wikidata; Antananarivo and Barkly East to GeoNames.
+Wikidata's Livingstone (Southern Province's seat until 2012; Choma since),
+Tsumeb (Oshikoto's largest town; its seat is Omuthiya), Triolet (a village of
+Pamplemousses) and Laâyoune (south of 27°40'N, in the polygon drawn as Western
+Sahara) leave the regions they are not the seats of, and "Chipata (Fort
+Jameson)" and "Moniya, Ibadan" lose their glosses. The second levels of Egypt,
+Morocco, Sudan, South Sudan and Algeria say what is known of their seats, and
+a seat GeoNames gives no population is called the unit's own only where the
+unit shows it (Lobito's and Kindamba's outlines hold Egito Praia's and
+Nyanga's).
+
+**Largest settlements.** Natural Earth files a region's town by the region's
+name, and thirteen were smaller towns than another in the same outline (Yei
+before Juba, Ikare before Akure, Sanniquellie before Ganta); the largest now
+stands.
+GeoNames places whose figure is their district's (Jirapa's 91,279 is Jirapa
+District's 2021 count) give way to the seat or are named without it. Tripoli,
+Salaga, Perseverance and six new towns on Egypt's land outside the zimam are
+not named for outlines that are not theirs: Tripoli and Tajura stand on a strip
+of coast no district covers, Salaga in the outline drawn as North East Gonja,
+Perseverance on an island the census counts as a district of its own, and the
+census counts each new town in a division of its own.
+
+**Rows and notes.** Botswana's districts take OCHA's age groups with their
+towns' (Gaborone with South-East, Francistown with North-East), Vatovavy-Fitovinany
+its two halves' survey respondents, and Plaines Wilhems its survey row, which
+the survey spells "Plaine Wilhems"; Malawi's Mzimba drops CLEAR Global's
+shares for the district without Mzuzu City, which the polygon holds; Wikidata's
+items for Tajura and for Port Said city, and the survey's Praslin region, leave
+units that are not theirs. Kolwezi, Bunia, Tshikapa, Red Sea State and three
+Malawian districts say what their figures are and cite them, and four
+divisions are filed under the governorate that counts them.
+
+**Sums and the Factbook.** A sum of survey shares says it counts survey
+respondents; Namibia's three compositions and Zimbabwe's and Mauritius's
+ethnic groups, all Round 9 survey estimates on every unit, are not summed over
+the country's own, and Zimbabwe's religion and language are summed from its
+2022 census now that the country is checked against it. The Comoros carry
+their census's national columns. The Factbook's misprinted shares for
+Cameroon, the Central African Republic and the DRC ("Beti/Bassa, Mbam 13.1%",
+"Christian 93/1%") are corrected before they are parsed, the reader stopping
+if a misprint is gone; a group closed by "or" or "including" keeps its whole
+name ("other, including Kgalagadi and people of European ancestry"); and the
+source a visitor reads is the Factbook alone, without the mirror's file name.
 
 ### Tunisia: the 2024 census by sector, added up to 264 delegations drawn for 2014
 
@@ -9098,9 +9277,10 @@ So three rules, none of them invented here:
 * **Under 25 respondents a region is dropped, not estimated.** That is the
   Demographic and Health Surveys' own suppression threshold, and using the
   field's convention keeps this comparable to how the source is normally read.
-  442 of 519 regions survive it.
+  435 of 505 regions survive it (Botswana's 24 survey strata are read as its
+  ten districts).
 * **Between 25 and 49 the region says it is imprecise**, which is what DHS's
-  parentheses mean. 117 regions carry that.
+  parentheses mean. 113 regions carry that.
 * **A question never asked is `not_collected`, never a composition.** The code
   is `9994`, and it is the whole of a country when it appears: Mauritania was
   not asked about religion, and Sudan, Tunisia and the Seychelles were not
@@ -9143,7 +9323,7 @@ columns, and Q2 was not among them. Nothing reported a missing question,
 because nothing had looked for one. The SPSS release, whose variables are
 named, is now the source for Round 9, and `--extract` reads it.
 
-Round 9 carries **Q2 "Language spoken in home" for all 442 regions it
+Round 9 carries **Q2 "Language spoken in home" for all 435 regions it
 publishes, in all 39 countries**. So language comes from Round 9, like
 religion and ethnicity.
 
@@ -9151,7 +9331,7 @@ Round 8 stays, for the one thing it is still good for: a region Round 9 is
 short of. It is registered **before** Round 9 in `ADAPTER_FILES`, which is
 lower authority, so a later file wins and Round 9 takes any region both hold.
 Round 8 is 48,084 interviews over 34 countries and 356 shapes; Round 9 is
-53,444 over 39 and 442, two years newer. `scripts/fetch_census/afrobarometer_r8.py`
+53,444 over 39 and 435, two years newer. `scripts/fetch_census/afrobarometer_r8.py`
 and `scripts/fetch_census/afrobarometer.py`.
 
 Language at first level in Africa went from **three countries to thirty-one**
@@ -9169,7 +9349,7 @@ only the newest two are read:
 | R6 | 2014-15 | 53,935 | 36 | 403 | 403 | 403 | 403 |
 | R7 | 2016-18 | 45,823 | 34 | 349 | 349 | 336 | 349 |
 | R8 | 2019-21 | 48,084 | 34 | 396 | 396 | 383 | 396 |
-| **R9** | **2021-23** | **53,444** | **39** | **442** | **433** | **423** | **442** |
+| **R9** | **2021-23** | **53,444** | **39** | **435** | **426** | **416** | **435** |
 
 Round 9's countries are a **superset** of every earlier round's once renames
 are resolved -- eSwatini/Swaziland, Cape Verde/Cabo Verde, Cote d'Ivoire/Côte
@@ -10431,14 +10611,82 @@ shares can add to slightly under 100 and the panel says which share of the
 population the record describes.
 
 **A language the file names wrongly for one country is renamed for that
-country only** (`LANGUAGE_RELABEL`), and every unit it touches says so in its
-note. Nepal's file names the Khas language of Karnali "Khasi", the name of a
-language of Meghalaya in India; it is written as Khash, as Nepal's 2021 census
-names it. The DRC's names 12.4% of Lomami's households and 25.0% of those of
-its territory of Kabinda "Lander River Warlpiri" (Glottolog land1255), an
-Aboriginal language of Australia; which language of Lomami was meant cannot
-be told from the file, so the share is kept, unnamed, as the residual "Other
-languages" rather than dropped, which would shrink both units, or guessed.
+country only** (`LANGUAGE_RELABEL`), and every unit that shows the share says
+which name the table gave it. Nepal's file names the Khas language of Karnali
+"Khasi", the name of a language of Meghalaya in India; it is written as Khash,
+as Nepal's 2021 census names it.
+
+The African files give shares to languages that no household of the unit can
+have as its main language. Each name in these files is Glottolog's, so each
+was read against Glottolog's own table of languages (where it is spoken, and
+its family).
+
+The DRC's are CLEAR Global's matches for the names its source, the CAID
+territory data of 2016, gives, and that source's wide table, published beside
+the long one, shows what each share was called before it was matched; the
+shares agree to the decimal. Kabinda's "Lander River Warlpiri" 25.0% (an
+Aboriginal language of Australia) is the source's "Lande"; Fizi's "Tamazola
+Mixtec" 7.9% (Oaxaca) its "Zola"; Bomongo's "Ibaloi" 5.0% (Luzon) its "Baloi";
+Mambasa's "Mokilese" 5.5% (a Micronesian atoll) its "Kilese" and its
+"Mpongmpong" 3.5% (south-eastern Cameroon) its "Bombo"; and Kapanga's "Rundi"
+88.9%, the language of Burundi, its "Urund" -- Ruund, the Lunda language of
+Kapanga. Each is written as the source names it, Kilese and Urund under
+Glottolog's names for them (Lese and Ruund), and the note says what CLEAR
+Global's table wrote. Mambasa's "Ombo" 7.3% is the source's "Bandaka", the
+Ndaka people, matched to Ombo, a language of Kailo in Maniema, where the file's
+own Ombo (11.4%) is right; it is relabelled in Mambasa alone (`UNIT_RELABEL`).
+Ruund, Baloi, Bila, Ndaka, Ombo and Kole's Ohendo join the Bantu languages, and
+Lese the Central Sudanic.
+
+Elsewhere no table gives the source's own name, so every name from another
+continent, or from the far end of Africa, is kept unnamed as the residual
+"Other languages" -- leaving the share out would shrink the unit, and putting a
+language in its place would be a guess, however good: Benin's "Central Malay"
+follows the Lokpa country of Ouaké and Djougou, but the file does not say
+Lokpa.
+
+| Country | Names kept unnamed | Largest share |
+|---|---|---|
+| Benin | Central Malay (Sumatra and the Malay peninsula), Tagwana Senoufo (central Côte d'Ivoire) | Ouaké 54.1% |
+| Ghana | Nyamal (the Pilbara, Australia) | Upper West districts, all of their interviews |
+| Nigeria | Kokata, Nguburindi (Australia); Chavacano, Sibalenhon (the Philippines); Nyindrou, Gama (Papua New Guinea); Bateri (Pakistan), Takari (India), Western Mewahang (Nepal), Lamunkhin (Siberia); Northwest Jujuy (the Andes); Bari (South Sudan); Tambo (Zambia and Tanzania) | Bama 5.2% |
+| Somalia | Kenya-Somali Sign Language | Bulo Burto 23.3% |
+| Senegal | Babalia Creole Arabic (Chad), Zenaga (south-western Mauritania) | Saint-Louis 3.5% |
+| Mozambique | Southern Sama (the southern Philippines) | Manica 2.5% |
+
+A unit holding two of them says both in one sentence. Two names are right but
+read wrongly. Malawi's and Mozambique's "Yao" is the Bantu language of the Yao
+people (Glottolog yaoo1241), but the language tree files the bare name under
+the Yao (Mien) languages of southern China, and Mangochi, Machinga and Niassa
+were coloured as Hmong-Mien: it is written Chiyao and Ciyao, as each country
+spells it (Chiyao is now a spelling of Ciyao). Namibia's and Angola's "Ndonga
+(R.20)" is the whole Oshiwambo group -- R.20 is its code in Guthrie's
+classification -- under one member's name, on constituencies that speak
+Oshikwanyama: it is written as the group, Oshiwambo in Namibia, Ovambo in
+Angola. Guthrie's codes come off the other labels that carry them ("Swahili
+(G.40)", "Budja (C.37)"). A unit whose only answers are "Unknown" or the
+unnamed residual is not written (Namibia's Kongola, six districts of Ghana),
+and the note gives the study's year once.
+
+**Survey tabulations too thin to stand.** Ten of the African files are
+CLEAR Global's tabulations of an Afrobarometer round, and the map reads the
+survey itself only where a region holds 25 respondents. The same interviews,
+tabulated by another hand, are no more: where the survey's own row says it
+interviewed 8 to 24 people in a region, CLEAR Global's language is withdrawn
+there too (`WITHDRAWN_FIELDS`, `FEW_INTERVIEWS`) -- Kenya's ten counties
+(Samburu showed "Turkana 100%" from eight people), Tanzania's Katavi and
+Kusini Unguja, the Republic of the Congo's Cuvette-Ouest and Sangha,
+Botswana's Chobe, and the seven Nigerian states for which Afrobarometer is
+the file's only source (Yobe's draws on REACH's assessment as well and stays);
+each of them then shows the survey's own sentence, that it interviewed too few
+people there. Ghana's districts and Namibia's constituencies are tabulated
+below the regions the survey samples, one to three enumeration areas of eight
+interviews each (half of Ghana's 147 district rows are a single answer or
+multiples of 12.5%), and the file grades them below a 95% confidence level or
+above a 10% margin of error: the reader writes every one of them with that
+reason in place of its shares (`SMALL_SAMPLE`), so each says why it shows none.
+Uganda's "Tororo" row holds the Tooro sub-region's languages, not Tororo's,
+and goes too.
 
 ### Admin 1 only, and why not admin 2
 
