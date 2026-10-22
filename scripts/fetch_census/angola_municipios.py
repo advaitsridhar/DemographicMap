@@ -2119,6 +2119,71 @@ def inspect(stem: str, blob: bytes) -> None:
                         log(f"    misfit: {line}")
 
 
+# Where --pages leaves its pictures of the pages: under data/processed, which
+# the runner commits, so that a table printed as a picture can be looked at.
+PAGE_PICTURES = PROCESSED / "angola_pages"
+
+
+def pages_report(stem: str, blob: bytes, numbers: list[int]) -> None:
+    """What each page given holds: its text layer (pypdf's and pdfplumber's
+    characters, upright or not), its pictures, and every row as laid out. A page
+    with pictures, or with no words at all, is also drawn as a PNG (whole, and
+    in strips of a few rows) under data/processed/angola_pages."""
+    import pdfplumber                                # noqa: PLC0415
+    from pypdf import PdfReader                      # noqa: PLC0415
+    reader = PdfReader(io.BytesIO(blob))
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for n in numbers:
+            if not 1 <= n <= len(pdf.pages):
+                continue
+            page = pdf.pages[n - 1]
+            raw = reader.pages[n - 1]
+            try:
+                text = raw.extract_text() or ""
+            except Exception as exc:                  # noqa: BLE001
+                text = f"<{type(exc).__name__}>"
+            chars = page.chars
+            upright = sum(1 for c in chars if c.get("upright", True))
+            log(f"== {stem} p{n}: {page.width:.0f}x{page.height:.0f} points, rotate "
+                f"{raw.get('/Rotate', 0)}; pypdf text {len(text)} characters; pdfplumber "
+                f"{len(chars)} characters ({upright} upright), {len(page.images)} pictures, "
+                f"{len(page.rects)} rectangles, {len(page.lines)} lines, "
+                f"{len(page.curves)} curves")
+            log("   text: " + " ".join(text.split())[:400])
+            if upright < len(chars):
+                log("   sideways: " + "".join(c["text"] for c in chars
+                                              if not c.get("upright", True))[:400])
+            for k, im in enumerate(page.images):
+                log(f"   picture {k}: x {im['x0']:.0f}-{im['x1']:.0f}, top {im['top']:.0f}-"
+                    f"{im['bottom']:.0f}, source {im.get('srcsize')}, "
+                    f"{im.get('bits')} bits, {im.get('colorspace')}")
+            words = page.extract_words(use_text_flow=False, keep_blank_chars=False)
+            for row in rows_of(words):
+                log(f"   row {row.label!r} @{row.top:.0f}: "
+                    + " ".join(f"{v}@{x1:.0f}" for _, x1, v in row.figures())
+                    + "  [" + " ".join(f"{t}@{x0:.0f}" for x0, _, t in row.label_words()) + "]")
+            if not (page.images or not words or page.curves):
+                continue
+            try:
+                from PIL import Image                # noqa: PLC0415
+                PAGE_PICTURES.mkdir(parents=True, exist_ok=True)
+                whole = PAGE_PICTURES / f"{stem}_p{n}.png"
+                page.to_image(resolution=200).save(whole)
+                image = Image.open(whole)
+                strips = 4
+                height = image.height // strips + 1
+                for s in range(strips):
+                    top, bottom = max(0, s * height - 40), min(image.height, (s + 1) * height + 40)
+                    for h, (left, right) in enumerate(((0, image.width // 2 + 60),
+                                                       (image.width // 2 - 60, image.width))):
+                        image.crop((left, top, right, bottom)).save(
+                            PAGE_PICTURES / f"{stem}_p{n}_s{s + 1}{'ab'[h]}.png")
+                log(f"   drawn: {whole.name} ({image.width}x{image.height}) and "
+                    f"{2 * strips} pieces")
+            except Exception as exc:                  # noqa: BLE001
+                log(f"   not drawn: {type(exc).__name__}: {exc}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -2130,9 +2195,25 @@ def main() -> int:
                         help="Stem:page,page;Stem:page -- print those pages' blocks, write nothing")
     parser.add_argument("--inspect", default="",
                         help="Stem,Stem -- print each table's pages as laid out, write nothing")
+    parser.add_argument("--pages", default="",
+                        help="Stem:first-last;Stem:page -- print what each page holds and draw "
+                             "the pages printed as pictures; write no records")
     args = parser.parse_args()
     import pdfplumber                                # noqa: PLC0415
     stems = [s for s in REPORTS if not args.only or s in args.only.split(",")]
+    if args.pages:
+        for part in args.pages.split(";"):
+            stem, _, spans = part.partition(":")
+            numbers: list[int] = []
+            for span in spans.split(","):
+                first, _, last = span.partition("-")
+                if first.isdigit():
+                    numbers += list(range(int(first), int(last or first) + 1))
+            try:
+                pages_report(stem, fetch_report(stem)[0], numbers)
+            except Exception as exc:                  # noqa: BLE001
+                log(f"== {stem}: {type(exc).__name__}: {exc}")
+        return 0
     if args.inspect:
         for stem in args.inspect.split(","):
             try:
