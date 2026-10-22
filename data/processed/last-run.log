@@ -1,35 +1,235 @@
-equatorial_guinea_census: 9,731,423 bytes, sha256 3c1cccc3705225e723e9fcfbb5d16be75cc729f9e249a00f510b77f119b9e56d
-  Annobón: 5,314; men 48.9%; nationals 98.3%
-    ANNOBON: 5,314 (Annobón)
-  Bioko Norte: 300,374; men 52.9%; nationals 87.3%
-    BANEY: 29,366 (Baney)
-    MALABO: 271,008 (Malabo)
-  Bioko Sur: 34,674; men 52.5%; nationals 93.9%
-    LUBA: 26,331 (Luba)
-    RIABA: 8,343 (Riaba)
-  Centro Sur: 141,986; men 51.2%; nationals 89.9%
-    ACURENAM: 23,614 (Acurenam, drawn whole)
-    BICURGA: not shown (not a district)
-    EVINAYONG: not shown (Evinayong)
-    NIEFANG: not shown (Niefang)
-    NKIMI: not shown (not a district)
-  Kie Ntem: 183,664; men 50.1%; nationals 89.5%
-    EBEBIYIN: 94,019 (Ebibeyin, drawn whole)
-    MICOMISENG: not shown (Micomiseng)
-    NKUE: not shown (not a district)
-    NSOC NSOMO: 37,920 (Nsok Nsomo, drawn whole)
-  Litoral: 367,348; men 52.3%; nationals 87.7%
-    BATA: not shown (Bata)
-    BITICA: not shown (not a district)
-    COGO: 29,341 (Cogo, drawn whole)
-    MACHINDA: not shown (not a district)
-    MBINI: not shown (Mbini)
-  Wele Nzas: 192,017; men 53.7%; nationals 83.5%
-    ACONIBE: 24,346 (Aconibe, drawn whole)
-    AYENE: not shown (not a district)
-    AÑISOC: not shown (Añisok)
-    MONGOMO: not shown (Mongomo)
-    MONGOMOYEN: not shown (not a district)
-    NSORK: 16,421 (Nsork, drawn whole)
-  wrote data/processed/equatorial_guinea_census.json (86 kB)
-  7 provinces and 25 district polygons written
+== xlsx https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f7208b61-cc26-42a7-a698-1d32af8d248f/download/tcd_admpop_2023.xlsx (?i)meta|info|readme|source|note 60 6
+  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/f7208b61-cc26-42a7-a698-1d32af8d248f/tcd_admpop_2023.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 23,529 bytes
+  sheet 'Metadata' 23x2
+    Item | Metadata
+    Country | Chad
+    Source(s) | Institut National 
+    Source(s) Link(s) | Shared directly by
+    Population Data Ty | Population project
+    Baseline Populatio | 2009
+    COD-PS Reference Y | 2023
+    COD-PS Publication | 2023
+    ADM-1 Name | Province
+    ADM-1 Number of Un | 23
+    ADM-1 Sex and Age  | Sex and age disagg
+    ADM-1 Open-ended A | 80+
+    ADM-2 Name | N/A
+    ADM-2 Number of Un | N/A
+    ADM-2 Sex and Age  | N/A
+    ADM-2 Open-ended A | N/A
+    ADM-3 Name | N/A
+    ADM-3 Number of Un | N/A
+    ADM-3 Sex and Age  | N/A
+    ADM-3 Open-ended A | N/A
+    General Notes | This COD-PS is bas
+    Data Limitations | The age-sex patter
+    COD-PS Demographic | The COD-PS was ass
+  sheet 'Methodological Documentation' 9x2
+  sheet 'tcd_admpop_adm0_2023' 2x59
+  sheet 'tcd_admpop_adm1_2023' 24x61
+== pdfg https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/4eaace66-d2bf-4e4e-a089-ccbd726fe394/download/tcd_codps_qa_2023.pdf (?i)census|recensement|RGPH|source|INSEED|projection|2009 40
+  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/4eaace66-d2bf-4e4e-a089-ccbd726fe394/tcd_codps_qa_2023.pdf application/pdf 993,089 bytes
+  6 pages
+  p1: Common Operational Dataset on Population Statistics (COD-PS) against the projections by the WPP 2022
+  p1: Source(s) Institut National de la Statistique, des Etudes Economiques et Démographiques (INSEED)
+  p1: Source(s) Link(s) Shared directly by the NSO with UNFPA.
+  p1: Population Data Type (Census Population projection
+  p1: or Population projection)
+  p1: Baseline Population Year 2009
+  p2: General Notes This COD-PS is based on two separate sets of projections from the INSEED, an ADM-2
+  p2: 2021 projection, disaggregated by sex and age, and a ADM-2 2021-2023 set of
+  p2: projections, not disaggregated by sex and age. This COD-PS uses the age-sex patterns of
+  p2: the 2021 projections in combination with the totals from the 2021-2023 projection series,
+  p2: COD-PS Demographic Data The COD-PS was assessed against ADM-0 estimates and projections published by the
+  p2: two separate sets of projections from the INSEED, an ADM-2 2021 projection,
+  p2: disaggregated by sex and age, and a 2021-2023 set of projections, not disaggregated by
+  p2: sex and age. This COD-PS uses the age-sex patterns of the 2021 projections in
+  p2: combination with the ADM-2 totals from the 2021-2023 projection series, with some
+  p2: Baseline Population 2009 census
+  p3: At ADM-0, the implied post-censal (2009-2023) population growth rates of this COD-PS (3.52% per year:
+  p3: female: 3.50%, male: 3.55%) are somewhat higher than the UN’s population projections published in the
+  p3: likely shaped in differences in projection assumptions and methods used.[Note that this calculation, and
+  p3: 2009 census from the former Ennedi region.]
+  p3: Since the last census, this COD-PS projects the highest growth rates for the urban region of N’Djamena
+  p3: rates reflect the projection assumptions used, especially related to migration and fertility.
+  p3: Last Census, Last Census, CODPS, PGR(%), PGR(%),
+  p4: Last Census, Last Census, CODPS, PGR(%), PGR(%),
+  p4: projections at the national level.
+  p4: Revision projections at ADM-0 level, with the INSEED projections tending to estimate fewer working-age
+  p4: and COD-PS projections of 26.43% for males, but a difference of 2.1% in the other direction for females.
+  p5: ADM-1 projections and the WPP ADM-0 projection.
+  p5: While the sex and age proportions of many provinces generally follow the WPP ADM-0 projections, the
+  p5: province of Guéra has a significantly higher share of children aged 10-14 than the national projection
+== pdfp https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/0510df39-c506-4389-9699-381563380a92/download/copy-of-cmr-cod-ps-2025-explanatory-note.pdf 1-4 300
+  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/0510df39-c506-4389-9699-381563380a92/copy-of-cmr-cod-ps-2025-explanatory-note.pdf application/pdf 706,950 bytes
+  7 pages
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+  --- page 1 ---
+  COD-PS Cameroon
+  Update Year 2025 / Reference Year 2025
+  Objective of This Explanatory Technical Note
+  This explanatory technical note provides supplementary notes on the strengths and limitations of each
+  Common Operational Dataset on Population Statistics (COD-PS) against the projections by the WPP
+  2024 Revision of the UN to enable informed humanitarian decision-making.
+  Structure of Supplementary Note
+  This supplementary note is organized into the following sections:
+  1. Metadata
+  2. Methodological Documentation
+  3. Intrinsic Population Growth Rates (ADM-0 & 1)
+  4. Population counts by age and sex (ADM-0)
+  5. Relative population size by age and sex (ADM-1)
+  1. Metadata
+  Item Metadata
+  Country Cameroon
+  Source(s) Bureau Central des Recensements et des Etudes de Population (BUCREP) Cameroun
+  Source(s) Link(s) http://www.bucrep.cm/index.php/fr/telechargement/category/82-projections-
+  demographiques
+  Population Data Type Population projection
+  (Census enumeration, Direct
+  estimate, or Population
+  projection)
+  Year of the Baseline 2005
+  Population
+  Reference year of this COD- 2025
+  PS
+  Publication year of this 2025
+  COD-PS
+  ADM-1 Name Région
+  ADM-1 Number of Units 10
+  ADM-1 Sex and Age Sex and age disaggregated by 5-year age groups
+  Disaggregation
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+  --- page 2 ---
+  Item Metadata
+  ADM-1 Open-ended Age 80+
+  Group
+  General Notes This COD-PS dataset includes an additional table at the metropolis level, which
+  contains projected population counts for two major cities in Cameroon, Ville de
+  Douala and Ville de Yaoundé.
+  Data Limitations Cameroon has not conducted a census since 2005, and preparations for the next
+  census are ongoing. As limited information is available on demographic dynamics
+  since the last census, and the baseline population was measured 20 years ago,
+  assumptions around post-censal demographic change are subject to notable
+  uncertainty. For example, while there has been substantial internal migration in
+  Cameroon since 2005, the subnational projections in this COD-PS assume zero net
+  internal migration. This may impact the projected ADM-1 population counts by age
+  and sex included in this COD-PS.
+  COD-PS Demographic Data The COD-PS was assessed against ADM-0 estimates and projections published in
+  Quality Assessment the World Population Prospects (2024 Revision) by the United Nations Department
+  of Economic and Social Affairs (UN-DESA), and found to be largely consistent at the
+  ADM-0 and ADM-1 level.
+  2. Methodological Documentation
+  Item Methodological Documentation
+  Methodology Used The cohort component method was used to construct the projections upon which
+  this COD-PS is based. These projections are based on the 2005 census, and were
+  updated for the period 2016-2025 based on survey data (Demographic and Health
+  Surveys and Multiple Cluster Indicator Surveys) up to 2014. Region (ADM-1)
+  projections were calibrated to align with national projections.
+  Baseline Population 2005 census
+  Post-enumeration survey A PES on a representative 2% sample of the population was carried out from
+  (PES) November 2006 - January 2007. Detailed results from the PES were not found
+  online.
+  Assessment and Adjustment The United Nations combined age-sex accuracy index was 29.81 for the 2005
+  of the Baseline Population census, indicating somewhat inaccurate age reporting. No recorded adjustments to
+  the baseline population were found online.
+  Fertility (births) Between 1991 and 2014, the total fertility rate (TFR) in Cameroon remained relatively
+  high, though it declined from 5.9 children per woman in 1991 to 5.1 children per
+  woman in 2011 and 4.9 children per woman in 2014. The medium scenario for these
+  projections assumes a slight decline in TFR nationally, from 4.9 in 2014 to 4.4 in
+  2025, with most regions also projected to experience an overall decline in TFR 2014-
+  2025 except for the Nord and Extrême-Nord Regions.
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+  --- page 3 ---
+  Item Methodological Documentation
+  Mortality (deaths) The NSO expects life expectancy at birth to rise, from 53.4 years (male) and 57.1
+  years (female) in 2005 to 57.1 years (male) and 60.6 years (female) in 2025. It was
+  assumed that the HIV prevalence observed in 2011 will fall by half in 2025 both at the
+  national level and in each region.
+  International migration (net The NSO assumed net international migration to be zero, due to the lack of sufficient
+  migration) data.
+  Internal migration (migration The NSO assumed net internal migration to be zero, due to the lack of sufficient data
+  within country) on internal migration dynamics within Cameroon.
+  3. Intrinsic Population Growth Rates (ADM-0 & 1)
+  At ADM-0, the implied post-censal (2005-2025) population growth rates (2.61% per year: female
+  2.64%, male 2.58%) are generally consistent with the rates implied by the UNʼs population projections
+  (2006: 2.75%, 2012: 2.82%, 2018: 2.81%, 2025: 2.54%) published in the 2024 revision of the World
+  Population Prospects (WPP).
+  At ADM-1, during the post-censal period the NSO projects the highest growth rates for the regions of
+  Nord (3.62% per year: female 3.68%, male 3.57%), Centre (3.05% per year: female 3.08%, male
+  3.02%), and Extrême-Nord (2.84% per year: female 2.81%, male 2.88%). The regions of Nord and
+  Extrême-Nord are projected to have the highest fertility among regions over the projection period, likely
+  contributing to this relatively high expected growth (projected TFR for 2025 is 6.7 in Extrême-Nord and
+  6.0 in Nord). High growth for the Centre Region overall is likely driven in part by expectations of
+  continued high growth of the capital city Yaoundé.
+  The lowest growth rates, conversely, are projected for the regions of Ouest (1.29% per year: female
+  1.39%, male 1.20%), followed by Sud (1.67% per year: female 1.60%, male 1.73%) and Nord-Ouest
+  (1.69% per year: female 1.80%, male 1.58%).
+  Last Census, Last Census, CODPS, PGR(%), PGR(%), PGR(%),
+  ADM-1 Female Male Female CODPS, Male Female Male Both
+  Adamaoua 445,376 438,913 796,794 744,979 2.91 2.65 2.78
+  Centre 1,487,159 1,494,925 2,751,647 2,735,993 3.08 3.02 3.05
+  Est 386,610 385,145 644,466 639,305 2.56 2.53 2.54
+  Extrême- 1,576,545 1,535,247 2,768,123 2,730,993 2.81 2.88 2.84
+  Nord
+  Littoral 1,307,849 1,318,374 2,246,136 2,252,731 2.70 2.68 2.69
+  Nord 851,032 836,927 1,775,848 1,710,068 3.68 3.57 3.62
+  Nord- 900,091 828,862 1,291,174 1,137,000 1.80 1.58 1.69
+  Ouest
+  Ouest 914,569 805,478 1,208,515 1,024,323 1.39 1.20 1.29
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+  --- page 4 ---
+  Last Census, Last Census, CODPS, PGR(%), PGR(%), PGR(%),
+  ADM-1 Female Male Female CODPS, Male Female Male Both
+  Sud 313,312 321,343 431,150 454,584 1.60 1.73 1.67
+  Sud- 649,257 666,822 1,053,594 1,044,895 2.42 2.25 2.34
+  Ouest
+  Total 8,831,800 8,632,036 14,967,447 14,474,871 2.64 2.58 2.61
+  4. Population Counts by age and sex (ADM-0)
+  Below, we compare the population structure across sex and age groups between the NSO and WPP
+  projections at the national level. The sex and age specific population counts of this COD-PS at ADM-0
+  are generally consistent with the WPP ADM-0 projection, though this COD-PS projects somewhat lower
+  numbers of youths aged 5-19 than the WPP. For the 5-9 age group, for example, this COD-PS projects
+  8.33% fewer males and 6.53% fewer females than the WPP. These differences in the projected
+  population of children could be shaped by assumptions around fertility since the 2005 census.
+  CODPS-WPP, Female Difference(%) CODPS-WPP, Male Difference(%)
+  0-4 -12,353 -0.55 -56,404 -2.48
+  5-9 -134,346 -6.53 -174,254 -8.33
+  10-14 -79,872 -4.41 -112,643 -6.15
+  15-19 -92,179 -5.72 -117,587 -7.26
+  20-24 -22,104 -1.63 -18,167 -1.34
+  25-29 7,738 0.67 23,260 2.02
+  30-34 -39,631 -3.85 -5,779 -0.57
+  35-39 31,112 3.50 -9,872 -1.12
+  40-44 74,775 10.18 -39,029 -5.40
+  45-49 77,362 13.27 -11,468 -2.02
+  50-54 39,433 8.60 6,429 1.46
+  55-59 30,164 8.66 7,898 2.41
+  60-64 45,786 17.62 28,818 12.19
+  65-69 27,940 14.45 29,691 17.70
+  70-74 25,666 19.58 25,783 24.08
+  75-79 -5,680 -7.22 5,270 8.83
+  80Plus 4,530 7.31 2,695 6.37
