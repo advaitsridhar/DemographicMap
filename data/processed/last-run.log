@@ -1,12 +1,21 @@
-Democratic Republic of the Congo: https://data.humdata.org/dataset/881bdaa3-6d4c-408b-88dc-aed0ecc0d119/resource/a4a72c31-af0d-4b0d-975b-9eadf6d5c103/download/democratic-republic-of-the-congo_uscb_202103.xlsx
-  297,896 bytes
-  Tribe and Religion [TRB_]: 191 rows, 105 groups, denominator 'Sample size'
-    164 rows skipped: another level, or no area name
-    admin1: 31,755 against the country's own 31,755 -- exactly
-    every one of 26 areas reaches its published total
-  Tribe and Religion [RLG_]: 191 rows, 9 groups, denominator 'Sample size'
-    164 rows skipped: another level, or no area name
-    admin1: 31,755 against the country's own 31,755 -- exactly
-    every one of 26 areas reaches its published total
-  wrote data/processed/drc_province.json (127 kB)
-  26 areas: 26 admin1
+Ethiopia: https://data.humdata.org/dataset/5438946a-51b7-44d6-9b76-aeafdb4dc4d3/resource/f112d5fa-d90e-4352-b0c1-54cffbbad62d/download/ethiopia_uscb_202308.xlsx
+  1,759,157 bytes
+  Religion: 851 rows, 6 groups, by sex, no published denominator
+    6 groups reconcile by sex across 5070 cells
+    743 rows skipped: another level, or no area name
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  Ethnicity: 108 rows, 93 groups, no published denominator
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  Language: 108 rows, 91 groups, no published denominator
+    1 areas listed with no figures at all: FINFINNE ZURIA SPECIAL ZONE
+    admin1: 73,750,932 against the country's own 73,750,932 -- exactly
+    admin2: 73,750,932 against the country's own 73,750,932 -- exactly
+    Ādīs Ābeba is one shape in the boundaries: summed 10 areas, 2,739,551 people, 100.0% of Ādīs Ābeba
+  wrote data/processed/ethiopia_region.json (1586 kB)
+  97 areas: 13 admin1, 84 admin2
