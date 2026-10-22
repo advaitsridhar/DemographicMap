@@ -66,6 +66,7 @@ from __future__ import annotations
 import argparse
 import io
 import json
+import math
 import re
 import unicodedata
 from collections import Counter, defaultdict
@@ -337,6 +338,10 @@ def numeric(token: str) -> bool:
 class Row:
     top: float
     words: list[tuple[float, float, str]] = field(default_factory=list)
+    # The words of a line of text alone printed right under a row of figures:
+    # the rest of its name, where the name runs onto a second line ("Maquela
+    # do" / "Zombo" in Uíge's table of religions).
+    tail: str = ""
 
     @property
     def label(self) -> str:
@@ -444,18 +449,34 @@ def blocks_of(rows: list[Row], lead: bool = False, singles: bool = False) -> lis
     current: Block | None = Block("", [], []) if lead else None
     if current is not None:
         out.append(current)
+    previous: Row | None = None
     for row in rows:
         if squeeze(row.label).startswith("quadro"):
             current = Block(row.label, [], [])
             out.append(current)
+            previous = None
             continue
         if current is None:
             continue
         if row.is_data or (singles and current.data and row.is_single):
             current.data.append(row)
-        elif not current.data:
+            previous = row
+            continue
+        if not current.data:
             current.header.append(row)
+        elif previous is not None and not previous.tail and not row.figures() \
+                and row.top - previous.top <= ORPHAN_REACH:
+            previous.tail = row.label
+        previous = None
     return [b for b in out if b.data]
+
+
+def full_label(row: Row, known: set[str]) -> str:
+    """A row's name with the line printed under it, where only the two together
+    are a name the report gives (``known``, folded)."""
+    if row.tail and fold(row.label) not in known and fold(f"{row.label} {row.tail}") in known:
+        return f"{row.label} {row.tail}"
+    return row.label
 
 
 def reach(columns: list[float]) -> float:
@@ -612,6 +633,8 @@ def sexes_add_up(total: int, men: int, women: int) -> bool:
 
 
 SEX_TABLES = ("residentepormunicipiosegundoosexo", "residenteporprovinciasegundoosexo")
+# "Quadro 8 - População residente por área de residência, segundo o sexo".
+AREA_TABLE = "residenteporareaderesidenciasegundoosexo"
 
 
 def split_province(rows: list[tuple[str, list[int]]], col: int
@@ -632,8 +655,13 @@ def read_report(stem: str, pages: list[list[Row]], texts: list[str]) -> Report:
     # município" in most reports and "por província" in some.
     old_head: list[int] | None = None
     old_rows: list[tuple[str, list[int]]] = []
+    # Other tables of the residents by sex, in page order: the province by area
+    # of residence (Quadro 8) and a second table of the 2024 municipalities
+    # (Moxico's Quadro 10), which print the province's own row.
+    others: list[tuple[str, list[tuple[str, list[int]]]]] = []
     for i, text in enumerate(texts):
-        if not any(k in text for k in SEX_TABLES) and "porgruposetariosquinquenais" not in text:
+        if not any(k in text for k in (*SEX_TABLES, AREA_TABLE)) \
+                and "porgruposetariosquinquenais" not in text:
             continue
         for block in blocks_of(pages[i]):
             title = squeeze(block.title)
@@ -646,6 +674,9 @@ def read_report(stem: str, pages: list[list[Row]], texts: list[str]) -> Report:
                 rep.total = tuple(head[1]) if head else tuple(
                     sum(f[j] for _, f in rest) for j in range(3))
                 rep.quadros["new"] = quadro_of(block.title)
+                rep.quadros["total"] = quadro_of(block.title)
+            elif any(k in title for k in (*SEX_TABLES, AREA_TABLE)) and widths == {3}:
+                others.append((quadro_of(block.title), rows))
             elif any(k in title for k in SEX_TABLES) and widths == {6} and not old_rows:
                 old_rows = rows
                 rep.quadros["old"] = quadro_of(block.title)
@@ -673,6 +704,23 @@ def read_report(stem: str, pages: list[list[Row]], texts: list[str]) -> Report:
         rep.old = [(lab, f[3], f[4], f[5]) for lab, f in rest]
         summed = head is None
         old_head = head[1][3:] if head else [sum(f[j] for _, f in rest) for j in (3, 4, 5)]
+        if head is not None:
+            others.append((rep.quadros.get("old", ""), [(head[0], head[1][3:])]))
+    if rep.new and not rep.province:
+        # Quadro 10 prints no row for the province (Malanje's, Moxico's): its
+        # total, men and women as another table prints them, in place of the
+        # municipalities' rows added up, each rounded from a weighted count.
+        slack = 2 + len(rep.new)
+        found = next(((number, label, figs) for number, rows in others for label, figs in rows
+                      if len(figs) == 3 and abs(figs[0] - rep.total[0]) <= slack
+                      and sexes_add_up(*figs)), None)
+        if found:
+            number, label, figs = found
+            rep.problems.append(f"the province's total from Quadro {number} ({label} "
+                                f"{figs[0]:,}), not its municipalities added up "
+                                f"({rep.total[0]:,})")
+            rep.province, rep.total = label, tuple(figs)
+            rep.quadros["total"] = number
     if not rep.new and rep.old and old_head:
         # The 2024 municipalities not read: the 2016 table still gives the
         # municipalities drawn their counts, and the province its total.
@@ -774,7 +822,14 @@ def median_entries(rows: list[Row]) -> tuple[str, list[tuple[str, float | None]]
 
 
 def decimal_columns(rows: list[Row]) -> list[list[float]]:
-    """The right ends of the figures printed as "18,0", gathered into columns."""
+    """The right ends of the figures printed as "18,0", gathered into columns.
+
+    A few figures of a column may end a little off it: Moxico's province row
+    ("22,37", "18,00") ends 19 points left of the rows below it, and Uíge's
+    third column group prints two rows 21 points left of the rest. A cluster
+    within 30 points of its neighbour and with a third of its members or fewer
+    joins it; the média and mediana columns of a group hold one figure each of
+    the same rows, so they never join one another."""
     ends = sorted(x1 for r in rows for _, x1, t in r.words if DECIMAL.match(t))
     clusters: list[list[float]] = []
     for x1 in ends:
@@ -782,6 +837,16 @@ def decimal_columns(rows: list[Row]) -> list[list[float]]:
             clusters[-1].append(x1)
         else:
             clusters.append([x1])
+    joined = True
+    while joined:
+        joined = False
+        for k in range(len(clusters) - 1):
+            one, other = clusters[k], clusters[k + 1]
+            if other[0] - one[-1] <= 30 and 3 * min(len(one), len(other)) <= max(
+                    len(one), len(other)):
+                clusters[k:k + 2] = [sorted(one + other)]
+                joined = True
+                break
     return clusters
 
 
@@ -809,15 +874,21 @@ def medians_of(rep: Report, pages: list[list[Row]], texts: list[str]) -> None:
             continue
         rep.median = entries[first][1]
         rep.quadros["medians"] = quadro_of(title)
+        rep.quadros["province_median"] = quadro_of(title)
         used: set[int] = set()
         pos = start + 1
+        # Each entry's name, and with the line after it where that line has no
+        # figures: a name run onto two lines ("Maquela do" / "Zombo").
+        said = [{fold(lab)} | ({fold(f"{lab} {entries[k + 1][0]}")}
+                               if k + 1 < len(entries) and entries[k + 1][1] is None else set())
+                for k, (lab, _) in enumerate(entries)]
         for name, *_ in rep.new:
             key = fold(name)
-            hit = next((k for k in range(pos, len(entries)) if fold(entries[k][0]) == key), None)
+            hit = next((k for k in range(pos, len(entries)) if key in said[k]), None)
             if hit is None:
                 # Printed out of Quadro 10's order: the first row of its name not taken.
                 hit = next((k for k in range(start + 1, len(entries))
-                            if k not in used and fold(entries[k][0]) == key), None)
+                            if k not in used and key in said[k]), None)
             if hit is None:
                 continue
             used.add(hit)
@@ -828,6 +899,46 @@ def medians_of(rep: Report, pages: list[list[Row]], texts: list[str]) -> None:
             rep.problems.append(f"median ages: no row for {', '.join(missing)}")
         return
     rep.problems.append("median ages: Quadro 1.7 not read")
+    # The province's median is also printed among the report's key indicators.
+    value, number = indicator_median(pages)
+    if value is not None:
+        rep.median = value
+        rep.quadros["province_median"] = number
+        rep.problems.append(f"median ages: the province's from the key indicators (Quadro "
+                            f"{number}): {value:g}")
+
+
+# Quadros 1 and 2, "Síntese dos principais indicadores": row 1.4, "Idade
+# mediana da população", gives the province's median age at the 2014 and 2024
+# censuses (Quadro 1: "14,0 17,0" in Uíge's report, "- 16,0" in a province
+# made in 2024) and in 2024 for the province, its urban and rural areas, its
+# men and its women (Quadro 2: "17,0 17,0 17,0 16,0 18,0").
+INDICATOR = re.compile(r"^\d{0,3}idademedianadapopulacao$")
+
+
+def indicator_median(pages: list[list[Row]]) -> tuple[float | None, str]:
+    """The province's 2024 median age from the key indicators, and the number of
+    the table it is read from; None where none is printed or two disagree."""
+    found: list[tuple[float, str]] = []
+    for rows in pages:
+        number = ""
+        for row in rows:
+            said = squeeze(words_of(row))
+            if said.startswith("quadro"):
+                number = quadro_of(words_of(row))
+            label = squeeze(" ".join(t for _, _, t in row.words
+                                     if not DECIMAL.match(t) and t not in DASHES))
+            if not INDICATOR.match(label):
+                continue
+            cells = [t for _, _, t in row.words if DECIMAL.match(t) or t in DASHES]
+            if len(cells) == 2 and DECIMAL.match(cells[1]):
+                found.append((float(cells[1].replace(",", ".")), number))
+            elif len(cells) == 5 and DECIMAL.match(cells[0]):
+                found.append((float(cells[0].replace(",", ".")), number))
+    values = {v for v, _ in found}
+    if len(values) != 1:
+        return None, ""
+    return found[0][0], next((n for _, n in found if n), "")
 
 
 def table_numbers(spec: dict[str, Any], texts: list[str]) -> set[str]:
@@ -852,6 +963,7 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
     last: Block | None = None
     before = False                 # the page before held a block of this table
     numbers = table_numbers(spec, texts)
+    known = {fold(n) for n, *_ in rep.new}
     for i, text in enumerate(texts):
         if not before and not any(k in text for k in keys_of(spec)):
             continue
@@ -893,7 +1005,7 @@ def read_table(rep: Report, name: str, spec: dict[str, Any], pages: list[list[Ro
             last = block
             here = True
             key = tuple(labels)
-            rows = [(r.label, values(block, r)) for r in block.data]
+            rows = [(full_label(r, known), values(block, r)) for r in block.data]
             if key not in groups:
                 groups[key] = []
                 order.append(key)
@@ -1141,6 +1253,13 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
         rep.problems.append(f"{name}: municipalities not found: {', '.join(missing)}")
         for n in missing:
             rep.refusals[name].setdefault(fold(n), ("missing",))
+        # A municipality's row not found means the walk took some row for what
+        # it is not: what it said of the communes it added up is not believed
+        # (Uíge's religions put Maquela do Zombo's row, its name printed over
+        # two lines, under Puri as a commune).
+        for key, why in list(rep.refusals[name].items()):
+            if why[0] == "communes":
+                rep.refusals[name][key] = ("unsure",)
     return out
 
 
@@ -1158,6 +1277,24 @@ def check_composition(field_name: str, label: str, vals: dict[str, int]) -> str 
     if abs(summed - total) > max(0.005 * total, 5):
         return f"{field_name}: {label}'s groups make {summed:,}, not {total:,}"
     return None
+
+
+def printed_short(rep: Report, name: str) -> tuple[list[str], float, list[str]] | None:
+    """Where a table's own province row falls short of its total -- the table
+    printed without some of its answers -- the answers it prints, the share of
+    the total they make, and (for religion, whose 21 answers every report
+    names) those it leaves out; None where the province's row adds up."""
+    table = rep.tables.get(name) or []
+    if not table:
+        return None
+    label, whole = max(table, key=lambda r: r[1].get("TOTAL", 0))
+    total = whole.get("TOTAL") or 0
+    made = sum(v for k, v in whole.items() if k != "TOTAL")
+    if not total or made >= total - max(0.005 * total, 5):
+        return None
+    printed = [k for k in whole if k != "TOTAL"]
+    left = [k for k in RELIGION if k not in printed] if name == "religion" else []
+    return printed, made / total, left
 
 
 # -- which new municipality is in which old one -----------------------------
@@ -1234,13 +1371,13 @@ def crosswalk_parts(rep: Report) -> dict[str, tuple[list[str], bool]]:
     """
     old = {fold(n): (t, m, f) for n, t, m, f in rep.old}
     new = {fold(n): (t, m, f) for n, t, m, f in rep.new}
-    names = {fold(n): n for n, *_ in rep.new}
+    names = {fold(n): shown_name(n) for n, *_ in rep.new}
     if not rep.short:
         walk = crosswalk(rep)
         if walk:
             got: dict[str, list[str]] = defaultdict(list)
             for n, *_ in rep.new:
-                got[walk[fold(n)]].append(n)
+                got[walk[fold(n)]].append(shown_name(n))
             return {o: (got.get(o, []), True) for o in old}
     seeds: dict[str, str] = {}
     for n, *_ in rep.old:
@@ -1328,10 +1465,13 @@ def listed(names: list[str]) -> str:
 
 
 def shown_name(name: str) -> str:
-    """A municipality's name as a note shows it: the census's "Cacongo(ex_Lândana)"
-    and "Catabola (ex. Nova Sintra)" as "Cacongo (ex-Lândana)" and "Catabola
-    (ex-Nova Sintra)"."""
-    text = re.sub(r"\s*\(\s*ex[\s._-]*", " (ex-", name)
+    """A municipality's name as a note shows it: the census's "Cacongo(ex_Lândana)",
+    "Catabola (ex. Nova Sintra)", "Milunga (Ex. Santa Cruz)" and "Boa
+    Entrada(Cadá)" as "Cacongo (ex-Lândana)", "Catabola (ex-Nova Sintra)",
+    "Milunga (ex-Santa Cruz)" and "Boa Entrada (Cadá)"."""
+    text = re.sub(r"\s*\(\s*ex[\s._-]*", " (ex-", name, flags=re.IGNORECASE)
+    text = re.sub(r"\s*\(\s*", " (", text)
+    text = re.sub(r"\s*\)", ")", text)
     return re.sub(r"\s+", " ", text).strip()
 
 
@@ -1353,7 +1493,8 @@ def cite(reps: list[Report], given: list[str], noted: list[str], quadros: list[s
         f"{f} note" for f in FIELD_ORDER if f in noted and f not in given]
     out = []
     for rep in reps:
-        keys = [("new" if rep.new else "old") if q == "total" else q for q in quadros]
+        keys = [("total" if rep.quadros.get("total") else "new" if rep.new else "old")
+                if q == "total" else q for q in quadros]
         numbers = list(dict.fromkeys(rep.quadros[q] for q in keys if rep.quadros.get(q)))
         tables = (f": Quadro {numbers[0]}" if len(numbers) == 1 else
                   f": Quadros {listed(numbers)}" if numbers else "")
@@ -1404,11 +1545,34 @@ def reason_note(rep: Report, table: str, part: str, reason: tuple[Any, ...],
                 names: list[str], stood: str) -> str:
     """Why a table's figures are not shown for a polygon: what the table prints
     for one of the 2024 municipalities it is made of."""
-    where = (f"In the 2024 census's table of {WHAT[table]} for "
-             f"{SHOWN.get(rep.stem, rep.stem)} province, ")
+    province = SHOWN.get(rep.stem, rep.stem)
+    where = f"In the 2024 census's table of {WHAT[table]} for {province} province, "
     tail = (f", so the {FIGURES.get(table, 'age')} figures for {listed(names)} as {stood} "
             f"under Lei n.º 18/16 are not shown.")
     kind = reason[0]
+    number = rep.quadros.get(table)
+    printed_as = f" (Quadro {number})" if number else ""
+    if kind == "columns":
+        printed, share, left = reason[1], reason[2], reason[3]
+        if left:
+            answers = (f"{len(printed)} of the census's {len(printed) + len(left)} answers, "
+                       f"which account for {share:.0%} of the province's people aged 2 and "
+                       f"over; the other {len(left)} ("
+                       + listed([QUOTED.get(g, g) for g in left]) + ")")
+        else:
+            answers = (f"{len(printed)} answers, which account for {share:.0%} of the "
+                       f"province's people aged 2 and over; the others")
+        return (f"The 2024 census's report for {province} province prints its table of "
+                f"{WHAT[table]} by municipality{printed_as} with {answers} are not printed by "
+                f"municipality" + tail)
+    if kind in ("table", "unsure", "missing"):
+        # Where the table could not be followed row by row, nothing is said of
+        # its rows: only what it covers and that these figures are not shown.
+        source = (f"Quadro {number} of its report for {province} province" if number
+                  else f"its report for {province} province")
+        return (f"The 2024 census prints {WHAT[table]} for the municipalities created in 2024 "
+                f"({source}); these figures are not shown for {listed(names)} as {stood} "
+                f"under Lei n.º 18/16.")
     if kind == "plausible":
         return (where + f"{part}'s row counts {reason[1]:,} people, against the "
                 f"{reason[2]:,} residents the census counts there, and its communes' rows "
@@ -1419,15 +1583,12 @@ def reason_note(rep: Report, table: str, part: str, reason: tuple[Any, ...],
     if kind == "sums":
         return (where + f"the groups of {part}'s row add up to {reason[1]:,}, not the "
                 f"{reason[2]:,} printed as its total" + tail)
-    if kind == "table":
-        return (where + f"the groups of {reason[1]} of its {reason[2]} municipalities' rows "
-                f"do not add up to their totals" + tail)
     if kind == "totals":
         return (where + f"{part}'s row gives {reason[1]:,} people in one column group and "
                 f"{reason[2]:,} in another" + tail)
     if kind == "sexes":
         return where + f"{part}'s men and women do not make the row's total" + tail
-    return where + f"no row can be told apart as {part}'s" + tail
+    return reason_note(rep, table, part, ("unsure",), names, stood)
 
 
 def patched_note(rep: Report, tables: tuple[str, ...], keys: list[str],
@@ -1453,6 +1614,23 @@ def patched_note(rep: Report, tables: tuple[str, ...], keys: list[str],
     return "".join(dict.fromkeys(out))
 
 
+def completed_median(groups: list[tuple[int, int | None, int]]) -> float | None:
+    """The median age in completed years, as the census prints its medians
+    ("17,0"): the year of age in which the middle person falls, each group's
+    people spread evenly over its years. Where both are known, the census's
+    published median is this year: Ambriz's age groups put the middle person
+    at 22.9 years and the census prints 22, Uíge's at 17.6 and it prints 17."""
+    base = sum(n for *_, n in groups)
+    half, before = base / 2, 0
+    for low, high, people in groups:
+        if before + people >= half and people > 0:
+            if high is None:
+                return None
+            return float(math.floor(low + (half - before) / people * (high - low + 1)))
+        before += people
+    return None
+
+
 def median_of(parts: list[dict[str, dict[str, int]]]) -> tuple[float | None, str | None]:
     broad = defaultdict(int)
     other = defaultdict(int)
@@ -1471,7 +1649,7 @@ def median_of(parts: list[dict[str, dict[str, int]]]) -> tuple[float | None, str
               (75, None, other["75+"])]
     if abs(sum(n for *_, n in groups) - broad["TOTAL"]) > 3:
         return None, "age groups do not make the total"
-    return grouped_median(groups), None
+    return completed_median(groups), None
 
 
 def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict[str, Any]],
@@ -1541,6 +1719,17 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
             bad = {k: p for k, v in rows[name].items()
                    if (p := check_composition(name, k, v))}
             rep.problems += list(bad.values())
+            short = printed_short(rep, name)
+            if bad and 3 * len(bad) > len(rows[name]) and short:
+                # The province's own row falls short as well: the table is
+                # printed without some of its answers (Uíge's religions, 11 of
+                # 21, the page that should hold the rest left blank).
+                rep.problems.append(f"{name}: the province's row prints {len(short[0])} "
+                                    f"answers, {short[1]:.1%} of its total; table left out")
+                for n, *_ in rep.new:
+                    rep.refusals[name][fold(n)] = ("columns", *short)
+                rows[name] = {}
+                continue
             if bad and 3 * len(bad) > len(rows[name]):
                 for k in rows[name]:
                     rep.refusals[name].setdefault(k, ("table", len(bad), len(rows[name])))
@@ -1610,40 +1799,12 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
             fields["population_note"] = (
                 f"The 2024 census's counts for {listed(shown)} provinces, which were made out "
                 f"of this one in 2024, added together.")
-        if len(reps) == 1 and reps[0].median is not None:
-            fields["median_age"] = measure(reps[0].median, unit="years", year=YEAR,
-                                           source=SOURCE)
-            fields["median_age_note"] = "The median age the 2024 census publishes for the province."
-            given.append("median_age")
-            quadros.append("medians")
-        else:
-            flat = [(lo, hi, n) for (lo, hi), n in sorted(shape_groups[shape].items(),
-                                                           key=lambda kv: kv[0][0])]
-            med = (grouped_median(flat) if flat and abs(sum(n for *_, n in flat) - t)
-                   <= 5 * len(reps) else None)
-            if med is not None:
-                fields["median_age"] = measure(med, unit="years", year=YEAR, source=SOURCE)
-                if len(reps) > 1:
-                    note = ("The median of the 2024 census's counts by five-year age group for "
-                            f"{listed(shown)} provinces, added together")
-                    if all(r.median is not None for r in reps):
-                        note += ("; the census publishes "
-                                 + listed([f"{r.median:g} years for {s}"
-                                           for r, s in zip(reps, shown)])
-                                 + ", not a median for the two together.")
-                        quadros.append("medians")
-                    else:
-                        note += "."
-                else:
-                    note = "The median of the 2024 census's counts by five-year age group."
-                    log_lines.append(f"  province {shape}: Quadro 1.7 not read; median from "
-                                     f"the five-year groups")
-                fields["median_age_note"] = note
-                given.append("median_age")
-                quadros.append("five_year")
+        noted: list[str] = []
+        province_median(shape, reps, shown, t, shape_groups[shape], fields, given, noted,
+                        quadros, log_lines)
         records.append(record(f"AGO-RGPH2024-{poly['id']}", poly["name"], level="admin1",
                               parent="AGO", country="AGO", match_by="shape_id",
-                              shape_id=poly["id"], sources=cite(reps, given, [], quadros),
+                              shape_id=poly["id"], sources=cite(reps, given, noted, quadros),
                               **fields))
     # Second level: each polygon and the 2016 municipalities it is.
     on_polygon: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -1679,7 +1840,7 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
         names = [u["name"] for u in units]
         stood = "it stood" if len(names) == 1 else "they stood"
         sizes = {fold(n): t for n, t, *_ in rep.new}
-        labels = {fold(n): n for n, *_ in rep.new}
+        labels = {fold(n): shown_name(n) for n, *_ in rep.new}
         if not all(u["counted"] for u in units):
             short = next(u for u in units if not u["counted"])
             stated[sid] = (short_note(rep, short["name"]), [rep], ["old"])
@@ -1758,7 +1919,8 @@ def build(reports: list[Report], admin1: list[dict[str, Any]], admin2: list[dict
                 given.append(name)
                 quadros.append(name)
             median_fields(rep, units, parts, keys, rows, names, stood, share, tail, usable,
-                          labels, sizes, fields, given, quadros, log_lines, poly["name"])
+                          labels, sizes, fields, given, quadros, log_lines, poly["name"],
+                          noted)
         records.append(record(f"AGO-RGPH2024-{sid}", poly["name"], level="admin2", parent="AGO",
                               country="AGO", match_by="shape_id", shape_id=sid,
                               sources=cite([rep], given, noted, quadros), **fields))
@@ -1830,20 +1992,104 @@ def why_not(rep: Report, name: str, keys: list[str], labels: dict[str, str],
                        ("missing",), names, stood)
 
 
+COMPLETED = "in completed years, as the census gives its medians"
+
+
+def province_median(shape: str, reps: list[Report], shown: list[str], total: int,
+                    groups: dict[tuple[int, int | None], int], fields: dict[str, Any],
+                    given: list[str], noted: list[str], quadros: list[str],
+                    log_lines: list[str]) -> None:
+    """A province's median age: the census's own, where the province as drawn
+    is one province of 2024; otherwise, for Luanda, Moxico and Cuando Cubango,
+    each two provinces of 2024, the one their medians give when they are equal,
+    and else the median of their counts by five-year age group added together,
+    which must lie between the two published medians (a union's median does)."""
+    published = [r.median for r in reps]
+    flat = [(lo, hi, n) for (lo, hi), n in sorted(groups.items(), key=lambda kv: kv[0][0])]
+    med = (completed_median(flat) if flat and abs(sum(n for *_, n in flat) - total)
+           <= 5 * len(reps) else None)
+    if len(reps) == 1 and published[0] is not None:
+        fields["median_age"] = measure(published[0], unit="years", year=YEAR, source=SOURCE)
+        fields["median_age_note"] = "The median age the 2024 census publishes for the province."
+        given.append("median_age")
+        quadros.append("province_median")
+        return
+    if len(reps) == 1:
+        if med is None:
+            return
+        fields["median_age"] = measure(med, unit="years", year=YEAR, source=SOURCE)
+        fields["median_age_note"] = (f"The median of the 2024 census's counts by five-year age "
+                                     f"group, {COMPLETED}.")
+        given.append("median_age")
+        quadros.append("five_year")
+        log_lines.append(f"  province {shape}: no median printed; from the five-year groups")
+        return
+    each = listed([f"{p:g} years for {s}" for p, s in zip(published, shown)]
+                  if all(p is not None for p in published) else [])
+    if all(p is not None for p in published) and len(set(published)) == 1:
+        fields["median_age"] = measure(published[0], unit="years", year=YEAR, source=SOURCE)
+        fields["median_age_note"] = (
+            f"The census publishes a median age of {published[0]:g} years for both "
+            f"{listed(shown)} provinces, which were made out of this one in 2024, so the two "
+            f"together have that median too.")
+        given.append("median_age")
+        quadros.append("province_median")
+        return
+    if med is None:
+        return
+    note = (f"The median of the 2024 census's counts by five-year age group for "
+            f"{listed(shown)} provinces, which were made out of this one in 2024, added "
+            f"together, {COMPLETED}")
+    if all(p is not None for p in published):
+        if not min(published) <= med <= max(published):
+            fields["median_age"] = gap(NOT_AVAILABLE, (
+                f"The 2024 census publishes a median age of {each}, which were made out of "
+                f"this province in 2024, and none for the two together; the median of their "
+                f"counts by five-year age group does not fall between the two, so none is "
+                f"shown."))
+            noted.append("median_age")
+            quadros += ["province_median", "five_year"]
+            log_lines.append(f"  province {shape}: median {med:g} outside {each}; not shown")
+            return
+        note += f"; the census publishes {each}, not a median for the two together."
+        quadros.append("province_median")
+    else:
+        note += "."
+    fields["median_age"] = measure(med, unit="years", year=YEAR, source=SOURCE)
+    fields["median_age_note"] = note
+    given.append("median_age")
+    quadros.append("five_year")
+
+
 def median_fields(rep: Report, units: list[dict[str, Any]], parts: list[str], keys: list[str],
                   rows: list[dict[str, dict[str, int]]], names: list[str], stood: str,
                   share: str, tail: str, usable: set[str], labels: dict[str, str],
                   sizes: dict[str, int], fields: dict[str, Any], given: list[str],
-                  quadros: list[str], log_lines: list[str], polygon: str) -> None:
+                  quadros: list[str], log_lines: list[str], polygon: str,
+                  noted: list[str] | None = None) -> None:
     """A polygon's median age: the census's own (Quadro 1.7) where it is one
-    municipality of 2024; otherwise taken from its municipalities' counts by age
-    group, added together, and the note says so."""
+    municipality of 2024. A polygon made of several has the median their own
+    medians give when they are all the same; otherwise the median of their
+    counts by age group, added together, in completed years as the census
+    gives its medians, which must lie between their published medians (a
+    union's median does), or none is shown, and the note says which."""
     single = len(parts) == 1 and len(units) == 1
     published = [rep.medians.get(k) for k in keys]
     if single and published[0] is not None:
         fields["median_age"] = measure(published[0], unit="years", year=YEAR, source=SOURCE)
         fields["median_age_note"] = (f"The median age the 2024 census publishes for "
                                      f"{parts[0]}." + (tail or share))
+        given.append("median_age")
+        quadros.append("medians")
+        return
+    known = not single and bool(published) and all(p is not None for p in published)
+    each = listed([f"{p} {m:g}" for p, m in zip(parts, published)]) if known else ""
+    if known and len(set(published)) == 1:
+        fields["median_age"] = measure(published[0], unit="years", year=YEAR, source=SOURCE)
+        fields["median_age_note"] = (
+            f"The census publishes a median age of {published[0]:g} years for each of the "
+            f"municipalities created in 2024 that make up {listed(names)} as {stood} under Lei "
+            f"n.º 18/16 ({listed(parts)}), so together they have that median too." + share)
         given.append("median_age")
         quadros.append("medians")
         return
@@ -1855,21 +2101,34 @@ def median_fields(rep: Report, units: list[dict[str, Any]], parts: list[str], ke
         return
     if single and keys[0] in rep.medians:
         note = (f"The census prints no median age for {parts[0]} as a whole, only for its "
-                f"communes; this one is taken from its counts by age group {AGE_GROUPS}.")
+                f"communes; this one is taken from its counts by age group {AGE_GROUPS}, "
+                f"{COMPLETED}.")
     elif single:
-        note = f"Taken from the 2024 census's counts by age group {AGE_GROUPS}."
+        note = f"Taken from the 2024 census's counts by age group {AGE_GROUPS}, {COMPLETED}."
         log_lines.append(f"  {polygon}: no row of {parts[0]} in Quadro 1.7; median from its "
                          f"age groups")
-    elif all(p is not None for p in published):
+    elif known:
+        if not min(published) <= med <= max(published):
+            fields["median_age"] = gap(NOT_AVAILABLE, (
+                f"The census publishes a median age for each municipality created in 2024 "
+                f"({each} years), not for {listed(names)} as {stood} under Lei n.º 18/16, and "
+                f"the median of their counts by age group, added together, does not fall "
+                f"between theirs, so none is shown."))
+            if noted is not None:
+                noted.append("median_age")
+            quadros.append("medians")
+            log_lines.append(f"  {polygon}: median {med:g} outside its parts' ({each}); not "
+                             f"shown")
+            return
         note = ("The census publishes a median age for each municipality created in 2024 ("
-                + listed([f"{p} {m:g}" for p, m in zip(parts, published)])
-                + f" years), not for {listed(names)} as {stood} under Lei n.º 18/16; this one "
-                f"is taken from their counts by age group {AGE_GROUPS}, added together.")
+                + each + f" years), not for {listed(names)} as {stood} under Lei n.º 18/16; "
+                f"this one is taken from their counts by age group {AGE_GROUPS}, added "
+                f"together, {COMPLETED}.")
         quadros.append("medians")
     else:
         note = (f"Taken from the 2024 census's counts by age group {AGE_GROUPS} for "
-                f"{listed(parts)}, added together; the census publishes no median age for "
-                f"{listed(names)} as {stood} under Lei n.º 18/16.")
+                f"{listed(parts)}, added together, {COMPLETED}; the census publishes no median "
+                f"age for {listed(names)} as {stood} under Lei n.º 18/16.")
     fields["median_age"] = measure(med, unit="years", year=YEAR, source=SOURCE)
     fields["median_age_note"] = note + share + patched_note(
         rep, ("age_broad", "age_other"), keys, labels, sizes, where="the tables of age groups")
@@ -1962,7 +2221,9 @@ def compare_national(reports: list[Report], national_rows: list[dict[str, Any]],
 # How a group reads inside a sentence.
 QUOTED = {"No religion": "no religion", "Not stated": "no answer",
           "Other religion": "another religion", "Other languages": "other languages",
-          "Other": "another ethnic group"}
+          "Other": "another ethnic group",
+          "Assemblies of God (Pentecostal)": "the Assemblies of God",
+          "Mensagem dos Últimos Tempos Church": "the Mensagem dos Últimos Tempos Church"}
 
 
 # Linked from the census's site as Relatorio_Provincial_<stem>_Censo2024.pdf; some
@@ -2124,7 +2385,7 @@ def inspect(stem: str, blob: bytes) -> None:
 PAGE_PICTURES = PROCESSED / "angola_pages"
 
 
-def pages_report(stem: str, blob: bytes, numbers: list[int]) -> None:
+def pages_report(stem: str, blob: bytes, numbers: list[int], draw_all: bool = False) -> None:
     """What each page given holds: its text layer (pypdf's and pdfplumber's
     characters, upright or not), its pictures, and every row as laid out. A page
     with pictures, or with no words at all, is also drawn as a PNG (whole, and
@@ -2132,6 +2393,17 @@ def pages_report(stem: str, blob: bytes, numbers: list[int]) -> None:
     import pdfplumber                                # noqa: PLC0415
     from pypdf import PdfReader                      # noqa: PLC0415
     reader = PdfReader(io.BytesIO(blob))
+    if not numbers:
+        # The whole document in brief: each page's size and the start of its text.
+        log(f"== {stem}: {len(reader.pages)} pages")
+        for n, raw in enumerate(reader.pages, start=1):
+            try:
+                text = " ".join((raw.extract_text() or "").split())
+            except Exception as exc:                  # noqa: BLE001
+                text = f"<{type(exc).__name__}>"
+            box = raw.mediabox
+            log(f"   p{n} {float(box.width):.0f}x{float(box.height):.0f}: {text[:160]}")
+        return
     with pdfplumber.open(io.BytesIO(blob)) as pdf:
         for n in numbers:
             if not 1 <= n <= len(pdf.pages):
@@ -2162,7 +2434,7 @@ def pages_report(stem: str, blob: bytes, numbers: list[int]) -> None:
                 log(f"   row {row.label!r} @{row.top:.0f}: "
                     + " ".join(f"{v}@{x1:.0f}" for _, x1, v in row.figures())
                     + "  [" + " ".join(f"{t}@{x0:.0f}" for x0, _, t in row.label_words()) + "]")
-            if not (page.images or not words or page.curves):
+            if not (draw_all or page.images or not words or page.curves):
                 continue
             try:
                 from PIL import Image                # noqa: PLC0415
@@ -2170,7 +2442,7 @@ def pages_report(stem: str, blob: bytes, numbers: list[int]) -> None:
                 whole = PAGE_PICTURES / f"{stem}_p{n}.png"
                 page.to_image(resolution=200).save(whole)
                 image = Image.open(whole)
-                strips = 4
+                strips = 4 if page.images else 0
                 height = image.height // strips + 1
                 for s in range(strips):
                     top, bottom = max(0, s * height - 40), min(image.height, (s + 1) * height + 40)
@@ -2198,6 +2470,7 @@ def main() -> int:
     parser.add_argument("--pages", default="",
                         help="Stem:first-last;Stem:page -- print what each page holds and draw "
                              "the pages printed as pictures; write no records")
+    parser.add_argument("--draw", default="", help="with --pages: 'all' draws every page given")
     args = parser.parse_args()
     import pdfplumber                                # noqa: PLC0415
     stems = [s for s in REPORTS if not args.only or s in args.only.split(",")]
@@ -2209,8 +2482,18 @@ def main() -> int:
                 first, _, last = span.partition("-")
                 if first.isdigit():
                     numbers += list(range(int(first), int(last or first) + 1))
+            # "Stem:all": every page of the document, in brief.
             try:
-                pages_report(stem, fetch_report(stem)[0], numbers)
+                # "Uige@2": the second of INE's own copies of the report.
+                name, _, copy = stem.partition("@")
+                if copy:
+                    url = INE_COPIES[name][int(copy) - 1]
+                    blob = http_get(url, binary=True, cache=False, timeout=600)
+                    log(f"== {stem}: {url.rsplit('/', 1)[-1]}, {len(blob):,} bytes")
+                else:
+                    blob = fetch_report(stem)[0]
+                pages_report(stem.replace("@", "_copy"), blob, numbers,
+                             draw_all=args.draw == "all")
             except Exception as exc:                  # noqa: BLE001
                 log(f"== {stem}: {type(exc).__name__}: {exc}")
         return 0
@@ -2243,7 +2526,8 @@ def main() -> int:
             blob, url = fetch_report(stem)
             texts = page_texts(blob)
             wanted = {i for i, t in enumerate(texts)
-                      if any(k in t for k in (*SEX_TABLES, "porgruposetariosquinquenais",
+                      if any(k in t for k in (*SEX_TABLES, AREA_TABLE,
+                                              "porgruposetariosquinquenais",
                                               *MEDIAN_PAGES, *(k for s in TABLES.values()
                                                                for k in keys_of(s))))}
             wanted |= {i + 1 for i in wanted if i + 1 < len(texts)}
