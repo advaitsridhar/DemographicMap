@@ -224,7 +224,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 18.3,
+      "value": 18.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -247,14 +247,14 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cubango province report: Quadros 9, 1.7 and 1.3",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cubango province report: Quadros 9 and 1.7",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Cubango_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
       },
       {
         "field": "population/sex_ratio/median_age",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cuando province report: Quadros 9, 1.7 and 1.3",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cuando province report: Quadros 9 and 1.7",
         "url": "https://censo2024.ine.gov.ao/CUANDO.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -265,7 +265,7 @@
     "shape_id": "26408823B90515543724533",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "population_note": "The 2024 census's counts for Cubango and Cuando provinces, which were made out of this one in 2024, added together.",
-    "median_age_note": "The median of the 2024 census's counts by five-year age group for Cubango and Cuando provinces, added together; the census publishes 18 years for Cubango and 18 years for Cuando, not a median for the two together."
+    "median_age_note": "The census publishes a median age of 18 years for both Cubango and Cuando provinces, which were made out of this one in 2024, so the two together have that median too."
   },
   {
     "id": "AGO-RGPH2024-26408823B10526282327152",
@@ -440,7 +440,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.0,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -463,7 +463,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Huambo province report: Quadros 10 and 1.3",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Huambo province report: Quadros 10 and 1",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Huambo_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -473,7 +473,7 @@
     "match_by": "shape_id",
     "shape_id": "26408823B12021631761277",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
-    "median_age_note": "The median of the 2024 census's counts by five-year age group."
+    "median_age_note": "The median age the 2024 census publishes for the province."
   },
   {
     "id": "AGO-RGPH2024-26408823B98547910937265",
@@ -544,7 +544,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 22.8,
+      "value": 22.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -585,7 +585,7 @@
     "shape_id": "26408823B17220104796328",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "population_note": "The 2024 census's counts for Luanda and Icolo e Bengo provinces, which were made out of this one in 2024, added together.",
-    "median_age_note": "The median of the 2024 census's counts by five-year age group for Luanda and Icolo e Bengo provinces, added together; the census publishes 23 years for Luanda and 21 years for Icolo e Bengo, not a median for the two together."
+    "median_age_note": "The median of the 2024 census's counts by five-year age group for Luanda and Icolo e Bengo provinces, which were made out of this one in 2024, added together, in completed years, as the census gives its medians; the census publishes 23 years for Luanda and 21 years for Icolo e Bengo, not a median for the two together."
   },
   {
     "id": "AGO-RGPH2024-26408823B5362531623165",
@@ -703,7 +703,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1298254,
+      "value": 1298250,
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
@@ -731,7 +731,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Malanje province report: Quadros 10 and 1.7",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Malanje province report: Quadros 11 and 1.7",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Malanje_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -755,12 +755,12 @@
       "status": "not_available"
     },
     "population": {
-      "value": 985325,
+      "value": 985327,
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 18.0,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -783,14 +783,14 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Moxico province report: Quadros 9 and 1.3",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Moxico province report: Quadros 8, 1.7 and 1.3",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Moxico_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
       },
       {
         "field": "population/sex_ratio/median_age",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Moxico Leste province report: Quadros 9 and 1.3",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Moxico Leste province report: Quadros 9, 1.7 and 1.3",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Moxico_Leste_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -801,7 +801,7 @@
     "shape_id": "26408823B70921043256570",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "population_note": "The 2024 census's counts for Moxico and Moxico Leste provinces, which were made out of this one in 2024, added together.",
-    "median_age_note": "The median of the 2024 census's counts by five-year age group for Moxico and Moxico Leste provinces, added together."
+    "median_age_note": "The median of the 2024 census's counts by five-year age group for Moxico and Moxico Leste provinces, which were made out of this one in 2024, added together, in completed years, as the census gives its medians; the census publishes 18 years for Moxico and 16 years for Moxico Leste, not a median for the two together."
   },
   {
     "id": "AGO-RGPH2024-26408823B78028517006075",
@@ -872,7 +872,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.6,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -895,7 +895,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 10 and 1.3",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 10 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -905,7 +905,7 @@
     "match_by": "shape_id",
     "shape_id": "26408823B906914650007",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
-    "median_age_note": "The median of the 2024 census's counts by five-year age group."
+    "median_age_note": "The median age the 2024 census publishes for the province."
   },
   {
     "id": "AGO-RGPH2024-26408823B68708736810578",
@@ -976,7 +976,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.8,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -1277,12 +1277,12 @@
     "shape_id": "91424787B8651457584120",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
-    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Gabela and Boa Entrada(Cadá) are added together for Amboim as it stood under Lei n.º 18/16. Together they hold 270,370 residents, against the 269,604 the census counts in Amboim as it stood under Lei n.º 18/16.",
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Gabela and Boa Entrada (Cadá) are added together for Amboim as it stood under Lei n.º 18/16. Together they hold 270,370 residents, against the 269,604 the census counts in Amboim as it stood under Lei n.º 18/16.",
     "language_year": 2024,
-    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Gabela and Boa Entrada(Cadá) are added together for Amboim as it stood under Lei n.º 18/16. Together they hold 270,370 residents, against the 269,604 the census counts in Amboim as it stood under Lei n.º 18/16.",
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Gabela and Boa Entrada (Cadá) are added together for Amboim as it stood under Lei n.º 18/16. Together they hold 270,370 residents, against the 269,604 the census counts in Amboim as it stood under Lei n.º 18/16.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Gabela and Boa Entrada(Cadá) are added together for Amboim as it stood under Lei n.º 18/16. Together they hold 270,370 residents, against the 269,604 the census counts in Amboim as it stood under Lei n.º 18/16.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Gabela 16 and Boa Entrada(Cadá) 17 years), not for Amboim as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together. Together they hold 270,370 residents, against the 269,604 the census counts in Amboim as it stood under Lei n.º 18/16."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Gabela and Boa Entrada (Cadá) are added together for Amboim as it stood under Lei n.º 18/16. Together they hold 270,370 residents, against the 269,604 the census counts in Amboim as it stood under Lei n.º 18/16.",
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Gabela 16 and Boa Entrada (Cadá) 17 years), not for Amboim as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians. Together they hold 270,370 residents, against the 269,604 the census counts in Amboim as it stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B55129164942932",
@@ -1596,7 +1596,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.6,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -1609,7 +1609,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Ambuíla as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Ambuíla as it stood under Lei n.º 18/16 are not shown."
     },
     "language": {
       "status": "not_available",
@@ -1670,7 +1670,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language note/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -1682,7 +1682,7 @@
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Ambuila and Quipedro, which together are Ambuíla as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Ambuila and Quipedro, added together; the census publishes no median age for Ambuíla as it stood under Lei n.º 18/16."
+    "median_age_note": "The census publishes a median age of 17 years for each of the municipalities created in 2024 that make up Ambuíla as it stood under Lei n.º 18/16 (Ambuila and Quipedro), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B26485253533103",
@@ -1701,7 +1701,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.3,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -1877,7 +1877,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Andulo and Calucinga, which together are Andulo as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Andulo and Calucinga, which together are Andulo as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Andulo 15 and Calucinga 14 years), not for Andulo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Andulo 15 and Calucinga 14 years), not for Andulo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B27175102535550",
@@ -1896,7 +1896,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 18.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 926,
@@ -2162,8 +2165,8 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/ethnicity/language/religion",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Benguela province report: Quadros 11, 6.1, 6.2 and 7.1",
+        "field": "population/sex_ratio/median_age/ethnicity/language/religion",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Benguela province report: Quadros 11, 6.1, 6.2, 7.1 and 1.7",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Benguela_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -2178,7 +2181,8 @@
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Baia Farta and Dombe Grande are added together for Baía Farta as it stood under Lei n.º 18/16. Together they hold 138,912 residents, against the 140,490 the census counts in Baía Farta as it stood under Lei n.º 18/16.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Baia Farta and Dombe Grande are added together for Baía Farta as it stood under Lei n.º 18/16. Together they hold 138,912 residents, against the 140,490 the census counts in Baía Farta as it stood under Lei n.º 18/16. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Baia Farta and Dombe Grande are added together for Baía Farta as it stood under Lei n.º 18/16. Together they hold 138,912 residents, against the 140,490 the census counts in Baía Farta as it stood under Lei n.º 18/16. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
+    "median_age_note": "The census publishes a median age of 18 years for each of the municipalities created in 2024 that make up Baía Farta as it stood under Lei n.º 18/16 (Baia Farta and Dombe Grande), so together they have that median too. Together they hold 138,912 residents, against the 140,490 the census counts in Baía Farta as it stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B68553415961222",
@@ -2197,7 +2201,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.7,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -2453,7 +2457,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Balombo and Chindumbo, which together are Balombo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Balombo and Chindumbo, which together are Balombo as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Balombo and Chindumbo, added together; the census publishes no median age for Balombo as it stood under Lei n.º 18/16."
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Balombo and Chindumbo, added together, in completed years, as the census gives its medians; the census publishes no median age for Balombo as it stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B56518154407657",
@@ -2472,7 +2476,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.5,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -2728,7 +2732,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Belize and Miconje, which together are Belize as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Belize and Miconje, which together are Belize as it stood under Lei n.º 18/16, are added together. The provincial report counts 105,313 people of Cabinda province under no religion, the census's national report 85,996.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Belize 19 and Miconje 18 years), not for Belize as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Belize 19 and Miconje 18 years), not for Belize as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B71715001010429",
@@ -2747,7 +2751,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.9,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -2760,7 +2764,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Bembe as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Bembe as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -2854,7 +2858,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -2868,7 +2872,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Bembe and Lucunga, which together are Bembe as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Bembe and Lucunga, which together are Bembe as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Bembe and Lucunga, added together; the census publishes no median age for Bembe as it stood under Lei n.º 18/16."
+    "median_age_note": "The census publishes a median age of 19 years for each of the municipalities created in 2024 that make up Bembe as it stood under Lei n.º 18/16 (Bembe and Lucunga), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B89506184943811",
@@ -2887,7 +2891,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.3,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -3173,7 +3177,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Benguela and Navegantes are added together for Benguela as it stood under Lei n.º 18/16. Together they hold 620,123 residents, against the 618,545 the census counts in Benguela as it stood under Lei n.º 18/16.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Benguela and Navegantes are added together for Benguela as it stood under Lei n.º 18/16. Together they hold 620,123 residents, against the 618,545 the census counts in Benguela as it stood under Lei n.º 18/16. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Benguela 19 and Navegantes 18 years), not for Benguela as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together. Together they hold 620,123 residents, against the 618,545 the census counts in Benguela as it stood under Lei n.º 18/16."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Benguela 19 and Navegantes 18 years), not for Benguela as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians. Together they hold 620,123 residents, against the 618,545 the census counts in Benguela as it stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B9367428478234",
@@ -3407,7 +3411,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 18.1,
+      "value": 18.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -3673,7 +3677,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Bocoio and Chila, which together are Bocoio as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Bocoio and Chila, which together are Bocoio as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Bocoio and Chila, added together; the census publishes no median age for Bocoio as it stood under Lei n.º 18/16."
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Bocoio and Chila, added together, in completed years, as the census gives its medians; the census publishes no median age for Bocoio as it stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B42052602271073",
@@ -3692,7 +3696,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.8,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -3958,7 +3962,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Buco Zau and Necuto, which together are Buco Zau as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Buco Zau and Necuto, which together are Buco Zau as it stood under Lei n.º 18/16, are added together. The provincial report counts 105,313 people of Cabinda province under no religion, the census's national report 85,996.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Buco Zau 20 and Necuto 18 years), not for Buco Zau as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Buco Zau 20 and Necuto 18 years), not for Buco Zau as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B57377917491043",
@@ -3977,7 +3981,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.5,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -3990,7 +3994,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Buengas (ex-Nova Esperança) as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Buengas (ex-Nova Esperança) as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -4079,7 +4083,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -4093,7 +4097,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "median_age_note": "The median age the 2024 census publishes for Nova Esperança."
   },
   {
     "id": "AGO-RGPH2024-91424787B37538296064397",
@@ -4387,7 +4391,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.3,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -4400,7 +4404,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Bungo as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Bungo as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -4529,7 +4533,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -4543,7 +4547,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "median_age_note": "The median age the 2024 census publishes for Bungo."
   },
   {
     "id": "AGO-RGPH2024-91424787B3279989161156",
@@ -4562,7 +4566,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 21.6,
+      "value": 21.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -4848,7 +4852,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cabinda, Tando Zinze, Ngoio and Liambo, which together are Cabinda as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cabinda, Tando Zinze, Ngoio and Liambo, which together are Cabinda as it stood under Lei n.º 18/16, are added together. The provincial report counts 105,313 people of Cabinda province under no religion, the census's national report 85,996.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cabinda 21, Tando Zinze 21, Ngoio 20 and Liambo 22 years), not for Cabinda as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cabinda 21, Tando Zinze 21, Ngoio 20 and Liambo 22 years), not for Cabinda as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B11681042656002",
@@ -5453,7 +5457,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.5,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -5714,7 +5718,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cacongo and Massabi, which together are Cacongo (ex-Lândana) as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cacongo and Massabi, which together are Cacongo (ex-Lândana) as it stood under Lei n.º 18/16, are added together. The provincial report counts 105,313 people of Cabinda province under no religion, the census's national report 85,996.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cacongo 18 and Massabi 22 years), not for Cacongo (ex-Lândana) as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cacongo 18 and Massabi 22 years), not for Cacongo (ex-Lândana) as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B27553841432178",
@@ -6401,7 +6405,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.4,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -6652,7 +6656,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Calandula, Cateco Cangola and Cuale, which together are Calandula as it stood under Lei n.º 18/16, are added together. The provincial report counts 7,552 people of Malanje province under other languages, the census's national report 6,721.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Calandula, Cateco Cangola and Cuale, which together are Calandula as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Calandula 19, Cateco Cangola 19 and Cuale 17 years), not for Calandula as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Calandula 19, Cateco Cangola 19 and Cuale 17 years), not for Calandula as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B2752331386063",
@@ -6671,7 +6675,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.7,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -6852,7 +6856,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Camacupa, Ringoma and Umpulo, which together are Camacupa as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Camacupa, Ringoma and Umpulo, which together are Camacupa as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Camacupa 16, Ringoma 16 and Umpulo 17 years), not for Camacupa as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Camacupa 16, Ringoma 16 and Umpulo 17 years), not for Camacupa as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B7794833392213",
@@ -6871,7 +6875,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 20.3,
+      "value": 20.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -7157,7 +7161,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cambulo and Canzar, which together are Cambulo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cambulo and Canzar, which together are Cambulo as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cambulo 20 and Canzar 18 years), not for Cambulo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cambulo 20 and Canzar 18 years), not for Cambulo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B84876845723860",
@@ -7176,7 +7180,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 14.5,
+      "value": 14.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -7367,7 +7371,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Camucuio and Cacimbas, which together are Camucuio as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Camucuio and Cacimbas, which together are Camucuio as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Camucuio 15 and Cacimbas 13 years), not for Camucuio as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Camucuio 15 and Cacimbas 13 years), not for Camucuio as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B16698787972109",
@@ -7681,7 +7685,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.4,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -7694,7 +7698,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Cangola as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Cangola as it stood under Lei n.º 18/16 are not shown."
     },
     "language": {
       "status": "not_available",
@@ -7755,7 +7759,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language note/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -7767,7 +7771,7 @@
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "median_age_note": "The median age the 2024 census publishes for Cangola."
   },
   {
     "id": "AGO-RGPH2024-91424787B15683694525911",
@@ -8081,7 +8085,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.7,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -8351,7 +8355,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cuanza Sul province report: Quadros 11, 6.1, 6.2, 7.1, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cuanza Sul province report: Quadros 11, 6.1, 6.2, 7.1 and 1.7",
         "url": "https://ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639065784580611643.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -8367,7 +8371,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cassongue and Pambangala, which together are Cassongue as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cassongue and Pambangala, which together are Cassongue as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cassongue 15 and Pambangala 15 years), not for Cassongue as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 15 years for each of the municipalities created in 2024 that make up Cassongue as it stood under Lei n.º 18/16 (Cassongue and Pambangala), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B92424746149540",
@@ -8386,7 +8390,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.2,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -8528,7 +8532,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Bié province report: Quadros 11, 6.1, 6.2, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Bié province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Bie_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -8542,7 +8546,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Catabola and Chipeta, which together are Catabola (ex-Nova Sintra) as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Catabola and Chipeta, which together are Catabola (ex-Nova Sintra) as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Catabola 16 and Chipeta 16 years), not for Catabola (ex-Nova Sintra) as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 16 years for each of the municipalities created in 2024 that make up Catabola (ex-Nova Sintra) as it stood under Lei n.º 18/16 (Catabola and Chipeta), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B41460379918234",
@@ -8561,7 +8565,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.2,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -8827,7 +8831,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Caungula and Camaxilo, which together are Caungula as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Caungula and Camaxilo, which together are Caungula as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Caungula 16 and Camaxilo 17 years), not for Caungula as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Caungula 16 and Camaxilo 17 years), not for Caungula as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B80090252235678",
@@ -8846,7 +8850,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.9,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -9156,7 +9160,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cuanza Sul province report: Quadros 11, 6.1, 6.2, 7.1, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cuanza Sul province report: Quadros 11, 6.1, 6.2, 7.1 and 1.7",
         "url": "https://ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639065784580611643.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -9172,7 +9176,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Waku Kungo and Sanga, which together are Cela as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Waku Kungo and Sanga, which together are Cela as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Waku Kungo 16 and Sanga 16 years), not for Cela as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 16 years for each of the municipalities created in 2024 that make up Cela as it stood under Lei n.º 18/16 (Waku Kungo and Sanga), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B36301106441136",
@@ -9981,7 +9985,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 18.7,
+      "value": 18.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -10268,7 +10272,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Dundo, Chitato, Mussungue and Lóvua, which together are Chitato and Lóvua as they stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Dundo, Chitato, Mussungue and Lóvua, which together are Chitato and Lóvua as they stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Dundo 18, Chitato 17, Mussungue 18 and Lóvua 22 years), not for Chitato and Lóvua as they stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Dundo 18, Chitato 17, Mussungue 18 and Lóvua 22 years), not for Chitato and Lóvua as they stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B86258699499147",
@@ -10287,7 +10291,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.2,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -10468,7 +10472,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Chitembo and Mumbué, which together are Chitembo as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Chitembo and Mumbué, which together are Chitembo as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Chitembo 17 and Mumbué 16 years), not for Chitembo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Chitembo 17 and Mumbué 16 years), not for Chitembo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B59258922825215",
@@ -10487,7 +10491,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.4,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -10768,7 +10772,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Chongorói and Bolonguera, which together are Chongoroi as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Chongorói and Bolonguera, which together are Chongoroi as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Chongorói and Bolonguera, added together; the census publishes no median age for Chongoroi as it stood under Lei n.º 18/16."
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Chongorói and Bolonguera, added together, in completed years, as the census gives its medians; the census publishes no median age for Chongoroi as it stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B21193839526041",
@@ -11087,7 +11091,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.8,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -11373,7 +11377,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cuango, Luremo and Cafunfo, which together are Cuango as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuango, Luremo and Cafunfo, which together are Cuango as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuango 19, Luremo 21 and Cafunfo 19 years), not for Cuango as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuango 19, Luremo 21 and Cafunfo 19 years), not for Cuango as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B85678158059981",
@@ -11392,7 +11396,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.8,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -11678,7 +11682,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cuanhama, Nehone and Cafima, which together are Cuanhama as it stood under Lei n.º 18/16, are added together. Cafima's own row in that table counts 25,194 people, against its 19,163 residents; its communes' rows, which add up to 17,788, are taken in its place.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuanhama, Nehone and Cafima, which together are Cuanhama as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuanhama 17, Nehone 15 and Cafima 15 years), not for Cuanhama as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuanhama 17, Nehone 15 and Cafima 15 years), not for Cuanhama as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B94223013824021",
@@ -11697,7 +11701,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.5,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -11973,7 +11977,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cubal, Iambala and Capupa, which together are Cubal as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cubal, Iambala and Capupa, which together are Cubal as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cubal 16, Iambala 18 and Capupa 18 years), not for Cubal as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cubal 16, Iambala 18 and Capupa 18 years), not for Cubal as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B96157154901846",
@@ -11992,7 +11996,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.1,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -12168,7 +12172,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Cuemba and Luando, which together are Cuemba as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cuemba and Luando, which together are Cuemba as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuemba 16 and Luando 18 years), not for Cuemba as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuemba 16 and Luando 18 years), not for Cuemba as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B17792860474609",
@@ -12442,7 +12446,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 18.5,
+      "value": 18.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -12723,7 +12727,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cuimba and Serra de Canda, which together are Cuimba as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuimba and Serra de Canda, which together are Cuimba as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuimba 17 and Serra de Canda 23 years), not for Cuimba as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuimba 17 and Serra de Canda 23 years), not for Cuimba as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B70988642078334",
@@ -12742,7 +12746,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.6,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -12923,7 +12927,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Cuito, Cambândua and Chicala, which together are Cuito as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cuito, Cambândua and Chicala, which together are Cuito as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuito 17, Cambândua 18 and Chicala 19 years), not for Cuito as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together. Cambândua's own row in the tables of age groups counts 95,909 people, against its 31,941 residents; its communes' rows, which add up to 31,941, are taken in its place."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuito 17, Cambândua 18 and Chicala 19 years), not for Cuito as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians. Cambândua's own row in the tables of age groups counts 95,909 people, against its 31,941 residents; its communes' rows, which add up to 31,941, are taken in its place."
   },
   {
     "id": "AGO-RGPH2024-91424787B4961383306768",
@@ -12942,7 +12946,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 18.2,
+      "value": 18.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -13173,7 +13177,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Kunda dya Baze and Milando, which together are Kunda dya Baze as it stood under Lei n.º 18/16, are added together. Kunda dya Baze's own row in that table counts 494,052 people, against its 14,843 residents; its communes' rows, which add up to 13,741, are taken in its place. The provincial report counts 7,552 people of Malanje province under other languages, the census's national report 6,721.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Kunda dya Baze and Milando, which together are Kunda dya Baze as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Kunda dya Baze 16 and Milando 21 years), not for Kunda dya Baze as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Kunda dya Baze 16 and Milando 21 years), not for Kunda dya Baze as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B32669130254170",
@@ -13192,7 +13196,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.1,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -13343,7 +13347,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Cunhinga and Belo Horizonte, which together are Cunhinga (Vouga) as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cunhinga and Belo Horizonte, which together are Cunhinga (Vouga) as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cunhinga 15 and Belo Horizonte 16 years), not for Cunhinga (Vouga) as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cunhinga 15 and Belo Horizonte 16 years), not for Cunhinga (Vouga) as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B51767671354696",
@@ -13362,7 +13366,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.1,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -13643,7 +13647,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Curoca and Chitado, which together are Curoca as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Curoca and Chitado, which together are Curoca as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Curoca 14 and Chitado 15 years), not for Curoca as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Curoca 14 and Chitado 15 years), not for Curoca as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B73167637219088",
@@ -13662,7 +13666,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.8,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -13958,7 +13962,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cuvango and Galangue, which together are Cuvango as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuvango and Galangue, which together are Cuvango as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuvango 17 and Galangue 16 years), not for Cuvango as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuvango 17 and Galangue 16 years), not for Cuvango as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B91850178309544",
@@ -13977,7 +13981,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.0,
+      "value": 14.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -14258,7 +14262,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Cuvelai, Chissuata and Mupa, which together are Cuvelai as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Cuvelai, Chissuata and Mupa, which together are Cuvelai as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuvelai 15, Chissuata 15 and Mupa 14 years), not for Cuvelai as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Cuvelai 15, Chissuata 15 and Mupa 14 years), not for Cuvelai as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B38882855808197",
@@ -14328,7 +14332,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 19.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 1052,
@@ -14338,7 +14345,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Damba as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Damba as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -14446,8 +14453,8 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1 and 6.2",
+        "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.7, 1.4 and 1.5",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -14460,7 +14467,8 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Damba and Nsosso, which together are Damba as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
-    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Damba and Nsosso, which together are Damba as it stood under Lei n.º 18/16, are added together."
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Damba and Nsosso, which together are Damba as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Damba 20 and Nsosso 18 years), not for Damba as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians. Nsosso's own row in the tables of age groups counts 58,210 people, against its 33,933 residents; its communes' rows, which add up to 33,933, are taken in its place."
   },
   {
     "id": "AGO-RGPH2024-91424787B22225869855797",
@@ -14479,7 +14487,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 21.6,
+      "value": 21.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -14765,7 +14773,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Dande, Úcua, Panguila and Barra do Dande, which together are Dande as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Dande, Úcua, Panguila and Barra do Dande, which together are Dande as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Dande 20, Úcua 27, Panguila 21 and Barra do Dande 20 years), not for Dande as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Dande 20, Úcua 27, Panguila 21 and Barra do Dande 20 years), not for Dande as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B30710276228058",
@@ -14784,7 +14792,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 20.7,
+      "value": 20.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -15039,7 +15047,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Bengo province report: Quadros 11, 6.1, 6.2, 7.1, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Bengo province report: Quadros 11, 6.1, 6.2, 7.1 and 1.7",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Bengo_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -15055,7 +15063,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Quibaxe and Piri, which together are Dembos as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Quibaxe and Piri, which together are Dembos as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Quibaxe 20 and Piri 20 years), not for Dembos as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 20 years for each of the municipalities created in 2024 that make up Dembos as it stood under Lei n.º 18/16 (Quibaxe and Piri), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B423531810897",
@@ -15074,7 +15082,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.5,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -15354,7 +15362,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cuanza Sul province report: Quadros 11, 6.1, 6.2, 7.1, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cuanza Sul province report: Quadros 11, 6.1, 6.2, 7.1 and 1.7",
         "url": "https://ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639065784580611643.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -15370,7 +15378,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Ebo and Condé, which together are Ebo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Ebo and Condé, which together are Ebo as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Ebo 16 and Condé 16 years), not for Ebo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 16 years for each of the municipalities created in 2024 that make up Ebo as it stood under Lei n.º 18/16 (Ebo and Condé), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B65882215003042",
@@ -15694,7 +15702,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.6,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -15949,7 +15957,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Benguela province report: Quadros 11, 6.1, 6.2, 7.1, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Benguela province report: Quadros 11, 6.1, 6.2, 7.1 and 1.7",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Benguela_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -15965,7 +15973,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Ganda, Babaera and Chicuma, which together are Ganda as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Ganda, Babaera and Chicuma, which together are Ganda as it stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Ganda 17, Babaera 17 and Chicuma 17 years), not for Ganda as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 17 years for each of the municipalities created in 2024 that make up Ganda as it stood under Lei n.º 18/16 (Ganda, Babaera and Chicuma), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B29193645971076",
@@ -15984,7 +15992,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.9,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -16295,7 +16303,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Jamba Mineira and Dongo, which together are Jamba as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Jamba Mineira and Dongo, which together are Jamba as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Jamba Mineira 16 and Dongo 19 years), not for Jamba as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Jamba Mineira 16 and Dongo 19 years), not for Jamba as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B74971894264507",
@@ -16554,7 +16562,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.7,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -16850,7 +16858,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Calulo, Munenga and Quissongo, which together are Libolo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Calulo, Munenga and Quissongo, which together are Libolo as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Calulo 17, Munenga 17 and Quissongo 18 years), not for Libolo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Calulo 17, Munenga 17 and Quissongo 18 years), not for Libolo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B28058724982941",
@@ -16869,7 +16877,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.8,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -17156,7 +17164,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Lobito, Egito Praia, Catumbela and Biópio, which together are Lobito and Catumbela as they stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Lobito, Egito Praia, Catumbela and Biópio, which together are Lobito and Catumbela as they stood under Lei n.º 18/16, are added together. The provincial report counts 149,908 people of Benguela province under no religion, the census's national report 83,806.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Lobito, Egito Praia, Catumbela and Biópio, added together; the census publishes no median age for Lobito and Catumbela as they stood under Lei n.º 18/16."
+    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Lobito, Egito Praia, Catumbela and Biópio, added together, in completed years, as the census gives its medians; the census publishes no median age for Lobito and Catumbela as they stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B46795887578157",
@@ -17175,7 +17183,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.2,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -17416,7 +17424,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Lubalo and Luangue, which together are Lubalo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Lubalo and Luangue, which together are Lubalo as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Lubalo 17 and Luangue 15 years), not for Lubalo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Lubalo 17 and Luangue 15 years), not for Lubalo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B48042434529764",
@@ -17435,7 +17443,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 20.7,
+      "value": 20.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -17721,7 +17729,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Lucapa and Xá Cassau, which together are Lucapa as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Lucapa and Xá Cassau, which together are Lucapa as it stood under Lei n.º 18/16, are added together. The provincial report counts 372,401 people of Lunda Norte province under no religion, the census's national report 334,106.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Lucapa 20 and Xá Cassau 29 years), not for Lucapa as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Lucapa 20 and Xá Cassau 29 years), not for Lucapa as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B85219322931866",
@@ -17740,7 +17748,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.9,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -18001,7 +18009,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Luquembo and Capunda, which together are Luquembo as it stood under Lei n.º 18/16, are added together. The provincial report counts 7,552 people of Malanje province under other languages, the census's national report 6,721.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Luquembo and Capunda, which together are Luquembo as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Luquembo 17 and Capunda 18 years), not for Luquembo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Luquembo 17 and Capunda 18 years), not for Luquembo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B32489723581228",
@@ -18071,7 +18079,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.8,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -18084,7 +18092,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, no row can be told apart as Maquela do Zombo's, so the religion figures for Maquela do Zombo as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Maquela do Zombo as it stood under Lei n.º 18/16 are not shown."
     },
     "language": {
       "status": "not_available",
@@ -18165,7 +18173,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language note/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 1.7, 1.4 and 1.5",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -18177,7 +18185,7 @@
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Maquela do Zombo and Sacandica, which together are Maquela do Zombo as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Maquela do Zombo and Sacandica, added together; the census publishes no median age for Maquela do Zombo as it stood under Lei n.º 18/16."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Maquela do Zombo 19 and Sacandica 20 years), not for Maquela do Zombo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B67542854590924",
@@ -18247,7 +18255,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.5,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -18483,7 +18491,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Massango and Quihuhu, which together are Massango as it stood under Lei n.º 18/16, are added together. The provincial report counts 7,552 people of Malanje province under other languages, the census's national report 6,721.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Massango and Quihuhu, which together are Massango as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Massango 15 and Quihuhu 17 years), not for Massango as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Massango 15 and Quihuhu 17 years), not for Massango as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B96825353351701",
@@ -18502,7 +18510,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.8,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -18797,7 +18805,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Huíla province report: Quadros 11, 6.1, 6.2, 7.1, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Huíla province report: Quadros 11, 6.1, 6.2, 7.1 and 1.7",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Huila_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -18813,7 +18821,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Matala and Capelongo, which together are Matala as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Matala and Capelongo, which together are Matala as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Matala 16 and Capelongo 16 years), not for Matala as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 16 years for each of the municipalities created in 2024 that make up Matala as it stood under Lei n.º 18/16 (Matala and Capelongo), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B74689305986886",
@@ -18832,7 +18840,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.9,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -19118,7 +19126,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Mbanza Kongo and Luvo, which together are Mbanza Kongo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Mbanza Kongo and Luvo, which together are Mbanza Kongo as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Mbanza Kongo 19 and Luvo 24 years), not for Mbanza Kongo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Mbanza Kongo 19 and Luvo 24 years), not for Mbanza Kongo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B58052517323546",
@@ -19137,7 +19145,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.4,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -19150,7 +19158,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Milunga (Ex. Santa Cruz) as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Milunga (ex-Santa Cruz) as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -19249,7 +19257,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -19260,10 +19268,10 @@
     "shape_id": "91424787B58052517323546",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
-    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Milunga and Massau, which together are Milunga (Ex. Santa Cruz) as it stood under Lei n.º 18/16, are added together.",
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Milunga and Massau, which together are Milunga (ex-Santa Cruz) as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
-    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Milunga and Massau, which together are Milunga (Ex. Santa Cruz) as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Milunga and Massau, added together; the census publishes no median age for Milunga (Ex. Santa Cruz) as it stood under Lei n.º 18/16."
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Milunga and Massau, which together are Milunga (ex-Santa Cruz) as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "The census publishes a median age of 16 years for each of the municipalities created in 2024 that make up Milunga (ex-Santa Cruz) as it stood under Lei n.º 18/16 (Milunga and Massau), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B3952894903684",
@@ -19282,7 +19290,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.8,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -19295,7 +19303,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Mucaba (ex-Quinzala) as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Mucaba (ex-Quinzala) as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -19404,7 +19412,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -19418,7 +19426,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "median_age_note": "The median age the 2024 census publishes for Mucaba."
   },
   {
     "id": "AGO-RGPH2024-91424787B90267506609693",
@@ -19437,7 +19445,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.3,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -19693,7 +19701,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Caculama and Muquixe, which together are Mucari as it stood under Lei n.º 18/16, are added together. The provincial report counts 7,552 people of Malanje province under other languages, the census's national report 6,721.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Caculama and Muquixe, which together are Mucari as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Caculama 16 and Muquixe 17 years), not for Mucari as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Caculama 16 and Muquixe 17 years), not for Mucari as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B56866030403615",
@@ -19763,7 +19771,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.2,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -20063,7 +20071,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cuanza Sul province report: Quadros 11, 6.1, 6.2, 7.1, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Cuanza Sul province report: Quadros 11, 6.1, 6.2, 7.1 and 1.7",
         "url": "https://ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639065784580611643.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -20079,7 +20087,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Mussende and Quenha, which together are Mussende as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Mussende and Quenha, which together are Mussende as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Mussende 15 and Quenha 15 years), not for Mussende as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 15 years for each of the municipalities created in 2024 that make up Mussende as it stood under Lei n.º 18/16 (Mussende and Quenha), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B91654064928130",
@@ -20098,7 +20106,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.9,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -20359,7 +20367,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Nzeto and Quindeje, which together are Nzeto as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Nzeto and Quindeje, which together are Nzeto as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Nzeto 19 and Quindeje 21 years), not for Nzeto as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Nzeto 19 and Quindeje 21 years), not for Nzeto as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B80938274141601",
@@ -20378,7 +20386,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.8,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -20535,7 +20543,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Bié province report: Quadros 11, 6.1, 6.2, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Bié province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Bie_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -20549,7 +20557,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Nharêa and Lúbia, which together are N'harea as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Nharêa and Lúbia, which together are N'harea as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Nharêa 16 and Lúbia 16 years), not for N'harea as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 16 years for each of the municipalities created in 2024 that make up N'harea as it stood under Lei n.º 18/16 (Nharêa and Lúbia), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B39035516179653",
@@ -20568,7 +20576,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.6,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -20854,7 +20862,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Namacunde and Chiéde, which together are Namacunde as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Namacunde and Chiéde, which together are Namacunde as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Namacunde 17 and Chiéde 16 years), not for Namacunde as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Namacunde 17 and Chiéde 16 years), not for Namacunde as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B85725666887647",
@@ -20873,7 +20881,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.6,
+      "value": 19.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -21149,7 +21157,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Nambuangongo, Quicunzo and Muxaluando, which together are Nambuangongo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Nambuangongo, Quicunzo and Muxaluando, which together are Nambuangongo as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Nambuangongo 21, Quicunzo 16 and Muxaluando 18 years), not for Nambuangongo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Nambuangongo 21, Quicunzo 16 and Muxaluando 18 years), not for Nambuangongo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B32970526214853",
@@ -21168,7 +21176,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 18.7,
+      "value": 18.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -21384,7 +21392,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Moçâmedes, Lucira and Sacomar are added together for Moçâmedes as it stood under Lei n.º 18/16. Together they hold 440,033 residents, against the 439,693 the census counts in Moçâmedes as it stood under Lei n.º 18/16.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Moçâmedes, Lucira and Sacomar are added together for Moçâmedes as it stood under Lei n.º 18/16. Together they hold 440,033 residents, against the 439,693 the census counts in Moçâmedes as it stood under Lei n.º 18/16.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Moçâmedes 18, Lucira 19 and Sacomar 17 years), not for Moçâmedes as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together. Together they hold 440,033 residents, against the 439,693 the census counts in Moçâmedes as it stood under Lei n.º 18/16."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Moçâmedes 18, Lucira 19 and Sacomar 17 years), not for Moçâmedes as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians. Together they hold 440,033 residents, against the 439,693 the census counts in Moçâmedes as it stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B13670088554329",
@@ -21403,7 +21411,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.8,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -21416,7 +21424,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Negage as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Negage as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -21570,7 +21578,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -21584,7 +21592,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "median_age_note": "The median age the 2024 census publishes for Negage."
   },
   {
     "id": "AGO-RGPH2024-91424787B72729996019257",
@@ -21603,7 +21611,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 21.4,
+      "value": 21.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -21838,7 +21846,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Zaire province report: Quadros 11, 6.1, 6.2, 7.1, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Zaire province report: Quadros 11, 6.1, 6.2, 7.1 and 1.7",
         "url": "https://censo2024.ine.gov.ao/ZAIRE.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -21854,7 +21862,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Nóqui and Lufíco, which together are Nóqui as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Nóqui and Lufíco, which together are Nóqui as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Nóqui 21 and Lufíco 21 years), not for Nóqui as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 21 years for each of the municipalities created in 2024 that make up Nóqui as it stood under Lei n.º 18/16 (Nóqui and Lufíco), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B27894484907941",
@@ -21873,7 +21881,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.2,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -22159,7 +22167,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Ombadja, Humbe and Naulila, which together are Ombadja as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Ombadja, Humbe and Naulila, which together are Ombadja as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Ombadja 15, Humbe 14 and Naulila 15 years), not for Ombadja as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Ombadja 15, Humbe 14 and Naulila 15 years), not for Ombadja as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B69944310654421",
@@ -22498,7 +22506,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.1,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -22511,7 +22519,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the communes of Puri add up to 106,323 people, not the 46,493 printed for it, so the religion figures for Puri as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Puri as it stood under Lei n.º 18/16 are not shown."
     },
     "language": {
       "status": "not_available",
@@ -22552,7 +22560,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language note/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -22564,7 +22572,7 @@
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "median_age_note": "The median age the 2024 census publishes for Puri."
   },
   {
     "id": "AGO-RGPH2024-91424787B39192527318793",
@@ -22583,7 +22591,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 18.8,
+      "value": 18.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -22823,7 +22831,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Malanje province report: Quadros 11, 6.1, 6.2, 7.1, 1.7, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Malanje province report: Quadros 11, 6.1, 6.2, 7.1 and 1.7",
         "url": "https://censo2024.ine.gov.ao/Relatorio_Provincial_Malanje_Censo2024.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -22839,7 +22847,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Quela and Xandel, which together are Quela as it stood under Lei n.º 18/16, are added together. The provincial report counts 7,552 people of Malanje province under other languages, the census's national report 6,721.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Quela and Xandel, which together are Quela as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Quela 18 and Xandel 18 years), not for Quela as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age of 18 years for each of the municipalities created in 2024 that make up Quela as it stood under Lei n.º 18/16 (Quela and Xandel), so together they have that median too."
   },
   {
     "id": "AGO-RGPH2024-91424787B28164329857407",
@@ -22858,7 +22866,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.6,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -23164,7 +23172,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Quibala and Lonhe, which together are Quibala as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Quibala and Lonhe, which together are Quibala as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Quibala 16 and Lonhe 15 years), not for Quibala as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Quibala 16 and Lonhe 15 years), not for Quibala as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B30313273165210",
@@ -23183,7 +23191,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.8,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -23474,7 +23482,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Quilenda and Quirimbo are added together for Quilenda as it stood under Lei n.º 18/16. Together they hold 106,333 residents, against the 107,099 the census counts in Quilenda as it stood under Lei n.º 18/16.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Quilenda and Quirimbo are added together for Quilenda as it stood under Lei n.º 18/16. Together they hold 106,333 residents, against the 107,099 the census counts in Quilenda as it stood under Lei n.º 18/16.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Quilenda 16 and Quirimbo 18 years), not for Quilenda as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together. Together they hold 106,333 residents, against the 107,099 the census counts in Quilenda as it stood under Lei n.º 18/16."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Quilenda 16 and Quirimbo 18 years), not for Quilenda as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians. Together they hold 106,333 residents, against the 107,099 the census counts in Quilenda as it stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B53455794126322",
@@ -23493,7 +23501,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 19.0,
+      "value": 18.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -23506,7 +23514,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Quimbele as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Quimbele as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -23610,7 +23618,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.7, 1.4 and 1.5",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -23624,7 +23632,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Quimbele and Alto Zaza, which together are Quimbele as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Quimbele and Alto Zaza, which together are Quimbele as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over) for Quimbele and Alto Zaza, added together; the census publishes no median age for Quimbele as it stood under Lei n.º 18/16."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Quimbele 18 and Alto Zaza 19 years), not for Quimbele as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B65383538427912",
@@ -23908,7 +23916,10 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.0,
+      "unit": "years",
+      "year": 2024,
+      "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "sex_ratio": {
       "value": 1014,
@@ -23918,7 +23929,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Quitexe as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Quitexe as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -24041,8 +24052,8 @@
     ],
     "sources": [
       {
-        "field": "population/sex_ratio/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1 and 6.2",
+        "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.7, 1.4 and 1.5",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -24055,7 +24066,8 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Dange Quitexe and Vista Alegre, which together are Quitexe as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
-    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Dange Quitexe and Vista Alegre, which together are Quitexe as it stood under Lei n.º 18/16, are added together."
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Dange Quitexe and Vista Alegre, which together are Quitexe as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Dange Quitexe 17 and Vista Alegre 16 years), not for Quitexe as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians. The tables of age groups prints no row for the municipality of Vista Alegre, only for its communes, which are added up (24,277 people)."
   },
   {
     "id": "AGO-RGPH2024-91424787B23875954822016",
@@ -24074,7 +24086,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.7,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -24087,7 +24099,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Sanza Pombo as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Sanza Pombo as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -24211,7 +24223,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -24225,7 +24237,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "median_age_note": "The median age the 2024 census publishes for Sanza Pombo."
   },
   {
     "id": "AGO-RGPH2024-91424787B32640595944585",
@@ -24295,7 +24307,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 15.3,
+      "value": 15.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -24576,7 +24588,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Seles and Amboiva, which together are Seles as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Seles and Amboiva, which together are Seles as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Seles 15 and Amboiva 14 years), not for Seles as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Seles 15 and Amboiva 14 years), not for Seles as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B10237640119625",
@@ -24595,7 +24607,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 16.5,
+      "value": 16.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -24608,7 +24620,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Songo as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Songo as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -24712,7 +24724,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -24726,7 +24738,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "median_age_note": "The median age the 2024 census publishes for Songo."
   },
   {
     "id": "AGO-RGPH2024-91424787B66506918249166",
@@ -24745,7 +24757,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 21.2,
+      "value": 21.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -25031,7 +25043,7 @@
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Soyo and Quêlo, which together are Soyo as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
     "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Soyo and Quêlo, which together are Soyo as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Soyo 21 and Quêlo 22 years), not for Soyo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Soyo 21 and Quêlo 22 years), not for Soyo as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B14975788239862",
@@ -25050,7 +25062,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 18.5,
+      "value": 18.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -25366,12 +25378,12 @@
     "shape_id": "91424787B14975788239862",
     "sex_ratio_note": "Men per 1,000 women among the residents the 2024 census counted.",
     "ethnicity_year": 2024,
-    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Sumbe, Gangula(Kuvu) and Gungo, which together are Sumbe as it stood under Lei n.º 18/16, are added together.",
+    "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Sumbe, Gangula (Kuvu) and Gungo, which together are Sumbe as it stood under Lei n.º 18/16, are added together.",
     "language_year": 2024,
-    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Sumbe, Gangula(Kuvu) and Gungo, which together are Sumbe as it stood under Lei n.º 18/16, are added together.",
+    "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Sumbe, Gangula (Kuvu) and Gungo, which together are Sumbe as it stood under Lei n.º 18/16, are added together.",
     "religion_year": 2024,
-    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Sumbe, Gangula(Kuvu) and Gungo, which together are Sumbe as it stood under Lei n.º 18/16, are added together.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Sumbe 18, Gangula(Kuvu) 17 and Gungo 19 years), not for Sumbe as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together."
+    "religion_note": "The 2024 census's count of the population aged 2 and over by declared religion, the denominations kept apart as printed. The census tabulates the municipalities of 2024: Sumbe, Gangula (Kuvu) and Gungo, which together are Sumbe as it stood under Lei n.º 18/16, are added together.",
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Sumbe 18, Gangula (Kuvu) 17 and Gungo 19 years), not for Sumbe as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians."
   },
   {
     "id": "AGO-RGPH2024-91424787B25052954178250",
@@ -25650,7 +25662,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.4,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -25851,7 +25863,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela. The census tabulates the municipalities of 2024: Tômbwa and Iona are added together for Tômbwa as it stood under Lei n.º 18/16. Together they hold 128,196 residents, against the 128,536 the census counts in Tômbwa as it stood under Lei n.º 18/16.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups. The census tabulates the municipalities of 2024: Tômbwa and Iona are added together for Tômbwa as it stood under Lei n.º 18/16. Together they hold 128,196 residents, against the 128,536 the census counts in Tômbwa as it stood under Lei n.º 18/16.",
-    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Tômbwa 17 and Iona 14 years), not for Tômbwa as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together. Together they hold 128,196 residents, against the 128,536 the census counts in Tômbwa as it stood under Lei n.º 18/16."
+    "median_age_note": "The census publishes a median age for each municipality created in 2024 (Tômbwa 17 and Iona 14 years), not for Tômbwa as it stood under Lei n.º 18/16; this one is taken from their counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over), added together, in completed years, as the census gives its medians. Together they hold 128,196 residents, against the 128,536 the census counts in Tômbwa as it stood under Lei n.º 18/16."
   },
   {
     "id": "AGO-RGPH2024-91424787B56359503590027",
@@ -25870,7 +25882,7 @@
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
     },
     "median_age": {
-      "value": 17.8,
+      "value": 17.0,
       "unit": "years",
       "year": 2024,
       "source": "INE Angola, Recenseamento Geral da População e Habitação 2024, Relatório dos Resultados Definitivos, provincial reports"
@@ -25883,7 +25895,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "In the 2024 census's table of religions for Uíge province, the groups of 21 of its 21 municipalities' rows do not add up to their totals, so the religion figures for Uíge as it stood under Lei n.º 18/16 are not shown."
+      "note": "The 2024 census's report for Uíge province prints its table of religions by municipality (Quadro 7.1) with 11 of the census's 21 answers, which account for 61% of the province's people aged 2 and over; the other 10 (the Assemblies of God, Methodist, Evangelical, Adventist, Baptist, Jehovah's Witnesses, the Mensagem dos Últimos Tempos Church, no religion, another religion and no answer) are not printed by municipality, so the religion figures for Uíge as it stood under Lei n.º 18/16 are not shown."
     },
     "language": [
       {
@@ -26032,7 +26044,7 @@
     "sources": [
       {
         "field": "population/sex_ratio/median_age/ethnicity/language/religion note",
-        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2, 1.4 and 1.5",
+        "name": "INE Angola, Recenseamento Geral da População e Habitação 2024, Resultados Definitivos, Uíge province report: Quadros 11, 6.1, 6.2 and 1.7",
         "url": "https://www.ine.gov.ao/Arquivos/arquivosCarregados/Carregados/Publicacao_639105199780531702.pdf",
         "year": 2024,
         "license": "Official statistics publication of the Instituto Nacional de Estatística de Angola"
@@ -26046,7 +26058,7 @@
     "ethnicity_note": "The 2024 census's count of the population aged 2 and over by ethnic group (grupos étnicos ou tribos), as it names them: Quicongo is shown as Bakongo, Quimbundo as Ambundu, Lunda-Quioco as Lunda-Chokwe, Umbundo as Ovimbundu, Nhaneca-Humbe as Nyaneka-Humbe, Ambó as Ovambo, Helelo as Herero, Xindonga as Ndonga and Ovanganguela as Ngangela.",
     "language_year": 2024,
     "language_note": "The 2024 census's count of the population aged 2 and over by mother tongue (língua materna), in the census's groups.",
-    "median_age_note": "Taken from the 2024 census's counts by age group (0-14, 15-19, 20-29, 30-54, 55-64, 65-74, 75 and over)."
+    "median_age_note": "The median age the 2024 census publishes for Uíge."
   },
   {
     "id": "AGO-RGPH2024-91424787B61939006387595",
