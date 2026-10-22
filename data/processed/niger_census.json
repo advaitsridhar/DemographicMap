@@ -506,13 +506,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -520,7 +523,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -553,13 +563,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -567,7 +580,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -600,13 +620,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -614,7 +637,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -647,13 +677,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -661,7 +694,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -694,13 +734,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -708,7 +751,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -741,13 +791,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -755,7 +808,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -788,13 +848,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -802,7 +865,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -835,13 +905,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -849,7 +922,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -882,13 +962,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -896,7 +979,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -929,13 +1019,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -943,7 +1036,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -976,13 +1076,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -990,7 +1093,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1023,13 +1133,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1037,7 +1150,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1070,13 +1190,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1084,7 +1207,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1117,13 +1247,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1131,7 +1264,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1164,13 +1304,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1178,7 +1321,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1211,13 +1361,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1225,7 +1378,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1258,13 +1418,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1272,7 +1435,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1305,13 +1475,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1319,7 +1492,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1352,13 +1532,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1366,7 +1549,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1399,13 +1589,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1413,7 +1606,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1446,13 +1646,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1460,7 +1663,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1493,13 +1703,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1507,7 +1720,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1540,13 +1760,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1554,7 +1777,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1587,13 +1817,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1601,7 +1834,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1634,13 +1874,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1648,7 +1891,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1681,13 +1931,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1695,7 +1948,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1728,13 +1988,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1742,7 +2005,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1775,13 +2045,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1789,7 +2062,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1822,13 +2102,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1836,7 +2119,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1869,13 +2159,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1883,7 +2176,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1916,13 +2216,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1930,7 +2233,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -1963,13 +2273,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -1977,7 +2290,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2010,13 +2330,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2024,7 +2347,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2057,13 +2387,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2071,7 +2404,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2104,13 +2444,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2118,7 +2461,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2151,13 +2501,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2165,7 +2518,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2198,13 +2558,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2212,7 +2575,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2245,13 +2615,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2259,7 +2632,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2292,13 +2672,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2306,7 +2689,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2339,13 +2729,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2353,7 +2746,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2386,13 +2786,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2400,7 +2803,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2433,13 +2843,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2447,7 +2860,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2480,13 +2900,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2494,7 +2917,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2518,7 +2948,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+      "note": "The 2012 census publishes ages by region only, not for the city."
     },
     "sex_ratio": {
       "value": 1053,
@@ -2527,13 +2957,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2541,7 +2974,7 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
       }
     ],
     "country": "NER",
@@ -2574,13 +3007,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2588,7 +3024,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2621,13 +3064,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2635,7 +3081,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2668,13 +3121,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2682,7 +3138,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2715,13 +3178,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2729,7 +3195,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2762,13 +3235,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2776,7 +3252,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2859,13 +3342,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2873,7 +3359,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2906,13 +3399,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2920,7 +3416,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -2953,13 +3456,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -2967,7 +3473,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3000,13 +3513,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3014,7 +3530,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3047,13 +3570,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3061,7 +3587,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3094,13 +3627,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3108,7 +3644,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3141,13 +3684,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3155,7 +3701,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3188,13 +3741,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3202,7 +3758,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3235,13 +3798,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3249,7 +3815,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3282,13 +3855,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3296,7 +3872,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3329,13 +3912,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3343,7 +3929,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3376,13 +3969,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3390,7 +3986,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3423,13 +4026,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3437,7 +4043,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3470,13 +4083,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3484,7 +4100,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3517,13 +4140,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3531,7 +4157,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3564,13 +4197,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3578,7 +4214,14 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
       }
     ],
     "country": "NER",
@@ -3602,7 +4245,7 @@
     },
     "median_age": {
       "status": "not_available",
-      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+      "note": "The 2012 census publishes ages by region only, not for the city."
     },
     "sex_ratio": {
       "value": 1015,
@@ -3611,13 +4254,16 @@
       "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
     },
     "sources": [
       {
@@ -3625,7 +4271,7 @@
         "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
         "license": "INS Niger publication (reuse with attribution)",
         "year": 2012,
-        "field": "sex_ratio"
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
       }
     ],
     "country": "NER",
