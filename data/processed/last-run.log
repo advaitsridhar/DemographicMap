@@ -1,92 +1,327 @@
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  commune across the line: ('guelmimouednoun', 'assazag', 'almahbass') {'women': 264, 'name': 'Al Mahbass', 'zone': ('guelmimouednoun', 'assazag', 'almahbass'), 'men': 318}
-  the Kingdom {'women': 18295103, 'men': 18195488}, 12 regions, 75 provinces, 1 communes
-  mother tongues for 89 zones; the Kingdom {'Amazigh': 18.9, 'Arabic': 80.6}
-  region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
-  'Taroudant Province' bound to 'Province de Taroudannt' by spelling
-  'Oued Ed-Dahab Province': a piece across the line, written as a gap
-  "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
-  'Tarfaya Province': part of a province across the line, written as a gap
-  HCP provinces not drawn: []
-  admin1 Béni Mellal-Khénifra                     956 [('Arabic', 65.6), ('Amazigh', 34.3)]
-  admin1 Casablanca-Settat                        995 [('Arabic', 95.5), ('Amazigh', 3.6)]
-  admin1 Drâa-Tafilalet                           968 [('Amazigh', 64.0), ('Arabic', 35.9)]
-  admin1 Fez-Meknes                               987 [('Arabic', 89.6), ('Amazigh', 10.3)]
-  admin1 Guelmim-Oued Noun                        971 [('Arabic', 59.6), ('Amazigh', 40.3)]
-  admin1 Marrakech-Safi                           1017 [('Arabic', 78.1), ('Amazigh', 21.6)]
-  admin1 Oriental                                 957 [('Arabic', 67.5), ('Amazigh', 32.3)]
-  admin1 Rabat-Salé-Kenitra                       987 [('Arabic', 94.2), ('Amazigh', 5.2)]
-  admin1 Souss-Massa                              983 [('Amazigh', 56.4), ('Arabic', 43.0)]
-  admin1 Tangier-Tetouan-Al Hoceima               1032 [('Arabic', 92.4), ('Amazigh', 7.3)]
-  admin2 Al Hoceima Province                      1023 [('Amazigh', 55.2), ('Arabic', 44.7)]
-  admin2 Chefchaouen Province                     1103 [('Arabic', 99.7), ('Amazigh', 0.2)]
-  admin2 Fahs-Anjra Province                      1084 [('Arabic', 98.0), ('Amazigh', 1.9)]
-  admin2 Larache Province                         1031 [('Arabic', 98.7), ('Amazigh', 1.2)]
-  admin2 Prefecture of Tangier - Assilah          1032 [('Arabic', 95.6), ('Amazigh', 3.8)]
-  admin2 Province d'Ouezzane                      1022 [('Arabic', 99.8), ('Amazigh', 0.1)]
-  admin2 Préfecture de M'diq-Fnideq               995 [('Arabic', 95.8), ('Amazigh', 3.9)]
-  admin2 Tetouan Province                         1003 [('Arabic', 97.7), ('Amazigh', 2.0)]
-  admin2 Province de Berkane                      960 [('Arabic', 88.4), ('Amazigh', 11.4)]
-  admin2 Province de Driouch                      915 [('Amazigh', 85.7), ('Arabic', 14.2)]
-  admin2 Province de Figuig                       956 [('Arabic', 62.8), ('Amazigh', 37.2)]
-  admin2 Province de Guercif                      972 [('Arabic', 65.0), ('Amazigh', 34.9)]
-  admin2 Province de Jerada                       954 [('Arabic', 96.2), ('Amazigh', 3.8)]
-  admin2 Province de Nador                        965 [('Amazigh', 63.7), ('Arabic', 36.2)]
-  admin2 Province de Taourirt                     955 [('Arabic', 85.6), ('Amazigh', 14.4)]
-  admin2 Préfecture d'Oujda-Angad                 957 [('Arabic', 95.7), ('Amazigh', 4.0)]
-  admin2 Prefecture de Meknès                     969 [('Arabic', 93.2), ('Amazigh', 6.5)]
-  admin2 Province d'El Hajeb                      999 [('Arabic', 83.5), ('Amazigh', 16.4)]
-  admin2 Province d'Ifrane                        969 [('Arabic', 59.0), ('Amazigh', 40.8)]
-  admin2 Province de Boulemane                    985 [('Arabic', 65.3), ('Amazigh', 34.6)]
-  admin2 Province de Moulay Yacoub                1078 [('Arabic', 99.4), ('Amazigh', 0.5)]
-  admin2 Province de Sefrou                       955 [('Arabic', 63.8), ('Amazigh', 36.2)]
-  admin2 Province de Taounate                     1037 [('Arabic', 99.8), ('Amazigh', 0.1)]
-  admin2 Province de Taza                         975 [('Arabic', 82.4), ('Amazigh', 17.5)]
-  admin2 Préfecture de Fès                        976 [('Arabic', 98.4), ('Amazigh', 1.2)]
-  admin2 Prefecture of Rabat                      930 [('Arabic', 92.5), ('Amazigh', 4.6)]
-  admin2 Prefecture of Salé                       981 [('Arabic', 95.1), ('Amazigh', 4.3)]
-  admin2 Province de Kenitra                      1005 [('Arabic', 97.7), ('Amazigh', 2.0)]
-  admin2 Province de Khémisset                    968 [('Arabic', 76.7), ('Amazigh', 23.2)]
-  admin2 Province de Sidi Kacem                   1026 [('Arabic', 99.6), ('Amazigh', 0.3)]
-  admin2 Province de Sidi Slimane                 1006 [('Arabic', 99.2), ('Amazigh', 0.7)]
-  admin2 Préfecture de Skhirate-Témara            985 [('Arabic', 94.5), ('Amazigh', 4.8)]
-  admin2 Province d'Azilal                        1021 [('Amazigh', 83.8), ('Arabic', 16.1)]
-  admin2 Province de Beni Mellal                  926 [('Arabic', 72.2), ('Amazigh', 27.7)]
-  admin2 Province de Fquih Ben Saleh              926 [('Arabic', 96.8), ('Amazigh', 3.1)]
-  admin2 Province de Khouribga                    947 [('Arabic', 98.7), ('Amazigh', 1.2)]
-  admin2 Province de Khénifra                     955 [('Amazigh', 54.3), ('Arabic', 45.6)]
-  admin2 Berrechid Province                       1025 [('Arabic', 96.0), ('Amazigh', 3.9)]
-  admin2 El Jadida Province                       1033 [('Arabic', 98.6), ('Amazigh', 1.2)]
-  admin2 Médiouna Province                        1015 [('Arabic', 95.1), ('Amazigh', 4.8)]
-  admin2 Nouaceur Province                        1005 [('Arabic', 92.2), ('Amazigh', 6.5)]
-  admin2 Prefecture of Casablanca                 965 [('Arabic', 93.8), ('Amazigh', 4.6)]
-  admin2 Prefecture of Mohammédia                 991 [('Arabic', 96.0), ('Amazigh', 3.3)]
-  admin2 Province de Benslimane                   1020 [('Arabic', 97.9), ('Amazigh', 1.9)]
-  admin2 Province de Sidi Bennour                 1030 [('Arabic', 99.6), ('Amazigh', 0.3)]
-  admin2 Settat Province                          1014 [('Arabic', 98.9), ('Amazigh', 0.9)]
-  admin2 Al Haouz Province                        1071 [('Amazigh', 75.4), ('Arabic', 24.5)]
-  admin2 Chichaoua Province                       1025 [('Amazigh', 60.6), ('Arabic', 39.3)]
-  admin2 Essaouira Province                       1021 [('Arabic', 63.1), ('Amazigh', 36.5)]
-  admin2 Province d'El Kelâat Es-Sraghna          996 [('Arabic', 97.8), ('Amazigh', 2.2)]
-  admin2 Province de Safi                         1039 [('Arabic', 99.4), ('Amazigh', 0.6)]
-  admin2 Province de Youssoufia                   1040 [('Arabic', 99.1), ('Amazigh', 0.8)]
-  admin2 Préfecture de Marrakech                  977 [('Arabic', 89.1), ('Amazigh', 10.0)]
-  admin2 Rhamna Province                          1071 [('Arabic', 97.7), ('Amazigh', 2.2)]
-  admin2 Ouarzazate Province                      950 [('Amazigh', 74.8), ('Arabic', 25.1)]
-  admin2 Province d'Errachidia                    964 [('Arabic', 64.5), ('Amazigh', 35.4)]
-  admin2 Province de Midelt                       982 [('Amazigh', 72.8), ('Arabic', 27.1)]
-  admin2 Province de Tinghir                      959 [('Amazigh', 96.3), ('Arabic', 3.6)]
-  admin2 Zagora Province                          991 [('Arabic', 51.3), ('Amazigh', 48.6)]
-  admin2 Agadir Ida-Outanane Prefecture           998 [('Amazigh', 52.5), ('Arabic', 46.7)]
-  admin2 Chtouka-Ait Baha Province                1037 [('Amazigh', 66.5), ('Arabic', 32.0)]
-  admin2 Inezgane-Ait Melloul Prefecture          1002 [('Arabic', 51.7), ('Amazigh', 48.0)]
-  admin2 Tata Province                            820 [('Amazigh', 70.6), ('Arabic', 29.4)]
-  admin2 Tiznit Province                          913 [('Amazigh', 85.5), ('Arabic', 14.4)]
-  admin2 Taroudant Province                       966 [('Amazigh', 51.7), ('Arabic', 48.3)]
-  admin2 Assa-Zag Province                        988 [('Arabic', 88.6), ('Amazigh', 11.3)]
-  admin2 Guelmim Province                         958 [('Arabic', 63.8), ('Amazigh', 36.0)]
-  admin2 Province de Tan-Tan                      1009 [('Arabic', 87.6), ('Amazigh', 12.4)]
-  admin2 Sidi Ifni Province                       959 [('Amazigh', 80.8), ('Arabic', 19.1)]
-  10 regions and 69 provinces written; 79 with mother tongues
-  wrote data/processed/morocco_rgph2024_sexes.json (203 kB)
+  read https://www.ins.tn/sites/default/files-ftp3/files/2025-05/Population_Secteur_Age_Sexe_Dynamique.xlsx: 9,247,324 bytes, sha256 70f8f9f872862d6947d08fc1b2775c66cf6b4d114a55f68092e7a4ce70d5d9ae
+  24 governorates, 279 delegations; age groups ['00-04', '05-09', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65-69', '70-74', '75-79', '80+']
+  11 1151 Carthage | قرطاج | 22,203 | median 42.2 | men/1000 women 956
+  11 1152 La medina | المدينة | 17,376 | median 42.1 | men/1000 women 1012
+  11 1153 Bab el bhar | باب البحر | 30,322 | median 36.6 | men/1000 women 1018
+  11 1154 Bab souika | باب سويقة | 25,142 | median 40.6 | men/1000 women 958
+  11 1155 El omrane | العمران | 37,678 | median 39.8 | men/1000 women 972
+  11 1156 El omrane superieur | العمران الاعلى | 57,993 | median 39.3 | men/1000 women 939
+  11 1157 Ettahrir | التحرير | 19,679 | median 40.3 | men/1000 women 915
+  11 1158 El menzah | المنزه | 40,738 | median 41.9 | men/1000 women 898
+  11 1159 Cite el khadhra | حي الخضراء | 30,345 | median 38.0 | men/1000 women 927
+  11 1160 Le bardo | باردو | 68,799 | median 40.8 | men/1000 women 931
+  11 1161 Sijoumi | السيجومي | 28,387 | median 40.2 | men/1000 women 981
+  11 1162 Ezzouhour-tunis | الزهور - تونس | 35,484 | median 40.7 | men/1000 women 928
+  11 1163 El hrairia | الحرائرية | 118,229 | median 37.2 | men/1000 women 971
+  11 1164 Sidi hassine | سيدي حسين | 129,888 | median 34.3 | men/1000 women 1022
+  11 1165 El ouardia | الوردية | 30,143 | median 40.4 | men/1000 women 963
+  11 1166 El kabaria | الكبارية | 83,856 | median 37.7 | men/1000 women 969
+  11 1167 Sidi el bechir | سيدي البشير | 25,044 | median 40.0 | men/1000 women 972
+  11 1168 Djebel djelloud | جبل الجلود | 24,183 | median 39.5 | men/1000 women 924
+  11 1169 La goulette | حلق الوادي | 48,382 | median 38.2 | men/1000 women 965
+  11 1170 Le kram | الكرم | 88,302 | median 38.3 | men/1000 women 965
+  11 1171 La marsa | المرسى | 113,133 | median 38.4 | men/1000 women 986
+  12 1251 Ariana ville | اريانةالمدينة | 109,693 | median 41.1 | men/1000 women 925
+  12 1252 Soukra | سكرة | 159,862 | median 35.3 | men/1000 women 991
+  12 1253 Raoued | روّاد | 141,471 | median 33.8 | men/1000 women 1028
+  12 1254 Kalaat el andalous | قلعة الأندلس | 32,520 | median 31.7 | men/1000 women 1056
+  12 1255 Sidi thabet | سيدي ثابت | 29,546 | median 35.6 | men/1000 women 990
+  12 1256 Cite ettadhamen | حي التضامن | 79,133 | median 37.1 | men/1000 women 993
+  12 1257 El mnihla | المنيهلة | 116,327 | median 34.7 | men/1000 women 1016
+  13 1351 Ben arous | بن عروس | 29,170 | median 40.4 | men/1000 women 939
+  13 1352 La nouvelle medina | المدينة الجديدة | 60,401 | median 37.3 | men/1000 women 977
+  13 1353 El mourouj | المروج | 121,712 | median 35.6 | men/1000 women 978
+  13 1354 Hammam lif | حمام  الأنف | 41,738 | median 41.5 | men/1000 women 925
+  13 1355 Hammam chott | حمام الشط | 34,341 | median 37.8 | men/1000 women 949
+  13 1356 Bou mhel el bassatin | بومهل البساتين | 50,817 | median 36.0 | men/1000 women 982
+  13 1357 Ezzahra | الزهراء | 35,241 | median 41.5 | men/1000 women 930
+  13 1358 Rades | رادس | 63,042 | median 38.5 | men/1000 women 986
+  13 1359 Megrine | مقرين | 25,863 | median 41.9 | men/1000 women 952
+  13 1360 Mohamedia | المحمدية | 84,465 | median 33.2 | men/1000 women 1001
+  13 1361 Fouchana | فوشانة | 100,868 | median 33.9 | men/1000 women 991
+  13 1362 Mornag | مرناق | 75,170 | median 34.9 | men/1000 women 1012
+  14 1451 Mannouba | منوبة | 62,945 | median 38.4 | men/1000 women 961
+  14 1452 Douar hicher | دوار هيشر | 88,335 | median 36.1 | men/1000 women 1004
+  14 1453 Oued ellil | وادي الليل | 81,040 | median 35.6 | men/1000 women 1005
+  14 1454 Mornaguia | المرناقية | 44,764 | median 36.3 | men/1000 women 1010
+  14 1455 Borj amri | برج العامري | 21,465 | median 36.7 | men/1000 women 995
+  14 1456 Djedeida | الجديدة | 52,713 | median 35.5 | men/1000 women 1016
+  14 1457 Tebourba | طبربة | 46,074 | median 37.2 | men/1000 women 999
+  14 1458 El battane | البطان | 21,018 | median 36.8 | men/1000 women 1015
+  15 1551 Nabeul | نابل | 72,776 | median 37.3 | men/1000 women 981
+  15 1552 Dar chaabane el fehr | دار شعبان الفهري | 51,174 | median 35.9 | men/1000 women 1022
+  15 1553 Beni khiar | بني خيار | 47,521 | median 36.1 | men/1000 women 1012
+  15 1554 Korba | قربة | 74,063 | median 35.8 | men/1000 women 1011
+  15 1555 Menzel temime | منزل تميم | 72,104 | median 35.7 | men/1000 women 999
+  15 1556 El mida | الميدة | 29,179 | median 34.4 | men/1000 women 967
+  15 1557 Kelibia | قليببية | 66,919 | median 36.9 | men/1000 women 1009
+  15 1558 Hammam el guezaz | حمام الأغزاز | 17,278 | median 36.8 | men/1000 women 1030
+  15 1559 El haouaria | الهوارية | 46,080 | median 37.1 | men/1000 women 1037
+  15 1560 Takelsa | تاكلسة | 24,805 | median 37.0 | men/1000 women 992
+  15 1561 Soliman | سليمان | 72,220 | median 35.8 | men/1000 women 996
+  15 1562 Menzel bouzelfa | منزل بوزلفة | 39,839 | median 36.3 | men/1000 women 1011
+  15 1563 Beni khalled | بني خلاد | 41,935 | median 36.2 | men/1000 women 987
+  15 1564 Grombalia | قرنبالية | 75,855 | median 35.6 | men/1000 women 997
+  15 1565 Bou argoub | بوعرقوب | 35,243 | median 35.4 | men/1000 women 996
+  15 1566 Hammamet | الحمامات | 96,181 | median 36.9 | men/1000 women 1051
+  16 1651 Zaghouan | زغوان | 43,813 | median 36.1 | men/1000 women 984
+  16 1652 Ez-zeriba | الزريبة | 27,849 | median 34.1 | men/1000 women 1018
+  16 1653 Bir mchergua | بئر مشارقة | 27,283 | median 34.7 | men/1000 women 1020
+  16 1654 El fahs | الفحص | 51,214 | median 36.1 | men/1000 women 962
+  16 1655 En-nadhour | الناظور | 37,130 | median 30.1 | men/1000 women 1017
+  16 1656 Saouaf | صواف | 13,776 | median 33.4 | men/1000 women 1002
+  17 1751 Bizerte nord | بنزرت الشمالية | 85,205 | median 39.5 | men/1000 women 970
+  17 1752 Zarzouna | جرزونة | 25,159 | median 35.1 | men/1000 women 921
+  17 1753 Bizerte sud | بنزرت الجنوبية | 75,669 | median 34.5 | men/1000 women 1018
+  17 1754 Sedjnane | سجنان | 41,119 | median 35.5 | men/1000 women 1044
+  17 1755 Djoumine | جومين | 27,896 | median 37.1 | men/1000 women 1071
+  17 1756 Mateur | ماطر | 49,316 | median 37.3 | men/1000 women 986
+  17 1757 Ghezala | غزالة | 25,366 | median 38.8 | men/1000 women 1041
+  17 1758 Menzel bourguiba | منزل بورقيبة | 60,356 | median 39.3 | men/1000 women 1000
+  17 1759 Tinja | تينجة | 21,995 | median 39.9 | men/1000 women 983
+  17 1760 Utique | أوتيك | 22,777 | median 34.5 | men/1000 women 1040
+  17 1761 Ghar el meleh | غار الملح | 22,267 | median 34.3 | men/1000 women 1050
+  17 1762 Menzel djemil | منزل جميل | 57,010 | median 35.7 | men/1000 women 997
+  17 1763 El alia | العالية | 29,322 | median 32.5 | men/1000 women 992
+  17 1764 Ras djebel | راس الجبل | 63,931 | median 35.6 | men/1000 women 1001
+  21 2151 Beja nord | باجة الشمالية | 74,642 | median 38.9 | men/1000 women 1003
+  21 2152 Beja sud | باجة الجنوبية | 38,700 | median 39.4 | men/1000 women 998
+  21 2153 Amdoun | عمدون | 21,403 | median 38.8 | men/1000 women 1034
+  21 2154 Nefza | نفزة | 47,573 | median 40.8 | men/1000 women 970
+  21 2155 Teboursouk | تبرسق | 21,414 | median 39.9 | men/1000 women 1000
+  21 2156 Tibar | تيبار | 10,538 | median 40.3 | men/1000 women 977
+  21 2157 Testour | تستور | 35,501 | median 36.2 | men/1000 women 1022
+  21 2158 Goubellat | قبلاط | 16,767 | median 35.9 | men/1000 women 1041
+  21 2159 Medjez el bab | مجاز الباب | 44,879 | median 37.2 | men/1000 women 991
+  22 2251 Jendouba | جندوبة | 77,342 | median 38.4 | men/1000 women 979
+  22 2252 Jendouba nord | جندوبة الشمالية | 44,687 | median 38.2 | men/1000 women 939
+  22 2253 Bou salem | بوسالم | 37,100 | median 39.6 | men/1000 women 969
+  22 2254 Tabarka | طبرقة | 48,888 | median 40.2 | men/1000 women 988
+  22 2255 Ain draham | عين دراهم | 32,306 | median 42.7 | men/1000 women 976
+  22 2256 Fernana | فرنانة | 47,917 | median 37.7 | men/1000 women 992
+  22 2257 Ghardimaou | غار الدماء | 62,313 | median 37.5 | men/1000 women 898
+  22 2258 Oued meliz | وادي مليز | 17,334 | median 40.4 | men/1000 women 926
+  22 2259 Balta - bou aouane | بلطة بوعوان | 36,465 | median 42.2 | men/1000 women 991
+  23 2351 Kef ouest | الكاف الغربية | 37,538 | median 38.0 | men/1000 women 967
+  23 2352 Kef est | الكاف الشرقية | 41,561 | median 40.0 | men/1000 women 972
+  23 2353 Nebeur | نبر | 18,651 | median 39.7 | men/1000 women 999
+  23 2354 Sakiet sidi youssef | ساقية سيدي يوسف | 16,173 | median 40.0 | men/1000 women 1000
+  23 2355 Tajerouine | تاجروين | 27,112 | median 41.3 | men/1000 women 978
+  23 2356 Kalaat snan | قلعة سنان | 13,517 | median 40.9 | men/1000 women 1010
+  23 2357 Kalaat khasbah | القلعة الخصباء | 5,663 | median 43.2 | men/1000 women 905
+  23 2358 Djerissa | الجريصة | 8,613 | median 45.1 | men/1000 women 937
+  23 2359 El ksour | القصور | 14,686 | median 37.9 | men/1000 women 1013
+  23 2360 Dahmani | الدهماني | 25,285 | median 39.7 | men/1000 women 993
+  23 2361 Es-sers | السرس | 23,024 | median 40.0 | men/1000 women 998
+  23 2362 Etouiref | الطويرف | 5,863 | median 41.7 | men/1000 women 1031
+  24 2451 Siliana nord | سليانة  الشمالية | 28,801 | median 36.9 | men/1000 women 977
+  24 2452 Siliana sud | سليانة الجنوبية | 29,953 | median 37.9 | men/1000 women 959
+  24 2453 Bou arada | بوعرادة | 19,373 | median 39.0 | men/1000 women 979
+  24 2454 Gaafour | قعفور | 15,801 | median 42.0 | men/1000 women 962
+  24 2455 El  krib | الكريب | 20,000 | median 39.2 | men/1000 women 991
+  24 2456 Bourouis | بورويس | 11,555 | median 40.8 | men/1000 women 970
+  24 2457 Makthar | مكثر | 28,321 | median 34.4 | men/1000 women 987
+  24 2458 Er-rouhia | الروحية | 27,063 | median 31.3 | men/1000 women 1013
+  24 2459 Kesra | كسرى | 15,031 | median 35.4 | men/1000 women 951
+  24 2460 Bargou | برقو | 11,505 | median 41.3 | men/1000 women 975
+  24 2461 El aroussa | العروسة | 8,839 | median 40.1 | men/1000 women 918
+  31 3151 Sousse medina | سوسة المدينة | 32,220 | median 36.5 | men/1000 women 931
+  31 3152 Sousse riadh | سوسة الرياض | 71,464 | median 33.4 | men/1000 women 966
+  31 3153 Sousse jawhara | سوسة جوهرة | 97,535 | median 33.9 | men/1000 women 909
+  31 3154 Sousse sidi abdelham | سوسة سيدي عبد الحميد | 57,691 | median 33.3 | men/1000 women 969
+  31 3155 Hammam sousse | حمام سوسة | 48,899 | median 36.9 | men/1000 women 924
+  31 3156 Akouda | اكودة | 39,174 | median 35.1 | men/1000 women 982
+  31 3157 Kalaa kebira | القلعة الكبرى | 67,108 | median 33.0 | men/1000 women 1044
+  31 3158 Sidi bou ali | سيدي بوعلي | 20,647 | median 34.5 | men/1000 women 991
+  31 3159 Hergla | هرقلة | 10,652 | median 36.0 | men/1000 women 990
+  31 3160 Enfidha | النفيضة | 58,613 | median 32.1 | men/1000 women 988
+  31 3161 Bouficha | بوفيشة | 36,094 | median 32.7 | men/1000 women 1010
+  31 3162 Kondar | كندار | 15,491 | median 29.7 | men/1000 women 931
+  31 3163 Sidi el heni | سيدي الهاني | 14,508 | median 32.4 | men/1000 women 923
+  31 3164 M'saken | مساكن | 97,312 | median 33.5 | men/1000 women 937
+  31 3165 Kalaa seghira | القلعة الصغرى | 45,743 | median 32.8 | men/1000 women 1013
+  31 3166 Zaouia - ksiba - thr | الزاوية - القصيبة - | 49,130 | median 31.1 | men/1000 women 1002
+  32 3251 Monastir | المنستير | 110,084 | median 32.7 | men/1000 women 932
+  32 3252 El Ouerdanine | الوردانين | 22,690 | median 31.7 | men/1000 women 992
+  32 3253 Sahline | الساحلين | 32,485 | median 33.9 | men/1000 women 985
+  32 3254 Zeramdine | زرمدين | 30,732 | median 32.5 | men/1000 women 978
+  32 3255 Beni hassen | بني حسان | 15,230 | median 32.4 | men/1000 women 1018
+  32 3256 Jammel | جمال | 71,158 | median 31.0 | men/1000 women 1000
+  32 3257 Bembla | بنبلة | 36,076 | median 31.0 | men/1000 women 1001
+  32 3258 Moknine | المكنين | 97,655 | median 31.4 | men/1000 women 986
+  32 3259 Bekalta | البقالطة | 19,091 | median 33.8 | men/1000 women 1016
+  32 3260 Teboulba | طبلبة | 41,049 | median 31.9 | men/1000 women 1008
+  32 3261 Ksar helal | قصر هلال | 55,505 | median 33.8 | men/1000 women 967
+  32 3262 Ksibet el mediouni | قصيبة المديوني | 41,075 | median 31.5 | men/1000 women 1009
+  32 3263 Sayada-lamta bou-hja | صيادة - لمطة - بوحجر | 26,939 | median 34.3 | men/1000 women 937
+  33 3351 Mahdia | المهدية | 74,504 | median 34.0 | men/1000 women 886
+  33 3352 Bou merdes | بومرداس | 37,089 | median 30.1 | men/1000 women 949
+  33 3353 Ouled chamekh | أولاد شامخ | 23,893 | median 32.3 | men/1000 women 817
+  33 3354 Chorbane | شربان | 29,059 | median 33.6 | men/1000 women 940
+  33 3355 Hebira | هبيرة | 11,617 | median 38.1 | men/1000 women 891
+  33 3356 Essouassi | السواسي | 58,683 | median 30.1 | men/1000 women 932
+  33 3357 El djem | الجم | 55,976 | median 32.0 | men/1000 women 956
+  33 3358 Chebba | الشابة | 31,137 | median 37.1 | men/1000 women 875
+  33 3359 Melloulech | ملولش | 23,890 | median 32.3 | men/1000 women 909
+  33 3360 Sidi alouane | سيدي علوان | 40,308 | median 32.1 | men/1000 women 859
+  33 3361 Ksour essef | قصور الساف | 38,567 | median 33.2 | men/1000 women 946
+  33 3362 Rejiche | رجيش | 11,603 | median 34.6 | men/1000 women 953
+  33 3363 El bradaa | البرادعة | 13,659 | median 32.8 | men/1000 women 725
+  34 3451 Sfax ville | صفاقس المدينة | 97,712 | median 37.7 | men/1000 women 916
+  34 3452 Sfax ouest | صفاقس الغريبة | 105,238 | median 36.3 | men/1000 women 933
+  34 3453 Sakiet ezzit | ساقية الزيت | 96,648 | median 36.2 | men/1000 women 997
+  34 3454 Sakiet eddaier | ساقية الداير | 123,457 | median 36.2 | men/1000 women 991
+  34 3455 Sfax sud | صفاقس الجنوبية | 142,716 | median 36.0 | men/1000 women 995
+  34 3456 Tina | طينة | 79,761 | median 33.8 | men/1000 women 1001
+  34 3457 Agareb | عقارب | 46,652 | median 34.0 | men/1000 women 991
+  34 3458 Djebeniana | جبنيانة | 58,364 | median 32.9 | men/1000 women 979
+  34 3459 El amra | العامرة | 35,808 | median 33.6 | men/1000 women 981
+  34 3460 El hencha | الحنشة | 55,434 | median 32.7 | men/1000 women 987
+  34 3461 Menzel chaker | منزل شاكر | 42,546 | median 32.9 | men/1000 women 990
+  34 3462 Ghraiba | الغريبة | 16,678 | median 35.4 | men/1000 women 948
+  34 3463 Bir ali ben kelifa | بئر علي بن خليفة | 55,339 | median 34.9 | men/1000 women 927
+  34 3464 Skhira | الصخيرة | 40,035 | median 31.9 | men/1000 women 956
+  34 3465 Mahres | المحرس | 35,698 | median 37.2 | men/1000 women 897
+  34 3466 Kerkenah | قرقنة | 15,382 | median 42.9 | men/1000 women 998
+  41 4151 Kairouan nord | القيروان الشمالية | 103,461 | median 33.7 | men/1000 women 943
+  41 4152 Kairouan sud | القيروان الجنوبية | 95,068 | median 33.5 | men/1000 women 943
+  41 4153 Echebika | الشبيكة | 37,193 | median 33.1 | men/1000 women 1010
+  41 4154 Sbikha | السبيخة | 77,650 | median 32.5 | men/1000 women 998
+  41 4155 El ouslatia | الوسلاتية | 26,454 | median 35.6 | men/1000 women 992
+  41 4156 Haffouz | حفوز | 44,492 | median 33.7 | men/1000 women 1010
+  41 4157 El alaa | العلاء | 28,897 | median 33.4 | men/1000 women 977
+  41 4158 Hajeb el ayoun | حاجب العيون | 40,655 | median 31.9 | men/1000 women 1049
+  41 4159 Nasrallah | نصر اللّه | 20,310 | median 38.5 | men/1000 women 956
+  41 4160 Echrarda | الشراردة | 28,868 | median 33.0 | men/1000 women 909
+  41 4161 Bouhajla | بوحجلة | 78,634 | median 31.0 | men/1000 women 1015
+  41 4162 Ain jeloula | عين جلولة | 6,441 | median 35.8 | men/1000 women 1022
+  41 4163 Menzel m'hiri | منزل مهيرى | 12,680 | median 35.8 | men/1000 women 975
+  42 4251 Kasserine nord | القصرين الشمالية | 74,925 | median 33.7 | men/1000 women 987
+  42 4252 Kasserine sud | القصرين الجنوبية | 27,048 | median 31.1 | men/1000 women 1028
+  42 4253 Ezzouhour-kasserine | الزهور - القصرين | 24,484 | median 31.9 | men/1000 women 976
+  42 4254 Hassi ferid | حاسي الفريد | 22,886 | median 24.8 | men/1000 women 1045
+  42 4255 Sbeitla | سبيطلة | 84,495 | median 31.2 | men/1000 women 956
+  42 4256 Sbiba | سبيبة | 48,620 | median 29.1 | men/1000 women 1006
+  42 4257 Djedeliane | جدليان | 12,066 | median 32.4 | men/1000 women 1019
+  42 4258 El ayoun | العيون | 20,115 | median 29.4 | men/1000 women 956
+  42 4259 Thala | تالة | 31,680 | median 35.3 | men/1000 women 983
+  42 4260 Hidra | حيدرة | 8,160 | median 37.4 | men/1000 women 983
+  42 4261 Foussana | فوسانة | 50,663 | median 31.5 | men/1000 women 989
+  42 4262 Feriana | فريانة | 59,584 | median 30.0 | men/1000 women 980
+  42 4263 Majel bel abbes | ماجل بالعباس | 28,015 | median 31.0 | men/1000 women 992
+  43 4351 Sidi bouzid ouest | سيدي بوزيد الغربية | 72,511 | median 34.4 | men/1000 women 979
+  43 4352 Sidi bouzid est | سيدي بوزيد الشرقية | 57,961 | median 33.7 | men/1000 women 997
+  43 4353 Jilma | جلمة | 45,519 | median 30.0 | men/1000 women 987
+  43 4354 Cebalet ouled asker | سبالة أولاد عسكر | 21,833 | median 33.1 | men/1000 women 838
+  43 4355 Bir el hafey | بئر الحفي | 45,208 | median 32.2 | men/1000 women 997
+  43 4356 Sidi ali ben aoun | سيدي علي بن عون | 31,424 | median 32.1 | men/1000 women 1012
+  43 4357 Menzel bouzaienne | منزل بوزيان | 31,048 | median 32.9 | men/1000 women 993
+  43 4358 Meknassy | المكناسي | 21,659 | median 39.1 | men/1000 women 960
+  43 4359 Souk jedid | سوق الجديد | 22,974 | median 34.0 | men/1000 women 976
+  43 4360 Mezzouna | المزونة | 27,748 | median 31.0 | men/1000 women 971
+  43 4361 Regueb | الرقاب | 48,925 | median 33.9 | men/1000 women 987
+  43 4362 Ouled haffouz | أولاد حفوز | 20,127 | median 37.6 | men/1000 women 987
+  43 4363 Essaida | السعيدة | 27,940 | median 30.6 | men/1000 women 1081
+  43 4364 El hichria | الهيشرية | 15,114 | median 32.5 | men/1000 women 1030
+  51 5151 Gabes medina | قابس المدينة | 46,380 | median 36.3 | men/1000 women 909
+  51 5152 Gabes ouest | قابس الغربية | 37,420 | median 34.5 | men/1000 women 957
+  51 5153 Gabes sud | قابس الجنوبية | 83,013 | median 35.0 | men/1000 women 949
+  51 5154 Ghanouch | غنوش | 35,329 | median 27.3 | men/1000 women 1047
+  51 5155 El metouia | المطوية | 13,613 | median 34.5 | men/1000 women 988
+  51 5156 Menzel el habib | منزل الحبيب | 10,200 | median 32.4 | men/1000 women 966
+  51 5157 El hamma | الحامة | 57,856 | median 33.1 | men/1000 women 958
+  51 5158 Matmata | مطماطة | 3,926 | median 40.7 | men/1000 women 907
+  51 5159 Nouvelle matmata | مطماطة الجديدة | 16,779 | median 36.3 | men/1000 women 896
+  51 5160 Mareth | مارث | 57,358 | median 35.7 | men/1000 women 896
+  51 5161 Dkhilet toujen | دخيلة توجان | 9,690 | median 32.3 | men/1000 women 875
+  51 5162 Ouedhref | وذرف | 17,931 | median 33.9 | men/1000 women 961
+  51 5163 El hamma ouest | الحامة الغربية | 21,352 | median 33.2 | men/1000 women 980
+  52 5251 Medenine nord | مدنين الشمالية | 64,010 | median 35.0 | men/1000 women 931
+  52 5252 Medenine sud | مدنين الجنوبية | 63,911 | median 33.4 | men/1000 women 931
+  52 5253 Beni khedech | بني خداش | 26,847 | median 36.0 | men/1000 women 775
+  52 5254 Ben guerdane | بنقردان | 90,504 | median 32.1 | men/1000 women 982
+  52 5255 Zarzis | جرجيس | 75,708 | median 37.5 | men/1000 women 859
+  52 5256 Djerba houmet souk | جربة حومة السوق | 89,228 | median 35.9 | men/1000 women 989
+  52 5257 Djerba midoun | جربة ميدون | 74,437 | median 35.4 | men/1000 women 977
+  52 5258 Djerba ajim | جربة أجيم | 24,166 | median 38.0 | men/1000 women 855
+  52 5259 Sidi makhloulf | سيدي مخلوف | 28,444 | median 34.2 | men/1000 women 934
+  53 5351 Tataouine nord | تطاوين الشمالية | 66,986 | median 31.6 | men/1000 women 874
+  53 5352 Tataouine sud | تطاوين الجنوبية | 36,391 | median 33.8 | men/1000 women 894
+  53 5353 Smar | الصمار | 8,080 | median 30.4 | men/1000 women 870
+  53 5354 Bir lahmar | بئر الأحمر | 10,772 | median 35.7 | men/1000 women 914
+  53 5355 Ghomrassen | غمراسن | 16,351 | median 39.3 | men/1000 women 739
+  53 5356 Dhehiba | ذهيبة | 5,920 | median 33.5 | men/1000 women 1005
+  53 5357 Remada | رمادة | 9,964 | median 32.9 | men/1000 women 983
+  53 5358 Beni mhira | بنى مهيرة | 8,190 | median 30.9 | men/1000 women 860
+  61 6151 Gafsa nord | قفصة الشمالية | 11,657 | median 33.5 | men/1000 women 1016
+  61 6152 Sidi aich | سيدي عيش | 12,029 | median 32.0 | men/1000 women 1021
+  61 6153 El ksar | القصر | 39,931 | median 35.9 | men/1000 women 959
+  61 6154 Gafsa sud | قفصة الجنوبية | 118,274 | median 33.5 | men/1000 women 974
+  61 6155 Oum el araies | أم العرائس | 31,767 | median 35.5 | men/1000 women 986
+  61 6156 Redeyef | الرديف | 31,421 | median 35.6 | men/1000 women 967
+  61 6157 Metlaoui | المتلوي | 44,547 | median 35.5 | men/1000 women 987
+  61 6158 Mdhila | المظيلة | 16,883 | median 33.1 | men/1000 women 1017
+  61 6159 El guetar | القطار | 20,784 | median 36.0 | men/1000 women 906
+  61 6160 Belkhir | بلخير | 15,923 | median 32.6 | men/1000 women 906
+  61 6161 Sned | السند | 23,633 | median 33.6 | men/1000 women 972
+  61 6162 Sidi boubaker | سيدى بوبكر | 5,402 | median 30.9 | men/1000 women 1015
+  61 6163 Zanouche | زانوش | 16,525 | median 32.8 | men/1000 women 969
+  62 6251 Tozeur | توزر | 50,362 | median 34.6 | men/1000 women 970
+  62 6252 Degach | دقاش | 24,426 | median 33.8 | men/1000 women 961
+  62 6253 Tameghza | تمغزة | 6,904 | median 33.5 | men/1000 women 1005
+  62 6254 Nefta | نفطة | 24,263 | median 33.3 | men/1000 women 980
+  62 6255 Hazoua | حزوة | 6,186 | median 30.1 | men/1000 women 1001
+  62 6256 Hammat ejrid | حامة الجريد | 7,895 | median 34.2 | men/1000 women 982
+  63 6351 Kebili sud | قبلي الجنوبية | 35,847 | median 33.8 | men/1000 women 972
+  63 6352 Kebeli nord | قبلي الشمالية | 36,132 | median 36.8 | men/1000 women 949
+  63 6353 Souk el ahed | سوق الأحد | 31,468 | median 36.8 | men/1000 women 901
+  63 6354 Douz nord | دوز  الشمالية | 33,951 | median 31.8 | men/1000 women 965
+  63 6355 Douz sud | دوز الجنوبية | 21,279 | median 32.6 | men/1000 women 968
+  63 6356 El faouar | الفوار | 19,875 | median 30.2 | men/1000 women 1010
+  63 6357 Rjim maatoug | رجيم معتوق | 4,649 | median 26.2 | men/1000 women 1082
+  2014: 'Centre Est' (2,590,032) is more than its delegation; skipped
+  2014 sectors that do not make their delegation: ['kebili/faouar: sectors 17,424 against 19,613']
+  2014: 2,064 sectors in 24 governorates
+  Ariana: El mnihla / المنيهلة bound to 'منيهلة' by spelling (0.86)
+  Nabeul: Hammam el guezaz / حمام الأغزاز bound to 'حمام الغزاز' by spelling (0.95)
+  Nabeul: Grombalia / قرنبالية bound to 'قرمبالية' by spelling (0.88)
+  Jendouba: Oued meliz / وادي مليز bound to 'واد مليز' by spelling (0.93)
+  El Kef: delegation 2362 Etouiref / الطويرف (5,863) has no polygon of its own
+  Mahdia: delegation 3362 Rejiche / رجيش (11,603) has no polygon of its own
+  Mahdia: delegation 3363 El bradaa / البرادعة (13,659) has no polygon of its own
+  Sfax: Sfax ouest / صفاقس الغريبة bound to 'صفاقس الغربية' by spelling (0.92)
+  Kairouan: delegation 4162 Ain jeloula / عين جلولة (6,441) has no polygon of its own
+  Kairouan: delegation 4163 Menzel m'hiri / منزل مهيرى (12,680) has no polygon of its own
+  Sidi Bouzid: Cebalet ouled asker / سبالة أولاد عسكر bound to 'سبالة أوالد عسكر' by spelling (0.93)
+  Sidi Bouzid: delegation 4363 Essaida / السعيدة (27,940) has no polygon of its own
+  Sidi Bouzid: delegation 4364 El hichria / الهيشرية (15,114) has no polygon of its own
+  Gabès: delegation 5161 Dkhilet toujen / دخيلة توجان (9,690) has no polygon of its own
+  Gabès: delegation 5162 Ouedhref / وذرف (17,931) has no polygon of its own
+  Gabès: delegation 5163 El hamma ouest / الحامة الغربية (21,352) has no polygon of its own
+  Tataouine: delegation 5358 Beni mhira / بنى مهيرة (8,190) has no polygon of its own
+  Gafsa: Mdhila / المظيلة bound to 'المضيلة' by spelling (0.86)
+  Gafsa: delegation 6162 Sidi boubaker / سيدى بوبكر (5,402) has no polygon of its own
+  Gafsa: delegation 6163 Zanouche / زانوش (16,525) has no polygon of its own
+  Tozeur: delegation 6256 Hammat ejrid / حامة الجريد (7,895) has no polygon of its own
+  Kébili: delegation 6357 Rjim maatoug / رجيم معتوق (4,649) has no polygon of its own
+  delegation 2362 Etouiref (5,863), made since 2014: its 4 sectors were part of ['nebeur']
+  delegation 3362 Rejiche (11,603), made since 2014: its 2 sectors were part of ['mahdia']
+  delegation 3363 El bradaa (13,659), made since 2014: its 4 sectors were part of ['ksouresef']
+    sector Djebel Oueslat read as 2014's djebelouestat (0.92)
+  delegation 4162 Ain jeloula (6,441), made since 2014: its 2 sectors were part of ['ouslatia']
+  delegation 4163 Menzel m'hiri (12,680), made since 2014: its 3 sectors were part of ['nasralah']
+  delegation 4363 Essaida (27,940), made since 2014: its 5 sectors were part of ['regueb']
+  delegation 4364 El hichria (15,114), made since 2014: its 3 sectors were part of ['sidibouzidest', 'sidibouzidouest']
+  delegation 5161 Dkhilet toujen (9,690), made since 2014: its 4 sectors were part of ['mareth']
+  delegation 5162 Ouedhref (17,931), made since 2014: its 4 sectors were part of ['metouia']
+  delegation 5163 El hamma ouest (21,352), made since 2014: its 5 sectors were part of ['hama']
+  delegation 5358 Beni mhira (8,190), made since 2014: its 5 sectors were part of ['smar']
+  delegation 6162 Sidi boubaker (5,402), made since 2014: its 2 sectors were part of ['oumelaraies']
+    sector Zanouch read as 2014's sanouche (0.80)
+    sector El jedida read as 2014's djedida (0.80)
+    sector Abdessadek read as 2014's abdesadok (0.89)
+  delegation 6163 Zanouche (16,525), made since 2014: its 3 sectors were part of ['sned']
+  delegation 6256 Hammat ejrid (7,895), made since 2014: its 3 sectors were part of ['degach']
+  delegation 6357 Rjim maatoug (4,649), made since 2014: its 2 sectors were part of ['faouar']
+  24 governorates and 264 of 264 delegation polygons bound
+  wrote data/processed/tunisia_census.json (644 kB)
