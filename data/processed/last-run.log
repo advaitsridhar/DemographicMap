@@ -1,235 +1,419 @@
-== xlsx https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f7208b61-cc26-42a7-a698-1d32af8d248f/download/tcd_admpop_2023.xlsx (?i)meta|info|readme|source|note 60 6
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/f7208b61-cc26-42a7-a698-1d32af8d248f/tcd_admpop_2023.xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 23,529 bytes
-  sheet 'Metadata' 23x2
-    Item | Metadata
-    Country | Chad
-    Source(s) | Institut National 
-    Source(s) Link(s) | Shared directly by
-    Population Data Ty | Population project
-    Baseline Populatio | 2009
-    COD-PS Reference Y | 2023
-    COD-PS Publication | 2023
-    ADM-1 Name | Province
-    ADM-1 Number of Un | 23
-    ADM-1 Sex and Age  | Sex and age disagg
-    ADM-1 Open-ended A | 80+
-    ADM-2 Name | N/A
-    ADM-2 Number of Un | N/A
-    ADM-2 Sex and Age  | N/A
-    ADM-2 Open-ended A | N/A
-    ADM-3 Name | N/A
-    ADM-3 Number of Un | N/A
-    ADM-3 Sex and Age  | N/A
-    ADM-3 Open-ended A | N/A
-    General Notes | This COD-PS is bas
-    Data Limitations | The age-sex patter
-    COD-PS Demographic | The COD-PS was ass
-  sheet 'Methodological Documentation' 9x2
-  sheet 'tcd_admpop_adm0_2023' 2x59
-  sheet 'tcd_admpop_adm1_2023' 24x61
-== pdfg https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/4eaace66-d2bf-4e4e-a089-ccbd726fe394/download/tcd_codps_qa_2023.pdf (?i)census|recensement|RGPH|source|INSEED|projection|2009 40
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/4eaace66-d2bf-4e4e-a089-ccbd726fe394/tcd_codps_qa_2023.pdf application/pdf 993,089 bytes
-  6 pages
-  p1: Common Operational Dataset on Population Statistics (COD-PS) against the projections by the WPP 2022
-  p1: Source(s) Institut National de la Statistique, des Etudes Economiques et Démographiques (INSEED)
-  p1: Source(s) Link(s) Shared directly by the NSO with UNFPA.
-  p1: Population Data Type (Census Population projection
-  p1: or Population projection)
-  p1: Baseline Population Year 2009
-  p2: General Notes This COD-PS is based on two separate sets of projections from the INSEED, an ADM-2
-  p2: 2021 projection, disaggregated by sex and age, and a ADM-2 2021-2023 set of
-  p2: projections, not disaggregated by sex and age. This COD-PS uses the age-sex patterns of
-  p2: the 2021 projections in combination with the totals from the 2021-2023 projection series,
-  p2: COD-PS Demographic Data The COD-PS was assessed against ADM-0 estimates and projections published by the
-  p2: two separate sets of projections from the INSEED, an ADM-2 2021 projection,
-  p2: disaggregated by sex and age, and a 2021-2023 set of projections, not disaggregated by
-  p2: sex and age. This COD-PS uses the age-sex patterns of the 2021 projections in
-  p2: combination with the ADM-2 totals from the 2021-2023 projection series, with some
-  p2: Baseline Population 2009 census
-  p3: At ADM-0, the implied post-censal (2009-2023) population growth rates of this COD-PS (3.52% per year:
-  p3: female: 3.50%, male: 3.55%) are somewhat higher than the UN’s population projections published in the
-  p3: likely shaped in differences in projection assumptions and methods used.[Note that this calculation, and
-  p3: 2009 census from the former Ennedi region.]
-  p3: Since the last census, this COD-PS projects the highest growth rates for the urban region of N’Djamena
-  p3: rates reflect the projection assumptions used, especially related to migration and fertility.
-  p3: Last Census, Last Census, CODPS, PGR(%), PGR(%),
-  p4: Last Census, Last Census, CODPS, PGR(%), PGR(%),
-  p4: projections at the national level.
-  p4: Revision projections at ADM-0 level, with the INSEED projections tending to estimate fewer working-age
-  p4: and COD-PS projections of 26.43% for males, but a difference of 2.1% in the other direction for females.
-  p5: ADM-1 projections and the WPP ADM-0 projection.
-  p5: While the sex and age proportions of many provinces generally follow the WPP ADM-0 projections, the
-  p5: province of Guéra has a significantly higher share of children aged 10-14 than the national projection
-== pdfp https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/0510df39-c506-4389-9699-381563380a92/download/copy-of-cmr-cod-ps-2025-explanatory-note.pdf 1-4 300
-  HTTP 200 -> https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/0510df39-c506-4389-9699-381563380a92/copy-of-cmr-cod-ps-2025-explanatory-note.pdf application/pdf 706,950 bytes
-  7 pages
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-  --- page 1 ---
-  COD-PS Cameroon
-  Update Year 2025 / Reference Year 2025
-  Objective of This Explanatory Technical Note
-  This explanatory technical note provides supplementary notes on the strengths and limitations of each
-  Common Operational Dataset on Population Statistics (COD-PS) against the projections by the WPP
-  2024 Revision of the UN to enable informed humanitarian decision-making.
-  Structure of Supplementary Note
-  This supplementary note is organized into the following sections:
-  1. Metadata
-  2. Methodological Documentation
-  3. Intrinsic Population Growth Rates (ADM-0 & 1)
-  4. Population counts by age and sex (ADM-0)
-  5. Relative population size by age and sex (ADM-1)
-  1. Metadata
-  Item Metadata
-  Country Cameroon
-  Source(s) Bureau Central des Recensements et des Etudes de Population (BUCREP) Cameroun
-  Source(s) Link(s) http://www.bucrep.cm/index.php/fr/telechargement/category/82-projections-
-  demographiques
-  Population Data Type Population projection
-  (Census enumeration, Direct
-  estimate, or Population
-  projection)
-  Year of the Baseline 2005
-  Population
-  Reference year of this COD- 2025
-  PS
-  Publication year of this 2025
-  COD-PS
-  ADM-1 Name Région
-  ADM-1 Number of Units 10
-  ADM-1 Sex and Age Sex and age disaggregated by 5-year age groups
-  Disaggregation
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-  --- page 2 ---
-  Item Metadata
-  ADM-1 Open-ended Age 80+
-  Group
-  General Notes This COD-PS dataset includes an additional table at the metropolis level, which
-  contains projected population counts for two major cities in Cameroon, Ville de
-  Douala and Ville de Yaoundé.
-  Data Limitations Cameroon has not conducted a census since 2005, and preparations for the next
-  census are ongoing. As limited information is available on demographic dynamics
-  since the last census, and the baseline population was measured 20 years ago,
-  assumptions around post-censal demographic change are subject to notable
-  uncertainty. For example, while there has been substantial internal migration in
-  Cameroon since 2005, the subnational projections in this COD-PS assume zero net
-  internal migration. This may impact the projected ADM-1 population counts by age
-  and sex included in this COD-PS.
-  COD-PS Demographic Data The COD-PS was assessed against ADM-0 estimates and projections published in
-  Quality Assessment the World Population Prospects (2024 Revision) by the United Nations Department
-  of Economic and Social Affairs (UN-DESA), and found to be largely consistent at the
-  ADM-0 and ADM-1 level.
-  2. Methodological Documentation
-  Item Methodological Documentation
-  Methodology Used The cohort component method was used to construct the projections upon which
-  this COD-PS is based. These projections are based on the 2005 census, and were
-  updated for the period 2016-2025 based on survey data (Demographic and Health
-  Surveys and Multiple Cluster Indicator Surveys) up to 2014. Region (ADM-1)
-  projections were calibrated to align with national projections.
-  Baseline Population 2005 census
-  Post-enumeration survey A PES on a representative 2% sample of the population was carried out from
-  (PES) November 2006 - January 2007. Detailed results from the PES were not found
-  online.
-  Assessment and Adjustment The United Nations combined age-sex accuracy index was 29.81 for the 2005
-  of the Baseline Population census, indicating somewhat inaccurate age reporting. No recorded adjustments to
-  the baseline population were found online.
-  Fertility (births) Between 1991 and 2014, the total fertility rate (TFR) in Cameroon remained relatively
-  high, though it declined from 5.9 children per woman in 1991 to 5.1 children per
-  woman in 2011 and 4.9 children per woman in 2014. The medium scenario for these
-  projections assumes a slight decline in TFR nationally, from 4.9 in 2014 to 4.4 in
-  2025, with most regions also projected to experience an overall decline in TFR 2014-
-  2025 except for the Nord and Extrême-Nord Regions.
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-  --- page 3 ---
-  Item Methodological Documentation
-  Mortality (deaths) The NSO expects life expectancy at birth to rise, from 53.4 years (male) and 57.1
-  years (female) in 2005 to 57.1 years (male) and 60.6 years (female) in 2025. It was
-  assumed that the HIV prevalence observed in 2011 will fall by half in 2025 both at the
-  national level and in each region.
-  International migration (net The NSO assumed net international migration to be zero, due to the lack of sufficient
-  migration) data.
-  Internal migration (migration The NSO assumed net internal migration to be zero, due to the lack of sufficient data
-  within country) on internal migration dynamics within Cameroon.
-  3. Intrinsic Population Growth Rates (ADM-0 & 1)
-  At ADM-0, the implied post-censal (2005-2025) population growth rates (2.61% per year: female
-  2.64%, male 2.58%) are generally consistent with the rates implied by the UNʼs population projections
-  (2006: 2.75%, 2012: 2.82%, 2018: 2.81%, 2025: 2.54%) published in the 2024 revision of the World
-  Population Prospects (WPP).
-  At ADM-1, during the post-censal period the NSO projects the highest growth rates for the regions of
-  Nord (3.62% per year: female 3.68%, male 3.57%), Centre (3.05% per year: female 3.08%, male
-  3.02%), and Extrême-Nord (2.84% per year: female 2.81%, male 2.88%). The regions of Nord and
-  Extrême-Nord are projected to have the highest fertility among regions over the projection period, likely
-  contributing to this relatively high expected growth (projected TFR for 2025 is 6.7 in Extrême-Nord and
-  6.0 in Nord). High growth for the Centre Region overall is likely driven in part by expectations of
-  continued high growth of the capital city Yaoundé.
-  The lowest growth rates, conversely, are projected for the regions of Ouest (1.29% per year: female
-  1.39%, male 1.20%), followed by Sud (1.67% per year: female 1.60%, male 1.73%) and Nord-Ouest
-  (1.69% per year: female 1.80%, male 1.58%).
-  Last Census, Last Census, CODPS, PGR(%), PGR(%), PGR(%),
-  ADM-1 Female Male Female CODPS, Male Female Male Both
-  Adamaoua 445,376 438,913 796,794 744,979 2.91 2.65 2.78
-  Centre 1,487,159 1,494,925 2,751,647 2,735,993 3.08 3.02 3.05
-  Est 386,610 385,145 644,466 639,305 2.56 2.53 2.54
-  Extrême- 1,576,545 1,535,247 2,768,123 2,730,993 2.81 2.88 2.84
-  Nord
-  Littoral 1,307,849 1,318,374 2,246,136 2,252,731 2.70 2.68 2.69
-  Nord 851,032 836,927 1,775,848 1,710,068 3.68 3.57 3.62
-  Nord- 900,091 828,862 1,291,174 1,137,000 1.80 1.58 1.69
-  Ouest
-  Ouest 914,569 805,478 1,208,515 1,024,323 1.39 1.20 1.29
-Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
-  --- page 4 ---
-  Last Census, Last Census, CODPS, PGR(%), PGR(%), PGR(%),
-  ADM-1 Female Male Female CODPS, Male Female Male Both
-  Sud 313,312 321,343 431,150 454,584 1.60 1.73 1.67
-  Sud- 649,257 666,822 1,053,594 1,044,895 2.42 2.25 2.34
-  Ouest
-  Total 8,831,800 8,632,036 14,967,447 14,474,871 2.64 2.58 2.61
-  4. Population Counts by age and sex (ADM-0)
-  Below, we compare the population structure across sex and age groups between the NSO and WPP
-  projections at the national level. The sex and age specific population counts of this COD-PS at ADM-0
-  are generally consistent with the WPP ADM-0 projection, though this COD-PS projects somewhat lower
-  numbers of youths aged 5-19 than the WPP. For the 5-9 age group, for example, this COD-PS projects
-  8.33% fewer males and 6.53% fewer females than the WPP. These differences in the projected
-  population of children could be shaped by assumptions around fertility since the 2005 census.
-  CODPS-WPP, Female Difference(%) CODPS-WPP, Male Difference(%)
-  0-4 -12,353 -0.55 -56,404 -2.48
-  5-9 -134,346 -6.53 -174,254 -8.33
-  10-14 -79,872 -4.41 -112,643 -6.15
-  15-19 -92,179 -5.72 -117,587 -7.26
-  20-24 -22,104 -1.63 -18,167 -1.34
-  25-29 7,738 0.67 23,260 2.02
-  30-34 -39,631 -3.85 -5,779 -0.57
-  35-39 31,112 3.50 -9,872 -1.12
-  40-44 74,775 10.18 -39,029 -5.40
-  45-49 77,362 13.27 -11,468 -2.02
-  50-54 39,433 8.60 6,429 1.46
-  55-59 30,164 8.66 7,898 2.41
-  60-64 45,786 17.62 28,818 12.19
-  65-69 27,940 14.45 29,691 17.70
-  70-74 25,666 19.58 25,783 24.08
-  75-79 -5,680 -7.22 5,270 8.83
-  80Plus 4,530 7.31 2,695 6.37
+== Benguela p70: 596x842 points, rotate 0; pypdf text 120 characters; pdfplumber 61 characters (61 upright), 0 pictures, 0 rectangles, 0 lines, 0 curves
+   text: 
+   drawn: Benguela_p70.png (1656x2341) and 0 pieces
+== Benguela p71: 596x842 points, rotate 0; pypdf text 56 characters; pdfplumber 34 characters (34 upright), 1 pictures, 0 rectangles, 0 lines, 0 curves
+   text: 1. POPULAÇÃO
+   picture 0: x -6-596, top -0-853, source (1011, 1430), 8 bits, [/'DeviceRGB']
+   row '1. POPULAÇÃO' @303:   [1.@139 POPULAÇÃO@157]
+   drawn: Benguela_p71.png (1656x2341) and 8 pieces
+== Benguela p72: 596x842 points, rotate 0; pypdf text 10 characters; pdfplumber 6 characters (6 upright), 0 pictures, 0 rectangles, 0 lines, 0 curves
+   text: 
+   drawn: Benguela_p72.png (1656x2341) and 0 pieces
+== Benguela p73: 596x842 points, rotate 0; pypdf text 2020 characters; pdfplumber 1954 characters (1954 upright), 0 pictures, 73 rectangles, 539 lines, 0 curves
+   text: Resultados Definitivos do RGPH 2024 – Província de Benguela 72 Quadro 1.1 - População por área de residência e província, 2024 Total Homens Mulheres Benguela 2 597 638 1 246 173 1 351 465 Área de residência Urbana 1 545 159 739 618 805 541 Rural 1 052 479 506 555 545 924 Municipios Benguela 380 048 182 079 197 969 Benguela 380 048 182 079 197 969 Ganda 165 651 78 816 86 835 Ganda 165 651 78 816 86
+   row 'Quadro 1.1 - População por área de residência e província,' @59: 2024@445  [Quadro@180 1.1@213 -@229 População@234 por@279 área@296 de@317 residência@329 e@374 província,@381]
+   row 'Total Homens Mulheres' @73:   [Total@274 Homens@340 Mulheres@406]
+   row 'Benguela' @84: 2597638@314 1246173@382 1351465@451  [Benguela@174]
+   row 'Área de residência' @95:   [Área@174 de@191 residência@203]
+   row 'Urbana' @105: 1545159@314 739618@382 805541@451  [Urbana@174]
+   row 'Rural' @116: 1052479@314 506555@382 545924@451  [Rural@174]
+   row 'Municipios' @127:   [Municipios@174]
+   row 'Benguela' @137: 380048@314 182079@382 197969@451  [Benguela@174]
+   row 'Benguela' @148: 380048@314 182079@382 197969@451  [Benguela@182]
+   row 'Ganda' @159: 165651@314 78816@382 86835@451  [Ganda@174]
+   row 'Ganda' @169: 165651@314 78816@382 86835@451  [Ganda@182]
+   row 'Lobito' @180: 380689@314 184153@382 196536@451  [Lobito@174]
+   row 'Lobito' @191: 380689@314 184153@382 196536@451  [Lobito@182]
+   row 'Catumbela' @202: 168774@314 81181@382 87594@451  [Catumbela@174]
+   row 'Catumbela' @212: 168774@314 81181@382 87594@451  [Catumbela@182]
+   row 'Bocoio' @223: 161009@314 76621@382 84388@451  [Bocoio@174]
+   row 'Bocoio' @234: 88732@314 42046@382 46686@451  [Bocoio@182]
+   row 'Cubal do Lumbo' @244: 18451@314 8836@382 9615@451  [Cubal@182 do@202 Lumbo@212]
+   row 'Monte Belo' @255: 53826@314 25739@382 28087@451  [Monte@182 Belo@205]
+   row 'Balombo' @266: 120272@314 58516@382 61755@451  [Balombo@174]
+   row 'Balombo' @276: 100085@314 48534@382 51551@451  [Balombo@174]
+   row 'Maca Mombolo' @287: 20186@314 9982@382 10205@451  [Maca@182 Mombolo@201]
+   row 'Cubal' @298: 229379@314 109447@382 119932@451  [Cubal@174]
+   row 'Cubal' @309: 229379@314 109447@382 119932@451  [Cubal@182]
+   row 'Baia Farta' @319: 95994@314 46207@382 49787@451  [Baia@174 Farta@190]
+   row 'Baia Farta' @330: 95994@314 46207@382 49787@451  [Baia@182 Farta@197]
+   row 'Caimbambo' @341: 79511@314 37670@382 41841@451  [Caimbambo@174]
+   row 'Caiave' @351: 12634@314 6072@382 6562@451  [Caiave@182]
+   row 'Caimbambo' @362: 46672@314 22020@382 24652@451  [Caimbambo@182]
+   row 'Viangombe' @373: 20205@314 9578@382 10627@451  [Viangombe@182]
+   row 'Chongorói' @383: 110326@314 52894@382 57431@451  [Chongorói@174]
+   row 'Camuine' @394: 20934@314 10276@382 10658@451  [Camuine@182]
+   row 'Chongorói' @405: 89392@314 42618@382 46774@451  [Chongorói@182]
+   row 'Egito Praia' @416: 33243@314 16127@382 17116@451  [Egito@174 Praia@192]
+   row 'Egito Praia' @426: 18003@314 8809@382 9194@451  [Egito@182 Praia@200]
+   row 'Canjala' @437: 15239@314 7318@382 7922@451  [Canjala@182]
+   row 'Biópio' @448: 8228@314 3938@382 4290@451  [Biópio@174]
+   row 'Biópio' @458: 8228@314 3938@382 4290@451  [Biópio@182]
+   row 'Chila' @469: 17474@314 8437@382 9037@451  [Chila@174]
+   row 'Chila' @480: 17474@314 8437@382 9037@451  [Chila@182]
+   row 'Chindumbo' @490: 32013@314 15608@382 16405@451  [Chindumbo@174]
+   row 'Chindumbo' @501: 32013@314 15608@382 16405@451  [Chindumbo@182]
+   row 'Dombe Grande' @512: 42918@314 20549@382 22370@451  [Dombe@174 Grande@200]
+   row 'Dombe Grande' @523: 42918@314 20549@382 22370@451  [Dombe@182 Grande@207]
+   row 'Canhamela' @533: 31082@314 14952@382 16131@451  [Canhamela@174]
+   row 'Canhamela' @544: 31082@314 14952@382 16131@451  [Canhamela@182]
+   row 'Catengue' @555: 17646@314 8526@382 9119@451  [Catengue@174]
+   row 'Catengue' @565: 17646@314 8526@382 9119@451  [Catengue@182]
+   row 'Bolonguera' @576: 18970@314 9476@382 9495@451  [Bolonguera@174]
+   row 'Bolonguera' @587: 18970@314 9476@382 9495@451  [Bolonguera@182]
+   row 'Iambala' @598: 74760@314 35380@382 39381@451  [Iambala@174]
+   row 'Iambala' @608: 74760@314 35380@382 39381@451  [Iambala@182]
+   row 'Capupa' @619: 72802@314 34453@382 38349@451  [Capupa@174]
+   row 'Capupa' @630: 72802@314 34453@382 38349@451  [Capupa@182]
+   row 'Babaera' @640: 76056@314 36148@382 39908@451  [Babaera@174]
+   row 'Babaera' @651: 76056@314 36148@382 39908@451  [Babaera@182]
+   row 'Chicuma' @662: 40717@314 19777@382 20940@451  [Chicuma@174]
+   row 'Chicuma' @672: 40717@314 19777@382 20940@451  [Chicuma@182]
+   row 'Navegantes' @683: 240075@314 115219@382 124856@451  [Navegantes@174]
+   row 'Navegantes' @694: 240075@314 115219@382 124856@451  [Navegantes@182]
+   row 'Resultados Definitivos do RGPH 2024 – Província de Benguela' @787: 72@505  [Resultados@85 Definitivos@134 do@181 RGPH@194 2024@221 –@245 Província@252 de@294 Benguela@307]
+== Benguela p74: 842x596 points, rotate 0; pypdf text 3469 characters; pdfplumber 3335 characters (3335 upright), 0 pictures, 157 rectangles, 1198 lines, 0 curves
+   text: Resultados Definitivos do RGPH 2024 – Província de Benguela 73 Quadro 1.2 - População por idades simples, 2024 Total Homem Mulher Benguela 2 597 638 1 246 173 1 351 465 Idade 0 ano 79 161 39 426 39 735 1 ano 77 282 38 325 38 957 2 anos 68 802 34 441 34 361 3 anos 72 791 36 245 36 546 4 anos 77 309 38 564 38 745 5 anos 69 861 35 014 34 848 6 anos 68 409 34 061 34 349 7 anos 66 414 33 267 33 147 8 a
+   row 'Quadro 1.2 - População por idades simples,' @59: 2024@522  [Quadro@320 1.2@354 -@369 População@374 por@420 idades@436 simples,@466]
+   row 'Total Homem Mulher Total Homem Mulher Total Homem Mulher' @77:   [Total@112 Homem@179 Mulher@233 Total@355 Homem@422 Mulher@476 Total@598 Homem@665 Mulher@719]
+   row 'Benguela 2 597 638 1 246 173 1 351 465 Benguela 2 597 638 1 246 173 1 351 465 Benguela' @87: 2597638@636 1246173@692 1351465@746  [Benguela@62 2@120 597@125 638@138 1@176 246@182 173@195 1@229 351@235 465@248 Benguela@305 2@363 597@368 638@381 1@419 246@425 173@438 1@472 351@478 465@491 Benguela@548]
+   row 'Idade Idade Idade' @96:   [Idade@62 Idade@305 Idade@548]
+   row '0 ano 79 161 39 426 39 735 42 anos 19 114 8 981 10 133 anos' @106: 2520@629 1020@686 1500@739  [0@73 ano@79 79@124 161@134 39@181 426@190 39@234 735@243 42@313 anos@322 19@367 114@377 8@426 981@431 10@477 133@486 anos@560]
+   row '1 ano 77 282 38 325 38 957 43 anos 16 603 7 864 8 739 85 anos' @116: 777@626 277@683 500@736  [1@73 ano@79 77@124 282@134 38@181 325@190 38@234 957@243 43@313 anos@322 16@367 603@377 7@426 864@431 8@479 739@484 85@556 anos@565]
+   row '2 anos 68 802 34 441 34 361 44 anos 20 076 9 258 10 819 86 anos' @125: 630@626 248@683 382@736  [2@72 anos@77 68@124 802@134 34@181 441@190 34@234 361@243 44@313 anos@322 20@367 076@377 9@426 258@431 10@477 819@486 86@556 anos@565]
+   row '3 anos 72 791 36 245 36 546 45 anos 16 810 7 471 9 339 87 anos' @135: 492@626 178@683 314@736  [3@72 anos@77 72@124 791@134 36@181 245@190 36@234 546@243 45@313 anos@322 16@367 810@377 7@426 471@431 9@479 339@484 87@556 anos@565]
+   row '4 anos 77 309 38 564 38 745 46 anos 16 449 7 092 9 357 88 anos' @144: 469@626 149@683 320@736  [4@72 anos@77 77@124 309@134 38@181 564@190 38@234 745@243 46@313 anos@322 16@367 449@377 7@426 092@431 9@479 357@484 88@556 anos@565]
+   row '5 anos 69 861 35 014 34 848 47 anos 15 863 6 960 8 903 89 anos' @154: 543@626 172@683 371@736  [5@72 anos@77 69@124 861@134 35@181 014@190 34@234 848@243 47@313 anos@322 15@367 863@377 6@426 960@431 8@479 903@484 89@556 anos@565]
+   row '6 anos 68 409 34 061 34 349 48 anos 17 207 7 752 9 455 90 anos' @164: 386@626 120@683 266@736  [6@72 anos@77 68@124 409@134 34@181 061@190 34@234 349@243 48@313 anos@322 17@367 207@377 7@426 752@431 9@479 455@484 90@556 anos@565]
+   row '7 anos 66 414 33 267 33 147 49 anos 20 740 9 300 11 440 91 anos' @174: 237@626 100@683 137@736  [7@72 anos@77 66@124 414@134 33@181 267@190 33@234 147@243 49@313 anos@322 20@367 740@377 9@426 300@431 11@477 440@486 91@556 anos@565]
+   row '8 anos 67 256 33 321 33 934 50 anos 16 215 7 237 8 978 92 anos' @183: 284@626 99@681 185@736  [8@72 anos@77 67@124 256@134 33@181 321@190 33@234 934@243 50@313 anos@322 16@367 215@377 7@426 237@431 8@479 978@484 92@556 anos@565]
+   row '9 anos 71 102 35 462 35 640 51 anos 14 122 6 078 8 044 93 anos' @193: 256@626 99@681 157@736  [9@72 anos@77 71@124 102@134 35@181 462@190 35@234 640@243 51@313 anos@322 14@367 122@377 6@426 078@431 8@479 044@484 93@556 anos@565]
+   row '10 anos 72 561 35 927 36 634 52 anos 14 597 6 583 8 015 94 anos' @202: 408@626 160@683 248@736  [10@70 anos@79 72@124 561@134 35@181 927@190 36@234 634@243 52@313 anos@322 14@367 597@377 6@426 583@431 8@479 015@484 94@556 anos@565]
+   row '11 anos 69 289 34 663 34 626 53 anos 11 759 5 420 6 339 95 anos' @212: 143@626 44@681 99@734  [11@70 anos@79 69@124 289@134 34@181 663@190 34@234 626@243 53@313 anos@322 11@367 759@377 5@426 420@431 6@479 339@484 95@556 anos@565]
+   row '12 anos 72 614 36 010 36 604 54 anos 14 684 6 470 8 214 96 anos' @222: 85@625 27@681 59@734  [12@70 anos@79 72@124 614@134 36@181 010@190 36@234 604@243 54@313 anos@322 14@367 684@377 6@426 470@431 8@479 214@484 96@556 anos@565]
+   row '13 anos 69 607 34 404 35 203 55 anos 13 200 5 778 7 422 97 anos' @231: 81@625 21@681 60@734  [13@70 anos@79 69@124 607@134 34@181 404@190 35@234 203@243 55@313 anos@322 13@367 200@377 5@426 778@431 7@479 422@484 97@556 anos@565]
+   row '14 anos 74 424 37 078 37 346 56 anos 12 046 5 368 6 678 98 anos' @241: 104@626 31@681 73@734  [14@70 anos@79 74@124 424@134 37@181 078@190 37@234 346@243 56@313 anos@322 12@367 046@377 5@426 368@431 6@479 678@484 98@556 anos@565]
+   row '15 anos 69 792 34 249 35 543 57 anos 10 695 4 548 6 148 99 anos' @251: 127@626 44@681 83@734  [15@70 anos@79 69@124 792@134 34@181 249@190 35@234 543@243 57@313 anos@322 10@367 695@377 4@426 548@431 6@479 148@484 99@556 anos@565]
+   row '16 anos 68 068 33 088 34 979 58 anos 10 967 4 854 6 112 100 anos' @260: 79@625 18@681 61@734  [16@70 anos@79 68@124 068@134 33@181 088@190 34@234 979@243 58@313 anos@322 10@367 967@377 4@426 854@431 6@479 112@484 100@554 anos@567]
+   row '17 anos 66 136 32 199 33 937 59 anos 11 084 4 797 6 287 101 anos' @270: 45@625 21@681 24@734  [17@70 anos@79 66@124 136@134 32@181 199@190 33@234 937@243 59@313 anos@322 11@367 084@377 4@426 797@431 6@479 287@484 101@554 anos@567]
+   row '18 anos 64 223 30 688 33 535 60 anos 11 614 5 242 6 372 102 anos' @280: 66@625 29@681 37@734  [18@70 anos@79 64@124 223@134 30@181 688@190 33@234 535@243 60@313 anos@322 11@367 614@377 5@426 242@431 6@479 372@484 102@554 anos@567]
+   row '19 anos 61 735 29 288 32 447 61 anos 9 580 4 343 5 237 103 anos' @289: 40@625 12@681 28@734  [19@70 anos@79 61@124 735@134 29@181 288@190 32@234 447@243 61@313 anos@322 9@369 580@375 4@426 343@431 5@479 237@484 103@554 anos@567]
+   row '20 anos 57 037 26 657 30 380 62 anos 9 693 4 325 5 368 104 anos' @299: 66@625 29@681 37@734  [20@70 anos@79 57@124 037@134 26@181 657@190 30@234 380@243 62@313 anos@322 9@369 693@375 4@426 325@431 5@479 368@484 104@554 anos@567]
+   row '21 anos 51 161 24 004 27 157 63 anos 9 314 4 157 5 158 105 anos' @309: 23@625 10@681 13@734  [21@70 anos@79 51@124 161@134 24@181 004@190 27@234 157@243 63@313 anos@322 9@369 314@375 4@426 157@431 5@479 158@484 105@554 anos@567]
+   row '22 anos 48 539 22 766 25 773 64 anos 9 402 4 059 5 343 106 anos' @318: 9@623 2@679 6@732  [22@70 anos@79 48@124 539@134 22@181 766@190 25@234 773@243 64@313 anos@322 9@369 402@375 4@426 059@431 5@479 343@484 106@554 anos@567]
+   row '23 anos 46 109 21 999 24 110 65 anos 7 921 3 434 4 487 107 anos' @328: 10@625 6@679 4@732  [23@70 anos@79 46@124 109@134 21@181 999@190 24@234 110@243 65@313 anos@322 7@369 921@375 3@426 434@431 4@479 487@484 107@554 anos@567]
+   row '24 anos 55 407 26 684 28 723 66 anos 7 296 3 239 4 058 108 anos' @338: 12@625 2@679 10@734  [24@70 anos@79 55@124 407@134 26@181 684@190 28@234 723@243 66@313 anos@322 7@369 296@375 3@426 239@431 4@479 058@484 108@554 anos@567]
+   row '25 anos 46 536 22 114 24 422 67 anos 6 493 2 913 3 580 109 anos' @347: 20@625 5@679 15@734  [25@70 anos@79 46@124 536@134 22@181 114@190 24@234 422@243 67@313 anos@322 6@369 493@375 2@426 913@431 3@479 580@484 109@554 anos@567]
+   row '26 anos 39 657 18 833 20 825 68 anos 6 243 2 732 3 511 110 anos' @357: 9@623 0@679 9@732  [26@70 anos@79 39@124 657@134 18@181 833@190 20@234 825@243 68@313 anos@322 6@369 243@375 2@426 732@431 3@479 511@484 110@554 anos@567]
+   row '27 anos 38 996 18 463 20 533 69 anos 6 575 2 776 3 799 111 anos' @367: 5@623 1@679 4@732  [27@70 anos@79 38@124 996@134 18@181 463@190 20@234 533@243 69@313 anos@322 6@369 575@375 2@426 776@431 3@479 799@484 111@554 anos@567]
+   row '28 anos 34 599 16 354 18 245 70 anos 6 159 2 736 3 423 112 anos' @376: 5@623 1@679 4@732  [28@70 anos@79 34@124 599@134 16@181 354@190 18@234 245@243 70@313 anos@322 6@369 159@375 2@426 736@431 3@479 423@484 112@554 anos@567]
+   row '29 anos 33 302 15 799 17 503 71 anos 4 817 2 221 2 596 113 anos' @386: 5@623 5@679 0@732  [29@70 anos@79 33@124 302@134 15@181 799@190 17@234 503@243 71@313 anos@322 4@369 817@375 2@426 221@431 2@479 596@484 113@554 anos@567]
+   row '30 anos 33 370 15 672 17 698 72 anos 4 929 2 265 2 664 114 anos' @396: 5@623 2@679 2@732  [30@70 anos@79 33@124 370@134 15@181 672@190 17@234 698@243 72@313 anos@322 4@369 929@375 2@426 265@431 2@479 664@484 114@554 anos@567]
+   row '31 anos 30 270 14 217 16 053 73 anos 4 482 1 939 2 543 115 anos' @405: 4@623 2@679 1@732  [31@70 anos@79 30@124 270@134 14@181 217@190 16@234 053@243 73@313 anos@322 4@369 482@375 1@426 939@431 2@479 543@484 115@554 anos@567]
+   row '32 anos 32 782 15 505 17 278 74 anos 5 358 2 199 3 159 116 anos' @415: 4@623 0@679 4@732  [32@70 anos@79 32@124 782@134 15@181 505@190 17@234 278@243 74@313 anos@322 5@369 358@375 2@426 199@431 3@479 159@484 116@554 anos@567]
+   row '33 anos 25 991 12 596 13 396 75 anos 3 877 1 655 2 222 117 anos' @425: 6@623 0@679 6@732  [33@70 anos@79 25@124 991@134 12@181 596@190 13@234 396@243 75@313 anos@322 3@369 877@375 1@426 655@431 2@479 222@484 117@554 anos@567]
+   row '34 anos 29 356 14 066 15 290 76 anos 3 229 1 423 1 806 118 anos' @434: 2@623 0@679 2@732  [34@70 anos@79 29@124 356@134 14@181 066@190 15@234 290@243 76@313 anos@322 3@369 229@375 1@426 423@431 1@479 806@484 118@554 anos@567]
+   row '35 anos 27 690 12 887 14 804 77 anos 3 061 1 416 1 645 119 anos' @444: 7@623 2@679 5@732  [35@70 anos@79 27@124 690@134 12@181 887@190 14@234 804@243 77@313 anos@322 3@369 061@375 1@426 416@431 1@479 645@484 119@554 anos@567]
+   row '36 anos 26 713 12 256 14 456 78 anos 2 841 1 211 1 630 120 anos' @454: 5@623 2@679 2@732  [36@70 anos@79 26@124 713@134 12@181 256@190 14@234 456@243 78@313 anos@322 2@369 841@375 1@426 211@431 1@479 630@484 120@554 anos@567]
+   row '37 anos 25 213 11 752 13 461 79 anos' @463: 3097@386 1261@443 1837@496  [37@70 anos@79 25@124 213@134 11@181 752@190 13@234 461@243 79@313 anos@322]
+   row '38 anos 25 095 11 693 13 402 80 anos' @473: 2480@386 1054@443 1425@496  [38@70 anos@79 25@124 095@134 11@181 693@190 13@234 402@243 80@313 anos@322]
+   row '39 anos 24 721 11 589 13 132 81 anos' @483: 2283@386 1010@443 1273@496  [39@70 anos@79 24@124 721@134 11@181 589@190 13@234 132@243 81@313 anos@322]
+   row '40 anos 23 521 11 152 12 369 82 anos' @492: 2438@386 1032@443 1406@496  [40@70 anos@79 23@124 521@134 11@181 152@190 12@234 369@243 82@313 anos@322]
+   row '41 anos 19 129 9 022 10 107 83 anos' @502: 2226@386 984@440 1242@496  [41@70 anos@79 19@124 129@134 9@183 022@188 10@234 107@243 83@313 anos@322]
+   row 'Resultados Definitivos do RGPH 2024 – Província de Benguela' @554: 73@765  [Resultados@57 Definitivos@105 do@153 RGPH@166 2024@193 –@216 Província@224 de@266 Benguela@278]
+== Benguela p75: 596x842 points, rotate 0; pypdf text 948 characters; pdfplumber 913 characters (913 upright), 0 pictures, 46 rectangles, 203 lines, 0 curves
+   text: Resultados Definitivos do RGPH 2024 – Província de Benguela 74 Quadro 1.3 - População por grupos etários quinquenais, 2024 Total Homens Mulheres Grupo etários Quinquenais 2 597 638 1 246 173 1 351 465 0-4 anos 375 345 187 001 188 344 5-9 anos 343 043 171 125 171 918 10-14 anos 358 494 178 081 180 412 15-19 anos 329 954 159 513 170 442 20-24 anos 258 253 122 110 136 143 25-29 anos 193 090 91 562 10
+   row 'Quadro 1.3 - População por grupos etários quinquenais,' @71: 2024@439  [Quadro@185 1.3@219 -@234 População@239 por@285 grupos@302 etários@332 quinquenais,@363]
+   row 'Total Homens Mulheres' @87:   [Total@284 Homens@344 Mulheres@408]
+   row 'Grupo etários' @100:   [Grupo@172 etários@197]
+   row 'Quinquenais' @114: 2597638@321 1246173@387 1351465@453  [Quinquenais@172]
+   row '0-4 anos' @127: 375345@321 187001@387 188344@453  [0-4@172 anos@185]
+   row '5-9 anos' @140: 343043@321 171125@387 171918@453  [5-9@172 anos@185]
+   row '10-14 anos' @153: 358494@321 178081@387 180412@453  [10-14@172 anos@195]
+   row '15-19 anos' @167: 329954@321 159513@387 170442@453  [15-19@172 anos@195]
+   row '20-24 anos' @180: 258253@321 122110@387 136143@453  [20-24@172 anos@195]
+   row '25-29 anos' @193: 193090@321 91562@387 101528@453  [25-29@172 anos@195]
+   row '30-34 anos' @206: 151770@321 72054@387 79715@453  [30-34@172 anos@195]
+   row '35-39 anos' @220: 129432@321 60178@387 69255@453  [35-39@172 anos@195]
+   row '40-44 anos' @233: 98444@321 46276@387 52167@453  [40-44@172 anos@195]
+   row '45-49 anos' @246: 87069@321 38575@387 48493@453  [45-49@172 anos@195]
+   row '50-54 anos' @259: 71378@321 31788@387 39590@453  [50-54@172 anos@195]
+   row '55-59 anos' @273: 57992@321 25345@387 32647@453  [55-59@172 anos@195]
+   row '60-64 anos' @286: 49604@321 22126@387 27478@453  [60-64@172 anos@195]
+   row '65-69 anos' @299: 34529@321 15094@387 19435@453  [65-69@172 anos@195]
+   row '70-74 anos' @312: 25745@321 11360@387 14385@453  [70-74@172 anos@195]
+   row '75-79 anos' @326: 16105@321 6964@387 9140@453  [75-79@172 anos@195]
+   row '80-84 anos' @339: 11947@321 5101@387 6846@453  [80-84@172 anos@195]
+   row '85-89 anos' @352: 2910@321 1024@387 1887@453  [85-89@172 anos@195]
+   row '90-94 anos' @365: 1571@321 577@387 993@453  [90-94@172 anos@195]
+   row '95 ou mais anos' @379: 965@321 319@387 647@453  [95@172 ou@183 mais@194 anos@213]
+   row 'Resultados Definitivos do RGPH 2024 – Província de Benguela' @787: 74@526  [Resultados@85 Definitivos@134 do@181 RGPH@194 2024@221 –@245 Província@252 de@294 Benguela@307]
+== Benguela p76: 596x842 points, rotate 0; pypdf text 2419 characters; pdfplumber 2354 characters (2354 upright), 0 pictures, 94 rectangles, 701 lines, 0 curves
+   text: Resultados Definitivos do RGPH 2024 – Província de Benguela 75 Quadro 1.4 - População por província, segundo grandes grupos etários, 2024 Total 0 - 14 anos 15 - 64 anos 65 ou mais anos Benguela 2 597 638 1 076 882 1 426 985 93 772 Área de residência Urbana 1 545 159 608 727 890 168 46 265 Rural 1 052 479 468 155 536 817 47 507 Municipios Benguela 380 048 142 360 225 271 12 417 Benguela 380 048 142
+   row 'Quadro 1.4 - População por província, segundo grandes grupos etários,' @59: 2024@470  [Quadro@154 1.4@188 -@203 População@208 por@253 província,@270 segundo@313 grandes@351 grupos@386 etários,@417]
+   row 'Total 0 - 14 anos 15 - 64 anos 65 ou mais anos' @81:   [Total@244 0@305 -@311 14@315 anos@325 15@373 -@383 64@387 anos@397 65@437 ou@447 mais@457 anos@475]
+   row 'Benguela' @100: 2597638@283 1076882@352 1426985@423 93772@494  [Benguela@120]
+   row 'Área de residência' @111:   [Área@120 de@137 residência@149]
+   row 'Urbana' @123: 1545159@283 608727@352 890168@423 46265@494  [Urbana@120]
+   row 'Rural' @134: 1052479@283 468155@352 536817@423 47507@494  [Rural@120]
+   row 'Municipios' @145:   [Municipios@120]
+   row 'Benguela' @156: 380048@283 142360@352 225271@423 12417@494  [Benguela@120]
+   row 'Benguela' @168: 380048@283 142360@352 225271@423 12417@494  [Benguela@128]
+   row 'Ganda' @179: 165651@283 71101@352 87156@423 7394@494  [Ganda@120]
+   row 'Ganda' @190: 165651@283 71101@352 87156@423 7394@494  [Ganda@128]
+   row 'Lobito' @201: 380689@283 139817@352 228438@423 12434@494  [Lobito@120]
+   row 'Lobito' @213: 380689@283 139817@352 228438@423 12434@494  [Lobito@128]
+   row 'Catumbela' @224: 168774@283 65366@352 98204@423 5205@494  [Catumbela@120]
+   row 'Catumbela' @235: 168774@283 65366@352 98204@423 5205@494  [Catumbela@128]
+   row 'Bocoio' @246: 161009@283 69230@352 83246@423 8534@494  [Bocoio@120]
+   row 'Bocoio' @258: 88732@283 39368@352 44778@423 4586@494  [Bocoio@128]
+   row 'Cubal do Lumbo' @269: 18451@283 6331@352 11104@423 1017@494  [Cubal@128 do@148 Lumbo@158]
+   row 'Monte Belo' @280: 53826@283 23531@352 27364@423 2931@494  [Monte@128 Belo@152]
+   row 'Balombo' @291: 120272@283 54003@352 62566@423 3702@494  [Balombo@120]
+   row 'Balombo' @303: 100085@283 44187@352 52762@423 3136@494  [Balombo@128]
+   row 'Maca Mombolo' @314: 20186@283 9817@352 9803@423 566@494  [Maca@128 Mombolo@148]
+   row 'Cubal' @325: 229379@283 102785@352 118301@423 8293@494  [Cubal@120]
+   row 'Cubal' @336: 229379@283 102785@352 118301@423 8293@494  [Cubal@128]
+   row 'Baia Farta' @348: 108628@283 46064@352 59600@423 2965@494  [Baia@120 Farta@136]
+   row 'Baia Farta' @359: 95994@283 39946@352 53503@423 2546@494  [Baia@128 Farta@144]
+   row 'Caiave' @370: 12634@283 6118@352 6097@423 420@494  [Caiave@128]
+   row 'Caimbambo' @381: 66877@283 31292@352 32974@423 2610@494  [Caimbambo@120]
+   row 'Caimbambo' @393: 46672@283 21712@352 23151@423 1810@494  [Caimbambo@128]
+   row 'Viangombe' @404: 20205@283 9581@352 9824@423 801@494  [Viangombe@128]
+   row 'Chongorói' @415: 110326@283 54261@352 52167@423 3898@494  [Chongorói@120]
+   row 'Camuine' @426: 20934@283 10818@352 9468@423 647@494  [Camuine@128]
+   row 'Chongorói' @438: 89392@283 43442@352 42699@423 3251@494  [Chongorói@128]
+   row 'Egito Praia' @449: 33243@283 14126@352 18064@423 1053@494  [Egito@120 Praia@139]
+   row 'Egito Praia' @460: 18003@283 8319@352 9116@423 569@494  [Egito@128 Praia@146]
+   row 'Canjala' @471: 15239@283 5807@352 8948@423 484@494  [Canjala@128]
+   row 'Biópio' @483: 8228@283 3597@352 4259@423 372@494  [Biópio@120]
+   row 'Biópio' @494: 8228@283 3597@352 4259@423 372@494  [Biópio@128]
+   row 'Chila' @505: 17474@283 7298@352 9186@423 991@494  [Chila@120]
+   row 'Chila' @516: 17474@283 7298@352 9186@423 991@494  [Chila@128]
+   row 'Chindumbo' @528: 32013@283 15814@352 15266@423 932@494  [Chindumbo@120]
+   row 'Chindumbo' @539: 32013@283 15814@352 15266@423 932@494  [Chindumbo@128]
+   row 'Dombe Grande' @550: 42918@283 17715@352 23866@423 1337@494  [Dombe@120 Grande@146]
+   row 'Dombe Grande' @561: 42918@283 17715@352 23866@423 1337@494  [Dombe@128 Grande@154]
+   row 'Canhamela' @573: 31082@283 14576@352 15303@423 1203@494  [Canhamela@120]
+   row 'Canhamela' @584: 31082@283 14576@352 15303@423 1203@494  [Canhamela@128]
+   row 'Catengue' @595: 17646@283 8078@352 8875@423 693@494  [Catengue@120]
+   row 'Catengue' @606: 17646@283 8078@352 8875@423 693@494  [Catengue@128]
+   row 'Bolonguera' @618: 18970@283 9141@352 8842@423 987@494  [Bolonguera@120]
+   row 'Bolonguera' @629: 18970@283 9141@352 8842@423 987@494  [Bolonguera@128]
+   row 'Iambala' @640: 74760@283 31527@352 39868@423 3366@494  [Iambala@120]
+   row 'Iambala' @651: 74760@283 31527@352 39868@423 3366@494  [Iambala@120]
+   row 'Capupa' @663: 72802@283 30317@352 39105@423 3380@494  [Capupa@120]
+   row 'Capupa' @674: 72802@283 30317@352 39105@423 3380@494  [Capupa@120]
+   row 'Babaera' @685: 76056@283 33861@352 38174@423 4021@494  [Babaera@120]
+   row 'Babaera' @696: 76056@283 33861@352 38174@423 4021@494  [Babaera@120]
+   row 'Chicuma' @708: 40717@283 17666@352 21106@423 1945@494  [Chicuma@120]
+   row 'Chicuma' @719: 40717@283 17666@352 21106@423 1945@494  [Chicuma@120]
+   row 'Navegantes' @730: 240075@283 96887@352 137150@423 6038@494  [Navegantes@120]
+   row 'Navegantes' @741: 240075@283 96887@352 137150@423 6038@494  [Navegantes@120]
+   row 'Resultados Definitivos do RGPH 2024 – Província de Benguela' @787: 75@526  [Resultados@85 Definitivos@134 do@181 RGPH@194 2024@221 –@245 Província@252 de@294 Benguela@307]
+== Benguela p77: 596x842 points, rotate 0; pypdf text 3321 characters; pdfplumber 3258 characters (3258 upright), 0 pictures, 985 rectangles, 1202 lines, 0 curves
+   text: Resultados Definitivos do RGPH 2024 – Província de Benguela 76 Quadro 1.5 - População por província, segundo outros grupos etários, 2024 Total 0 - 19 anos 20 - 29 anos 30 - 54 anos 55 - 64 anos 65 - 74 anos 75 - ou mais anos Benguela 2 597 638 1 406 836 451 343 538 092 107 596 60 274 33 498 Àrea de residência Urbana 1 545 159 813 142 283 318 343 256 59 179 30 625 15 640 Rural 1 052 479 593 694 168
+   row 'Quadro 1.5 - População por província, segundo outros grupos etários,' @59: 2024@467  [Quadro@157 1.5@191 -@206 População@211 por@256 província,@273 segundo@316 outros@354 grupos@383 etários,@414]
+   row 'Total 0 - 19 anos 20 - 29 anos 30 - 54 anos 55 - 64 anos 65 - 74 anos 75 - ou mais anos' @75:   [Total@176 0@221 -@227 19@231 anos@241 20@272 -@282 29@286 anos@296 30@325 -@335 54@339 anos@349 55@379 -@389 64@393 anos@403 65@436 -@446 74@450 anos@460 75@492 -@502 ou@507 mais@517 anos@535]
+   row 'Benguela' @90: 2597638@206 1406836@260 451343@312 538092@367 107596@421 60274@481 33498@551  [Benguela@73]
+   row 'Àrea de residência' @103:   [Àrea@73 de@91 residência@103]
+   row 'Urbana' @115: 1545159@206 813142@260 283318@312 343256@367 59179@421 30625@481 15640@551  [Urbana@81]
+   row 'Rural' @127: 1052479@206 593694@260 168025@312 194836@367 48417@421 29649@481 17858@551  [Rural@81]
+   row 'Benguela' @139: 380048@206 193041@260 72807@312 86444@367 15338@421 8218@481 4199@552  [Benguela@73]
+   row 'Benguela' @151: 380048@206 193041@260 72807@312 86444@367 15338@421 8218@481 4199@552  [Benguela@81]
+   row 'Ganda' @163: 165651@206 93464@260 25115@312 31257@367 8421@421 4839@481 2555@552  [Ganda@73]
+   row 'Ganda' @174: 165651@206 93464@260 25115@312 31257@367 8421@421 4839@481 2555@552  [Ganda@81]
+   row 'Lobito' @186: 380689@206 188983@260 72019@312 92297@367 14956@421 8252@481 4182@552  [Lobito@73]
+   row 'Lobito' @198: 380689@206 188983@260 72019@312 92297@367 14956@421 8252@481 4182@552  [Lobito@81]
+   row 'Catumbela' @210: 168774@206 86740@260 31368@312 38705@367 6757@421 3414@481 1790@552  [Catumbela@73]
+   row 'Catumbela' @222: 168774@206 86740@260 31368@312 38705@367 6757@421 3414@481 1790@552  [Catumbela@81]
+   row 'Bocoio' @234: 161009@206 88116@260 25007@312 31165@367 8187@421 5097@481 3436@552  [Bocoio@73]
+   row 'Bocoio' @246: 88732@206 50229@260 13269@312 16125@367 4523@421 2646@481 1940@552  [Bocoio@81]
+   row 'Cubal do Lumbo' @257: 18451@206 8267@260 3517@312 4658@367 993@421 614@481 403@551  [Cubal@81 do@101 Lumbo@112]
+   row 'Monte Belo' @269: 53826@206 29621@260 8221@312 10382@367 2671@421 1838@481 1093@552  [Monte@81 Belo@105]
+   row 'Balombo' @281: 120272@206 68983@260 21056@312 21940@367 4590@421 2524@481 1179@552  [Balombo@73]
+   row 'Balombo' @293: 100085@206 56828@260 17506@312 18712@367 3903@421 2134@481 1002@552  [Balombo@73]
+   row 'Maca Mombolo' @305: 20186@206 12156@260 3549@312 3229@367 687@421 389@481 177@551  [Maca@81 Mombolo@101]
+   row 'Cubal' @317: 229379@206 132707@260 37477@312 41272@367 9629@421 5284@481 3009@552  [Cubal@81]
+   row 'Cubal' @329: 229379@206 132707@260 37477@312 41272@367 9629@421 5284@481 3009@552  [Cubal@81]
+   row 'Baia Farta' @340: 95994@206 51411@260 18040@312 20952@367 3046@421 1804@481 742@551  [Baia@73 Farta@89]
+   row 'Baia Farta' @352: 95994@206 51411@260 18040@312 20952@367 3046@421 1804@481 742@551  [Baia@81 Farta@97]
+   row 'Caimbambo' @364: 79511@206 47544@260 12674@312 13211@367 3053@421 1727@481 1303@552  [Caimbambo@73]
+   row 'Caiave' @376: 12634@206 7603@260 2044@312 2102@367 466@421 238@481 182@551  [Caiave@73]
+   row 'Caimbambo' @388: 46672@206 27865@260 7371@312 7852@367 1775@421 992@481 818@551  [Caimbambo@73]
+   row 'Viangombe' @400: 20205@206 12076@260 3260@312 3257@367 812@421 497@481 304@551  [Viangombe@73]
+   row 'Chongorói' @412: 110326@206 68053@260 15679@312 18730@367 3965@421 2334@481 1563@552  [Chongorói@73]
+   row 'Camuine' @423: 20934@206 13387@260 2929@312 3282@367 690@421 425@481 222@551  [Camuine@81]
+   row 'Chongorói' @435: 89392@206 54667@260 12751@312 15448@367 3275@421 1910@481 1341@552  [Chongorói@81]
+   row 'Egito Praia' @447: 33243@206 17551@260 5771@312 7339@367 1528@421 655@481 398@551  [Egito@73 Praia@92]
+   row 'Egito Praia' @459: 18003@206 10114@260 2874@312 3606@367 842@421 362@481 206@551  [Egito@81 Praia@99]
+   row 'Canjala' @471: 15239@206 7437@260 2897@312 3734@367 687@421 293@481 192@551  [Canjala@81]
+   row 'Biópio' @483: 8228@206 4656@260 1287@312 1540@367 373@421 221@481 151@551  [Biópio@73]
+   row 'Biópio' @494: 8228@206 4656@260 1287@312 1540@367 373@421 221@481 151@551  [Biópio@81]
+   row 'Chila' @506: 17474@206 9098@260 2895@312 3610@367 880@421 571@481 420@551  [Chila@73]
+   row 'Chila' @518: 17474@206 9098@260 2895@312 3610@367 880@421 571@481 420@551  [Chila@81]
+   row 'Chindumbo' @530: 32013@206 19795@260 4726@312 5472@367 1087@421 606@481 326@551  [Chindumbo@73]
+   row 'Chindumbo' @542: 32013@206 19795@260 4726@312 5472@367 1087@421 606@481 326@551  [Chindumbo@81]
+   row 'Dombe Grande' @554: 42918@206 22912@260 8043@312 8970@367 1655@421 854@481 483@551  [Dombe@73 Grande@99]
+   row 'Dombe Grande' @566: 42918@206 22912@260 8043@312 8970@367 1655@421 854@481 483@551  [Dombe@81 Grande@107]
+   row 'Canhamela' @578: 31082@206 18400@260 4921@312 5260@367 1299@421 675@481 528@551  [Canhamela@73]
+   row 'Canhamela' @589: 31082@206 18400@260 4921@312 5260@367 1299@421 675@481 528@551  [Canhamela@81]
+   row 'Catengue' @601: 17646@206 10292@260 2796@312 3157@367 708@421 393@481 300@551  [Catengue@73]
+   row 'Catengue' @613: 17646@206 10292@260 2796@312 3157@367 708@421 393@481 300@551  [Catengue@81]
+   row 'Bolonguera' @625: 18970@206 11004@260 2676@312 3549@367 753@421 525@481 463@551  [Bolonguera@73]
+   row 'Bolonguera' @637: 18970@206 11004@260 2676@312 3549@367 753@421 525@481 463@551  [Bolonguera@81]
+   row 'Iambala' @649: 74760@206 40730@260 12492@312 14494@367 3678@421 2195@481 1170@552  [Iambala@73]
+   row 'Iambala' @660: 74760@206 40730@260 12492@312 14494@367 3678@421 2195@481 1170@552  [Iambala@81]
+   row 'Capupa' @672: 72802@206 38922@260 13179@312 13931@367 3389@421 2103@481 1278@552  [Capupa@73]
+   row 'Capupa' @684: 72802@206 38922@260 13179@312 13931@367 3389@421 2103@481 1278@552  [Capupa@81]
+   row 'Babaera' @696: 76056@206 42889@260 11584@312 13547@367 4015@421 2602@481 1419@552  [Babaera@73]
+   row 'Babaera' @708: 76056@206 42889@260 11584@312 13547@367 4015@421 2602@481 1419@552  [Babaera@81]
+   row 'Chicuma' @720: 40717@206 22566@260 6578@312 7728@367 1900@421 1270@481 675@551  [Chicuma@73]
+   row 'Chicuma' @731: 40717@206 22566@260 6578@312 7728@367 1900@421 1270@481 675@551  [Chicuma@81]
+   row 'Navegantes' @743: 240075@206 128978@260 43153@312 53518@367 8388@421 4111@481 1927@552  [Navegantes@73]
+   row 'Navegantes' @755: 240075@206 128978@260 43153@312 53518@367 8388@421 4111@481 1927@552  [Navegantes@81]
+   row 'Resultados Definitivos do RGPH 2024 – Província de Benguela' @787: 76@526  [Resultados@85 Definitivos@134 do@181 RGPH@194 2024@221 –@245 Província@252 de@294 Benguela@307]
+== Benguela p78: 596x842 points, rotate 0; pypdf text 3031 characters; pdfplumber 2957 characters (2957 upright), 0 pictures, 896 rectangles, 1025 lines, 0 curves
+   text: Resultados Definitivos do RGPH 2024 – Província de Benguela 77 Quadro 1.6 - População por província, segundo outros grupos etários, 2024 Grupo etários Grupos etários de análise 0 - 14 anos 15 - 64 anos 65 ou mais anos Sexo Homem Mulher Homem Mulher Homem Mulher Benguela 536 207 540 674 669 527 757 458 40 439 53 333 Área de residência Urbana 300 690 308 037 418 987 471 181 19 941 26 324 Rural 235 5
+   row 'Quadro 1.6 - População por província, segundo outros grupos etários,' @59: 2024@467  [Quadro@157 1.6@191 -@206 População@211 por@256 província,@273 segundo@316 outros@354 grupos@383 etários,@414]
+   row 'Grupos etários de análise' @73:   [Grupos@319 etários@343 de@365 análise@375]
+   row '0 - 14 anos 15 - 64 anos 65 ou mais anos' @83:   [0@244 -@250 14@254 anos@263 15@339 -@348 64@352 anos@361 65@428 ou@438 mais@447 anos@464]
+   row 'Grupo etários Sexo' @92:   [Grupo@130 etários@152 Sexo@350]
+   row 'Homem Mulher Homem Mulher Homem Mulher' @102:   [Homem@225 Mulher@274 Homem@321 Mulher@370 Homem@417 Mulher@466]
+   row 'Benguela' @113: 536207@256 540674@304 669527@352 757458@400 40439@448 53333@496  [Benguela@129]
+   row 'Área de residência' @123:   [Área@129 de@145 residência@155]
+   row 'Urbana' @133: 300690@256 308037@304 418987@352 471181@400 19941@448 26324@496  [Urbana@129]
+   row 'Rural' @144: 235517@256 232638@304 250540@352 286277@400 20498@448 27009@496  [Rural@129]
+   row 'Municipíos' @154:   [Municipíos@129]
+   row 'Benguela' @165: 70264@256 72096@304 106538@352 118734@400 5278@448 7139@496  [Benguela@129]
+   row 'Benguela' @175: 70264@256 72096@304 106538@352 118734@400 5278@448 7139@496  [Benguela@136]
+   row 'Ganda' @186: 35551@256 35550@304 40280@352 46876@400 2985@448 4409@496  [Ganda@129]
+   row 'Ganda' @196: 35551@256 35550@304 40280@352 46876@400 2985@448 4409@496  [Ganda@136]
+   row 'Lobito' @206: 68970@256 70848@304 109576@352 118862@400 5607@448 6826@496  [Lobito@129]
+   row 'Lobito' @217: 68970@256 70848@304 109576@352 118862@400 5607@448 6826@496  [Lobito@136]
+   row 'Catumbela' @227: 32342@256 33023@304 46498@352 51706@400 2341@448 2864@496  [Catumbela@129]
+   row 'Catumbela' @238: 32342@256 33023@304 46498@352 51706@400 2341@448 2864@496  [Catumbela@136]
+   row 'Bocoio' @248: 34767@256 34463@304 38129@352 45117@400 3726@448 4808@496  [Bocoio@129]
+   row 'Bocoio' @258: 19802@256 19566@304 20265@352 24513@400 1979@448 2607@496  [Bocoio@136]
+   row 'Cubal do Lumbo' @269: 3143@256 3188@304 5199@352 5905@400 494@448 522@496  [Cubal@136 do@155 Lumbo@165]
+   row 'Monte Belo' @279: 11822@256 11709@304 12665@352 14699@400 1252@448 1679@496  [Monte@136 Belo@159]
+   row 'Balombo' @289: 27209@256 26794@304 29818@352 32748@400 1489@448 2214@496  [Balombo@129]
+   row 'Balombo' @300: 22176@256 22011@304 25085@352 27678@400 1274@448 1862@496  [Balombo@136]
+   row 'Maca Mombolo' @310: 5034@256 4783@304 4733@352 5070@400 215@448 351@496  [Maca@136 Mombolo@155]
+   row 'Cubal' @321: 51395@256 51390@304 54686@352 63615@400 3367@448 4926@496  [Cubal@129]
+   row 'Cubal' @331: 51395@256 51390@304 54686@352 63615@400 3367@448 4926@496  [Cubal@129]
+   row 'Baia Farta' @342: 19806@256 20140@304 25238@352 28265@400 1163@448 1383@496  [Baia@129 Farta@144]
+   row 'Baia Farta' @352: 19806@256 20140@304 25238@352 28265@400 1163@448 1383@496  [Baia@136 Farta@151]
+   row 'Caimbambo' @362: 18841@256 18569@304 17548@352 21523@400 1280@448 1750@496  [Caimbambo@129]
+   row 'Caiave' @373: 3197@256 2921@304 2708@352 3389@400 167@448 253@496  [Caiave@136]
+   row 'Caimbambo' @383: 10879@256 10832@304 10369@352 12781@400 771@448 1038@496  [Caimbambo@136]
+   row 'Viangombe' @394: 4765@256 4816@304 4471@352 5353@400 342@448 459@496  [Viangombe@136]
+   row 'Chongorói' @404: 27396@256 26864@304 23767@352 28401@400 1732@448 2166@496  [Chongorói@129]
+   row 'Camuine' @414: 5459@256 5360@304 4522@352 4946@400 295@448 351@496  [Camuine@136]
+   row 'Chongorói' @425: 21938@256 21505@304 19245@352 23454@400 1436@448 1815@496  [Chongorói@136]
+   row 'Egito Praia' @435: 6998@256 7128@304 8567@352 9497@400 563@448 491@496  [Egito@129 Praia@146]
+   row 'Egito Praia' @445: 4143@256 4176@304 4361@352 4755@400 305@448 264@496  [Egito@136 Praia@153]
+   row 'Canjala' @456: 2855@256 2952@304 4206@352 4742@400 257@448 227@496  [Canjala@136]
+   row 'Biópio' @466: 1746@256 1851@304 2017@352 2243@400 176@448 196@496  [Biópio@129]
+   row 'Biópio' @477: 1746@256 1851@304 2017@352 2243@400 176@448 196@496  [Biópio@136]
+   row 'Chila' @487: 3664@256 3634@304 4285@352 4900@400 488@448 503@496  [Chila@129]
+   row 'Chila' @498: 3664@256 3634@304 4285@352 4900@400 488@448 503@496  [Chila@136]
+   row 'Chindumbo' @508: 7998@256 7816@304 7250@352 8016@400 360@448 572@496  [Chindumbo@129]
+   row 'Chindumbo' @518: 7998@256 7816@304 7250@352 8016@400 360@448 572@496  [Chindumbo@136]
+   row 'Dombe Grande' @529: 8718@256 8997@304 11237@352 12629@400 594@448 743@496  [Dombe@129 Grande@153]
+   row 'Dombe Grande' @539: 8718@256 8997@304 11237@352 12629@400 594@448 743@496  [Dombe@136 Grande@160]
+   row 'Canhamela' @550: 7450@256 7126@304 7011@352 8292@400 491@448 713@496  [Canhamela@129]
+   row 'Canhamela' @560: 7450@256 7126@304 7011@352 8292@400 491@448 713@496  [Canhamela@136]
+   row 'Catengue' @570: 4056@256 4022@304 4146@352 4729@400 325@448 369@496  [Catengue@129]
+   row 'Catengue' @581: 4056@256 4022@304 4146@352 4729@400 325@448 369@496  [Catengue@136]
+   row 'Bolonguera' @591: 4718@256 4423@304 4246@352 4596@400 511@448 476@496  [Bolonguera@129]
+   row 'Bolonguera' @602: 4718@256 4423@304 4246@352 4596@400 511@448 476@496  [Bolonguera@136]
+   row 'Iambala' @612: 15740@256 15787@304 18251@352 21617@400 1389@448 1977@496  [Iambala@129]
+   row 'Iambala' @622: 15740@256 15787@304 18251@352 21617@400 1389@448 1977@496  [Iambala@136]
+   row 'Capupa' @633: 14988@256 15329@304 17993@352 21112@400 1472@448 1909@496  [Capupa@129]
+   row 'Capupa' @643: 14988@256 15329@304 17993@352 21112@400 1472@448 1909@496  [Capupa@136]
+   row 'Babaera' @654: 16764@256 17097@304 17754@352 20420@400 1629@448 2392@496  [Babaera@129]
+   row 'Babaera' @664: 16764@256 17097@304 17754@352 20420@400 1629@448 2392@496  [Babaera@136]
+   row 'Chicuma' @674: 8832@256 8834@304 10088@352 11018@400 858@448 1087@496  [Chicuma@129]
+   row 'Chicuma' @685: 8832@256 8834@304 10088@352 11018@400 858@448 1087@496  [Chicuma@136]
+   row 'Navegantes' @695: 47995@256 48892@304 64607@352 72543@400 2618@448 3421@496  [Navegantes@129]
+   row 'Navegantes' @706: 47995@256 48892@304 64607@352 72543@400 2618@448 3421@496  [Navegantes@136]
+   row 'Resultados Definitivos do RGPH 2024 – Província de Benguela' @787: 77@526  [Resultados@85 Definitivos@134 do@181 RGPH@194 2024@221 –@245 Província@252 de@294 Benguela@307]
+== Benguela p79: 596x842 points, rotate 0; pypdf text 1412 characters; pdfplumber 1343 characters (1343 upright), 0 pictures, 50 rectangles, 396 lines, 0 curves
+   text: Resultados Definitivos do RGPH 2024 – Província de Benguela 78 Quadro 1. 7 - Idade média e mediana da população por área de residência e sexo Grupo etários Média Mediana Benguela 22,60 18,00 Área de residência Urbana 22,8 18,0 Rural 22,4 17,0 Sexo Homens 21,9 17,0 Mulheres 23,3 18,0 Municípios Benguela 23,4 19,0 Benguela 23,4 19,0 Ganda 22,9 17,0 Ganda 22,9 17,0 Lobito 23,7 20,0 Lobito 23,7 20,0 C
+   row 'Quadro 1. 7 - Idade média e mediana da população por' @59:   [Quadro@198 1.@231 7@241 -@249 Idade@254 média@280 e@308 mediana@315 da@353 população@366 por@412]
+   row 'área de residência e sexo' @72:   [área@260 de@280 residência@293 e@338 sexo@345]
+   row 'Grupo etários Média Mediana' @86:   [Grupo@196 etários@219 Média@317 Mediana@384]
+   row 'Benguela 22,60 18,00' @98:   [Benguela@196 22,60@318 18,00@389]
+   row 'Área de residência' @110:   [Área@196 de@214 residência@224]
+   row 'Urbana 22,8 18,0' @121:   [Urbana@204 22,8@320 18,0@391]
+   row 'Rural 22,4 17,0' @131:   [Rural@204 22,4@320 17,0@391]
+   row 'Sexo' @141:   [Sexo@196]
+   row 'Homens 21,9 17,0' @151:   [Homens@196 21,9@320 17,0@391]
+   row 'Mulheres 23,3 18,0' @162:   [Mulheres@196 23,3@320 18,0@391]
+   row 'Municípios' @172:   [Municípios@196]
+   row 'Benguela 23,4 19,0' @182:   [Benguela@196 23,4@320 19,0@391]
+   row 'Benguela 23,4 19,0' @192:   [Benguela@204 23,4@320 19,0@391]
+   row 'Ganda 22,9 17,0' @203:   [Ganda@196 22,9@320 17,0@391]
+   row 'Ganda 22,9 17,0' @213:   [Ganda@204 22,9@320 17,0@391]
+   row 'Lobito 23,7 20,0' @223:   [Lobito@196 23,7@320 20,0@391]
+   row 'Lobito 23,7 20,0' @234:   [Lobito@204 23,7@320 20,0@391]
+   row 'Catumbela 23,1 19,0' @244:   [Catumbela@196 23,1@320 19,0@391]
+   row 'Catumbela 23,1 19,0' @254:   [Catumbela@204 23,1@320 19,0@391]
+   row 'Bocoio' @264:   [Bocoio@196]
+   row 'Bocoio 22,9 17,0' @275:   [Bocoio@204 22,9@320 17,0@391]
+   row 'Cubal do Lumbo 26,1 22,0' @285:   [Cubal@204 do@224 Lumbo@235 26,1@320 22,0@391]
+   row 'Monte Belo 23,2 17,0' @295:   [Monte@204 Belo@228 23,2@320 17,0@391]
+   row 'Balombo' @305:   [Balombo@196]
+   row 'Balombo 21,4 17,0' @316:   [Balombo@204 21,4@320 17,0@391]
+   row 'Maca Mombolo 19,7 15,0' @326:   [Maca@204 Mombolo@224 19,7@320 15,0@391]
+   row 'Cubal 21,6 16,0' @336:   [Cubal@196 21,6@320 16,0@391]
+   row 'Cubal 21,6 16,0' @347:   [Cubal@204 21,6@320 16,0@391]
+   row 'Baia Farta 21,8 18,0' @357:   [Baia@196 Farta@212 21,8@320 18,0@391]
+   row 'Baia Farta 21,8 18,0' @367:   [Baia@204 Farta@220 21,8@320 18,0@391]
+   row 'Caimbambo' @377:   [Caimbambo@196]
+   row 'Caiave 20,4 15,0' @388:   [Caiave@204 20,4@320 15,0@391]
+   row 'Caimbambo 21,2 16,0' @398:   [Caimbambo@204 21,2@320 16,0@391]
+   row 'Viangombe 21,0 15,0' @408:   [Viangombe@204 21,0@320 15,0@391]
+   row 'Chongorói' @418:   [Chongorói@196]
+   row 'Camuine 19,2 14,0' @429:   [Camuine@204 19,2@320 14,0@391]
+   row 'Chongorói 20,7 15,0' @439:   [Chongorói@204 20,7@320 15,0@391]
+   row 'Egito Praia' @449:   [Egito@196 Praia@215]
+   row 'Egito Praia 21,5 16,0' @460:   [Egito@204 Praia@222 21,5@320 16,0@391]
+   row 'Canjala 23,7 20,0' @470:   [Canjala@204 23,7@320 20,0@391]
+   row 'Biópio 22,6 17,0' @480:   [Biópio@196 22,6@320 17,0@391]
+   row 'Biópio 22,6 17,0' @490:   [Biópio@204 22,6@320 17,0@391]
+   row 'Chila 24,0 18,0' @501:   [Chila@196 24,0@320 18,0@391]
+   row 'Chila 24,0 18,0' @511:   [Chila@204 24,0@320 18,0@391]
+   row 'Chindumbo 19,8 15,0' @521:   [Chindumbo@196 19,8@320 15,0@391]
+   row 'Chindumbo 19,8 15,0' @531:   [Chindumbo@204 19,8@320 15,0@391]
+   row 'Dombe Grande 22,2 18,0' @542:   [Dombe@196 Grande@222 22,2@320 18,0@391]
+   row 'Dombe Grande 22,2 18,0' @552:   [Dombe@204 Grande@230 22,2@320 18,0@391]
+   row 'Canhamela 21,3 16,0' @562:   [Canhamela@196 21,3@320 16,0@391]
+   row 'Canhamela 21,3 16,0' @572:   [Canhamela@204 21,3@320 16,0@391]
+   row 'Catengue 21,6 16,0' @583:   [Catengue@196 21,6@320 16,0@391]
+   row 'Catengue 21,6 16,0' @593:   [Catengue@204 21,6@320 16,0@391]
+   row 'Bolonguera 22,1 15,0' @603:   [Bolonguera@196 22,1@320 15,0@391]
+   row 'Bolonguera 22,1 15,0' @614:   [Bolonguera@204 22,1@320 15,0@391]
+   row 'Iambala 23,0 18,0' @624:   [Iambala@196 23,0@320 18,0@391]
+   row 'Iambala 23,0 18,0' @634:   [Iambala@204 23,0@320 18,0@391]
+   row 'Capupa 23,1 18,0' @644:   [Capupa@196 23,1@320 18,0@391]
+   row 'Capupa 23,1 18,0' @655:   [Capupa@204 23,1@320 18,0@391]
+   row 'Babaera 22,9 17,0' @665:   [Babaera@196 22,9@320 17,0@391]
+   row 'Babaera 22,9 17,0' @675:   [Babaera@204 22,9@320 17,0@391]
+   row 'Chicuma 22,8 17,0' @685:   [Chicuma@196 22,8@320 17,0@391]
+   row 'Chicuma 22,8 17,0' @696:   [Chicuma@204 22,8@320 17,0@391]
+   row 'Navegantes 22,2 18,0' @706:   [Navegantes@196 22,2@320 18,0@391]
+   row 'Navegantes 22,2 18,0' @716:   [Navegantes@204 22,2@320 18,0@391]
+   row 'Resultados Definitivos do RGPH 2024 – Província de Benguela' @787: 78@526  [Resultados@85 Definitivos@134 do@181 RGPH@194 2024@221 –@245 Província@252 de@294 Benguela@307]
+== Benguela p80: 596x842 points, rotate 0; pypdf text 4 characters; pdfplumber 3 characters (3 upright), 0 pictures, 0 rectangles, 0 lines, 0 curves
+   text: 
+   drawn: Benguela_p80.png (1656x2341) and 0 pieces
+== Benguela p81: 596x842 points, rotate 0; pypdf text 34 characters; pdfplumber 25 characters (25 upright), 1 pictures, 0 rectangles, 0 lines, 0 curves
+   text: 2. ESTADO CIVIL
+   picture 0: x 0-594, top -0-840, source (1055, 1492), 8 bits, [/'DeviceRGB']
+   row '2. ESTADO CIVIL' @126:   [2.@139 ESTADO@157 CIVIL@196]
+   drawn: Benguela_p81.png (1656x2341) and 8 pieces
+== Benguela p82: 596x842 points, rotate 0; pypdf text 4 characters; pdfplumber 3 characters (3 upright), 0 pictures, 0 rectangles, 0 lines, 0 curves
+   text: 
+   drawn: Benguela_p82.png (1656x2341) and 0 pieces
