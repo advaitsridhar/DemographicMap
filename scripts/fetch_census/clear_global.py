@@ -226,6 +226,14 @@ LANGUAGE_RELABEL: dict[str, dict[str, str]] = {
     "AGO": {"Ndonga (R.20)": "Ovambo"},
 }
 
+# A name the file gets wrong in one unit and right in another, keyed by the
+# unit's code: Mambasa's "Ombo" 7.3% is the source's "Bandaka" (0.076 of
+# 1.043) -- the Ndaka people of the Ituri forest -- matched to Ombo, a
+# language of Kailo in Maniema, where the file's own Ombo (11.4%) stands.
+UNIT_RELABEL: dict[str, dict[str, dict[str, str]]] = {
+    "COD": {"CD5403": {"Ombo": "Ndaka"}},
+}
+
 # What each relabelled name was, said on the record of every unit whose
 # shares carry it: {(iso3, the file's name): sentence}.
 _FOREIGN = {
@@ -274,7 +282,9 @@ RELABEL_NOTES: dict[tuple[str, str], str] = {
            ("Mokilese", "Lese", "the Central Sudanic language of the Ituri forest", "Kilese",
             "a Micronesian language of Mokil atoll, in the Pacific"),
            ("Rundi", "Ruund", "the Lunda language of Kapanga", "Urund",
-            "the language of Burundi"))},
+            "the language of Burundi"),
+           ("Ombo", "Ndaka", "the language of the Ndaka people of the Ituri forest",
+            "Bandaka", "a language of Maniema"))},
     ("NAM", "Ndonga (R.20)"): (
         "'Oshiwambo' is the Oshiwambo languages, Oshikwanyama and Oshindonga among "
         "them, which CLEAR Global's table writes 'Ndonga (R.20)': one of their names "
@@ -555,7 +565,8 @@ def read_csv(body: str) -> tuple[list[dict[str, str]], list[str]]:
 
 
 def compose(rows: list[dict[str, str]], level: int = 1,
-            relabel: dict[str, str] | None = None
+            relabel: dict[str, str] | None = None,
+            unit_relabel: dict[str, dict[str, str]] | None = None
             ) -> tuple[dict[str, dict[str, Any]], list[str], list[str]]:
     """{unit code: {name, shares, total}}, and the units dropped, with reasons.
 
@@ -584,7 +595,8 @@ def compose(rows: list[dict[str, str]], level: int = 1,
         code = (row.get("location_code") or "").strip()
         name = (row.get("location_name") or "").strip()
         named = (row.get("language_name") or "").strip()
-        language = GUTHRIE_CODE.sub("", (relabel or {}).get(named, named))
+        here = {**(relabel or {}), **(unit_relabel or {}).get(code, {})}
+        language = GUTHRIE_CODE.sub("", here.get(named, named))
         if not code or not name or not language:
             continue
         try:
@@ -595,7 +607,7 @@ def compose(rows: list[dict[str, str]], level: int = 1,
         # A language listed twice in one unit is added up rather than
         # overwritten: dropping one of them would quietly shrink the unit.
         unit["counts"][language] = unit["counts"].get(language, 0.0) + value
-        if named in (relabel or {}) and value > 0:
+        if named in here and value > 0:
             unit["relabelled"][named] = language
 
     kept: dict[str, dict[str, Any]] = {}
@@ -679,7 +691,7 @@ def country_records(package: dict[str, Any], level: int = 1
         return []
 
     relabel = LANGUAGE_RELABEL.get(iso, {})
-    kept, refused, unnamed = compose(rows, level, relabel)
+    kept, refused, unnamed = compose(rows, level, relabel, UNIT_RELABEL.get(iso))
     for line in unnamed[:4]:
         log(f"    dropped {line}")
     for line in refused[:8]:

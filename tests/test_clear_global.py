@@ -278,6 +278,20 @@ class CountryRecords(unittest.TestCase):
         self.assertNotIn("Lese", {g["group"] for g in by_name["Ituri"]["language"]})
         self.assertNotIn("Mokilese", by_name["Ituri"]["language_note"])
 
+    def test_a_name_wrong_in_one_unit_is_relabelled_there_only(self):
+        # Mambasa's "Ombo" is the source's Bandaka (the Ndaka people);
+        # Kailo's Ombo, in Maniema where Ombo is spoken, stands.
+        rows = [row("CD5403", "Mambasa", "Congo Swahili", 0.927, level="2"),
+                row("CD5403", "Mambasa", "Ombo", 0.073, level="2"),
+                row("CD6302", "Kailo", "Lega-Mwenga", 0.886, level="2"),
+                row("CD6302", "Kailo", "Ombo", 0.114, level="2")]
+        kept, _, _ = cg.compose(rows, 2, cg.LANGUAGE_RELABEL["COD"], cg.UNIT_RELABEL["COD"])
+        self.assertEqual({r["group"] for r in kept["CD5403"]["shares"]}, {"Congo Swahili", "Ndaka"})
+        self.assertEqual(kept["CD5403"]["relabelled"], ["Ombo"])
+        self.assertEqual({r["group"] for r in kept["CD6302"]["shares"]}, {"Lega-Mwenga", "Ombo"})
+        self.assertEqual(kept["CD6302"]["relabelled"], [])
+        self.assertIn("names it Bandaka", cg.RELABEL_NOTES[("COD", "Ombo")])
+
     def test_names_kept_unnamed_in_one_unit_share_one_sentence(self):
         rows = [row("NG002001", "Demsa", "Bacama", 0.9), row("NG002001", "Demsa", "Sibalenhon", 0.06),
                 row("NG002001", "Demsa", "Tambo", 0.04),

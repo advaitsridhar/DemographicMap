@@ -1773,8 +1773,10 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Bantu languages": (
         # CLEAR Global, DR Congo, Namibia, Uganda, Kenya and Malawi, at district level.
         "Yombe", "Tetela", "Nande", "Songe", "Budja", "Dengese",
-        # Ruund (Uruund), the Lunda language of Kapanga, and the Ngiri's Baloi.
-        "Ruund", "Baloi",
+        # Ruund (Uruund), the Lunda language of Kapanga, and the Ngiri's Baloi;
+        # Ituri's Bila and Ndaka, Maniema's Ombo and Sankuru's Ohendo (Kole), all
+        # of Guthrie's zones C and D.
+        "Ruund", "Baloi", "Bila", "Ndaka", "Ombo", "Ohendo",
         "Bangala", "Bembe", "Havu", "Mashi", "Lambya", "Tooro", "Embu",
         "Diriku-Shambyu",
         "Ovambo", "Herero", "Kwangali", "Lozi", "Yeyi", "Mbukushu",
