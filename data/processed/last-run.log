@@ -1,88 +1,17 @@
-/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages/openpyxl/reader/workbook.py:118: UserWarning: Print area cannot be set to Defined name: Population_légale!$A:$G.
-  warn(f"Print area cannot be set to Defined name: {defn.value}.")
-  Région de Rabat-Salé-Kénitra: median 31.6 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Kénitra: median 28.8 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Khémisset: median 32.9 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Préfecture de Rabat: median 39.2 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Préfecture de Salé: median 32.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Sidi Kacem: median 29.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Province de Sidi Slimane: median 28.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Préfecture de Skhirate-Témara: median 31.5 (RGPH 2024, indicateurs démographiques et socio-économiques de la région de Rabat-Salé-Kénitra)
-  Région de Fès-Meknès: median 31.4 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Préfecture de Meknès: median 32.9 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Boulemane: median 29.1 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province d'El Hajeb: median 31.3 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Préfecture de Fès: median 31.4 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province d'Ifrane: median 32.8 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Sefrou: median 33.0 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Taounate: median 29.3 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Taza: median 32.9 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Moulay Yacoub: median 26.2 (Les principaux résultats de la région Fès-Meknès selon le RGPH 2024)
-  Province de Tétouan: median 31.2; the region 29.7
-  Province d'Ouezzane: median 33.0; the region 29.7
-  Province de Larache: median 29.7; the region 29.7
-  Préfecture de Tanger-Assilah: median 29.3; the region 29.7
-  Préfecture de M'diq-Fnideq: median 29.7; the region 29.7
-  Région de Souss-Massa: median 31.2 (https://www.hcp.ma/region-agadir/attachment/2802780/)
-  Préfecture d'Agadir-Ida-Ou-Tanane: median 31.6 (https://www.hcp.ma/region-agadir/attachment/2802781/)
-  Préfecture d'Inezgane-Aït Melloul: median 30.3 (https://www.hcp.ma/region-agadir/attachment/2802782/)
-  Province de Chtouka-Aït Baha: median 29.3 (https://www.hcp.ma/region-agadir/attachment/2802783/)
-  Province de Taroudannt: median 31.7 (https://www.hcp.ma/region-agadir/attachment/2802784/)
-  Province de Tata: median 31.6 (https://www.hcp.ma/region-agadir/attachment/2802862/)
-  Province de Tiznit: median 37.1 (https://www.hcp.ma/region-agadir/attachment/2802786/)
-  31 units' five-year shares agree with the dashboard's under 15 and 60+
-  region 'Laâyoune-Sakia El Hamra': across the line, written as a gap
-  'Taroudant Province' bound to 'Province de Taroudannt' by spelling
-  'Oued Ed-Dahab Province': a piece across the line, written as a gap
-  "Province d'Es-Semara إقليم السمارة": a piece across the line, written as a gap
-  'Tarfaya Province': part of a province across the line, written as a gap
-  HCP provinces not drawn: []
-  Région de Béni Mellal-Khénifra: no five-year ages
-  Région de Casablanca-Settat: no five-year ages
-  Région de Drâa-Tafilalet: no five-year ages
-  Région de Marrakech-Safi: no five-year ages
-  Région de l'Oriental: no five-year ages
-  Province d'Al Hoceima: no five-year ages
-  Province de Chefchaouen: no five-year ages
-  Province de Fahs-Anjra: no five-year ages
-  Province de Berkane: no five-year ages
-  Province de Driouch: no five-year ages
-  Province de Figuig: no five-year ages
-  Province de Guercif: no five-year ages
-  Province de Jerada: no five-year ages
-  Province de Nador: no five-year ages
-  Province de Taourirt: no five-year ages
-  Préfecture d'Oujda-Angad: no five-year ages
-  Province d'Azilal: no five-year ages
-  Province de Béni Mellal: no five-year ages
-  Province de Fquih Ben Salah: no five-year ages
-  Province de Khouribga: no five-year ages
-  Province de Khénifra: no five-year ages
-  Province de Berrechid: no five-year ages
-  Province d'El Jadida: no five-year ages
-  Province de Médiouna: no five-year ages
-  Province de Nouaceur: no five-year ages
-  Préfecture de Casablanca: no five-year ages
-  Préfecture de Mohammadia: no five-year ages
-  Province de Benslimane: no five-year ages
-  Province de Sidi Bennour: no five-year ages
-  Province de Settat: no five-year ages
-  Province d'Al Haouz: no five-year ages
-  Province de Chichaoua: no five-year ages
-  Province d'Essaouira: no five-year ages
-  Province d'El Kelâa Des-Sraghna: no five-year ages
-  Province de Safi: no five-year ages
-  Province de Youssoufia: no five-year ages
-  Préfecture de Marrakech: no five-year ages
-  Province de Rehamna: no five-year ages
-  Province d'Ouarzazate: no five-year ages
-  Province d'Errachidia: no five-year ages
-  Province de Midelt: no five-year ages
-  Province de Tinghir: no five-year ages
-  Province de Zagora: no five-year ages
-  Province d'Assa-Zag: no five-year ages
-  Province de Guelmim: no five-year ages
-  Province de Tan-Tan: no five-year ages
-  Province de Sidi Ifni: no five-year ages
-  79 records: 31 medians (4 regions, 27 provinces); the rest say why
-  wrote data/processed/morocco_rgph2024_ages.json (102 kB)
+  read https://web.archive.org/web/20241104035225id_/https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf: 20,479,297 bytes, sha256 1363c816008eca631a07c30691713625f37614fdeeb01adaeb2bae18e9a3d3e0
+  the country's median age: 22.2
+  OCHA's constituencies added up: {'oshikoto': (227737, 2023)}
+  Caprivi: 142,373, ratio 967, median 20.3; The 2023 census's count for Zambezi, drawn here as Caprivi.
+  Erongo: 240,206, ratio 1038, median 27.3; The 2023 census's count for Erongo.
+  Hardap: 106,680, ratio 1038, median 25.1; The 2023 census's count for Hardap.
+  Karas: 109,893, ratio 1027, median 27.2; The 2023 census's count for //Kharas, drawn here as Karas.
+  Kavango: 341,687, ratio 899, median 17.7; The 2023 census's counts for Kavango East and Kavango West added together: the map draws them as one region, as before 2013.
+  Khomas: 494,605, ratio 951, median 26.5; The 2023 census's count for Khomas.
+  Kunene: 120,762, ratio 1006, median 19.4; The 2023 census's count for Kunene.
+  Ohangwena: 337,729, ratio 897, median 17.1; The 2023 census's count for Ohangwena.
+  Omaheke: 102,881, ratio 1120, median 22.7; The 2023 census's count for Omaheke.
+  Omusati: 316,671, ratio 869, median 18.8; The 2023 census's count for Omusati.
+  Oshana: 230,801, ratio 858, median 23.3; The 2023 census's count for Oshana.
+  Oshikoto: 257,302, ratio 980, median 20.5; The 2023 census's count for Oshikoto. OCHA's projections of its constituencies for 2023 add up to 227,737.
+  Otjozondjupa: 220,811, ratio 1053, median 23.1; The 2023 census's count for Otjozondjupa.
+  wrote data/processed/namibia_census.json (24 kB)

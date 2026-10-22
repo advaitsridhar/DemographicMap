@@ -603,12 +603,19 @@
         "url": "https://census.nsanamibia.com/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
         "license": "Namibia Statistics Agency publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "field": "population note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-nam), reference year 2023",
+        "url": "https://data.humdata.org/dataset/cod-ps-nam",
+        "year": 2023,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False"
       }
     ],
     "country": "NAM",
     "match_by": "shape_id",
     "shape_id": "33880854B4413577706595",
-    "population_note": "The 2023 census's count for Oshikoto.",
+    "population_note": "The 2023 census's count for Oshikoto. OCHA's projections of its constituencies for 2023 add up to 227,737.",
     "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's shares of the people under 15 (Table 2.3) and of the youth in each five-year group from 15 to 34 (Table 2.4)."
   },
   {
