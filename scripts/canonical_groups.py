@@ -1296,6 +1296,9 @@ RESIDUAL: frozenset[str] = frozenset({
     # because each has fewer than a hundred people in the country, and the
     # Mongolian citizens it records under a foreign nationality.
     "Other ethnic groups", "Other nationals (Mongolian citizens)",
+    # Liberia's and Sierra Leone's censuses: the citizens of no group the
+    # table names, and the residents who are not citizens at all.
+    "Other Liberian", "Non-Sierra Leonean",
     "Some other race (non-Hispanic)", "Other and unspecified languages",
     # A marker the source prints where it has nothing to report. It is not a
     # group at all, and until it was named here it read as one: grey on the

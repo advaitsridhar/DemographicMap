@@ -738,6 +738,24 @@ ADAPTER_FILES = [
     "tunisia_census.json", "algeria_census.json", "libya_census.json",
     "egypt_census.json", "sudan_census.json", "south_sudan_census.json",
     "morocco_rgph2024_sexes.json", "morocco_rgph2024_ages.json",
+    # Anglophone West Africa's censuses, likewise after the COD-PS files and
+    # the surveys: Nigeria's 2006 Table DS5 by state and local government area
+    # (a local government area's count only fills, OCHA's 2020 projection
+    # being newer; a state's count is what its newer figures are weighed
+    # against; its sex ratios and median ages stand in front of the
+    # projection's), Sierra Leone's 2015 census by region and district, with
+    # its 2021 mid-term census offered behind it (HELD_ROWS), Liberia's 2022
+    # census by county and by the districts drawn as the census counts them,
+    # and The Gambia's 2024 census by local government area with its 2013
+    # census's districts and ages; and the seats their census reports do not
+    # name: Ghana's and Sierra Leone's districts' from Wikipedia's lists of the
+    # districts, and Nigeria's local government areas', The Gambia's units'
+    # and Liberia's districts' from each unit's own Wikipedia article, written
+    # only for the polygons Wikidata names no seat for.
+    "nigeria_census.json", "sierra_leone_census.json", "sierra_leone_mtphc.json",
+    "liberia_census.json", "gambia_census.json", "ghana_capitals.json",
+    "sierra_leone_capitals.json", "nigeria_capitals.json", "gambia_capitals.json",
+    "liberia_capitals.json",
     # After Afrobarometer, which is first: Kenya's counties carried the survey
     # and now carry the 2019 census, and merge_adapter lets the count win the
     # religion field while the survey keeps any field the census did not ask.
@@ -2948,6 +2966,38 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "NGA-CODPS-NG017011": ("Mbatoli",),
         "NGA-CODPS-NG022005": ("Bagudu",),
         "NGA-CODPS-NG034021": ("Wamakko",),
+        # OCHA's spellings of Nigeria's other areas, each the one area of its
+        # state so spelled: sixteen of them the 2006 census's own
+        # (nigeria_census) -- Isiukwuato, Bekwara, Ilejemeji, Unuimo, Kiri
+        # Kasamma, Garum Mallam, Olamabolo, Nasarawa-Eggon, Muya, Aiyedade,
+        # Aiyedire, Atakumosa, Barikin Ladi, Emohua, Obia/Akpor, Tarmua; two
+        # the census's names for areas since renamed, Egbado for Yewa and
+        # Atigbo for Atisbo; and Birni Kudu, Markafi and Zango-Kataf, which
+        # neither census volume uses (it prints Birnin Kudu, Makarfi and
+        # Zangon-Kataf).
+        "NGA-CODPS-NG001008": ("Isuikwuato",),
+        "NGA-CODPS-NG009006": ("Bekwarra",),
+        "NGA-CODPS-NG013012": ("Ilejemeje",),
+        "NGA-CODPS-NG017027": ("Onuimo",),
+        "NGA-CODPS-NG018004": ("Birnin Kudu",),
+        "NGA-CODPS-NG018018": ("Kiri Kasama",),
+        "NGA-CODPS-NG019018": ("Makarfi",),
+        "NGA-CODPS-NG019022": ("Zangon Kataf",),
+        "NGA-CODPS-NG020015": ("Garun Malam",),
+        "NGA-CODPS-NG023018": ("Olamaboro",),
+        "NGA-CODPS-NG026010": ("Nasarawa Egon",),
+        "NGA-CODPS-NG027018": ("Munya",),
+        "NGA-CODPS-NG028004": ("Yewa North",),
+        "NGA-CODPS-NG028005": ("Yewa South",),
+        "NGA-CODPS-NG030001": ("Ayedade",),
+        "NGA-CODPS-NG030002": ("Ayedire",),
+        "NGA-CODPS-NG030003": ("Atakunmosa East",),
+        "NGA-CODPS-NG030004": ("Atakunmosa West",),
+        "NGA-CODPS-NG031004": ("Atisbo",),
+        "NGA-CODPS-NG032001": ("Barkin Ladi",),
+        "NGA-CODPS-NG033010": ("Emuoha",),
+        "NGA-CODPS-NG033015": ("Obio/Akpor",),
+        "NGA-CODPS-NG036015": ("Tarmuwa",),
         "SSD-CODPS-SS0902": ("Raga",),
         "STP-CODPS-ST0206": ("Mé-zóxi",),
         "TZA-CODPS-TZ0105": ("Dodoma Urban",),
@@ -2974,6 +3024,43 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "TZA-CODPS-TZ2201": ("Njombe Urban",),
         "TZA-CODPS-TZ2206": ("Makambako Township Authority",),
         "TZA-CODPS-TZ2301": ("Mpanda Urban",),
+    },
+    # OCHA's age-and-sex table names Nigeria's areas as its population table
+    # does, under row ids of its own: the same thirty spellings, so that the
+    # projection's median age and sex ratio stay behind the 2006 census's for
+    # these areas too, as they do for the other 744 (cod_ps_age.json fills
+    # only).
+    "cod_ps_age.json": {
+        "NGA-CODPSAGE-NG001009": ("Obi Nwga",),
+        "NGA-CODPSAGE-NG005004": ("Dambam",),
+        "NGA-CODPSAGE-NG012010": ("Iguegben",),
+        "NGA-CODPSAGE-NG015002": ("Municipal Area Council",),
+        "NGA-CODPSAGE-NG017011": ("Mbatoli",),
+        "NGA-CODPSAGE-NG022005": ("Bagudu",),
+        "NGA-CODPSAGE-NG034021": ("Wamakko",),
+        "NGA-CODPSAGE-NG001008": ("Isuikwuato",),
+        "NGA-CODPSAGE-NG009006": ("Bekwarra",),
+        "NGA-CODPSAGE-NG013012": ("Ilejemeje",),
+        "NGA-CODPSAGE-NG017027": ("Onuimo",),
+        "NGA-CODPSAGE-NG018004": ("Birnin Kudu",),
+        "NGA-CODPSAGE-NG018018": ("Kiri Kasama",),
+        "NGA-CODPSAGE-NG019018": ("Makarfi",),
+        "NGA-CODPSAGE-NG019022": ("Zangon Kataf",),
+        "NGA-CODPSAGE-NG020015": ("Garun Malam",),
+        "NGA-CODPSAGE-NG023018": ("Olamaboro",),
+        "NGA-CODPSAGE-NG026010": ("Nasarawa Egon",),
+        "NGA-CODPSAGE-NG027018": ("Munya",),
+        "NGA-CODPSAGE-NG028004": ("Yewa North",),
+        "NGA-CODPSAGE-NG028005": ("Yewa South",),
+        "NGA-CODPSAGE-NG030001": ("Ayedade",),
+        "NGA-CODPSAGE-NG030002": ("Ayedire",),
+        "NGA-CODPSAGE-NG030003": ("Atakunmosa East",),
+        "NGA-CODPSAGE-NG030004": ("Atakunmosa West",),
+        "NGA-CODPSAGE-NG031004": ("Atisbo",),
+        "NGA-CODPSAGE-NG032001": ("Barkin Ladi",),
+        "NGA-CODPSAGE-NG033010": ("Emuoha",),
+        "NGA-CODPSAGE-NG033015": ("Obio/Akpor",),
+        "NGA-CODPSAGE-NG036015": ("Tarmuwa",),
     },
     "clear_global_language.json": {
         "MAR-CG-MA001001": ("Province d'Azilal إقليم أزيلال",),
@@ -3204,9 +3291,14 @@ HELD_KEYS = frozenset({"id", "level", "name", "parent", "parent_name", "parent_a
 def offer_only(row: dict[str, Any]) -> dict[str, Any]:
     """A HELD_ROWS row as it is read: what places it, its population and that
     figure's citation, marked as an offer (``_offer``), which merge_adapter
-    holds behind whatever the unit carries."""
+    holds behind whatever the unit carries.
+
+    The note beside the population goes with it, as merge_adapter keeps any
+    held figure's (``unit_note``), and is shown where the figure is taken:
+    Sierra Leone's 2021 mid-term counts say they are the mid-term census's and
+    that its results were disputed, and Kambia's 367,699 stood without it."""
     kept = {key: value for key, value in row.items()
-            if key in HELD_KEYS or key == "population"}
+            if key in HELD_KEYS or key in ("population", "population_note")}
     kept["sources"] = [src for src in row.get("sources") or []
                        if set(str(src.get("field") or "").split("/")) <= {"population"}]
     kept["_offer"] = True
@@ -3679,6 +3771,12 @@ HELD_ROWS: dict[str, dict[str, str]] = {
                            "NPL": "nepal_district.json",
                            "PHL": "philippines_age.json"},
     "wikidata_points_admin2.json": {"JPN": "japan_municipal.json"},
+    # Sierra Leone's 2021 mid-term census, put together on the 2015 census's
+    # districts and regions: newer word of the same units, and disputed --
+    # its Western Area Urban count is 42% below the 2015 census's -- so each
+    # unit shows it only where prefer_newer_figures finds the change from the
+    # figure shown one a population makes, and names it otherwise.
+    "sierra_leone_mtphc.json": {"SLE": "sierra_leone_census.json"},
 }
 
 
@@ -11860,6 +11958,19 @@ NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
         for field, source in (("population", "cod_ps_admin2.json"),
                               ("median_age", "cod_ps_age.json"),
                               ("sex_ratio", "cod_ps_age.json"))
+    },
+    # Cross River's polygon is the state without the Bakassi peninsula, which
+    # passed to Cameroon in 2008; nigeria_census counts it so, as the 2006
+    # census's table for the state less Bakassi local government area's.
+    # Wikidata's 3,866,269 for 2016 is the Commission's projection of the
+    # state as the 2006 census counted it, Bakassi with its peninsula
+    # included, and is not offered in front of that count.
+    ("NGA", "27671186B81745654473385"): {
+        "population": ("wikidata_admin1.json", (
+            "Wikidata's figure for Cross River State, 3,866,269 for 2016, projects the "
+            "state as the 2006 census counted it, with Bakassi local government area and "
+            "the peninsula that passed to Cameroon in 2008, so it is not this polygon's "
+            "ground.")),
     },
     ("MAR", "70788906B89532291078161"): {
         "population": (None, (

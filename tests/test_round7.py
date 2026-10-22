@@ -605,6 +605,34 @@ class HeldRows(unittest.TestCase):
         self.assertEqual(units[0]["population"]["source"], "OCHA COD-PS")
         self.assertEqual(units[0]["sources"], [{"field": "population", "name": "OCHA COD-PS"}])
 
+    def test_the_note_beside_an_offer_is_shown_with_it_and_only_with_it(self):
+        # Sierra Leone's mid-term counts say what they are and that they were
+        # disputed; Kambia's stood without its note.
+        note = "The 2021 mid-term census's count. Its results were disputed."
+
+        def offer(value):
+            row = self.ocha(value=value)
+            return be.offer_only({**row, "population": row["population"],
+                                  "population_note": note})
+
+        self.assertEqual(offer(1)["population_note"], note)
+        for value, shown in ((round(50_000 * 1.015 ** 9), True), (150_000, False)):
+            units = []
+            for i in range(5):
+                entity = {"id": f"D{i}", "name": f"District {i}", "level": "admin2",
+                          "country": "LAO"}
+                be.merge_adapter(entity, {"_source": "laos_district.json", "_match": "shape_id",
+                                          "population": {"value": 50_000, "year": 2015,
+                                                         "source": CENSUS},
+                                          "population_note": "The 2015 census's count."})
+                be.merge_adapter(entity, offer(value))
+                # Held, the note is not on the record.
+                self.assertEqual(entity["population_note"], "The 2015 census's count.")
+                units.append(entity)
+            be.prefer_newer_figures({}, {"LAO": units})
+            self.assertEqual(units[0]["population_note"],
+                             note if shown else "The 2015 census's count.", value)
+
     def test_a_row_keeps_only_what_places_it_and_its_population(self):
         row = {"id": "LAO-CODPS-LA0101", "name": "Chanthabuly", "country": "LAO",
                "level": "admin2", "parent_name": "Vientiane Capital",

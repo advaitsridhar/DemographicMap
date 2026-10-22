@@ -418,12 +418,15 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
                       "Guang", "Dangme", "Gonja"),
     # Gio is Dan under Liberia's name for it and Lorma is Loma: both Mande,
     # not Kru, although Liberia's Kru languages sit beside them.
+    # Sierra Leone's 2015 census names Kono and Koranko (Mande), and Limba
+    # and Sherbro, which sit with Temne, Kissi and Gola in the old Atlantic
+    # grouping this branch follows.
     "Mande languages": ("Bambara", "Malinke", "Maninka", "Dioula", "Jula",
                         "Soninke", "Mende", "Kpelle", "Susu", "Vai", "Bozo",
-                        "Dan", "Mano", "Gio", "Lorma", "Loma"),
+                        "Dan", "Mano", "Gio", "Lorma", "Loma", "Kono", "Koranko"),
     "Atlantic languages": ("Wolof", "Fula", "Fulfulde", "Pulaar", "Serer",
                            "Diola", "Jola", "Temne", "Balanta", "Manjak",
-                           "Kissi", "Gola"),
+                           "Kissi", "Gola", "Limba", "Sherbro"),
     "Gur languages": ("Mooré", "More", "Dagbani", "Dagaare", "Gurma",
                       "Senufo", "Lobiri", "Kabiyé", "Bwamu", "Bariba",
                       "Moba", "Mampruli", "Ditammari", "Kulango",
@@ -971,6 +974,8 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Balanta", "Manjak", "Papel", "Bijago", "Sarakole", "Songhai",
         "Tukulor", "Dioula", "Kabye", "Fon", "Adja", "Bariba", "Yom",
         "Betamaribe", "Mandingo", "Vai", "Sherbro", "Kono", "Loko",
+        # Sierra Leone's 2015 census: the Krim of Bonthe and Pujehun.
+        "Krim",
     ),
     "Nilotic peoples": (
         "Luo", "Kalenjin", "Maasai", "Turkana", "Samburu", "Dinka", "Nuer",
@@ -2874,6 +2879,7 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     # Fula, across a dozen colonial orthographies.
     "Fulah": "Fula", "Fulata": "Fula", "Peulh": "Fula", "Peul": "Fula",
     "Pular": "Fula", "Mbororo": "Fula", "Fulani": "Fula", "Poular": "Fula",
+    "Fullah": "Fula",
     # Madagascar's census names the highland dialect, not the language.
     "Merina": "Malagasy",
     # Ghana's census names the Akan dialects separately.
@@ -2995,6 +3001,8 @@ ETHNIC_VARIANTS: dict[str, str] = {
     "Peule": "Fula", "Fullah": "Fula",
     "Madingo": "Mandingo", "Mandinga": "Mandingo", "Manjago": "Manjak",
     "Manjaco": "Manjak", "Manjack": "Manjak", "Sereer": "Serer",
+    # The Gambia's census spellings.
+    "Wollof": "Wolof", "Serere": "Serer",
     "Kissien": "Kissi", "Serahuleh": "Soninke", "Grusi": "Gurunsi",
     "Gourounsi": "Gurunsi", "Sonrai": "Songhai",
     "Afrikaaner": "Afrikaner", "Masai": "Maasai", "Mosarwa": "Sarwa",
