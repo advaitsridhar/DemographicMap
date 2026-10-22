@@ -1,64 +1,35 @@
-gabon_census: https://gabon.unfpa.org/sites/default/files/pub-pdf/Resultats%20Globaux%20RGPL(1).pdf: 2,461,517 bytes, sha256 017f3bb741957d68b6cdc9ceeee6fa7f24bdd7ebaf20716031a63c046797357d
-  Départements du Gabon: 50 departments with a seat
-  Abanga-Bignè: 14,941 (Abanga-Bigne), seat Ndjolé
-  Basse-Banio: 7,192 (Basse-Banio), seat Mayumba
-  Bayi-Brikolo: 1,998 (Bayi-Brikolo), seat Aboumi
-  Bendjè: 140,747 (Bendjé), seat Port-Gentil
-  Boumi-Louetsi: 13,223 (Boumi-Louetsi), seat Mbigou
-  Djouè: 2,178 (Djoue), seat Onga
-  Djouori-Agnili: 4,210 (Djouori-Agnili), seat Bongoville
-  Dola: 6,979 (Dola), seat Ndendé
-  Douigni: 5,235 (Douigny), seat Moabi
-  Doutsita: 4,623 (Doutsila), seat Mabanda
-  Douya-Onoyè: 37,699 (Douya-Onoye), seat Mouila
-  Etimbouè: 5,723 (Etimboué), seat Omboué
-  Haut-Komo: 3,403 (Haut-Como), seat Médouneu
-  Haut-Ntem: 10,838 (Haut-Ntem), seat Minvoul
-  Haute-Banio: 1,413 (Haute-Banio), seat Ndindi
-  Ivindo: 31,073 (Ivindo), seat Makokou
-  Komo: 17,575 (Komo), seat Kango
-  Komo-Mondah: 169,396 (Komo-Mondah + Owendo), seat Ntoum
-  Komo-Ocèan: 553 (Komo-Océan), seat Ndzomoe
-  Lèbombi-Leyou: 64,569 (Lebombi-Leyou), seat Moanda
-  Lèkabi-Lèwolo: 4,914 (Lekabi-Lewolo), seat Ngouoni
-  Lèkoko: 4,920 (Lekoko), seat Bakoumba
-  Lèkoni-Lèkori: 10,028 (Lekoni-Lekori), seat Akiéni
-  Libreville: 703,940 (Libreville), seat Libreville
-  Lolo-Bouenguidi: 30,643 (Lolo-Bouenguidi), seat Koulamoutou
-  Lombo-Bouenguidi: 4,635 (Lombo-Bouenguidi), seat Pana
-  Lopè: 12,382 (Lopé), seat Booué
-  Louetsi-Bibaka: 2,734 (Louetsi-Bibaka), seat Malinga
-  Louetsi-Wano: 9,750 (Louetsi-Wano), seat Lébamba
-  Mongo: 2,602 (Mongo), seat Moulengui-Binza
-  Mougalaba: 1,490 (Mougalaba), seat Guiétsou
-  Mougoutsi: 31,789 (Mougoutsi), seat Tchibanga
-  Mpassa: 129,694 (Mpassa), seat Franceville
-  Mouloundou: 27,750 (Mulundu), seat Lastoursville
-  Mvoung: 4,022 (Mvoung), seat Ovan
-  Ndolou: 5,727 (Ndolou), seat Mandji
-  Ndougou: 11,092 (Ndougou), seat Gamba
-  Noya: 4,225 (Noya), seat Cocobeach
-  Ntem: 49,712 (Ntem), seat Bitam
-  Offouè-Onoyè: 2,743 (Offoué-Onoye), seat Iboundji
-  Ogoouè et Lacs: 54,346 (Ogooué et Lacs), seat Lambaréné
-  Ogoouè-Lètili: 2,791 (Ogooué-Letili), seat Boumango
-  Ogoulou: 8,361 (Ogoulou), seat Mimongo
-  Okano: 16,630 (Okano), seat Mitzic
-  Plateaux: 9,054 (Plateaux), seat Lékoni
-  Sèbè-Brikolo: 16,443 (Sebe-Brikolo), seat Okondja
-  Tsamba-Magotsi: 14,875 (Tsamba-Magotsi), seat Fougamou
-  Woleu: 74,403 (Woleu), seat Oyem
-  Zadiè: 15,816 (Zadié), seat Mékambo
-  9 provinces and 49 department polygons written
-  wrote data/processed/gabon_census.json (147 kB)
-  2022: Estuaire: 1,132,882
-  2022: Haut-Ogooué: 317,227
-  2022: Moyen-Ogooué: 87,642
-  2022: Ngounié: 127,550
-  2022: Nyanga: 66,857
-  2022: Ogooué-Ivindo: 80,062
-  2022: Ogooué-Lolo: 83,182
-  2022: Ogooué-Maritime: 199,274
-  2022: Woleu-Ntem: 196,039
-  2022: the provinces make 2,290,715
-  wrote data/processed/gabon_projection.json (12 kB)
+equatorial_guinea_census: 9,731,423 bytes, sha256 3c1cccc3705225e723e9fcfbb5d16be75cc729f9e249a00f510b77f119b9e56d
+  Annobón: 5,314; men 48.9%; nationals 98.3%
+    ANNOBON: 5,314 (Annobón)
+  Bioko Norte: 300,374; men 52.9%; nationals 87.3%
+    BANEY: 29,366 (Baney)
+    MALABO: 271,008 (Malabo)
+  Bioko Sur: 34,674; men 52.5%; nationals 93.9%
+    LUBA: 26,331 (Luba)
+    RIABA: 8,343 (Riaba)
+  Centro Sur: 141,986; men 51.2%; nationals 89.9%
+    ACURENAM: 23,614 (Acurenam, drawn whole)
+    BICURGA: not shown (not a district)
+    EVINAYONG: not shown (Evinayong)
+    NIEFANG: not shown (Niefang)
+    NKIMI: not shown (not a district)
+  Kie Ntem: 183,664; men 50.1%; nationals 89.5%
+    EBEBIYIN: 94,019 (Ebibeyin, drawn whole)
+    MICOMISENG: not shown (Micomiseng)
+    NKUE: not shown (not a district)
+    NSOC NSOMO: 37,920 (Nsok Nsomo, drawn whole)
+  Litoral: 367,348; men 52.3%; nationals 87.7%
+    BATA: not shown (Bata)
+    BITICA: not shown (not a district)
+    COGO: 29,341 (Cogo, drawn whole)
+    MACHINDA: not shown (not a district)
+    MBINI: not shown (Mbini)
+  Wele Nzas: 192,017; men 53.7%; nationals 83.5%
+    ACONIBE: 24,346 (Aconibe, drawn whole)
+    AYENE: not shown (not a district)
+    AÑISOC: not shown (Añisok)
+    MONGOMO: not shown (Mongomo)
+    MONGOMOYEN: not shown (not a district)
+    NSORK: 16,421 (Nsork, drawn whole)
+  wrote data/processed/equatorial_guinea_census.json (86 kB)
+  7 provinces and 25 district polygons written
