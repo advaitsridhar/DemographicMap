@@ -1,18 +1,36 @@
-mali: INSTAT Mali, 5ème Recensement Général de la Population et de l'Habitat (RGPH5, 2022), rapport thématique Caractéristiques culturelles de la population
-  17,708,018 bytes
-  70 pages
-  annex tables on pages ethnicity 55, language 56
-  religion: 20 regions, 21,347,586 people
-  ethnicity: 20 regions, 21,200,119 people
-  language: 20 regions, 19,144,632 people
-  2009 languages: https://data.humdata.org/dataset/54941a2a-9546-4885-a12c-80c34eaa20cf/resource/00e9ae0f-0822-4235-97b3-c2c1d125efb3/download/mali_uscb_202211.xlsx: 594,053 bytes
-  Language: 60 rows, 22 groups, no published denominator
-    50 rows skipped: another level, or no area name
-    admin1: 11,109,312 against the country's own 11,109,312 -- exactly
-  Bamako: the 2009 census's languages, 1,473,213 people aged 6 and over: Bambara 86.4%, Maraka/soninke 2.9%, Malinke 2.2%
-  Koulikoro: the 2009 census's languages, 1,830,321 people aged 6 and over: Bambara 72.7%, Malinke 8.5%, Maraka/soninke 7.1%
-  Mopti: the 2009 census's languages, 1,537,698 people aged 6 and over: Dogon 41.4%, Fula/fulfulbe 25.9%, Bambara 11.1%
-  Sikasso: the 2009 census's languages, 2,006,535 people aged 6 and over: Bambara 63.1%, Minianka 15.7%, Senufo 11.0%
-  Ségou: the 2009 census's languages, 1,790,200 people aged 6 and over: Bambara 74.5%, Bobo 7.9%, Minianka 5.4%
-  9 shapes
-  wrote data/processed/mali_rgph5_region.json (49 kB)
+  district-autonome-abidjan-mono: recalled; its reading of 2026-10-18 kept: 6,321,017 (3,210,983 men), seat Abidjan, mean age 25, Ivorians None
+  district-autonome-yamoussoukro-mono: recalled; its reading of 2026-10-18 kept: 422,072 (217,176 men), seat Yamoussoukro, mean age 25, Ivorians (88.4, 11.6)
+  mono-region-gbokle: recalled; its reading of 2026-10-18 kept: 460,980 (250,395 men), seat Sassandra, mean age 22, Ivorians None
+  mono-region-nawa: recalled; its reading of 2026-10-18 kept: 1,165,472 (620,869 men), seat Soubre, mean age 21, Ivorians None
+  mono-region-de-san-pedro: recalled; its reading of 2026-10-18 kept: 1,060,724 (570,701 men), seat San-Pedro, mean age 22, Ivorians (59.9, 40.1)
+  region-indenie-djuablin-mono: recalled; its reading of 2026-10-18 kept: 716,443 (381,684 men), seat Abengourou, mean age 23, Ivorians None
+  region-sud-comoe-mono: recalled; its reading of 2026-10-18 kept: 784,893 (407,615 men), seat Aboisso, mean age 24, Ivorians None
+  region-folon-mono: recalled; its reading of 2026-10-18 kept: 146,209 (75,902 men), seat Minignan, mean age 20, Ivorians None
+  region-kabadougou-mono: recalled; its reading of 2026-10-18 kept: 289,806 (151,394 men), seat Odienne, mean age 21, Ivorians None
+  region-goh-mono: recalled; its reading of 2026-10-18 kept: 985,282 (515,602 men), seat Gagnoa, mean age 23, Ivorians None
+  region-loh-djiboua-mono: recalled; its reading of 2026-10-18 kept: 1,103,158 (577,653 men), seat Divo, mean age 23, Ivorians None
+  region-belier-mono: recalled; its reading of 2026-10-18 kept: 415,593 (213,448 men), seat Toumodi, mean age 25, Ivorians (92.1, 7.9)
+  region-iffou-mono: recalled; its reading of 2026-10-18 kept: 378,560 (196,717 men), seat Daoukro, mean age 24, Ivorians None
+  region-moronou-mono: recalled; its reading of 2026-10-18 kept: 439,755 (237,458 men), seat Bongouanou, mean age 26, Ivorians None
+  region-nzi-mono: recalled; its reading of 2026-10-18 kept: 254,623 (129,386 men), seat Dimbokro, mean age 25, Ivorians None
+  region-agneby-tiassa-mono: recalled; its reading of 2026-10-18 kept: 865,951 (458,756 men), seat Agboville, mean age 24, Ivorians (79.7, 20.3)
+  region-grands-ponts-mono: recalled; its reading of 2026-10-18 kept: 450,007 (235,759 men), seat Dabou, mean age 24, Ivorians None
+  region-la-me-mono: recalled; its reading of 2026-10-18 kept: 726,665 (382,827 men), seat Adzope, mean age 25, Ivorians None
+  region-cavally-mono: recalled; its reading of 2026-10-18 kept: 708,241 (394,576 men), seat Guiglo, mean age 22, Ivorians None
+  region-guemon-mono: recalled; its reading of 2026-10-18 kept: 930,873 (503,870 men), seat Duekoue, mean age 23, Ivorians None
+  region-tonkpi-mono: recalled; its reading of 2026-10-18 kept: 1,387,909 (740,936 men), seat Man, mean age 22, Ivorians (85.38, 14.62)
+  region-haut-sassandra-mono: recalled; its reading of 2026-10-18 kept: 1,739,697 (920,422 men), seat Daloa, mean age 22, Ivorians None
+  region-marahoue-mono: recalled; its reading of 2026-10-18 kept: 981,179 (521,475 men), seat Bouafle, mean age 23.2, Ivorians None
+  region-bagoue-mono: recalled; its reading of 2026-10-18 kept: 515,890 (265,229 men), seat Boundiali, mean age 21, Ivorians (88.1, 11.9)
+  region-poro-mono: recalled; its reading of 2026-10-18 kept: 1,040,461 (524,531 men), seat Korhogo, mean age 22, Ivorians (91.1, 8.9)
+  region-tchologo-mono: recalled; its reading of 2026-10-18 kept: 603,084 (309,037 men), seat Ferkessedougou, mean age 22.2, Ivorians None
+  region-gbeke-mono: recalled; its reading of 2026-10-18 kept: 1,352,900 (699,816 men), seat Bouaké, mean age 26, Ivorians (91.1, 8.9)
+  region-hambol-mono: recalled; its reading of 2026-10-18 kept: 612,029 (321,767 men), seat Katiola, mean age 23, Ivorians None
+  region-bafing-mono: recalled; its reading of 2026-10-18 kept: 262,850 (136,919 men), seat Touba, mean age 23, Ivorians (83.0, 17.0)
+  region-bere-mono: recalled; its reading of 2026-10-18 kept: 492,151 (256,585 men), seat Mankono, mean age 21, Ivorians None
+  region-du-worodougou-mono: recalled; its reading of 2026-10-18 kept: 429,812 (225,557 men), seat Seguela, mean age 21, Ivorians None
+  region-bounkani-mono: recalled; its reading of 2026-10-18 kept: 427,037 (216,310 men), seat Bouna, mean age 22, Ivorians None
+  region-gontougo-mono: recalled; its reading of 2026-10-18 kept: 917,828 (473,635 men), seat Bondoukou, mean age 24, Ivorians None
+  wrote data/processed/cote_divoire_census_pages.json (9 kB)
+  33 of 33 pages read; they make 29,389,151 against the country's 29,389,150
+  wrote data/processed/cote_divoire_census.json (95 kB)
