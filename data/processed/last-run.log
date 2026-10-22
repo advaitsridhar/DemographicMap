@@ -1,58 +1,29 @@
-== grep https://data.humdata.org/api/3/action/package_show?id=cod-ps-cmr url.{3,4}https[^,]{0,250} 40 0
-  HTTP 200 application/json;charset=utf-8 65,152 bytes
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/845f2655-6348-4554-8570-04d9556cded6/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/845f2655-6348-4554-8570-04d9556cded6/download/copy-of-cmr_admpop_2025.xlsx"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/c23633c8-f033-44bd-b43b-e8a1bc487784/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/c23633c8-f033-44bd-b43b-e8a1bc487784/download/copy-of-cmr_admpop_met_2025.csv"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/09be4b94-28bb-4921-a7e0-19967c178230/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/09be4b94-28bb-4921-a7e0-19967c178230/download/copy-of-cmr_admpop_adm1_2025.csv"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/e4b2b236-5b8c-462f-989d-993eee4b3be3/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/e4b2b236-5b8c-462f-989d-993eee4b3be3/download/copy-of-cmr_admpop_adm0_2025.csv"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/0510df39-c506-4389-9699-381563380a92/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/0510df39-c506-4389-9699-381563380a92/download/copy-of-cmr-cod-ps-2025-explanatory-note.pdf"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/247800e6-85a8-407a-ad50-4084b1e45464/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/247800e6-85a8-407a-ad50-4084b1e45464/download/cmr_admpop_2024.xlsx"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/5395c330-9f4a-4d73-b4be-a3917d1ba2ce/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/5395c330-9f4a-4d73-b4be-a3917d1ba2ce/download/cmr_admpop_met_2024.csv"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/07b7f2eb-79cf-489a-a726-d6092deb83e9/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/07b7f2eb-79cf-489a-a726-d6092deb83e9/download/cmr_admpop_adm1_2024.csv"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/11eb6616-a3eb-4319-b8a0-cc22f00f8fe7/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/11eb6616-a3eb-4319-b8a0-cc22f00f8fe7/download/cmr_admpop_adm0_2024.csv"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/55fde51e-8666-45b2-b372-55a662d8dba6/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/55fde51e-8666-45b2-b372-55a662d8dba6/download/cmr-cod-ps-2024-explanatory-note.pdf"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/ae611bf1-72d9-4996-9284-5d5e961bfe1e/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/ae611bf1-72d9-4996-9284-5d5e961bfe1e/download/cmr_codps_qa_2023.pdf"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/6241f609-f0cd-4b24-9e92-897c6f292ee2/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/6241f609-f0cd-4b24-9e92-897c6f292ee2/download/cmr_adminboundaries_tabulardata.xlsx"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/21819ce3-93a7-4bba-8617-b2e7d3a0e5f6/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/21819ce3-93a7-4bba-8617-b2e7d3a0e5f6/download/cmr_admpop_2023.xlsx"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/ea12b969-31d8-471a-bfef-36ccd0f9a985/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/ea12b969-31d8-471a-bfef-36ccd0f9a985/download/cmr_admpop_adm0_2023.csv"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/75d2954c-8f50-47d1-b48f-8d6dc589b663/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/75d2954c-8f50-47d1-b48f-8d6dc589b663/download/cmr_admpop_adm1_2023.csv"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/9c934b68-72c2-4025-b921-7a6912547b8b/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/9c934b68-72c2-4025-b921-7a6912547b8b/download/copy-of-cmr_admpop_2025.xlsx"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/661d9852-aa86-41fc-829e-751cae8b73db/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/661d9852-aa86-41fc-829e-751cae8b73db/download/copy-of-cmr_admpop_met_2025.csv"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/05743711-fcd8-43d1-845c-9ed08b5a1ebb/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/05743711-fcd8-43d1-845c-9ed08b5a1ebb/download/copy-of-cmr_admpop_adm1_2025.csv"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/99cef7a9-ae62-41bb-be80-423553f72bde/download/"
-  ~ url": "https://data.humdata.org/dataset/e8db7923-6cd2-4974-ad57-14a157978cfd/resource/99cef7a9-ae62-41bb-be80-423553f72bde/download/copy-of-cmr_admpop_adm0_2025.csv"
-== grep https://data.humdata.org/api/3/action/package_show?id=cod-ps-tcd url.{3,4}https[^,]{0,250} 30 0
-  HTTP 200 application/json;charset=utf-8 26,944 bytes
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f7208b61-cc26-42a7-a698-1d32af8d248f/download/"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f7208b61-cc26-42a7-a698-1d32af8d248f/download/tcd_admpop_2023.xlsx"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/4eaace66-d2bf-4e4e-a089-ccbd726fe394/download/"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/4eaace66-d2bf-4e4e-a089-ccbd726fe394/download/tcd_codps_qa_2023.pdf"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/acfd6ed9-4150-4445-8dec-83091d1b65eb/download/"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/acfd6ed9-4150-4445-8dec-83091d1b65eb/download/tcd_admgz.xlsx"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/ce1b0007-e65c-4b3c-bd48-2cd0e3b9d203/download/"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/ce1b0007-e65c-4b3c-bd48-2cd0e3b9d203/download/tcd_admpop_adm0_2023.csv"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/fb3d793e-57c5-4fb9-b361-8d4222fd254e/download/"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/fb3d793e-57c5-4fb9-b361-8d4222fd254e/download/tcd_admpop_adm1_2023.csv"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f026a982-b530-4e49-97a3-f54bbc5bad5d/download/"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/f026a982-b530-4e49-97a3-f54bbc5bad5d/download/tchad_populationdutchad_20240102.xlsx"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/384ea173-1a24-4fc2-9f54-24d9e4b7e1e4/download/"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/384ea173-1a24-4fc2-9f54-24d9e4b7e1e4/download/tcd_data_cod_ps_update_21_09_2022_fin.xlsx"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/5451d395-5344-4a7c-8cf3-22f08e4a1138/download/"
-  ~ url": "https://data.humdata.org/dataset/5e60290d-0a82-48e2-9454-812b01c7d9d4/resource/5451d395-5344-4a7c-8cf3-22f08e4a1138/download/tcd_admpop_2021.xlsx"
+congo_census: 12 department pages, 92 districts and communes listed
+  Kouilou: 6 districts and communes listed, making 97,362 of 97,362: Hinda 19,264; Kakamoeka 8,729; Loango 39,531; Madingo-Kayes 8,574; Mvouti 19,132; Nzambi 2,132
+  Niari: 14 districts and communes listed, making 334,863 of 334,863: Banda 7,403; Divénié 12,268; Kibangou 13,430; Kimongo 18,929; Londéla-Kayes 10,108; Louvakou ( incl. Dolisie commune ) 209,889; Makabana 11,436; Mayoko 8,098; Mbinda 3,956; Moungoundou-Nord 1,845; Moungoundou-Sud 4,710; Moutamba ( incl. Mossendjo commune ) 22,936; Nyanga 6,642; Yaya 3,213
+  Lékoumou: 5 districts and communes listed, making 100,559 of 100,559: Bambama 4,407; Komono 12,078; Mayéyé 13,239; Sibiti ( incl. Sibiti commune ) 54,254; Zanaga 16,581
+  Bouenza: 10 districts and communes listed, making 363,850 of 363,850: Boko-Songho 11,563; Kayes ( incl. Nkayi commune ) 114,622; Kingoué 14,399; Loudima 36,644; Mabombo 12,145; Madingou ( incl. Madingou commune ) 81,254; Mfouati 33,017; Mouyondzi 37,863; Tsiaki 10,966; Yamba 11,377
+  Pool: 13 districts and communes listed, making 394,532 of 394,532: Boko 15,330; Goma Tsé-Tsé 42,537; Ignié ( incl. Kintélé commune ) 108,294; Kimba 8,092; Kindamba 19,894; Kinkala ( incl. Kinkala commune ) 50,528; Louingui 11,933; Loumo 5,592; Mayama 5,893; Mbandza-Ndounga 10,003; Mindouli 63,954; Ngabé 45,442; Vindza 7,040
+  Plateaux: 11 districts and communes listed, making 283,421 of 283,421: Abala 13,326; Allembé 6,208; Djambala ( incl. Djambala commune ) 29,583; Gamboma 76,073; Lékana 15,257; Makotimpoko 41,242; Mbon 5,711; Mpouya 17,603; Ngo 34,183; Ollombo 26,854; Ongogni 17,381
+  Cuvette: 10 districts and communes listed, making 316,599 of 316,599: Bokoma 4,588; Boundji 27,577; Loukoléla 42,676; Makoua 40,004; Mossaka 46,605; Ngoko 5,103; Ntokou 5,909; Owando ( incl. Owando commune ) 64,358; Oyo 70,287; Tchikapika 9,492
+  Cuvette-Ouest: 6 districts and communes listed, making 119,328 of 119,328: Etoumbi 18,748; Ewo ( incl. Ewo commune ) 42,975; Kéllé 15,748; Mbama 12,619; Mbomo 13,197; Okoyo 16,041
+  Sangha: 6 districts and communes listed, making 209,701 of 209,701: Kabo ( incl. Pokola commune ) 38,443; Mokéko ( incl. Ouesso commune ) 108,808; Ngbala 9,019; Pikounda 9,418; Sembé 18,661; Souanké 25,352
+  Likouala: 7 districts and communes listed, making 355,570 of 355,570: Bétou 126,956; Bouanéla 16,359; Dongou 44,027; Enyellé 51,188; Epena 32,110; Impfondo ( incl. Impfondo commune ) 54,789; Liranga 30,141
+  Brazzaville: 2 districts and communes listed, making 2,145,783 of 2,145,783: Brazzaville 2,138,236; Ile Mbamou 7,547
+  Pointe-Noire: 2 districts and communes listed, making 1,420,612 of 1,420,612: Pointe-Noire 1,398,812; Tchiamba-Nzassi 21,800
+  the departments make 6,142,180
+  Tchiamba-Nzassi: 21,800 counted under Pointe-Noire, drawn in Kouilou; its men and women not given apart
+  Kouilou: 119,162 (52,111 men, 45,251 women); as counted 97,362
+  Niari: 334,863 (160,761 men, 174,102 women)
+  Lékoumou: 100,559 (50,313 men, 50,246 women)
+  Bouenza: 363,850 (180,914 men, 182,936 women)
+  Pool: 394,532 (197,707 men, 196,825 women)
+  Plateaux: 283,421 (137,918 men, 145,503 women)
+  Cuvette: 316,599 (153,648 men, 162,951 women)
+  Cuvette-Ouest: 119,328 (58,280 men, 61,048 women)
+  Sangha: 209,701 (113,359 men, 96,342 women)
+  Likouala: 355,570 (174,270 men, 181,300 women)
+  Brazzaville: 2,145,783 (1,061,708 men, 1,084,075 women)
+  Pointe-Noire: 1,398,812 (708,953 men, 711,659 women); as counted 1,420,612
+  46 second-level polygons given reasons
+  wrote data/processed/congo_census.json (152 kB)
