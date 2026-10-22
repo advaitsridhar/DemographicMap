@@ -818,5 +818,106 @@ class Transnistria(unittest.TestCase):
         self.assertNotIn("population", got[("Bender", "admin1")])
 
 
+class SurveyCountsCutToWholeNumbers(unittest.TestCase):
+    """Côte d'Ivoire's Gôh-Djiboua: Gôh's 40 respondents and Lôh-Djiboua's 32."""
+
+    def part(self, name, religion):
+        return {"id": name, "level": "admin1", "name": name, "country": "CIV",
+                "_source": "afrobarometer_region.json",
+                "sources": [{"name": "Afro", "field": "religion", "url": "u"}],
+                "religion": religion, "population": {"status": "not_available"}}
+
+    def goh_and_loh(self):
+        goh = self.part("Gôh", [{"group": "Evangelical", "pct": 39.5, "count": 15},
+                                {"group": "Muslim", "pct": 2.3, "count": 0},
+                                {"group": "Christian", "pct": 58.2, "count": 23}])
+        loh = self.part("Lôh-Djiboua", [{"group": "Evangelical", "pct": 44.9, "count": 14},
+                                        {"group": "Christian", "pct": 55.1, "count": 17}])
+        return goh, loh
+
+    def test_a_union_weighed_by_respondents_keeps_a_small_groups_share(self):
+        with mock.patch.object(be, "log"):
+            pooled = be.pool_rows("Gôh-Djiboua", list(self.goh_and_loh()), "CIV",
+                                  "afrobarometer_region.json", weigh="respondents")
+        shares = {r["group"]: r["pct"] for r in pooled["religion"]}
+        # 2.3% of Gôh's 38 counted, over 69: 1.3%, not the nought the counts give.
+        self.assertAlmostEqual(shares["Muslim"], round(2.3 * 38 / 69, 1), places=1)
+        self.assertAlmostEqual(shares["Evangelical"], round((39.5 * 38 + 44.9 * 31) / 69, 1),
+                               delta=0.1)
+        self.assertIn("weighted by their respondents", pooled["religion_note"])
+
+    def test_only_the_unions_that_ask_are_weighed_by_respondents(self):
+        # Without the union's word the counts are added, as for Maputo and São
+        # Tomé, whose published shares stay as they were.
+        with mock.patch.object(be, "log"):
+            pooled = be.pool_rows("Gôh-Djiboua", list(self.goh_and_loh()), "CIV",
+                                  "afrobarometer_region.json")
+        self.assertIn("weighted by their published counts", pooled["religion_note"])
+        self.assertNotIn("Muslim", {r["group"] for r in pooled["religion"]
+                                    if r["pct"] > 0})
+        asked = {key for key, spec in be.ROW_UNIONS.items() if spec.get("weigh")}
+        self.assertEqual(asked, {("CIV", "Goh-Djiboua"), ("CIV", "Sassandra-Marahoue"),
+                                 ("NER", "Tahoua/Agadez"), ("NER", "Zinder/Diffa"),
+                                 ("TGO", "Maritime Region")})
+        self.assertTrue(all(spec["weigh"] == "respondents" for key, spec in be.ROW_UNIONS.items()
+                            if key in asked))
+
+
+class WithdrawnFields(unittest.TestCase):
+    """Niger: Round 9's languages and religion are not used; its ethnic groups are."""
+
+    def test_a_withdrawn_field_leaves_the_row_and_its_citation(self):
+        row = {"id": "NER-AB9-1102", "country": "NER", "name": "DOSSO",
+               "religion": [{"group": "Muslim", "pct": 92.1}], "religion_note": "n",
+               "language": [{"group": "Haoussa", "pct": 51.0}], "language_note": "n",
+               "ethnicity": [{"group": "Haoussa", "pct": 51.6}],
+               "sources": [{"field": "religion/ethnicity/language", "name": "Afro"}]}
+        be.withdraw_fields(row, be.WITHDRAWN_FIELDS["afrobarometer_region.json"]["NER"])
+        for key in ("language", "language_note", "religion", "religion_note"):
+            self.assertNotIn(key, row)
+        self.assertIn("ethnicity", row)
+        self.assertEqual(row["sources"], [{"field": "ethnicity", "name": "Afro"}])
+
+    def test_the_niger_unions_pool_ethnicity_alone(self):
+        data = rows("afrobarometer_region.json")
+        if not data:
+            self.skipTest("afrobarometer_region.json is not in this checkout")
+        fields = be.WITHDRAWN_FIELDS["afrobarometer_region.json"]["NER"]
+        parts = [dict(data[rid], _source="afrobarometer_region.json")
+                 for rid in be.ROW_UNIONS[("NER", "Zinder/Diffa")]["rows"]]
+        for part in parts:
+            be.withdraw_fields(part, fields)
+        with mock.patch.object(be, "log"):
+            pooled = be.pool_rows("Zinder/Diffa", parts, "NER", "afrobarometer_region.json")
+        self.assertIsInstance(pooled.get("ethnicity"), list)
+        self.assertNotIn("religion", pooled)
+        self.assertNotIn("language", pooled)
+
+    def test_a_row_can_lose_one_field(self):
+        # Wikidata's seat for Togo's Savanes is not its seat: the capital leaves
+        # that row alone, and its citation, so GeoNames' Dapaong can stand.
+        withdrawn = be.WITHDRAWN_FIELDS["wikidata_admin1.json"]
+        self.assertEqual(set(withdrawn), {"TGO-WD-Q279945", "SEN-WD-Q738061", "BEN-WD-Q29147"})
+        row = {"id": "TGO-WD-Q279945", "country": "TGO", "name": "Savanes Region",
+               "capital": "Durum Town", "population": {"value": 1, "year": 2022},
+               "sources": [{"field": "population/capital/coordinates", "name": "Wikidata"}]}
+        be.withdraw_fields(row, withdrawn[row["id"]])
+        self.assertNotIn("capital", row)
+        self.assertEqual(row["sources"], [{"field": "population/coordinates",
+                                           "name": "Wikidata"}])
+
+    def test_round_8s_french_is_noted_where_round_9_differs(self):
+        notes = be.ROW_NOTES["afrobarometer_r8_language.json"]
+        self.assertIn("12.5%", notes["NER-AB8-TILLABERI"]["language"])
+        self.assertIn("6.8%", notes["NER-AB8-MARADI"]["language"])
+        cited = be.ROW_NOTE_SOURCES["afrobarometer_r8_language.json"]["NER-AB8-MARADI"]
+        self.assertEqual([(s["field"], s["name"]) for s in cited],
+                         [("language note", "Afrobarometer Round 9 (2021-2023)")])
+        data = rows("afrobarometer_r8_language.json")
+        if data:
+            french = {e["group"]: e["pct"] for e in data["NER-AB8-TILLABERI"]["language"]}
+            self.assertEqual(french["French"], 12.5)
+
+
 if __name__ == "__main__":
     unittest.main()

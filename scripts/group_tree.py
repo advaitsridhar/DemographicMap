@@ -429,11 +429,16 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
     "Atlantic languages": ("Wolof", "Fula", "Fulfulde", "Pulaar", "Serer",
                            "Diola", "Jola", "Temne", "Balanta", "Manjak",
                            "Kissi", "Gola", "Limba", "Sherbro"),
-    "Gur languages": ("Mooré", "More", "Dagbani", "Dagaare", "Gurma",
-                      "Senufo", "Lobiri", "Kabiyé", "Bwamu", "Bariba",
+    # Mooré is the Mossi's language, Gur (Oti-Volta), not Mande: Mossi and
+    # Mòoré are the names surveys and CLEAR Global give it.
+    "Gur languages": ("Mooré", "More", "Mossi", "Mòoré", "Dagbani", "Dagaare",
+                      "Gurma", "Senufo", "Lobiri", "Kabiyé", "Bwamu", "Bariba",
                       "Moba", "Mampruli", "Ditammari", "Kulango",
                       "Karaboro", "Dagaari", "Frafra", "Farefare",
                       "Likpakpaln", "Konkomba", "Tem"),
+    # Dogon is a branch of its own, not Mande (Mali's Bandiagara plateau and
+    # Burkina Faso's Kossi).
+    "Dogon languages": ("Dogon",),
     # Two Niger-Congo branches the tree had no member of until Afrobarometer
     # Round 8's language question brought Liberia's and the Niger delta's.
     "Kru languages": ("Kru", "Krahn", "Grebo", "Klao", "Bassa (Liberia)"),
@@ -634,6 +639,7 @@ LANGUAGE_FAMILY: dict[str, tuple[str, ...]] = {
         "Bantu languages", "Volta-Niger languages", "Kwa languages",
         "Mande languages", "Atlantic languages", "Gur languages",
         "Adamawa-Ubangi languages", "Kru languages", "Ijoid languages",
+        "Dogon languages",
     ),
     "Austronesian languages": ("Malayo-Polynesian languages",
                                "Oceanic languages", "Formosan languages"),
@@ -733,7 +739,7 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
     "Malayo-Polynesian languages": ("Bisaya, n.o.s.", "Kinaray-a",
                                     "Waray-Waray", "Kankanaey",
                                     "Pampangan"),
-    "Mande languages": ("Bamanankan", "Wojenaka", "Mossi", "Mòoré"),
+    "Mande languages": ("Bamanankan", "Wojenaka"),
     "Creole languages": ("Morisyen", "Jamaican English Creole", "Sango",
                          "Sango Riverain", "Plautdietsch", "Pennsylvania German",
                          "Low Saxon", "Mina"),
@@ -978,6 +984,8 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Betamaribe", "Mandingo", "Vai", "Sherbro", "Kono", "Loko",
         # Sierra Leone's 2015 census: the Krim of Bonthe and Pujehun.
         "Krim",
+        # Guinea-Bissau's 2009 census (the Biafada of Quinara and Tombali).
+        "Beafada",
     ),
     "Nilotic peoples": (
         "Luo", "Kalenjin", "Maasai", "Turkana", "Samburu", "Dinka", "Nuer",
@@ -1447,6 +1455,9 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
         "Afghan national", "Iraqi national", "Pakistani national",
         "Turkish national",
         "Nigerian", "Kenyan", "Cameroonian", "Malian", "Senegalese",
+        # Côte d'Ivoire's 2021 census: the share of Ivorians among a region's
+        # residents (the regional pages print no ethnic group).
+        "Ivorian",
         "Congolese (Kinshasa)", "Congolese (Brazzaville)", "Chadian",
         "Pakistani", "Indian", "Bangladeshi", "Sri Lankan", "Nepalese",
         "Burmese", "Thai", "Indonesian", "Filipino national",
@@ -1782,10 +1793,14 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Mande languages": (
         # CLEAR Global, Guinea and Sierra Leone.
         "Manenkan", "Western Maninkakan", "Kono (Guinea)", "Toma",
-        "Kuranko", "Kono (Sierra Leone)","Mandingo", "Dogon",
+        "Kuranko", "Kono (Sierra Leone)","Mandingo",
                         # Mali and Burkina Faso.
                         "Khassonke", "Samogo", "Dafing", "Marka", "Bissa",
-                        "Bobo"),
+                        "Bobo",
+                        # Guinea's 2014 census (the Konyanka of the forest
+                        # region) and Benin's Boo, the Boko of Segbana;
+                        # Burkina Faso's Samo (San) of the Sourou.
+                        "Konyanka", "Boo", "Samo"),
     "Indo-Aryan languages": (
         "Halabi", "Avadhi", "Sarnami Hindustani",
         # ALI, Iran: an Indo-Aryan island on the Hormozgān coast,
@@ -1849,7 +1864,15 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
                       # Togo's Lama (Lamba), a Gur language of the Kara
                       # region, not Zambia's Bantu Lamba.
                       "Lama, Lamba",
-                      "Gurunsi", "Minianka", "Kassena", "Konkomba"),
+                      "Gurunsi", "Minianka", "Kassena", "Konkomba",
+                      # Burkina Faso's 2019 census, by province: the Grusi
+                      # Nuni, Ko (Winyé) and Lyélé, the Oti-Volta Koussassé
+                      # (Kusaal), Birifor, Nankana, Ninkare and Yana, and
+                      # Toussian, Gouin (Cerma), Turka, Koromfé, Dyan, Kaansa
+                      # (Gan) and Dogosé.
+                      "Nuni", "Ko", "Lyélé", "Koussassé", "Birifor", "Nankana",
+                      "Ninkare", "Yana", "Toussian", "Gouin", "Turka", "Koromfé",
+                      "Dyan", "Kaansa", "Dogosé"),
     # Central African Republic: the Ubangian languages its census lists, which
     # the tree reached only through the "Banda" and "Gbaya" cover terms.
     "Adamawa-Ubangi languages": (
@@ -2562,7 +2585,10 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # Asian ancestry would be the likelier guess and still a guess: the
     # census asks about religion there, and the honest answer is to say the
     # category is not an ancestry rather than to pick one for it.
-    "Unclassified ethnicity answers": ("Hindou", "Musulman",
+    "Unclassified ethnicity answers": (
+        # Côte d'Ivoire's other nationals, a remainder that names no state.
+        "Non-Ivorian",
+        "Hindou", "Musulman",
                                        # Registers' residual rows: STATEC's
                                        # unknown and stateless, CBS's other
                                        # migration background.

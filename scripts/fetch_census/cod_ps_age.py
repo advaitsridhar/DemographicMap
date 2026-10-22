@@ -250,6 +250,12 @@ def drop_copied_structures(code: str, out: list[dict[str, Any]]) -> list[dict[st
 
     - every unit carries the same proportions as the table as a whole:
       no unit's median is its own (its sex ratio may still be, and stays);
+      likewise where most units do (COPY_SHARE) and a few were projected
+      apart: the medians of those that carry the table's proportions go,
+      and the few keep theirs (Niger's departments: 65 of the 67 carry one
+      structure; the cities of Maradi and Zinder carry proportions no other
+      row of the 2024 tables has, their regions' included -- 1.6 and 1.4
+      points from them in a five-year group);
     - most second-level units carry their first-level parent's proportions:
       their medians are the parent's, and so are the ratios that match the
       parent's to within 2 per 1,000.
@@ -266,16 +272,27 @@ def drop_copied_structures(code: str, out: list[dict[str, Any]]) -> list[dict[st
             for low, high, people in rec["age_groups"]:
                 whole[(low, high)] = whole.get((low, high), 0.0) + people
         aggregate = [[low, high, n] for (low, high), n in whole.items()]
-        if all(same_structure(rec["age_groups"], aggregate) for rec in recs):
+        alike = [rec for rec in recs if same_structure(rec["age_groups"], aggregate)]
+        word = "first" if level == "admin1" else "second"
+        if len(alike) == len(recs):
             year = recs[0]["median_age"]["year"]
             log(f"    {level}: all {len(recs)} units carry the same age proportions "
                 f"(within {COPY_TOLERANCE} points in every group): medians withdrawn")
-            word = "first" if level == "admin1" else "second"
             for rec in recs:
                 withdraw(rec, "median_age",
                          f"OCHA's population table for this country (reference year {year}) "
                          f"gives all its {word}-level divisions the same age proportions, so "
                          f"no median age of this division's own can be taken from it.")
+        elif len(alike) >= COPY_SHARE * len(recs):
+            year = alike[0]["median_age"]["year"]
+            log(f"    {level}: {len(alike)} of {len(recs)} units carry the table's own age "
+                f"proportions: their medians withdrawn, the other {len(recs) - len(alike)} kept")
+            for rec in alike:
+                withdraw(rec, "median_age",
+                         f"OCHA's population table for this country (reference year {year}) "
+                         f"gives {len(alike)} of its {len(recs)} {word}-level divisions, this "
+                         f"one among them, the same age proportions, so no median age of this "
+                         f"division's own can be taken from it.")
     parents = {rec["name"]: rec for rec in out
                if rec["level"] == "admin1" and rec.get("age_groups")}
     children = [rec for rec in out if rec["level"] == "admin2" and rec.get("age_groups")

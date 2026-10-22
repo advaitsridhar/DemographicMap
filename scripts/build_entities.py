@@ -721,6 +721,22 @@ ADAPTER_FILES = [
     "senegal_rgph5.json", "morocco_rgph2024.json", "zambia_census.json",
     "guinea_bissau_census.json", "tanzania_census.json", "ghana_census.json",
     "south_africa_districts.json", "cabo_verde_parishes.json",
+    # West Africa and the Sahel, after the COD-PS files for the same reason:
+    # Guinea's 2025 preliminary count by region and prefecture (2014 census
+    # compositions), Niger's 2012 census (regions' ages, sexes and religion,
+    # departments' sexes), Togo's 2022 census by region and prefecture, Mali's
+    # 2022 census for the four regions the regions of 2023 make and the 2009
+    # census for the five they cross, with the cercles' 2009 sexes,
+    # Mauritania's 2023 census by wilaya and moughataa, Côte d'Ivoire's 2021
+    # census by region, Burkina Faso's 2019 census by province and region
+    # (sexes, religion, language; the regions' medians), Senegal's 2023
+    # regional reports (median age, language),
+    # Benin's 2013 census (departments' ages and sexes, communes' sexes), and
+    # the seats OCHA's boundary sets name where no source named a capital (and
+    # why none, where they name none).
+    "guinea_census.json", "niger_census.json", "togo_census.json", "mali_census.json",
+    "mauritania_census.json", "cote_divoire_census.json", "burkina_provinces.json",
+    "senegal_regional_reports.json", "benin_census.json", "sahel_capitals.json",
     "philippines_province.json", "ethiopia_region.json",
     # North Africa's own counts, likewise after the COD-PS tables: Tunisia's
     # 2024 census by governorate and delegation (the 15 delegations made since
@@ -1019,8 +1035,10 @@ ADAPTER_FILES = [
     # the municipios stand.
     "guatemala_census.json",
     "mali_region.json",
-    # After both Afrobarometer and the 2009 census file: Mali's nine regions
-    # now carry RGPH5 2022 for all three fields.
+    # After both Afrobarometer and the 2009 census file: the four Mali regions
+    # the regions of 2023 make carry RGPH5 2022 for all three fields; the five
+    # they cross carry the 2009 census's languages with the 2022 census's
+    # reason, and their survey religion and ethnic groups stand (mali.py).
     "mali_rgph5_region.json",
     "drc_province.json", "russia_subject.json",
     # Russia's 2020 census count and men per hundred women for the municipal
@@ -3079,6 +3097,8 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "ETH-WD-Q207635": ("Beneshangul Gumu",),
         "ETH-WD-Q1033855": ("Hareri",),
         "SOM-WD-Q806070": ("Banadir",),
+        # The boundary file spells Niger's Dosso region "Dossa".
+        "NER-WD-Q850055": ("Dossa",),
     },
     "wikidata_admin2.json": {
         "THA-WD-Q1019417": ("Vadhana",),
@@ -3240,6 +3260,32 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "TZA-CODPSAGE-TZ1705": ("Kahama Township Authority",),
         "TZA-CODPSAGE-TZ2106": ("Babati UrbanBabati Urban",),
         "TZA-CODPSAGE-TZ2301": ("Mpanda Urban",),
+        # OCHA's age tables and Afrobarometer spell a few West African units another
+        # way: Benin's Atacora and Couffo (Atakora, Kouffo), Mauritania's Hodh El
+        # Chargi and Tris-Zemmour (Hodh ech Chargui, Tiris Zemmour), Burkina Faso's
+        # Kourittenga and Komandjari (Kouritenga, Komonjdjari). Each is its
+        # country's only unit of the name, in the region the row gives.
+        "BEN-CODPSAGE-BJ02": ("Atakora",),
+        "BEN-CODPSAGE-BJ06": ("Kouffo",),
+        "MRT-CODPSAGE-MR07": ("Hodh ech Chargui",),
+        "MRT-CODPSAGE-MR13": ("Tiris Zemmour",),
+        "BFA-CODPSAGE-BF4803": ("Kouritenga",),
+        "BFA-CODPSAGE-BF5203": ("Komonjdjari",),
+    },
+    "afrobarometer_region.json": {
+        "BEN-AB9-101": ("Atakora",),
+        "BEN-AB9-105": ("Kouffo",),
+        # Niger's Dosso, which the boundary file spells Dossa; Mauritania's
+        # Guidimaka and the two Hodhs as the survey spells them.
+        "NER-AB9-1102": ("Dossa",),
+        # Mali's Koulikoro, which the boundary file spells Koulikouro: the
+        # survey samples the region as drawn, and its religion and ethnic
+        # groups stand there now that the 2022 census's shares, for the
+        # regions of 2023, which cross it, are not shown (mali.py).
+        "MLI-AB9-502": ("Koulikouro",),
+        "MRT-AB9-1885": ("Guidimaka",),
+        "MRT-AB9-1886": ("Hodh ech Chargui",),
+        "MRT-AB9-1887": ("Hodh el Gharbi",),
     },
     "clear_global_language.json": {
         "MAR-CG-MA001001": ("Province d'Azilal إقليم أزيلال",),
@@ -3369,6 +3415,17 @@ ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
             "ethnicity": ENGURI_VILLAGES + "whom the 2002 census did not count.",
         },
     },
+    # Niger: Round 8 gives French as the home language of 12.5% of Tillabéri's
+    # respondents and 6.8% of Maradi's; Round 9 gives 0.5% in each, and no
+    # ethnic group answers to it (WITHDRAWN_FIELDS).
+    "afrobarometer_r8_language.json": {
+        "NER-AB8-TILLABERI": {"language": (
+            "Round 9 of the same survey (2021-2023) puts French at 0.5% of the region's "
+            "homes, against the 12.5% here.")},
+        "NER-AB8-MARADI": {"language": (
+            "Round 9 of the same survey (2021-2023) puts French at 0.5% of the region's "
+            "homes, against the 6.8% here.")},
+    },
 }
 
 # The sources ROW_NOTES' sentences quote, cited on the row for its notes: Gal
@@ -3378,7 +3435,12 @@ GAL_VILLAGES_2011 = {
             "census of Gal district by village administration",
     "url": "http://ethno-kavkaz.narod.ru/gal11.html", "year": 2011,
     "license": "Transcription of the census; terms of reuse not stated"}
+AFROBAROMETER_R9 = {"name": "Afrobarometer Round 9 (2021-2023)",
+                    "url": "https://www.afrobarometer.org/data/", "year": 2023}
 ROW_NOTE_SOURCES: dict[str, dict[str, list[dict[str, Any]]]] = {
+    "afrobarometer_r8_language.json": {
+        row: [{"field": "language note", **AFROBAROMETER_R9}]
+        for row in ("NER-AB8-TILLABERI", "NER-AB8-MARADI")},
     "georgia.json": {
         "GEO-GEOSTAT-92138335B56355921545740": [
             {"field": f"{field} note", **GAL_VILLAGES_2011}
@@ -3411,8 +3473,73 @@ DROPPED_ROWS: dict[str, dict[str, str]] = {
     "wiki_population_admin1.json": {
         "MDG-WP-vatovavy-fitovinany": "Fitovinany's 2018 figure, three of the "
                                       "polygon's six districts",
+        # English Wikipedia's Mali regions now describe the regions of 2023:
+        # Kayes without Kita and Nioro, Koulikoro without Dioila and Nara (and
+        # the ground the 2023 Bamako and Bougouni took). The polygons are the
+        # regions of before; their cercles carry OCHA's figures, summed.
+        "MLI-WP-kayes": "the Kayes region of 2023, without Kita and Nioro",
+        "MLI-WP-koulikouro": "the Koulikoro region of 2023, without Dioila and Nara",
+    },
+    "wikidata_admin1.json": {
+        # The 2022 census's count for the District of Bamako as redrawn in
+        # 2023, which OCHA's boundaries draw about three times the size of the
+        # polygon, over the Kati cercle; the polygon's one cercle carries
+        # OCHA's figure for the district of before.
+        "MLI-WD-Q3703": "the District of Bamako of 2023, larger than the polygon",
     },
 }
+
+
+# Fields of a file's rows that are not used, keyed by file, then a country (all
+# its rows) or one row's id, then field, with the reason; the rows keep their
+# other fields. The field goes before any union is pooled, so a pooled row
+# never carries it, and a lower-ranked file's figure stands where this one's
+# would have.
+#   NER  Afrobarometer Round 9's home languages for Niger contradict the same
+#        survey's ethnic groups: Tamasheq is 20.1% of Dosso's languages where
+#        no respondent gave Tuareg ethnicity, 26.2% of Niamey's against 1.9%
+#        by ethnicity, 27.1% of Tillabéri's against 9.9%, while Zinder's
+#        Tuareg (14.0%) speak Tamasheq at 1.4% and Zarma/Songhay is 15.8% of
+#        Diffa's languages against 2.1% by ethnicity -- the language codes look
+#        misassigned. Round 8's languages (afrobarometer_r8_language) stand on
+#        all six polygons instead: they follow the ethnic groups, Tamasheq where
+#        the Tuareg are, except French, which Round 8 gives 12.5% of Tillabéri's
+#        homes and 6.8% of Maradi's against Round 9's 0.5% in each; those two
+#        say so (ROW_NOTES). Round 9's religion is behind the 2012 census's for
+#        every polygon (niger_census), and pooled for the two merged polygons it
+#        would be appended after the census and stand in front of it.
+#   Seats Wikidata gives three first-level units of West Africa that are not
+#        their seats, where GeoNames' seat of the first-order division (PPLA),
+#        inside the polygon, is: Togo's Savanes is Dapaong's, not "Durum Town";
+#        Senegal's Louga is Louga's, not Nguer Malal (a village of the region);
+#        Benin's Atlantique has been Allada's since the decree of 2016 that
+#        made the twelve departments' seats, not Ouidah's. Taking the capital
+#        off the row lets GeoNames' seat stand (fill_capitals_from_geonames).
+WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
+    "afrobarometer_region.json": {
+        "NER": {"language": "Round 9's language codes for Niger look misassigned",
+                "religion": "the 2012 census gives every polygon's religion"},
+    },
+    "wikidata_admin1.json": {
+        "TGO-WD-Q279945": {"capital": "the Savanes region's seat is Dapaong"},
+        "SEN-WD-Q738061": {"capital": "the Louga region's seat is Louga"},
+        "BEN-WD-Q29147": {"capital": "the Atlantique department's seat is Allada"},
+    },
+}
+
+
+def withdraw_fields(row: dict[str, Any], fields: Sequence[str] | set[str]) -> None:
+    """Take ``fields`` off a row read from a file, and off its citations."""
+    gone = set(fields)
+    for field in gone:
+        for key in (field, f"{field}_note", f"{field}_year", f"{field}_basis"):
+            row.pop(key, None)
+    kept = []
+    for src in row.get("sources") or []:
+        cited = [f for f in str(src.get("field") or "").split("/") if f and f not in gone]
+        if cited:
+            kept.append({**src, "field": "/".join(cited)})
+    row["sources"] = kept
 
 
 def superseded(filename: str) -> set[str]:
@@ -3444,6 +3571,7 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
         parents = ROW_PARENTS.get(filename, {})
         placed_by_id = ROW_SHAPES.get(filename, {})
         notes = ROW_NOTES.get(filename, {})
+        withdrawn = WITHDRAWN_FIELDS.get(filename, {})
         # A row a declared union pools stays although its country's rows in
         # this file give way: the union names it by id, and the office's file
         # that supersedes the rest says the polygon is not one of its units.
@@ -3455,6 +3583,10 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
                 continue
             if row.get("sources"):
                 row["sources"] = spell_fields(row["sources"])
+            if iso3 in withdrawn:
+                withdraw_fields(row, withdrawn[iso3])
+            if row.get("id") in withdrawn:
+                withdraw_fields(row, withdrawn[row["id"]])
             if row.get("id") in aliases:
                 row["aliases"] = [*(row.get("aliases") or []), *aliases[row["id"]]]
             if row.get("id") in parents and not row.get("parent_name"):
@@ -9855,13 +9987,17 @@ def grouped_median(groups: Sequence[tuple[int, int | None, float]]) -> float | N
 
 
 def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
-              filename: str) -> dict[str, Any]:
+              filename: str, weigh: str | None = None) -> dict[str, Any]:
     """One row for a shape, from the rows a source publishes for its parts.
 
     Counts are summed where every part carries them; otherwise the shares are
     weighted by the parts' populations; otherwise the field is left out and
     the log says so. A survey's counts are respondents and a census's are
     people, and both pool correctly because the parts come from one file.
+    A union that declares ``weigh="respondents"`` (ROW_UNIONS) has each
+    part's shares weighed by its respondents instead of its counts added: a
+    survey's counts are weighted respondents cut to whole numbers, which lose
+    its small groups (Gôh's Muslims, 2.3% of 40, count 0).
     """
     pooled: dict[str, Any] = {
         "id": f"{iso3}-POOL-{norm(name)}-{norm(filename)}",
@@ -9936,7 +10072,7 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
         totals: dict[str, float] = defaultdict(float)
         counted = all(all(isinstance(e.get("count"), (int, float)) for e in v)
                       for v in lists)
-        if counted:
+        if counted and weigh != "respondents":
             for v in lists:
                 for e in v:
                     totals[e["group"]] += float(e["count"])
@@ -9947,6 +10083,20 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
             for row in rows:
                 row["count"] = int(round(totals[row["group"]]))
             basis = "their published counts"
+        elif counted:
+            # Declared by the union: each part's shares weighed by its
+            # respondents, as the file counts them.
+            weights = [sum(float(e["count"]) for e in v) for v in lists]
+            for v, w in zip(lists, weights):
+                for g, pct in shares_of(v):
+                    totals[g] += pct * w / 100
+            whole = sum(weights)
+            if whole <= 0:
+                continue
+            rows = whole_hundred([(g, c / whole * 100) for g, c in totals.items()])
+            for row in rows:
+                row["count"] = int(round(totals[row["group"]]))
+            basis = "their respondents"
         elif all(v is not None for v in pops):
             for v, w in zip(lists, pops):
                 for g, pct in shares_of(v):
@@ -10062,6 +10212,19 @@ def first_place(rows: list[dict[str, Any]], parts: list[dict[str, Any]]) -> int:
 #   STP  Afrobarometer's ninth round divides São Tomé island into three
 #        strata, Norte Oeste, Centro Este and Sul Este, which together are the
 #        island and so the province; Príncipe is its fourth.
+#   CIV  Afrobarometer's rows are Côte d'Ivoire's 31 regions, the map's second
+#        level; two found a district by part of its name, each one region's
+#        respondents standing for a district of two: Gôh's 40 for Gôh-Djiboua,
+#        Marahoué's 40 for Sassandra-Marahoué. Each district is its two
+#        regions, whose shares are weighed by their respondents (72 and 96 in
+#        all; "weigh": "respondents", pool_rows). So are the NER and TGO
+#        unions below; the other unions add their counts as before.
+#   NER  The boundary file draws Tahoua with Agadez and Zinder with Diffa as
+#        single polygons; the survey samples each region (232 and 32, 248 and
+#        40 respondents). Only their ethnic groups are pooled: Round 9's
+#        languages and religion for Niger are not used (WITHDRAWN_FIELDS).
+#   TGO  The survey samples Lomé (168 respondents) apart from the rest of the
+#        Maritime region (368); the map's Maritime region includes Lomé.
 #   PRY  The polygon is Bella Vista (Amambay) and Bella Vista (Itapúa) drawn
 #        as one, as both were before Cerro Corá was cut from the first in
 #        2020; OCHA's 2023 table has both districts and no Cerro Corá. The
@@ -10118,6 +10281,29 @@ ROW_UNIONS: dict[tuple[str, str], dict[str, Any]] = {
         "rows": ("STP-AB9-1660", "STP-AB9-1661", "STP-AB9-1662"),
         "shapes": (("admin1", "19237168B40253326356618"),),
         "note": "The three are the survey's divisions of São Tomé island."},
+    ("CIV", "Goh-Djiboua"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("CIV-AB9-1271", "CIV-AB9-1281"),
+        "shapes": (("admin1", "83157122B34711482467037"),), "weigh": "respondents",
+        "note": "The district is the regions of Gôh and Lôh-Djiboua."},
+    ("CIV", "Sassandra-Marahoue"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("CIV-AB9-1276", "CIV-AB9-1282"),
+        "shapes": (("admin1", "83157122B74959515955757"),), "weigh": "respondents",
+        "note": "The district is the regions of Haut-Sassandra and Marahoué."},
+    ("NER", "Tahoua/Agadez"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("NER-AB9-1104", "NER-AB9-1100"),
+        "shapes": (("admin1", "87150794B58281898249288"),), "weigh": "respondents"},
+    ("NER", "Zinder/Diffa"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("NER-AB9-1106", "NER-AB9-1101"),
+        "shapes": (("admin1", "87150794B17606801029036"),), "weigh": "respondents"},
+    ("TGO", "Maritime Region"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("TGO-AB9-1141", "TGO-AB9-1140"),
+        "shapes": (("admin1", "44829518B32493797453601"),), "weigh": "respondents",
+        "note": "The region as drawn includes Lomé, which the survey samples apart."},
     ("PRY", "Bella Vista"): {
         "file": "cod_ps_admin2.json",
         "rows": ("PRY-CODPS-PY1302", "PRY-CODPS-PY0702"),
@@ -10281,7 +10467,7 @@ def pool_row_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
                     f"{', '.join(missing)}, not pooled")
                 continue
             parts = [found[rid] for rid in wanted]
-            pooled = pool_rows(shape_name, parts, iso3, filename)
+            pooled = pool_rows(shape_name, parts, iso3, filename, weigh=spec.get("weigh"))
             extra = spec.get("note")
             if extra:
                 for key in ("population", "sex_ratio", *ROLLUP_FIELDS):
@@ -11813,8 +11999,10 @@ def add_known_as(index: dict[str, list[dict[str, Any]]],
     for entity in entities:
         for alias in known_as(entity["name"], entity.get("country")):
             key = norm(alias)
-            if key and key not in own and entity not in index[key]:
-                index[key].append(entity)
+            # Any mapping will do, not only a defaultdict: a test's plain
+            # index met Mauritania's Guidimakha, which no shape is named.
+            if key and key not in own and entity not in index.get(key, []):
+                index.setdefault(key, []).append(entity)
                 added += 1
     return added
 

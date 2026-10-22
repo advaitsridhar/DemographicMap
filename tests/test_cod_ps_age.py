@@ -198,6 +198,18 @@ class CopiedStructures(unittest.TestCase):
         out = cpa.drop_copied_structures("XXX", regions + districts)
         self.assertTrue(all("value" in rec["median_age"] for rec in out))
 
+    def test_most_units_with_one_structure_lose_their_medians_and_the_rest_keep_theirs(self):
+        # Niger: 65 of the 67 departments carry one structure; the cities of
+        # Maradi and Zinder were projected apart, matching no region's row.
+        recs = [unit(f"d{i}", "admin2", YOUNG, ratio=990) for i in range(9)] + \
+               [unit("city", "admin2", scaled(OLDER, 0.1), ratio=1010)]
+        out = cpa.drop_copied_structures("NER", recs)
+        for rec in out[:9]:
+            self.assertEqual(rec["median_age"]["status"], "not_available")
+            self.assertIn("9 of its 10 second-level divisions", rec["median_age"]["note"])
+            self.assertIn("value", rec["sex_ratio"])
+        self.assertIn("value", out[9]["median_age"])
+
     def test_distinct_units_are_left_alone(self):
         recs = [unit("a", "admin1", YOUNG), unit("b", "admin1", OLDER),
                 unit("c", "admin1", MIDDLE)]
