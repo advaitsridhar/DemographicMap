@@ -2,7 +2,7 @@
   {
     "id": "SYC-2022-anseboileau",
     "level": "admin1",
-    "name": "Anse Boile",
+    "name": "Anse Boileau",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -145,12 +145,15 @@
     "language_note": "Main first language spoken at home of the 3,723 people aged 3 and over who gave one, of 4,435 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 3,862 people in households whose religion the census could classify, of 4,595 (Table B4.1).",
+    "aliases": [
+      "Anse Boile"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
     "id": "SYC-2022-anseetoile",
     "level": "admin1",
-    "name": "Anse Etoil",
+    "name": "Anse Etoile",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -293,12 +296,15 @@
     "language_note": "Main first language spoken at home of the 5,036 people aged 3 and over who gave one, of 5,287 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 5,202 people in households whose religion the census could classify, of 5,477 (Table B4.1).",
+    "aliases": [
+      "Anse Etoil"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
     "id": "SYC-2022-anseroyale",
     "level": "admin1",
-    "name": "Anse Royal",
+    "name": "Anse Royale",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -441,6 +447,9 @@
     "language_note": "Main first language spoken at home of the 4,213 people aged 3 and over who gave one, of 4,386 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 4,346 people in households whose religion the census could classify, of 4,552 (Table B4.1).",
+    "aliases": [
+      "Anse Royal"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
@@ -589,6 +598,9 @@
     "language_note": "Main first language spoken at home of the 3,472 people aged 3 and over who gave one, of 3,748 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 3,612 people in households whose religion the census could classify, of 3,898 (Table B4.1).",
+    "aliases": [
+      "Anse Aux P"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
@@ -742,7 +754,7 @@
   {
     "id": "SYC-2022-baielazare",
     "level": "admin1",
-    "name": "Baie Lazar",
+    "name": "Baie Lazare",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -880,12 +892,15 @@
     "language_note": "Main first language spoken at home of the 3,563 people aged 3 and over who gave one, of 4,108 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 3,680 people in households whose religion the census could classify, of 4,265 (Table B4.1).",
+    "aliases": [
+      "Baie Lazar"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
     "id": "SYC-2022-baiesainteanne",
     "level": "admin1",
-    "name": "Baie Saint",
+    "name": "Baie Sainte Anne",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -1028,12 +1043,15 @@
     "language_note": "Main first language spoken at home of the 3,551 people aged 3 and over who gave one, of 4,091 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 3,694 people in households whose religion the census could classify, of 4,272 (Table B4.1).",
+    "aliases": [
+      "Baie Saint"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
     "id": "SYC-2022-beauvallon",
     "level": "admin1",
-    "name": "Beau Vallo",
+    "name": "Beau Vallon",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -1176,6 +1194,9 @@
     "language_note": "Main first language spoken at home of the 3,855 people aged 3 and over who gave one, of 4,581 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 3,980 people in households whose religion the census could classify, of 4,740 (Table B4.1).",
+    "aliases": [
+      "Beau Vallo"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
@@ -1610,6 +1631,7 @@
     "match_by": "shape_id",
     "shape_id": "4304713B24501722208733",
     "population_note": "The 2022 census's count for Cascade.",
+    "sex_ratio_note": "Men per 1,000 women among the people the 2022 census counted here: 4,751 men and 1,908 women (Table 2.4).",
     "language_year": 2022,
     "language_basis": "main first language spoken at home, population aged 3 and over",
     "language_note": "Main first language spoken at home of the 4,935 people aged 3 and over who gave one, of 6,481 (Table B3.1a).",
@@ -1911,6 +1933,9 @@
     "language_note": "Main first language spoken at home of the 3,069 people aged 3 and over who gave one, of 3,308 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 3,175 people in households whose religion the census could classify, of 3,425 (Table B4.1).",
+    "aliases": [
+      "Grand'Anse"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
@@ -2054,12 +2079,15 @@
     "language_note": "Main first language spoken at home of the 3,075 people aged 3 and over who gave one, of 3,475 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 3,195 people in households whose religion the census could classify, of 3,610 (Table B4.1).",
+    "aliases": [
+      "Grand Anse"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
     "id": "SYC-2022-ladigueandinnerislands",
     "level": "admin1",
-    "name": "La Digue a",
+    "name": "La Digue and Inner Islands",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -2261,19 +2289,22 @@
     "shape_id": "4304713B61373702137462",
     "ethnicity_year": 2022,
     "ethnicity_basis": "nationality",
-    "ethnicity_note": "Nationality, not ethnicity: the 2022 census records no ethnic group, and its report counts each region's non-Seychellois by nationality (Table A7). La Digue a is one of the census's regions as well as a district: of its 3,624 people (Table B4.1), 1,086 are non-Seychellois, the most of them 346 Indian, 169 Sri Lankan and 89 Kenyan; the rest are Seychellois.",
+    "ethnicity_note": "Nationality, not ethnicity: the 2022 census records no ethnic group, and its report counts each region's non-Seychellois by nationality (Table A7). La Digue and Inner Islands is one of the census's regions as well as a district: of its 3,624 people (Table B4.1), 1,086 are non-Seychellois, the most of them 346 Indian, 169 Sri Lankan and 89 Kenyan; the rest are Seychellois.",
     "population_note": "The 2022 census's count for La Digue and Inner Islands.",
     "language_year": 2022,
     "language_basis": "main first language spoken at home, population aged 3 and over",
     "language_note": "Main first language spoken at home of the 2,825 people aged 3 and over who gave one, of 3,499 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 2,930 people in households whose religion the census could classify, of 3,624 (Table B4.1).",
+    "aliases": [
+      "La Digue a"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1). That table counts 3,624 people here where Table 2.4 counts 3,537: the two place 87 islanders of La Digue and Inner Islands and the Outer Islands differently."
   },
   {
     "id": "SYC-2022-englishriver",
     "level": "admin1",
-    "name": "La Rivière",
+    "name": "La Rivière Anglaise",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -2416,12 +2447,15 @@
     "language_note": "Main first language spoken at home of the 3,192 people aged 3 and over who gave one, of 3,362 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 3,327 people in households whose religion the census could classify, of 3,508 (Table B4.1).",
+    "aliases": [
+      "La Rivière"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
     "id": "SYC-2022-lesmamelles",
     "level": "admin1",
-    "name": "Les Mamell",
+    "name": "Les Mamelles",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -2554,12 +2588,15 @@
     "language_note": "Main first language spoken at home of the 1,930 people aged 3 and over who gave one, of 2,131 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 2,005 people in households whose religion the census could classify, of 2,215 (Table B4.1).",
+    "aliases": [
+      "Les Mamell"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
     "id": "SYC-2022-montbuxton",
     "level": "admin1",
-    "name": "Mont Buxto",
+    "name": "Mont Buxton",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -2697,12 +2734,15 @@
     "language_note": "Main first language spoken at home of the 2,547 people aged 3 and over who gave one, of 2,687 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 2,628 people in households whose religion the census could classify, of 2,778 (Table B4.1).",
+    "aliases": [
+      "Mont Buxto"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
     "id": "SYC-2022-montfleuri",
     "level": "admin1",
-    "name": "Mont Fleur",
+    "name": "Mont Fleuri",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -2845,6 +2885,9 @@
     "language_note": "Main first language spoken at home of the 2,803 people aged 3 and over who gave one, of 3,398 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 2,849 people in households whose religion the census could classify, of 3,506 (Table B4.1).",
+    "aliases": [
+      "Mont Fleur"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
@@ -2920,6 +2963,10 @@
     "match_by": "shape_id",
     "shape_id": "4304713B25967812410873",
     "population_note": "The 2022 census's count for Outer Islands.",
+    "sex_ratio_note": "Men per 1,000 women among the people the 2022 census counted here: 1,000 men and 75 women (Table 2.4).",
+    "aliases": [
+      "Outer Isla"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1). That table counts 988 people here where Table 2.4 counts 1,075: the two place 87 islanders of La Digue and Inner Islands and the Outer Islands differently."
   },
   {
@@ -3068,7 +3115,7 @@
   {
     "id": "SYC-2022-pointelarue",
     "level": "admin1",
-    "name": "Pointe La",
+    "name": "Pointe Larue",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -3206,6 +3253,9 @@
     "language_note": "Main first language spoken at home of the 2,955 people aged 3 and over who gave one, of 3,132 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 3,082 people in households whose religion the census could classify, of 3,267 (Table B4.1).",
+    "aliases": [
+      "Pointe La"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
@@ -3349,7 +3399,7 @@
   {
     "id": "SYC-2022-rochecaiman",
     "level": "admin1",
-    "name": "Roche Caïm",
+    "name": "Roche Caiman",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -3492,12 +3542,15 @@
     "language_note": "Main first language spoken at home of the 2,419 people aged 3 and over who gave one, of 3,036 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 2,525 people in households whose religion the census could classify, of 3,157 (Table B4.1).",
+    "aliases": [
+      "Roche Caïm"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
     "id": "SYC-2022-saintlouis",
     "level": "admin1",
-    "name": "Saint Loui",
+    "name": "Saint Louis",
     "parent": "SYC",
     "capital": {
       "status": "not_available"
@@ -3640,6 +3693,9 @@
     "language_note": "Main first language spoken at home of the 2,753 people aged 3 and over who gave one, of 3,140 (Table B3.1a).",
     "religion_year": 2022,
     "religion_note": "Religion of the 2,875 people in households whose religion the census could classify, of 3,267 (Table B4.1).",
+    "aliases": [
+      "Saint Loui"
+    ],
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
@@ -4716,6 +4772,7 @@
     "match_by": "shape_id",
     "shape_id": "34574756B54247629098598",
     "population_note": "The 2022 census's counts for the Outer Islands and for the inner islands other than La Digue added together: the tables' Outer Islands and La Digue and Inner Islands, less the island of La Digue, which they give apart.",
+    "sex_ratio_note": "Men per 1,000 women among the people the 2022 census counted here: 1,329 men and 150 women (Tables A2.1 and A2.2).",
     "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
   },
   {
