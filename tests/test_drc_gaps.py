@@ -146,6 +146,36 @@ class Reasons(unittest.TestCase):
         self.assertIn("2 health zones", by["Matadi"]["population_note"])
         self.assertEqual(by["Matadi"]["match_by"], "shape_id")
 
+    def test_the_2024_projection_matched_by_name_and_its_factor(self):
+        admin1, admin2 = units()
+        factor = 662_833 / 340_040
+        # The workbook codes Mbanza-Ngungu CD2014; the 2020 table, CD2013.
+        sheet = [["Province", "Code Province", "Territoire", "Code Terrtoire", "Zone de sante",
+                  "Pcode ZS", "Population 2024"],
+                 ["Kongo-Central", "CD20", "Matadi", "CD2001", "Matadi", "CD2001ZS01", 662_833],
+                 ["Kongo-Central", "CD20", "Songololo", "CD2011", "Kimpese", "CD2011ZS01",
+                  round(345_342 * factor)],
+                 ["Kongo-Central", "CD20", "Mbanza-Ngungu", "CD2014", "Kwilu-Ngongo",
+                  "CD2014ZS01", round(726_605 * factor)]]
+        held, report = dg.hpc_build(dg.hpc_sums(sheet), dg.rows_of(ADM2), admin1, admin2)
+        by = {r["name"]: r for r in held}
+        self.assertEqual(by["Mbanza-Ngungu"]["population"]["value"], round(726_605 * factor))
+        self.assertTrue(any("CD2014 Mbanza-Ngungu (Kongo-Central) is the 2020 table's CD2013"
+                            in line for line in report))
+        self.assertEqual(by["Matadi"]["population_note"],
+                         "OCHA's projected population of Matadi for 2024, made for humanitarian "
+                         "planning: its health zone's figure. The projection is OCHA's 2020 "
+                         "estimate for every territory and city of Kongo-Central multiplied by "
+                         "1.95.")
+        self.assertEqual([s["field"] for s in by["Matadi"]["sources"]],
+                         ["population", "population note"])
+        # A code whose 2020 unit has another name is not taken on that code.
+        sheet[3][2], sheet[3][3] = "Nowhere", "CD2013"
+        held, report = dg.hpc_build(dg.hpc_sums(sheet), dg.rows_of(ADM2), admin1, admin2)
+        self.assertNotIn("Mbanza-Ngungu", {r["name"] for r in held})
+        self.assertTrue(any("CD2013 Nowhere (Kongo-Central): no 2020 unit" in line
+                            for line in report))
+
     def test_town_premise_checked(self):
         admin1, admin2 = units()
         moved = ADM2.replace("Population is reflected in CD2011", "Population is reflected in CD2001")

@@ -1224,8 +1224,12 @@ def municipalities(rep: Report, name: str, rows: list[tuple[str, dict[str, int]]
             # A row its residents rule out ends at the next municipality whose
             # row they allow, or at the next one at all once its communes make
             # it (Benguela's Baía Farta and Caimbambo trade 12,634 people
-            # between their rows and their communes alike).
-            ready = fresh and (fits(key, vals) or made_up)
+            # between their rows and their communes alike), or make its
+            # residents: Uíge's ages print Nsosso's row as Nsosso and Vista
+            # Alegre together (58,210), its commune Nsosso (33,933, its
+            # residents), then Vista Alegre's communes under no row of their own.
+            ready = fresh and (fits(key, vals) or made_up
+                               or (bool(communes) and fits(current, dict(summed))))
         else:
             ready = made_up
         resume = fresh and not ready and fits(key, vals)
@@ -2443,7 +2447,7 @@ def pages_report(stem: str, blob: bytes, numbers: list[int], draw_all: bool = Fa
                 page.to_image(resolution=200).save(whole)
                 image = Image.open(whole)
                 strips = 4 if page.images else 0
-                height = image.height // strips + 1
+                height = image.height // max(strips, 1) + 1
                 for s in range(strips):
                     top, bottom = max(0, s * height - 40), min(image.height, (s + 1) * height + 40)
                     for h, (left, right) in enumerate(((0, image.width // 2 + 60),

@@ -102,8 +102,18 @@ class Build(unittest.TestCase):
         self.assertEqual(len(records), 9)
         by_name = {(r["level"], r["name"]): r for r in records}
         tome = by_name[("admin1", "São Tomé")]
-        self.assertEqual(tome["population"]["value"], 171_856)
-        self.assertEqual(by_name[("admin1", "Príncipe")]["population"]["value"], 7_344)
+        # The provinces' 2012 counts are said, not given: newer figures for
+        # their districts describe the same ground.
+        self.assertNotIn("value", tome["population"])
+        self.assertIn("counted 171,856 residents in São Tomé province", tome["population_note"])
+        principe = by_name[("admin1", "Príncipe")]
+        self.assertNotIn("value", principe["population"])
+        self.assertIn("counted 7,344 residents in the Autonomous Region of Príncipe",
+                      principe["population_note"])
+        self.assertIn("value", principe["sex_ratio"])
+        self.assertTrue(principe["sources"][0]["field"].endswith("/population note"))
+        # The district keeps its count; OCHA's 2022 figure stands in front of it.
+        self.assertEqual(by_name[("admin2", "Príncipe")]["population"]["value"], 7_344)
         self.assertEqual(by_name[("admin2", "Água Grande")]["median_age"]["value"], 20.1)
         self.assertTrue(all(r["match_by"] == "shape_id" for r in records))
 

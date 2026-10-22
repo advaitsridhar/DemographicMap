@@ -452,16 +452,23 @@ def build(national: list[str], reports: dict[str, list[str]],
                      for k in LANGUAGE_FIRST + LANGUAGE_SECOND})
         where = ("the Autonomous Region of Príncipe" if province == "Príncipe"
                  else "São Tomé province, its six districts added up")
-        cite = [{"field": "population/sex_ratio/median_age/religion/language",
+        cite = [{"field": "sex_ratio/median_age/religion/language/population note",
                  "name": SOURCE + f", Resultado Distrital ({m}), Quadros 2, 5, 6 and 10",
                  "url": BASE + DISTRICTS[m][0], "year": YEAR, "license": LICENCE}
                 for m in members]
+        given = fields((total, men, women), agegroups, rel, where, lang)
+        # A province is its districts' ground, which newer figures describe
+        # (OCHA's 2022 projection of each district; Príncipe is one district):
+        # the 2012 count is said, not shown in front of them.
+        given.pop("population")
+        given["population_note"] = (
+            f"The 2012 census counted {total:,} residents in {where} (present and absent "
+            f"residents, in ordinary and collective dwellings).")
         records.append(record(f"STP-RGPH2012-{sid}", labels.get(sid, province), level="admin1",
                               parent="STP",
                               country="STP", match_by="shape_id", shape_id=sid,
-                              sources=cite,
-                              **fields((total, men, women), agegroups, rel, where, lang)))
-        report.append(f"  province {province}: {total:,}")
+                              sources=cite, **given))
+        report.append(f"  province {province}: {total:,} (said, not given)")
     return records, report
 
 

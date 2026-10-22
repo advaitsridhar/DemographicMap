@@ -1230,6 +1230,25 @@ class ReviewRound(unittest.TestCase):
         self.assertEqual(bengo["population"]["value"], 488_978)
         self.assertIn("Quadros 8 and 1.7", bengo["sources"][0]["name"])
 
+    def test_a_row_that_holds_the_next_municipality(self):
+        # Uíge's Quadro 1.5 (run e36dafd, pages 73-74): Nsosso's row counts
+        # Nsosso and Vista Alegre together, its commune Nsosso its residents,
+        # and Vista Alegre's communes follow under no row of their own.
+        rep = am.Report("Uige")
+        rep.new = [("Damba", 59_745, 29_000, 30_745), ("Nsosso", 33_933, 16_000, 17_933),
+                   ("Vista Alegre", 24_277, 12_000, 12_277), ("Lucunga", 14_832, 7_000, 7_832)]
+        rows = [(label, {"TOTAL": total}) for label, total in (
+            ("Uíge", 132_787), ("Damba", 59_745), ("Damba", 37_098), ("Camatambo", 4_801),
+            ("Lêmboa", 4_332), ("Petecusso", 13_515), ("Nsosso", 58_210), ("Nsosso", 33_933),
+            ("Vista Alegre", 17_106), ("Cambamba", 7_171), ("Lucunga", 14_832),
+            ("Lucunga", 14_832))]
+        got = am.municipalities(rep, "age_other", rows)
+        self.assertEqual({k: v["TOTAL"] for k, v in got.items()},
+                         {"damba": 59_745, "nsosso": 33_933, "vistaalegre": 24_277,
+                          "lucunga": 14_832})
+        self.assertEqual(rep.patched["age_other"], {"nsosso": ("communes", 58_210, 33_933),
+                                                    "vistaalegre": ("namesake", 17_106, 24_277)})
+
     def test_census_labels_in_notes(self):
         self.assertEqual(am.shown_name("Boa Entrada(Cadá)"), "Boa Entrada (Cadá)")
         self.assertEqual(am.shown_name("Gangula(Kuvu)"), "Gangula (Kuvu)")

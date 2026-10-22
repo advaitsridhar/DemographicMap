@@ -409,11 +409,41 @@ def hpc_sums(rows: list[list[Any]]) -> dict[str, dict[str, Any]]:
     return out
 
 
+def total_2020(row: dict[str, str]) -> int:
+    """A unit's 2020 estimate: T_TL, or its women and men added up."""
+    return num(row, "T_TL") or num(row, "F_TL") + num(row, "M_TL")
+
+
+# Two units' 2024/2020 ratios this close (relative) are one factor applied to both.
+FACTOR_TOLERANCE = 5e-4
+
+
+def province_factors(pairs: dict[str, list[tuple[int, float]]]) -> dict[str, float]:
+    """Province -> the one factor the 2024 table applies to all its units' 2020
+    estimates, where every unit of it carries the same one; ``pairs`` gives each
+    province's (2020 estimate, 2024 figure) pairs."""
+    out: dict[str, float] = {}
+    for province, got in pairs.items():
+        ratios = sorted(new / old for old, new in got if old > 0)
+        if len(ratios) < 2:
+            continue
+        middle = ratios[len(ratios) // 2]
+        if all(abs(r / middle - 1) <= FACTOR_TOLERANCE for r in ratios):
+            out[province] = middle
+    return out
+
+
 def hpc_build(sums: dict[str, dict[str, Any]], adm2: list[dict[str, str]],
               admin1: list[dict[str, Any]], admin2: list[dict[str, Any]]
               ) -> tuple[list[dict[str, Any]], list[str]]:
     """Each territory's and city's 2024 sum, on the polygon OCHA's 2020 row of the same
-    code reaches; the build holds these behind the 2020 figures (HELD_ROWS)."""
+    unit reaches; the build holds these behind the 2020 figures (HELD_ROWS).
+
+    The unit is the 2020 row of the workbook's code where that row has the
+    workbook's name; otherwise the one 2020 row of the workbook's name in its
+    province (the workbook codes Kasongo-Lunda CD3106, the 2020 table CD3107),
+    and every such match is logged. Each note says by what factor the workbook
+    raises its province's 2020 estimates, where it raises all of them by one."""
     by_key = {fold(u["name"]): u for u in admin1}
     parents = {u["id"]: u["name"] for u in admin1}
 
@@ -426,27 +456,70 @@ def hpc_build(sums: dict[str, dict[str, Any]], adm2: list[dict[str, str]],
              for code, r in counted.items()}
     bound, _ = bind(units, admin2, parents)
     shapes = {u["id"]: u for u in admin2}
-    records: list[dict[str, Any]] = []
+    named: dict[tuple[str, str], list[str]] = defaultdict(list)
+    for code, r in counted.items():
+        named[(fold(r["admin1Name_fr"]), fold(r["admin2Name_fr"]))].append(code)
     report: list[str] = []
+    # 2020 code -> the workbook's codes that are that unit.
+    taken: dict[str, list[str]] = defaultdict(list)
     for code, entry in sorted(sums.items()):
-        sid = bound.get(code)
-        if sid is None:
-            report.append(f"  2024: {code} {entry['name']}: no 2020 unit of that code on a polygon")
+        own = counted.get(code)
+        if own is not None and fold(own["admin2Name_fr"]) == fold(entry["name"]):
+            taken[code].append(code)
             continue
+        same = named.get((fold(entry["province"]), fold(entry["name"])), [])
+        if len(same) == 1:
+            report.append(f"  2024: {code} {entry['name']} ({entry['province']}) is the 2020 "
+                          f"table's {same[0]} "
+                          f"{counted[same[0]]['admin2Name_fr']}, matched by name in its province"
+                          + (f"; the 2020 table's {code} is {own['admin2Name_fr']}" if own else ""))
+            taken[same[0]].append(code)
+        else:
+            report.append(f"  2024: {code} {entry['name']} ({entry['province']}): no 2020 unit "
+                          f"of that code and name ({len(same)} of that name in its province)")
+    pairs: dict[str, list[tuple[int, float]]] = defaultdict(list)
+    chosen: list[tuple[str, str, dict[str, Any]]] = []
+    for old, codes in sorted(taken.items()):
+        if len(codes) > 1:
+            report.append(f"  2024: {', '.join(codes)} are all the 2020 table's {old}; left out")
+            continue
+        entry = sums[codes[0]]
+        pairs[counted[old]["admin1Name_fr"]].append((total_2020(counted[old]), entry["total"]))
+        sid = bound.get(old)
+        if sid is None:
+            report.append(f"  2024: {codes[0]} {entry['name']}: the 2020 unit {old} is on no "
+                          f"polygon")
+            continue
+        chosen.append((old, sid, entry))
+    factors = province_factors(pairs)
+    for province, factor in sorted(factors.items()):
+        report.append(f"  2024: {province}: every unit's 2020 estimate x{factor:.4f}")
+    for province in sorted(set(pairs) - set(factors)):
+        report.append(f"  2024: {province}: its units' 2024/2020 ratios differ")
+    records: list[dict[str, Any]] = []
+    for old, sid, entry in chosen:
         name = shapes[sid]["name"]
         if name in TOWNS or name in DECLARED_ELSEWHERE:
             continue
         zones = entry["zones"]
+        province = counted[old]["admin1Name_fr"]
+        shown = (map_province(province) or {}).get("name") or province
+        note = (f"OCHA's projected population of {name} for {HPC_YEAR}, made for humanitarian "
+                f"planning: its "
+                + (f"{zones} health zones' figures added up." if zones > 1
+                   else "health zone's figure."))
+        if province in factors:
+            note += (f" The projection is OCHA's 2020 estimate for every territory and city of "
+                     f"{shown} multiplied by {factors[province]:.2f}.")
         records.append(record(
             f"COD-HPC{HPC_YEAR}-{sid}", name, level="admin2", parent="COD", country="COD",
             match_by="shape_id", shape_id=sid,
             population=measure(round(entry["total"]), year=HPC_YEAR, source=HPC_SOURCE),
-            population_note=(f"OCHA's projected population of {name} for {HPC_YEAR}, made for "
-                             f"humanitarian planning: its "
-                             + (f"{zones} health zones' figures added up."
-                                if zones > 1 else "health zone's figure.")),
+            population_note=note,
             sources=[{"field": "population", "name": HPC_SOURCE, "url": OCHA_URL,
-                      "year": HPC_YEAR, "license": OCHA_LICENCE}]))
+                      "year": HPC_YEAR, "license": OCHA_LICENCE},
+                     {"field": "population note", "name": OCHA, "url": OCHA_URL, "year": 2020,
+                      "license": OCHA_LICENCE}]))
     report.append(f"  2024: {len(records)} territories and cities, "
                   f"{sum(r['population']['value'] for r in records):,} people")
     return records, report
