@@ -1,225 +1,86 @@
-car_census: https://data.humdata.org/dataset/d3600c4b-d93d-4ed0-b7b1-359a060b916a/resource/fb2c7f59-3b51-4218-9049-2eddb61a404b/download/icasees_cartocensitaire2021_formatocha_public_v2.xlsx: 66,575 bytes, sha256 e7bc08f1f7fa2b5a8914089e0744ad07e9419fadeca018a982f495e8171b6274
-car_census: https://data.humdata.org/dataset/4f41a2c7-167f-4e60-8e90-dd282383dd90/resource/1670d3a6-a89f-40cd-80c9-bf580b27e08e/download/central_african_republic_uscb_202303.xlsx: 401,471 bytes, sha256 a8bda4dbb6baef97c7cc39ec8e3ea94c6a066a9d54072be0f0fa57f3071934dc
-  2025 resource: Projection population-2025.xlsx: Projection de la population 2025 en Admin2 (ICASEES)
-  dataset notes: Population projection based on the general census of 2003. Latest projection for 2025. See caveats. Data available for: 2025, 2022, 2021, 2015
-  dataset caveats: [Dataset title changed 2018 05 10] WARNING: The sex disaggregated data (SADD) provided at administrative levels 2 and 3 are derived from the actual administrative level 1 data ratios. While the lower level population data are valid, the sex data will under- or over-count the numbers of females and males. The age disaggregated data provided at administrative levels 1, 2, and 3 are derived from the actual administrative level 0 data ratios. While the lower level population data are valid, the age data will under- or over-count the numbers of children, adults, and elderly.
-car_census: ocha-car-projection-population-2025-icasees.xlsx: 22,728 bytes, sha256 1ce7104a08eb8fcd81962405ac6b68b3f280d676ffc749abfdcb2c024a36bbaf
-  Population_HNRP 2026: 85 sub-prefectures, 6,567,382 people for 2025
-PrevCommune: 178 communes of the 2003 frame, 6,091,097 people; the national line 6,091,097
-mapping table: 0 of 280 units depart from the fixed 49% share of men
-  the same count, 8,825, for Lissa (Grimari) and Pouyamba (Grimari)
-  the same count, 23,708, for Mobaye (Mobaye) and Haute-Kadéi (Dede Mocouba) (Dede-Makouba)
-  OCHA's table files Nola (Nola, 71,134) under Mbaïki's commune of the same name; the names place it here
-  twins: 8,825 for Lissa (Grimari) and Pouyamba (Grimari)
-  twins: 23,708 for Haute-Kadéi (Dédé-Mokouba) and Mobaye (Mobaye)
-  2025: prefecture nanagribizi -> nanagrebizi (0.91)
-  2025: baminguibangoran: baminigui -> bamingui (0.94)
-  2025: bangui: 2025 rows not matched ['Bangui Centre', 'Bangui Fleuve', 'Bangui Kaga', 'Bangui Rapide']; mapping-table sub-prefectures without a 2025 row ['bangui', 'begoua', 'bimbo']
-  2025: hautekotto: 2025 rows not matched ['Ouandja Kotto']; mapping-table sub-prefectures without a 2025 row []
-  2025: hautmbomou: djemah -> djema (0.91)
-  2025: hautmbomou: 2025 rows not matched ['Mboki']; mapping-table sub-prefectures without a 2025 row []
-  2025: lobaye: 2025 rows not matched ['Moboma']; mapping-table sub-prefectures without a 2025 row []
-  2025: mamberekadei: dedemakouba -> dedemokouba (0.91)
-  2025: ouhamfafa: bantangafo -> batangafo (0.95)
-  2025: vakaga: 2025 rows not matched ['Am-Dafock', 'Ouandja']; mapping-table sub-prefectures without a 2025 row []
-  2025: Boali: 67,723 (Boali; 2021 62,071, +2.2% a year)
-  2025: Djoukou: 50,881 (Ndjoukou; 2021 46,627, +2.2% a year)
-  2025: Gamboula: 43,268 (Gamboula; 2021 41,196, +1.2% a year)
-  2025: Baboua: 82,555 (Baboua; 2021 77,278, +1.7% a year)
-  2025: Nola: 106,410 (Nola; 2021 95,550, +2.7% a year)
-  2025: Bria: hautekotto divided otherwise in 2025
-  2025: Batangafo: 95,085 (Batangafo; 2021 88,407, +1.8% a year)
-  2025: Dédé-Mokouba: 24,253 (Dédé Mokouba; 2021 23,708, +0.6% a year) -- 2021 count withheld
-  2025: Mongoumba: lobaye divided otherwise in 2025
-  2025: Carnot: 210,988 (Carnot + Senkpa-Mbaéré; 2021 178,257, +4.3% a year)
-  2025: Bozoum: 78,386 (Bozoum; 2021 75,139, +1.1% a year)
-  2025: Bouar: 197,498 (Bouar; 2021 175,054, +3.1% a year)
-  2025: Mbaïki: lobaye divided otherwise in 2025
-  2025: Bambouti: hautmbomou divided otherwise in 2025
-  2025: Mala: 21,469 (Mala; 2021 19,680, +2.2% a year)
-  2025: Zangba: 53,361 (Zangba; 2021 50,815, +1.2% a year)
-  2025: Ouanda-Djallé: vakaga divided otherwise in 2025
-  2025: Berbérati: 199,199 (Berbérati; 2021 189,813, +1.2% a year)
-  2025: Kembé: 47,999 (Kembé; 2021 46,050, +1.0% a year)
-  2025: Bambari: 227,806 (Bambari; 2021 216,534, +1.3% a year)
-  2025: Boganda: lobaye divided otherwise in 2025
-  2025: Bogangolo: 12,070 (Bogangolo; 2021 9,801, +5.3% a year)
-  2025: Rafaï: 23,534 (Rafaï; 2021 21,936, +1.8% a year)
-  2025: Zémio: hautmbomou divided otherwise in 2025
-  2025: Bamingui: 11,258 (Bamingui; 2021 10,284, +2.3% a year)
-  2025: Obo: hautmbomou divided otherwise in 2025
-  2025: Gadzi: 97,966 (Gadzi; 2021 72,071, +8.0% a year)
-  2025: Boganangone: lobaye divided otherwise in 2025
-  2025: Markounda: 41,875 (Markounda; 2021 37,399, +2.9% a year)
-  2025: Bayanga: 20,940 (Bayanga; 2021 18,556, +3.1% a year)
-  2025: Satéma: 39,457 (Satema; 2021 37,097, +1.6% a year)
-  2025: Ippy: 61,472 (Ippy; 2021 59,290, +0.9% a year)
-  2025: Mbrès: 37,754 (Mbrès; 2021 33,323, +3.2% a year)
-  2025: Bocaranga: 109,571 (Bocaranga; 2021 102,297, +1.7% a year)
-  2025: Birao: vakaga divided otherwise in 2025
-  2025: Kouango: 111,713 (Kouango; 2021 107,763, +0.9% a year)
-  2025: Gambo: 34,464 (Gambo; 2021 33,294, +0.9% a year)
-  2025: Bangui: bangui divided otherwise in 2025
-  2025: Bakouma: 30,410 (Bakouma; 2021 28,703, +1.5% a year)
-  2025: Baoro: 63,764 (Baoro; 2021 58,207, +2.3% a year)
-  2025: Bouca: 86,787 (Bouca; 2021 80,531, +1.9% a year)
-  2025: Dékoa: 61,285 (Dekoa; 2021 57,254, +1.7% a year)
-  2025: Alindao: 131,219 (Alindao; 2021 125,040, +1.2% a year)
-  2025: Amada-Gaza: 20,319 (Amada-Gaza; 2021 15,151, +7.6% a year)
-  2025: Nana-Bakassa: 61,816 (Nana-Bakassa; 2021 55,642, +2.7% a year)
-  2025: Ouango: 66,058 (Ouango; 2021 62,662, +1.3% a year)
-  2025: Sibut: 66,865 (Sibut; 2021 60,181, +2.7% a year)
-  2025: Mingala: 41,257 (Mingala; 2021 39,672, +1.0% a year)
-  2025: Koui: 44,669 (Koui; 2021 41,551, +1.8% a year)
-  2025: Bossembélé: 65,181 (Bossembele; 2021 58,504, +2.7% a year)
-  2025: Bossemtélé: 25,844 (Bossemptele; 2021 24,328, +1.5% a year)
-  2025: Yalinga: hautekotto divided otherwise in 2025
-  2025: Kabo: 60,873 (Kabo + Sido; 2021 56,541, +1.9% a year)
-  2025: Bangassou: 117,194 (Bangassou; 2021 111,208, +1.3% a year)
-  2025: Boda: lobaye divided otherwise in 2025
-  2025: Ndélé: 75,496 (Ndélé; 2021 71,824, +1.3% a year)
-  2025: Sosso-Nakombo: 18,785 (Sosso-Nakombo; 2021 18,449, +0.5% a year)
-  2025: Ouadda: hautekotto divided otherwise in 2025
-  2025: Bambio: 27,615 (Bambio; 2021 24,664, +2.9% a year)
-  2025: Yaloké: 90,123 (Yaloké; 2021 82,678, +2.2% a year)
-  2025: Bimbo: bangui divided otherwise in 2025
-  2025: Bossangoa: 188,751 (Bossangoa; 2021 167,214, +3.1% a year)
-  2025: Grimari: 53,088 (Grimari; 2021 51,275, +0.9% a year)
-  2025: Damara: 61,912 (Damara; 2021 56,755, +2.2% a year)
-  2025: Paoua: 244,426 (Paoua; 2021 307,172, -5.6% a year)
-  2025: Kaga-Bandoro: 197,936 (Kaga Bandoro + Nana-Outa; 2021 175,498, +3.1% a year)
-  2025: Ngaoundaye: 111,426 (Kodi + Ngaoundaye; 2021 134,979, -4.7% a year)
-  2025: Djéma: hautmbomou divided otherwise in 2025
-  2025: Bakala: 12,228 (Bakala; 2021 11,492, +1.6% a year)
-  2025: Abba: 33,625 (Aba; 2021 31,257, +1.8% a year)
-  2025: Mobaye: 85,883 (Mobaye; 2021 81,498, +1.3% a year)
-  2025: Nagha Boguila: 42,149 (Nanga-Boguila; 2021 37,649, +2.9% a year)
-  2025: prefecture Bamingui-Bangoran: 86,754
-  2025: prefecture Bangui: none (Bangui)
-  2025: prefecture Basse-Kotto: 399,176
-  2025: prefecture Haut-Mbomou: none (Bambouti, Djéma, Obo, Zémio)
-  2025: prefecture Haute-Kotto: none (Bria, Ouadda, Yalinga)
-  2025: prefecture Kémo: 200,501
-  2025: prefecture Lobaye: none (Boda, Boganangone, Boganda, Mbaïki, Mongoumba)
-  2025: prefecture Mambéré-Kadéï: 614,778
-  2025: prefecture Mbomou: 271,661
-  2025: prefecture Nana-Grébizi: 235,690
-  2025: prefecture Nana-Mambéré: 377,443
-  2025: prefecture Ombella-M'Poko: none (Bimbo)
-  2025: prefecture Ouaka: 466,306
-  2025: prefecture Ouham: 577,336
-  2025: prefecture Ouham-Pendé: 614,321
-  2025: prefecture Sangha-Mbaéré: 154,965
-  2025: prefecture Vakaga: none (Birao, Ouanda-Djallé)
-  2025 sexes: Bamingui-Bangoran: one share of men, 0.4988, for 2 sub-prefectures
-  2025 sexes: Bangui: one share of men, 0.4787, for 4 sub-prefectures
-  2025 sexes: Basse-Kotto: one share of men, 0.5027, for 6 sub-prefectures
-  2025 sexes: Haut-Mbomou: one share of men, 0.4993, for 5 sub-prefectures
-  2025 sexes: Haute-Kotto: one share of men, 0.4994, for 4 sub-prefectures
-  2025 sexes: Kémo: one share of men, 0.5000, for 4 sub-prefectures
-  2025 sexes: Lim-Pendé: one share of men, 0.4984, for 5 sub-prefectures
-  2025 sexes: Lobaye: one share of men, 0.4994, for 6 sub-prefectures
-  2025 sexes: Mambéré: one share of men, 0.5000, for 4 sub-prefectures
-  2025 sexes: Mambéré-Kadeï: one share of men, 0.4995, for 4 sub-prefectures
-  2025 sexes: Mbomou: one share of men, 0.5106, for 5 sub-prefectures
-  2025 sexes: Nana-Gribizi: one share of men, 0.5001, for 3 sub-prefectures
-  2025 sexes: Nana-Mambéré: one share of men, 0.5000, for 4 sub-prefectures
-  2025 sexes: Ombella-M'Poko: one share of men, 0.4998, for 5 sub-prefectures
-  2025 sexes: Ouaka: one share of men, 0.4976, for 5 sub-prefectures
-  2025 sexes: Ouham: one share of men, 0.5000, for 4 sub-prefectures
-  2025 sexes: Ouham-Fafa: one share of men, 0.5067, for 4 sub-prefectures
-  2025 sexes: Ouham-Pendé: one share of men, 0.4997, for 4 sub-prefectures
-  2025 sexes: Sangha-Mbaéré: one share of men, 0.5000, for 3 sub-prefectures
-  2025 sexes: Vakaga: one share of men, 0.5225, for 4 sub-prefectures
-  Boali: 62,071 (1 communes of 2021)
-  Djoukou: 46,627 (2 communes of 2021)
-  Gamboula: 41,196 (1 communes of 2021)
-  Baboua: 77,278 (5 communes of 2021)
-  Nola: 95,550 (3 communes of 2021)
-  Bria: 102,356 (3 communes of 2021)
-  Batangafo: 88,407 (5 communes of 2021)
-  Dédé-Mokouba: 23,708 (1 communes of 2021) -- withheld
-  Mongoumba: 33,894 (1 communes of 2021)
-  Carnot: 178,257 (2 communes of 2021; 2021 sub-prefectures Carnot, Senkpa-Mbaéré)
-  Bozoum: 75,139 (5 communes of 2021)
-  Bouar: 175,054 (7 communes of 2021)
-  Mbaïki: 188,263 (8 communes of 2021)
-  Bambouti: 310 (1 communes of 2021)
-  Mala: 19,680 (1 communes of 2021)
-  Zangba: 50,815 (2 communes of 2021)
-  Ouanda-Djallé: 6,921 (1 communes of 2021)
-  Berbérati: 189,813 (5 communes of 2021)
-  Kembé: 46,050 (2 communes of 2021)
-  Bambari: 216,534 (5 communes of 2021)
-  Boganda: 19,823 (1 communes of 2021)
-  Bogangolo: 9,801 (1 communes of 2021)
-  Rafaï: 21,936 (1 communes of 2021)
-  Zémio: 29,420 (1 communes of 2021)
-  Bamingui: 10,284 (1 communes of 2021)
-  Obo: 20,100 (2 communes of 2021)
-  Gadzi: 72,071 (2 communes of 2021)
-  Boganangone: 39,115 (1 communes of 2021)
-  Markounda: 37,399 (1 communes of 2021)
-  Bayanga: 18,556 (1 communes of 2021)
-  Satéma: 37,097 (1 communes of 2021)
-  Ippy: 59,290 (3 communes of 2021)
-  Mbrès: 33,323 (1 communes of 2021)
-  Bocaranga: 102,297 (3 communes of 2021)
-  Birao: 76,267 (2 communes of 2021)
-  Kouango: 107,763 (3 communes of 2021)
-  Gambo: 33,294 (2 communes of 2021)
-  Bangui: 812,407 (8 communes of 2021)
-  Bakouma: 28,703 (1 communes of 2021)
-  Baoro: 58,207 (3 communes of 2021)
-  Bouca: 80,531 (4 communes of 2021)
-  Dékoa: 57,254 (3 communes of 2021)
-  Alindao: 125,040 (5 communes of 2021)
-  Amada-Gaza: 15,151 (1 communes of 2021)
-  Nana-Bakassa: 55,642 (1 communes of 2021)
-  Ouango: 62,662 (2 communes of 2021)
-  Sibut: 60,181 (2 communes of 2021)
-  Mingala: 39,672 (3 communes of 2021)
-  Koui: 41,551 (1 communes of 2021)
-  Bossembélé: 58,504 (2 communes of 2021)
-  Bossemtélé: 24,328 (1 communes of 2021)
-  Yalinga: 4,562 (1 communes of 2021)
-  Kabo: 56,541 (2 communes of 2021; 2021 sub-prefectures Kabo, Sido)
-  Bangassou: 111,208 (4 communes of 2021)
-  Boda: 64,013 (2 communes of 2021)
-  Ndélé: 71,824 (2 communes of 2021)
-  Sosso-Nakombo: 18,449 (1 communes of 2021)
-  Ouadda: 21,424 (2 communes of 2021)
-  Bambio: 24,664 (1 communes of 2021)
-  Yaloké: 82,678 (2 communes of 2021)
-  Bimbo: 612,869 (2 communes of 2021; 2021 sub-prefectures Bimbo, Bégoua)
-  Bossangoa: 167,214 (6 communes of 2021)
-  Grimari: 51,275 (4 communes of 2021)
-  Damara: 56,755 (1 communes of 2021)
-  Paoua: 307,172 (8 communes of 2021)
-  Kaga-Bandoro: 175,498 (5 communes of 2021; 2021 sub-prefectures Kaga Bandoro, Nana-Outa)
-  Ngaoundaye: 134,979 (4 communes of 2021; 2021 sub-prefectures Kodi, Ngaoundaye)
-  Djéma: 2,484 (1 communes of 2021)
-  Bakala: 11,492 (1 communes of 2021)
-  Abba: 31,257 (2 communes of 2021)
-  Mobaye: 81,498 (2 communes of 2021)
-  Nagha Boguila: 37,649 (1 communes of 2021)
-  prefecture Bamingui-Bangoran: 82,108; 2016: 948 men per 1,000 women, median 18.5
-  prefecture Bangui: 812,407; 2016: 991 men per 1,000 women, median 20.4
-  prefecture Basse-Kotto: 380,172; 2016: 948 men per 1,000 women, median 20.3
-  prefecture Haute-Kotto: 128,342; 2016: 1106 men per 1,000 women, median 23.5
-  prefecture Haut-Mbomou: 52,314; 2016: 939 men per 1,000 women, median 24.0
-  prefecture Kémo: 183,742; 2016: 951 men per 1,000 women, median 20.2
-  prefecture Lobaye: 345,108; 2016: 957 men per 1,000 women, median 20.0
-  prefecture Mambéré-Kadéï: 538,645; 2016: 1000 men per 1,000 women, median 20.2
-  prefecture Mbomou: 257,803; 2016: 956 men per 1,000 women, median 21.2
-  prefecture Nana-Grébizi: 208,821; 2016: 960 men per 1,000 women, median 20.2
-  prefecture Nana-Mambéré: 341,796; 2016: 973 men per 1,000 women, median 19.6
-  prefecture Ombella-M'Poko: 882,678; 2016: 980 men per 1,000 women, median 20.2
-  prefecture Ouaka: 446,354; 2016: 934 men per 1,000 women, median 20.1
-  prefecture Ouham: 523,383; 2016: 947 men per 1,000 women, median 19.5
-  prefecture Ouham-Pendé: 685,466; 2016: 926 men per 1,000 women, median 18.9
-  prefecture Sangha-Mbaéré: 138,770; 2016: 1008 men per 1,000 women, median 19.9
-  prefecture Vakaga: 83,188; 2016: 873 men per 1,000 women, median 17.8
-  17 prefectures and 72 sub-prefecture polygons written; 2025: 11 prefectures and 56 sub-prefectures
-  wrote data/processed/car_census.json (378 kB)
-  wrote data/processed/car_projection.json (138 kB)
+  13,616,720 bytes
+  Dakar: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf: 13,616,720 bytes, sha256 e027a15cc6d29786fea36de5a4880043c5b0f2d7e3c2132878ec0d8bdfa0bc89
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/PCOHWO+AcuminVariableConcept', '/Encoding': IndirectObject(9721, 0, 131042457058896), '/FirstChar': 19, '/FontDescriptor': IndirectObject(9722, 0, 131042457058896), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/PCOHWO+AcuminVariableConcept', '/Encoding': IndirectObject(9723, 0, 131042457058896), '/FirstChar': 22, '/FontDescriptor': IndirectObject(9724, 0, 131042457058896), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [715, 715, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/PCOHWO+AcuminVariableConcept', '/Encoding': IndirectObject(9725, 0, 131042457058896), '/FirstChar': 23, '/FontDescriptor': IndirectObject(9726, 0, 131042457058896), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  15,068,454 bytes
+  Diourbel: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_DIOURBEL_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf: 15,068,454 bytes, sha256 7a79677cc7438934eb2b04e4e740109064b3d4f26660d5c65e007c8a66f69ef6
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/GWFFAG+AcuminVariableConcept', '/Encoding': IndirectObject(10280, 0, 131042457669776), '/FirstChar': 19, '/FontDescriptor': IndirectObject(10281, 0, 131042457669776), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/GWFFAG+AcuminVariableConcept', '/Encoding': IndirectObject(10282, 0, 131042457669776), '/FirstChar': 21, '/FontDescriptor': IndirectObject(10283, 0, 131042457669776), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [609, 706, 744, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/GWFFAG+AcuminVariableConcept', '/Encoding': IndirectObject(10284, 0, 131042457669776), '/FirstChar': 23, '/FontDescriptor': IndirectObject(10285, 0, 131042457669776), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  14,232,161 bytes
+  Kaffrine: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf: 14,232,161 bytes, sha256 c1cc6366ed93e32c1b08bb223f9c2980935c7ded11701640208cd7e45804101d
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UURQTE+AcuminVariableConcept', '/Encoding': IndirectObject(8412, 0, 131042457675792), '/FirstChar': 19, '/FontDescriptor': IndirectObject(8413, 0, 131042457675792), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UURQTE+AcuminVariableConcept', '/Encoding': IndirectObject(8414, 0, 131042457675792), '/FirstChar': 21, '/FontDescriptor': IndirectObject(8415, 0, 131042457675792), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [609, 715, 715, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UURQTE+AcuminVariableConcept', '/Encoding': IndirectObject(8416, 0, 131042457675792), '/FirstChar': 23, '/FontDescriptor': IndirectObject(8417, 0, 131042457675792), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  17,326,890 bytes
+  Fatick: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_FATICK_Avril%202026_0.pdf: 17,326,890 bytes, sha256 ea6299540060cae9f69df7d079e4c9f40c8c1fb5c88b2cf40402dcc45985f93b
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/OFDPNQ+AcuminVariableConcept', '/Encoding': IndirectObject(9870, 0, 131042457675536), '/FirstChar': 19, '/FontDescriptor': IndirectObject(9871, 0, 131042457675536), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/OFDPNQ+AcuminVariableConcept', '/Encoding': IndirectObject(9872, 0, 131042457675536), '/FirstChar': 19, '/FontDescriptor': IndirectObject(9873, 0, 131042457675536), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [715, 727, 617, 715, 609, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/OFDPNQ+AcuminVariableConcept', '/Encoding': IndirectObject(9874, 0, 131042457675536), '/FirstChar': 23, '/FontDescriptor': IndirectObject(9875, 0, 131042457675536), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  12,309,217 bytes
+  Kaolack: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAOLACK_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf: 12,309,217 bytes, sha256 a33b96596c62bef85242d978b0d4051bf52a0dc313367c94ce05975e4f063708
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UGCOTE+AcuminVariableConcept', '/Encoding': IndirectObject(8029, 0, 131042427048656), '/FirstChar': 19, '/FontDescriptor': IndirectObject(8030, 0, 131042427048656), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UGCOTE+AcuminVariableConcept', '/Encoding': IndirectObject(8031, 0, 131042427048656), '/FirstChar': 20, '/FontDescriptor': IndirectObject(8032, 0, 131042427048656), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [727, 609, 715, 715, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UGCOTE+AcuminVariableConcept', '/Encoding': IndirectObject(8033, 0, 131042427048656), '/FirstChar': 23, '/FontDescriptor': IndirectObject(8034, 0, 131042427048656), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  12,694,365 bytes
+  Kolda: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KOLDA_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf: 12,694,365 bytes, sha256 ab6235c1399fa33d1a97066be8f6ff59d3699ce1b3677fd435571a295e413366
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ERCTYK+AcuminVariableConcept', '/Encoding': IndirectObject(8850, 0, 131042456908112), '/FirstChar': 19, '/FontDescriptor': IndirectObject(8851, 0, 131042456908112), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ERCTYK+AcuminVariableConcept', '/Encoding': IndirectObject(8852, 0, 131042456908112), '/FirstChar': 21, '/FontDescriptor': IndirectObject(8853, 0, 131042456908112), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [715, 609, 715, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ERCTYK+AcuminVariableConcept', '/Encoding': IndirectObject(8854, 0, 131042456908112), '/FirstChar': 23, '/FontDescriptor': IndirectObject(8855, 0, 131042456908112), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  14,630,701 bytes
+  Kédougou: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KEDOUGOU_Avril%202026.pdf: 14,630,701 bytes, sha256 3f1ed03faa29f1d51e66df6aa7e436e0577b0e7c579ae9e3e4ce33d9f6d5b259
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UGALOE+AcuminVariableConcept', '/Encoding': IndirectObject(13371, 0, 131042427081744), '/FirstChar': 19, '/FontDescriptor': IndirectObject(13372, 0, 131042427081744), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UGALOE+AcuminVariableConcept', '/Encoding': IndirectObject(13373, 0, 131042427081744), '/FirstChar': 22, '/FontDescriptor': IndirectObject(13374, 0, 131042427081744), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [744, 715, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UGALOE+AcuminVariableConcept', '/Encoding': IndirectObject(13375, 0, 131042427081744), '/FirstChar': 23, '/FontDescriptor': IndirectObject(13376, 0, 131042427081744), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  15,374,077 bytes
+  Louga: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_LOUGA_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf: 15,374,077 bytes, sha256 d25a403566b9840d57e3120127e1719819c75cf81ca6a264a8ded05c7be56a9b
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ZCPPGU+AcuminVariableConcept', '/Encoding': IndirectObject(10020, 0, 131042414297680), '/FirstChar': 19, '/FontDescriptor': IndirectObject(10021, 0, 131042414297680), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ZCPPGU+AcuminVariableConcept', '/Encoding': IndirectObject(10022, 0, 131042414297680), '/FirstChar': 21, '/FontDescriptor': IndirectObject(10023, 0, 131042414297680), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [715, 744, 609, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ZCPPGU+AcuminVariableConcept', '/Encoding': IndirectObject(10024, 0, 131042414297680), '/FirstChar': 23, '/FontDescriptor': IndirectObject(10025, 0, 131042414297680), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  12,142,290 bytes
+  Saint-Louis: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SAINT_LOUIS_Avril%202026.pdf: 12,142,290 bytes, sha256 d529cc53695f3b6c97a4c75933d67cfa0af1688ebd16c1570bb753e072ecb0bb
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ULBLOE+AcuminVariableConcept', '/Encoding': IndirectObject(6599, 0, 131042391584208), '/FirstChar': 19, '/FontDescriptor': IndirectObject(6600, 0, 131042391584208), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ULBLOE+AcuminVariableConcept', '/Encoding': IndirectObject(6601, 0, 131042391584208), '/FirstChar': 18, '/FontDescriptor': IndirectObject(6602, 0, 131042391584208), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [744, 609, 385, 617, 715, 668, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/ULBLOE+AcuminVariableConcept', '/Encoding': IndirectObject(6603, 0, 131042391584208), '/FirstChar': 23, '/FontDescriptor': IndirectObject(6604, 0, 131042391584208), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  13,033,059 bytes
+  Matam: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_MATAM_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf: 13,033,059 bytes, sha256 653bcf8176a2e7a66aab019223cf220bd23ee92d9c45ca535d4291eaaec5d20d
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/OEOBIQ+AcuminVariableConcept', '/Encoding': IndirectObject(7549, 0, 131042393751760), '/FirstChar': 19, '/FontDescriptor': IndirectObject(7550, 0, 131042393751760), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/OEOBIQ+AcuminVariableConcept', '/Encoding': IndirectObject(7551, 0, 131042393751760), '/FirstChar': 21, '/FontDescriptor': IndirectObject(7552, 0, 131042393751760), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [617, 715, 911, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/OEOBIQ+AcuminVariableConcept', '/Encoding': IndirectObject(7553, 0, 131042393751760), '/FirstChar': 23, '/FontDescriptor': IndirectObject(7554, 0, 131042393751760), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  13,152,192 bytes
+  Sédhiou: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SEDHIOU_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf: 13,152,192 bytes, sha256 5e9e1a1ef06e8aaebd511f1d5c4b7c8e39ac10d8bf9041be75e823830a36bf45
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/IPBRCC+AcuminVariableConcept', '/Encoding': IndirectObject(8313, 0, 131042427081488), '/FirstChar': 19, '/FontDescriptor': IndirectObject(8314, 0, 131042427081488), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/IPBRCC+AcuminVariableConcept', '/Encoding': IndirectObject(8315, 0, 131042427081488), '/FirstChar': 21, '/FontDescriptor': IndirectObject(8316, 0, 131042427081488), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [744, 758, 668, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/IPBRCC+AcuminVariableConcept', '/Encoding': IndirectObject(8317, 0, 131042427081488), '/FirstChar': 23, '/FontDescriptor': IndirectObject(8318, 0, 131042427081488), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  14,446,727 bytes
+  Tambacounda: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf: 14,446,727 bytes, sha256 f4a02f4e7ad204a18a35d084f7acf43769a0d4ada28651d2148a4e8f5ce068ee
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/HTCLOE+AcuminVariableConcept', '/Encoding': IndirectObject(11348, 0, 131042414307280), '/FirstChar': 19, '/FontDescriptor': IndirectObject(11349, 0, 131042414307280), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/HTCLOE+AcuminVariableConcept', '/Encoding': IndirectObject(11350, 0, 131042414307280), '/FirstChar': 18, '/FontDescriptor': IndirectObject(11351, 0, 131042414307280), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [744, 727, 706, 911, 715, 617, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/HTCLOE+AcuminVariableConcept', '/Encoding': IndirectObject(11352, 0, 131042414307280), '/FirstChar': 23, '/FontDescriptor': IndirectObject(11353, 0, 131042414307280), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  12,432,668 bytes
+  Thiès: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_THIES_Avril%202026.pdf: 12,432,668 bytes, sha256 b6112b28b181d1306d5852244c004ebddcc68d154e2837e6961b6b1cc54ea896
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/SDSZMI+AcuminVariableConcept', '/Encoding': IndirectObject(8743, 0, 131042389610704), '/FirstChar': 19, '/FontDescriptor': IndirectObject(8744, 0, 131042389610704), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/SDSZMI+AcuminVariableConcept', '/Encoding': IndirectObject(8745, 0, 131042389610704), '/FirstChar': 20, '/FontDescriptor': IndirectObject(8746, 0, 131042389610704), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [668, 638, 758, 617, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/SDSZMI+AcuminVariableConcept', '/Encoding': IndirectObject(8747, 0, 131042389610704), '/FirstChar': 23, '/FontDescriptor': IndirectObject(8748, 0, 131042389610704), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  24,959,248 bytes
+  Ziguinchor: read https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_ZIGUINCHOR_Avril%202026_0.pdf: 24,959,248 bytes, sha256 ce0bf1b80a6f64f30bdd5011ef42852ddcf0037a7c0b4b577c381738b3e3629e
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/MBISLU+AcuminVariableConcept', '/Encoding': IndirectObject(8932, 0, 131042390127888), '/FirstChar': 19, '/FontDescriptor': IndirectObject(8933, 0, 131042390127888), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [554, 683, 319, 709, 614, 589, 698, 216, 576, 722, 632, 653, 651]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/MBISLU+AcuminVariableConcept', '/Encoding': IndirectObject(8934, 0, 131042390127888), '/FirstChar': 20, '/FontDescriptor': IndirectObject(8935, 0, 131042390127888), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [758, 727, 744, 642, 754, 222, 768, 777, 345, 767, 638, 691]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/MBISLU+AcuminVariableConcept', '/Encoding': IndirectObject(8936, 0, 131042390127888), '/FirstChar': 23, '/FontDescriptor': IndirectObject(8937, 0, 131042390127888), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [429, 438, 394, 190, 200, 200, 283, 389, 455]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+  Dakar: median 24 (Tableau II-5); language count (Tableau II-11): Wolof 2,478,174.0, Pulaar 567,823.0, Serer 205,270.0, Jola 109,967.0; departments in broad groups: True
+  Diourbel: median 18 (Tableau II-5); language count (Tableau III-12): Wolof 1,480,406.0, Serer 233,063.0, Pulaar 73,425.0, Sign language 6,339.0; departments in broad groups: True
+  Fatick: median 17 (Tableau II-4); language count (Tableau II-11): Serer 421,575.0, Wolof 275,908.0, Pulaar 60,543.0, Mandinka 17,927.0; departments in broad groups: True
+  Kaffrine: median 16 (Tableau II-5); language count (Tableau II-12): Wolof 530,382.0, Pulaar 130,667.0, Serer 32,304.0, Other African languages 4,643.0; departments in broad groups: True
+  Kaolack: median 17 (Tableau II-4); language count (Tableau II-12): Wolof 801,629.0, Pulaar 184,774.0, Serer 127,529.0, Other African languages 14,314.0; departments in broad groups: True
+  Kédougou: median 18 (Tableau II-5); language count (Tableau II-13): Pulaar 107,112.0, Other African languages 66,991.0, Mandinka 10,713.0, Wolof 9,402.0; departments in broad groups: True
+  Kolda: median 16 (Tableau II-4); language count (Tableau II-12): Pulaar 637,970.0, Wolof 72,191.0, Mandinka 35,731.0, Soninke 21,511.0; departments in broad groups: True
+  Louga: median 18 (Tableau II-5); language count (Tableau II-12): Wolof 646,680.0, Pulaar 314,505.0, Serer 19,715.0, Hassaniya 2,469.0; departments in broad groups: True
+  Matam: median 17 (Tableau II-5); language count (Tableau II-12): Pulaar 648,450.0, Wolof 28,292.0, Soninke 22,189.0, Serer 2,244.0; departments in broad groups: True
+  Saint-Louis: median 19 (Tableau II-5); language count (Tableau II-12): Pulaar 559,255.0, Wolof 457,304.0, Hassaniya 15,089.0, Serer 4,375.0; departments in broad groups: True
+  Sédhiou: median 16 (Tableau II.5); language count (Tableau III-12): Mandinka 196,082.0, Pulaar 133,503.0, Wolof 56,083.0, Balanta 41,110.0; departments in broad groups: True
+  Tambacounda: median 17 (Tableau II-5); language count (Tableau II-13): Pulaar 504,905.0, Wolof 117,099.0, Soninke 75,898.0, Mandinka 68,286.0; departments in broad groups: True
+  Thiès: median 20 (Tableau 1.4); language count (): Wolof 1,470,178.0, Serer 443,160.0, Pulaar 196,810.0, Jola 20,074.0; departments in broad groups: True
+  Ziguinchor: median 20 (Tableau II-5); language count (Tableau II-13): Jola 271,946.0, Wolof 101,370.0, Mandinka 66,912.0, Pulaar 55,725.0; departments in broad groups: True
+  14 regions and 45 departments written
+  wrote data/processed/senegal_regional_reports.json (168 kB)

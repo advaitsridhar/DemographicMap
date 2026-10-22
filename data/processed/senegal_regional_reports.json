@@ -2415,22 +2415,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Tambacounda region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2459,22 +2470,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Diourbel region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Diourbel",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_DIOURBEL_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2503,22 +2525,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Ziguinchor region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Ziguinchor",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_ZIGUINCHOR_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2547,22 +2580,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaffrine region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2591,22 +2635,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Sédhiou region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Sédhiou",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SEDHIOU_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2635,22 +2690,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Saint-Louis region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Saint-Louis",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SAINT_LOUIS_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2679,22 +2745,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Dakar region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2723,22 +2800,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Diourbel region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Diourbel",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_DIOURBEL_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2767,22 +2855,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Fatick region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Fatick",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_FATICK_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2811,22 +2910,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Fatick region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Fatick",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_FATICK_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2855,22 +2965,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Fatick region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Fatick",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_FATICK_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2899,22 +3020,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Tambacounda region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2943,22 +3075,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Sédhiou region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Sédhiou",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SEDHIOU_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -2987,22 +3130,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Dakar region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3031,22 +3185,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaolack region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaolack",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAOLACK_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3075,22 +3240,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaffrine region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3119,22 +3295,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Matam region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Matam",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_MATAM_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3163,22 +3350,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaolack region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaolack",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAOLACK_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3207,22 +3405,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Louga region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Louga",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_LOUGA_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3251,22 +3460,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kédougou region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kédougou",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KEDOUGOU_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3295,22 +3515,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kolda region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kolda",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KOLDA_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3339,22 +3570,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Tambacounda region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3383,22 +3625,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaffrine region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3427,22 +3680,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Louga region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Louga",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_LOUGA_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3471,22 +3735,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Louga region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Louga",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_LOUGA_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3515,22 +3790,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaffrine region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaffrine",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAFFRINE_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3559,22 +3845,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Matam region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Matam",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_MATAM_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3603,22 +3900,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Diourbel region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Diourbel",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_DIOURBEL_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3647,22 +3955,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Thiès region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Thiès",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_THIES_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3691,22 +4010,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kolda region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kolda",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KOLDA_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3735,22 +4065,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kaolack region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kaolack",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KAOLACK_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3779,22 +4120,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Ziguinchor region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Ziguinchor",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_ZIGUINCHOR_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3823,22 +4175,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Dakar region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3867,22 +4230,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Saint-Louis region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Saint-Louis",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SAINT_LOUIS_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3911,22 +4285,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Matam region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Matam",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_MATAM_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3955,22 +4340,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Dakar region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Dakar",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_DAKAR_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -3999,22 +4395,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Saint-Louis region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Saint-Louis",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SAINT_LOUIS_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -4043,22 +4450,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kédougou region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kédougou",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KEDOUGOU_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -4087,22 +4505,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kédougou region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kédougou",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KEDOUGOU_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -4131,22 +4560,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Sédhiou region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Sédhiou",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_SEDHIOU_27112025_Version%20Formate%CC%81%20ok_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -4175,22 +4615,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Tambacounda region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Tambacounda",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_TAMBACOUNDA_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -4219,22 +4670,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Thiès region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Thiès",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_THIES_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -4263,22 +4725,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Thiès region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Thiès",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_THIES_Avril%202026.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -4307,22 +4780,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Kolda region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Kolda",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5%20RR_KOLDA_27112025_Version%20Formate%CC%81%20ok_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
@@ -4351,22 +4835,33 @@
       "status": "not_available"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no religion, at any level."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's report for the Ziguinchor region tabulates the principal language spoken for the region only, not by department."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2023 census's national and regional reports tabulate no ethnic group, at any level."
     },
     "sources": [
       {
-        "field": "median_age note",
+        "field": "median_age note/religion note/ethnicity note/language note",
         "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport de présentation des résultats, Région de Ziguinchor",
         "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/RGPH-5_ZIGUINCHOR_Avril%202026_0.pdf",
         "page": "https://www.ansd.sn/rapports/rgph-5-2023",
         "license": "ANSD publication (reuse with attribution)",
         "year": 2023
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de la Démographie (ANSD), Cinquième Recensement Général de la Population et de l'Habitat (RGPH-5) 2023, Rapport définitif",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/rapport_national/Rapport-def-RGPH-5.pdf",
+        "page": "https://www.ansd.sn/rapports/rgph-5-2023",
+        "license": "ANSD publication (reuse with attribution)",
+        "year": 2023,
+        "field": "religion note/ethnicity note"
       }
     ],
     "country": "SEN",
