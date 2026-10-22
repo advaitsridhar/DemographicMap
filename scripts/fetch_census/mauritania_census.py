@@ -410,10 +410,10 @@ def wilaya_median(wilaya: str, ages: dict[str, list[tuple[int, int | None, int]]
     median = grouped_median(groups)
     if median is None:
         return None
-    whose = ("the three wilayas of Nouakchott, added group by group"
-             if wilaya == "Nouakchott" else "the wilaya")
+    whose = ("the three wilayas of Nouakchott by age, added group by group"
+             if wilaya == "Nouakchott" else "the wilaya by age")
     return median, ("Interpolated within the five-year age group that holds the middle person, "
-                    f"from the 2023 census's count of {whose} by age (Thème 2, Tableau A.2.2).")
+                    f"from the 2023 census's count of {whose} (Thème 2, Tableau A.2.2).")
 
 
 def fields(figures: tuple[int, int, int], note: str, ages_noted: bool = False
