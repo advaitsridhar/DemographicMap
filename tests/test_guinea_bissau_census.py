@@ -36,8 +36,13 @@ class GuineaBissauThematic(unittest.TestCase):
         fields = gb.thematic_fields("Bolama", thematic)
         self.assertEqual(fields["ethnicity"][0]["group"], "Bijago")
         self.assertEqual(fields["median_age"]["value"], 18.7)
-        self.assertIn("ethnic group and by urban or rural", fields["language"]["note"])
-        self.assertEqual(len(fields["extra_sources"]), 2)
+        # The language tables are the annex's Quadros 4 to 6 A, by ethnic
+        # group, sex and residence; the reason cites them for its note.
+        self.assertIn("annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural",
+                      fields["language"]["note"])
+        self.assertEqual([s["field"] for s in fields["extra_sources"]],
+                         ["median_age", "religion/ethnicity", "language note"])
+        self.assertIn("Quadros 4 a 6 A", fields["extra_sources"][2]["name"])
 
 
 class AutonomousSector(unittest.TestCase):
@@ -63,7 +68,25 @@ class AutonomousSector(unittest.TestCase):
         self.assertTrue(sector["ethnicity_note"].endswith("The region is this one polygon."))
         self.assertEqual(sector["language"]["status"], "not_available")
         self.assertEqual([s["field"] for s in sector["sources"]],
-                         ["population/sex_ratio", "median_age", "religion/ethnicity"])
+                         ["population/sex_ratio", "median_age", "religion/ethnicity",
+                          "language note"])
+
+    def test_a_sector_cites_the_reports_its_reasons_quote(self):
+        thematic = gb.thematic_tables(QUADRO_9B, ANNEX)
+        spec = gb.REGIONS["Biombo"]
+        sectors = {k: {"name": k, "total": 1000, "men": 500, "women": 500}
+                   for k in spec["sectors"]}
+        tables = {"Biombo": {"region": (3000, 1500, 1500), "sectors": sectors}}
+        admin1 = [{"id": spec["polygon"], "name": "Biombo", "parent": "GNB"}]
+        admin2 = [{"id": sid, "name": k, "parent": spec["polygon"]}
+                  for k, sid in spec["sectors"].items()]
+        records, _ = gb.build(tables, admin1, admin2, thematic)
+        sector = next(r for r in records if r["level"] == "admin2")
+        self.assertIn("Quadro 9 B", sector["median_age"]["note"])
+        self.assertIn("annex Quadros 4 to 6 A", sector["language"]["note"])
+        self.assertEqual([s["field"] for s in sector["sources"]],
+                         ["population/sex_ratio", "median_age note",
+                          "religion note/ethnicity note", "language note"])
 
 if __name__ == "__main__":
     unittest.main()

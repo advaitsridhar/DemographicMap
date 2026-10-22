@@ -190,6 +190,28 @@ class Capitals(unittest.TestCase):
         self.assertEqual(sc.dataset_year({"dataset_date": "[2019-07-17T00:00:00 TO "
                                                           "2019-07-17T23:59:59]"}), 2019)
 
+    def test_a_point_filed_under_its_neighbour_lies_in_its_own_unit(self):
+        # Mauritania's layer files Zouérat's point under F'Dérik (adm3 Fderik 2,
+        # as the probe printed it); it lies inside the polygon drawn as
+        # Zoueratt, which takes it as its seat, and F'Derick keeps its reason.
+        points = [{"adm1_name": "Tris-Zemmour", "adm2_name": "F'Derik", "adm3_name": "Fderik 2",
+                   "name": "Zouerate", "_xy": [-12.45205, 22.71873]},
+                  {"adm1_name": "Inchiri", "adm2_name": "Akjoujt", "adm3_name": "Akjoujt 2",
+                   "name": "Akjoujt", "_xy": [-14.41639, 19.69694]}]
+        silent = {"status": "not_available"}
+        admin2 = [{"id": f"m{i}", "name": n, "parent": "W", "capital": silent}
+                  for i, n in enumerate(["Zoueratt", "F'Derick", "Akjoujt"])]
+        records, report = sc.build("MRT", points, "page", [{"id": "W", "name": "W"}], admin2,
+                                   year=2024)
+        by = {r["name"]: r for r in records}
+        self.assertEqual(by["Zoueratt"]["capital"], "Zouérat")
+        self.assertIn("under F'Dérik", by["Zoueratt"]["capital_note"])
+        self.assertEqual([s["field"] for s in by["Zoueratt"]["sources"]],
+                         ["capital/capital note"])
+        self.assertIn("name Zouérat, the capital of the wilaya, for it",
+                      by["F'Derick"]["capital"]["note"])
+        self.assertIn("give the seats of 2 of the 3 moughataas", by["F'Derick"]["capital"]["note"])
+
 
 if __name__ == "__main__":
     unittest.main()

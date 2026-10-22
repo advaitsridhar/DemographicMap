@@ -145,6 +145,48 @@ class MaliRegionsOfBefore(unittest.TestCase):
         # A crossed region the Bureau gives no figures for still says why.
         self.assertIn("cannot be put together", by["Mopti"]["median_age"]["note"])
 
+    def test_bamako_takes_the_projection_of_its_own_ground(self):
+        # The district drawn as one cercle: INSTAT's 2018 projection of its
+        # ground, the figure its cercle carries, newer than the 2009 count,
+        # which the note names. Koulikoro, drawn with several cercles, keeps
+        # the 2009 count (the map shows its cercles' newer sum in its place).
+        sexes, medians, annex = mc.parse_sexes(TEXT), mc.parse_medians(TEXT), mc.parse_annex(TEXT)
+        projection = {"regions": {"BAMAKO": (1_100_000, 1_131_344)},
+                      "totals": {"BAMAKO": 2_231_344, "KOULIKORO": 2_985_338},
+                      "cercles": []}
+        records, report = mc.region_records(sexes, medians, annex, ADMIN1, FACTS_2009,
+                                            ADMIN2, projection)
+        by = {r["name"]: r for r in records}
+        bamako = by["Bamako"]
+        self.assertEqual(bamako["population"]["value"], 2_231_344)
+        self.assertEqual(bamako["population"]["year"], 2018)
+        self.assertIn("projection for 2018", bamako["population_note"])
+        self.assertIn("1,810,366", bamako["population_note"])
+        cited = {s["name"]: s["field"].split("/") for s in bamako["sources"]}
+        self.assertEqual(cited[mc.SOURCE_2018], ["population"])
+        self.assertEqual(cited[mc.SOURCE_2009], ["median_age", "sex_ratio", "population note"])
+        # Every note says what the 2022 census counts, and Bamako's measures the
+        # district of 2023 by OCHA's boundaries: both are cited for the notes.
+        notes = ["population note", "median_age note", "sex_ratio note"]
+        self.assertEqual(cited[mc.SOURCE], notes)
+        self.assertEqual(cited[mc.COD_AB_2023["name"]], notes)
+        koulikoro = by["Koulikouro"]
+        self.assertEqual(koulikoro["population"]["value"], 2_418_305)
+        self.assertEqual(koulikoro["population"]["year"], 2009)
+        self.assertNotIn(mc.COD_AB_2023["name"], {s["name"] for s in koulikoro["sources"]})
+        self.assertIn(mc.SOURCE, {s["name"] for s in koulikoro["sources"]})
+        self.assertTrue(any("2018 projection 2,231,344" in line for line in report))
+
+    def test_the_cercles_cite_what_their_reasons_quote(self):
+        final = mc.parse_p1(P1_TEXT, P1_COUNTRY)
+        records, _ = mc.projection_records(None, ADMIN1, ADMIN2, FACTS_2009, final)
+        tessalit = {r["name"]: r for r in records}["Tessalit"]
+        cited = {s["name"]: s["field"].split("/") for s in tessalit["sources"]}
+        self.assertEqual(cited[mc.SOURCE_P1], ["sex_ratio"])
+        self.assertEqual(cited[mc.TOME_1["name"]], ["median_age note"])
+        self.assertEqual(cited[mc.SOURCE], ["median_age note", "sex_ratio note"])
+        self.assertIn("Tome 1, Tableau P-2", tessalit["median_age"]["note"])
+
     def test_bamako_drawn_as_one_cercle(self):
         data = {"regions": {}, "cercles": []}
         records, _ = mc.projection_records(data, ADMIN1, ADMIN2, FACTS_2009)

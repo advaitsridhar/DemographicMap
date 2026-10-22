@@ -290,6 +290,13 @@ class ReligionChartsOfFourRegions(unittest.TestCase):
         self.assertEqual(got["groups"][14], (70, 74, 17_473))    # "8 37 9" is 8 379
         self.assertEqual((got["men"], got["women"]), (946_183, 955_086))
         self.assertEqual(got["printed"], 15.5)
+        # Boucle du Mouhoun's table prints 15.5; its own groups give 16.7.
+        median = bp.grouped_median(got["groups"])
+        self.assertEqual(median, 16.7)
+        self.assertEqual(bp.printed_median(got, median),
+                         " The table itself prints a median of 15.5, which its own counts by "
+                         "five-year age group do not bear out.")
+        self.assertEqual(bp.printed_median({"printed": None}, median), "")
 
     def test_region_figures_and_the_communes_not_enumerated(self):
         shapes = [{"id": "b", "name": "Bam"}, {"id": "n", "name": "Namentenga"},
@@ -302,6 +309,10 @@ class ReligionChartsOfFourRegions(unittest.TestCase):
         self.assertEqual(region["sex_ratio"]["year"], 2019)
         self.assertEqual(region["median_age"]["value"], 15.7)
         self.assertIn("Tableau 2.5", region["median_age_note"])
+        # What the table prints is said beside the figure (15.6 against 15.7:
+        # within what single years can move it, so not disputed).
+        self.assertIn("The table itself prints a median of 15.6.", region["median_age_note"])
+        self.assertIn("de l'Habitation (RGPH) 2019", region["sources"][0]["name"])
         # Six communes of Bam and Sanmatenga were not enumerated, two in part.
         self.assertIn("Barsalogho", region["sex_ratio_note"])
         self.assertIn("part of Bourzanga and Pissila", region["median_age_note"])

@@ -70,7 +70,25 @@ class NigerReads(unittest.TestCase):
         self.assertTrue(one["median_age_note"].endswith("The region is this one department."))
         self.assertEqual(one["sources"][0]["field"], "sex_ratio/median_age")
         self.assertEqual(city["median_age"]["status"], "not_available")
-        self.assertEqual(city["sources"][0]["field"], "sex_ratio")
+        # Every other department says why it has no median, religion, language
+        # or ethnic group of the census's, and cites what each reason quotes:
+        # the report, and OCHA's 2024 projection for the ages.
+        self.assertEqual([s["field"] for s in city["sources"]],
+                         ["sex_ratio/median_age note/religion note/language note/ethnicity note",
+                          "median_age note"])
+        self.assertIn("cod-ps-ner", city["sources"][1]["name"])
+        self.assertIn("OCHA's 2024 projection", city["median_age"]["note"])
+        self.assertIn("by region only (Etat et structure de la population, Tableau A 11)",
+                      city["religion"]["note"])
+        self.assertIn("no table of language", city["language"]["note"])
+        self.assertIn("nationality", city["ethnicity"]["note"])
+        # The cities of Maradi and Zinder, which OCHA projected apart, keep their
+        # medians there: their reason is only the census's, and OCHA is not cited.
+        for name in ("Maradi", "Zinder"):
+            own = by[("admin2", name)]
+            self.assertEqual(own["median_age"]["note"], nc.NO_CITY_AGES)
+            self.assertEqual(len(own["sources"]), 1)
+        self.assertNotIn("note", one["religion"])
 
 
 if __name__ == "__main__":

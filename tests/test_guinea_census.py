@@ -280,6 +280,11 @@ class GuineaReads(unittest.TestCase):
         self.assertEqual(conakry["median_age"]["year"], 2014)
         self.assertIn("this one prefecture", conakry["median_age_note"])
         self.assertIn("median_age", [s["field"] for s in conakry["sources"]])
+        # The note quotes the 2025 census's median: its results are cited for it.
+        for rec in (region, conakry):
+            self.assertEqual(rec["sources"][0]["field"], "population/sex_ratio/median_age note")
+            self.assertIn("RGPH-4", rec["sources"][0]["name"])
+        self.assertEqual(by[("admin2", "Coyah")]["sources"][0]["field"], "population/sex_ratio")
         self.assertNotIn("value", by[("admin2", "Coyah")]["median_age"])
 
 

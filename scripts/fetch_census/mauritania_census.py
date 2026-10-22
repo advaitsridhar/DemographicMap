@@ -20,9 +20,11 @@ leaflet is read from the copy the Centre Rachad publishes.
 * Nouakchott is three wilayas since 2014; the map's Nouakchott takes the
   three. Its nine moughataas are not bound: the lines drawn for them do not
   follow the moughataas as OCHA's boundaries of the census's units draw them
-  (OCHA's Toujounine lies mostly over what is drawn as Ksar and Ouad Naga), and
-  the polygon drawn as Ouad Naga holds the outer parts of seven of them. Each
-  says why.
+  (29 of the 33 points of OCHA's Ksar fall in what is drawn as Ouad Naga; its
+  admin2 labels Toujounine and Teyarett are swapped against the communes it
+  files under them, so neither is named), and the polygon drawn as Ouad Naga
+  holds the outer parts of seven of them. Each says why, citing OCHA's
+  boundaries, which the reason measures them by.
 
 Written for every other wilaya and moughataa: population and sex ratio (men
 per 1,000 women), 2023. The leaflet gives no ages: each moughataa says so.
@@ -137,9 +139,9 @@ NOUAKCHOTT_POLYGONS = {"arafat", "darnaim", "elmina", "ksar", "riyadh", "sebkha"
 NOT_BOUND = {
     **{k: ("The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for "
            "them do not follow the moughataas as OCHA's 2024 boundaries of the census's units "
-           "draw them: OCHA's Toujounine, for one, lies mostly over what is drawn here as Ksar "
-           "and Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries "
-           "the census's count of its three wilayas.") for k in NOUAKCHOTT_POLYGONS},
+           "draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. "
+           "No count is placed on these polygons; Nouakchott as a whole carries the census's "
+           "count of its three wilayas.") for k in NOUAKCHOTT_POLYGONS},
     "ouadnaga": ("The 2023 census counts the moughataa of Ouad Naga, but the polygon drawn here "
                  "also takes in the outer parts of seven of Nouakchott's moughataas as OCHA's "
                  "2024 boundaries of the census's units draw them, so the moughataa's count is "
@@ -155,6 +157,11 @@ EDGE = {
 }
 NO_AGES = ("The 2023 census's results published so far give each moughataa's population by "
            "sex, not by age.")
+# OCHA's boundaries of the census's units, by which the reasons of Nouakchott's
+# moughataas and Ouad Naga measure the lines drawn here: cited for those notes.
+COD_AB = {"name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+          "url": "https://data.humdata.org/dataset/cod-ab-mrt", "license": "CC BY-IGO",
+          "year": 2024}
 
 
 def fold(text: Any) -> str:
@@ -290,14 +297,18 @@ def parse(text: str) -> dict[str, Any]:
     return {"wilayas": summary, "moughataas": moughataas}
 
 
-def fields(figures: tuple[int, int, int], note: str) -> dict[str, Any]:
+def fields(figures: tuple[int, int, int], note: str, ages_noted: bool = False
+           ) -> dict[str, Any]:
+    """A unit's count and sex ratio, cited to the leaflet -- and its median-age
+    reason, which quotes the leaflet, where the unit carries one."""
     men, women, total = figures
     return {"population": measure(total, year=YEAR, source=SOURCE),
             "population_note": note,
             "sex_ratio": measure(round(1000 * men / women), unit="males_per_1000_females",
                                  year=YEAR, source=SOURCE),
-            "sources": [{"field": "population/sex_ratio", "name": SOURCE, "url": URL,
-                         "license": LICENCE, "year": YEAR}]}
+            "sources": [{"field": "population/sex_ratio"
+                         + ("/median_age note" if ages_noted else ""), "name": SOURCE,
+                         "url": URL, "license": LICENCE, "year": YEAR}]}
 
 
 def added(*parts: tuple[int, int, int]) -> tuple[int, int, int]:
@@ -354,9 +365,11 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                 population=gap(NOT_AVAILABLE, NOT_BOUND[k]),
                 sex_ratio=gap(NOT_AVAILABLE, NOT_BOUND[k]),
                 median_age=gap(NOT_AVAILABLE, NO_AGES),
-                # The census the notes quote, not the source of a figure shown.
+                # The census the notes quote, not the source of a figure shown,
+                # and OCHA's boundaries, by which the reason measures the lines.
                 sources=[{"field": "population note/sex_ratio note/median_age note",
-                          "name": SOURCE, "url": URL, "license": LICENCE, "year": YEAR}]))
+                          "name": SOURCE, "url": URL, "license": LICENCE, "year": YEAR},
+                         {**COD_AB, "field": "population note/sex_ratio note"}]))
             continue
         if k not in MOUGHATAAS:
             report.append(f"moughataa polygon {shape['name']!r}: not placed")
@@ -384,7 +397,7 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
         records.append(record(f"MRT-RGPH2023-{k}", shape["name"], level="admin2", parent="MRT",
                               country="MRT", match_by="shape_id", shape_id=shape["id"],
                               median_age=gap(NOT_AVAILABLE, NO_AGES),
-                              **fields(figures, note)))
+                              **fields(figures, note, ages_noted=True)))
     left = sorted(f"{w}/{m['name']}" for w, ms in mou.items() if w not in NOUAKCHOTT
                   for p, m in ms.items() if (w, p) not in used and p != "ouadnaga")
     if left:

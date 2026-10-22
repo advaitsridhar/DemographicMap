@@ -49,8 +49,19 @@ fills them: their median age and sex ratio would then be written), so every
 cercle says why it has no median age. Their populations are left to the
 figures the map has.
 
-The five crossed regions also take the 2009 census's count of their ground,
-older than OCHA's 2018 figures for their cercles, which the map shows summed.
+The five crossed regions also take a count of their ground. Four take the 2009
+census's, older than OCHA's 2018 figures for their cercles, which the map shows
+summed in its place, naming the count it replaces. The District of Bamako,
+drawn as one cercle, takes INSTAT's projection for 2018 of the district as it
+stood (the Bureau's projection sheet, the figure OCHA's table gives its one
+cercle), the most recent figure for its own ground, with the 2009 count in the
+note.
+
+**Citations.** A note that quotes a publication cites it for that field's
+note: the 2022 report where a reason says what that census counts or tabulates,
+Tome 1 of the 2009 results where the cercles' reason quotes its Tableau P-2,
+and OCHA's boundaries of the units of 2023 where Bamako's reason measures the
+district of 2023 by them.
 
 **Checks before anything is written.** Every row's men and women make its
 total (the annex's counts are adjusted and may miss by a person); the regions
@@ -98,6 +109,12 @@ SOURCE_2009 = ("Institut National de la Statistique (INSTAT) du Mali, 4ème Rece
                "démographique, population by sex and five-year age group, as the US Census "
                "Bureau tabulates it for HDX")
 YEAR_2009 = 2009
+# OCHA's boundaries of the units of 2023, by which the crossings were measured:
+# cited where a reason quotes them (the District of Bamako's).
+COD_AB_2023 = {"name": "OCHA, Mali - Subnational Administrative Boundaries (COD-AB, 2025), "
+                       "the regions and cercles of 2023",
+               "url": "https://data.humdata.org/dataset/cod-ab-mli", "license": "CC BY-IGO",
+               "year": 2025}
 OUT = "mali_census.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
 
@@ -325,14 +342,44 @@ def check_medians(annex: dict[str, dict[str, Any]], medians: dict[str, int]) -> 
                              f"report {medians[region]}")
 
 
+def cite(entry: dict[str, Any], fields: list[str]) -> list[dict[str, Any]]:
+    """``entry`` cited for ``fields``, or nothing where there are none."""
+    return [{**entry, "field": "/".join(fields)}] if fields else []
+
+
+def report_2022() -> dict[str, Any]:
+    return {"name": SOURCE, "url": URL, "page": PAGE, "license": LICENCE, "year": YEAR}
+
+
+def tables_2009() -> dict[str, Any]:
+    return {"name": SOURCE_2009, "url": uscb.dataset_url(DATASET), "year": YEAR_2009,
+            "license": "CC BY-IGO, published via HDX"}
+
+
+def projection_2018() -> dict[str, Any]:
+    return {"name": SOURCE_2018, "url": uscb.dataset_url(DATASET), "year": 2018,
+            "license": "CC BY-IGO, published via HDX"}
+
+
+def projected_total(projection: dict[str, Any] | None, key: str) -> int | None:
+    """INSTAT's 2018 projection for the map's region (folded name), both sexes."""
+    for name, total in ((projection or {}).get("totals") or {}).items():
+        if fold(name).replace("koulikoro", "koulikouro") == key and total:
+            return int(round(total))
+    return None
+
+
 def region_records(sexes: dict[str, tuple[int, int, int]], medians: dict[str, int],
                    annex: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
-                   region_facts: dict[str, dict[str, Any]] | None = None
+                   region_facts: dict[str, dict[str, Any]] | None = None,
+                   admin2: list[dict[str, Any]] | None = None,
+                   projection: dict[str, Any] | None = None
                    ) -> tuple[list[dict[str, Any]], list[str]]:
+    """The map's nine regions. A crossed region drawn as one cercle (the
+    District of Bamako) shows INSTAT's projection for 2018 of its ground, the
+    figure OCHA's table gives that cercle, newer than the 2009 count."""
     records, report = [], []
-    src = {"name": SOURCE, "url": URL, "page": PAGE, "license": LICENCE, "year": YEAR}
-    src_2009 = {"name": SOURCE_2009, "url": uscb.dataset_url(DATASET), "year": YEAR_2009,
-                "license": "CC BY-IGO, published via HDX"}
+    src = report_2022()
     for shape in admin1:
         key = fold(shape["name"])
         if key in MADE_OF:
@@ -370,17 +417,20 @@ def region_records(sexes: dict[str, tuple[int, int, int]], medians: dict[str, in
                 f"{round(1000 * men / women)} men per 1,000 women, median {median}")
         elif key in CROSSED:
             facts = facts_2009(region_facts or {}, key)
+            alone = admin2 is not None and sum(
+                1 for s in admin2 if s.get("parent") == shape["id"]) == 1
+            projected = projected_total(projection, key) if alone else None
+            fields = crossed_fields(key, facts, projected=projected)
             records.append(record(
                 f"MLI-RGPH5-region-{key}", shape["name"], level="admin1", parent="MLI",
-                country="MLI", match_by="shape_id", shape_id=shape["id"],
-                **crossed_fields(key, facts),
-                sources=[{**(src_2009 if facts else src),
-                          "field": "population/median_age/sex_ratio" if facts
-                          else "median_age note/sex_ratio note"}]))
+                country="MLI", match_by="shape_id", shape_id=shape["id"], **fields,
+                sources=crossed_sources(key, facts, fields)))
             report.append(f"{shape['name']}: not the ground of any regions of 2023"
                           + (f"; the 2009 census's median {facts['median']} and "
                              f"{round(1000 * facts['men'] / facts['women'])} men per 1,000 "
-                             "women" if facts else "; no 2009 figures"))
+                             "women" if facts else "; no 2009 figures")
+                          + (f"; drawn as one cercle, INSTAT's 2018 projection {projected:,} "
+                             f"for its ground" if projected and facts else ""))
         else:
             report.append(f"region polygon {shape['name']!r}: not placed")
     return records, report
@@ -454,11 +504,13 @@ def facts_2009(region_facts: dict[str, dict[str, Any]], key: str) -> dict[str, A
     return None
 
 
-def crossed_fields(key: str, facts: dict[str, Any] | None, one_cercle: bool = False
-                   ) -> dict[str, Any]:
+def crossed_fields(key: str, facts: dict[str, Any] | None, one_cercle: bool = False,
+                   projected: int | None = None) -> dict[str, Any]:
     """A crossed region's median age and sex ratio: the 2009 census's for the
     region as drawn here where the Bureau gives them, or the reason none is
-    shown."""
+    shown; and its count, the 2009 census's, or for a region drawn as one
+    cercle (``projected``) INSTAT's 2018 projection of the same ground, the
+    newer figure, with the 2009 count in the note."""
     unit = "district" if key == "bamako" else "region"
     why = (f"The 2022 census counts the regions of 2023, and their lines cross this "
            f"{unit}'s: {CROSSED[key]}.")
@@ -469,7 +521,14 @@ def crossed_fields(key: str, facts: dict[str, Any] | None, one_cercle: bool = Fa
     drawn = (f"the {unit} as drawn here, as it stood before 2023"
              + (", drawn as one cercle" if one_cercle else ""))
     counted = {}
-    if not one_cercle and facts.get("total"):
+    if not one_cercle and projected:
+        counted = {
+            "population": measure(projected, year=2018, source=SOURCE_2018),
+            "population_note": (f"INSTAT's projection for 2018, made from the 2009 census, of "
+                                f"{drawn}; the 2009 census counted {facts['total']:,} people "
+                                "there. " + why),
+        }
+    elif not one_cercle and facts.get("total"):
         counted = {
             "population": measure(facts["total"], year=YEAR_2009, source=SOURCE_2009),
             "population_note": f"The 2009 census's count of {drawn}. " + why,
@@ -485,6 +544,30 @@ def crossed_fields(key: str, facts: dict[str, Any] | None, one_cercle: bool = Fa
         "sex_ratio_note": (f"The 2009 census's count of {drawn}: {facts['men']:,} men and "
                            f"{facts['women']:,} women. " + why),
     }
+
+
+def crossed_sources(key: str, facts: dict[str, Any] | None, fields: dict[str, Any]
+                    ) -> list[dict[str, Any]]:
+    """What a crossed unit's figures and notes cite: the 2009 tables for the
+    2009 figures (and the note naming the 2009 count beside the projection),
+    the projection for its count, the 2022 report for every note (each says
+    what that census counts), and, for the District of Bamako, OCHA's
+    boundaries of the units of 2023, by which its reason measures the district."""
+    kinds = ("population", "median_age", "sex_ratio")
+    shown = [f for f in kinds if isinstance(fields.get(f), dict) and "value" in fields[f]]
+    noted = [f"{f} note" for f in kinds if fields.get(f"{f}_note")
+             or (isinstance(fields.get(f), dict) and fields[f].get("note"))]
+    projected = "population" in shown and fields["population"].get("year") == 2018
+    out: list[dict[str, Any]] = []
+    if facts:
+        out += cite(tables_2009(), [f for f in shown if fields[f].get("year") == YEAR_2009]
+                    + (["population note"] if projected else []))
+    if projected:
+        out += cite(projection_2018(), ["population"])
+    out += cite(report_2022(), noted)
+    if key == "bamako":
+        out += cite(COD_AB_2023, noted)
+    return out
 
 
 def cercle_records(data: dict[str, Any], admin1: list[dict[str, Any]],
@@ -530,6 +613,11 @@ URL_P1 = SHARE_2009 = ("https://www.instat-mali.org/laravel-filemanager/files/sh
 SOURCE_P1 = ("Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général de "
              "la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: Série "
              "démographique (2011), Tableau P-1")
+# The same volume, as a reason quotes it (its Tableau P-2: ages by region only).
+TOME_1 = {"name": ("Institut National de la Statistique (INSTAT) du Mali, 4ème Recensement Général "
+                   "de la Population et de l'Habitat (RGPH) 2009, Résultats définitifs, Tome 1: "
+                   "Série démographique (2011)"),
+          "url": URL_P1, "license": LICENCE, "year": YEAR_2009}
 P1_NATIONAL = (7_204_990, 7_323_672, 14_528_662)
 P1_HEAD = re.compile(r"^\s*(CERCLE|REGION|DISTRICT)\s+DE\s+(.+?)\s*$")
 
@@ -630,23 +718,26 @@ NO_CERCLE_AGES = ("The 2022 census's reports give ages by region only (Tableaux 
 
 
 def read_projection(book) -> dict[str, Any]:
-    """The 2018 projection's men and women by cercle and by region."""
+    """The 2018 projection's men and women by cercle and by region, and each
+    one's total of both sexes (the sheet's own, or men and women added)."""
     rows = uscb.sheet_rows(book, "Population Projections")
     names, _ = uscb.columns(rows)
     at = {n: i for i, n in enumerate(names) if n}
-    cercles, regions = [], {}
+    cercles, regions, totals = [], {}, {}
     for row in rows[2:]:
         level = uscb.number(row[at["ADM_LEVEL"]])
         men, women = uscb.number(row[at["EST_M_18"]]), uscb.number(row[at["EST_F_18"]])
         if men is None or women is None or not women:
             continue
+        both = uscb.number(row[at["EST_BOT_18"]]) if "EST_BOT_18" in at else None
         region = str(row[at["ADM1_NAME"]]).strip()
         if level == 1:
             regions[region] = (men, women)
+            totals[region] = both or men + women
         elif level == 2:
             cercles.append({"name": str(row[at["ADM2_NAME"]]).strip(), "region": region,
-                            "men": men, "women": women})
-    return {"cercles": cercles, "regions": regions}
+                            "men": men, "women": women, "total": both or men + women})
+    return {"cercles": cercles, "regions": regions, "totals": totals}
 
 
 def copied(data: dict[str, Any]) -> bool:
@@ -702,21 +793,18 @@ def projection_records(data: dict[str, Any] | None, admin1: list[dict[str, Any]]
     rows = paired(data, admin2, parents)
     counted = paired(final, admin2, parents)
     records, report = [], []
-    src = {"name": SOURCE_2018, "url": uscb.dataset_url(DATASET), "year": 2018,
-           "license": "CC BY-IGO, published via HDX"}
-    src_2009 = {"name": SOURCE_2009, "url": uscb.dataset_url(DATASET), "year": YEAR_2009,
-                "license": "CC BY-IGO, published via HDX"}
+    src = projection_2018()
     for shape in admin2:
         key = (parents.get(shape["parent"], ""), fold(shape["name"]))
         region = regions.get(shape["parent"], "")
         alone = sum(1 for s in admin2 if s["parent"] == shape["parent"]) == 1
         facts = facts_2009(region_facts or {}, region) if alone and region in CROSSED else None
         if facts is not None:
+            same = crossed_fields(region, facts, one_cercle=True)
             records.append(record(f"MLI-cercle-{key[0]}-{key[1]}", shape["name"], level="admin2",
                                   parent="MLI", country="MLI", match_by="shape_id",
-                                  shape_id=shape["id"],
-                                  **crossed_fields(region, facts, one_cercle=True),
-                                  sources=[{**src_2009, "field": "median_age/sex_ratio"}]))
+                                  shape_id=shape["id"], **same,
+                                  sources=crossed_sources(region, facts, same)))
             continue
         c = rows.get(shape["id"])
         fields: dict[str, Any] = {"median_age": gap(NOT_AVAILABLE, NO_CERCLE_AGES)}
@@ -742,6 +830,12 @@ def projection_records(data: dict[str, Any] | None, admin1: list[dict[str, Any]]
         elif data is not None or final is not None:
             report.append(f"cercle polygon {shape['name']!r}: no row in Tableau P-1 or the 2018 "
                           "projection")
+        # The reasons quote the 2022 report (ages and sexes by region only) and
+        # Tome 1 of the 2009 results (Tableau P-2, ages by region only).
+        fields["sources"] = [*fields.get("sources", []),
+                             {**TOME_1, "field": "median_age note"},
+                             *cite(report_2022(), ["median_age note"]
+                                   + (["sex_ratio note"] if "sex_ratio" in fields else []))]
         records.append(record(f"MLI-cercle-{key[0]}-{key[1]}", shape["name"], level="admin2",
                               parent="MLI", country="MLI", match_by="shape_id",
                               shape_id=shape["id"], **fields))
@@ -855,7 +949,16 @@ def main() -> int:
         f"{len(data['regions'])} regions, {len(data['region_facts'])} with ages and sexes")
     for name, f in sorted(data["region_facts"].items()):
         log(f"    2009 {name}: {f['total']:,} ({f['men']:,} men), median {f['median']}")
-    records, report = region_records(sexes, medians, annex, admin1, data["region_facts"])
+    # INSTAT's 2018 projection, both sexes, by region and cercle: the count of
+    # a crossed region drawn as one cercle (the District of Bamako).
+    projections = read_projection(book)
+    for name, total in sorted(projections["totals"].items()):
+        log(f"    2018 projection {name}: {total:,.0f}")
+    for c in projections["cercles"]:
+        if fold(c["region"]) == "bamako":
+            log(f"    2018 projection, cercle {c['name']} of {c['region']}: {c['total']:,.0f}")
+    records, report = region_records(sexes, medians, annex, admin1, data["region_facts"],
+                                     admin2, projections)
     final = None
     try:
         blob_p1 = fetch_blob(URL_P1)
@@ -878,7 +981,7 @@ def main() -> int:
     if data["cercles"]:
         more, why = cercle_records(data, admin1, admin2)
     else:
-        projection = read_projection(book)
+        projection = projections
         if copied(projection):
             log("  the 2018 projection gives the cercles their regions' split by sex: not used")
             projection = None

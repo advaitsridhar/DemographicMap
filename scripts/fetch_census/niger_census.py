@@ -17,8 +17,12 @@ every first-level polygon. No population: OCHA's 2024 projections are newer
 figures for the same departments, and the regions are their sums. Every
 department says why it has no median age: the census publishes ages by region
 only, and OCHA's 2024 table gives 65 of the 67 departments one and the same age
-structure (only the cities of Maradi and Zinder have their own). The city of
-Niamey, the region's one department and drawn alone, takes the region's median.
+structure (only the cities of Maradi and Zinder have their own, which stand,
+so those two say only the census's part). Every department says too why it has
+no religion, language or ethnic group of the census's: the report tabulates
+religion by region only, nationality rather than ethnic group, and no
+language. Each reason cites what it quotes. The city of Niamey, the region's
+one department and drawn alone, takes the region's median.
 
 **Two polygons are two regions.** The boundary file draws Tahoua with Agadez
 and Zinder with Diffa as single first-level polygons. Each takes its two
@@ -79,6 +83,27 @@ RELIGIONS = ["No religion", "Islam", "Christianity", "Animist", "Other religion"
 NO_DEPARTMENT_AGES = ("The 2012 census publishes ages by region only, and OCHA's 2024 "
                       "projection gives nearly every department of Niger the same age "
                       "proportions, so neither gives a median age of the department's own.")
+# The cities of Maradi and Zinder are the two OCHA projected apart (their own
+# age proportions, so cod_ps_age keeps their medians): only the census's part
+# of the reason holds for them.
+NO_CITY_AGES = "The 2012 census publishes ages by region only, not for the city."
+# What the 2012 report tabulates of the compositions: religion by region
+# (Tableau A 11), nationality (foreigners by region, Tableau 23), no language.
+NO_DEPARTMENT_COMPOSITIONS = {
+    "religion": ("The 2012 census tabulates religion by region only (Etat et structure de la "
+                 "population, Tableau A 11), not by department."),
+    "language": ("The 2012 census's report on the state and structure of the population has no "
+                 "table of language, at any level."),
+    "ethnicity": ("The 2012 census's report on the state and structure of the population "
+                  "tabulates nationality (foreign residents by region, Tableau 23), not ethnic "
+                  "group, at any level."),
+}
+# OCHA's 2024 projection, which the departments' age reason quotes.
+COD_PS = {"name": ("OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), "
+                   "reference year 2024"),
+          "url": "https://data.humdata.org/dataset/cod-ps-ner",
+          "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+          "year": 2024}
 SHOWN = {"AGADEZ": "Agadez", "DIFFA": "Diffa", "DOSSO": "Dosso", "MARADI": "Maradi",
          "TAHOUA": "Tahoua", "TILLABERI": "Tillabéri", "ZINDER": "Zinder", "NIAMEY": "Niamey"}
 AGE_ROW = re.compile(r"^\s*(\d{1,2})\s*-\s*(\d{1,2})\s*ans\s+(.*)$")
@@ -336,17 +361,28 @@ def build(text: str, layout: str, admin1: list[dict[str, Any]],
         # (the city of Niamey): the region's ages are the department's.
         whole = (len(regions) == 1 and drawn.get(shape.get("parent")) == 1
                  and sum(1 for (r, _) in table["departments"] if r == regions[0]) == 1)
+        city = fold(name) in {fold(c) for c in CITIES}
         if whole:
             median, median_note = medians[shape["parent"]]
             age_fields: dict[str, Any] = {
                 "median_age": measure(median, unit="years", year=YEAR, source=SOURCE),
                 "median_age_note": median_note + " The region is this one department."}
+            cited = [{**src, "field": "sex_ratio/median_age"}]
         else:
-            age_fields = {"median_age": gap(NOT_AVAILABLE, NO_DEPARTMENT_AGES)}
+            # A department's compositions say what the report tabulates; the
+            # region's census religion and survey shares stay on the region.
+            age_fields = {"median_age": gap(NOT_AVAILABLE,
+                                            NO_CITY_AGES if city else NO_DEPARTMENT_AGES),
+                          **{field: gap(NOT_AVAILABLE, why)
+                             for field, why in NO_DEPARTMENT_COMPOSITIONS.items()}}
+            cited = [{**src, "field": "sex_ratio/median_age note/religion note/language note/"
+                                      "ethnicity note"}]
+            if not city:
+                cited.append({**COD_PS, "field": "median_age note"})
         records.append(record(
             f"NER-RGPH2012-{hits[0][0].lower()}-{key}", shape["name"], level="admin2",
             parent="NER", country="NER", match_by="shape_id", shape_id=shape["id"],
-            sources=[{**src, "field": "sex_ratio/median_age" if whole else "sex_ratio"}],
+            sources=cited,
             sex_ratio=measure(round(1000 * men / women), unit="males_per_1000_females",
                               year=YEAR, source=SOURCE + ", Tableau 6"),
             sex_ratio_note=(f"The 2012 census counted {men:,} men and {women:,} women in "

@@ -283,6 +283,8 @@ def build(facts: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
         if f["ivorian"]:
             fields.update(nationality(f["ivorian"], unit))
             cited.append("ethnicity")
+        if f["mean"]:
+            cited.append("median_age note")       # the reason quotes the page's mean age
         records.append(record(f"CIV-RGPH2021-{fold(shape['name'])}", shape["name"],
                               level="admin2", parent="CIV", country="CIV", match_by="shape_id",
                               shape_id=shape["id"],
@@ -327,11 +329,26 @@ def build(facts: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                     "The district groups the regions of " + ", ".join(named[:-1]) + " and "
                     + named[-1] + ", as the 2021 census's regional pages give them; they name "
                     "no seat for the district itself."))
-        elif parts[0]["seat"]:
-            # An autonomous district is one region: its page names the city.
-            fields["capital"] = parts[0]["seat"]
+        else:
+            # An autonomous district is one region, its page the district's own:
+            # the city it names, the mean age its reason quotes and the shares
+            # of Ivorians it gives are the district's at this level too.
+            if parts[0]["seat"]:
+                fields["capital"] = parts[0]["seat"]
+            if parts[0]["mean"]:
+                fields["median_age"] = gap(NOT_AVAILABLE, NO_MEDIAN.format(
+                    unit="district", mean=parts[0]["mean"]))
+            if parts[0]["ivorian"]:
+                fields.update(nationality(parts[0]["ivorian"], "district"))
         cited = ["population", "sex_ratio"] + (["capital"] if isinstance(fields.get("capital"), str)
                                                 and not sources else [])
+        if "ethnicity" in fields:
+            cited.append("ethnicity")
+        # Every reason here quotes the census's pages: the median's, and a
+        # district's seat (also a region's seat on them) or its want of one.
+        cited.append("median_age note")
+        if fields.get("capital_note") or isinstance(fields.get("capital"), dict):
+            cited.append("capital note")
         records.append(record(f"CIV-RGPH2021-district-{fold(shape['name'])}", shape["name"],
                               level="admin1", parent="CIV", country="CIV", match_by="shape_id",
                               shape_id=shape["id"],

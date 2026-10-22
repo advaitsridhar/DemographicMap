@@ -103,6 +103,18 @@ NATIONAL_2021 = (491_233, 246_363, 244_870)          # both sexes, men, women
 NO_MEDIAN = ("No median age is published for the parish: the 2021 census and OCHA's population "
              "projections give ages for the municipality of {municipality} as a whole, and the "
              "2010 census's tables by parish give no ages fine enough to take a median from.")
+# What that reason quotes besides the 2010 parish table: the 2021 report and
+# OCHA's projections, cited for the note.
+NO_MEDIAN_SOURCES = [
+    {"field": "median_age note",
+     "name": ("Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da "
+              "População e Habitação (Censo 2021), Estado e Estrutura da População"),
+     "url": REPORT_ORIGINAL, "license": LICENCE, "year": YEAR_2021},
+    {"field": "median_age note",
+     "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+     "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+     "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"},
+]
 # Each municipality's name in Tabela 7, by INE's code.
 NAMES_2021 = {
     11: "Ribeira Grande", 12: "Paul", 13: "Porto Novo", 21: "São Vicente", 31: "Ribeira Brava",
@@ -625,8 +637,12 @@ def records_of(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[
             continue
         own = table[fold(ine)]
         source = SOURCE.format(island=p["island_name"])
-        sources = [{"field": "population/sex_ratio", "name": source, "url": p["url"],
-                    "page": POPULATION + p["island"], "license": LICENCE, "year": YEAR}]
+        # The parish table is quoted by the median-age reason too, beside the
+        # 2021 report and OCHA's projections.
+        sources = [{"field": "population/sex_ratio/median_age note", "name": source,
+                    "url": p["url"], "page": POPULATION + p["island"], "license": LICENCE,
+                    "year": YEAR},
+                   *(dict(src) for src in NO_MEDIAN_SOURCES)]
         population = measure(round(p["total"]), year=YEAR, source=source)
         sex_note = None
         whole = len(parishes[p["code"] // 10]) == 1 and p["total"] == own["households"]

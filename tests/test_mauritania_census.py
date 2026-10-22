@@ -47,6 +47,18 @@ class MauritaniaLeaflet(unittest.TestCase):
         self.assertIn("5 km outside", by[("admin2", "Selibabi")]["population_note"])
         counted = [r for r in records if r["level"] == "admin2" and "value" in r["population"]]
         self.assertEqual(len(counted), 47)
+        # Each reason cites what it quotes: the leaflet for the ages it does not
+        # give, and OCHA's boundaries, by which Nouakchott's lines are measured
+        # (its Ksar, not its Toujounine, whose label it swaps with Teyarett's).
+        ksar = by[("admin2", "Ksar")]
+        self.assertIn("OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga",
+                      ksar["population"]["note"])
+        self.assertNotIn("Toujounine", ksar["population"]["note"])
+        self.assertEqual([(s["name"], s["field"]) for s in ksar["sources"]][1],
+                         (mc.COD_AB["name"], "population note/sex_ratio note"))
+        self.assertEqual(by[("admin2", "Amourj")]["sources"][0]["field"],
+                         "population/sex_ratio/median_age note")
+        self.assertEqual(by[("admin1", "Gorgol")]["sources"][0]["field"], "population/sex_ratio")
 
 
 if __name__ == "__main__":

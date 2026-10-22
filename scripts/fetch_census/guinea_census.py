@@ -500,6 +500,8 @@ def build(text_2025: str, layout_2025: str, text_2014: str, admin1: list[dict[st
                 f"The 2025 census's median for {region}, {medians[region]:g}, is for {ground}, "
                 "not the ground drawn here; this is the 2014 census's median for the region on "
                 "its earlier lines.")
+            # The note quotes the 2025 median: the preliminary results are cited for it.
+            sources[0] = {**src_2025, "field": "population/sex_ratio/median_age note"}
             sources.append({**src_2014, "field": "median_age"})
         # The shares as printed, not rescaled to make 100. Tableau 5.10 is of the
         # resident population, so its shares of the region's 2014 population
@@ -526,7 +528,7 @@ def build(text_2025: str, layout_2025: str, text_2014: str, admin1: list[dict[st
                               parent="GIN", country="GIN", match_by="shape_id",
                               shape_id=shape["id"], sources=sources, **fields))
         medians_drawn[region] = (fields["median_age"], fields["median_age_note"],
-                                 sources[1])
+                                 sources[1], sources[0]["field"])
     by_prefecture = {fold(p): p for ps in PREFECTURES.values() for p in ps}
     used: set[str] = set()
     for shape in admin2:
@@ -542,15 +544,16 @@ def build(text_2025: str, layout_2025: str, text_2014: str, admin1: list[dict[st
         # region's median is the prefecture's.
         same: dict[str, Any] = {}
         extra: list[dict[str, Any]] = []
+        first = "population/sex_ratio"
         if PREFECTURES[region] == [prefecture] and region in medians_drawn:
-            median, note, cited = medians_drawn[region]
+            median, note, cited, first = medians_drawn[region]
             same = {"median_age": median,
                     "median_age_note": note + " The region is this one prefecture."}
             extra = [cited]
         records.append(record(
             f"GIN-RGPH-{fold(prefecture)}", shape["name"], level="admin2", parent="GIN",
             country="GIN", match_by="shape_id", shape_id=shape["id"],
-            sources=[{**src_2025, "field": "population/sex_ratio"}, *extra],
+            sources=[{**src_2025, "field": first}, *extra],
             population=measure(t, year=YEAR_2025, source=SOURCE_2025),
             population_note=notes_for(prefecture, "prefecture", (m, w, t), table, communes,
                                       regions),

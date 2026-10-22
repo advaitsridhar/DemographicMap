@@ -42,10 +42,11 @@ População*, whose Quadro 9 B gives each region's median age, and
 population of Guinean nationality by ethnic group and by religion in each
 region. Each region's groups must make the same total in both tables, and
 the regions the country's 1,442,227. Neither report goes below the region,
-and the principal language spoken ("dialecto") is tabulated by ethnic group
-and by urban or rural residence only, so the sectors and the regions' language
-say so instead -- except the Autonomous Sector of Bissau, drawn as the
-region's one polygon at the second level too, which takes the region's.
+and the principal language spoken ("dialecto") is tabulated by ethnic group,
+sex and urban or rural residence only (annex Quadros 4 to 6 A; the body's 6 to
+8 A), so the sectors and the regions' language say so instead -- except the
+Autonomous Sector of Bissau, drawn as the region's one polygon at the second
+level too, which takes the region's. Each reason cites the report it quotes.
 
 Usage:
     python -m scripts.fetch_census.guinea_bissau_census
@@ -77,6 +78,13 @@ ESTADO_SOURCE = ("Instituto Nacional de Estatística da Guiné-Bissau, IV Recens
                  "População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B")
 SOCIO_SOURCE = ("Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da "
                 "População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3")
+# The same report's language tables, which the language reasons quote: the
+# principal language spoken by ethnic group (annex Quadro 4), by ethnic group
+# and sex (5, 5 A) and by ethnic group and urban or rural residence (6, 6 A);
+# the body numbers them 6 to 8 A. None is by region.
+SOCIO_LANGUAGE_SOURCE = ("Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento "
+                         "Geral da População e Habitação 2009, Características Socioculturais, "
+                         "Anexo, Quadros 4 a 6 A")
 NATIONALS = 1_442_227
 # Region names as the thematic tables print them (folded) -> REGIONS' keys.
 THEMATIC_REGIONS = {"tombali": "Tombali", "quinara": "Quinara", "oio": "Oio", "biombo": "Biombo",
@@ -98,12 +106,22 @@ SECTOR_GAPS = {
                  "Socioculturais), not by sector."),
     "ethnicity": ("The 2009 census tabulates ethnic group by region only (Características "
                   "Socioculturais), not by sector."),
-    "language": ("The 2009 census tabulates the principal language spoken by ethnic group and "
-                 "by urban or rural residence only, not by region or sector."),
+    "language": ("The 2009 census tabulates the principal language spoken by ethnic group, sex "
+                 "and urban or rural residence only (Características Socioculturais, annex "
+                 "Quadros 4 to 6 A), not by region or sector."),
 }
 REGION_LANGUAGE = ("The 2009 census tabulates the principal language spoken (Características "
-                   "Socioculturais, Quadros 4 to 8) by ethnic group and by urban or rural "
-                   "residence only, not by region.")
+                   "Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or "
+                   "rural residence only, not by region.")
+# What the sectors' reasons quote, cited for those notes.
+SECTOR_NOTE_SOURCES = [
+    {"field": "median_age note", "name": ESTADO_SOURCE, "url": ESTADO, "license": LICENCE,
+     "year": YEAR},
+    {"field": "religion note/ethnicity note", "name": SOCIO_SOURCE, "url": SOCIO,
+     "license": LICENCE, "year": YEAR},
+    {"field": "language note", "name": SOCIO_LANGUAGE_SOURCE, "url": SOCIO, "license": LICENCE,
+     "year": YEAR},
+]
 SITE = PROCESSED.parent.parent / "site" / "data"
 
 # Each region's PDF, the region's polygon, and its sectors (folded) -> polygon ids.
@@ -407,6 +425,8 @@ def thematic_fields(region: str, thematic: dict[str, Any]) -> dict[str, Any]:
             {"field": "median_age", "name": ESTADO_SOURCE, "url": ESTADO, "license": LICENCE,
              "year": YEAR},
             {"field": "religion/ethnicity", "name": SOCIO_SOURCE, "url": SOCIO,
+             "license": LICENCE, "year": YEAR},
+            {"field": "language note", "name": SOCIO_LANGUAGE_SOURCE, "url": SOCIO,
              "license": LICENCE, "year": YEAR}],
     }
 
@@ -490,6 +510,7 @@ def build(tables: dict[str, dict[str, Any]], admin1: list[dict[str, Any]],
                 own2.update(same)
             elif thematic:
                 own2.update({k: gap(NOT_AVAILABLE, v) for k, v in SECTOR_GAPS.items()})
+                own2["sources"] = own2["sources"] + [dict(src) for src in SECTOR_NOTE_SOURCES]
             records.append(record(f"GNB-2009-{sid}", shape["name"], level="admin2", parent="GNB",
                                   country="GNB", match_by="shape_id", shape_id=sid, **own2))
             report.append(f"  {shape['name']}: {total:,} ({', '.join(keys)})")

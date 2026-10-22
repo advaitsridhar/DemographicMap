@@ -22,8 +22,9 @@ within the group that holds the middle person, a census's figures in front of
 OCHA's 2023 projection. The tables print medians of their own, but these do
 not agree with their counts (Centre-Est's region-wide 15.0 lies below both its
 rural 15.6 and its urban 17.0), so the median is taken from the groups, the
-same way in every region; the age table's men and women must be the region's
-count. The Centre's median is Kadiogo's too.
+same way in every region, and the note gives the table's printed figure beside
+it, which a reader of the table finds there; the age table's men and women
+must be the region's count. The Centre's median is Kadiogo's too.
 
 **Communes not enumerated.** Insecurity kept the census from enumerating six
 communes of Bam and Sanmatenga and three of Yagha and Soum, and part of seven
@@ -798,6 +799,23 @@ def not_enumerated(provinces: list[str]) -> str:
     return " and ".join(said)
 
 
+def printed_median(ages: dict[str, Any], median: float) -> str:
+    """What the table prints as the median, where it prints one: a visitor who
+    opens the table finds that figure, which its own counts by age do not give
+    where it differs from the one interpolated from them."""
+    printed = ages.get("printed")
+    if printed is None:
+        return ""
+    if abs(printed - median) < 0.05:
+        return f" The table prints the same median, {printed:.1f}."
+    if abs(printed - median) < 0.5:
+        # Within what a median taken from single years rather than five-year
+        # groups can move: said, not disputed.
+        return f" The table itself prints a median of {printed:.1f}."
+    return (f" The table itself prints a median of {printed:.1f}, which its own counts by "
+            f"five-year age group do not bear out.")
+
+
 def coverage_note(provinces: list[str], what: str) -> str:
     """What the figures of these provinces leave out or estimate, or ""."""
     where = not_enumerated(provinces)
@@ -817,8 +835,10 @@ def region_records(region: str, shapes: list[dict[str, Any]], shape: dict[str, A
     (sex ratio, median age, language), from its monograph's text. The Centre is
     the one province of Kadiogo, which takes the region's median too."""
     names = [s["name"] for s in shapes]
+    # The monographs spell the census out as the Recensement général de la
+    # population et de l'habitation (their list of abbreviations).
     monograph = (f"{PUBLISHER}, Cinquième Recensement Général de la Population et de "
-                 f"l'Habitat (RGPH) 2019, Monographie de la région {region}")
+                 f"l'Habitation (RGPH) 2019, Monographie de la région {region}")
     table = None
     count = None
     try:
@@ -877,7 +897,8 @@ def region_records(region: str, shapes: list[dict[str, Any]], shape: dict[str, A
                 "Interpolated within the five-year age group that holds the middle person, "
                 "from the 2019 census's count of the region's residents by five-year age group "
                 f"({ages['table']})" + (", the region being this one province." if one
-                                        else ".") + coverage_note(names, "figures")),
+                                        else ".") + printed_median(ages, median)
+                + coverage_note(names, "figures")),
         }
         median_source = {"field": "median_age",
                          "name": f"{monograph} ({ages['table']}, population by age group, "

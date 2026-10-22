@@ -34,7 +34,8 @@ but a checked point gives are listed in SEAT_POINTS (Niger's departments the
 layer names otherwise, its cities drawn as units of their own, Kozah's seat
 Kara, Guinea-Bissau's sector of Boé drawn under the label Madina do Boé, whose
 seat the layer labels with the sector's name and which is the town of Madina
-do Boé, as its note says, citing GeoNames for the town). A
+do Boé, as its note says, citing GeoNames for the town; Mauritania's Zoueratt,
+whose seat Zouérat the layer files under F'Dérik, as its note says). A
 unit the layer gives no seat says so: how many of the units drawn here it
 gives one, and what it has for this one (a point filed under another unit, a
 point whose name is not the unit's, a polygon that is not the unit its label
@@ -171,6 +172,11 @@ SEAT_POINTS = {
     # names each sector's seat by the sector; this one is the town of Madina do
     # Boé (SEAT_NOTES).
     ("GNB", "madinadobo"): ("boe", "boe", "Madina do Boé"),
+    # Mauritania's layer files its one point for Zouérat (12.452 W, 22.719 N)
+    # under F'Dérik; placed on the map's polygons it lies inside Zoueratt, 3.8
+    # km from the F'Derick polygon, and 2.6 km from GeoNames' Zouérat (2375558,
+    # the wilaya's capital). F'Derick keeps its reason (EXCLUDED).
+    ("MRT", "zoueratt"): ("fderik", "zouerate", "Zouérat"),
 }
 # A seat written otherwise than the layer names it, with what the visitor is
 # told and the source of what the note adds: Guinea-Bissau's layer labels every
@@ -184,6 +190,12 @@ SEAT_NOTES = {
         "GeoNames places it.",
         {"name": "GeoNames", "url": "https://www.geonames.org/2371663",
          "license": "CC BY 4.0"}),
+    # The note quotes the layer alone, the seat's own source (no entry added).
+    ("MRT", "zoueratt"): (
+        "OCHA's administrative boundaries for Mauritania file their point for Zouérat under "
+        "F'Dérik, the moughataa beside it; the point lies inside the outline drawn here for "
+        "Zoueratt.",
+        None),
 }
 # What the second-level units are called, for the reason given where no seat is.
 UNIT_WORDS = {"SEN": ("department", "departments"), "NER": ("department", "departments"),
@@ -402,7 +414,10 @@ def build(iso3: str, points: list[dict[str, Any]], page: str, admin1: list[dict[
         if (iso3, unit_key(iso3, u["name"])) in SEAT_NOTES:
             told, cited = SEAT_NOTES[(iso3, unit_key(iso3, u["name"]))]
             extra["capital_note"] = told
-            sources.append({**cited, "field": "capital note"})
+            if cited:
+                sources.append({**cited, "field": "capital note"})
+            else:
+                sources = [{**source, "field": "capital/capital note"}]
         records.append(record(rid, u["name"], level="admin2", parent=iso3, country=iso3,
                               match_by="shape_id", shape_id=u["id"], capital=seat,
                               sources=sources, **extra))

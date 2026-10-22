@@ -72,8 +72,11 @@ class CoteDivoire(unittest.TestCase):
         self.assertEqual(district["capital"], "Bouaké")
         self.assertIn("also the seat of the Gbeke region", district["capital_note"])
         self.assertIn("Décret n° 2011-263", district["capital_note"])
+        # The census's pages are cited for the reasons that quote them: the
+        # median's, and the seat's (also a region's seat on them).
         self.assertEqual([s["field"] for s in district["sources"]],
-                         ["population/sex_ratio", "capital"])
+                         ["population/sex_ratio/median_age note/capital note", "capital"])
+        self.assertIn("median_age note", gbeke["sources"][0]["field"].split("/"))
         self.assertTrue(district["sources"][1]["url"].endswith("/Districts_of_Ivory_Coast"))
         self.assertEqual(len(report), 31 + 13)  # 31 regions unread; 13 districts not whole
         # A seat that is none of the district's regions' seats is not written.
@@ -82,7 +85,8 @@ class CoteDivoire(unittest.TestCase):
         district = {(r["level"], r["name"]): r for r in records}[("admin1", "Valle Du Bandama")]
         self.assertIn("Gbeke (seat Sakassou) and Hambol (seat Katiola)",
                       district["capital"]["note"])
-        self.assertEqual([s["field"] for s in district["sources"]], ["population/sex_ratio"])
+        self.assertEqual([s["field"] for s in district["sources"]],
+                         ["population/sex_ratio/median_age note/capital note"])
         self.assertEqual(len(report), 31 + 13 + 1)
 
     def test_lagunes_and_an_autonomous_district(self):
@@ -100,8 +104,14 @@ class CoteDivoire(unittest.TestCase):
         abidjan = by[("admin1", "District Autonome D'Abidjan")]
         self.assertEqual(abidjan["capital"], "Abidjan")
         self.assertNotIn("capital_note", abidjan)
+        # An autonomous district's page is the district's own: the shares of
+        # Ivorians it gives, and the mean age its reason quotes, stand at the
+        # first level too (the page here is Gbêkê's, which gives both).
+        self.assertEqual(abidjan["ethnicity_basis"], "nationality")
+        self.assertIn("district's residents", abidjan["ethnicity_note"])
+        self.assertIn("mean age (26 years)", abidjan["median_age"]["note"])
         self.assertEqual([s["field"] for s in abidjan["sources"]],
-                         ["population/sex_ratio/capital"])
+                         ["population/sex_ratio/capital/ethnicity/median_age note"])
 
 
 # Run 3's log: excerpts of the regional pages where they were not yet read.
