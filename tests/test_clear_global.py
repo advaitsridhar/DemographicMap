@@ -270,6 +270,56 @@ class CountryRecords(unittest.TestCase):
         self.assertNotIn("Other languages", {g["group"] for g in by_name["Ituri"]["language"]})
         self.assertNotIn("Mokilese", by_name["Ituri"]["language_note"])
 
+    def test_names_kept_unnamed_in_one_unit_share_one_sentence(self):
+        rows = [row("NG002001", "Demsa", "Bacama", 0.9), row("NG002001", "Demsa", "Sibalenhon", 0.06),
+                row("NG002001", "Demsa", "Tambo", 0.04),
+                row("NG002002", "Fufore", "Fulfulde", 1.0)]
+        self.serve(csv_text(rows))
+        nigeria = dict(PACKAGE, name="nigeria-languages", groups=[{"name": "nga"}])
+        records, _ = quiet(cg.country_records, nigeria)
+        note = next(r for r in records if r["name"] == "Demsa")["language_note"]
+        self.assertEqual(note.count("'Other languages' includes"), 1)
+        self.assertIn("languages it names Sibalenhon, a language of the Philippines and Tambo, ",
+                      note)
+        self.assertIn("which languages of this area are meant cannot be told", note)
+
+    def test_a_guthrie_code_is_not_part_of_the_name(self):
+        rows = [row("BI01", "Bujumbura Mairie", "Swahili (G.40)", 0.4),
+                row("BI01", "Bujumbura Mairie", "Kirundi", 0.6),
+                row("BI02", "Bururi", "Kirundi", 1.0)]
+        kept, _, _ = cg.compose(rows)
+        self.assertEqual({r["group"] for r in kept["BI01"]["shares"]}, {"Swahili", "Kirundi"})
+        self.assertEqual(kept["BI01"]["relabelled"], [])
+
+    def test_namibia_s_ndonga_r20_is_the_oshiwambo_group(self):
+        import group_tree as gt
+        rows = [row("NA0801", "Eenhana", "Ndonga (R.20)", 0.97), row("NA0801", "Eenhana", "English", 0.03),
+                row("NA0802", "Endola", "Ndonga (R.20)", 1.0)]
+        self.serve(csv_text(rows))
+        namibia = dict(PACKAGE, name="namibia-languages", groups=[{"name": "nam"}])
+        records, _ = quiet(cg.country_records, namibia)
+        self.assertEqual({g["group"] for r in records for g in r["language"]},
+                         {"Oshiwambo", "English"})
+        self.assertIn("Oshikwanyama and Oshindonga", records[0]["language_note"])
+        self.assertEqual(gt.parent_of("language", "Oshiwambo"), "Bantu languages")
+
+    def test_a_unit_that_names_no_language_is_not_written(self):
+        rows = [row("NA0104", "Kongola", "Unknown", 1.0),
+                row("GH1302", "Jirapa", "Nyamal", 1.0)] + TWO_UNITS
+        kept, refused, unnamed = cg.compose(rows, 1, cg.LANGUAGE_RELABEL["GHA"])
+        self.assertEqual(sorted(kept), ["A1", "A2"])
+        self.assertEqual(refused, [])
+        self.assertEqual(len(unnamed), 2)
+        self.assertIn("only 'Unknown'", unnamed[0])
+
+    def test_the_year_is_said_once(self):
+        rows = [dict(r, dataset_name="Kenya Round 9 data (2009)", source="AfroBarometer")
+                for r in TWO_UNITS]
+        self.serve(csv_text(rows))
+        records, _ = quiet(cg.country_records, PACKAGE)
+        note = records[0]["language_note"]
+        self.assertIn("from Kenya Round 9 data (2009) (AfroBarometer). ", note)
+
     def test_malawi_s_and_mozambique_s_yao_are_the_bantu_language(self):
         import group_tree as gt
         rows = [row("MW301", "Mangochi", "Yao", 0.7), row("MW301", "Mangochi", "Nyanja", 0.3),

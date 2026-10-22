@@ -1770,7 +1770,7 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     # under their families.
     "Bantu languages": (
         # CLEAR Global, DR Congo, Namibia, Uganda, Kenya and Malawi, at district level.
-        "Yombe", "Tetela", "Nande", "Songe", "Budja (C.37)", "Dengese",
+        "Yombe", "Tetela", "Nande", "Songe", "Budja", "Dengese",
         "Bangala", "Bembe", "Havu", "Mashi", "Lambya", "Tooro", "Embu",
         "Diriku-Shambyu",
         "Ovambo", "Herero", "Kwangali", "Lozi", "Yeyi", "Mbukushu",

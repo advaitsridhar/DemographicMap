@@ -120,6 +120,14 @@ MIN_UNITS = 2
 MIN_PCT = 0.05
 
 UNKNOWN_UNIT = re.compile(r"\bunknown\b|\blevel \d+ unknown\b", re.I)
+# A Bantu language's code in Guthrie's classification, which some files print
+# after the name: "Swahili (G.40)", "Budja (C.37)". It classifies the name and
+# is not part of it.
+GUTHRIE_CODE = re.compile(r"\s*\([A-S]\.\d{1,3}[a-z]?\)$")
+# Answers that name no language. A unit with nothing else says nothing about
+# its languages and is not written: one of Namibia's constituencies is
+# "Unknown" 100%, as are districts of Ghana under a name from Australia.
+NON_ANSWERS = frozenset({"Unknown", "Other languages"})
 # "clearglobal_language_use_SOM_admin1.csv" in the 2025 release and
 # "th_lang_admin1_v01.csv" in the older one. The version suffix matters: a
 # pattern that required the name to end at "admin1" missed the four older
@@ -186,7 +194,11 @@ YEAR = re.compile(r"(1[89]\d\d|20\d\d)")
 # Malawi's and Mozambique's "Yao" is right (Glottolog yaoo1241, the Bantu
 # language of the Yao people), but the name is also that of the Yao (Mien)
 # languages of southern China, which is where the language tree files it.
-# It is written as each country spells it, "Chiyao" and "Ciyao".
+# It is written as each country spells it, "Chiyao" and "Ciyao". Namibia's
+# and Angola's "Ndonga (R.20)" is the whole Oshiwambo group -- R.20 is its
+# code in Guthrie's classification -- under the name of one member, which
+# put Oshindonga on Kwanyama-speaking constituencies; it is written as the
+# group, Oshiwambo in Namibia, Ovambo in Angola.
 OTHER = "Other languages"
 LANGUAGE_RELABEL: dict[str, dict[str, str]] = {
     "NPL": {"Khasi": "Khash"},
@@ -202,6 +214,8 @@ LANGUAGE_RELABEL: dict[str, dict[str, str]] = {
     "SEN": {"Babalia Creole Arabic": OTHER, "Zenaga": OTHER},
     "MOZ": {"Yao": "Ciyao", "Southern Sama": OTHER},
     "MWI": {"Yao": "Chiyao"},
+    "NAM": {"Ndonga (R.20)": "Oshiwambo"},
+    "AGO": {"Ndonga (R.20)": "Ovambo"},
 }
 
 # What each relabelled name was, said on the record of every unit whose
@@ -241,6 +255,14 @@ RELABEL_NOTES: dict[tuple[str, str], str] = {
                      "Global's table writes 'Yao'."),
     ("MWI", "Yao"): ("'Chiyao' is the Bantu language of the Yao people, which CLEAR "
                      "Global's table writes 'Yao'."),
+    ("NAM", "Ndonga (R.20)"): (
+        "'Oshiwambo' is the Oshiwambo languages, Oshikwanyama and Oshindonga among "
+        "them, which CLEAR Global's table writes 'Ndonga (R.20)': one of their names "
+        "and the group's code in Guthrie's classification of the Bantu languages."),
+    ("AGO", "Ndonga (R.20)"): (
+        "'Ovambo' is the Ovambo languages, Kwanyama and Ndonga among them, which CLEAR "
+        "Global's table writes 'Ndonga (R.20)': one of their names and the group's "
+        "code in Guthrie's classification of the Bantu languages."),
     **{(iso, name): (f"'{OTHER}' includes the share CLEAR Global's table gives a "
                      f"language it names {name}, {what}; which language of this area is "
                      f"meant cannot be told, so it is not named.")
@@ -489,6 +511,24 @@ def admin1_resource(package: dict[str, Any]) -> dict[str, Any] | None:
     return None
 
 
+def relabel_notes(iso: str, names: list[str]) -> list[str]:
+    """What a unit's relabelled names were: a sentence each, except that the
+    names kept unnamed share one sentence, as they share one share."""
+    unnamed = [n for n in names if n in _FOREIGN.get(iso, {})]
+    said = [RELABEL_NOTES[(iso, n)] for n in names
+            if n not in unnamed and (iso, n) in RELABEL_NOTES]
+    if len(unnamed) == 1:
+        said.append(RELABEL_NOTES[(iso, unnamed[0])])
+    elif unnamed:
+        listed = [f"{n}, {_FOREIGN[iso][n]}" for n in unnamed]
+        joined = (" and ".join(listed) if len(listed) == 2
+                  else "; ".join(listed[:-1]) + "; and " + listed[-1])
+        said.append(f"'{OTHER}' includes the shares CLEAR Global's table gives languages "
+                    f"it names {joined}; which languages of this area are meant cannot be "
+                    f"told, so they are not named.")
+    return said
+
+
 def read_csv(body: str) -> tuple[list[dict[str, str]], list[str]]:
     reader = csv.DictReader(io.StringIO(body))
     return list(reader), list(reader.fieldnames or [])
@@ -524,7 +564,7 @@ def compose(rows: list[dict[str, str]], level: int = 1,
         code = (row.get("location_code") or "").strip()
         name = (row.get("location_name") or "").strip()
         named = (row.get("language_name") or "").strip()
-        language = (relabel or {}).get(named, named)
+        language = GUTHRIE_CODE.sub("", (relabel or {}).get(named, named))
         if not code or not name or not language:
             continue
         try:
@@ -535,7 +575,7 @@ def compose(rows: list[dict[str, str]], level: int = 1,
         # A language listed twice in one unit is added up rather than
         # overwritten: dropping one of them would quietly shrink the unit.
         unit["counts"][language] = unit["counts"].get(language, 0.0) + value
-        if language != named and value > 0:
+        if named in (relabel or {}) and value > 0:
             unit["relabelled"][named] = language
 
     kept: dict[str, dict[str, Any]] = {}
@@ -557,6 +597,10 @@ def compose(rows: list[dict[str, str]], level: int = 1,
         shares.sort(key=lambda r: (-r["pct"], r["group"]))
         if not shares:
             refused.append(f"{name} ({code}): no language reaches 0.05%")
+            continue
+        if all(r["group"] in NON_ANSWERS for r in shares):
+            unnamed.append(f"{name} ({code}): the file names no language for it, only "
+                           + " and ".join(f"'{r['group']}'" for r in shares))
             continue
         shown = {r["group"] for r in shares}
         kept[code] = {"name": name, "shares": shares, "total": total,
@@ -658,7 +702,7 @@ def country_records(package: dict[str, Any], level: int = 1
         f"population. Tabulated by {PUBLISHER} from "
         f"{'; '.join(study) or 'a study the file does not name'}"
         f"{' (' + '; '.join(origin) + ')' if origin else ''}"
-        f"{f', {year}' if year else ''}. "
+        f"{f', {year}' if year and str(year) not in ' '.join(study) else ''}. "
         f"Methodology as the publisher states it: {methodology or 'not stated'}"
         f"{'; ' + method_note if method_note else ''}"
         f"{'; representivity ' + ', '.join(grading) if grading else ''}. "
@@ -670,8 +714,7 @@ def country_records(package: dict[str, Any], level: int = 1
     # joins on its own name or not at all.
     aliases = BOUNDARY_ALIASES.get(iso, {}) if level == 1 else {}
     for code, unit in sorted(kept.items()):
-        said = [RELABEL_NOTES[(iso, named)] for named in unit["relabelled"]
-                if (iso, named) in RELABEL_NOTES]
+        said = relabel_notes(iso, unit["relabelled"])
         records.append(record(
             f"{iso}-CG-{code}", unit["name"], level=f"admin{level}",
             parent=iso, country=iso,
