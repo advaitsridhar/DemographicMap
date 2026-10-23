@@ -271,16 +271,11 @@ class SurveyRowsOnTheirOwnGround(unittest.TestCase):
         self.assertEqual([r["id"] for r in got], ["CPV-CG-CV07"])
 
     def test_every_ivorian_survey_region_reaches_its_district(self):
-        import csv
-        import gzip
-        from pathlib import Path
         from scripts.fetch_census import afrobarometer_r8 as r8
-        extract = Path(be.__file__).resolve().parent.parent / "data/raw/afrobarometer/r8_extract.csv.gz"
-        if not extract.exists():
-            self.skipTest("the Round 8 extract is not in this checkout")
-        with gzip.open(extract, "rt", encoding="utf-8") as f:
-            regions = {row["region"] for row in csv.DictReader(f)
-                       if row["country"] == "C\u00f4te d'Ivoire"}
+        if not r8.COUNTS.exists():
+            self.skipTest("the Round 8 counts are not in this checkout")
+        regions = {row["region"] for row in r8.read_counts(r8.COUNTS)
+                   if row["country"] == "C\u00f4te d'Ivoire"}
         districts = {"Bas-Sassandra", "Comoe", "Denguele", "Goh-Djiboua", "Lacs", "Lagunes",
                      "Montagnes", "Sassandra-Marahoue", "Savanes", "Valle Du Bandama",
                      "Woroba", "Zanzan"}

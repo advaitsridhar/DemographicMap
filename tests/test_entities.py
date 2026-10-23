@@ -7737,7 +7737,7 @@ class ASurveyIsNotACount(unittest.TestCase):
         self.assertEqual(ab.ISO3["8"], "COG")
         self.assertNotIn("COD", ab.ISO3.values())
 
-    def test_the_committed_extract_is_actually_committed(self):
+    def test_the_committed_counts_are_actually_committed(self):
         """data/raw/* has silently un-tracked a source before now.
 
         Twenty of the Census of India workbooks were missing for exactly this
@@ -7745,7 +7745,7 @@ class ASurveyIsNotACount(unittest.TestCase):
         without saying so. A negation the adapter depends on is worth a test.
         """
         import subprocess
-        for name in ("r9_extract.csv.gz", "r9_labels.json"):
+        for name in ("r9_counts.csv.gz", "r9_labels.json"):
             path = f"data/raw/afrobarometer/{name}"
             listed = subprocess.run(["git", "ls-files", "--error-unmatch", path],
                                     cwd=ROOT, capture_output=True, text=True)

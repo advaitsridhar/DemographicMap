@@ -42,13 +42,23 @@ Mali and South Africa already have census figures and those must win. Because
 merge_adapter works field by field, this still fills a field the census left
 empty without touching one it filled.
 
-The published file is a 24 MB workbook of 400-odd columns. Only five are read,
-so what is committed is an extract of those five -- reproducible from the
-release with ``--extract`` -- rather than the whole thing.
+The release has a row for every person interviewed, across 400-odd columns.
+What is committed is not those rows but their counts (COUNTS): for each
+region, question and answer, how many people gave it and their summed weight,
+sorted by answer. With the labels beside them (LABELS), that is everything
+this module reads. The sums are exact, which keeps every published share what
+it was; it also means rows whose sums match, or add up to another row's, can
+show that the same people gave both answers, so some people's three answers
+can be matched up again from the file. They carry no names, and the release
+itself prints each person's answers whole. ``--extract`` re-derives the counts
+from the release, saved in data/raw/afrobarometer, where .gitignore keeps it
+out of every commit.
 
 Usage:
     python -m scripts.fetch_census.afrobarometer
-    python -m scripts.fetch_census.afrobarometer --extract R9.Merge_39ctry.xlsx
+    python -m scripts.fetch_census.afrobarometer --extract data/raw/afrobarometer/<release>.sav
+    python -m scripts.fetch_census.afrobarometer \\
+        --extract-xlsx data/raw/afrobarometer/R9.Merge_39ctry.xlsx
 """
 
 from __future__ import annotations
@@ -58,15 +68,17 @@ import csv
 import gzip
 import json
 import re
-from typing import Any
+from pathlib import Path
+from typing import Any, Iterable
 
 from ._shared import (NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, gap, log,
                       record, shares, write_json)
 
 HERE = RAW / "afrobarometer"
-EXTRACT = HERE / "r9_extract.csv.gz"
+COUNTS = HERE / "r9_counts.csv.gz"
 LABELS = HERE / "r9_labels.json"
 OUT = "afrobarometer_region.json"
+FIELDS = ("religion", "ethnicity", "language")
 
 # Column positions in the published merge file, confirmed against the codebook.
 COLUMNS = {"country": 1, "region": 9, "ethnicity": 297, "religion": 340, "weight": 396}
@@ -131,14 +143,63 @@ POOLED = {"BWA": "district"}
 # region labels the workbook's codebook omits, and 21 religion labels.
 SAV_COLUMNS = {"country": "COUNTRY", "region": "REGION", "ethnicity": "Q84A",
                "religion": "Q95", "language": "Q2", "weight": "withinwt_hh"}
-# withinwt_hh, not withinwt_ea: the household-level weight is the one the
-# committed extract already carried, checked row by row against both.
+# withinwt_hh, not withinwt_ea: the household-level weight is the one in the
+# workbook's column COLUMNS reads, checked row by row against both.
 SAV_LABELS = {"COUNTRY": "country", "REGION": "region", "Q95": "religion",
               "Q84A": "ethnicity", "Q2": "language"}
 
 
+# What each round commits in place of its respondents, and the three readers
+# share: for every stratum, question and answer, the people who gave it and
+# their summed weight, added in the order the respondents come. The rows are
+# written sorted: in the order answers first appear, a stratum's first rows
+# were its first respondent's answers, one person's record read back off the
+# file.
+def tally_answers(respondents: Iterable[tuple[tuple[str, ...], dict[str, str], float]]
+                  ) -> dict[tuple[str, ...], list[Any]]:
+    """Respondents and summed weight per stratum, question and answer."""
+    counts: dict[tuple[str, ...], list[Any]] = {}
+    for stratum, answers, weight in respondents:
+        for question, value in answers.items():
+            entry = counts.setdefault((*stratum, question, value), [0, 0.0])
+            entry[0] += 1
+            entry[1] += weight
+    return counts
+
+
+def write_counts(path: Path, strata: list[str],
+                 counts: dict[tuple[str, ...], list[Any]]) -> int:
+    """One row per stratum, question and answer, sorted; returns how many."""
+    with gzip.open(path, "wt", newline="", encoding="utf-8") as handle:
+        writer = csv.writer(handle)
+        writer.writerow([*strata, "question", "answer", "respondents", "weight"])
+        for key, (n, weight) in sorted(counts.items()):
+            writer.writerow([*key, n, repr(weight)])
+    return len(counts)
+
+
+def read_counts(path: Path) -> list[dict[str, str]]:
+    with gzip.open(path, "rt", encoding="utf-8") as handle:
+        return list(csv.DictReader(handle))
+
+
+def respondent(row: dict[str, Any]) -> tuple[tuple[str, str], dict[str, str], float] | None:
+    """One interview as tally_answers takes it: its country and region, each
+    question's answer as a code ("" for none), and its weight."""
+    country, region = code(row["country"]), code(row["region"])
+    if not country or not region:
+        return None
+    try:
+        weight = float(row["weight"])
+    except (TypeError, ValueError):
+        weight = 1.0
+    return ((country, region),
+            {field: code(row[field]) or "" for field in FIELDS if field in row},
+            weight)
+
+
 def extract_sav(path: str) -> int:
-    """Re-derive the committed extract and its labels from the SPSS release."""
+    """Re-derive the committed counts and their labels from the SPSS release."""
     import pyreadstat                                # noqa: PLC0415 -- optional
 
     log(f"afrobarometer: reading {path}")
@@ -150,16 +211,12 @@ def extract_sav(path: str) -> int:
     LABELS.write_text(json.dumps(labels, ensure_ascii=False, indent=1,
                                  sort_keys=True), encoding="utf-8")
     log("  labels: " + ", ".join(f"{k} {len(v)}" for k, v in labels.items()))
-    rows = 0
-    with gzip.open(EXTRACT, "wt", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle)
-        writer.writerow(list(SAV_COLUMNS))
-        for values in zip(*(frame[c] for c in SAV_COLUMNS.values())):
-            if values[0] != values[0]:               # no country
-                continue
-            writer.writerow(["" if v != v else v for v in values])
-            rows += 1
-    log(f"  wrote {EXTRACT} ({rows:,} rows)")
+    interviews = (respondent({name: "" if v != v else v
+                              for name, v in zip(SAV_COLUMNS, values)})
+                  for values in zip(*(frame[c] for c in SAV_COLUMNS.values())))
+    rows = write_counts(COUNTS, ["country", "region"],
+                        tally_answers(found for found in interviews if found))
+    log(f"  wrote {COUNTS} ({rows:,} rows)")
     return rows
 
 
@@ -231,26 +288,25 @@ def named(field: str, value: str, table: dict[str, str]) -> str:
 
 
 def extract(path: str) -> int:
-    """Re-derive the committed extract from the published workbook."""
+    """Re-derive the committed counts from the published workbook."""
     import openpyxl                                  # noqa: PLC0415 -- optional
 
     log(f"afrobarometer: reading {path}")
     book = openpyxl.load_workbook(path, read_only=True, data_only=True)
     sheet = book[book.sheetnames[0]]
     HERE.mkdir(parents=True, exist_ok=True)
-    rows = 0
-    with gzip.open(EXTRACT, "wt", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle)
-        writer.writerow(list(COLUMNS))
+
+    def interviews() -> Iterable[tuple[tuple[str, str], dict[str, str], float]]:
         for row in sheet.iter_rows(min_row=2, values_only=True):
             if row is None or len(row) <= COLUMNS["weight"]:
                 continue
-            if row[COLUMNS["country"]] is None:
-                continue
-            writer.writerow([row[i] for i in COLUMNS.values()])
-            rows += 1
+            found = respondent({name: row[i] for name, i in COLUMNS.items()})
+            if found:
+                yield found
+
+    rows = write_counts(COUNTS, ["country", "region"], tally_answers(interviews()))
     book.close()
-    log(f"  wrote {EXTRACT} ({rows} rows)")
+    log(f"  wrote {COUNTS} ({rows} rows)")
     return rows
 
 
@@ -261,29 +317,22 @@ def tabulate() -> tuple[dict[tuple[str, str], dict[str, dict[str, float]]],
     sample: dict[tuple[str, str], int] = {}
     never_asked: set[tuple[str, str]] = set()
     asked: set[tuple[str, str]] = set()
-    with gzip.open(EXTRACT, "rt", encoding="utf-8") as handle:
-        for row in csv.DictReader(handle):
-            country, region = code(row["country"]), code(row["region"])
-            if not country or not region:
-                continue
-            try:
-                weight = float(row["weight"])
-            except (TypeError, ValueError):
-                weight = 1.0
-            key = (country, region)
-            sample[key] = sample.get(key, 0) + 1
-            cell = tally.setdefault(key, {"religion": {}, "ethnicity": {},
-                                          "language": {}})
-            for field in ("religion", "ethnicity", "language"):
-                column = field
-                value = code(row[column])
-                if value == NOT_ASKED:
-                    never_asked.add((country, field))
-                    continue
-                asked.add((country, field))
-                if value is None or value in NOT_ANSWERED:
-                    continue
-                cell[field][value] = cell[field].get(value, 0.0) + weight
+    for row in read_counts(COUNTS):
+        country, region = row["country"], row["region"]
+        field, value = row["question"], row["answer"]
+        key = (country, region)
+        cell = tally.setdefault(key, {name: {} for name in FIELDS})
+        # Everyone answers every question once, if only by declining, so the
+        # people counted under one question are the region's interviews.
+        if field == FIELDS[0]:
+            sample[key] = sample.get(key, 0) + int(row["respondents"])
+        if value == NOT_ASKED:
+            never_asked.add((country, field))
+            continue
+        asked.add((country, field))
+        if not value or value in NOT_ANSWERED:
+            continue
+        cell[field][value] = cell[field].get(value, 0.0) + float(row["weight"])
     # A country counts as never asked only if no respondent in it was asked.
     return tally, sample, {pair for pair in never_asked if pair not in asked}
 
@@ -345,12 +394,12 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--extract", metavar="SAV",
-                    help="re-derive the committed extract and labels from the "
+                    help="re-derive the committed counts and labels from the "
                          "SPSS release")
     ap.add_argument("--extract-xlsx", metavar="XLSX", dest="extract_xlsx",
                     help="the older route, reading the published workbook by "
                          "column position; writes no labels")
-    ap.add_argument("--out", default=None)
+    ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()
 
     if args.extract:
@@ -366,6 +415,13 @@ def main() -> int:
         f"{sum(sample.values())} interviews")
     for country, field in sorted(never_asked):
         log(f"  {labels['COUNTRY'].get(country, country)}: {field} not asked")
+    # A question with no rows at all was not counted -- the workbook route has
+    # no Q2 -- which is not the same as nobody answering it, so it is left out
+    # rather than written as a gap in every region.
+    counted = {row["question"] for row in read_counts(COUNTS)}
+    for field in FIELDS:
+        if field not in counted:
+            log(f"  {field}: not in the counts, so no region carries it")
 
     records: list[dict[str, Any]] = []
     dropped = low = 0
@@ -379,7 +435,9 @@ def main() -> int:
             # a figure for the field (a count always stands in front of it).
             dropped += 1
             thin: dict[str, Any] = {}
-            for field in ("religion", "ethnicity", "language"):
+            for field in FIELDS:
+                if field not in counted:
+                    continue
                 if (country, field) in never_asked:
                     thin[field] = gap(NOT_COLLECTED)
                     thin[f"{field}_note"] = (
@@ -400,8 +458,8 @@ def main() -> int:
         for field, table in (("religion", labels["Q95"]),
                              ("ethnicity", labels["Q84A"]),
                              ("language", labels.get("Q2", {}))):
-            if field == "language" and not table:
-                continue                     # an extract taken before Q2 was read
+            if field not in counted or (field == "language" and not table):
+                continue                     # counts or labels taken without Q2
             if (country, field) in never_asked:
                 fields[field] = gap(NOT_COLLECTED)
                 fields[f"{field}_note"] = (

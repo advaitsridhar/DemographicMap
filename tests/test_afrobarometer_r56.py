@@ -2,7 +2,7 @@
 to two is a rule that could silently stop working.
 
 The round is chosen per field rather than per country, the choice is measured
-from the extract rather than declared, and three things are refused: Egypt's
+from the counts rather than declared, and three things are refused: Egypt's
 one-valued language variable, Egypt's never-asked ethnicity and Algeria
 entirely. Each of those is a decision this file holds to.
 """
@@ -18,28 +18,27 @@ sys.path.insert(0, str(ROOT))
 from scripts.fetch_census import afrobarometer_r56 as ab  # noqa: E402
 
 
-def row(round_, country, region, **fields):
-    base = {"round": round_, "country": country, "region": region,
-            "religion": "", "ethnicity": "", "language": "",
-            "weight": "1.0", "year": "2014"}
-    base.update(fields)
-    return base
+def counted(round_, country, region, question, answer, respondents=1):
+    """One row of the committed counts: so many people gave this answer."""
+    return {"round": round_, "year": "2014", "country": country, "region": region,
+            "question": question, "answer": answer,
+            "respondents": str(respondents), "weight": str(float(respondents))}
 
 
 class ChoosingTheRound(unittest.TestCase):
     """The newest round that *asks*, which is not the newest round."""
 
     def test_a_field_the_newer_round_drops_falls_back_to_the_older(self):
-        rows = ([row("R6", "Burundi", "Gitega", ethnicity="Not asked in country")] * 4
-                + [row("R5", "Burundi", "Gitega", ethnicity="Hutu")] * 3
-                + [row("R5", "Burundi", "Gitega", ethnicity="Tutsi")])
+        rows = [counted("R6", "Burundi", "Gitega", "ethnicity", "Not asked in country", 4),
+                counted("R5", "Burundi", "Gitega", "ethnicity", "Hutu", 3),
+                counted("R5", "Burundi", "Gitega", "ethnicity", "Tutsi")]
         self.assertEqual(ab.choose(rows)[("Burundi", "ethnicity")], "R5")
 
     def test_the_newer_round_wins_when_both_ask(self):
-        rows = ([row("R6", "Burundi", "Gitega", religion="Roman Catholic")] * 2
-                + [row("R6", "Burundi", "Gitega", religion="Muslim only")]
-                + [row("R5", "Burundi", "Gitega", religion="Roman Catholic")] * 2
-                + [row("R5", "Burundi", "Gitega", religion="Muslim only")])
+        rows = [counted("R6", "Burundi", "Gitega", "religion", "Roman Catholic", 2),
+                counted("R6", "Burundi", "Gitega", "religion", "Muslim only"),
+                counted("R5", "Burundi", "Gitega", "religion", "Roman Catholic", 2),
+                counted("R5", "Burundi", "Gitega", "religion", "Muslim only")]
         self.assertEqual(ab.choose(rows)[("Burundi", "religion")], "R6")
 
     def test_one_distinct_answer_is_not_a_measurement(self):
@@ -49,13 +48,14 @@ class ChoosingTheRound(unittest.TestCase):
         composition until it is counted, and publishing it would paint a
         country uniform on a survey's authority.
         """
-        rows = ([row("R6", "Egypt", "Cairo", language="Egyptian Arabic")] * 40
-                + [row("R5", "Egypt", "Cairo", language="Arabic")] * 40)
+        rows = [counted("R6", "Egypt", "Cairo", "language", "Egyptian Arabic", 40),
+                counted("R5", "Egypt", "Cairo", "language", "Arabic", 40)]
         self.assertIsNone(ab.choose(rows)[("Egypt", "language")])
 
     def test_a_field_no_round_asks_is_chosen_from_neither(self):
-        rows = ([row("R6", "Egypt", "Cairo", religion="NOT ASKED IN THIS COUNTRY")] * 5
-                + [row("R5", "Egypt", "Cairo", ethnicity="")] * 5)
+        rows = [counted("R6", "Egypt", "Cairo", "religion", "NOT ASKED IN THIS COUNTRY", 5),
+                counted("R6", "Egypt", "Cairo", "ethnicity", "", 5),
+                counted("R5", "Egypt", "Cairo", "ethnicity", "", 5)]
         self.assertIsNone(ab.choose(rows)[("Egypt", "ethnicity")])
 
 

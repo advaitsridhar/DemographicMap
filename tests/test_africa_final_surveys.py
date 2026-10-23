@@ -84,8 +84,8 @@ class BotswanaStrataMakeItsDistricts(unittest.TestCase):
         self.assertEqual((unit["key"], unit["name"], unit["n"]), ("1620", "Hhohho", 300))
 
     def test_every_round_9_stratum_of_botswana_has_its_district(self):
-        if not ab.EXTRACT.exists():
-            self.skipTest("the Round 9 extract is not in this checkout")
+        if not ab.COUNTS.exists():
+            self.skipTest("the Round 9 counts are not in this checkout")
         labels = ab.load_labels()
         _, sample, _ = ab.tabulate()
         strata = {labels["REGION"][region] for country, region in sample if country == "4"}
@@ -270,16 +270,14 @@ class TheBuildReadsThePooledDistricts(unittest.TestCase):
         self.assertIn("1,186 of the 1,200 people", reason)
         self.assertIsNone(self.be.field_gap("SWZ", "religion", "admin1"))
 
-    def test_the_count_is_the_extract_s(self):
-        import csv
-        import gzip
-        path = ROOT / "data" / "raw" / "afrobarometer" / "r9_extract.csv.gz"
-        if not path.exists():
-            raise unittest.SkipTest("the Round 9 extract is not in this checkout")
-        with gzip.open(path, "rt") as fh:
-            eswatini = [r for r in csv.DictReader(fh) if float(r["country"]) == 10]
-        self.assertEqual(len(eswatini), 1200)
-        self.assertEqual(sum(float(r["ethnicity"]) == 9990 for r in eswatini), 1186)
+    def test_the_count_is_the_survey_s(self):
+        if not ab.COUNTS.exists():
+            raise unittest.SkipTest("the Round 9 counts are not in this checkout")
+        eswatini = [r for r in ab.read_counts(ab.COUNTS)
+                    if r["country"] == "10" and r["question"] == "ethnicity"]
+        self.assertEqual(sum(int(r["respondents"]) for r in eswatini), 1200)
+        self.assertEqual(sum(int(r["respondents"]) for r in eswatini
+                             if r["answer"] == ab.NATIONAL_ONLY), 1186)
 
 
 if __name__ == "__main__":

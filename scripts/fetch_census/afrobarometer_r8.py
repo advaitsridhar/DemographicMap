@@ -38,36 +38,39 @@ as Round 9 writes them (``SPELLING``). Refusals, don't knows and missing values
 are excluded from the denominator, which is the usual treatment and the one
 Round 9 already uses.
 
-**The extract stores labels, not codes.** Round 9's does the opposite, because
-its source is a workbook of numeric codes with a separate codebook; this one is
-read from the SPSS release, which carries most of its value labels inside the
-file, so resolving them at extract time removes a class of code-to-label
-drift. Most, not all: the release's REGION table holds 427 of the 454 labels
+**The counts store labels, not codes.** Round 9's keep codes, with the
+release's value labels written beside them (r9_labels.json), a layout kept from
+when Round 9 was read from a workbook of numeric codes; this one is read from
+the SPSS release, which carries most of its value labels inside the file, so
+resolving them at extract time removes a class of code-to-label drift. Most,
+not all: the release's REGION table holds 427 of the 454 labels
 the codebook lists, and the 27 it omits include every one of Tanzania's 31
 regions, which read as "740.0" until the codebook fills them. The released
-file is 52 MB of 425 columns and is not committed; what is committed is the
-six columns this reads and the codebook's region list, re-derivable with
+file is 52 MB of 425 columns, a row for every person interviewed, and is not
+committed; what is committed is the codebook's region list and the counts of
+the three questions this reads -- for each region and answer, the people who
+gave it and their summed weight, as Round 9's are kept -- re-derivable with
 ``--extract``.
 
 Usage:
     python -m scripts.fetch_census.afrobarometer_r8
-    python -m scripts.fetch_census.afrobarometer_r8 --extract <release>.sav
+    python -m scripts.fetch_census.afrobarometer_r8 --extract data/raw/afrobarometer/<release>.sav
 """
 
 from __future__ import annotations
 
 import argparse
-import csv
-import gzip
 import json
+from pathlib import Path
 from typing import Any
 
 from ._shared import (NOT_AVAILABLE, PROCESSED, RAW, gap, log, record, shares,
                       write_json)
-from .afrobarometer import LOW_PRECISION, MIN_SAMPLE
+from .afrobarometer import (LOW_PRECISION, MIN_SAMPLE, read_counts, tally_answers,
+                            write_counts)
 
 HERE = RAW / "afrobarometer"
-EXTRACT = HERE / "r8_extract.csv.gz"
+COUNTS = HERE / "r8_counts.csv.gz"
 # The release's own REGION value-label table is short: it holds 427 of the 454
 # the codebook lists, and Tanzania's 31 regions -- codes 740 to 770 -- are
 # among the missing, so reading the file alone leaves a twenty-nine-region
@@ -78,15 +81,16 @@ REGION_CODEBOOK = HERE / "r8_region_codebook.json"
 OUT = "afrobarometer_r8_language.json"
 
 # The columns of the SPSS release this reads, and the name each is written
-# under. Religion and ethnicity are extracted although nothing here publishes
+# under. Religion and ethnicity are counted although nothing here publishes
 # them: Round 9 covers both and is newer, but the release is not committed and
 # re-extracting means having the 52 MB file again, so the two fields that might
 # later rescue a region Round 9 had too few respondents for are taken now.
-# withinwt_hh, the household-level weight, because that is the one Round 9's
-# committed extract carries and two readings of one programme must weight the
-# same way. The release offers withinwt_ea beside it, the older EA-level one.
+# withinwt_hh, the household-level weight, because that is the one Round 9 is
+# read with and two readings of one programme must weight the same way. The
+# release offers withinwt_ea beside it, the older EA-level one.
 COLUMNS = {"country": "COUNTRY", "region": "REGION", "language": "Q2",
            "religion": "Q98A", "ethnicity": "Q81", "weight": "withinwt_hh"}
+QUESTIONS = ("language", "religion", "ethnicity")
 
 # What the questionnaire calls a non-answer. "Other" is deliberately absent:
 # it is an answer, and appears below under its own label.
@@ -281,8 +285,19 @@ NO_LANGUAGE = (
     "of this release, not a statement that the question is never asked.")
 
 
+def respondent(row: dict[str, Any]) -> tuple[tuple[str, str], dict[str, str], float]:
+    """One interview as tally_answers takes it: its country and region, each
+    question's answer as the release labels it, and its weight."""
+    try:
+        weight = float(row["weight"])
+    except (TypeError, ValueError):
+        weight = 1.0
+    return ((row["country"], row["region"]),
+            {question: row[question] for question in QUESTIONS}, weight)
+
+
 def extract(path: str) -> int:
-    """Re-derive the committed extract from the SPSS release."""
+    """Re-derive the committed counts from the SPSS release."""
     import pyreadstat                                # noqa: PLC0415 -- optional
 
     log(f"afrobarometer_r8: reading {path}")
@@ -306,18 +321,16 @@ def extract(path: str) -> int:
         return str(table.get(value, value)).strip()
 
     HERE.mkdir(parents=True, exist_ok=True)
-    rows = 0
-    with gzip.open(EXTRACT, "wt", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle)
-        writer.writerow(list(COLUMNS))
+
+    def interviews():
         for values in zip(*(frame[c] for c in COLUMNS.values())):
-            out = [label(c, v) if c != COLUMNS["weight"] else v
-                   for c, v in zip(COLUMNS.values(), values)]
-            if not out[0] or not out[1]:             # no country or no region
-                continue
-            writer.writerow(out)
-            rows += 1
-    log(f"  wrote {EXTRACT} ({rows:,} rows)")
+            row = {name: label(c, v) if name != "weight" else v
+                   for (name, c), v in zip(COLUMNS.items(), values)}
+            if row["country"] and row["region"]:
+                yield respondent(row)
+
+    rows = write_counts(COUNTS, ["country", "region"], tally_answers(interviews()))
+    log(f"  wrote {COUNTS} ({rows:,} rows)")
     return rows
 
 
@@ -329,23 +342,20 @@ def tabulate() -> tuple[dict[tuple[str, str], dict[str, float]],
     sample: dict[tuple[str, str], int] = {}
     answered: set[str] = set()
     seen: set[str] = set()
-    with gzip.open(EXTRACT, "rt", encoding="utf-8") as handle:
-        for row in csv.DictReader(handle):
-            country, region = row["country"], row["region"]
-            seen.add(country)
-            key = (country, region)
-            sample[key] = sample.get(key, 0) + 1
-            try:
-                weight = float(row["weight"])
-            except (TypeError, ValueError):
-                weight = 1.0
-            name = row["language"]
-            if not name or name in NOT_ANSWERED:
-                continue
-            answered.add(country)
-            name = SPELLING.get(name, name)
-            cell = tally.setdefault(key, {})
-            cell[name] = cell.get(name, 0.0) + weight
+    for row in read_counts(COUNTS):
+        if row["question"] != "language":
+            continue
+        country, region = row["country"], row["region"]
+        seen.add(country)
+        key = (country, region)
+        sample[key] = sample.get(key, 0) + int(row["respondents"])
+        name = row["answer"]
+        if not name or name in NOT_ANSWERED:
+            continue
+        answered.add(country)
+        name = SPELLING.get(name, name)
+        cell = tally.setdefault(key, {})
+        cell[name] = cell.get(name, 0.0) + float(row["weight"])
     return tally, sample, seen - answered
 
 
@@ -353,8 +363,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--extract", metavar="SAV",
-                    help="re-derive the committed extract from the SPSS release")
-    ap.add_argument("--out", default=None)
+                    help="re-derive the committed counts from the SPSS release")
+    ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()
 
     if args.extract:

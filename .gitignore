@@ -70,13 +70,21 @@ data/raw/*
 # build cannot re-derive religion for a single county.
 !data/raw/us/
 !data/raw/us/*.xlsx
-# Afrobarometer R9. The published release is a 24 MB workbook of 400-odd
-# columns; what is committed is the five-column extract the adapter reads,
-# re-derivable with --extract. Without these two lines a clean checkout
-# builds with no Afrobarometer at all and says nothing about it.
+# Afrobarometer. The releases have a row for every person interviewed and are
+# not committed; what is committed is each round's counts -- for every region,
+# question and answer, the people who gave it and their summed weight -- with
+# Round 9's labels, all three re-derived by --extract, and Round 8's region
+# list, transcribed from its codebook and read by --extract. The five are
+# named, and the rest of the folder ignored, so that a release put here to
+# extract from is never swept into a commit. Without these lines a clean
+# checkout builds with no Afrobarometer at all and says nothing about it.
 !data/raw/afrobarometer/
-!data/raw/afrobarometer/*.csv.gz
-!data/raw/afrobarometer/*.json
+data/raw/afrobarometer/*
+!data/raw/afrobarometer/r9_counts.csv.gz
+!data/raw/afrobarometer/r9_labels.json
+!data/raw/afrobarometer/r8_counts.csv.gz
+!data/raw/afrobarometer/r8_region_codebook.json
+!data/raw/afrobarometer/r56_counts.csv.gz
 # Scotland's Census 2011 key statistics by council area, as published by
 # National Records of Scotland. Three small CSVs; the 2022 equivalents are
 # still behind a table builder, so these are what the map has.
@@ -152,6 +160,15 @@ data/raw/*
 !data/raw/ess/*.json.gz
 !data/raw/ess/*.json
 data/processed/http_cache/
+
+# Survey and census releases in SPSS, Stata and SAS formats, wherever they are
+# saved: they hold a row for every person interviewed, and only what a reader
+# makes of them -- counts, shares -- is committed.
+*.sav
+*.zsav
+*.por
+*.dta
+*.sas7bdat
 
 # Intermediate tiling artefacts
 *.mbtiles
