@@ -19,7 +19,7 @@ asked:
     Egypt     religion    Round 6 does not ask; Round 5 does (1,190 answers)
 
 So the rounds are mixed *per field*, and ``choose()`` below re-derives that
-from the extract on every run rather than trusting the table above. Each
+from the counts on every run rather than trusting the table above. Each
 field carries its own year, read from the round's own interview dates:
 
     Burundi religion, language   Round 6, 29 Sep - 10 Oct 2014      2014
@@ -60,28 +60,31 @@ is the lowest authority. Nothing else on this map writes to Burundi or Egypt
 today, so nothing is at stake in the order; it is there because a survey
 ranks below a count whatever else happens to be present.
 
-The releases are 50 MB of microdata and are not committed. What is committed
-is the seven columns this reads, for the three countries above only --
-reproducible with ``--extract``.
+The releases are 50 MB each, a row for every person interviewed, and are not
+committed. What is committed is their counts for the three countries above:
+for each round, interview year, region, question and answer, the people who
+gave it and their summed weight, as Round 9's are kept -- reproducible with
+``--extract``.
 
 Usage:
     python -m scripts.fetch_census.afrobarometer_r56
-    python -m scripts.fetch_census.afrobarometer_r56 --extract R5.sav R6.sav
+    python -m scripts.fetch_census.afrobarometer_r56 \\
+        --extract data/raw/afrobarometer/R5.sav data/raw/afrobarometer/R6.sav
 """
 
 from __future__ import annotations
 
 import argparse
-import csv
-import gzip
+from pathlib import Path
 from typing import Any
 
 from ._shared import (NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, gap, log,
                       record, shares, write_json)
-from .afrobarometer import LOW_PRECISION, MIN_SAMPLE, NATIONAL_ONLY_LABEL, clean
+from .afrobarometer import (LOW_PRECISION, MIN_SAMPLE, NATIONAL_ONLY_LABEL, clean,
+                            read_counts, tally_answers, write_counts)
 
 HERE = RAW / "afrobarometer"
-EXTRACT = HERE / "r56_extract.csv.gz"
+COUNTS = HERE / "r56_counts.csv.gz"
 OUT = "afrobarometer_r56.json"
 
 # The two releases' variable names. Round 5 asks ethnicity as Q84 and Round 6
@@ -201,17 +204,24 @@ ONE_VALUE = (
     "composition, so no shares are shown.")
 
 
+def respondent(row: dict[str, Any]) -> tuple[tuple[str, ...], dict[str, str], float]:
+    """One interview as tally_answers takes it: its round, year, country and
+    region, each question's answer as the release labels it, and its weight."""
+    try:
+        weight = float(row["weight"])
+    except (TypeError, ValueError):
+        weight = 1.0
+    return ((row["round"], str(row["year"]), row["country"], row["region"]),
+            {field: row[field] for field in FIELDS}, weight)
+
+
 def extract(paths: dict[str, str]) -> int:
-    """Re-derive the committed extract from the two SPSS releases."""
+    """Re-derive the committed counts from the two SPSS releases."""
     import pyreadstat                                # noqa: PLC0415 -- optional
 
     HERE.mkdir(parents=True, exist_ok=True)
-    columns = ["round", "country", "region", "religion", "ethnicity",
-               "language", "weight", "year"]
-    rows = 0
-    with gzip.open(EXTRACT, "wt", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle)
-        writer.writerow(columns)
+
+    def interviews():
         for rnd in NEWEST_FIRST:
             path = paths[rnd]
             names = ROUNDS[rnd]
@@ -234,25 +244,22 @@ def extract(paths: dict[str, str]) -> int:
                 region = label(names["region"], cell["region"])
                 if not region:
                     continue
-                date = cell["date"]
-                writer.writerow([
-                    rnd, country, region,
-                    label(names["religion"], cell["religion"]),
-                    label(names["ethnicity"], cell["ethnicity"]),
-                    label(names["language"], cell["language"]),
-                    cell["weight"],
-                    getattr(date, "year", ""),
-                ])
                 kept += 1
-            log(f"  {kept:,} rows for {', '.join(sorted(COUNTRIES))}")
-            rows += kept
-    log(f"  wrote {EXTRACT} ({rows:,} rows)")
+                yield respondent({
+                    "round": rnd, "year": getattr(cell["date"], "year", ""),
+                    "country": country, "region": region,
+                    "weight": cell["weight"],
+                    **{field: label(names[field], cell[field]) for field in FIELDS}})
+            log(f"  {kept:,} interviews in {', '.join(sorted(COUNTRIES))}")
+
+    rows = write_counts(COUNTS, ["round", "year", "country", "region"],
+                        tally_answers(interviews()))
+    log(f"  wrote {COUNTS} ({rows:,} rows)")
     return rows
 
 
 def read() -> list[dict[str, str]]:
-    with gzip.open(EXTRACT, "rt", encoding="utf-8") as handle:
-        return list(csv.DictReader(handle))
+    return read_counts(COUNTS)
 
 
 def answer(value: str) -> str | None:
@@ -274,11 +281,10 @@ def choose(rows: list[dict[str, str]]) -> dict[tuple[str, str], str | None]:
     """
     seen: dict[tuple[str, str, str], set[str]] = {}
     for row in rows:
-        for field in FIELDS:
-            name = answer(row[field])
-            if name:
-                seen.setdefault((row["country"], field, row["round"]),
-                                set()).add(name)
+        name = answer(row["answer"])
+        if name:
+            seen.setdefault((row["country"], row["question"], row["round"]),
+                            set()).add(name)
     out: dict[tuple[str, str], str | None] = {}
     for country in COUNTRIES:
         for field in FIELDS:
@@ -298,8 +304,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--extract", nargs=2, metavar=("R5_SAV", "R6_SAV"),
-                    help="re-derive the committed extract from the releases")
-    ap.add_argument("--out", default=None)
+                    help="re-derive the committed counts from the releases")
+    ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()
 
     if args.extract:
@@ -333,20 +339,16 @@ def main() -> int:
         shape = REGIONS.get((iso, row["region"]), row["region"])
         key = (iso, shape)
         strata.setdefault((iso, shape, row["round"]), set()).add(row["region"])
-        try:
-            weight = float(row["weight"])
-        except (TypeError, ValueError):
-            weight = 1.0
-        for field in FIELDS:
-            if picked[(row["country"], field)] != row["round"]:
-                continue
-            sample.setdefault(key, {})
-            sample[key][field] = sample[key].get(field, 0) + 1
-            name = answer(row[field])
-            if not name:
-                continue
-            cell = tally.setdefault(key, {}).setdefault(field, {})
-            cell[name] = cell.get(name, 0.0) + weight
+        field = row["question"]
+        if picked[(row["country"], field)] != row["round"]:
+            continue
+        sample.setdefault(key, {})
+        sample[key][field] = sample[key].get(field, 0) + int(row["respondents"])
+        name = answer(row["answer"])
+        if not name:
+            continue
+        cell = tally.setdefault(key, {}).setdefault(field, {})
+        cell[name] = cell.get(name, 0.0) + float(row["weight"])
 
     records: list[dict[str, Any]] = []
     kept = {field: 0 for field in FIELDS}
@@ -360,9 +362,9 @@ def main() -> int:
             rnd = picked[(country, field)]
             if rnd is None:
                 note = (ONE_VALUE.format(n=sum(
-                    1 for r in rows if r["country"] == country
-                    and answer(r[field]))) if field == "language"
-                    else NEVER_ASKED.format(field=field))
+                    int(r["respondents"]) for r in rows if r["country"] == country
+                    and r["question"] == field and answer(r["answer"])))
+                    if field == "language" else NEVER_ASKED.format(field=field))
                 fields[field] = gap(NOT_COLLECTED, note)
                 continue
             n = sample[(iso, shape)].get(field, 0)

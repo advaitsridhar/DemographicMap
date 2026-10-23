@@ -9324,7 +9324,20 @@ was not a reading of the questionnaire; it was an artefact of how Round 9 was
 first read here -- by *column position* out of the published workbook, five
 columns, and Q2 was not among them. Nothing reported a missing question,
 because nothing had looked for one. The SPSS release, whose variables are
-named, is now the source for Round 9, and `--extract` reads it.
+named, is now the source for Round 9, and `--extract` reads it. What is
+committed of it is its counts, not its rows: for each region, question and
+answer, the people who gave it and their summed weight, sorted by answer --
+9,924 rows for 53,444 interviews, 124 KB, in
+`data/raw/afrobarometer/r9_counts.csv.gz`. The sums are exact, so the three
+Afrobarometer readers publish from the counts exactly the files they published
+from the rows. Exact sums can also be matched: rows whose sums are equal, or
+add up to another row's, show that the same people gave both answers, and
+across the three rounds' counts several hundred people's answers to all three
+questions can be put back together, and a few thousand people's answers to
+two. Those answers carry no names, and Afrobarometer's release prints every
+person's answers whole; closing the gap would mean rounding the sums, which
+would move published shares. The rows themselves were committed from
+September to October 2026 and are still in the repository's history.
 
 Round 9 carries **Q2 "Language spoken in home" for all 435 regions it
 publishes, in all 39 countries**. So language comes from Round 9, like
@@ -9386,7 +9399,7 @@ silent on a field an older one asked:
 | Egypt religion | R6 (2015) | no, "NOT ASKED IN THIS COUNTRY" | **R5 (2013)** | 1,190 |
 
 So `afrobarometer_r56.py` picks the round **per field**, not per country, and
-`choose()` re-derives the table above from the extract on every run rather
+`choose()` re-derives the table above from the counts on every run rather
 than trusting it. Each field carries its own year, read from the round's own
 interview dates rather than from its title: Burundi's Round 6 fieldwork ran
 29 September to 10 October 2014, its Round 5 fieldwork 28 November to 10
@@ -9435,10 +9448,12 @@ is a wrong one, and a wrong figure on a shape is worse than an empty shape:
 the empty one says it is empty. Algeria's provinces keep their existing
 `not_collected` reason, which is that the census does not ask.
 
-The two releases are 50 MB of microdata each and are not committed. What is
-committed is the seven columns the adapter reads, for those three countries
-only -- 7,192 rows, 21 KB, in
-`data/raw/afrobarometer/r56_extract.csv.gz`, reproducible with `--extract`.
+The two releases are 50 MB each, a row for every person interviewed, and are
+not committed. What is committed is their counts for those three countries:
+for each round, interview year, region, question and answer, the people who
+gave it and their summed weight, sorted by answer -- 819 rows for 7,192
+interviews, 11 KB, in `data/raw/afrobarometer/r56_counts.csv.gz`, reproducible
+with `--extract`.
 
 **Two defects in the Round 8 release, both found by checking rather than
 trusting.**
@@ -9489,11 +9504,14 @@ itself a variant of it and silently resolved to nothing.
 because it is an answer and excluding it would inflate every named language
 beside it. Refusals, don't knows and missing values leave the denominator.
 
-The 52 MB release is not committed. What is committed is the six columns this
-reads, gzipped to 287 KB and re-derivable with `--extract`, plus the
-codebook's region list. Religion and ethnicity are extracted although nothing
-publishes them yet: Round 9 covers both and is newer, but re-extracting later
-would mean having the release again.
+The 52 MB release is not committed. What is committed is the codebook's region
+list and the counts of the three questions this reads -- for each region and
+answer, the people who gave it and their summed weight, sorted by answer:
+9,489 rows for 48,084 interviews, 143 KB in
+`data/raw/afrobarometer/r8_counts.csv.gz` --
+re-derivable with `--extract`. Religion and ethnicity are counted although
+nothing publishes them yet: Round 9 covers both and is newer, but counting them
+later would mean having the release again.
 
 ## One ISO code, several places
 
