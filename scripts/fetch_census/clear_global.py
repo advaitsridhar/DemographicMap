@@ -90,7 +90,7 @@ import urllib.parse
 import urllib.request
 from typing import Any
 
-from ._shared import PROCESSED, log, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, write_json
 
 API = "https://data.humdata.org/api/3/action"
 ORG = "clear"
@@ -120,6 +120,14 @@ MIN_UNITS = 2
 MIN_PCT = 0.05
 
 UNKNOWN_UNIT = re.compile(r"\bunknown\b|\blevel \d+ unknown\b", re.I)
+# A Bantu language's code in Guthrie's classification, which some files print
+# after the name: "Swahili (G.40)", "Budja (C.37)". It classifies the name and
+# is not part of it.
+GUTHRIE_CODE = re.compile(r"\s*\([A-S]\.\d{1,3}[a-z]?\)$")
+# Answers that name no language. A unit with nothing else says nothing about
+# its languages and is not written: one of Namibia's constituencies is
+# "Unknown" 100%, as are districts of Ghana under a name from Australia.
+NON_ANSWERS = frozenset({"Unknown", "Other languages"})
 # "clearglobal_language_use_SOM_admin1.csv" in the 2025 release and
 # "th_lang_admin1_v01.csv" in the older one. The version suffix matters: a
 # pattern that required the name to end at "admin1" missed the four older
@@ -157,14 +165,159 @@ YEAR = re.compile(r"(1[89]\d\d|20\d\d)")
 # of an Austroasiatic language of Meghalaya, in India. Its shares are those
 # Nepal's 2021 census prints for "Khash" (Jumla 51.2%, Kalikot 26.2%, Mugu
 # 6.7%, Humla 5.7%), an Indo-Aryan language, so that is what it is written as.
+#
+# Read against Glottolog's own table of languages (where each name in these
+# files comes from), the African files give a share to languages of other
+# continents, or of another end of Africa, that no household of the unit can
+# have as its main language.
+#
+# The DRC's are CLEAR Global's matches for the names its source, the CAID
+# territory data of 2016, gives -- a wide table published beside the long
+# one (cd_lang_admin2_v01.csv), whose rows show what each share was called
+# before it was matched: Kabinda's "Lander River Warlpiri" 25.0% (Australia)
+# is the source's "Lande" 0.5 of 2.0; Fizi's "Tamazola Mixtec" 7.9% (Oaxaca)
+# its "Zola" 0.15 of 1.9; Bomongo's "Ibaloi" 5.0% (Luzon) its "Baloi"; Mambasa's
+# "Mokilese" 5.5% (a Micronesian atoll) its "Kilese" and "Mpongmpong" 3.5%
+# (south-eastern Cameroon) its "Bombo"; and Kapanga's "Rundi" 88.9%, the
+# language of Burundi, its "Urund" -- Ruund, the Lunda language of Kapanga.
+# Each is written as the source names it: Kilese is Lese (Ki- is Swahili's
+# prefix for a language) and Urund is Ruund, Glottolog's names for them;
+# Lande, Zola, Bombo and Baloi stay as the source spells them.
+#
+# Elsewhere no table gives the source's own name, so the share is kept,
+# unnamed, as the residual "Other languages" -- leaving it out would shrink
+# the units, and guessing a language would be inventing one: in Benin Central
+# Malay (Ouaké 54.1%) and Tagwana
+# Senoufo (central Côte d'Ivoire; Djidja 8.0%); in Ghana Nyamal (the Pilbara;
+# the Upper West's districts, up to all of a district's interviews); in
+# Nigeria eleven names from Australia, the Pacific, Asia and the Andes, and
+# South Sudan's Bari and Zambia's Tambo, each under 6% of a local government
+# area; in Somalia Kenya-Somali Sign Language (Galgaduud 15.3%); in Senegal
+# Babalia Creole Arabic (Chad) and Zenaga (a Berber language of south-western
+# Mauritania with few speakers; Saint-Louis 3.5%); and in Mozambique
+# Southern Sama (the southern Philippines). Some of them can be guessed at --
+# Benin's "Central Malay" follows the Lokpa country of Ouaké and Djougou --
+# but a guess is not the source, so each is kept unnamed, the same way.
+#
+# Malawi's and Mozambique's "Yao" is right (Glottolog yaoo1241, the Bantu
+# language of the Yao people), but the name is also that of the Yao (Mien)
+# languages of southern China, which is where the language tree files it.
+# It is written as each country spells it, "Chiyao" and "Ciyao". Namibia's
+# and Angola's "Ndonga (R.20)" is the whole Oshiwambo group -- R.20 is its
+# code in Guthrie's classification -- under the name of one member, which
+# put Oshindonga on Kwanyama-speaking constituencies; it is written as the
+# group, Oshiwambo in Namibia, Ovambo in Angola.
+OTHER = "Other languages"
 LANGUAGE_RELABEL: dict[str, dict[str, str]] = {
     "NPL": {"Khasi": "Khash"},
+    "COD": {"Lander River Warlpiri": "Lande", "Tamazola Mixtec": "Zola", "Ibaloi": "Baloi",
+            "Mokilese": "Lese", "Mpongmpong": "Bombo", "Rundi": "Ruund"},
+    "BEN": {"Central Malay": OTHER, "Tagwana Senoufo": OTHER},
+    "GHA": {"Nyamal": OTHER},
+    "NGA": {"Kokata": OTHER, "Nguburindi": OTHER, "Chavacano": OTHER, "Sibalenhon": OTHER,
+            "Nyindrou": OTHER, "Gama": OTHER, "Bateri": OTHER, "Takari": OTHER,
+            "Western Mewahang": OTHER, "Lamunkhin": OTHER, "Northwest Jujuy": OTHER,
+            "Bari": OTHER, "Tambo": OTHER},
+    "SOM": {"Kenya-Somali Sign Language": OTHER},
+    "SEN": {"Babalia Creole Arabic": OTHER, "Zenaga": OTHER},
+    "MOZ": {"Yao": "Ciyao", "Southern Sama": OTHER},
+    "MWI": {"Yao": "Chiyao"},
+    "NAM": {"Ndonga (R.20)": "Oshiwambo"},
+    "AGO": {"Ndonga (R.20)": "Ovambo"},
 }
-# Said on the record of every unit whose shares carry a relabelled name.
+
+# Levels where CLEAR Global's tabulation is of a survey's interviews too few in
+# each unit for shares -- the map reads Afrobarometer itself only where a region
+# holds 25 respondents. Each unit the file names there is written with this
+# reason in place of its shares, so it says why it shows none rather than take
+# a sentence about how far the country's sources reach. Ghana's 147 district
+# rows tabulate Round 5 (2012): 50 give one language at 100% and 39 more only
+# multiples of 12.5%, one area's eight interviews, and the file grades them
+# below a 95% confidence level or above a 10% margin of error. Namibia's 88
+# constituency rows tabulate Round 6 (2014), 1,200 interviews over 121
+# constituencies, graded the same way.
+SMALL_SAMPLE: dict[tuple[str, int], str] = {
+    ("GHA", 2): ("CLEAR Global tabulates Ghana's districts from Afrobarometer's Round 5 "
+                 "interviews of 2012, a handful in each district, which it grades below a "
+                 "95% confidence level or above a 10% margin of error: too few to estimate "
+                 "shares from, so none are shown."),
+    ("NAM", 2): ("CLEAR Global tabulates Namibia's constituencies from Afrobarometer's "
+                 "Round 6 interviews of 2014, a handful in each constituency, which it grades "
+                 "below a 95% confidence level or above a 10% margin of error: too few to "
+                 "estimate shares from, so none are shown."),
+}
+
+# A name the file gets wrong in one unit and right in another, keyed by the
+# unit's code: Mambasa's "Ombo" 7.3% is the source's "Bandaka" (0.076 of
+# 1.043) -- the Ndaka people of the Ituri forest -- matched to Ombo, a
+# language of Kailo in Maniema, where the file's own Ombo (11.4%) stands.
+UNIT_RELABEL: dict[str, dict[str, dict[str, str]]] = {
+    "COD": {"CD5403": {"Ombo": "Ndaka"}},
+}
+
+# What each relabelled name was, said on the record of every unit whose
+# shares carry it: {(iso3, the file's name): sentence}.
+_FOREIGN = {
+    "BEN": {"Central Malay": "a Malay language of Sumatra and the Malay peninsula",
+            "Tagwana Senoufo": "a Senufo language of central Côte d'Ivoire"},
+    "GHA": {"Nyamal": "an Aboriginal language of the Pilbara, Australia"},
+    "NGA": {"Kokata": "an Aboriginal language of South Australia",
+            "Nguburindi": "an Aboriginal language of Queensland, Australia",
+            "Chavacano": "a Spanish creole of the Philippines",
+            "Sibalenhon": "a language of the Philippines",
+            "Nyindrou": "a language of Manus, in Papua New Guinea",
+            "Gama": "a language of Papua New Guinea",
+            "Bateri": "an Indo-Aryan language of northern Pakistan",
+            "Takari": "a language of central India",
+            "Western Mewahang": "a Kiranti language of Nepal",
+            "Lamunkhin": "a dialect of Even, in Siberia",
+            "Northwest Jujuy": "a Quechua variety of the Andes",
+            "Bari": "a Nilotic language of South Sudan",
+            "Tambo": "a Bantu language of the border of Zambia and Tanzania"},
+    "SOM": {"Kenya-Somali Sign Language": "a sign language of Kenya"},
+    "SEN": {"Babalia Creole Arabic": "an Arabic creole of Chad",
+            "Zenaga": "a Berber language of south-western Mauritania"},
+    "MOZ": {"Southern Sama": "a language of the southern Philippines"},
+}
 RELABEL_NOTES: dict[tuple[str, str], str] = {
-    ("NPL", "Khash"): ("'Khash' is the Khas language of Karnali, as Nepal's 2021 census "
+    ("NPL", "Khasi"): ("'Khash' is the Khas language of Karnali, as Nepal's 2021 census "
                        "names it; CLEAR Global's table writes it 'Khasi', the name of a "
                        "different language, spoken in Meghalaya, India."),
+    ("MOZ", "Yao"): ("'Ciyao' is the Bantu language of the Yao people, which CLEAR "
+                     "Global's table writes 'Yao'."),
+    ("MWI", "Yao"): ("'Chiyao' is the Bantu language of the Yao people, which CLEAR "
+                     "Global's table writes 'Yao'."),
+    # The DRC's source names these shares, where CLEAR Global's matches do not.
+    **{("COD", wrong): (f"'{named}' is the name the DRC's CAID territory data of 2016, "
+                        f"the source CLEAR Global's table tabulates, gives this share; CLEAR "
+                        f"Global's table writes it '{wrong}', {where}.")
+       for wrong, named, where in (
+           ("Lander River Warlpiri", "Lande", "an Aboriginal language of Australia"),
+           ("Tamazola Mixtec", "Zola", "a Mixtec language of Oaxaca, Mexico"),
+           ("Ibaloi", "Baloi", "a language of northern Luzon, in the Philippines"),
+           ("Mpongmpong", "Bombo", "a Bantu language of south-eastern Cameroon"))},
+    **{("COD", wrong): (f"'{named}' is {what}. The DRC's CAID territory data of 2016, the "
+                        f"source CLEAR Global's table tabulates, names it {source}; CLEAR "
+                        f"Global's table writes it '{wrong}', {where}.")
+       for wrong, named, what, source, where in (
+           ("Mokilese", "Lese", "the Central Sudanic language of the Ituri forest", "Kilese",
+            "a Micronesian language of Mokil atoll, in the Pacific"),
+           ("Rundi", "Ruund", "the Lunda language of Kapanga", "Urund",
+            "the language of Burundi"),
+           ("Ombo", "Ndaka", "the language of the Ndaka people of the Ituri forest",
+            "Bandaka", "a language of Maniema"))},
+    ("NAM", "Ndonga (R.20)"): (
+        "'Oshiwambo' is the Oshiwambo languages, Oshikwanyama and Oshindonga among "
+        "them, which CLEAR Global's table writes 'Ndonga (R.20)': one of their names "
+        "and the group's code in Guthrie's classification of the Bantu languages."),
+    ("AGO", "Ndonga (R.20)"): (
+        "'Ovambo' is the Ovambo languages, Kwanyama and Ndonga among them, which CLEAR "
+        "Global's table writes 'Ndonga (R.20)': one of their names and the group's "
+        "code in Guthrie's classification of the Bantu languages."),
+    **{(iso, name): (f"'{OTHER}' includes the share CLEAR Global's table gives a "
+                     f"language it names {name}, {what}; which language of this area is "
+                     f"meant cannot be told, so it is not named.")
+       for iso, names in _FOREIGN.items() for name, what in names.items()},
 }
 
 
@@ -409,18 +562,39 @@ def admin1_resource(package: dict[str, Any]) -> dict[str, Any] | None:
     return None
 
 
+def relabel_notes(iso: str, names: list[str]) -> list[str]:
+    """What a unit's relabelled names were: a sentence each, except that the
+    names kept unnamed share one sentence, as they share one share."""
+    unnamed = [n for n in names if n in _FOREIGN.get(iso, {})]
+    said = [RELABEL_NOTES[(iso, n)] for n in names
+            if n not in unnamed and (iso, n) in RELABEL_NOTES]
+    if len(unnamed) == 1:
+        said.append(RELABEL_NOTES[(iso, unnamed[0])])
+    elif unnamed:
+        listed = [f"{n}, {_FOREIGN[iso][n]}" for n in unnamed]
+        joined = (" and ".join(listed) if len(listed) == 2
+                  else "; ".join(listed[:-1]) + "; and " + listed[-1])
+        said.append(f"'{OTHER}' includes the shares CLEAR Global's table gives languages "
+                    f"it names {joined}; which languages of this area are meant cannot be "
+                    f"told, so they are not named.")
+    return said
+
+
 def read_csv(body: str) -> tuple[list[dict[str, str]], list[str]]:
     reader = csv.DictReader(io.StringIO(body))
     return list(reader), list(reader.fieldnames or [])
 
 
 def compose(rows: list[dict[str, str]], level: int = 1,
-            relabel: dict[str, str] | None = None
+            relabel: dict[str, str] | None = None,
+            unit_relabel: dict[str, dict[str, str]] | None = None
             ) -> tuple[dict[str, dict[str, Any]], list[str], list[str]]:
     """{unit code: {name, shares, total}}, and the units dropped, with reasons.
 
     ``relabel`` is the country's entry in ``LANGUAGE_RELABEL``: a language
-    name the file gets wrong, read as the language it is.
+    name the file gets wrong, read as the language it is. Each unit keeps the
+    file's names it read that way (``relabelled``), so that its record says
+    what they were.
 
     The dropped ones come back in two lists, because they are two different
     findings and only one of them is evidence about the file. A unit whose
@@ -441,18 +615,21 @@ def compose(rows: list[dict[str, str]], level: int = 1,
             continue
         code = (row.get("location_code") or "").strip()
         name = (row.get("location_name") or "").strip()
-        language = (row.get("language_name") or "").strip()
-        language = (relabel or {}).get(language, language)
+        named = (row.get("language_name") or "").strip()
+        here = {**(relabel or {}), **(unit_relabel or {}).get(code, {})}
+        language = GUTHRIE_CODE.sub("", here.get(named, named))
         if not code or not name or not language:
             continue
         try:
             value = float(row.get("proportion_value") or "")
         except ValueError:
             continue
-        unit = units.setdefault(code, {"name": name, "counts": {}})
+        unit = units.setdefault(code, {"name": name, "counts": {}, "relabelled": {}})
         # A language listed twice in one unit is added up rather than
         # overwritten: dropping one of them would quietly shrink the unit.
         unit["counts"][language] = unit["counts"].get(language, 0.0) + value
+        if named in here and value > 0:
+            unit["relabelled"][named] = language
 
     kept: dict[str, dict[str, Any]] = {}
     unnamed: list[str] = []
@@ -474,7 +651,16 @@ def compose(rows: list[dict[str, str]], level: int = 1,
         if not shares:
             refused.append(f"{name} ({code}): no language reaches 0.05%")
             continue
-        kept[code] = {"name": name, "shares": shares, "total": total}
+        if all(r["group"] in NON_ANSWERS for r in shares):
+            unnamed.append(f"{name} ({code}): the file names no language for it, only "
+                           + " and ".join(f"'{r['group']}'" for r in shares))
+            continue
+        shown = {r["group"] for r in shares}
+        kept[code] = {"name": name, "shares": shares, "total": total,
+                      # The file's names that stand under another in a share
+                      # this unit shows, so its record can say what they were.
+                      "relabelled": sorted(n for n, to in unit["relabelled"].items()
+                                           if to in shown)}
     return kept, refused, unnamed
 
 
@@ -525,8 +711,31 @@ def country_records(package: dict[str, Any], level: int = 1
         log(f"      its columns are: {', '.join(columns)}")
         return []
 
+    thin = SMALL_SAMPLE.get((iso, level))
+    if thin:
+        # Every unit the file names at the level, those whose only answer is
+        # "Unknown" too: each says why, in place of shares.
+        named: dict[str, str] = {}
+        for row in rows:
+            if str(row.get("location_level", "")).strip() not in LEVEL_NAMES[level]:
+                continue
+            code = (row.get("location_code") or "").strip()
+            name = (row.get("location_name") or "").strip()
+            if (code and name and not UNKNOWN_UNIT.search(name)
+                    and not code.upper().endswith("XXX")):
+                named.setdefault(code, name)
+        log(f"    level {level}: {len(named)} unit(s) written with the reason in place of "
+            f"their shares: the interviews behind them are too few")
+        return [record(f"{iso}-CG-{code}", name, level=f"admin{level}", parent=iso,
+                       country=iso, language=gap(NOT_AVAILABLE, thin),
+                       sources=[{"field": "language note",
+                                 "name": f"{PUBLISHER}, {package.get('title')}",
+                                 "url": DATASET_PAGE.format(stub=stub),
+                                 "license": licence(package)}])
+                for code, name in sorted(named.items())]
+
     relabel = LANGUAGE_RELABEL.get(iso, {})
-    kept, refused, unnamed = compose(rows, level, relabel)
+    kept, refused, unnamed = compose(rows, level, relabel, UNIT_RELABEL.get(iso))
     for line in unnamed[:4]:
         log(f"    dropped {line}")
     for line in refused[:8]:
@@ -569,7 +778,7 @@ def country_records(package: dict[str, Any], level: int = 1
         f"population. Tabulated by {PUBLISHER} from "
         f"{'; '.join(study) or 'a study the file does not name'}"
         f"{' (' + '; '.join(origin) + ')' if origin else ''}"
-        f"{f', {year}' if year else ''}. "
+        f"{f', {year}' if year and str(year) not in ' '.join(study) else ''}. "
         f"Methodology as the publisher states it: {methodology or 'not stated'}"
         f"{'; ' + method_note if method_note else ''}"
         f"{'; representivity ' + ', '.join(grading) if grading else ''}. "
@@ -580,10 +789,8 @@ def country_records(package: dict[str, Any], level: int = 1
     # boundary file's, and there is no second-level equivalent. A district
     # joins on its own name or not at all.
     aliases = BOUNDARY_ALIASES.get(iso, {}) if level == 1 else {}
-    relabelled = set(relabel.values())
     for code, unit in sorted(kept.items()):
-        said = [RELABEL_NOTES[(iso, r["group"])] for r in unit["shares"]
-                if r["group"] in relabelled and (iso, r["group"]) in RELABEL_NOTES]
+        said = relabel_notes(iso, unit["relabelled"])
         records.append(record(
             f"{iso}-CG-{code}", unit["name"], level=f"admin{level}",
             parent=iso, country=iso,

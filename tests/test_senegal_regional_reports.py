@@ -1,0 +1,222 @@
+"""Senegal's 2023 regional census reports as the runner printed their pages."""
+
+import sys
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT))
+
+from scripts.fetch_census import senegal_regional_reports as sr  # noqa: E402
+
+DAKAR = '\x0c\nRGPH-5 :Rapport de présentation des résultats\n  Région de Dakar\n9\n9\nII.2.2.3. Age moyen et âge médian\nLa moitié de la population  de la région a moins de 24 ans. Cette situation témoigne ainsi de\nsa jeunesse, avec un âge médian similaire aussi bien chez les femmes que chez les hommes.\nL’âge moyen s’établit à 27 ans et ne varie pas selon le sexe dans la région de Dakar.\nTableau II-5 : Age moyen et âge médian de la population selon le sexe et le milieu de résidence\nIndicateurs de tendance\nCentrale\nUrbain Total\nMasculin Féminin Ensemble Masculin Féminin Total\nMoyenne 27 27 27 27 27 27\nMédiane 24 24 24 24 24 24\nSource : ANSD. RGPH-5, 2023\nII.2.2.4. Grands groupes d’âges et Rapport de dépendance\ndémographique\nDans la région, le département de Dakar est le plus peuplé, avec un effectif de 1 278 471\nhabitants. Il est suivi par les départements de Rufisque (818  337 habitants), de Keur Massar\n(770 314 habitants), et de Pikine (764 596 habitants). Guédiawaye demeure le département\nle moins peuplé de la région, avec 372 708 habitants.\nLa répartition par grand groupe d’âge montre que 70,4% de la population du département de\nDakar est âgé entre 15 et 64 ans,  66,0% pour Pikine, 61,5% pour Rufisque,  66,2% pour\nGuédiawaye et 63,3% pour Keur Massar . En revanche, les proportions les plus faibles sont\nobservées dans le groupe d’âge des 65 ans et plus quel que soit le département.\nEn plus , le poids démographique des moins de 15 ans est assez important dans le\ndépartement de Rufisque avec un plus du tiers (34,7%).\nLe rapport de dépendance démographique est relativement faible dans tous les départements.\nAinsi, il est observé 51,6 personnes inactives pour 100 personnes en âge de travailler dans la\nrégion même si tous ceux qui sont potentiellement actifs ne travaillent pas forcément. La même\nsituation est notée à l’échelle départementale où le rapport de dépendance démographique se\nsitue presque sur les mêmes ordres de grandeurs à l’exception des  départements de Dakar\n(42,1) et de Rufisque (62,7) qui se distingue des autres.\nTableau II-6 : Répartition de la population résidente par groupes d’âges selon le département\nGroupe d’âge DAKAR PIKINE RUFISQUE GUEDIAWAYE KEUR MASSAR Région DAKAR\nMoins de 15 ans 316 887 229 982 284 128 109 787 255 658 1 196 442\n15-64 ans 899 852 504 876 502 987 246 656 487 557 2 641 928\n65 ans et plus  61 732 29 739 31 222 16 264 27 098 166 055\nTotal 1 278 471 764 596 818 337 372 708 770 314 4 004 426\nMoins de 15 ans 24,8 30,1 34,7 29,5 33,2 29,87799\n15-64 ans 70,4 66 61,5 66,2 63,3 66\n65 ans et plus  4,8 3,9 3,8 4,4 3,5 4,1\nTotal 100 100 100 100 100 100\n Rapport de dépendance 42,1 51,4 62,7 51,1 58 51,6\nSource : ANSD. RGPH-5, 2023\n\n\x0c\nRGPH-5 :Rapport de présentation des résultats\n  Région de Dakar\n13\n13\nSEXE\n Masculin Féminin Total\nEffectif % Effectif % Effectif %\nApatride 492 0,0 494 0,0 986 0,0\nND 105 0,0 20 0,0 125 0,0\nTotal 2 018 761 100 1 985 666 100 4 004 426 100\nSource : ANSD. RGPH-5, 2023\n PRINCIPALE LANGUE COURAMMENT PARLEE\nDans la région de Dakar, 68,7% des habitants âgés de 3 ans et plus utilisent souvent la langue\nWolof, soit un effectif de 2  478 174 résidents. En plus, le Wolof est une  langue quasiment\nparlée par le même nombre d’hommes ( 68,5%) et de femmes ( 68,9%) de la région.  T andis\nque le Pulaar est utilisé le plus souvent par 15,7% des habitants de Dakar, le Sereer (5,7%),\nle Joola (3,0%), le Français (1,8%) et le Soninké (1,2%) . Les autres langues sont utilisées\ndans la région de Dakar par moins de 1% de la population.\nTableau II-11 : Répartition de la population résidente de 3 ans ou plus par principale langue couramment\nparlée selon le sexe\nSEXE\nMasculin Féminin Total\nEffectif % Effectif % Effectif %\nLangage des signes (Sourd-Muet) 2 079 0,1 1 982 0,1 4 061 0,1\nWolof 1 228 269 68,5 1 249 905 68,9 2 478 174 68,7\nPulaar 292 351 16,3 275 472 15,2 567 823 15,7\nSereer 95 596 5,3 109 674 6,0 205 270 5,7\nJoola 53 214 3,0 56 753 3,1 109 967 3,0\nMàndienka 16 891 0,9 17 329 1,0 34 220 0,9\nSóninke 21 395 1,2 22 457 1,2 43 852 1,2\nhasaniya (maure) 568 0,0 447 0,0 1 014 0,0\nBalant 3 896 0,2 4 143 0,2 8 039 0,2\nMànkaañ 4 588 0,3 4 928 0,3 9 516 0,3\nMànjaku 11 389 0,6 13 523 0,7 24 912 0,7\nMënik 635 0,0 631 0,0 1 266 0,0\nOniyan 117 0,0 130 0,0 247 0,0\nGuñuun 130 0,0 121 0,0 251 0,0\nKanjad 51 0,0 50 0,0 101 0,0\nJalunga 92 0,0 105 0,0 197 0,0\nBayot 192 0,0 191 0,0 383 0,0\nWomey 29 0,0 32 0,0 61 0,0\nautres langues africaines 16 890 0,9 16 048 0,9 32 938 0,9\nTourka 88 0,0 75 0,0 163 0,0\nlangues étrangères 4933 0,3 3270 0,2 8203 0,2\nFrançais 34462 1,9 32078 1,8 66541 1,8\nautres langues étrangères non africaines 5672 0,3 5197 0,3 10869 0,3\nTotal 1793526 100 1814541 100 3608067 100\nSource : ANSD. RGPH-5, 2023\n\n'
+
+KAOLACK = "II.2.2.3. Ages moyen et âge médian\nIl ressort des résultats du RGPH-5 que l’âge médian des résidents de la région de Kaolack est\nde 17 ans. Autrement dit, la moitié de la population de Kaolack a moins de 17 ans en 2023.\nCe qui confirme la jeunesse de la population de cette région. L’âge médian est plus faible chez\nles hommes (16 ans) que chez les femmes (18 ans) et quel que soit le milieu de r ésidence.\nL’âge médian noté en milieu urbain (19 ans) dépasse de trois ans celui observé en milieu rural\n(16 ans).\nPar ailleurs, l’âge moyen de la population, qui s’établit à 22 ans, est également plus élevé chez\nles femmes (23 ans) que chez les hommes (21 ans).\nTableau II-4: Age moyen et âge médian de la population selon le sexe et le milieu de résidence\nIndicateurs\nde tendance\ncentrale\nUrbain Rural Total\nMasculin Féminin Total Masculin Féminin Total Masculin Féminin Total\nMoyenne 23 25 24 20 21 21 21 23 22\nMédiane 18 20 19 15 16 16 16 18 17\nSource : ANSD. RGPH-5, 2023\n\n\x0c\nRGPH-5 :Rapport de présentation des résultats\n  Région de Kaolack\n33\nII.2.2.4. Grands groupes d’âges et Rapport de dépendance\ndémographique\nLa majorité de la population de la région a entre 15 et 64 ans, représentant 53,1% au niveau\nrégional. Ce groupe est plus présent en milieu urbain (57,7%) qu'en milieu rural (50,3%). Une\nanalyse par département montre une proportion des 15- 64 ans plus élev ée dans le\ndépartement de Kaolack (55,1%) par rapport à ceux de Nioro et de Guinguinéo, où elles\nreprésentent respectivement 50,6% et 53,0%.\nEn outre, les personnes âgées de 65 ans et plus, quel que soit le milieu de résidence ou le\ndépartement, représentent moins de 5,0% de la population. Leur proportion est plus élevée en\nmilieu urbain (3,9%) et dans le département de Guinguinéo (4,0%).\nPar conséquent, un rapport de dépendance démographique de 88 ,2% est observé dans la\nrégion. Autrement dit, il est recensé en moyenne 88 personnes âgées de 0 – 14 ans ou de 65\nans et plus pour 100 personnes âgées de 15 – 64 ans. Il traduit ainsi une dépendance\ndémographique relativement forte au sein de la population. Le rapport de dépendance\ndémographique est plus faible dans le département de Kaolack (81,6%), tandis que Nioro en\naffiche le niveau le plus élevé (97,5%).\nTableau II-5: Répartition de la population résidente par groupes d’âges selon le département et le milieu de\nrésidence (en %)\nGroupe d'âges\nKAOLACK NIORO GUINGUINEO Région\nUrba\nin\nRura\nl\nEnsem\nble\nUrbain\nRura\nl\nEnse\nmble\nUrba\nin\nRura\nl\nEnsem\nble\nUrbain Rural\nEnse\nmble\nMoins de 15\nans\n37,3 46,6 41,2 42,8 47,4 46,7 39,9 44,2 43,0 38,4 46,7 43,5\n15-64 ans 58,6 50,2 55,1 54,2 49,9 50,6 55,8 52 53 ?à 57,7 50,3 53,1\n65 ans et plus 4,1 3,2 3,7 2,9 2,7 2,7 4,3 3,8 4,0 3,9 3 3,3\nTotal 100 100 100 100 100 100 100 100 100 100 100 100\nRapport de\ndépendance\ndémographique\n    81,6     97,5     88,6     88,2\nSource : ANSD. RGPH-5, 2023\n"
+
+KAOLACK_LANGUAGE = """Tableau II -13: Répartition (%) de la population résidente de 3 ans ou plus par principale langue
+couramment parlée selon le sexe
+SEXE
+Masculin Féminin Total
+Wolof 82,0 82,4 82,2
+Pulaar 8,1 7,9 8,0
+Sereer 5,6 5,7 5,6
+Màndienka 2,0 1,9 2,0
+autres langues africaines 1,4 1,3 1,4
+Français 0,9 0,8 0,8
+Total 100 100 100
+Source : ANSD. RGPH-5, 2023
+"""
+
+ADMIN1 = [{'id': '71046170B16569890219484', 'name': 'Dakar', 'parent': 'SEN'}, {'id': '71046170B89912390768536', 'name': 'Diourbel', 'parent': 'SEN'}, {'id': '71046170B84527172065489', 'name': 'Fatick', 'parent': 'SEN'}, {'id': '71046170B9856693808493', 'name': 'Kaffrine', 'parent': 'SEN'}, {'id': '71046170B19471834738959', 'name': 'Kaolack', 'parent': 'SEN'}, {'id': '71046170B5066698136661', 'name': 'Kedougou', 'parent': 'SEN'}, {'id': '71046170B66864032803639', 'name': 'Kolda', 'parent': 'SEN'}, {'id': '71046170B63374102885919', 'name': 'Louga', 'parent': 'SEN'}, {'id': '71046170B85295751834134', 'name': 'Matam', 'parent': 'SEN'}, {'id': '71046170B37999982332216', 'name': 'Saint Louis', 'parent': 'SEN'}, {'id': '71046170B19178449543377', 'name': 'Sedhiou', 'parent': 'SEN'}, {'id': '71046170B85662395344337', 'name': 'Tambacounda', 'parent': 'SEN'}, {'id': '71046170B89315153043645', 'name': 'Thies', 'parent': 'SEN'}, {'id': '71046170B26251724010642', 'name': 'Ziguinchor', 'parent': 'SEN'}]
+
+ADMIN2 = [{'id': '50182788B16013842146029', 'name': 'Bakel', 'parent': '71046170B85662395344337'}, {'id': '50182788B75300917140294', 'name': 'Bambey', 'parent': '71046170B89912390768536'}, {'id': '50182788B19391387689457', 'name': 'Bignona', 'parent': '71046170B26251724010642'}, {'id': '50182788B56779252201559', 'name': 'Birkelane', 'parent': '71046170B9856693808493'}, {'id': '50182788B68388966372963', 'name': 'Bounkiling', 'parent': '71046170B19178449543377'}, {'id': '50182788B94177495754038', 'name': 'Dagana', 'parent': '71046170B37999982332216'}, {'id': '50182788B18539004609148', 'name': 'Dakar', 'parent': '71046170B16569890219484'}, {'id': '50182788B22549322426328', 'name': 'Diourbel', 'parent': '71046170B89912390768536'}, {'id': '50182788B55839740763416', 'name': 'Fatick', 'parent': '71046170B84527172065489'}, {'id': '50182788B85341589150678', 'name': 'Foundiougne', 'parent': '71046170B84527172065489'}, {'id': '50182788B90737446104605', 'name': 'Gossas', 'parent': '71046170B84527172065489'}, {'id': '50182788B18390590381778', 'name': 'Goudiry', 'parent': '71046170B85662395344337'}, {'id': '50182788B48951494587639', 'name': 'Goudomp', 'parent': '71046170B19178449543377'}, {'id': '50182788B55211093773925', 'name': 'Guediawaye', 'parent': '71046170B16569890219484'}, {'id': '50182788B97054679922117', 'name': 'Guinguineo', 'parent': '71046170B19471834738959'}, {'id': '50182788B43046627101076', 'name': 'Kaffrine', 'parent': '71046170B9856693808493'}, {'id': '50182788B72122084264725', 'name': 'Kanel', 'parent': '71046170B85295751834134'}, {'id': '50182788B15645681951695', 'name': 'Kaolack', 'parent': '71046170B19471834738959'}, {'id': '50182788B60047071387499', 'name': 'Kebemer', 'parent': '71046170B63374102885919'}, {'id': '50182788B85082652306110', 'name': 'Kedougou', 'parent': '71046170B5066698136661'}, {'id': '50182788B77977720497228', 'name': 'Kolda', 'parent': '71046170B66864032803639'}, {'id': '50182788B60464160168835', 'name': 'Koumpentoum', 'parent': '71046170B85662395344337'}, {'id': '50182788B42114348275286', 'name': 'Koungheul', 'parent': '71046170B9856693808493'}, {'id': '50182788B14678638932037', 'name': 'Linguere', 'parent': '71046170B63374102885919'}, {'id': '50182788B22933374767599', 'name': 'Louga', 'parent': '71046170B63374102885919'}, {'id': '50182788B13883389428586', 'name': 'Malem Hodar', 'parent': '71046170B9856693808493'}, {'id': '50182788B95113260184043', 'name': 'Matam', 'parent': '71046170B85295751834134'}, {'id': '50182788B63857747785645', 'name': 'Mbacke', 'parent': '71046170B89912390768536'}, {'id': '50182788B56533800648606', 'name': 'Mbour', 'parent': '71046170B89315153043645'}, {'id': '50182788B71056203552440', 'name': 'Medina Yoroufoula', 'parent': '71046170B66864032803639'}, {'id': '50182788B29473400533502', 'name': 'Nioro Du Rip', 'parent': '71046170B19471834738959'}, {'id': '50182788B11051302290888', 'name': 'Oussouye', 'parent': '71046170B26251724010642'}, {'id': '50182788B8601261498481', 'name': 'Pikine', 'parent': '71046170B16569890219484'}, {'id': '50182788B66510054428140', 'name': 'Podor', 'parent': '71046170B37999982332216'}, {'id': '50182788B34306626760019', 'name': 'Ranerou', 'parent': '71046170B85295751834134'}, {'id': '50182788B16861669195445', 'name': 'Rufisque', 'parent': '71046170B16569890219484'}, {'id': '50182788B94115130730188', 'name': 'Saint Louis', 'parent': '71046170B37999982332216'}, {'id': '50182788B75788529380727', 'name': 'Salemata', 'parent': '71046170B5066698136661'}, {'id': '50182788B8770711358016', 'name': 'Saraya', 'parent': '71046170B5066698136661'}, {'id': '50182788B34006486463131', 'name': 'Sedhiou', 'parent': '71046170B19178449543377'}, {'id': '50182788B74600736318601', 'name': 'Tambacounda', 'parent': '71046170B85662395344337'}, {'id': '50182788B65872214095625', 'name': 'Thies', 'parent': '71046170B89315153043645'}, {'id': '50182788B62483410284412', 'name': 'Tivaoune', 'parent': '71046170B89315153043645'}, {'id': '50182788B9780593325351', 'name': 'Velingara', 'parent': '71046170B66864032803639'}, {'id': '50182788B19119296887329', 'name': 'Ziguinchor', 'parent': '71046170B26251724010642'}]
+
+
+class SenegalRegionalReports(unittest.TestCase):
+    def test_dakar(self):
+        self.assertEqual(sr.parse_median(DAKAR), (24, "Tableau II-5"))
+        language, kind, table = sr.parse_language(DAKAR)
+        self.assertEqual((kind, table), ("count", "Tableau II-11"))
+        self.assertEqual(language["Wolof"], 2_478_174)
+        self.assertEqual(language["Sign language"], 4_061)
+        self.assertEqual(language["French"], 66_541)
+        self.assertLessEqual(abs(sum(language.values()) - 3_608_067), 2)
+        self.assertTrue(sr.departments_in_broad_groups(DAKAR))
+
+    def test_kaolack(self):
+        self.assertEqual(sr.parse_median(KAOLACK), (17, "Tableau II-4"))
+        self.assertTrue(sr.departments_in_broad_groups(KAOLACK))
+        language, kind, _ = sr.parse_language(KAOLACK_LANGUAGE)
+        self.assertEqual(kind, "pct")
+        self.assertEqual(language["Mandinka"], 2.0)
+
+    def test_wrapped_label(self):
+        # Tambacounda's table as the runner printed it, cut after three rows,
+        # with a total row made from them.
+        table = """Tableau II-13 : Répartition (%) de la population résidente de 3 ans ou plus par principale langue couramment parlée selon
+le sexe
+Principale langue
+couramment parlée
+SEXE
+Masculin Féminin Ensemble
+Effectif % Effectif % Effectif %
+Langage des signes
+(Sourd-Muet)
+2813 0,7 2894 0,7 5707 0,7
+wolof 60226 13,9 56873 13,3 117099 13,6
+pulaar 254514 58,9 250391 58,5 504905 58,7
+Ensemble 317553 100 310158 100 627711 100
+Source : ANSD. RGPH-5, 2023
+"""
+        language, kind, number = sr.parse_language(table)
+        self.assertEqual((kind, number), ("count", "Tableau II-13"))
+        self.assertEqual(language, {"Sign language": 5707.0, "Wolof": 117099.0,
+                                    "Pulaar": 504905.0})
+
+    def test_build(self):
+        reports = [sr.parsed("Dakar", DAKAR, "u1"),
+                   sr.parsed("Kaolack", KAOLACK + "\f" + KAOLACK_LANGUAGE, "u2")]
+        records, report = sr.build(reports, ADMIN1, ADMIN2)
+        by = {(r["level"], r["name"]): r for r in records}
+        dakar = by[("admin1", "Dakar")]
+        self.assertEqual(dakar["median_age"]["value"], 24)
+        self.assertEqual(dakar["language"][0]["group"], "Wolof")
+        self.assertEqual(dakar["language"][0]["pct"], 68.7)
+        kaolack = by[("admin1", "Kaolack")]
+        self.assertNotIn("count", kaolack["language"][0])
+        depts = [r for r in records if r["level"] == "admin2"]
+        # Dakar: the four departments drawn (Keur Massar, made in 2021, is not).
+        self.assertEqual(len(depts), 4 + 3)
+        self.assertIn("three broad age groups", depts[0]["median_age"]["note"])
+        # The departments say why they have no compositions, citing the reports.
+        self.assertEqual(depts[0]["religion"]["note"], sr.NO_RELIGION)
+        self.assertEqual(depts[0]["ethnicity"]["note"], sr.NO_ETHNICITY)
+        self.assertNotIn("note", depts[0]["language"])
+        self.assertEqual([s["field"] for s in depts[0]["sources"]],
+                         ["median_age note/religion note/ethnicity note",
+                          "religion note/ethnicity note"])
+        self.assertEqual(depts[0]["sources"][1]["name"], sr.NATIONAL_REPORT["name"])
+        self.assertEqual(len(report), 12)
+
+
+# The tables of run 3's log, as the runner printed them where they were not
+# yet read (the lines the adapter shows around a table it cannot read).
+FATICK_MEDIAN = "Tableau II- 4 : Age moyen et âge médian de la population selon le sexe et le milieu de \nrésidence  \nINDICATEURS \nDE \nTENDANCE \nCENTRALE \nUrbain Rural ENSEMBLE \nMasculin Féminin Total Masculin Féminin Total Masculin Féminin Total \nMoyenne 22,7 24,7 23,7 21,6 22,8 22,2 21,8 23,3 22,5 \nMédiane 17,0 19,0 18,0 16,0 17,0 16,0 16,0 18,0 17,0 \n \nSource : ANSD. RGPH-5, 2023 \nII.2.2.4. Grands groupes d’âges et Rapport de dépendance démographique \nÀ l’échelle régionale, la population est caractérisée par une forte proportion de jeunes de moins de \n15 ans, qui représentent 43,7 % de l’ensemble des résidents. Cette prédominance de la jeunesse \nentraîne un rapport de dépendance démographique élevé (90,8% ), indiquant une charge \nimportante sur la population active. Les personnes en âge de travailler (15-64 ans) constituent 52,4 \n% de la population, tandis que la population âgée de 65 ans et plus ne représente que 3,9 %. En \noutre, des variations sont sont observées selon le milieu  de résidence.En effet,  , la proportion des \njeunes est plus élevée en milieu rural (44,9 %) qu’en zone urbaine (39,5 %). En revanche, la part \ndes actifs est plus faible en zone rurale, soit 51,2 %contre 56,3 % en milieu urbaine. \nAu niveau départemental, Foundiougne et Gossas enregistrent les plus fortes proportions de moins \nde 15 ans (respectivement 44,9 % et 44,8 %), tandis que Fatick en compte légèrement moins (42,2 \n%). La population en âge de travailler (15-64 ans) est plus élevée à Fatick (53,3 %), contre 51,7 % \nà Foundiougne et 51,5 % à Gossas.  \nAinsi, le rapport de dépendance démographique est moins élevé à Fatick (87,6%), tandis qu'il est \nplus élevé à Foundiougne (93,3%) et Gossas (94,4%). \nRGPH-5 :Rapport de présentation des résultats\n  Région de Fatick\n29\n \n   29  \nTableau II- 5 : Répartition de la population résidente par groupes d’âges selon le \ndépartement et le milieu de résidence  \nGROUPE \nD'ÂGES \nQUINQUENNAUX \nFATICK FOUNDIOUGNE GOSSAS REGION \nUrbain \nRural \nEnsemble \nUrbain \nRural \nEnsemble \nUrbain \n"
+
+FATICK_DEPARTMENTS = "Tableau II- 5 : Répartition de la population résidente par groupes d’âges selon le \ndépartement et le milieu de résidence  \nGROUPE \nD'ÂGES \nQUINQUENNAUX \nFATICK FOUNDIOUGNE GOSSAS REGION \nUrbain \nRural \nEnsemble \nUrbain \nRural \nEnsemble \nUrbain \nRural \nEnsemble \nUrbain \nRural \nEnsemble \nMoins de 15 ans 37,0 43,6 42,2 41,8 46,0 44,9 39,0 45,9 44,8 39,5 44,9 43,7 \n15-64 ans 58,2 52,0 53,3 54,6 50,7 51,7 56,7 50,4 51,5 56,3 51,2 52,4 \n65 ans et plus 4,8 4,4 4,5 3,6 3,3 3,4 4,3 3,7 3,8 4,2 3,9 3,9 \nTotal 100 100 100 100 100 100 100 100 100 100 100 100 \nRapport de \ndépendance \ndémographique \n71,8 92,4 87,6 83,2 97,2 93,3 76,4 98,4 94,4 77,5 95,1 90,8 \nSource : ANSD. RGPH-5, 2023 \nII.2.2.5. Analyse du rapport de masculinité par âge \nLe rapport de masculinité au niveau régional est évalué à 100,2 %, indiquant globalement un \néquilibre presque parfait entre hommes et femmes, mais avec des variations significatives selon \nl’âge. En effet, il est observé une supériorité masculine aux âges j eunes de 0 à 19 ans. Cette \ntendance s'inverse à partir de 20 ans. La tendance s’inverse pour les hommes à 40-44 ans au-delà \nduquel il est observé une présence plus importante des femmes, particulièrement marquée après \n70 ans. \nGraphique  II-3 : Rapport de masculinité (%) selon l’âge  \n \nSource : ANSD. RGPH-5, 2023 \nII.2.2.6. Répartition spatiale de la population  \nLa répartition de la population de la région de Fatick selon les départements met en lumière des \nvariations importantes en termes de poids démographique, de rapport de masculinité et de \ndistribution entre les sexes. Le département de Fatick regroupe 45,0% de la population totale de \n50\n60\n70\n80\n"
+
+KEDOUGOU_DEPARTMENTS = " Tableau II-6 : Répartition de la population résidente par groupes d’âges selon le département et le milieu \nde résidence  \nGroupes d'âges \nKEDOUGOU SALEMATA SARAYA Ensemble \nUrbain  Rural Total Urbain  Rural Total Urbain  Rural Total Urbain  Rural Total \nMoins de 15 ans 23 178 28 733 51 911 2 715 9 579 12 294 3 874 34 636 38 510 29 767 72 948 102 715 \n15-64 ans 34 630 34 106 68 736 3 790 10 963 14 753 6 678 46 004 52 682 45 099 91 073 136 171 \n65 ans et plus  1 422 2 196 3 618 207 772 980 188 1 475 1 663 1 817 4 443 6 260 \nTotal 59 230 65 035 124 265 6 713 21 314 28 027 10 740 82 116 92 855 76 683 168 464 245 147 \nPart des moins de 15 ans 39,1 44,2 41,8 40,4 44,9 43,9 36,1 42,2 41,5 38,8 43,3 41,9 \nPart des 15-64 ans 58,5 52,4 55,3 56,5 51,4 52,6 62,2 56,0 56,7 58,8 54,1 55,5 \nPart des 65 ans et plus 2,4 3,4 2,9 3,1 3,6 3,5 1,8 1,8 1,8 2,4 2,6 2,6 \nRapport de \ndépendance \ndémographique \n71,0 90,7 80,8 77,1 94,4 90,0 60,8 78,5 76,3 70,0 85,0 80,0 \nSource : ANSD. RGPH-5, 2023  \n ANALYSE DU RAPPORT DE MASCULINITE PAR GROUPE D’AGE \nL’analyse du rapport de masculinité met en évidence la supériorité numérique des hommes \npar rapport aux  femmes jusqu’à l’âge de 6 9 ans au niveau régional.  En revanche, il y a \nmoins d’hommes dans les tranches d’âge 70-74 ans et au-delà de 80 ans.  \nTableau II-7 : Répartition de la population résidente par groupe d’âges quinquennaux selon le sexe et le \nrapport de masculinité  \nGroupe \nd'âges Masculin Féminin \nEnsemble Rapport de \nmasculinité \n(%) Effectif Proportion (%) \n0-4 19 074 16 750 35 823 14,6 114 \n5-9 18 702 17 204 35 906 14,6 109 \n10-14 16 877 14 110 30 986 12,6 120 \n15-19 14 580 12 904 27 483 11,2 113 \n20-24 13 714 12 489 26 203 10,7 110 \n25-29 11 648 9 798 21 446 8,70 119 \n30-34 9 913 7 252 17 164 7,0 137 \n35-39 7 661 5 564 13 225 5,4 138 \n40-44 5 576 3 793 9 369 3,8 147 \n45-49 4 182 3 266 7 449 3,0 128 \n50-54 3 085 2 734 5 819 2,4 113 \n55-59 2 114 1 959 4 073 1,7 108 \n60-64 1 980 1 961 3 941 1,6 101 \n65-69 1 210 1 177 2 387 1,0 103 \n70-74 940 967 1 907 0,8 97 \n75-79 520 437 957 0,4 119 \nRGPH-5 :Rapport de présentation des résultats\n"
+
+SAINT_LOUIS = "Tableau II-5 Tableau 1.6: Age moyen et âge médian de la population selon le sexe et le milieu de résidence \nIndicateurs de tendance \ncentrale \nMasculin Féminin Ensemble \nUrbain Rural Total Urbain Rural Total Urbain Rural Total \nMoyenne 24,4 25,8 25,1 22,6 23,3 23,0 23,5 24,5 24,0 \nMédiane 20,0 22,0 20,0 17,0 18,0 18,0 18,0 20,0 19,0 \nSource : ANSD. RGPH-5, 2023 \nII.2.4.2. Grands groupes d’âges et Rapport de dépendance démographique \nLe rapport de dépendance démographique est moins élevé à Saint-Louis (65,3%), tandis qu'il \nest plus élevé à Dagana (73,1%) et Podor (87,4%).  \nTableau II-6: Répartition de la population résidente par groupes d’âges selon le département et le milieu de \nrésidence  \nGroupes d'âge \nDagana   Podor   \nSaint-\nLouis  \nUrbain Rural Ensemble Urbain Rural Ensemble Urbain Rural Ensemble \nMoins de 15 \nans 56860 69362 126222 39363 167304 206667 102264 34061 136325 \n15-64 ans 93643 96449 190093 58487 200810 259296 187786 46507 234293 \n65 ans et plus 6213 6537 12749 4211 15834 20046 13484 3267 16751 \nTotal 156716 172348 329064 102060 383948 486009 303533 83835 387369 \nRapport de \ndépendance \ndémographique   73,1   87,4   65,3 \nSource : ANSD. RGPH-5, 2023  \nRGPH-5 :Rapport de présentation des résultats\n  Région de Saint-Louis\n17\nII.2.4.3. Analyse du rapport de masculinité par âge \nLa courbe du rapport de masculinité par âge met en évidence la supériorité numérique des \nhommes sur les femmes jusqu’à l’âge de 19 ans. Entre 20 et 29 ans, la tendance s’inverse \nlégèrement ; les femmes devenant majoritaires. \nA partir de 30 ans, un certain équilibre s’établit avec des écarts minimes entre les rapports de \nmasculinité jusqu’à l’âge de 44 ans. Toutefois, il y a plus de femmes entre 45 et 64 ans et au-\ndelà de 70 ans. \nGraphique II-2 : Rapport de masculinité selon l’âge \n \nSource : ANSD. RGPH-5, 2023 \nII.2.4.4. Répartition spatiale de la population  \nLa répartition de la population régionale présente des disparités plus ou moins importantes \nentre les départements. D’après les résultats du RGPH-5 de 2023, le département de Podor, \nse distingue par son poids démographique (40,4%), suivi du département de Saint -Louis \n(32,2%) et du département de Dagana (27,4%).  \n"
+
+KAOLACK_TABLE_12 = 'Tableau II-12: Répartition (%) de la population résidente de 3 ans ou plus par principale langue couramment \nparlée selon le sexe \nPrincipale langue \ncouramment parlée \nSEXE \nMasculin Féminin Ensemble \nEffectif \nPourcentage \n(%) \nEffectif \nPourcentage \n(%) \nEffectif \nPourcentage \n(%) \nLangage des signes \n(Sourd-Muet) \n1922 0,3 1759 0,3 3681 0,3 \nwolof 388610 68,5 413019 70,3 801629 69,4 \npulaar 93975 16,6 90799 15,5 184774 16 \nsereer 63910 11,3 63619 10,8 127529 11 \njoola 2069 0,4 2172 0,4 4241 0,4 \nmàndienka 3728 0,7 3737 0,6 7465 0,6 \nsóninke 2379 0,4 2373 0,4 4752 0,4 \nhasaniya (maure) 35 0 19 0 54 0 \nbalant 259 0 249 0 508 0 \nmànkaañ 308 0,1 355 0,1 662 0,1 \nmànjaku 214 0 227 0 441 0 \nmënik 22 0 38 0 61 0 \noniyan 5 0 1 0 6 0 \nguñuun 1 0 1 0 2 0 \nkanjad 10 0 16 0 26 0 \njalunga 5 0 9 0 14 0 \nbayot 6 0 3 0 9 0 \nwomey 2 0 0 0 2 0 \nautres langues africaines 7401 1,3 6913 1,2 14314 1,2 \ntourka 377 0,1 381 0,1 757 0,1 \nlangues étrangère 386 0,1 151 0 537 0 \nfrançais 1092 0,2 869 0,1 1961 0,2 \nautres langues étrangères \nnon africaines \n446 0,1 435 0,1 881 0,1 \nTotal 567162 100 587146 100 1154307 100 \nSource : ANSD. RGPH-5, 2023 \n POSSESSION D’UN ACTE DE NAISSANCE  \n'
+
+MATAM_TABLE_12 = 'Tableau II-12 : Répartition (%) de la population résidente de 3 ans ou plus par principale langue couramment \nparlée selon le sexe \nPrincipale langue \ncouramment parlée \nSexe \nMasculin Féminin Ensemble \nEffectif % Effectif % Effectif % \nLangage des signes \n(Sourd-Muet) 405 0,1 390 0,1 795 0,1 \nWolof 14\u2009316 4,1 13\u2009976 3,9 28\u2009292 4,0 \nPulaar 318\u2009981 91,9 329\u2009469 92,0 648\u2009450 91,9 \nSereer 1\u2009307 0,4 937 0,3 2\u2009244 0,3 \nJoola 212 0,1 101 0,0 313 0,0 \nMàndienka 115 0,0 104 0,0 219 0,0 \nSóninke 10\u2009151 2,9 12\u2009038 3,4 22\u2009189 3,1 \nHasaniya (maure) 89 0,0 88 0,0 177 0,0 \nBalant 23 0,0 6 0,0 29 0,0 \nMànkaañ 8 0,0 7 0,0 15 0,0 \nMànjaku 21 0,0 11 0,0 32 0,0 \nMënik 3 0,0 0 0,0 3 0,0 \nOniyan 3 0,0 3 0,0 6 0,0 \nGuñuun 2 0,0 2 0,0 4 0,0 \nKanjad 1 0,0 1 0,0 2 0,0 \nJalunga 12 0,0 6 0,0 18 0,0 \nBayot 1 0,0 0 0,0 1 0,0 \nWomey 0 0,0 1 0,0 1 0,0 \nAutres langues \nafricaines 708 0,2 540 0,2 1\u2009248 0,2 \nTourka 5 0,0 0 0,0 5 0,0 \nLangues étrangères 73 0,0 28 0,0 101 0,0 \nFrançais 369 0,1 383 0,1 751 0,1 \nAutres langues \nétrangères non \nafricaines \n195 0,1 168 0,0 363 0,1 \nTotal 347\u2009001 100,0 358\u2009259 100,0 705\u2009259 100,0 \nSource : ANSD. RGPH-5, 2023 \nRGPH-5 :Rapport de présentation des résultats\n  Région de Matam\n39\n \n \n \n \n POSSESSION D’UN ACTE DE NAISSANCE \n'
+
+
+class SenegalRegionalReportsRun3(unittest.TestCase):
+    def test_decimal_medians(self):
+        self.assertEqual(sr.parse_median(FATICK_MEDIAN)[0], 17)
+        self.assertEqual(sr.parse_median(SAINT_LOUIS)[0], 19)
+
+    def test_department_tables_beside_charts(self):
+        # A chart's axis or the region's five-year table on the same page is
+        # not the department table.
+        self.assertTrue(sr.departments_in_broad_groups(FATICK_DEPARTMENTS))
+        self.assertTrue(sr.departments_in_broad_groups(KEDOUGOU_DEPARTMENTS))
+        self.assertTrue(sr.departments_in_broad_groups(SAINT_LOUIS))
+
+    def test_whole_percentages(self):
+        rows, kind, _ = sr.parse_language(KAOLACK_TABLE_12)
+        self.assertEqual(kind, "count")
+        self.assertEqual(rows["Pulaar"], 184_774)
+        self.assertEqual(rows["Serer"], 127_529)
+        self.assertEqual(rows["Other foreign languages"], 537)
+        self.assertEqual(round(sum(rows.values())), 1_154_306)  # the total row: 1,154,307
+
+    def test_thin_spaces(self):
+        rows, kind, _ = sr.parse_language(MATAM_TABLE_12)
+        self.assertEqual(kind, "count")
+        self.assertEqual(rows["Pulaar"], 648_450)
+        self.assertEqual(rows["Wolof"], 28_292)
+        self.assertAlmostEqual(sum(rows.values()), 705_259, delta=10)
+
+
+# Run 4's log: the department tables of Matam and Sédhiou, and the language
+# tables of Thiès and Kaffrine (Kaffrine's as far as the log shows it, its
+# total row constructed from its rows), as the runner printed them.
+MATAM_DEPARTMENTS = "Tableau II-6 : Répartition de la population résidente par groupes d’âges selon le département et le milieu \nde résidence \nGroupe d'âges \nMatam Kanel Ranérou Ferlo \nUrbain Rural Ensemble Urbain Rural Ensemble Urbain Rural Ensemble \n- de 15 ans 56\u2009974 105\u2009988 162\u2009962 46\u2009840 105\u2009453 152\u2009292 2\u2009093 47\u2009128 49\u2009221 \n15-64 ans 82\u2009499 126\u2009800 209\u2009299 61\u2009636 115\u2009595 177\u2009231 2\u2009470 48\u2009508 50\u2009979 \n65 ans et + 5\u2009196 9\u2009429 14\u2009626 4\u2009476 7\u2009519 11\u2009995 85 2\u2009941 3\u2009026 \nTotal 144\u2009670 242\u2009217 386\u2009887 112\u2009951 228\u2009567 341\u2009518 4\u2009648 98\u2009577 103\u2009225 \n- de 15 ans 39,4 43,8 42,1 41,5 46,1 44,6 45,0 47,8 47,7 \n15-64 ans 57,0 52,3 54,1 54,6 50,6 51,9 53,1 49,2 49,4 \n65 ans et + 3,6 3,9 3,8 4,0 3,3 3,5 1,8 3,0 2,9 \nEnsemble 100,0 100,0 100,0 100,0 100,0 100,0 100,0 100,0 100,0 \nRapport de \ndépendance \ndémographique \n  84,8   92,7   102,5 \nSource : ANSD. RGPH-5, 2023 \nII.2.2.5. Répartition spatiale de la population \nLa répartition de la population résidente dans la région de Matam révèle des inégalités \nnotables à l’échelle départementale. En effet, le département de Matam concentre à lui seul \nprès de la moitié de la population régionale, avec 46,5% des effectifs. À l’ opposé, le \ndépartement de Ranérou Ferlo, le plus vaste de la région, ne détient que 12,4% de la \npopulation. Le département de Kanel occupe une position intermédiaire, abritant 41,1% de \nla population régionale. \nLes résultats du RGPH -5 au niveau régional présentent un rapport de masculinité de 106  \nhommes pour 100 femmes. Cet indicateur reflète une tendance générale à la prédominance \ndu sexe masculin dans la région, tout en mettant en évidence des disparités observées \nentre les départements. En effet, le département de Matam affiche le rapport de masculinité \nRGPH-5 :Rapport de présentation des résultats\n  Région de Matam\n33\n \n \n \n \nle plus élevé, avec 109 hommes pour 100 femmes, suivi du département de Ranérou Ferlo \n(108 hommes pour 100 femmes). Pour le département de Kanel, le rapport de masculinité \nest légèrement supérieur à l'équilibre, avec 103 hommes pour 100 femmes. \nTableau II-7 : Répartition de la population résidente par département selon le sexe, le poids \ndémographique et le rapport de masculinité \nDépartement Effectif de la population Poids démographique (%) Rapport de masculinité (%) Homme Femme Ensemble \nMatam 201\u2009425 185\u2009462 386\u2009887 46,5 109 \nKanel 173\u2009057 168\u2009461 341\u2009518 41,1 103 \nRanérou \n"
+
+SEDHIOU_DEPARTMENTS = "Tableau II-6 : Répartition de la population résidente par groupes d’âges selon le \ndépartement et le milieu de résidence  \nGroupes d'âge Moins de \n15 ans \n15-64 \nans \n65 ans \nou \nplus \nTotal % moins \nde 15 \nans \n% 15-64 \nans \n% 65 \nans ou \nplus \nTotal RDD \nSédhiou \nUrbain 18 031 25 044 1 523 44 598 40,4 56,2 3,4 100 78 \nRural 68 324 75 700 4 673 148 697 45,9 50,9 3,1 100 96 \nEnsemble 86 355 100 744 6 196 193 295 44,7 52,1 3,2 100 92 \nBounkiling \nUrbain 17 144 21 920 979 40 043 42,8 54,7 2,4 100 83 \nRural 79 676 83 370 4 783 167 830 47,5 49,7 2,8 100 101 \nEnsemble 96 820 105 290 5 763 207 873 46,6 50,7 2,8 100 97 \nGoudomp \nUrbain 19 760 25 205 1 419 46 383 42,6 54,3 3,1 100 84 \nRural 67 258 70 196 4 261 141 715 47,5 49,5 3,0 100 102 \nEnsemble 87 018 95 401 5 679 188 098 46,3 50,7 3,0 100 97 \nEnsemble \nUrbain 54 935 72 169 3 921 131 024 41,9 55,1 3,0 100 81,6 \nRural 215 258 229 266 13 717 458 242 47 50 3,0 100 99,9 \nEnsemble 270 193 301 435 17 638 589 266 45,9 51,2 3,0 100 95,5 \nSource : ANSD. RGPH-5, 2023  \nRGPH-5 :Rapport de présentation des résultats\n  Région de Sédhiou\n25\n \n  \n  \n     ANALYSE DU RAPPORT DE MASCULINITE PAR AGE \nLes résultats du RGPH-5 mettent en évidence la jeunesse de la population de la région de \nSédhiou au regard de la structure par âge. En effet, l’essentiel des plus grands effectifs de \npopulation se trouvent en deçà de 20 ans. Les enfants de m oins de 15 ans représentent \n"
+
+THIES_TABLE = "Tableau 0-2 : Répartition (%) de la population résidente de 3 ans ou plus par principale \nlangue couramment parlée selon le sexe \nPrincipale langue \ncouramment parlée \nSexe \nMasculin Féminin Ensemble \nEffectif % Effectif % Effectif % \nLangage des signes (Sourd-\nMuet) 2012 0,2 1735 0,2 3747 0,2 \nwolof 730578 66,9 739600 67,9 1470178 67,4 \npulaar 101710 9,3 95100 8,7 196810 9,0 \nsereer 222700 20,4 220460 20,2 443160 20,3 \njoola 9859 0,9 10215 0,9 20074 0,9 \nmàndienka 3857 0,4 3614 0,3 7470 0,3 \nsóninke 3094 0,3 3018 0,3 6113 0,3 \nhasaniya (maure) 304 0,0 235 0,0 539 0,0 \nbalant 1872 0,2 1633 0,1 3504 0,2 \nmànkaañ 1298 0,1 1371 0,1 2669 0,1 \nmànjaku 1630 0,1 1859 0,2 3489 0,2 \nmënik 117 0,0 97 0,0 214 0,0 \noniyan 73 0,0 52 0,0 124 0,0 \nguñuun 37 0,0 36 0,0 74 0,0 \nkanjad 43 0,0 44 0,0 86 0,0 \njalunga 13 0,0 16 0,0 29 0,0 \nbayot 118 0,0 99 0,0 217 0,0 \nwomey 14 0,0 15 0,0 29 0,0 \nautres langues africaines 4831 0,4 4300 0,4 9131 0,4 \ntourka 53 0,0 48 0,0 101 0,0 \nlangues étrangère 968 0,1 605 0,1 1574 0,1 \nfrançais 5171 0,5 4391 0,4 9562 0,4 \nautres langues étrangères non \nafricaines 1176 0,1 968 0,1 2144 0,1 \nTotal 1 091 529 100,0 1 089 510 100 2 181 039 100,0 \nSource : ANSD. RGPH-5, 2023 \n \nI.4.3. Possession d’un acte de naissance \nAu niveau régional, la majorité de la population possède un bulletin de naissance (75,7%). \nCependant, une proportion notable de la population détient un jugement supplétif (10,7%) et \n2,8% ne possèdent pas d’acte de naissance. \nL'analyse par groupe d’âge révèle que la possession d'un bulletin de naissance est plus élevée \nchez les moins d’un an enfants, avec un taux de 82,8% et diminuant progressivement avec \nl'âge. La proportion de personnes possédant un jugement supplétif est plus élevée chez les \n75-79 ans (20,5%).  \n \n \n"
+
+KAFFRINE_TABLE = 'Tableau II-12 : Répartition (%) de la population résidente de 3 ans ou plus par principale langue couramment parlée \nselon le sexe \nPrincipale \nlangue \ncouramment \nparlée \nSexe \nMasculin Féminin Ensemble \nEffectif Proportion (%) Effectif Proportion (%) Effectif Proportion (%) \nLangage des \nsignes (Sourd-\nMuet) \n945 0,3 891 0,2 1 836 0,3 \nWolof 257 253 73,7 273 129 76,3 530 382 75,0 \nRGPH-5 :Rapport de présentation des résultats\n38\n  Région de Kaffrine\n38 \n \nPrincipale \nlangue \ncouramment \nparlée \nSexe \nMasculin Féminin Ensemble \nEffectif Proportion (%) Effectif Proportion (%) Effectif Proportion (%) \nPulaar 67 892 19,4 62 775 17,5 130 667 18,5 \nSereer 17 022 4,9 15 282 4,3 32 304 4,6 \nJoola 346 0,1 294 0,1 641 0,1 \nMàndienka 1 392 0,4 1 402 0,4 2794 0,4 \nSóninke 664 0,2 678 0,2 1343 0,2 \nHasaniya \n(maure) 81 0 62 0 142 0,0 \nBalant 29 0 31 0 61 0,0 \nMànkaañ 17 0 22 0 40 0,0 \nMànjaku 22 0 12 0 34 0,0 \nMënik 2 0 2 0 4 0,0 \nOniyan 3 0 2 0 5 0,0 \nGuñuun 0 0 1 0 1 0,0 \nKanjad 9 0 9 0 18 0,0 \nJalunga 2 0 2 0 4 0,0 \nBayot 4 0 0 0 4 0,0 \nWomey 1 0 1 0 2 0,0 \nAutres langues \nafricaines 2 356 0,7 2 286 0,6 4 643 0,7 \n'
+
+
+class SenegalRegionalReportsRun4(unittest.TestCase):
+    def test_department_tables_worded_otherwise(self):
+        self.assertTrue(sr.departments_in_broad_groups(MATAM_DEPARTMENTS))
+        self.assertTrue(sr.departments_in_broad_groups(SEDHIOU_DEPARTMENTS))
+
+    def test_a_share_of_100_is_not_a_count(self):
+        rows, kind, _ = sr.parse_language(THIES_TABLE)
+        self.assertEqual(kind, "count")
+        self.assertAlmostEqual(sum(rows.values()), 2_181_039, delta=2 * len(rows))
+
+    def test_a_table_over_two_pages(self):
+        # Its rows run onto the next page under a repeated header; the total
+        # row is constructed: the rows' men and women as printed, and the two
+        # together.
+        men = sum([945, 257_253, 67_892, 17_022, 346, 1_392, 664, 81, 29, 17, 22, 2, 3, 0, 9,
+                   2, 4, 1, 2_356])
+        women = sum([891, 273_129, 62_775, 15_282, 294, 1_402, 678, 62, 31, 22, 12, 2, 2, 1, 9,
+                     2, 0, 1, 2_286])
+
+        def spaced(n):
+            return f"{n:,}".replace(",", " ")
+        text = (KAFFRINE_TABLE + f"Total {spaced(men)} 100 {spaced(women)} 100 "
+                f"{spaced(men + women)} 100\n")
+        got, kind, _ = sr.parse_language(text)
+        self.assertEqual(kind, "count")
+        self.assertEqual(got["Wolof"], 530_382)
+        self.assertEqual(got["Pulaar"], 130_667)
+        self.assertEqual(got["Sign language"], 1_836)
+        self.assertEqual(len(got), 19)
+
+    def test_row_figures(self):
+        self.assertEqual(sr.row_figures("1 091 529 100,0 1 089 510 100 2 181 039 100,0".split()),
+                         (2_181_039.0, "count"))
+        self.assertEqual(sr.row_figures("349 197 100 357 509 100 706 706 100".split()),
+                         (706_706.0, "count"))
+        self.assertEqual(sr.row_figures("73,7 76,3 75,0".split()), (75.0, "pct"))
+        self.assertIsNone(sr.row_figures("945 0,3 891 0,2 1 839 0,3".split()))
+
+
+# Run 5's log: Fatick's language table, whose empty cells are dashes.
+FATICK_TABLE_11 = "Tableau II- 11 : Répartition (%) de la population résidente de 3 ans ou plus par principale \nlangue couramment parlée selon le sexe  \nPRINCIPALE LANGUE \nCOURAMMENT PARLÉE \nMASCULIN FÉMININ ENSEMBLE \nEffectif % Effectif % Effectif % \nLangage des signes (Sourd-Muet) 1 217 0,3 1 138 0,3 2 355 0,3 \nwolof 134 238 34,3 141 671 35,1 275 908 34,7 \npulaar 30 753 7,9 29 790 7,4 60 543 7,6 \nsereer 208 178 53,2 213 397 52,9 421 575 53,1 \njoola 1 639 0,4 1 806 0,4 3 445 0,4 \nmàndienka 8 581 2,2 9 346 2,3 17 927 2,3 \nsóninke 1 923 0,5 1 980 0,5 3 903 0,5 \nhasaniya (maure) 81 0,0 69 0,0 150 0,0 \nbalant 104 0,0 103 0,0 207 0,0 \nmànkaañ 166 0,0 196 0,0 362 0,0 \nmànjaku 186 0,0 183 0,0 369 0,0 \nmënik 22 0,0 24 0,0 46 0,0 \noniyan - 0,0 3 0,0 3 0,0 \nguñuun 1 0,0 1 0,0 2 0,0 \nkanjad 4 0,0 2 0,0 6 0,0 \njalunga - 0,0 2 0,0 2 0,0 \nbayot 3 0,0 4 0,0 7 0,0 \nRGPH-5 :Rapport de présentation des résultats\n  Région de Fatick\n35\n \n   35  \nPRINCIPALE LANGUE \nCOURAMMENT PARLÉE \nMASCULIN FÉMININ ENSEMBLE \nEffectif % Effectif % Effectif % \nwomey 2 0,0 - 0,0 2 0,0 \nautres langues africaines 2 702 0,7 2 516 0,6 5 217 0,7 \ntourka 136 0,0 142 0,0 279 0,0 \nlangues étrangère 200 0,1 101 0,0 301 0,0 \nfrançais 648 0,2 491 0,1 1 139 0,1 \nautres langues étrangères non africaines 359 0,1 305 0,1 664 0,1 \nTotal 391 141 100,0 403 271 100,0 794 412 100,0 \nSource : ANSD. RGPH-5, 2023 \n POSSESSION D’UN ACTE DE NAISSANCE \nAu niveau régional, la majorité de la population possède un bulletin de naissance (62,8%). \nCependant, une proportion notable de la population détient un jugement supplétif (18,7%) et 4,5% \nne possèdent pas d’acte de naissance. \nL'analyse par groupe d’âge révèle que la possession d'un bulletin de naissance est plus élevée \n"
+
+
+class SenegalRegionalReportsRun5(unittest.TestCase):
+    def test_dashes_are_empty_cells(self):
+        rows, kind, number = sr.parse_language(FATICK_TABLE_11)
+        self.assertEqual(kind, "count")
+        self.assertEqual(rows["Serer"], 421_575)
+        self.assertEqual(rows["Wamey"], 2)
+        self.assertEqual(rows["Bassari"], 3)
+        self.assertAlmostEqual(sum(rows.values()), 794_412, delta=2 * len(rows))
+
+
+class SenegalRegionalReportsRun6(unittest.TestCase):
+    def test_sign_language_cut_by_a_heading_or_a_page(self):
+        # The labels run 6 wrote for Kaolack, Ziguinchor and Sédhiou.
+        for label in ("Pourcentage (%) Langage des signes (Sourd-Muet)",
+                      "des signes (Sourd- Muet)", "Muet)", "Langage des signes (Sourd -"):
+            self.assertEqual(sr.language_label(label), "Sign language", label)
+        self.assertEqual(sr.language_label("sereer"), "Serer")
+        self.assertEqual(sr.language_label("Màndienka"), "Mandinka")
+
+
+if __name__ == "__main__":
+    unittest.main()

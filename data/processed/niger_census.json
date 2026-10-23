@@ -1,0 +1,4280 @@
+[
+  {
+    "id": "NER-RGPH2012-dossa",
+    "level": "admin1",
+    "name": "Dossa",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 14.9,
+      "unit": "years",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)"
+    },
+    "sex_ratio": {
+      "value": 974,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 98.9,
+        "count": 2016264
+      },
+      {
+        "group": "Animist",
+        "pct": 0.3,
+        "count": 6863
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.3,
+        "count": 5671
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.2,
+        "count": 4948
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2,
+        "count": 3774
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 193
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age/religion"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "87150794B47488127174201",
+    "median_age_note": "The median of the region's five-year age groups (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Dosso 15 in whole years.",
+    "religion_year": 2012,
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated."
+  },
+  {
+    "id": "NER-RGPH2012-maradi",
+    "level": "admin1",
+    "name": "Maradi",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 13.3,
+      "unit": "years",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)"
+    },
+    "sex_ratio": {
+      "value": 968,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.3,
+        "count": 3379780
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.2,
+        "count": 6420
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 8000
+      },
+      {
+        "group": "Animist",
+        "pct": 0.1,
+        "count": 3743
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 3791
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 360
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age/religion"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "87150794B5839560144768",
+    "median_age_note": "The median of the region's five-year age groups (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Maradi 13 in whole years.",
+    "religion_year": 2012,
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated."
+  },
+  {
+    "id": "NER-RGPH2012-niamey",
+    "level": "admin1",
+    "name": "Niamey",
+    "parent": "NER",
+    "capital": "Niamey",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18.6,
+      "unit": "years",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)"
+    },
+    "sex_ratio": {
+      "value": 991,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 97.4,
+        "count": 1000642
+      },
+      {
+        "group": "Christianity",
+        "pct": 1.4,
+        "count": 14353
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 6293
+      },
+      {
+        "group": "Animist",
+        "pct": 0.3,
+        "count": 3489
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 1027
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 1044
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age/religion/capital"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "87150794B29979307394387",
+    "median_age_note": "The median of the region's five-year age groups (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Niamey 19 in whole years.",
+    "religion_year": 2012,
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated."
+  },
+  {
+    "id": "NER-RGPH2012-tahouaagadez",
+    "level": "admin1",
+    "name": "Tahoua/Agadez",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available",
+      "note": "The polygon is two regions, Tahoua and Agadez, each with a seat of its own."
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 14.4,
+      "unit": "years",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)"
+    },
+    "sex_ratio": {
+      "value": 1004,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.3,
+        "count": 3790948
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 9423
+      },
+      {
+        "group": "Animist",
+        "pct": 0.1,
+        "count": 5331
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 5260
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 4709
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 314
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age/religion"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "87150794B58281898249288",
+    "sex_ratio_note": "The regions of Tahoua and Agadez added together.",
+    "median_age_note": "The regions of Tahoua and Agadez together, as the polygon draws them: the median of their populations added five-year group by five-year group (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Tahoua 14, Agadez 16 in whole years.",
+    "religion_year": 2012,
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated; the regions of Tahoua and Agadez added together."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi",
+    "level": "admin1",
+    "name": "Tillaberi",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 14.8,
+      "unit": "years",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)"
+    },
+    "sex_ratio": {
+      "value": 978,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 98.6,
+        "count": 2685707
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.8,
+        "count": 21292
+      },
+      {
+        "group": "Animist",
+        "pct": 0.2,
+        "count": 5656
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2,
+        "count": 4979
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 4673
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 175
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age/religion"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "87150794B24708462658640",
+    "median_age_note": "The median of the region's five-year age groups (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Tillabéri 15 in whole years.",
+    "religion_year": 2012,
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated."
+  },
+  {
+    "id": "NER-RGPH2012-zinderdiffa",
+    "level": "admin1",
+    "name": "Zinder/Diffa",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available",
+      "note": "The polygon is two regions, Zinder and Diffa, each with a seat of its own."
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 13.6,
+      "unit": "years",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)"
+    },
+    "sex_ratio": {
+      "value": 1003,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.3,
+        "count": 4105548
+      },
+      {
+        "group": "Animist",
+        "pct": 0.2,
+        "count": 9704
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 8548
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.1,
+        "count": 4583
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 4768
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 434
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age/religion"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "87150794B17606801029036",
+    "sex_ratio_note": "The regions of Zinder and Diffa added together.",
+    "median_age_note": "The regions of Zinder and Diffa together, as the polygon draws them: the median of their populations added five-year group by five-year group (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Zinder 14, Diffa 14 in whole years.",
+    "religion_year": 2012,
+    "religion_note": "Religion of the resident population as the 2012 census tabulates it by region (Tableau A 11); those whose religion was not declared (ND) are shown as not stated; the regions of Zinder and Diffa added together."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-abala",
+    "level": "admin2",
+    "name": "Abala",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 936,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B96366222257755",
+    "sex_ratio_note": "The 2012 census counted 69,757 men and 74,530 women in the department of Abala."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-abalak",
+    "level": "admin2",
+    "name": "Abalak",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1096,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B73397103622086",
+    "sex_ratio_note": "The 2012 census counted 134,005 men and 122,296 women in the department of Abalak."
+  },
+  {
+    "id": "NER-RGPH2012-agadez-aderbissinat",
+    "level": "admin2",
+    "name": "Aderbissinat",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1087,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B52241460380538",
+    "sex_ratio_note": "The 2012 census counted 18,398 men and 16,922 women in the department of Aderbissinat."
+  },
+  {
+    "id": "NER-RGPH2012-maradi-aguie",
+    "level": "admin2",
+    "name": "Aguié",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 960,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B59469969297601",
+    "sex_ratio_note": "The 2012 census counted 120,482 men and 125,514 women in the department of Aguié."
+  },
+  {
+    "id": "NER-RGPH2012-agadez-arlit",
+    "level": "admin2",
+    "name": "Arlit",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1097,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B35740417673211",
+    "sex_ratio_note": "The 2012 census counted 54,938 men and 50,087 women in the department of Arlit."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-ayerou",
+    "level": "admin2",
+    "name": "Ayérou",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 968,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B66518443893936",
+    "sex_ratio_note": "The 2012 census counted 28,058 men and 28,972 women in the department of Ayérou."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-bagaroua",
+    "level": "admin2",
+    "name": "Bagaroua",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 956,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B53990886897515",
+    "sex_ratio_note": "The 2012 census counted 35,336 men and 36,957 women in the department of Bagaroua."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-balleyara",
+    "level": "admin2",
+    "name": "Balléyara",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 913,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B53989443832132",
+    "sex_ratio_note": "The 2012 census counted 51,122 men and 56,012 women in the department of Balléyara."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-banibangou",
+    "level": "admin2",
+    "name": "Banibangou",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 973,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B31350615327928",
+    "sex_ratio_note": "The 2012 census counted 33,011 men and 33,938 women in the department of Banibangou."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-bankilare",
+    "level": "admin2",
+    "name": "Bankilaré",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1022,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B18164013569517",
+    "sex_ratio_note": "The 2012 census counted 42,909 men and 41,984 women in the department of Bankilaré."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-belbedji",
+    "level": "admin2",
+    "name": "Belbédji",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1014,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B37162587774633",
+    "sex_ratio_note": "The 2012 census counted 48,552 men and 47,900 women in the department of Belbédji."
+  },
+  {
+    "id": "NER-RGPH2012-agadez-bilma",
+    "level": "admin2",
+    "name": "Bilma",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 997,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B30294266740058",
+    "sex_ratio_note": "The 2012 census counted 8,954 men and 8,981 women in the department of Bilma."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-birninkonni",
+    "level": "admin2",
+    "name": "Birni-N'Konni",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1008,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B12101722290167",
+    "sex_ratio_note": "The 2012 census counted 157,066 men and 155,820 women in the department of Birni-N'Konni."
+  },
+  {
+    "id": "NER-RGPH2012-dosso-boboye",
+    "level": "admin2",
+    "name": "Boboye",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 947,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B30838539224942",
+    "sex_ratio_note": "The 2012 census counted 122,830 men and 129,767 women in the department of Boboye."
+  },
+  {
+    "id": "NER-RGPH2012-diffa-bosso",
+    "level": "admin2",
+    "name": "Bosso",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1081,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B85188331861732",
+    "sex_ratio_note": "The 2012 census counted 39,867 men and 36,868 women in the department of Bosso."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-bouza",
+    "level": "admin2",
+    "name": "Bouza",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 983,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B24942158565256",
+    "sex_ratio_note": "The 2012 census counted 220,749 men and 224,614 women in the department of Bouza."
+  },
+  {
+    "id": "NER-RGPH2012-maradi-bermo",
+    "level": "admin2",
+    "name": "Bérmo",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1051,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B15241034776795",
+    "sex_ratio_note": "The 2012 census counted 26,783 men and 25,491 women in the department of Bérmo."
+  },
+  {
+    "id": "NER-RGPH2012-maradi-dakoro",
+    "level": "admin2",
+    "name": "Dakoro",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 980,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B7432037800977",
+    "sex_ratio_note": "The 2012 census counted 311,953 men and 318,468 women in the department of Dakoro."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-damagaramtakaya",
+    "level": "admin2",
+    "name": "Damagaram Takaya",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 998,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B91194911882215",
+    "sex_ratio_note": "The 2012 census counted 120,456 men and 120,713 women in the department of Damagaram Takaya."
+  },
+  {
+    "id": "NER-RGPH2012-diffa-diffa",
+    "level": "admin2",
+    "name": "Diffa",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1039,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B49279802347692",
+    "sex_ratio_note": "The 2012 census counted 81,402 men and 78,320 women in the department of Diffa."
+  },
+  {
+    "id": "NER-RGPH2012-dosso-dioundiou",
+    "level": "admin2",
+    "name": "Dioundiou",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 997,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B87103937584190",
+    "sex_ratio_note": "The 2012 census counted 54,733 men and 54,882 women in the department of Dioundiou."
+  },
+  {
+    "id": "NER-RGPH2012-dosso-dogondoutchi",
+    "level": "admin2",
+    "name": "Dogondoutchi",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 974,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B71800364259973",
+    "sex_ratio_note": "The 2012 census counted 183,802 men and 188,671 women in the department of Dogondoutchi."
+  },
+  {
+    "id": "NER-RGPH2012-dosso-dosso",
+    "level": "admin2",
+    "name": "Dosso",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 971,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B13950466033624",
+    "sex_ratio_note": "The 2012 census counted 242,681 men and 249,879 women in the department of Dosso."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-dungass",
+    "level": "admin2",
+    "name": "Dungass",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1005,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B10149369238340",
+    "sex_ratio_note": "The 2012 census counted 177,376 men and 176,491 women in the department of Dungass."
+  },
+  {
+    "id": "NER-RGPH2012-dosso-falmey",
+    "level": "admin2",
+    "name": "Falmèy",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 966,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B42967903288320",
+    "sex_ratio_note": "The 2012 census counted 50,731 men and 52,540 women in the department of Falmèy."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-filingue",
+    "level": "admin2",
+    "name": "Filingué",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 973,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B22646074094064",
+    "sex_ratio_note": "The 2012 census counted 151,240 men and 155,486 women in the department of Filingué."
+  },
+  {
+    "id": "NER-RGPH2012-dosso-gaya",
+    "level": "admin2",
+    "name": "Gaya",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 993,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B94426243670688",
+    "sex_ratio_note": "The 2012 census counted 130,345 men and 131,293 women in the department of Gaya."
+  },
+  {
+    "id": "NER-RGPH2012-maradi-gazaoua",
+    "level": "admin2",
+    "name": "Gazaoua",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 965,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B75774451533542",
+    "sex_ratio_note": "The 2012 census counted 78,836 men and 81,700 women in the department of Gazaoua."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-gotheye",
+    "level": "admin2",
+    "name": "Gothèye",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 953,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B45142923275636",
+    "sex_ratio_note": "The 2012 census counted 117,650 men and 123,393 women in the department of Gothèye."
+  },
+  {
+    "id": "NER-RGPH2012-diffa-goudoumaria",
+    "level": "admin2",
+    "name": "Goudoumaria",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1047,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B75635581877036",
+    "sex_ratio_note": "The 2012 census counted 51,444 men and 49,115 women in the department of Goudoumaria."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-goure",
+    "level": "admin2",
+    "name": "Gouré",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1004,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B20082731758941",
+    "sex_ratio_note": "The 2012 census counted 164,248 men and 163,570 women in the department of Gouré."
+  },
+  {
+    "id": "NER-RGPH2012-maradi-guidanroumdji",
+    "level": "admin2",
+    "name": "Guidan-Roumdji",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 960,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B37435064601183",
+    "sex_ratio_note": "The 2012 census counted 256,514 men and 267,203 women in the department of Guidan-Roumdji."
+  },
+  {
+    "id": "NER-RGPH2012-agadez-iferouane",
+    "level": "admin2",
+    "name": "Iférouane",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 997,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B42361363165505",
+    "sex_ratio_note": "The 2012 census counted 16,340 men and 16,391 women in the department of Iférouane."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-illela",
+    "level": "admin2",
+    "name": "Illéla",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 998,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B93785804329420",
+    "sex_ratio_note": "The 2012 census counted 167,724 men and 168,061 women in the department of Illéla."
+  },
+  {
+    "id": "NER-RGPH2012-agadez-ingall",
+    "level": "admin2",
+    "name": "Ingall",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1099,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B91742674817727",
+    "sex_ratio_note": "The 2012 census counted 27,173 men and 24,730 women in the department of Ingall."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-kantche",
+    "level": "admin2",
+    "name": "Kantché",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 966,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B81952569357883",
+    "sex_ratio_note": "The 2012 census counted 196,183 men and 202,998 women in the department of Kantché."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-keita",
+    "level": "admin2",
+    "name": "Keita",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 962,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B44584919101761",
+    "sex_ratio_note": "The 2012 census counted 165,280 men and 171,818 women in the department of Keita."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-kollo",
+    "level": "admin2",
+    "name": "Kollo",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 985,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B29201413246391",
+    "sex_ratio_note": "The 2012 census counted 230,916 men and 234,483 women in the department of Kollo."
+  },
+  {
+    "id": "NER-RGPH2012-dosso-loga",
+    "level": "admin2",
+    "name": "Loga",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 956,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B16490635358595",
+    "sex_ratio_note": "The 2012 census counted 85,780 men and 89,763 women in the department of Loga."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-madaoua",
+    "level": "admin2",
+    "name": "Madaoua",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1013,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B88186704259068",
+    "sex_ratio_note": "The 2012 census counted 274,507 men and 271,031 women in the department of Madaoua."
+  },
+  {
+    "id": "NER-RGPH2012-maradi-madarounfa",
+    "level": "admin2",
+    "name": "Madarounfa",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 959,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B10786712449018",
+    "sex_ratio_note": "The 2012 census counted 219,725 men and 229,138 women in the department of Madarounfa."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-magaria",
+    "level": "admin2",
+    "name": "Magaria",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 967,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B72934105448405",
+    "sex_ratio_note": "The 2012 census counted 283,991 men and 293,752 women in the department of Magaria."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-malbaza",
+    "level": "admin2",
+    "name": "Malbaza",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1022,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B4654450212041",
+    "sex_ratio_note": "The 2012 census counted 117,481 men and 114,926 women in the department of Malbaza."
+  },
+  {
+    "id": "NER-RGPH2012-maradi-maradi",
+    "level": "admin2",
+    "name": "Maradi",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1053,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/religion note/language note/ethnicity note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B96333695472040",
+    "sex_ratio_note": "The 2012 census counted 137,051 men and 130,198 women in the city of Maradi."
+  },
+  {
+    "id": "NER-RGPH2012-maradi-mayahi",
+    "level": "admin2",
+    "name": "Mayahi",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 935,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B12759501052009",
+    "sex_ratio_note": "The 2012 census counted 269,270 men and 287,916 women in the department of Mayahi."
+  },
+  {
+    "id": "NER-RGPH2012-diffa-mainesoroa",
+    "level": "admin2",
+    "name": "Maïné-Soroa",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1048,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B74336618625682",
+    "sex_ratio_note": "The 2012 census counted 67,381 men and 64,283 women in the department of Maïné-Soroa."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-mirriah",
+    "level": "admin2",
+    "name": "Mirriah",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1032,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B93207740600063",
+    "sex_ratio_note": "The 2012 census counted 257,772 men and 249,727 women in the department of Mirriah."
+  },
+  {
+    "id": "NER-RGPH2012-diffa-ngourti",
+    "level": "admin2",
+    "name": "N'Gourti",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1065,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B32057380818540",
+    "sex_ratio_note": "The 2012 census counted 26,696 men and 25,071 women in the department of N'Gourti."
+  },
+  {
+    "id": "NER-RGPH2012-diffa-nguigmi",
+    "level": "admin2",
+    "name": "N'Guigmi",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1043,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B27242520162456",
+    "sex_ratio_note": "The 2012 census counted 37,456 men and 35,918 women in the department of N'Guigmi."
+  },
+  {
+    "id": "NER-RGPH2012-niamey-niamey",
+    "level": "admin2",
+    "name": "Niamey",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18.6,
+      "unit": "years",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)"
+    },
+    "sex_ratio": {
+      "value": 991,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B37846693808008",
+    "sex_ratio_note": "The 2012 census counted 511,166 men and 515,682 women in the city of Niamey.",
+    "median_age_note": "The median of the region's five-year age groups (Tableaux A2 to A4), interpolated within the group holding the middle person; the report gives Niamey 19 in whole years. The region is this one department."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-ouallam",
+    "level": "admin2",
+    "name": "Ouallam",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 963,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B18642698649368",
+    "sex_ratio_note": "The 2012 census counted 160,511 men and 166,713 women in the department of Ouallam."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-say",
+    "level": "admin2",
+    "name": "Say",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1037,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B83200163093073",
+    "sex_ratio_note": "The 2012 census counted 89,422 men and 86,203 women in the department of Say."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-tahoua",
+    "level": "admin2",
+    "name": "Tahoua",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 937,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B71026362524800",
+    "sex_ratio_note": "The 2012 census counted 209,349 men and 223,310 women in the department of Tahoua."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-tahouaville",
+    "level": "admin2",
+    "name": "Tahoua Ville",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 983,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B25077979802367",
+    "sex_ratio_note": "The 2012 census counted 74,096 men and 75,402 women in the city of Tahoua."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-takeita",
+    "level": "admin2",
+    "name": "Takeita",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 950,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B25575457251727",
+    "sex_ratio_note": "The 2012 census counted 120,271 men and 126,547 women in the department of Takeita."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-tanout",
+    "level": "admin2",
+    "name": "Tanout",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1000,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B69081741011402",
+    "sex_ratio_note": "The 2012 census counted 214,567 men and 214,583 women in the department of Tanout."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-tassara",
+    "level": "admin2",
+    "name": "Tassara",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1063,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B43997741220428",
+    "sex_ratio_note": "The 2012 census counted 12,602 men and 11,855 women in the department of Tassara."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-tchintabaraden",
+    "level": "admin2",
+    "name": "Tchintabaraden",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1004,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B37880443282078",
+    "sex_ratio_note": "The 2012 census counted 72,675 men and 72,411 women in the department of Tchintabaraden."
+  },
+  {
+    "id": "NER-RGPH2012-agadez-tchirozerine",
+    "level": "admin2",
+    "name": "Tchirozérine",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1052,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B66307714151869",
+    "sex_ratio_note": "The 2012 census counted 125,454 men and 119,252 women in the department of Tchirozérine."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-tesker",
+    "level": "admin2",
+    "name": "Tesker",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1091,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B16015640173227",
+    "sex_ratio_note": "The 2012 census counted 19,375 men and 17,757 women in the department of Tesker."
+  },
+  {
+    "id": "NER-RGPH2012-maradi-tessaoua",
+    "level": "admin2",
+    "name": "Tessaoua",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 964,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B9962986153255",
+    "sex_ratio_note": "The 2012 census counted 253,169 men and 262,683 women in the department of Tessaoua."
+  },
+  {
+    "id": "NER-RGPH2012-dosso-tibiri",
+    "level": "admin2",
+    "name": "Tibiri",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 996,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B22885280076406",
+    "sex_ratio_note": "The 2012 census counted 134,739 men and 135,277 women in the department of Tibiri."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-tillaberi",
+    "level": "admin2",
+    "name": "Tillabéri",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 950,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B45975933186230",
+    "sex_ratio_note": "The 2012 census counted 110,784 men and 116,568 women in the department of Tillabéri."
+  },
+  {
+    "id": "NER-RGPH2012-tahoua-tillia",
+    "level": "admin2",
+    "name": "Tillia",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1060,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B40327375212482",
+    "sex_ratio_note": "The 2012 census counted 20,064 men and 18,930 women in the department of Tillia."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-torodi",
+    "level": "admin2",
+    "name": "Torodi",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 1044,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B58853598919637",
+    "sex_ratio_note": "The 2012 census counted 93,251 men and 89,362 women in the department of Torodi."
+  },
+  {
+    "id": "NER-RGPH2012-tillaberi-tera",
+    "level": "admin2",
+    "name": "Téra",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2012 census publishes ages by region only, and OCHA's 2024 projection gives nearly every department of Niger the same age proportions, so neither gives a median age of the department's own."
+    },
+    "sex_ratio": {
+      "value": 995,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/median_age note/religion note/language note/ethnicity note"
+      },
+      {
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-ner), reference year 2024",
+        "url": "https://data.humdata.org/dataset/cod-ps-ner",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+        "year": 2024,
+        "field": "median_age note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B14211003047249",
+    "sex_ratio_note": "The 2012 census counted 167,664 men and 168,543 women in the department of Téra."
+  },
+  {
+    "id": "NER-RGPH2012-zinder-zinder",
+    "level": "admin2",
+    "name": "Zinder",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1015,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015), Tableau 6"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2012 census tabulates religion by region only (Etat et structure de la population, Tableau A 11), not by department."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population has no table of language, at any level."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2012 census's report on the state and structure of the population tabulates nationality (foreign residents by region, Tableau 23), not ethnic group, at any level."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) du Niger, Quatrième Recensement Général de la Population et de l'Habitat (RGPH 2012), Etat et structure de la population du Niger en 2012 (2015)",
+        "url": "https://www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf",
+        "license": "INS Niger publication (reuse with attribution)",
+        "year": 2012,
+        "field": "sex_ratio/religion note/language note/ethnicity note"
+      }
+    ],
+    "country": "NER",
+    "match_by": "shape_id",
+    "shape_id": "23599985B17840081467963",
+    "sex_ratio_note": "The 2012 census counted 162,705 men and 160,230 women in the city of Zinder."
+  }
+]

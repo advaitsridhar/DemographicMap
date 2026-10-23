@@ -1,0 +1,4100 @@
+[
+  {
+    "id": "MRT-RGPH2023-adrar",
+    "level": "admin1",
+    "name": "Adrar",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 71623,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 20.1,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 940,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B19416274064143",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the wilaya by age (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya: 34,710 men and 36,913 women."
+  },
+  {
+    "id": "MRT-RGPH2023-assaba",
+    "level": "admin1",
+    "name": "Assaba",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 451804,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 16.4,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 817,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B24757493091095",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the wilaya by age (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya: 203,189 men and 248,615 women."
+  },
+  {
+    "id": "MRT-RGPH2023-brakna",
+    "level": "admin1",
+    "name": "Brakna",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 391310,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 17.2,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 862,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B32818049823770",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the wilaya by age (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya: 181,163 men and 210,147 women."
+  },
+  {
+    "id": "MRT-RGPH2023-dakhletnouadhibou",
+    "level": "admin1",
+    "name": "Dakhlet Nouadhibou",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 177077,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1238,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B42879511039945",
+    "population_note": "The 2023 census counts 184,459 people in the wilaya, with the moughataa of Chami (7,382); the map draws Chami in Inchiri, so this is the moughataa of Nouadhibou, the rest of the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa of Nouadhibou: 97,955 men and 79,122 women."
+  },
+  {
+    "id": "MRT-RGPH2023-gorgol",
+    "level": "admin1",
+    "name": "Gorgol",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 442490,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 16.2,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 908,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B65251719279272",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the wilaya by age (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya: 210,612 men and 231,878 women."
+  },
+  {
+    "id": "MRT-RGPH2023-guidimakha",
+    "level": "admin1",
+    "name": "Guidimaka",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 363075,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 16.2,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 904,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B46967673309417",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the wilaya by age (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya: 172,362 men and 190,713 women."
+  },
+  {
+    "id": "MRT-RGPH2023-hodhchargui",
+    "level": "admin1",
+    "name": "Hodh ech Chargui",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 625643,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 17.0,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 855,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B22115476481884",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the wilaya by age (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya: 288,388 men and 337,255 women."
+  },
+  {
+    "id": "MRT-RGPH2023-hodhelgharbi",
+    "level": "admin1",
+    "name": "Hodh el Gharbi",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 403091,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 16.9,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 864,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B52393032227980",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the wilaya by age (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya: 186,877 men and 216,214 women."
+  },
+  {
+    "id": "MRT-RGPH2023-inchiri",
+    "level": "admin1",
+    "name": "Inchiri",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 36866,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1749,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B38857826595310",
+    "population_note": "The 2023 census's count for the wilaya (29,484) and for the moughataa of Chami (7,382), which the census counts in Dakhlet Nouadhibou and the map draws here.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya and the moughataa of Chami together: 23,455 men and 13,411 women."
+  },
+  {
+    "id": "MRT-RGPH2023-nouakchott",
+    "level": "admin1",
+    "name": "Nouakchott",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available",
+      "note": "The polygon is the city of Nouakchott, three wilayas since 2014 (Nouakchott-Ouest, Nouakchott-Nord and Nouakchott-Sud), each with a seat of its own."
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1446761,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 21.6,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 1001,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B45475199809733",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the three wilayas of Nouakchott by age, added group by group (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the three wilayas of Nouakchott together: Nouakchott-Ouest 204,881, Nouakchott-Nord 614,465 and Nouakchott-Sud 627,415.",
+    "sex_ratio_note": "The 2023 census's count of the three wilayas of Nouakchott together: 723,638 men and 723,123 women."
+  },
+  {
+    "id": "MRT-RGPH2023-tagant",
+    "level": "admin1",
+    "name": "Tagant",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 114760,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 17.6,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 897,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B48349945606013",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the wilaya by age (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya: 54,264 men and 60,496 women."
+  },
+  {
+    "id": "MRT-RGPH2023-tiriszemmour",
+    "level": "admin1",
+    "name": "Tiris Zemmour",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 79129,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 24.0,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 1455,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B50097143527370",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the wilaya by age (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya: 46,899 men and 32,230 women."
+  },
+  {
+    "id": "MRT-RGPH2023-trarza",
+    "level": "admin1",
+    "name": "Trarza",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 323903,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "value": 19.8,
+      "unit": "years",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2"
+    },
+    "sex_ratio": {
+      "value": 884,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "64602211B44145471606678",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2023 census's count of the wilaya by age (Thème 2, Tableau A.2.2).",
+    "population_note": "The 2023 census's count for the wilaya.",
+    "sex_ratio_note": "The 2023 census's count of the wilaya: 151,958 men and 171,945 women."
+  },
+  {
+    "id": "MRT-RGPH2023-akjoujt",
+    "level": "admin2",
+    "name": "Akjoujt",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18138,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 1056,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B26316239883363",
+    "population_note": "The 2023 census's count for the moughataa of Akjoujt. The town of Akjoujt, where nearly all of the moughataa's people live, lies on this polygon's edge with the one drawn as Benichab.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 9,315 men and 8,823 women."
+  },
+  {
+    "id": "MRT-RGPH2023-aleg",
+    "level": "admin2",
+    "name": "Aleg",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 130656,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 852,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B53604404291210",
+    "population_note": "Drawn on its outline from before the moughataa of Maal was made from it; the 2023 census counts the two apart, Aleg 75,856 and Maal 54,800, added here.",
+    "sex_ratio_note": "The 2023 census's count of Aleg and Maal together: 60,113 men and 70,543 women."
+  },
+  {
+    "id": "MRT-RGPH2023-amourj",
+    "level": "admin2",
+    "name": "Amourj",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 151003,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 827,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B9245180339851",
+    "population_note": "Drawn on its outline from before the moughataa of Adel Bagrou was made from it; the 2023 census counts the two apart, Amourj 78,148 and Adel Bagrou 72,855, added here.",
+    "sex_ratio_note": "The 2023 census's count of Amourj and Adel Bagrou together: 68,353 men and 82,650 women."
+  },
+  {
+    "id": "MRT-RGPH2023-aoujeft",
+    "level": "admin2",
+    "name": "Aoujeft",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13877,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 992,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B38912627875653",
+    "population_note": "The 2023 census's count for the moughataa of Aoujeft.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 6,912 men and 6,965 women."
+  },
+  {
+    "id": "MRT-RGPH2023-arafat",
+    "level": "admin2",
+    "name": "Arafat",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population note/sex_ratio note/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      },
+      {
+        "name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+        "url": "https://data.humdata.org/dataset/cod-ab-mrt",
+        "license": "CC BY-IGO",
+        "year": 2024,
+        "field": "population note/sex_ratio note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B30050302787661"
+  },
+  {
+    "id": "MRT-RGPH2023-atar",
+    "level": "admin2",
+    "name": "Atar",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 47364,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 940,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B12791497255333",
+    "population_note": "The 2023 census's count for the moughataa of Atar.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 22,950 men and 24,414 women."
+  },
+  {
+    "id": "MRT-RGPH2023-bababe",
+    "level": "admin2",
+    "name": "Bababe",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 43410,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 908,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B74593484893275",
+    "population_note": "The 2023 census's count for the moughataa of Bababé.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 20,658 men and 22,752 women."
+  },
+  {
+    "id": "MRT-RGPH2023-barkeol",
+    "level": "admin2",
+    "name": "Barkeol",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 109237,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 792,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B92526973547543",
+    "population_note": "The 2023 census's count for the moughataa of Barkewol.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 48,293 men and 60,944 women."
+  },
+  {
+    "id": "MRT-RGPH2023-basseknou",
+    "level": "admin2",
+    "name": "Basseknou",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 123337,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 881,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B79518958456259",
+    "population_note": "The 2023 census's count for the moughataa of Bassiknou.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 57,780 men and 65,557 women."
+  },
+  {
+    "id": "MRT-RGPH2023-benichab",
+    "level": "admin2",
+    "name": "Benichab",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11346,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 4169,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B98603827415339",
+    "population_note": "The 2023 census's count for the moughataa of Bennechab.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 9,151 men and 2,195 women."
+  },
+  {
+    "id": "MRT-RGPH2023-birmoghrein",
+    "level": "admin2",
+    "name": "Bir Moghrein",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5126,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 2265,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B49457561972338",
+    "population_note": "The 2023 census's count for the moughataa of Bir Mogrein.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 3,556 men and 1,570 women."
+  },
+  {
+    "id": "MRT-RGPH2023-boghe",
+    "level": "admin2",
+    "name": "Boghe",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 85333,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 890,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B52802302132146",
+    "population_note": "The 2023 census's count for the moughataa of Boghé.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 40,177 men and 45,156 women."
+  },
+  {
+    "id": "MRT-RGPH2023-boumdeid",
+    "level": "admin2",
+    "name": "Boumdeid",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 10747,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 939,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B4408163770822",
+    "population_note": "The 2023 census's count for the moughataa of Boumdeid.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 5,205 men and 5,542 women."
+  },
+  {
+    "id": "MRT-RGPH2023-boutilimitt",
+    "level": "admin2",
+    "name": "Boutilimitt",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 66999,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 851,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B79459539986617",
+    "population_note": "The 2023 census's count for the moughataa of Boutilimit.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 30,812 men and 36,187 women."
+  },
+  {
+    "id": "MRT-RGPH2023-chami",
+    "level": "admin2",
+    "name": "Chami",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7382,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 2085,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B60250303477597",
+    "population_note": "The 2023 census's count for the moughataa of Chami, which it counts in the wilaya of Dakhlet Nouadhibou.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 4,989 men and 2,393 women."
+  },
+  {
+    "id": "MRT-RGPH2023-chinguitti",
+    "level": "admin2",
+    "name": "Chinguitti",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6549,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 840,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B90495786476095",
+    "population_note": "The 2023 census's count for the moughataa of Chinguitti.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 2,989 men and 3,560 women."
+  },
+  {
+    "id": "MRT-RGPH2023-darnaim",
+    "level": "admin2",
+    "name": "Dar Naim",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population note/sex_ratio note/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      },
+      {
+        "name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+        "url": "https://data.humdata.org/dataset/cod-ab-mrt",
+        "license": "CC BY-IGO",
+        "year": 2024,
+        "field": "population note/sex_ratio note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B20684442825570"
+  },
+  {
+    "id": "MRT-RGPH2023-djigueni",
+    "level": "admin2",
+    "name": "Djigueni",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 91605,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 842,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B52298833192374",
+    "population_note": "The 2023 census's count for the moughataa of Djigueni.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 41,878 men and 49,727 women."
+  },
+  {
+    "id": "MRT-RGPH2023-eayouneelatrous",
+    "level": "admin2",
+    "name": "Eayoune El Atrous",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 78229,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 869,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B47795340566920",
+    "population_note": "The 2023 census's count for the moughataa of Aïoun.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 36,381 men and 41,848 women."
+  },
+  {
+    "id": "MRT-RGPH2023-elmejrya",
+    "level": "admin2",
+    "name": "El Mejrya",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 57936,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 897,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B50345645287156",
+    "population_note": "The 2023 census's count for the moughataa of Moudjeria.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 27,392 men and 30,544 women."
+  },
+  {
+    "id": "MRT-RGPH2023-elmina",
+    "level": "admin2",
+    "name": "El Mina",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population note/sex_ratio note/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      },
+      {
+        "name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+        "url": "https://data.humdata.org/dataset/cod-ab-mrt",
+        "license": "CC BY-IGO",
+        "year": 2024,
+        "field": "population note/sex_ratio note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B34919448738513"
+  },
+  {
+    "id": "MRT-RGPH2023-fderick",
+    "level": "admin2",
+    "name": "F'Derick",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11623,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 4800,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B14226246765401",
+    "population_note": "The 2023 census's count for the moughataa of Fdeirik.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 9,619 men and 2,004 women."
+  },
+  {
+    "id": "MRT-RGPH2023-ghabou",
+    "level": "admin2",
+    "name": "Ghabou",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 113669,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 920,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B82257373833544",
+    "population_note": "The 2023 census's count for the moughataa of Ghabou.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 54,475 men and 59,194 women."
+  },
+  {
+    "id": "MRT-RGPH2023-guerrou",
+    "level": "admin2",
+    "name": "Guerrou",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 67964,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 790,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B49231245131640",
+    "population_note": "The 2023 census's count for the moughataa of Guerou.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 29,986 men and 37,978 women."
+  },
+  {
+    "id": "MRT-RGPH2023-kaedi",
+    "level": "admin2",
+    "name": "Kaedi",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 161927,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 921,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B29120201182559",
+    "population_note": "Drawn on its outline from before the moughataa of Lexeiba1 was made from it; the 2023 census counts the two apart, Kaedi 120,660 and Lexeiba1 41,267, added here.",
+    "sex_ratio_note": "The 2023 census's count of Kaedi and Lexeiba1 together: 77,621 men and 84,306 women."
+  },
+  {
+    "id": "MRT-RGPH2023-kankossa",
+    "level": "admin2",
+    "name": "Kankossa",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 117392,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 860,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B30732925248213",
+    "population_note": "The 2023 census's count for the moughataa of Kankoussa.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 54,271 men and 63,121 women."
+  },
+  {
+    "id": "MRT-RGPH2023-keurmacene",
+    "level": "admin2",
+    "name": "Keur Macene",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 33488,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 843,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B95460333313215",
+    "population_note": "The 2023 census's count for the moughataa of Keur Macene.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 15,319 men and 18,169 women."
+  },
+  {
+    "id": "MRT-RGPH2023-kiffa",
+    "level": "admin2",
+    "name": "Kiffa",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 146464,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 808,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B84598403271907",
+    "population_note": "The 2023 census's count for the moughataa of Kiffa.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 65,434 men and 81,030 women."
+  },
+  {
+    "id": "MRT-RGPH2023-koubenni",
+    "level": "admin2",
+    "name": "Koubenni",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 135158,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 881,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B43555481021158",
+    "population_note": "The 2023 census's count for the moughataa of Koubenni.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 63,288 men and 71,870 women."
+  },
+  {
+    "id": "MRT-RGPH2023-ksar",
+    "level": "admin2",
+    "name": "Ksar",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population note/sex_ratio note/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      },
+      {
+        "name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+        "url": "https://data.humdata.org/dataset/cod-ab-mrt",
+        "license": "CC BY-IGO",
+        "year": 2024,
+        "field": "population note/sex_ratio note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B19939520283708"
+  },
+  {
+    "id": "MRT-RGPH2023-mbagne",
+    "level": "admin2",
+    "name": "M'Bagne",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 52865,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 835,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B91967865285968",
+    "population_note": "The 2023 census's count for the moughataa of Mbagne.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 24,049 men and 28,816 women."
+  },
+  {
+    "id": "MRT-RGPH2023-mbout",
+    "level": "admin2",
+    "name": "M'bout",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 132464,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 904,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B11221851845412",
+    "population_note": "The 2023 census's count for the moughataa of Mbout.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 62,894 men and 69,570 women."
+  },
+  {
+    "id": "MRT-RGPH2023-maghama",
+    "level": "admin2",
+    "name": "Maghama",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 90891,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 942,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B54868139713795",
+    "population_note": "The 2023 census's count for the moughataa of Maghama.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 44,080 men and 46,811 women."
+  },
+  {
+    "id": "MRT-RGPH2023-magtalahjar",
+    "level": "admin2",
+    "name": "Magta lahjar",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 79046,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 843,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B18376526841546",
+    "population_note": "The 2023 census's count for the moughataa of Magta lahjar.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 36,166 men and 42,880 women."
+  },
+  {
+    "id": "MRT-RGPH2023-mederdra",
+    "level": "admin2",
+    "name": "Mederdra",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 35108,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 847,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B59245352565920",
+    "population_note": "The 2023 census's count for the moughataa of Mederdra.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 16,102 men and 19,006 women."
+  },
+  {
+    "id": "MRT-RGPH2023-monguel",
+    "level": "admin2",
+    "name": "Monguel",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 57208,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 834,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B31251685847111",
+    "population_note": "The 2023 census's count for the moughataa of Mounguel.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 26,017 men and 31,191 women."
+  },
+  {
+    "id": "MRT-RGPH2023-moughataadenneama",
+    "level": "admin2",
+    "name": "Moughataa d'Enneama",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 121409,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 846,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B75019227159374",
+    "population_note": "The 2023 census's count for the moughataa of Nema.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 55,643 men and 65,765 women."
+  },
+  {
+    "id": "MRT-RGPH2023-nbeiketlehouach",
+    "level": "admin2",
+    "name": "N'beiket Lehouach",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12652,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 1003,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B78705057775708",
+    "population_note": "The 2023 census's count for the moughataa of Nbeiket Lahwache.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 6,334 men and 6,318 women."
+  },
+  {
+    "id": "MRT-RGPH2023-nouadhibou",
+    "level": "admin2",
+    "name": "Nouadhibou",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 177077,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 1238,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B41685059019738",
+    "population_note": "The 2023 census's count for the moughataa of Nouadhibou.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 97,955 men and 79,122 women."
+  },
+  {
+    "id": "MRT-RGPH2023-ouadnaga",
+    "level": "admin2",
+    "name": "Ouad Naga",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2023 census counts the moughataa of Ouad Naga, but the polygon drawn here also takes in the outer parts of seven of Nouakchott's moughataas as OCHA's 2024 boundaries of the census's units draw them, so the moughataa's count is not this polygon's."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2023 census counts the moughataa of Ouad Naga, but the polygon drawn here also takes in the outer parts of seven of Nouakchott's moughataas as OCHA's 2024 boundaries of the census's units draw them, so the moughataa's count is not this polygon's."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population note/sex_ratio note/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      },
+      {
+        "name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+        "url": "https://data.humdata.org/dataset/cod-ab-mrt",
+        "license": "CC BY-IGO",
+        "year": 2024,
+        "field": "population note/sex_ratio note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B19423449459947"
+  },
+  {
+    "id": "MRT-RGPH2023-ouadane",
+    "level": "admin2",
+    "name": "Ouadane",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3833,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 942,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B44927668035814",
+    "population_note": "The 2023 census's count for the moughataa of Ouadane.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 1,859 men and 1,974 women."
+  },
+  {
+    "id": "MRT-RGPH2023-oualata",
+    "level": "admin2",
+    "name": "Oualata",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12842,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 948,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B56395627841614",
+    "population_note": "The 2023 census's count for the moughataa of Oualata.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 6,249 men and 6,593 women."
+  },
+  {
+    "id": "MRT-RGPH2023-ouldyenge",
+    "level": "admin2",
+    "name": "Ould Yenge",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 92582,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 888,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B88135317282644",
+    "population_note": "The 2023 census's count for the moughataa of Ould Yenge.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 43,540 men and 49,042 women."
+  },
+  {
+    "id": "MRT-RGPH2023-rkiz",
+    "level": "admin2",
+    "name": "R'Kiz",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 93300,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 854,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B92400580164100",
+    "population_note": "Drawn on its outline from before the moughataa of Tekane was made from it; the 2023 census counts the two apart, Rkiz 49,564 and Tekane 43,736, added here.",
+    "sex_ratio_note": "The 2023 census's count of Rkiz and Tekane together: 42,973 men and 50,327 women."
+  },
+  {
+    "id": "MRT-RGPH2023-riyadh",
+    "level": "admin2",
+    "name": "Riyadh",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population note/sex_ratio note/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      },
+      {
+        "name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+        "url": "https://data.humdata.org/dataset/cod-ab-mrt",
+        "license": "CC BY-IGO",
+        "year": 2024,
+        "field": "population note/sex_ratio note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B18524078593640"
+  },
+  {
+    "id": "MRT-RGPH2023-rosso",
+    "level": "admin2",
+    "name": "Rosso",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 70403,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 975,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B77132653245300",
+    "population_note": "The 2023 census's count for the moughataa of Rosso.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 34,761 men and 35,642 women."
+  },
+  {
+    "id": "MRT-RGPH2023-sebkha",
+    "level": "admin2",
+    "name": "Sebkha",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population note/sex_ratio note/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      },
+      {
+        "name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+        "url": "https://data.humdata.org/dataset/cod-ab-mrt",
+        "license": "CC BY-IGO",
+        "year": 2024,
+        "field": "population note/sex_ratio note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B41815213489591"
+  },
+  {
+    "id": "MRT-RGPH2023-selibabi",
+    "level": "admin2",
+    "name": "Selibabi",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 156824,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 901,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B53880541156854",
+    "population_note": "Drawn on its outline from before the moughataa of Wompou was made from it; the 2023 census counts the two apart, Sélibaby 99,118 and Wompou 57,706, added here. The town of Sélibaby, the moughataa's seat, is drawn about 5 km outside this polygon, in the one drawn as Ghabou.",
+    "sex_ratio_note": "The 2023 census's count of Sélibaby and Wompou together: 74,347 men and 82,477 women."
+  },
+  {
+    "id": "MRT-RGPH2023-tamchekett",
+    "level": "admin2",
+    "name": "Tamchekett",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 43936,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 848,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B49487198034252",
+    "population_note": "The 2023 census's count for the moughataa of Tamcheket.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 20,157 men and 23,779 women."
+  },
+  {
+    "id": "MRT-RGPH2023-tevraghzein",
+    "level": "admin2",
+    "name": "Tevragh Zein",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population note/sex_ratio note/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      },
+      {
+        "name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+        "url": "https://data.humdata.org/dataset/cod-ab-mrt",
+        "license": "CC BY-IGO",
+        "year": 2024,
+        "field": "population note/sex_ratio note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B736390613482"
+  },
+  {
+    "id": "MRT-RGPH2023-teyarett",
+    "level": "admin2",
+    "name": "Teyarett",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population note/sex_ratio note/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      },
+      {
+        "name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+        "url": "https://data.humdata.org/dataset/cod-ab-mrt",
+        "license": "CC BY-IGO",
+        "year": 2024,
+        "field": "population note/sex_ratio note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B65700672861559"
+  },
+  {
+    "id": "MRT-RGPH2023-tichitt",
+    "level": "admin2",
+    "name": "Tichitt",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4490,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 956,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B42701553126465",
+    "population_note": "The 2023 census's count for the moughataa of Tichit.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 2,195 men and 2,295 women."
+  },
+  {
+    "id": "MRT-RGPH2023-tijigja",
+    "level": "admin2",
+    "name": "Tijigja",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 52334,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 892,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B404198781259",
+    "population_note": "The 2023 census's count for the moughataa of Tidjikdja.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 24,677 men and 27,657 women."
+  },
+  {
+    "id": "MRT-RGPH2023-timbedgha",
+    "level": "admin2",
+    "name": "Timbedgha",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 112796,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 860,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B26087332325113",
+    "population_note": "The 2023 census's count for the moughataa of Timbédra.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 52,151 men and 60,645 women."
+  },
+  {
+    "id": "MRT-RGPH2023-tintane",
+    "level": "admin2",
+    "name": "Tintane",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 145766,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 852,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B49589683558539",
+    "population_note": "Drawn on its outline from before the moughataa of Touil was made from it; the 2023 census counts the two apart, Tintane 98,188 and Touil 47,578, added here.",
+    "sex_ratio_note": "The 2023 census's count of Tintane and Touil together: 67,049 men and 78,717 women."
+  },
+  {
+    "id": "MRT-RGPH2023-toujounine",
+    "level": "admin2",
+    "name": "Toujounine",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "The 2023 census counts Nouakchott's nine moughataas, but the lines drawn here for them do not follow the moughataas as OCHA's 2024 boundaries of the census's units draw them: OCHA's Ksar, for one, lies mostly over what is drawn here as Ouad Naga. No count is placed on these polygons; Nouakchott as a whole carries the census's count of its three wilayas."
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population note/sex_ratio note/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      },
+      {
+        "name": "OCHA, Mauritania - Subnational Administrative Boundaries (COD-AB, 2024)",
+        "url": "https://data.humdata.org/dataset/cod-ab-mrt",
+        "license": "CC BY-IGO",
+        "year": 2024,
+        "field": "population note/sex_ratio note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B78041808774540"
+  },
+  {
+    "id": "MRT-RGPH2023-zoueratt",
+    "level": "admin2",
+    "name": "Zoueratt",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 62380,
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "The 2023 census's results give each moughataa's population by sex, not by age: its report on the population's structure by sex and age tabulates ages by wilaya only."
+    },
+    "sex_ratio": {
+      "value": 1177,
+      "unit": "males_per_1000_females",
+      "year": 2023,
+      "source": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH 2023), Population des Wilayas, Moughataa et Communes (2024)",
+        "url": "https://web.archive.org/web/20250925063203id_/https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "page": "https://ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Agence Nationale de la Statistique et de l'Analyse Démographique et Economique (ANSADE), Recensement Général de la Population et de l'Habitat (RGPH-5, 2023), Thème 2 : Structure par sexe et par âge de la population (2024), Tableau A.2.2",
+        "url": "https://admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf",
+        "license": "ANSADE publication (reuse with attribution)",
+        "year": 2023,
+        "field": "median_age note"
+      }
+    ],
+    "country": "MRT",
+    "match_by": "shape_id",
+    "shape_id": "47542326B94085620874331",
+    "population_note": "The 2023 census's count for the moughataa of Zoueratt.",
+    "sex_ratio_note": "The 2023 census's count of the moughataa: 33,724 men and 28,656 women."
+  }
+]

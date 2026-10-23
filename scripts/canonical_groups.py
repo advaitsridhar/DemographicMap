@@ -63,6 +63,10 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Protestant (Mixed)", "Mixed Catholic / Protestant",
         "Non-denominational Christian", "Christian Fellowship Church",
         "Independent", "African Independent Church",
+        # Mozambique's census counts the Zionist churches (Zione/Sião) as one
+        # class beside the Catholic, Anglican and Evangelical/Pentecostal:
+        # African-initiated churches of many names, Christian and no more.
+        "Zionist churches",
         # The Pacific censuses' rows for the churches they do not name
         # (Vanuatu, Samoa), and the smaller bodies Samoa's, Tonga's and
         # Nauru's censuses do name whose tradition their tables do not state:
@@ -119,6 +123,10 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "Church of Jesus Christ in Madagascar/Malagasy Lutheran Church/Anglican Church",
         "Awakening Churches/Christian Revival", "Apostolic Sect",
         "Universal Kingdom of God", "Worship Centre",
+        # Sao Tome and Principe's 2012 census names three Pentecostal churches
+        # of Brazilian and Portuguese origin among its thirteen answers.
+        "Universal Church of the Kingdom of God", "God Is Love Pentecostal Church",
+        "Maná Church",
         "United Church", "United Church of Zambia or UCZ",
         "United Church of Zambia", "New Apostolic Church",
         "Christian mission in many lands (CMML)",
@@ -277,11 +285,10 @@ RELIGION: dict[str, tuple[str, ...]] = {
         "ethnic religionist", "African traditionalist",
         "traditional African religion", "customary beliefs", "folk",
         # Census 2022 heads the column "Traditional African" and calls it
-        # "Traditional African religion" in the prose on the same page. The
-        # Factbook string is the tail of "ancestral, tribal, animist, or other
-        # traditional African religions", which its parser leaves cut in half.
+        # "Traditional African religion" in the prose on the same page; the
+        # Factbook names it in full.
         "Traditional African", "Traditional African religion",
-        "or other traditional African religions",
+        "ancestral, tribal, animist, or other traditional African religions",
         "Shaman", "shamanist", "Badimo", "Modekngei", "Mana",
         "Traditional/Ethnic religion", "Traditional/ethnic religion",
         # Brazil's 2022 column for the religions of its indigenous peoples.
@@ -1282,6 +1289,9 @@ RESIDUAL: frozenset[str] = frozenset({
     "other or not stated", "none or not stated", "Other and unspecified",
     "Other or unspecified", "other/not stated", "Other/not stated",
     "No ethnic group", "Unknown ethnicity", "Not declared",
+    # Afrobarometer's respondents who name only their nationality: an
+    # answer, and not an ethnic group, so it does not lead where one does.
+    "National identity only",
     # The Nordic membership registers' rows for everyone outside one church
     # (Denmark), outside every registered body (Norway), or inside some body
     # other than the Church of Norway: 51% of Copenhagen is the first, and none
@@ -1296,6 +1306,9 @@ RESIDUAL: frozenset[str] = frozenset({
     # because each has fewer than a hundred people in the country, and the
     # Mongolian citizens it records under a foreign nationality.
     "Other ethnic groups", "Other nationals (Mongolian citizens)",
+    # Liberia's and Sierra Leone's censuses: the citizens of no group the
+    # table names, and the residents who are not citizens at all.
+    "Other Liberian", "Non-Sierra Leonean",
     "Some other race (non-Hispanic)", "Other and unspecified languages",
     # A marker the source prints where it has nothing to report. It is not a
     # group at all, and until it was named here it read as one: grey on the

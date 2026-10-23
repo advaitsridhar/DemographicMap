@@ -1,0 +1,1510 @@
+[
+  {
+    "id": "STP-RGPH2012-43174148B36740863505441",
+    "level": "admin2",
+    "name": "Água Grande",
+    "parent": "STP",
+    "capital": "São Tomé",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 69772,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "value": 20.1,
+      "unit": "years",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "sex_ratio": {
+      "value": 940,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 57.4,
+        "count": 39888
+      },
+      {
+        "group": "No religion",
+        "pct": 18.7,
+        "count": 12998
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.7,
+        "count": 3966
+      },
+      {
+        "group": "Adventist",
+        "pct": 4.7,
+        "count": 3241
+      },
+      {
+        "group": "Maná Church",
+        "pct": 3.0,
+        "count": 2094
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 3.0,
+        "count": 2104
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 2.5,
+        "count": 1752
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.5,
+        "count": 1030
+      },
+      {
+        "group": "God Is Love Pentecostal Church",
+        "pct": 0.9,
+        "count": 651
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 0.9,
+        "count": 618
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 517
+      },
+      {
+        "group": "Church of World Messianity",
+        "pct": 0.6,
+        "count": 431
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 164
+      }
+    ],
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 98.6,
+        "count": 66359
+      },
+      {
+        "group": "Forro",
+        "pct": 36.8,
+        "count": 24745
+      },
+      {
+        "group": "French",
+        "pct": 10.9,
+        "count": 7308
+      },
+      {
+        "group": "English",
+        "pct": 8.6,
+        "count": 5782
+      },
+      {
+        "group": "Cape Verdean Creole",
+        "pct": 5.4,
+        "count": 3637
+      },
+      {
+        "group": "Angolar",
+        "pct": 3.6,
+        "count": 2426
+      },
+      {
+        "group": "Other languages",
+        "pct": 3.0,
+        "count": 2034
+      },
+      {
+        "group": "Lung'ie",
+        "pct": 1.2,
+        "count": 783
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Água Grande), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital__%C3%81GUA-GRANDE.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of São Tomé and Príncipe",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B36740863505441",
+    "language_year": 2012,
+    "language_basis": "languages spoken (multi-response)",
+    "language_note": "Which languages each person speaks, as the 2012 census asked the 67,295 residents of ordinary dwellings aged one year and over, several answers allowed: each share is the percentage of them who speak the language, so the shares add up to more than 100. Other languages include sign language.",
+    "population_note": "The resident population of Água Grande district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2012 census's ages of the 69,454 residents of ordinary dwellings.",
+    "religion_year": 2012,
+    "religion_note": "The 2012 census's religion question, answered for the 69,454 residents of ordinary dwellings, in the census's own thirteen answers."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B76706884828518",
+    "level": "admin2",
+    "name": "Mé-zóxi",
+    "parent": "STP",
+    "capital": "Trindade",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 44763,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "value": 18.7,
+      "unit": "years",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "sex_ratio": {
+      "value": 989,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 49.1,
+        "count": 21976
+      },
+      {
+        "group": "No religion",
+        "pct": 27.7,
+        "count": 12380
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.3,
+        "count": 2387
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 4.0,
+        "count": 1784
+      },
+      {
+        "group": "Adventist",
+        "pct": 3.6,
+        "count": 1613
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 3.4,
+        "count": 1521
+      },
+      {
+        "group": "Maná Church",
+        "pct": 2.3,
+        "count": 1009
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4,
+        "count": 618
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 1.2,
+        "count": 545
+      },
+      {
+        "group": "God Is Love Pentecostal Church",
+        "pct": 0.8,
+        "count": 349
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 303
+      },
+      {
+        "group": "Church of World Messianity",
+        "pct": 0.3,
+        "count": 145
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.3,
+        "count": 122
+      }
+    ],
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 98.5,
+        "count": 42672
+      },
+      {
+        "group": "Forro",
+        "pct": 40.0,
+        "count": 17317
+      },
+      {
+        "group": "French",
+        "pct": 5.3,
+        "count": 2295
+      },
+      {
+        "group": "Angolar",
+        "pct": 4.2,
+        "count": 1822
+      },
+      {
+        "group": "Cape Verdean Creole",
+        "pct": 3.5,
+        "count": 1519
+      },
+      {
+        "group": "English",
+        "pct": 3.5,
+        "count": 1538
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.8,
+        "count": 1210
+      },
+      {
+        "group": "Lung'ie",
+        "pct": 0.5,
+        "count": 212
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Mé-Zóchi), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_M%C3%89-Z%C3%93CHI.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of São Tomé and Príncipe",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B76706884828518",
+    "language_year": 2012,
+    "language_basis": "languages spoken (multi-response)",
+    "language_note": "Which languages each person speaks, as the 2012 census asked the 43,340 residents of ordinary dwellings aged one year and over, several answers allowed: each share is the percentage of them who speak the language, so the shares add up to more than 100. Other languages include sign language.",
+    "population_note": "The resident population of Mé-Zóchi district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2012 census's ages of the 44,752 residents of ordinary dwellings.",
+    "religion_year": 2012,
+    "religion_note": "The 2012 census's religion question, answered for the 44,752 residents of ordinary dwellings, in the census's own thirteen answers."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B99779095511190",
+    "level": "admin2",
+    "name": "Cantagalo",
+    "parent": "STP",
+    "capital": "Santana",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17169,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "value": 18.0,
+      "unit": "years",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "sex_ratio": {
+      "value": 1040,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 68.3,
+        "count": 11722
+      },
+      {
+        "group": "No religion",
+        "pct": 14.2,
+        "count": 2437
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.9,
+        "count": 665
+      },
+      {
+        "group": "Adventist",
+        "pct": 2.9,
+        "count": 505
+      },
+      {
+        "group": "Maná Church",
+        "pct": 2.8,
+        "count": 479
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 2.7,
+        "count": 466
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 2.3,
+        "count": 396
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 179
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 121
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.5,
+        "count": 81
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 0.3,
+        "count": 51
+      },
+      {
+        "group": "Church of World Messianity",
+        "pct": 0.2,
+        "count": 32
+      },
+      {
+        "group": "God Is Love Pentecostal Church",
+        "pct": 0.2,
+        "count": 27
+      }
+    ],
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 98.5,
+        "count": 16376
+      },
+      {
+        "group": "Forro",
+        "pct": 43.4,
+        "count": 7209
+      },
+      {
+        "group": "Cape Verdean Creole",
+        "pct": 14.0,
+        "count": 2319
+      },
+      {
+        "group": "Angolar",
+        "pct": 10.2,
+        "count": 1703
+      },
+      {
+        "group": "French",
+        "pct": 4.2,
+        "count": 694
+      },
+      {
+        "group": "English",
+        "pct": 2.3,
+        "count": 390
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.3,
+        "count": 209
+      },
+      {
+        "group": "Lung'ie",
+        "pct": 0.4,
+        "count": 71
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Cantagalo), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_CANTAGALO.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of São Tomé and Príncipe",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B99779095511190",
+    "language_year": 2012,
+    "language_basis": "languages spoken (multi-response)",
+    "language_note": "Which languages each person speaks, as the 2012 census asked the 16,622 residents of ordinary dwellings aged one year and over, several answers allowed: each share is the percentage of them who speak the language, so the shares add up to more than 100. Other languages include sign language.",
+    "population_note": "The resident population of Cantagalo district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2012 census's ages of the 17,161 residents of ordinary dwellings.",
+    "religion_year": 2012,
+    "religion_note": "The 2012 census's religion question, answered for the 17,161 residents of ordinary dwellings, in the census's own thirteen answers."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B37019359222323",
+    "level": "admin2",
+    "name": "Caué",
+    "parent": "STP",
+    "capital": "São João dos Angolares",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6062,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "value": 17.9,
+      "unit": "years",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "sex_ratio": {
+      "value": 1085,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 38.2,
+        "count": 2305
+      },
+      {
+        "group": "No religion",
+        "pct": 27.2,
+        "count": 1640
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 10.1,
+        "count": 608
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 8.4,
+        "count": 507
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.7,
+        "count": 344
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 5.5,
+        "count": 332
+      },
+      {
+        "group": "Adventist",
+        "pct": 1.3,
+        "count": 81
+      },
+      {
+        "group": "Not stated",
+        "pct": 1.2,
+        "count": 75
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.8,
+        "count": 46
+      },
+      {
+        "group": "Maná Church",
+        "pct": 0.7,
+        "count": 40
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.5,
+        "count": 30
+      },
+      {
+        "group": "Church of World Messianity",
+        "pct": 0.2,
+        "count": 11
+      },
+      {
+        "group": "God Is Love Pentecostal Church",
+        "pct": 0.2,
+        "count": 12
+      }
+    ],
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 98.3,
+        "count": 5755
+      },
+      {
+        "group": "Angolar",
+        "pct": 47.2,
+        "count": 2762
+      },
+      {
+        "group": "Forro",
+        "pct": 13.5,
+        "count": 788
+      },
+      {
+        "group": "Other languages",
+        "pct": 5.3,
+        "count": 308
+      },
+      {
+        "group": "Cape Verdean Creole",
+        "pct": 4.6,
+        "count": 267
+      },
+      {
+        "group": "French",
+        "pct": 1.7,
+        "count": 97
+      },
+      {
+        "group": "English",
+        "pct": 1.0,
+        "count": 59
+      },
+      {
+        "group": "Lung'ie",
+        "pct": 0.3,
+        "count": 17
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Caué), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_CAU%C3%89.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of São Tomé and Príncipe",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B37019359222323",
+    "language_year": 2012,
+    "language_basis": "languages spoken (multi-response)",
+    "language_note": "Which languages each person speaks, as the 2012 census asked the 5,856 residents of ordinary dwellings aged one year and over, several answers allowed: each share is the percentage of them who speak the language, so the shares add up to more than 100. Other languages include sign language.",
+    "population_note": "The resident population of Caué district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2012 census's ages of the 6,031 residents of ordinary dwellings.",
+    "religion_year": 2012,
+    "religion_note": "The 2012 census's religion question, answered for the 6,031 residents of ordinary dwellings, in the census's own thirteen answers."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B20195011652309",
+    "level": "admin2",
+    "name": "Lemba",
+    "parent": "STP",
+    "capital": "Neves",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14676,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "value": 17.5,
+      "unit": "years",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "sex_ratio": {
+      "value": 1068,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 45.6,
+        "count": 6677
+      },
+      {
+        "group": "No religion",
+        "pct": 33.6,
+        "count": 4925
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 5.2,
+        "count": 768
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 5.2,
+        "count": 755
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.0,
+        "count": 583
+      },
+      {
+        "group": "Adventist",
+        "pct": 3.2,
+        "count": 462
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 1.0,
+        "count": 142
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 87
+      },
+      {
+        "group": "Maná Church",
+        "pct": 0.6,
+        "count": 91
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.6,
+        "count": 92
+      },
+      {
+        "group": "Church of World Messianity",
+        "pct": 0.2,
+        "count": 34
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 29
+      },
+      {
+        "group": "God Is Love Pentecostal Church",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 97.9,
+        "count": 13846
+      },
+      {
+        "group": "Forro",
+        "pct": 30.2,
+        "count": 4276
+      },
+      {
+        "group": "Angolar",
+        "pct": 14.7,
+        "count": 2075
+      },
+      {
+        "group": "Cape Verdean Creole",
+        "pct": 10.2,
+        "count": 1437
+      },
+      {
+        "group": "French",
+        "pct": 2.3,
+        "count": 323
+      },
+      {
+        "group": "English",
+        "pct": 1.1,
+        "count": 161
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.9,
+        "count": 128
+      },
+      {
+        "group": "Lung'ie",
+        "pct": 0.4,
+        "count": 58
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Lembá), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_LEMB%C3%81.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of São Tomé and Príncipe",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B20195011652309",
+    "language_year": 2012,
+    "language_basis": "languages spoken (multi-response)",
+    "language_note": "Which languages each person speaks, as the 2012 census asked the 14,148 residents of ordinary dwellings aged one year and over, several answers allowed: each share is the percentage of them who speak the language, so the shares add up to more than 100. Other languages include sign language.",
+    "population_note": "The resident population of Lembá district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2012 census's ages of the 14,652 residents of ordinary dwellings.",
+    "religion_year": 2012,
+    "religion_note": "The 2012 census's religion question, answered for the 14,652 residents of ordinary dwellings, in the census's own thirteen answers."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B25004726463593",
+    "level": "admin2",
+    "name": "Lobata",
+    "parent": "STP",
+    "capital": "Guadalupe",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19414,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "value": 18.5,
+      "unit": "years",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "sex_ratio": {
+      "value": 1037,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 63.1,
+        "count": 12225
+      },
+      {
+        "group": "No religion",
+        "pct": 16.6,
+        "count": 3218
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 4.0,
+        "count": 769
+      },
+      {
+        "group": "Adventist",
+        "pct": 3.3,
+        "count": 632
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.1,
+        "count": 594
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 3.0,
+        "count": 581
+      },
+      {
+        "group": "Maná Church",
+        "pct": 2.0,
+        "count": 387
+      },
+      {
+        "group": "God Is Love Pentecostal Church",
+        "pct": 1.7,
+        "count": 321
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 1.5,
+        "count": 299
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.8,
+        "count": 157
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 131
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 31
+      },
+      {
+        "group": "Church of World Messianity",
+        "pct": 0.1,
+        "count": 20
+      }
+    ],
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 98.1,
+        "count": 18323
+      },
+      {
+        "group": "Forro",
+        "pct": 40.2,
+        "count": 7498
+      },
+      {
+        "group": "Cape Verdean Creole",
+        "pct": 17.6,
+        "count": 3280
+      },
+      {
+        "group": "French",
+        "pct": 3.7,
+        "count": 696
+      },
+      {
+        "group": "Angolar",
+        "pct": 2.2,
+        "count": 413
+      },
+      {
+        "group": "English",
+        "pct": 2.2,
+        "count": 410
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.3,
+        "count": 236
+      },
+      {
+        "group": "Lung'ie",
+        "pct": 0.5,
+        "count": 87
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Lobata), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_LOBATA.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of São Tomé and Príncipe",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B25004726463593",
+    "language_year": 2012,
+    "language_basis": "languages spoken (multi-response)",
+    "language_note": "Which languages each person speaks, as the 2012 census asked the 18,671 residents of ordinary dwellings aged one year and over, several answers allowed: each share is the percentage of them who speak the language, so the shares add up to more than 100. Other languages include sign language.",
+    "population_note": "The resident population of Lobata district at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2012 census's ages of the 19,365 residents of ordinary dwellings.",
+    "religion_year": 2012,
+    "religion_note": "The 2012 census's religion question, answered for the 19,365 residents of ordinary dwellings, in the census's own thirteen answers."
+  },
+  {
+    "id": "STP-RGPH2012-43174148B82261817076051",
+    "level": "admin2",
+    "name": "Pagué",
+    "parent": "STP",
+    "capital": "Santo António",
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7344,
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "median_age": {
+      "value": 18.4,
+      "unit": "years",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "sex_ratio": {
+      "value": 1046,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 65.2,
+        "count": 4777
+      },
+      {
+        "group": "Adventist",
+        "pct": 9.6,
+        "count": 705
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 7.4,
+        "count": 541
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.2,
+        "count": 451
+      },
+      {
+        "group": "No religion",
+        "pct": 4.6,
+        "count": 337
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 1.4,
+        "count": 102
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4,
+        "count": 101
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 1.3,
+        "count": 95
+      },
+      {
+        "group": "Maná Church",
+        "pct": 1.2,
+        "count": 91
+      },
+      {
+        "group": "God Is Love Pentecostal Church",
+        "pct": 0.9,
+        "count": 65
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 29
+      },
+      {
+        "group": "Church of World Messianity",
+        "pct": 0.2,
+        "count": 15
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 15
+      }
+    ],
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 97.3,
+        "count": 6892
+      },
+      {
+        "group": "Cape Verdean Creole",
+        "pct": 31.0,
+        "count": 2195
+      },
+      {
+        "group": "Forro",
+        "pct": 12.3,
+        "count": 874
+      },
+      {
+        "group": "Lung'ie",
+        "pct": 7.4,
+        "count": 525
+      },
+      {
+        "group": "French",
+        "pct": 4.0,
+        "count": 284
+      },
+      {
+        "group": "English",
+        "pct": 3.0,
+        "count": 216
+      },
+      {
+        "group": "Angolar",
+        "pct": 2.5,
+        "count": 176
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 59
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age/religion/language",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Príncipe), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_REGI%C3%83O%20AUT%C3%93NOMA%20DO%20PR%C3%8DNCIPE.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "capital",
+        "name": "English Wikipedia, Districts of São Tomé and Príncipe",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "43174148B82261817076051",
+    "language_year": 2012,
+    "language_basis": "languages spoken (multi-response)",
+    "language_note": "Which languages each person speaks, as the 2012 census asked the 7,083 residents of ordinary dwellings aged one year and over, several answers allowed: each share is the percentage of them who speak the language, so the shares add up to more than 100. Other languages include sign language.",
+    "population_note": "The resident population of the Autonomous Region of Príncipe at the 2012 census, present and absent residents, in ordinary and collective dwellings.",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2012 census's ages of the 7,324 residents of ordinary dwellings.",
+    "religion_year": 2012,
+    "religion_note": "The 2012 census's religion question, answered for the 7,324 residents of ordinary dwellings, in the census's own thirteen answers."
+  },
+  {
+    "id": "STP-RGPH2012-19237168B40253326356618",
+    "level": "admin1",
+    "name": "São Tomé Province",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 19.0,
+      "unit": "years",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "sex_ratio": {
+      "value": 989,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 55.3,
+        "count": 94793
+      },
+      {
+        "group": "No religion",
+        "pct": 21.9,
+        "count": 37598
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.0,
+        "count": 8539
+      },
+      {
+        "group": "Adventist",
+        "pct": 3.8,
+        "count": 6534
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 3.4,
+        "count": 5889
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 2.7,
+        "count": 4636
+      },
+      {
+        "group": "Maná Church",
+        "pct": 2.4,
+        "count": 4100
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 2.0,
+        "count": 3473
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.2,
+        "count": 2101
+      },
+      {
+        "group": "God Is Love Pentecostal Church",
+        "pct": 0.8,
+        "count": 1367
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.7,
+        "count": 1239
+      },
+      {
+        "group": "Church of World Messianity",
+        "pct": 0.4,
+        "count": 673
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.3,
+        "count": 473
+      }
+    ],
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 98.4,
+        "count": 163331
+      },
+      {
+        "group": "Forro",
+        "pct": 37.3,
+        "count": 61833
+      },
+      {
+        "group": "Cape Verdean Creole",
+        "pct": 7.5,
+        "count": 12459
+      },
+      {
+        "group": "French",
+        "pct": 6.9,
+        "count": 11413
+      },
+      {
+        "group": "Angolar",
+        "pct": 6.8,
+        "count": 11201
+      },
+      {
+        "group": "English",
+        "pct": 5.0,
+        "count": 8340
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.5,
+        "count": 4125
+      },
+      {
+        "group": "Lung'ie",
+        "pct": 0.7,
+        "count": 1228
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "sex_ratio/median_age/religion/language/population note",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Água Grande), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital__%C3%81GUA-GRANDE.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "sex_ratio/median_age/religion/language/population note",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Mé-Zóchi), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_M%C3%89-Z%C3%93CHI.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "sex_ratio/median_age/religion/language/population note",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Cantagalo), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_CANTAGALO.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "sex_ratio/median_age/religion/language/population note",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Caué), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_CAU%C3%89.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "sex_ratio/median_age/religion/language/population note",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Lembá), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado_Distrital_LEMB%C3%81.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      },
+      {
+        "field": "sex_ratio/median_age/religion/language/population note",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Lobata), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_LOBATA.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "19237168B40253326356618",
+    "language_year": 2012,
+    "language_basis": "languages spoken (multi-response)",
+    "language_note": "Which languages each person speaks, as the 2012 census asked the 165,932 residents of ordinary dwellings aged one year and over, several answers allowed: each share is the percentage of them who speak the language, so the shares add up to more than 100. Other languages include sign language.",
+    "population_note": "The 2012 census counted 171,856 residents in São Tomé province, its six districts added up (present and absent residents, in ordinary and collective dwellings).",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2012 census's ages of the 171,415 residents of ordinary dwellings.",
+    "religion_year": 2012,
+    "religion_note": "The 2012 census's religion question, answered for the 171,415 residents of ordinary dwellings, in the census's own thirteen answers."
+  },
+  {
+    "id": "STP-RGPH2012-19237168B82261817076051",
+    "level": "admin1",
+    "name": "Príncipe Province",
+    "parent": "STP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18.4,
+      "unit": "years",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "sex_ratio": {
+      "value": 1046,
+      "unit": "males_per_1000_females",
+      "year": 2012,
+      "source": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 65.2,
+        "count": 4777
+      },
+      {
+        "group": "Adventist",
+        "pct": 9.6,
+        "count": 705
+      },
+      {
+        "group": "New Apostolic",
+        "pct": 7.4,
+        "count": 541
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.2,
+        "count": 451
+      },
+      {
+        "group": "No religion",
+        "pct": 4.6,
+        "count": 337
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 1.4,
+        "count": 102
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.4,
+        "count": 101
+      },
+      {
+        "group": "Universal Church of the Kingdom of God",
+        "pct": 1.3,
+        "count": 95
+      },
+      {
+        "group": "Maná Church",
+        "pct": 1.2,
+        "count": 91
+      },
+      {
+        "group": "God Is Love Pentecostal Church",
+        "pct": 0.9,
+        "count": 65
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.4,
+        "count": 29
+      },
+      {
+        "group": "Church of World Messianity",
+        "pct": 0.2,
+        "count": 15
+      },
+      {
+        "group": "Don't know",
+        "pct": 0.2,
+        "count": 15
+      }
+    ],
+    "language": [
+      {
+        "group": "Portuguese",
+        "pct": 97.3,
+        "count": 6892
+      },
+      {
+        "group": "Cape Verdean Creole",
+        "pct": 31.0,
+        "count": 2195
+      },
+      {
+        "group": "Forro",
+        "pct": 12.3,
+        "count": 874
+      },
+      {
+        "group": "Lung'ie",
+        "pct": 7.4,
+        "count": 525
+      },
+      {
+        "group": "French",
+        "pct": 4.0,
+        "count": 284
+      },
+      {
+        "group": "English",
+        "pct": 3.0,
+        "count": 216
+      },
+      {
+        "group": "Angolar",
+        "pct": 2.5,
+        "count": 176
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 59
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "sex_ratio/median_age/religion/language/population note",
+        "name": "Instituto Nacional de Estatística de São Tomé e Príncipe, IV Recenseamento Geral da População e da Habitação 2012, Resultado Distrital (Príncipe), Quadros 2, 5, 6 and 10",
+        "url": "https://www.ine.st/phocadownload/userupload/Documentos/Recenseamentos/2012/Dados%20Distritais%20e%20Nacional%20Recenseamento%202012/Resultado%20Distrital_REGI%C3%83O%20AUT%C3%93NOMA%20DO%20PR%C3%8DNCIPE.pdf",
+        "year": 2012,
+        "license": "INE São Tomé e Príncipe publication (reuse with attribution)"
+      }
+    ],
+    "country": "STP",
+    "match_by": "shape_id",
+    "shape_id": "19237168B82261817076051",
+    "language_year": 2012,
+    "language_basis": "languages spoken (multi-response)",
+    "language_note": "Which languages each person speaks, as the 2012 census asked the 7,083 residents of ordinary dwellings aged one year and over, several answers allowed: each share is the percentage of them who speak the language, so the shares add up to more than 100. Other languages include sign language.",
+    "population_note": "The 2012 census counted 7,344 residents in the Autonomous Region of Príncipe (present and absent residents, in ordinary and collective dwellings).",
+    "sex_ratio_note": "Men per 1,000 women among the residents the 2012 census counted.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2012 census's ages of the 7,324 residents of ordinary dwellings.",
+    "religion_year": 2012,
+    "religion_note": "The 2012 census's religion question, answered for the 7,324 residents of ordinary dwellings, in the census's own thirteen answers."
+  }
+]

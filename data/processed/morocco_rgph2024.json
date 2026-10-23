@@ -27,12 +27,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 2524541
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 1260
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -43,6 +52,9 @@
     "match_by": "shape_id",
     "shape_id": "70788906B63032885328780",
     "population_note": "The legal population of Région de Béni Mellal-Khénifra in the 2024 census (RGPH, September 2024): 2,524,541 Moroccans and 1,260 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Région de Béni Mellal-Khénifra in the 2024 census: 2,524,541 Moroccans and 1,260 foreign residents.",
     "codes": {
       "hcp": "5"
     }
@@ -75,12 +87,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.2,
+        "count": 7628065
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.8,
+        "count": 60902
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -91,6 +112,9 @@
     "match_by": "shape_id",
     "shape_id": "70788906B33851053053385",
     "population_note": "The legal population of Région de Casablanca-Settat in the 2024 census (RGPH, September 2024): 7,628,065 Moroccans and 60,902 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Région de Casablanca-Settat in the 2024 census: 7,628,065 Moroccans and 60,902 foreign residents.",
     "codes": {
       "hcp": "6"
     }
@@ -123,12 +147,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 1654942
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 681
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -139,6 +172,9 @@
     "match_by": "shape_id",
     "shape_id": "70788906B26242154300952",
     "population_note": "The legal population of Région de Drâa-Tafilalet in the 2024 census (RGPH, September 2024): 1,654,942 Moroccans and 681 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Région de Drâa-Tafilalet in the 2024 census: 1,654,942 Moroccans and 681 foreign residents.",
     "codes": {
       "hcp": "8"
     }
@@ -171,12 +207,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.8,
+        "count": 4461182
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 6729
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -187,6 +232,9 @@
     "match_by": "shape_id",
     "shape_id": "70788906B83815134303720",
     "population_note": "The legal population of Région de Fès-Meknès in the 2024 census (RGPH, September 2024): 4,461,182 Moroccans and 6,729 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Région de Fès-Meknès in the 2024 census: 4,461,182 Moroccans and 6,729 foreign residents.",
     "codes": {
       "hcp": "3"
     }
@@ -203,7 +251,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 448685,
+      "value": 429546,
       "year": 2024,
       "source": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes"
     },
@@ -219,12 +267,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 429014
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 532
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -234,7 +291,10 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "70788906B64069740334949",
-    "population_note": "The legal population of Région de Guelmim-Oued Noun in the 2024 census (RGPH, September 2024): 448,152 Moroccans and 533 foreign residents.",
+    "population_note": "The legal population of Région de Guelmim-Oued Noun in the 2024 census (RGPH, September 2024) without the commune of Al Mahbass (19,139 people), which lies south of the Western Sahara line: 429,014 Moroccans and 532 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Région de Guelmim-Oued Noun in the 2024 census without the commune of Al Mahbass (19,139 people), which lies south of the Western Sahara line: 429,014 Moroccans and 532 foreign residents.",
     "codes": {
       "hcp": "10"
     }
@@ -281,7 +341,15 @@
       "note": "This polygon is only the part of the Laâyoune-Sakia El Hamra region north of the Western Sahara line; the region's people live almost all across it. The 2024 census counts the region whole (451,028), and no source counts this part apart, so no figure is shown here.",
       "displaces_before": 2025
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population note/median_age note/sex_ratio note/religion note/language note/ethnicity note",
+        "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
+        "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "70788906B89532291078161"
@@ -314,12 +382,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.7,
+        "count": 4878500
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 13893
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -330,6 +407,9 @@
     "match_by": "shape_id",
     "shape_id": "70788906B60308563647099",
     "population_note": "The legal population of Région de Marrakech-Safi in the 2024 census (RGPH, September 2024): 4,878,500 Moroccans and 13,893 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Région de Marrakech-Safi in the 2024 census: 4,878,500 Moroccans and 13,893 foreign residents.",
     "codes": {
       "hcp": "7"
     }
@@ -362,12 +442,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.8,
+        "count": 2291040
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 3625
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -378,6 +467,9 @@
     "match_by": "shape_id",
     "shape_id": "70788906B40056535803135",
     "population_note": "The legal population of Région de l'Oriental in the 2024 census (RGPH, September 2024): 2,291,040 Moroccans and 3,625 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Région de l'Oriental in the 2024 census: 2,291,040 Moroccans and 3,625 foreign residents.",
     "codes": {
       "hcp": "2"
     }
@@ -410,12 +502,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.4,
+        "count": 5103406
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.6,
+        "count": 29233
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -426,6 +527,9 @@
     "match_by": "shape_id",
     "shape_id": "70788906B15955360211262",
     "population_note": "The legal population of Région de Rabat-Salé-Kénitra in the 2024 census (RGPH, September 2024): 5,103,406 Moroccans and 29,233 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Région de Rabat-Salé-Kénitra in the 2024 census: 5,103,406 Moroccans and 29,233 foreign residents.",
     "codes": {
       "hcp": "4"
     }
@@ -458,12 +562,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.5,
+        "count": 3006430
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.5,
+        "count": 14001
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -474,6 +587,9 @@
     "match_by": "shape_id",
     "shape_id": "70788906B1820144472977",
     "population_note": "The legal population of Région de Souss-Massa in the 2024 census (RGPH, September 2024): 3,006,430 Moroccans and 14,001 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Région de Souss-Massa in the 2024 census: 3,006,430 Moroccans and 14,001 foreign residents.",
     "codes": {
       "hcp": "9"
     }
@@ -506,12 +622,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.8,
+        "count": 4020545
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 9677
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -522,6 +647,9 @@
     "match_by": "shape_id",
     "shape_id": "70788906B66040098455254",
     "population_note": "The legal population of Région de Tanger-Tétouan-Al Hoceima in the 2024 census (RGPH, September 2024): 4,020,545 Moroccans and 9,677 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Région de Tanger-Tétouan-Al Hoceima in the 2024 census: 4,020,545 Moroccans and 9,677 foreign residents.",
     "codes": {
       "hcp": "1"
     }
@@ -554,12 +682,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 371391
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 136
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -570,6 +707,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B99920267922653",
     "population_note": "The legal population of Province d'Al Hoceima in the 2024 census (RGPH, September 2024): 371,391 Moroccans and 136 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'Al Hoceima in the 2024 census: 371,391 Moroccans and 136 foreign residents.",
     "codes": {
       "hcp": "1051"
     }
@@ -602,12 +742,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 412617
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 96
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -618,6 +767,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B54306876372793",
     "population_note": "The legal population of Province de Chefchaouen in the 2024 census (RGPH, September 2024): 412,617 Moroccans and 96 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Chefchaouen in the 2024 census: 412,617 Moroccans and 96 foreign residents.",
     "codes": {
       "hcp": "1151"
     }
@@ -650,12 +802,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 100700
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 89
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -666,6 +827,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B56432502406176",
     "population_note": "The legal population of Province de Fahs-Anjra in the 2024 census (RGPH, September 2024): 100,700 Moroccans and 89 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Fahs-Anjra in the 2024 census: 100,700 Moroccans and 89 foreign residents.",
     "codes": {
       "hcp": "1227"
     }
@@ -698,12 +862,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 510017
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 194
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -714,6 +887,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B18768670389586",
     "population_note": "The legal population of Province de Larache in the 2024 census (RGPH, September 2024): 510,017 Moroccans and 194 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Larache in the 2024 census: 510,017 Moroccans and 194 foreign residents.",
     "codes": {
       "hcp": "1331"
     }
@@ -746,12 +922,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.5,
+        "count": 1487175
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.5,
+        "count": 7238
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -762,6 +947,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B99361415702964",
     "population_note": "The legal population of Préfecture de Tanger-Assilah in the 2024 census (RGPH, September 2024): 1,487,175 Moroccans and 7,238 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture de Tanger-Assilah in the 2024 census: 1,487,175 Moroccans and 7,238 foreign residents.",
     "codes": {
       "hcp": "1511"
     }
@@ -769,7 +957,7 @@
   {
     "id": "MAR-RGPH2024-1405",
     "level": "admin2",
-    "name": "Province d'Ouezzane إقليم وزان",
+    "name": "Province d'Ouezzane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -794,12 +982,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 274500
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 77
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -809,7 +1006,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B93440982531475",
+    "aliases": [
+      "Province d'Ouezzane إقليم وزان"
+    ],
     "population_note": "The legal population of Province d'Ouezzane in the 2024 census (RGPH, September 2024): 274,500 Moroccans and 77 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'Ouezzane in the 2024 census: 274,500 Moroccans and 77 foreign residents.",
     "codes": {
       "hcp": "1405"
     }
@@ -817,7 +1020,7 @@
   {
     "id": "MAR-RGPH2024-1573",
     "level": "admin2",
-    "name": "Préfecture de M'diq-Fnideq عمالة المضيق الفنيدق",
+    "name": "Préfecture de M'diq-Fnideq",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -842,12 +1045,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.7,
+        "count": 253388
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 676
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -857,7 +1069,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B89687162507810",
+    "aliases": [
+      "Préfecture de M'diq-Fnideq عمالة المضيق الفنيدق"
+    ],
     "population_note": "The legal population of Préfecture de M'diq-Fnideq in the 2024 census (RGPH, September 2024): 253,388 Moroccans and 676 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture de M'diq-Fnideq in the 2024 census: 253,388 Moroccans and 676 foreign residents.",
     "codes": {
       "hcp": "1573"
     }
@@ -890,12 +1108,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.8,
+        "count": 610757
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 1171
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -906,6 +1133,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B84561517472973",
     "population_note": "The legal population of Province de Tétouan in the 2024 census (RGPH, September 2024): 610,757 Moroccans and 1,171 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Tétouan in the 2024 census: 610,757 Moroccans and 1,171 foreign residents.",
     "codes": {
       "hcp": "1571"
     }
@@ -913,7 +1143,7 @@
   {
     "id": "MAR-RGPH2024-2113",
     "level": "admin2",
-    "name": "Province de Berkane إقليم بركان",
+    "name": "Province de Berkane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -938,12 +1168,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.8,
+        "count": 283538
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 523
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -953,7 +1192,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B69343874835814",
+    "aliases": [
+      "Province de Berkane إقليم بركان"
+    ],
     "population_note": "The legal population of Province de Berkane in the 2024 census (RGPH, September 2024): 283,538 Moroccans and 523 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Berkane in the 2024 census: 283,538 Moroccans and 523 foreign residents.",
     "codes": {
       "hcp": "2113"
     }
@@ -961,7 +1206,7 @@
   {
     "id": "MAR-RGPH2024-2167",
     "level": "admin2",
-    "name": "Province de Driouch إقليم الدريوش",
+    "name": "Province de Driouch",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -986,12 +1231,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 188047
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 144
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1001,7 +1255,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B88930410593624",
+    "aliases": [
+      "Province de Driouch إقليم الدريوش"
+    ],
     "population_note": "The legal population of Province de Driouch in the 2024 census (RGPH, September 2024): 188,047 Moroccans and 144 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Driouch in the 2024 census: 188,047 Moroccans and 144 foreign residents.",
     "codes": {
       "hcp": "2167"
     }
@@ -1009,7 +1269,7 @@
   {
     "id": "MAR-RGPH2024-2251",
     "level": "admin2",
-    "name": "Province de Figuig إقليم الناظور",
+    "name": "Province de Figuig",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1034,12 +1294,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 144404
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 47
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1049,7 +1318,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B25874170222857",
+    "aliases": [
+      "Province de Figuig إقليم الناظور"
+    ],
     "population_note": "The legal population of Province de Figuig in the 2024 census (RGPH, September 2024): 144,404 Moroccans and 47 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Figuig in the 2024 census: 144,404 Moroccans and 47 foreign residents.",
     "codes": {
       "hcp": "2251"
     }
@@ -1057,7 +1332,7 @@
   {
     "id": "MAR-RGPH2024-2265",
     "level": "admin2",
-    "name": "Province de Guercif إقليم جرسيف",
+    "name": "Province de Guercif",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1082,12 +1357,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 215804
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1097,7 +1381,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B63064605054668",
+    "aliases": [
+      "Province de Guercif إقليم جرسيف"
+    ],
     "population_note": "The legal population of Province de Guercif in the 2024 census (RGPH, September 2024): 215,804 Moroccans and 33 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Guercif in the 2024 census: 215,804 Moroccans and 33 foreign residents.",
     "codes": {
       "hcp": "2265"
     }
@@ -1105,7 +1395,7 @@
   {
     "id": "MAR-RGPH2024-2275",
     "level": "admin2",
-    "name": "Province de Jerada إقليم جرادة",
+    "name": "Province de Jerada",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1130,12 +1420,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 103413
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 114
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1145,7 +1444,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B21390270390615",
+    "aliases": [
+      "Province de Jerada إقليم جرادة"
+    ],
     "population_note": "The legal population of Province de Jerada in the 2024 census (RGPH, September 2024): 103,413 Moroccans and 114 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Jerada in the 2024 census: 103,413 Moroccans and 114 foreign residents.",
     "codes": {
       "hcp": "2275"
     }
@@ -1153,7 +1458,7 @@
   {
     "id": "MAR-RGPH2024-2381",
     "level": "admin2",
-    "name": "Province de Nador إقليم الناظور",
+    "name": "Province de Nador",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1178,12 +1483,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 565542
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 445
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1193,7 +1507,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B25654465299878",
+    "aliases": [
+      "Province de Nador إقليم الناظور"
+    ],
     "population_note": "The legal population of Province de Nador in the 2024 census (RGPH, September 2024): 565,542 Moroccans and 445 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Nador in the 2024 census: 565,542 Moroccans and 445 foreign residents.",
     "codes": {
       "hcp": "2381"
     }
@@ -1201,7 +1521,7 @@
   {
     "id": "MAR-RGPH2024-2533",
     "level": "admin2",
-    "name": "Province de Taourirt إقليم تاوريرت",
+    "name": "Province de Taourirt",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1226,12 +1546,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 220062
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 95
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1241,7 +1570,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B4563753155162",
+    "aliases": [
+      "Province de Taourirt إقليم تاوريرت"
+    ],
     "population_note": "The legal population of Province de Taourirt in the 2024 census (RGPH, September 2024): 220,062 Moroccans and 95 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Taourirt in the 2024 census: 220,062 Moroccans and 95 foreign residents.",
     "codes": {
       "hcp": "2533"
     }
@@ -1249,7 +1584,7 @@
   {
     "id": "MAR-RGPH2024-2411",
     "level": "admin2",
-    "name": "Préfecture d'Oujda-Angad عمالة وجدة - أنجاد",
+    "name": "Préfecture d'Oujda-Angad",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1274,12 +1609,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.6,
+        "count": 570230
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.4,
+        "count": 2224
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1289,7 +1633,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B53695376753874",
+    "aliases": [
+      "Préfecture d'Oujda-Angad عمالة وجدة - أنجاد"
+    ],
     "population_note": "The legal population of Préfecture d'Oujda-Angad in the 2024 census (RGPH, September 2024): 570,230 Moroccans and 2,224 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture d'Oujda-Angad in the 2024 census: 570,230 Moroccans and 2,224 foreign residents.",
     "codes": {
       "hcp": "2411"
     }
@@ -1297,7 +1647,7 @@
   {
     "id": "MAR-RGPH2024-3061",
     "level": "admin2",
-    "name": "Prefecture de Meknès عمالة مكناس",
+    "name": "Prefecture de Meknès",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1322,12 +1672,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.8,
+        "count": 940900
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 2045
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1337,7 +1696,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B60043813814440",
+    "aliases": [
+      "Prefecture de Meknès عمالة مكناس"
+    ],
     "population_note": "The legal population of Préfecture de Meknès in the 2024 census (RGPH, September 2024): 940,900 Moroccans and 2,045 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture de Meknès in the 2024 census: 940,900 Moroccans and 2,045 foreign residents.",
     "codes": {
       "hcp": "3061"
     }
@@ -1345,7 +1710,7 @@
   {
     "id": "MAR-RGPH2024-3171",
     "level": "admin2",
-    "name": "Province d'El Hajeb إقليم الحاجب",
+    "name": "Province d'El Hajeb",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1370,12 +1735,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 267098
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 58
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1385,7 +1759,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B90056368806308",
+    "aliases": [
+      "Province d'El Hajeb إقليم الحاجب"
+    ],
     "population_note": "The legal population of Province d'El Hajeb in the 2024 census (RGPH, September 2024): 267,098 Moroccans and 58 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'El Hajeb in the 2024 census: 267,098 Moroccans and 58 foreign residents.",
     "codes": {
       "hcp": "3171"
     }
@@ -1393,7 +1773,7 @@
   {
     "id": "MAR-RGPH2024-3271",
     "level": "admin2",
-    "name": "Province d'Ifrane ⵜⴰⵙⴳⴰ ⵏ ⵉⴼⵔⴰⵏ إقليم إفران",
+    "name": "Province d'Ifrane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1418,12 +1798,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 160700
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 204
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1433,7 +1822,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B64717664824106",
+    "aliases": [
+      "Province d'Ifrane ⵜⴰⵙⴳⴰ ⵏ ⵉⴼⵔⴰⵏ إقليم إفران"
+    ],
     "population_note": "The legal population of Province d'Ifrane in the 2024 census (RGPH, September 2024): 160,700 Moroccans and 204 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'Ifrane in the 2024 census: 160,700 Moroccans and 204 foreign residents.",
     "codes": {
       "hcp": "3271"
     }
@@ -1441,7 +1836,7 @@
   {
     "id": "MAR-RGPH2024-3131",
     "level": "admin2",
-    "name": "Province de Boulemane إقليم بولمان",
+    "name": "Province de Boulemane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1466,12 +1861,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 205377
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 34
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1481,7 +1885,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B81090244987905",
+    "aliases": [
+      "Province de Boulemane إقليم بولمان"
+    ],
     "population_note": "The legal population of Province de Boulemane in the 2024 census (RGPH, September 2024): 205,377 Moroccans and 34 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Boulemane in the 2024 census: 205,377 Moroccans and 34 foreign residents.",
     "codes": {
       "hcp": "3131"
     }
@@ -1489,7 +1899,7 @@
   {
     "id": "MAR-RGPH2024-3591",
     "level": "admin2",
-    "name": "Province de Moulay Yacoub إقليم مولاي يعقوب",
+    "name": "Province de Moulay Yacoub",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1514,12 +1924,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 216789
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 165
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1529,7 +1948,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B42104761334354",
+    "aliases": [
+      "Province de Moulay Yacoub إقليم مولاي يعقوب"
+    ],
     "population_note": "The legal population of Province de Moulay Yacoub in the 2024 census (RGPH, September 2024): 216,789 Moroccans and 165 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Moulay Yacoub in the 2024 census: 216,789 Moroccans and 165 foreign residents.",
     "codes": {
       "hcp": "3591"
     }
@@ -1537,7 +1962,7 @@
   {
     "id": "MAR-RGPH2024-3451",
     "level": "admin2",
-    "name": "Province de Sefrou إقليم صفرو",
+    "name": "Province de Sefrou",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1562,12 +1987,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 304552
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 196
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1577,7 +2011,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B1478822582790",
+    "aliases": [
+      "Province de Sefrou إقليم صفرو"
+    ],
     "population_note": "The legal population of Province de Sefrou in the 2024 census (RGPH, September 2024): 304,552 Moroccans and 196 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Sefrou in the 2024 census: 304,552 Moroccans and 196 foreign residents.",
     "codes": {
       "hcp": "3451"
     }
@@ -1585,7 +2025,7 @@
   {
     "id": "MAR-RGPH2024-3531",
     "level": "admin2",
-    "name": "Province de Taounate إقليم تاونات",
+    "name": "Province de Taounate",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1610,12 +2050,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 612582
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 68
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1625,7 +2074,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B36967765471663",
+    "aliases": [
+      "Province de Taounate إقليم تاونات"
+    ],
     "population_note": "The legal population of Province de Taounate in the 2024 census (RGPH, September 2024): 612,582 Moroccans and 68 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Taounate in the 2024 census: 612,582 Moroccans and 68 foreign residents.",
     "codes": {
       "hcp": "3531"
     }
@@ -1633,7 +2088,7 @@
   {
     "id": "MAR-RGPH2024-3561",
     "level": "admin2",
-    "name": "Province de Taza اقليم تازة",
+    "name": "Province de Taza",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1658,12 +2113,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 500844
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 127
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1673,7 +2137,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B85287588144355",
+    "aliases": [
+      "Province de Taza اقليم تازة"
+    ],
     "population_note": "The legal population of Province de Taza in the 2024 census (RGPH, September 2024): 500,844 Moroccans and 127 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Taza in the 2024 census: 500,844 Moroccans and 127 foreign residents.",
     "codes": {
       "hcp": "3561"
     }
@@ -1681,7 +2151,7 @@
   {
     "id": "MAR-RGPH2024-3231",
     "level": "admin2",
-    "name": "Préfecture de Fès عمالة فاس",
+    "name": "Préfecture de Fès",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1706,12 +2176,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.7,
+        "count": 1252340
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 3832
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1721,7 +2200,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B2759448404756",
+    "aliases": [
+      "Préfecture de Fès عمالة فاس"
+    ],
     "population_note": "The legal population of Préfecture de Fès in the 2024 census (RGPH, September 2024): 1,252,340 Moroccans and 3,832 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture de Fès in the 2024 census: 1,252,340 Moroccans and 3,832 foreign residents.",
     "codes": {
       "hcp": "3231"
     }
@@ -1754,12 +2239,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 97.2,
+        "count": 501005
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 2.8,
+        "count": 14614
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1770,6 +2264,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B91545835536411",
     "population_note": "The legal population of Préfecture de Rabat in the 2024 census (RGPH, September 2024): 501,005 Moroccans and 14,614 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture de Rabat in the 2024 census: 501,005 Moroccans and 14,614 foreign residents.",
     "codes": {
       "hcp": "4421"
     }
@@ -1802,12 +2299,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.4,
+        "count": 1082784
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.6,
+        "count": 6770
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1818,6 +2324,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B6720908192283",
     "population_note": "The legal population of Préfecture de Salé in the 2024 census (RGPH, September 2024): 1,082,784 Moroccans and 6,770 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture de Salé in the 2024 census: 1,082,784 Moroccans and 6,770 foreign residents.",
     "codes": {
       "hcp": "4441"
     }
@@ -1825,7 +2334,7 @@
   {
     "id": "MAR-RGPH2024-4281",
     "level": "admin2",
-    "name": "Province de Kenitra إقليم القنيطرة",
+    "name": "Province de Kenitra",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1850,12 +2359,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.8,
+        "count": 1281256
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 2991
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1865,7 +2383,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B12662883146655",
+    "aliases": [
+      "Province de Kenitra إقليم القنيطرة"
+    ],
     "population_note": "The legal population of Province de Kénitra in the 2024 census (RGPH, September 2024): 1,281,256 Moroccans and 2,991 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Kénitra in the 2024 census: 1,281,256 Moroccans and 2,991 foreign residents.",
     "codes": {
       "hcp": "4281"
     }
@@ -1873,7 +2397,7 @@
   {
     "id": "MAR-RGPH2024-4291",
     "level": "admin2",
-    "name": "Province de Khémisset إقليم الخميسات",
+    "name": "Province de Khémisset",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1898,12 +2422,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 562745
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 291
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1913,7 +2446,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B24539393832458",
+    "aliases": [
+      "Province de Khémisset إقليم الخميسات"
+    ],
     "population_note": "The legal population of Province de Khémisset in the 2024 census (RGPH, September 2024): 562,745 Moroccans and 291 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Khémisset in the 2024 census: 562,745 Moroccans and 291 foreign residents.",
     "codes": {
       "hcp": "4291"
     }
@@ -1921,7 +2460,7 @@
   {
     "id": "MAR-RGPH2024-4481",
     "level": "admin2",
-    "name": "Province de Sidi Kacem إقليم سيدي قاسم",
+    "name": "Province de Sidi Kacem",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1946,12 +2485,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 545426
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 83
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -1961,7 +2509,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B9718685225615",
+    "aliases": [
+      "Province de Sidi Kacem إقليم سيدي قاسم"
+    ],
     "population_note": "The legal population of Province de Sidi Kacem in the 2024 census (RGPH, September 2024): 545,426 Moroccans and 83 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Sidi Kacem in the 2024 census: 545,426 Moroccans and 83 foreign residents.",
     "codes": {
       "hcp": "4481"
     }
@@ -1969,7 +2523,7 @@
   {
     "id": "MAR-RGPH2024-4491",
     "level": "admin2",
-    "name": "Province de Sidi Slimane إقليم سيدي سليمان",
+    "name": "Province de Sidi Slimane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -1994,12 +2548,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 351146
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 53
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2009,7 +2572,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B64432809888793",
+    "aliases": [
+      "Province de Sidi Slimane إقليم سيدي سليمان"
+    ],
     "population_note": "The legal population of Province de Sidi Slimane in the 2024 census (RGPH, September 2024): 351,146 Moroccans and 53 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Sidi Slimane in the 2024 census: 351,146 Moroccans and 53 foreign residents.",
     "codes": {
       "hcp": "4491"
     }
@@ -2017,7 +2586,7 @@
   {
     "id": "MAR-RGPH2024-4501",
     "level": "admin2",
-    "name": "Préfecture de Skhirate-Témara عمالة الصخيرات-تمارة",
+    "name": "Préfecture de Skhirate-Témara",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2042,12 +2611,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.4,
+        "count": 779044
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.6,
+        "count": 4431
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2057,7 +2635,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B91342156363380",
+    "aliases": [
+      "Préfecture de Skhirate-Témara عمالة الصخيرات-تمارة"
+    ],
     "population_note": "The legal population of Préfecture de Skhirate-Témara in the 2024 census (RGPH, September 2024): 779,044 Moroccans and 4,431 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture de Skhirate-Témara in the 2024 census: 779,044 Moroccans and 4,431 foreign residents.",
     "codes": {
       "hcp": "4501"
     }
@@ -2065,7 +2649,7 @@
   {
     "id": "MAR-RGPH2024-5081",
     "level": "admin2",
-    "name": "Province d'Azilal إقليم أزيلال",
+    "name": "Province d'Azilal",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2090,12 +2674,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 574051
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 61
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2105,7 +2698,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B10773066300421",
+    "aliases": [
+      "Province d'Azilal إقليم أزيلال"
+    ],
     "population_note": "The legal population of Province d'Azilal in the 2024 census (RGPH, September 2024): 574,051 Moroccans and 61 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'Azilal in the 2024 census: 574,051 Moroccans and 61 foreign residents.",
     "codes": {
       "hcp": "5081"
     }
@@ -2113,7 +2712,7 @@
   {
     "id": "MAR-RGPH2024-5091",
     "level": "admin2",
-    "name": "Province de Beni Mellal إقليم بني ملال",
+    "name": "Province de Beni Mellal",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2138,12 +2737,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 579729
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 598
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2153,7 +2761,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B40957387644980",
+    "aliases": [
+      "Province de Beni Mellal إقليم بني ملال"
+    ],
     "population_note": "The legal population of Province de Béni Mellal in the 2024 census (RGPH, September 2024): 579,729 Moroccans and 598 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Béni Mellal in the 2024 census: 579,729 Moroccans and 598 foreign residents.",
     "codes": {
       "hcp": "5091"
     }
@@ -2161,7 +2775,7 @@
   {
     "id": "MAR-RGPH2024-5255",
     "level": "admin2",
-    "name": "Province de Fquih Ben Saleh إقليم الفقيه بن صالح",
+    "name": "Province de Fquih Ben Saleh",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2186,12 +2800,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 475893
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 84
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2201,7 +2824,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B50122508033550",
+    "aliases": [
+      "Province de Fquih Ben Saleh إقليم الفقيه بن صالح"
+    ],
     "population_note": "The legal population of Province de Fquih Ben Salah in the 2024 census (RGPH, September 2024): 475,893 Moroccans and 84 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Fquih Ben Salah in the 2024 census: 475,893 Moroccans and 84 foreign residents.",
     "codes": {
       "hcp": "5255"
     }
@@ -2209,7 +2838,7 @@
   {
     "id": "MAR-RGPH2024-5311",
     "level": "admin2",
-    "name": "Province de Khouribga إقليم خريبكة",
+    "name": "Province de Khouribga",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2234,12 +2863,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 524712
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 433
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2249,7 +2887,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B15248572972708",
+    "aliases": [
+      "Province de Khouribga إقليم خريبكة"
+    ],
     "population_note": "The legal population of Province de Khouribga in the 2024 census (RGPH, September 2024): 524,712 Moroccans and 433 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Khouribga in the 2024 census: 524,712 Moroccans and 433 foreign residents.",
     "codes": {
       "hcp": "5311"
     }
@@ -2257,7 +2901,7 @@
   {
     "id": "MAR-RGPH2024-5301",
     "level": "admin2",
-    "name": "Province de Khénifra إقليم خنيفرة",
+    "name": "Province de Khénifra",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2282,12 +2926,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 370156
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 84
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2297,7 +2950,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B52871738396395",
+    "aliases": [
+      "Province de Khénifra إقليم خنيفرة"
+    ],
     "population_note": "The legal population of Province de Khénifra in the 2024 census (RGPH, September 2024): 370,156 Moroccans and 84 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Khénifra in the 2024 census: 370,156 Moroccans and 84 foreign residents.",
     "codes": {
       "hcp": "5301"
     }
@@ -2330,12 +2989,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.8,
+        "count": 639618
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 1039
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2346,6 +3014,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B26045285741175",
     "population_note": "The legal population of Province de Berrechid in the 2024 census (RGPH, September 2024): 639,618 Moroccans and 1,039 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Berrechid in the 2024 census: 639,618 Moroccans and 1,039 foreign residents.",
     "codes": {
       "hcp": "6117"
     }
@@ -2378,12 +3049,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.8,
+        "count": 912835
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 1532
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2394,6 +3074,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B5863178934624",
     "population_note": "The legal population of Province d'El Jadida in the 2024 census (RGPH, September 2024): 912,835 Moroccans and 1,532 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'El Jadida in the 2024 census: 912,835 Moroccans and 1,532 foreign residents.",
     "codes": {
       "hcp": "6181"
     }
@@ -2426,12 +3109,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 345507
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 280
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2442,6 +3134,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B92138134403299",
     "population_note": "The legal population of Province de Médiouna in the 2024 census (RGPH, September 2024): 345,507 Moroccans and 280 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Médiouna in the 2024 census: 345,507 Moroccans and 280 foreign residents.",
     "codes": {
       "hcp": "6355"
     }
@@ -2474,12 +3169,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 98.9,
+        "count": 665135
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.1,
+        "count": 7189
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2490,6 +3194,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B89345886069248",
     "population_note": "The legal population of Province de Nouaceur in the 2024 census (RGPH, September 2024): 665,135 Moroccans and 7,189 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Nouaceur in the 2024 census: 665,135 Moroccans and 7,189 foreign residents.",
     "codes": {
       "hcp": "6385"
     }
@@ -2522,12 +3229,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 98.6,
+        "count": 3172072
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.4,
+        "count": 45964
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2538,6 +3254,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B69656421663665",
     "population_note": "The legal population of Préfecture de Casablanca in the 2024 census (RGPH, September 2024): 3,172,072 Moroccans and 45,964 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture de Casablanca in the 2024 census: 3,172,072 Moroccans and 45,964 foreign residents.",
     "codes": {
       "hcp": "6141"
     }
@@ -2570,12 +3289,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.4,
+        "count": 510951
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.6,
+        "count": 3106
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2586,6 +3314,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B27397508075839",
     "population_note": "The legal population of Préfecture de Mohammadia in the 2024 census (RGPH, September 2024): 510,951 Moroccans and 3,106 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture de Mohammadia in the 2024 census: 510,951 Moroccans and 3,106 foreign residents.",
     "codes": {
       "hcp": "6371"
     }
@@ -2593,7 +3324,7 @@
   {
     "id": "MAR-RGPH2024-6111",
     "level": "admin2",
-    "name": "Province de Benslimane إقليم بن سليمان",
+    "name": "Province de Benslimane",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2618,12 +3349,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.7,
+        "count": 278768
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 749
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2633,7 +3373,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B34372354169334",
+    "aliases": [
+      "Province de Benslimane إقليم بن سليمان"
+    ],
     "population_note": "The legal population of Province de Benslimane in the 2024 census (RGPH, September 2024): 278,768 Moroccans and 749 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Benslimane in the 2024 census: 278,768 Moroccans and 749 foreign residents.",
     "codes": {
       "hcp": "6111"
     }
@@ -2641,7 +3387,7 @@
   {
     "id": "MAR-RGPH2024-6467",
     "level": "admin2",
-    "name": "Province de Sidi Bennour إقليم سيدي بنور",
+    "name": "Province de Sidi Bennour",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2666,12 +3412,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 451852
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 78
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2681,7 +3436,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B30309850889145",
+    "aliases": [
+      "Province de Sidi Bennour إقليم سيدي بنور"
+    ],
     "population_note": "The legal population of Province de Sidi Bennour in the 2024 census (RGPH, September 2024): 451,852 Moroccans and 78 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Sidi Bennour in the 2024 census: 451,852 Moroccans and 78 foreign residents.",
     "codes": {
       "hcp": "6467"
     }
@@ -2714,12 +3475,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 651327
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 965
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2730,6 +3500,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B9799798831472",
     "population_note": "The legal population of Province de Settat in the 2024 census (RGPH, September 2024): 651,327 Moroccans and 965 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Settat in the 2024 census: 651,327 Moroccans and 965 foreign residents.",
     "codes": {
       "hcp": "6461"
     }
@@ -2762,12 +3535,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 642171
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 644
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2778,6 +3560,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B698999344864",
     "population_note": "The legal population of Province d'Al Haouz in the 2024 census (RGPH, September 2024): 642,171 Moroccans and 644 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'Al Haouz in the 2024 census: 642,171 Moroccans and 644 foreign residents.",
     "codes": {
       "hcp": "7041"
     }
@@ -2810,12 +3595,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 378932
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 147
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2826,6 +3620,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B46616002618727",
     "population_note": "The legal population of Province de Chichaoua in the 2024 census (RGPH, September 2024): 378,932 Moroccans and 147 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Chichaoua in the 2024 census: 378,932 Moroccans and 147 foreign residents.",
     "codes": {
       "hcp": "7161"
     }
@@ -2858,12 +3655,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.7,
+        "count": 425449
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 1270
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2874,6 +3680,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B53936679900609",
     "population_note": "The legal population of Province d'Essaouira in the 2024 census (RGPH, September 2024): 425,449 Moroccans and 1,270 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'Essaouira in the 2024 census: 425,449 Moroccans and 1,270 foreign residents.",
     "codes": {
       "hcp": "7211"
     }
@@ -2881,7 +3690,7 @@
   {
     "id": "MAR-RGPH2024-7191",
     "level": "admin2",
-    "name": "Province d'El Kelâat Es-Sraghna إقليم قلعة السراغنة",
+    "name": "Province d'El Kelâat Es-Sraghna",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2906,12 +3715,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 560075
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 198
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2921,7 +3739,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B21870556317795",
+    "aliases": [
+      "Province d'El Kelâat Es-Sraghna إقليم قلعة السراغنة"
+    ],
     "population_note": "The legal population of Province d'El Kelâa Des-Sraghna in the 2024 census (RGPH, September 2024): 560,075 Moroccans and 198 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'El Kelâa Des-Sraghna in the 2024 census: 560,075 Moroccans and 198 foreign residents.",
     "codes": {
       "hcp": "7191"
     }
@@ -2929,7 +3753,7 @@
   {
     "id": "MAR-RGPH2024-7431",
     "level": "admin2",
-    "name": "Province de Safi إقليم أسفي",
+    "name": "Province de Safi",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -2954,12 +3778,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 719299
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 372
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -2969,7 +3802,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B23117375948520",
+    "aliases": [
+      "Province de Safi إقليم أسفي"
+    ],
     "population_note": "The legal population of Province de Safi in the 2024 census (RGPH, September 2024): 719,299 Moroccans and 372 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Safi in the 2024 census: 719,299 Moroccans and 372 foreign residents.",
     "codes": {
       "hcp": "7431"
     }
@@ -2977,7 +3816,7 @@
   {
     "id": "MAR-RGPH2024-7585",
     "level": "admin2",
-    "name": "Province de Youssoufia إقليم اليوسفية",
+    "name": "Province de Youssoufia",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -3002,12 +3841,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 246098
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 50
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3017,7 +3865,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B54259280648674",
+    "aliases": [
+      "Province de Youssoufia إقليم اليوسفية"
+    ],
     "population_note": "The legal population of Province de Youssoufia in the 2024 census (RGPH, September 2024): 246,098 Moroccans and 50 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Youssoufia in the 2024 census: 246,098 Moroccans and 50 foreign residents.",
     "codes": {
       "hcp": "7585"
     }
@@ -3025,7 +3879,7 @@
   {
     "id": "MAR-RGPH2024-7351",
     "level": "admin2",
-    "name": "Préfecture de Marrakech عمالة مراكش",
+    "name": "Préfecture de Marrakech",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -3050,12 +3904,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.3,
+        "count": 1560704
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.7,
+        "count": 10876
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3065,7 +3928,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B80339347175881",
+    "aliases": [
+      "Préfecture de Marrakech عمالة مراكش"
+    ],
     "population_note": "The legal population of Préfecture de Marrakech in the 2024 census (RGPH, September 2024): 1,560,704 Moroccans and 10,876 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture de Marrakech in the 2024 census: 1,560,704 Moroccans and 10,876 foreign residents.",
     "codes": {
       "hcp": "7351"
     }
@@ -3098,12 +3967,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 345772
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 336
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3114,6 +3992,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B21316479060137",
     "population_note": "The legal population of Province de Rehamna in the 2024 census (RGPH, September 2024): 345,772 Moroccans and 336 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Rehamna in the 2024 census: 345,772 Moroccans and 336 foreign residents.",
     "codes": {
       "hcp": "7427"
     }
@@ -3146,12 +4027,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 304760
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 172
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3162,6 +4052,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B41522516415054",
     "population_note": "The legal population of Province d'Ouarzazate in the 2024 census (RGPH, September 2024): 304,760 Moroccans and 172 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'Ouarzazate in the 2024 census: 304,760 Moroccans and 172 foreign residents.",
     "codes": {
       "hcp": "8401"
     }
@@ -3169,7 +4062,7 @@
   {
     "id": "MAR-RGPH2024-8201",
     "level": "admin2",
-    "name": "Province d'Errachidia إقليم الرشيدية",
+    "name": "Province d'Errachidia",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -3194,12 +4087,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 427309
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 263
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3209,7 +4111,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B35891480133263",
+    "aliases": [
+      "Province d'Errachidia إقليم الرشيدية"
+    ],
     "population_note": "The legal population of Province d'Errachidia in the 2024 census (RGPH, September 2024): 427,309 Moroccans and 263 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'Errachidia in the 2024 census: 427,309 Moroccans and 263 foreign residents.",
     "codes": {
       "hcp": "8201"
     }
@@ -3217,7 +4125,7 @@
   {
     "id": "MAR-RGPH2024-8363",
     "level": "admin2",
-    "name": "Province de Midelt إقليم ميدلت",
+    "name": "Province de Midelt",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -3242,12 +4150,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 313627
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 142
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3257,7 +4174,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B71822601453569",
+    "aliases": [
+      "Province de Midelt إقليم ميدلت"
+    ],
     "population_note": "The legal population of Province de Midelt in the 2024 census (RGPH, September 2024): 313,627 Moroccans and 142 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Midelt in the 2024 census: 313,627 Moroccans and 142 foreign residents.",
     "codes": {
       "hcp": "8363"
     }
@@ -3265,7 +4188,7 @@
   {
     "id": "MAR-RGPH2024-8577",
     "level": "admin2",
-    "name": "Province de Tinghir إقليم تنغير",
+    "name": "Province de Tinghir",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -3290,12 +4213,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 323764
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 41
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3305,7 +4237,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B39685617616684",
+    "aliases": [
+      "Province de Tinghir إقليم تنغير"
+    ],
     "population_note": "The legal population of Province de Tinghir in the 2024 census (RGPH, September 2024): 323,764 Moroccans and 41 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Tinghir in the 2024 census: 323,764 Moroccans and 41 foreign residents.",
     "codes": {
       "hcp": "8577"
     }
@@ -3338,12 +4276,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 285482
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 63
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3354,6 +4301,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B83322507681707",
     "population_note": "The legal population of Province de Zagora in the 2024 census (RGPH, September 2024): 285,482 Moroccans and 63 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Zagora in the 2024 census: 285,482 Moroccans and 63 foreign residents.",
     "codes": {
       "hcp": "8587"
     }
@@ -3386,12 +4336,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.4,
+        "count": 716940
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.6,
+        "count": 4491
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3402,6 +4361,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B63187791317705",
     "population_note": "The legal population of Préfecture d'Agadir-Ida-Ou-Tanane in the 2024 census (RGPH, September 2024): 716,940 Moroccans and 4,491 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture d'Agadir-Ida-Ou-Tanane in the 2024 census: 716,940 Moroccans and 4,491 foreign residents.",
     "codes": {
       "hcp": "9001"
     }
@@ -3434,12 +4396,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 98.6,
+        "count": 486825
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 1.4,
+        "count": 6798
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3450,6 +4421,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B99021473747258",
     "population_note": "The legal population of Province de Chtouka-Aït Baha in the 2024 census (RGPH, September 2024): 486,825 Moroccans and 6,798 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Chtouka-Aït Baha in the 2024 census: 486,825 Moroccans and 6,798 foreign residents.",
     "codes": {
       "hcp": "9163"
     }
@@ -3482,12 +4456,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.7,
+        "count": 634881
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.3,
+        "count": 2035
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3498,6 +4481,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B99662254658575",
     "population_note": "The legal population of Préfecture d'Inezgane-Aït Melloul in the 2024 census (RGPH, September 2024): 634,881 Moroccans and 2,035 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Préfecture d'Inezgane-Aït Melloul in the 2024 census: 634,881 Moroccans and 2,035 foreign residents.",
     "codes": {
       "hcp": "9273"
     }
@@ -3530,12 +4516,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 111744
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 13
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3546,6 +4541,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B26550498921337",
     "population_note": "The legal population of Province de Tata in the 2024 census (RGPH, September 2024): 111,744 Moroccans and 13 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Tata in the 2024 census: 111,744 Moroccans and 13 foreign residents.",
     "codes": {
       "hcp": "9551"
     }
@@ -3578,12 +4576,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 198367
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 175
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3594,6 +4601,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B52167870329218",
     "population_note": "The legal population of Province de Tiznit in the 2024 census (RGPH, September 2024): 198,367 Moroccans and 175 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Tiznit in the 2024 census: 198,367 Moroccans and 175 foreign residents.",
     "codes": {
       "hcp": "9581"
     }
@@ -3626,12 +4636,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 857673
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 489
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3642,6 +4661,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B53703826618026",
     "population_note": "The legal population of Province de Taroudannt in the 2024 census (RGPH, September 2024): 857,673 Moroccans and 489 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Taroudannt in the 2024 census: 857,673 Moroccans and 489 foreign residents.",
     "codes": {
       "hcp": "9541"
     }
@@ -3658,7 +4680,7 @@
       "status": "not_available"
     },
     "population": {
-      "value": 53298,
+      "value": 34159,
       "year": 2024,
       "source": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes"
     },
@@ -3674,12 +4696,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 100.0,
+        "count": 34151
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3689,7 +4720,10 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B62254917052717",
-    "population_note": "The legal population of Province d'Assa-Zag in the 2024 census (RGPH, September 2024): 53,289 Moroccans and 9 foreign residents.",
+    "population_note": "The legal population of Province d'Assa-Zag in the 2024 census (RGPH, September 2024) without the commune of Al Mahbass (19,139 people), which lies south of the Western Sahara line: 34,151 Moroccans and 8 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province d'Assa-Zag in the 2024 census without the commune of Al Mahbass (19,139 people), which lies south of the Western Sahara line: 34,151 Moroccans and 8 foreign residents.",
     "codes": {
       "hcp": "10071"
     }
@@ -3722,12 +4756,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.8,
+        "count": 195919
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 348
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3738,6 +4781,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B36466177595872",
     "population_note": "The legal population of Province de Guelmim in the 2024 census (RGPH, September 2024): 195,919 Moroccans and 348 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Guelmim in the 2024 census: 195,919 Moroccans and 348 foreign residents.",
     "codes": {
       "hcp": "10261"
     }
@@ -3745,7 +4791,7 @@
   {
     "id": "MAR-RGPH2024-10521",
     "level": "admin2",
-    "name": "Province de Tan-Tan إقليم طانطان",
+    "name": "Province de Tan-Tan",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -3770,12 +4816,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 94433
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 86
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3785,7 +4840,13 @@
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B8060198419886",
+    "aliases": [
+      "Province de Tan-Tan إقليم طانطان"
+    ],
     "population_note": "The legal population of Province de Tan-Tan in the 2024 census (RGPH, September 2024): 94,433 Moroccans and 86 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Tan-Tan in the 2024 census: 94,433 Moroccans and 86 foreign residents.",
     "codes": {
       "hcp": "10521"
     }
@@ -3818,12 +4879,21 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Moroccan",
+        "pct": 99.9,
+        "count": 104511
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.1,
+        "count": 90
+      }
+    ],
     "sources": [
       {
-        "field": "population",
+        "field": "population/ethnicity",
         "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
         "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
         "license": "HCP open data (reuse with attribution)",
@@ -3834,6 +4904,9 @@
     "match_by": "shape_id",
     "shape_id": "96644757B51161748863193",
     "population_note": "The legal population of Province de Sidi Ifni in the 2024 census (RGPH, September 2024): 104,511 Moroccans and 90 foreign residents.",
+    "ethnicity_basis": "nationality",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Nationality, from the legal population of Province de Sidi Ifni in the 2024 census: 104,511 Moroccans and 90 foreign residents.",
     "codes": {
       "hcp": "10473"
     }
@@ -3879,7 +4952,15 @@
       "note": "This polygon is a sliver of 0.7 km2 at the Western Sahara line, labelled for Oued Ed-Dahab province. The 2024 census counts Oued Ed-Dahab province whole (195,467 people), almost all of it across that line, and no source counts this piece apart, so no figure is shown here.",
       "displaces_before": 2025
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population note/median_age note/sex_ratio note/religion note/language note/ethnicity note",
+        "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
+        "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B78111329468616"
@@ -3887,7 +4968,7 @@
   {
     "id": "MAR-RGPH2024-piece-96644757B70524131405695",
     "level": "admin2",
-    "name": "Province d'Es-Semara إقليم السمارة",
+    "name": "Province d'Es-Semara",
     "parent": "MAR",
     "capital": {
       "status": "not_available"
@@ -3925,10 +5006,21 @@
       "note": "This polygon is the 2,016 km2 part of Es-Semara province north of the Western Sahara line. The 2024 census counts Es-Semara province whole (73,864 people), almost all of it across that line, and no source counts this piece apart, so no figure is shown here.",
       "displaces_before": 2025
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population note/median_age note/sex_ratio note/religion note/language note/ethnicity note",
+        "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
+        "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
     "country": "MAR",
     "match_by": "shape_id",
-    "shape_id": "96644757B70524131405695"
+    "shape_id": "96644757B70524131405695",
+    "aliases": [
+      "Province d'Es-Semara إقليم السمارة"
+    ]
   },
   {
     "id": "MAR-RGPH2024-part-96644757B75888110493475",
@@ -3943,35 +5035,43 @@
     },
     "population": {
       "status": "not_available",
-      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
+      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) and that of El Hagounia (561 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
       "displaces_before": 2025
     },
     "median_age": {
       "status": "not_available",
-      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
+      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) and that of El Hagounia (561 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
       "displaces_before": 2025
     },
     "sex_ratio": {
       "status": "not_available",
-      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
+      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) and that of El Hagounia (561 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
       "displaces_before": 2025
     },
     "religion": {
       "status": "not_available",
-      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
+      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) and that of El Hagounia (561 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
       "displaces_before": 2025
     },
     "language": {
       "status": "not_available",
-      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
+      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) and that of El Hagounia (561 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
       "displaces_before": 2025
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
+      "note": "This polygon is the part of Tarfaya province north of the Western Sahara line. The 2024 census counts Tarfaya province whole (16,228 people), the commune of Daoura (902 people) and that of El Hagounia (561 people) south of that line among them, and no figure for the part north of it alone has been read, so none is shown here.",
       "displaces_before": 2025
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population note/median_age note/sex_ratio note/religion note/language note/ethnicity note",
+        "name": "Haut-Commissariat au Plan (HCP), Recensement Général de la Population et de l'Habitat 2024, population légale des régions, provinces, préfectures et communes",
+        "url": "https://www.hcp.ma/Population-legale-du-Royaume-du-Maroc-repartie-par-regions-provinces-et-prefectures-et-communes-selon-les-resultats-du_a3974.html",
+        "license": "HCP open data (reuse with attribution)",
+        "year": 2024
+      }
+    ],
     "country": "MAR",
     "match_by": "shape_id",
     "shape_id": "96644757B75888110493475"

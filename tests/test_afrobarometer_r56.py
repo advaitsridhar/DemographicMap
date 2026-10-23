@@ -69,13 +69,14 @@ class ReadingAnAnswer(unittest.TestCase):
         for text in ("Refused", "Don't know", "Missing", ""):
             self.assertIsNone(ab.answer(text))
 
-    def test_naming_no_ethnic_group_is_an_answer(self):
-        """Both releases' punctuation of the same answer must be recognised."""
+    def test_naming_only_a_nationality_is_an_answer(self):
+        """Both releases' punctuation of the same answer must be recognised,
+        and it is written as what was said, not as "No ethnic group"."""
         for text in ('National identity only, or "doesn\'t think of self in '
                      'those terms"',
                      "National identity only, or 'doesnt think of self in "
                      "those terms'"):
-            self.assertEqual(ab.answer(text), "No ethnic group")
+            self.assertEqual(ab.answer(text), "National identity only")
 
     def test_the_codebooks_only_suffix_is_dropped(self):
         self.assertEqual(ab.answer("Muslim only"), "Muslim")

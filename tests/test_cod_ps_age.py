@@ -105,5 +105,127 @@ class UnitFigures(unittest.TestCase):
         self.assertIn("do not add up", why)
 
 
+def unit(name, level, groups, ratio=1000, parent=None):
+    """A written record as country_records leaves it, groups [[low, high, people]]."""
+    rec = cpa.record(f"X-{name}", name, level=level, parent="XXX", country="XXX",
+                     parent_name=parent,
+                     median_age={"value": 20.0, "unit": "years", "year": 2022, "source": "s"},
+                     median_age_note="interpolated",
+                     sex_ratio={"value": ratio, "unit": "males_per_1000_females",
+                                "year": 2022, "source": "s"},
+                     sex_ratio_note="males per 1,000 females",
+                     sources=[{"field": "median_age/sex_ratio", "name": "s"}],
+                     age_groups=[list(g) for g in groups])
+    return rec
+
+
+YOUNG = [(0, 14, 450.0), (15, 64, 520.0), (65, None, 30.0)]
+OLDER = [(0, 14, 300.0), (15, 64, 600.0), (65, None, 100.0)]
+MIDDLE = [(0, 14, 380.0), (15, 64, 560.0), (65, None, 60.0)]
+
+
+def scaled(groups, k):
+    return [(lo, hi, n * k) for lo, hi, n in groups]
+
+
+class NamesakeLevel(unittest.TestCase):
+    def test_a_short_table_landing_on_the_other_level_is_refused(self):
+        # Niger: the file's adm1 table, eight regions, matched the departments
+        # named after the regional capitals (67 drawn at the second level).
+        regions = ["Agadez", "Diffa", "Dosso", "Maradi", "Niamey", "Tahoua", "Tillaberi", "Zinder"]
+        why = cpa.namesake_level("1", "admin2", regions, 67)
+        self.assertIsNotNone(why)
+        self.assertIn("8 rows", why)
+
+    def test_a_table_the_size_of_the_level_it_lands_on_stands(self):
+        # Romania: the file's adm2 table is the 42 judete, this map's first level.
+        self.assertIsNone(cpa.namesake_level("2", "admin1", [f"J{i}" for i in range(42)], 42))
+
+    def test_agreement_is_never_refused(self):
+        self.assertIsNone(cpa.namesake_level("2", "admin2", ["a", "b"], 300))
+
+
+class CopiedStructures(unittest.TestCase):
+    def test_one_structure_for_every_unit_withdraws_the_medians_and_keeps_the_ratios(self):
+        # Liberia: every county carries the national proportions.
+        recs = [unit(f"c{i}", "admin1", scaled(YOUNG, 1 + i), ratio=950 + 20 * i)
+                for i in range(5)]
+        out = cpa.drop_copied_structures("LBR", recs)
+        for rec in out:
+            self.assertEqual(rec["median_age"]["status"], "not_available")
+            self.assertIn("the same age proportions", rec["median_age"]["note"])
+            self.assertNotIn("median_age_note", rec)
+            self.assertNotIn("age_groups", rec)
+            self.assertIn("value", rec["sex_ratio"])
+            self.assertEqual(rec["sources"][0]["field"], "sex_ratio")
+
+    def test_districts_with_their_regions_proportions_and_ratios_lose_both(self):
+        # Burkina Faso: each province carries its region's ages and sexes.
+        regions = [unit("North", "admin1", YOUNG, ratio=930),
+                   unit("South", "admin1", OLDER, ratio=980)]
+        provinces = [unit(f"n{i}", "admin2", scaled(YOUNG, 0.2 + i), ratio=930, parent="North")
+                     for i in range(3)] + \
+                    [unit(f"s{i}", "admin2", scaled(OLDER, 0.3 + i), ratio=981, parent="South")
+                     for i in range(3)]
+        out = cpa.drop_copied_structures("BFA", regions + provinces)
+        for rec in out:
+            if rec["level"] == "admin1":
+                self.assertIn("value", rec["median_age"])
+                self.assertIn("value", rec["sex_ratio"])
+            else:
+                self.assertIn("first-level division it lies in", rec["median_age"]["note"])
+                self.assertIn("men and women", rec["sex_ratio"]["note"])
+                self.assertEqual(rec["sources"], [])
+
+    def test_districts_with_their_own_share_of_men_keep_their_ratios(self):
+        # Paraguay: the departments' ages, but each district's own sexes.
+        regions = [unit("Central", "admin1", YOUNG, ratio=990),
+                   unit("Guaira", "admin1", OLDER, ratio=1010)]
+        districts = [unit(f"d{i}", "admin2", scaled(YOUNG, 0.1 + i), ratio=900 + 40 * i,
+                          parent="Central") for i in range(4)]
+        out = cpa.drop_copied_structures("PRY", regions + districts)
+        for rec in out[2:]:
+            self.assertEqual(rec["median_age"]["status"], "not_available")
+            self.assertIn("value", rec["sex_ratio"])
+
+    def test_one_district_like_its_region_is_no_copy(self):
+        # A city that is nearly all of its province can honestly match it.
+        regions = [unit("A", "admin1", YOUNG), unit("B", "admin1", OLDER)]
+        districts = [unit("a1", "admin2", scaled(YOUNG, 0.9), parent="A"),
+                     unit("a2", "admin2", OLDER, parent="A"),
+                     unit("b1", "admin2", MIDDLE, parent="B"),
+                     unit("b2", "admin2", YOUNG, parent="B")]
+        out = cpa.drop_copied_structures("XXX", regions + districts)
+        self.assertTrue(all("value" in rec["median_age"] for rec in out))
+
+    def test_most_units_with_one_structure_lose_their_medians_and_the_rest_keep_theirs(self):
+        # Niger: 65 of the 67 departments carry one structure; the cities of
+        # Maradi and Zinder were projected apart, matching no region's row.
+        recs = [unit(f"d{i}", "admin2", YOUNG, ratio=990) for i in range(9)] + \
+               [unit("city", "admin2", scaled(OLDER, 0.1), ratio=1010)]
+        out = cpa.drop_copied_structures("NER", recs)
+        for rec in out[:9]:
+            self.assertEqual(rec["median_age"]["status"], "not_available")
+            self.assertIn("9 of its 10 second-level divisions", rec["median_age"]["note"])
+            self.assertIn("value", rec["sex_ratio"])
+        self.assertIn("value", out[9]["median_age"])
+
+    def test_distinct_units_are_left_alone(self):
+        recs = [unit("a", "admin1", YOUNG), unit("b", "admin1", OLDER),
+                unit("c", "admin1", MIDDLE)]
+        out = cpa.drop_copied_structures("XXX", recs)
+        self.assertTrue(all("value" in rec["median_age"] for rec in out))
+
+
+class Coverage(unittest.TestCase):
+    def test_the_default_run_reads_the_americas_and_africa(self):
+        # A run with no --only rewrites the whole file, so a default that
+        # dropped either region would empty its units on the next refresh.
+        self.assertTrue(cpa.AMERICAS <= cpa.DEFAULT)
+        self.assertTrue(cpa.AFRICA <= cpa.DEFAULT)
+        self.assertEqual(len(cpa.AFRICA), 54)
+        self.assertFalse(cpa.AMERICAS & cpa.AFRICA)
+
+
 if __name__ == "__main__":
     unittest.main()

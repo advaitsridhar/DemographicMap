@@ -1,0 +1,5206 @@
+[
+  {
+    "id": "SYC-2022-anseboileau",
+    "level": "admin1",
+    "name": "Anse Boileau",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4595,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.4,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1318,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 76.7,
+        "count": 2961
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.4,
+        "count": 440
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.5,
+        "count": 211
+      },
+      {
+        "group": "Anglican",
+        "pct": 3.1,
+        "count": 121
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.0,
+        "count": 77
+      },
+      {
+        "group": "Islam",
+        "pct": 1.3,
+        "count": 52
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 92.4,
+        "count": 3441
+      },
+      {
+        "group": "English",
+        "pct": 5.5,
+        "count": 205
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 30
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 17
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.3,
+        "count": 11
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 11
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 8
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the West region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B33324691861484",
+    "population_note": "The 2022 census's count for Anse Boileau.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,723 people aged 3 and over who gave one, of 4,435 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,862 people in households whose religion the census could classify, of 4,595 (Table B4.1).",
+    "aliases": [
+      "Anse Boile"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-anseetoile",
+    "level": "admin1",
+    "name": "Anse Etoile",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5477,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.5,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1140,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 67.1,
+        "count": 3489
+      },
+      {
+        "group": "Hindu",
+        "pct": 8.5,
+        "count": 442
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.2,
+        "count": 425
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.7,
+        "count": 349
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.4,
+        "count": 334
+      },
+      {
+        "group": "Islam",
+        "pct": 3.1,
+        "count": 163
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 82.7,
+        "count": 4167
+      },
+      {
+        "group": "English",
+        "pct": 8.1,
+        "count": 408
+      },
+      {
+        "group": "Hindi",
+        "pct": 6.3,
+        "count": 317
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.3,
+        "count": 65
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.7,
+        "count": 34
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 26
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 19
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the North region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B87843643892528",
+    "population_note": "The 2022 census's count for Anse Etoile.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 5,036 people aged 3 and over who gave one, of 5,287 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 5,202 people in households whose religion the census could classify, of 5,477 (Table B4.1).",
+    "aliases": [
+      "Anse Etoil"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-anseroyale",
+    "level": "admin1",
+    "name": "Anse Royale",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4552,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 36.1,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1087,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 70.6,
+        "count": 3067
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.3,
+        "count": 536
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.8,
+        "count": 253
+      },
+      {
+        "group": "Anglican",
+        "pct": 5.5,
+        "count": 237
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.4,
+        "count": 146
+      },
+      {
+        "group": "Islam",
+        "pct": 2.5,
+        "count": 107
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 87.4,
+        "count": 3682
+      },
+      {
+        "group": "English",
+        "pct": 8.0,
+        "count": 336
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.8,
+        "count": 75
+      },
+      {
+        "group": "Gujarati",
+        "pct": 1.2,
+        "count": 51
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.8,
+        "count": 33
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 27
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.2,
+        "count": 9
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the East-South region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B89376585633127",
+    "population_note": "The 2022 census's count for Anse Royale.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 4,213 people aged 3 and over who gave one, of 4,386 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 4,346 people in households whose religion the census could classify, of 4,552 (Table B4.1).",
+    "aliases": [
+      "Anse Royal"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-anseauxpins",
+    "level": "admin1",
+    "name": "Anse aux Pins",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3898,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.0,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1059,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 77.3,
+        "count": 2792
+      },
+      {
+        "group": "Other Christian",
+        "pct": 10.3,
+        "count": 372
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.7,
+        "count": 168
+      },
+      {
+        "group": "Anglican",
+        "pct": 3.3,
+        "count": 121
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.5,
+        "count": 91
+      },
+      {
+        "group": "Islam",
+        "pct": 1.9,
+        "count": 68
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 92.4,
+        "count": 3207
+      },
+      {
+        "group": "English",
+        "pct": 4.3,
+        "count": 150
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.3,
+        "count": 45
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.1,
+        "count": 37
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.4,
+        "count": 13
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.3,
+        "count": 12
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 8
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the East-South region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B37030743125890",
+    "population_note": "The 2022 census's count for Anse Aux Pins.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,472 people aged 3 and over who gave one, of 3,748 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,612 people in households whose religion the census could classify, of 3,898 (Table B4.1).",
+    "aliases": [
+      "Anse Aux P"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-aucap",
+    "level": "admin1",
+    "name": "Au Cap",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5168,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.5,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1165,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 68.6,
+        "count": 3206
+      },
+      {
+        "group": "Other Christian",
+        "pct": 13.6,
+        "count": 634
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.2,
+        "count": 292
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.0,
+        "count": 232
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.7,
+        "count": 221
+      },
+      {
+        "group": "Islam",
+        "pct": 1.9,
+        "count": 87
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 82.1,
+        "count": 3907
+      },
+      {
+        "group": "English",
+        "pct": 11.6,
+        "count": 554
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.0,
+        "count": 96
+      },
+      {
+        "group": "Gujarati",
+        "pct": 1.5,
+        "count": 73
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.1,
+        "count": 52
+      },
+      {
+        "group": "French",
+        "pct": 0.9,
+        "count": 42
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.7,
+        "count": 35
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the East-South region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B21107318630465",
+    "population_note": "The 2022 census's count for Au Cap.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 4,759 people aged 3 and over who gave one, of 4,985 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 4,672 people in households whose religion the census could classify, of 5,168 (Table B4.1).",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-baielazare",
+    "level": "admin1",
+    "name": "Baie Lazare",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4265,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.9,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1308,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 77.1,
+        "count": 2838
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.3,
+        "count": 305
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.5,
+        "count": 239
+      },
+      {
+        "group": "Islam",
+        "pct": 4.2,
+        "count": 155
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.0,
+        "count": 75
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.8,
+        "count": 68
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 86.6,
+        "count": 3086
+      },
+      {
+        "group": "English",
+        "pct": 9.7,
+        "count": 345
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.0,
+        "count": 73
+      },
+      {
+        "group": "French",
+        "pct": 0.9,
+        "count": 32
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.4,
+        "count": 16
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 11
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the West region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B38530476923333",
+    "population_note": "The 2022 census's count for Baie Lazare.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,563 people aged 3 and over who gave one, of 4,108 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,680 people in households whose religion the census could classify, of 4,265 (Table B4.1).",
+    "aliases": [
+      "Baie Lazar"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-baiesainteanne",
+    "level": "admin1",
+    "name": "Baie Sainte Anne",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4272,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 34.5,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1271,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 64.5,
+        "count": 2383
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.2,
+        "count": 451
+      },
+      {
+        "group": "Other religion",
+        "pct": 10.3,
+        "count": 380
+      },
+      {
+        "group": "Anglican",
+        "pct": 8.6,
+        "count": 319
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.3,
+        "count": 122
+      },
+      {
+        "group": "Islam",
+        "pct": 1.1,
+        "count": 39
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 91.5,
+        "count": 3250
+      },
+      {
+        "group": "English",
+        "pct": 4.7,
+        "count": 167
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.4,
+        "count": 50
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.2,
+        "count": 44
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 18
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.4,
+        "count": 13
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 9
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the Praslin region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B68430641477456",
+    "population_note": "The 2022 census's count for Baie Sainte Anne.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,551 people aged 3 and over who gave one, of 4,091 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,694 people in households whose religion the census could classify, of 4,272 (Table B4.1).",
+    "aliases": [
+      "Baie Saint"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-beauvallon",
+    "level": "admin1",
+    "name": "Beau Vallon",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4740,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 36.0,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1088,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 71.7,
+        "count": 2854
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.6,
+        "count": 383
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.9,
+        "count": 313
+      },
+      {
+        "group": "Anglican",
+        "pct": 5.1,
+        "count": 202
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.0,
+        "count": 158
+      },
+      {
+        "group": "Islam",
+        "pct": 1.8,
+        "count": 70
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 81.1,
+        "count": 3126
+      },
+      {
+        "group": "English",
+        "pct": 13.7,
+        "count": 530
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.1,
+        "count": 81
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.3,
+        "count": 52
+      },
+      {
+        "group": "French",
+        "pct": 0.9,
+        "count": 34
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.5,
+        "count": 20
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.3,
+        "count": 12
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the North region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B88598061182448",
+    "population_note": "The 2022 census's count for Beau Vallon.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,855 people aged 3 and over who gave one, of 4,581 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,980 people in households whose religion the census could classify, of 4,740 (Table B4.1).",
+    "aliases": [
+      "Beau Vallo"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-belair",
+    "level": "admin1",
+    "name": "Bel Air",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2619,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 38.7,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1061,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 65.5,
+        "count": 1528
+      },
+      {
+        "group": "Anglican",
+        "pct": 10.1,
+        "count": 236
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.0,
+        "count": 209
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.7,
+        "count": 156
+      },
+      {
+        "group": "Hindu",
+        "pct": 5.8,
+        "count": 136
+      },
+      {
+        "group": "Islam",
+        "pct": 2.9,
+        "count": 68
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 82.2,
+        "count": 1870
+      },
+      {
+        "group": "English",
+        "pct": 11.5,
+        "count": 261
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.6,
+        "count": 59
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.6,
+        "count": 37
+      },
+      {
+        "group": "Gujarati",
+        "pct": 1.2,
+        "count": 28
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 11
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.4,
+        "count": 8
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the Central region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B54769404218422",
+    "population_note": "The 2022 census's count for Bel Air.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 2,274 people aged 3 and over who gave one, of 2,530 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 2,333 people in households whose religion the census could classify, of 2,619 (Table B4.1).",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-belombre",
+    "level": "admin1",
+    "name": "Bel Ombre",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3823,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 36.4,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1062,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 68.9,
+        "count": 2370
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.9,
+        "count": 305
+      },
+      {
+        "group": "Anglican",
+        "pct": 8.8,
+        "count": 304
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.6,
+        "count": 226
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.7,
+        "count": 126
+      },
+      {
+        "group": "Islam",
+        "pct": 3.1,
+        "count": 108
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 84.1,
+        "count": 2783
+      },
+      {
+        "group": "English",
+        "pct": 11.8,
+        "count": 390
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.4,
+        "count": 81
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.1,
+        "count": 38
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 11
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 7
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the North region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B26716977032117",
+    "population_note": "The 2022 census's count for Belombre.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,310 people aged 3 and over who gave one, of 3,689 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,439 people in households whose religion the census could classify, of 3,823 (Table B4.1).",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-cascade",
+    "level": "admin1",
+    "name": "Cascade",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6659,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.3,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 2490,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 59.0,
+        "count": 2951
+      },
+      {
+        "group": "Hindu",
+        "pct": 26.7,
+        "count": 1337
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.4,
+        "count": 272
+      },
+      {
+        "group": "Islam",
+        "pct": 3.9,
+        "count": 193
+      },
+      {
+        "group": "Other religion",
+        "pct": 3.1,
+        "count": 157
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.9,
+        "count": 94
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 64.6,
+        "count": 3188
+      },
+      {
+        "group": "Hindi",
+        "pct": 11.7,
+        "count": 577
+      },
+      {
+        "group": "Gujarati",
+        "pct": 11.3,
+        "count": 557
+      },
+      {
+        "group": "English",
+        "pct": 10.2,
+        "count": 504
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.3,
+        "count": 63
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 27
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 19
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the East-South region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B24501722208733",
+    "population_note": "The 2022 census's count for Cascade.",
+    "sex_ratio_note": "Men per 1,000 women among the people the 2022 census counted here: 4,751 men and 1,908 women (Table 2.4).",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 4,935 people aged 3 and over who gave one, of 6,481 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 5,004 people in households whose religion the census could classify, of 6,659 (Table B4.1).",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-glacis",
+    "level": "admin1",
+    "name": "Glacis",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3803,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 38.8,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1095,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 76.0,
+        "count": 2673
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.6,
+        "count": 268
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.1,
+        "count": 213
+      },
+      {
+        "group": "Anglican",
+        "pct": 4.7,
+        "count": 166
+      },
+      {
+        "group": "Islam",
+        "pct": 3.6,
+        "count": 126
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.0,
+        "count": 71
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 85.8,
+        "count": 2958
+      },
+      {
+        "group": "English",
+        "pct": 9.3,
+        "count": 322
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.6,
+        "count": 90
+      },
+      {
+        "group": "French",
+        "pct": 1.2,
+        "count": 40
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.9,
+        "count": 32
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the North region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B70505016322555",
+    "population_note": "The 2022 census's count for Glacis.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,448 people aged 3 and over who gave one, of 3,686 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,517 people in households whose religion the census could classify, of 3,803 (Table B4.1).",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-grandansemahe",
+    "level": "admin1",
+    "name": "Grand'Anse Mahé",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3425,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 34.4,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1057,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 73.6,
+        "count": 2336
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.4,
+        "count": 267
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.3,
+        "count": 199
+      },
+      {
+        "group": "Anglican",
+        "pct": 4.5,
+        "count": 144
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.1,
+        "count": 131
+      },
+      {
+        "group": "Islam",
+        "pct": 3.1,
+        "count": 98
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 89.9,
+        "count": 2759
+      },
+      {
+        "group": "English",
+        "pct": 4.4,
+        "count": 136
+      },
+      {
+        "group": "Hindi",
+        "pct": 3.0,
+        "count": 92
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.6,
+        "count": 48
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.8,
+        "count": 24
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 8
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.1,
+        "count": 2
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the West region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B44273626822256",
+    "population_note": "The 2022 census's count for Grand Anse Mahé.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,069 people aged 3 and over who gave one, of 3,308 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,175 people in households whose religion the census could classify, of 3,425 (Table B4.1).",
+    "aliases": [
+      "Grand'Anse"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-grandansepraslin",
+    "level": "admin1",
+    "name": "Grand'Anse Praslin",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3610,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 36.2,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1224,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 53.3,
+        "count": 1703
+      },
+      {
+        "group": "Anglican",
+        "pct": 24.2,
+        "count": 772
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.3,
+        "count": 394
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.9,
+        "count": 188
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.7,
+        "count": 85
+      },
+      {
+        "group": "Islam",
+        "pct": 1.7,
+        "count": 53
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 88.0,
+        "count": 2706
+      },
+      {
+        "group": "English",
+        "pct": 10.0,
+        "count": 308
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 26
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 14
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 12
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 9
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the Praslin region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B30823539589951",
+    "population_note": "The 2022 census's count for Grand Anse Praslin.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,075 people aged 3 and over who gave one, of 3,475 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,195 people in households whose religion the census could classify, of 3,610 (Table B4.1).",
+    "aliases": [
+      "Grand Anse"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-ladigueandinnerislands",
+    "level": "admin1",
+    "name": "La Digue and Inner Islands",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3537,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 36.8,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1453,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 70.0,
+        "count": 2050
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.2,
+        "count": 329
+      },
+      {
+        "group": "Other religion",
+        "pct": 8.3,
+        "count": 244
+      },
+      {
+        "group": "Hindu",
+        "pct": 6.2,
+        "count": 182
+      },
+      {
+        "group": "Islam",
+        "pct": 2.2,
+        "count": 63
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.1,
+        "count": 62
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 83.9,
+        "count": 2371
+      },
+      {
+        "group": "English",
+        "pct": 6.7,
+        "count": 190
+      },
+      {
+        "group": "Other languages",
+        "pct": 4.3,
+        "count": 121
+      },
+      {
+        "group": "Gujarati",
+        "pct": 1.9,
+        "count": 53
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.6,
+        "count": 46
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.9,
+        "count": 26
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 18
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Seychellois nationals",
+        "pct": 70.0,
+        "count": 2538
+      },
+      {
+        "group": "Indian nationals",
+        "pct": 9.5,
+        "count": 346
+      },
+      {
+        "group": "Sri Lankan nationals",
+        "pct": 4.7,
+        "count": 169
+      },
+      {
+        "group": "Other foreign nationals",
+        "pct": 3.3,
+        "count": 118
+      },
+      {
+        "group": "Kenyan nationals",
+        "pct": 2.5,
+        "count": 89
+      },
+      {
+        "group": "Nationality not stated",
+        "pct": 2.4,
+        "count": 88
+      },
+      {
+        "group": "Bangladeshi nationals",
+        "pct": 2.1,
+        "count": 77
+      },
+      {
+        "group": "Nepali nationals",
+        "pct": 1.8,
+        "count": 65
+      },
+      {
+        "group": "Filipino nationals",
+        "pct": 1.2,
+        "count": 42
+      },
+      {
+        "group": "Malagasy nationals",
+        "pct": 1.0,
+        "count": 35
+      },
+      {
+        "group": "Indonesian nationals",
+        "pct": 0.6,
+        "count": 21
+      },
+      {
+        "group": "South African nationals",
+        "pct": 0.6,
+        "count": 23
+      },
+      {
+        "group": "Mauritian nationals",
+        "pct": 0.4,
+        "count": 13
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B61373702137462",
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2022 census records no ethnic group, and its report counts each region's non-Seychellois by nationality (Table A7). La Digue and Inner Islands is one of the census's regions as well as a district: of its 3,624 people (Table B4.1), 1,086 are non-Seychellois, the most of them 346 Indian, 169 Sri Lankan and 89 Kenyan; the rest are Seychellois.",
+    "population_note": "The 2022 census's count for La Digue and Inner Islands.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 2,825 people aged 3 and over who gave one, of 3,499 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 2,930 people in households whose religion the census could classify, of 3,624 (Table B4.1).",
+    "aliases": [
+      "La Digue a"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1). That table counts 3,624 people here where Table 2.4 counts 3,537: the two place 87 islanders of La Digue and Inner Islands and the Outer Islands differently."
+  },
+  {
+    "id": "SYC-2022-englishriver",
+    "level": "admin1",
+    "name": "La Rivière Anglaise",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3508,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.6,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 997,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 70.8,
+        "count": 2355
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.2,
+        "count": 372
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.4,
+        "count": 214
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.7,
+        "count": 188
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.7,
+        "count": 124
+      },
+      {
+        "group": "Islam",
+        "pct": 2.2,
+        "count": 74
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 89.1,
+        "count": 2845
+      },
+      {
+        "group": "English",
+        "pct": 6.3,
+        "count": 202
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.9,
+        "count": 61
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.1,
+        "count": 36
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.6,
+        "count": 20
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.5,
+        "count": 15
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 13
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the Central region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B99498664822858",
+    "population_note": "The 2022 census's count for English River.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,192 people aged 3 and over who gave one, of 3,362 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,327 people in households whose religion the census could classify, of 3,508 (Table B4.1).",
+    "aliases": [
+      "La Rivière"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-lesmamelles",
+    "level": "admin1",
+    "name": "Les Mamelles",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2215,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 36.6,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1096,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 74.4,
+        "count": 1492
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.7,
+        "count": 194
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.1,
+        "count": 123
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.1,
+        "count": 82
+      },
+      {
+        "group": "Islam",
+        "pct": 3.6,
+        "count": 73
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.0,
+        "count": 41
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 91.9,
+        "count": 1774
+      },
+      {
+        "group": "English",
+        "pct": 6.6,
+        "count": 127
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 15
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 10
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 4
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the Central region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B85899211000067",
+    "population_note": "The 2022 census's count for Les Mamelles.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 1,930 people aged 3 and over who gave one, of 2,131 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 2,005 people in households whose religion the census could classify, of 2,215 (Table B4.1).",
+    "aliases": [
+      "Les Mamell"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-montbuxton",
+    "level": "admin1",
+    "name": "Mont Buxton",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2778,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 38.0,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1006,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 74.7,
+        "count": 1964
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.3,
+        "count": 244
+      },
+      {
+        "group": "Anglican",
+        "pct": 5.5,
+        "count": 144
+      },
+      {
+        "group": "Islam",
+        "pct": 4.4,
+        "count": 116
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.3,
+        "count": 113
+      },
+      {
+        "group": "Hindu",
+        "pct": 1.8,
+        "count": 47
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 93.1,
+        "count": 2372
+      },
+      {
+        "group": "English",
+        "pct": 4.7,
+        "count": 119
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.8,
+        "count": 20
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.5,
+        "count": 13
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.5,
+        "count": 14
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 9
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the Central region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B48375430986897",
+    "population_note": "The 2022 census's count for Mont Buxton.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 2,547 people aged 3 and over who gave one, of 2,687 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 2,628 people in households whose religion the census could classify, of 2,778 (Table B4.1).",
+    "aliases": [
+      "Mont Buxto"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-montfleuri",
+    "level": "admin1",
+    "name": "Mont Fleuri",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3506,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 36.3,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1199,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 71.4,
+        "count": 2033
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.9,
+        "count": 224
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.3,
+        "count": 180
+      },
+      {
+        "group": "Hindu",
+        "pct": 5.3,
+        "count": 150
+      },
+      {
+        "group": "Anglican",
+        "pct": 5.2,
+        "count": 149
+      },
+      {
+        "group": "Islam",
+        "pct": 4.0,
+        "count": 113
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 83.5,
+        "count": 2340
+      },
+      {
+        "group": "English",
+        "pct": 10.1,
+        "count": 284
+      },
+      {
+        "group": "Other languages",
+        "pct": 3.3,
+        "count": 92
+      },
+      {
+        "group": "Gujarati",
+        "pct": 1.0,
+        "count": 29
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.9,
+        "count": 26
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.8,
+        "count": 23
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 9
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the Central region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B90252608075096",
+    "population_note": "The 2022 census's count for Mont Fleuri.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 2,803 people aged 3 and over who gave one, of 3,398 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 2,849 people in households whose religion the census could classify, of 3,506 (Table B4.1).",
+    "aliases": [
+      "Mont Fleur"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-outerislands",
+    "level": "admin1",
+    "name": "Outer Islands",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1075,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 32.1,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 13333,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2022 census report records the same 707 of the Outer Islands' 988 people as Gujarati-speaking (Table B3.1a) and as Hindu (Table B4.1), island by island alike (all 353 on Platte, all 110 on Darros); its table of the non-Seychellois (Table A7) counts 707 men there whose nationality is missing; its tables of second language and education (Tables B3.1b and C2.1) give every one of the Outer Islands' people as missing. With most of the islands' answers missing or recorded alike, neither language nor religion is shown."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "The 2022 census report records the same 707 of the Outer Islands' 988 people as Gujarati-speaking (Table B3.1a) and as Hindu (Table B4.1), island by island alike (all 353 on Platte, all 110 on Darros); its table of the non-Seychellois (Table A7) counts 707 men there whose nationality is missing; its tables of second language and education (Tables B3.1b and C2.1) give every one of the Outer Islands' people as missing. With most of the islands' answers missing or recorded alike, neither language nor religion is shown."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Nationality, which the 2022 census report gives by region in place of ethnic group (Table A7), is not shown: of the 935 people it counts as non-Seychellois on the Outer Islands, 707 have their nationality missing, the same number its tables of language and religion record alike as Gujarati-speaking and Hindu."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language note/religion note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Tables A7, B3.1a, B3.1b, B4.1 and C2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B25967812410873",
+    "population_note": "The 2022 census's count for Outer Islands.",
+    "sex_ratio_note": "Men per 1,000 women among the people the 2022 census counted here: 1,000 men and 75 women (Table 2.4).",
+    "aliases": [
+      "Outer Isla"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1). That table counts 988 people here where Table 2.4 counts 1,075: the two place 87 islanders of La Digue and Inner Islands and the Outer Islands differently."
+  },
+  {
+    "id": "SYC-2022-plaisance",
+    "level": "admin1",
+    "name": "Plaisance",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3685,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.8,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1095,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 74.6,
+        "count": 2512
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.9,
+        "count": 301
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.3,
+        "count": 180
+      },
+      {
+        "group": "Anglican",
+        "pct": 4.8,
+        "count": 161
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.7,
+        "count": 125
+      },
+      {
+        "group": "Islam",
+        "pct": 2.7,
+        "count": 90
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 90.1,
+        "count": 2918
+      },
+      {
+        "group": "English",
+        "pct": 7.2,
+        "count": 234
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.3,
+        "count": 42
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.8,
+        "count": 26
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 11
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.2,
+        "count": 7
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the Central region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B73485441343177",
+    "population_note": "The 2022 census's count for Plaisance.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,238 people aged 3 and over who gave one, of 3,555 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,369 people in households whose religion the census could classify, of 3,685 (Table B4.1).",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-pointelarue",
+    "level": "admin1",
+    "name": "Pointe Larue",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3267,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 33.8,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1149,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 77.0,
+        "count": 2373
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.6,
+        "count": 296
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.0,
+        "count": 123
+      },
+      {
+        "group": "Anglican",
+        "pct": 3.7,
+        "count": 115
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.4,
+        "count": 104
+      },
+      {
+        "group": "Islam",
+        "pct": 2.3,
+        "count": 71
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 92.7,
+        "count": 2740
+      },
+      {
+        "group": "English",
+        "pct": 6.4,
+        "count": 188
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.6,
+        "count": 17
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.2,
+        "count": 6
+      },
+      {
+        "group": "French",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the East-South region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B83277674209167",
+    "population_note": "The 2022 census's count for Pointe Larue.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 2,955 people aged 3 and over who gave one, of 3,132 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,082 people in households whose religion the census could classify, of 3,267 (Table B4.1).",
+    "aliases": [
+      "Pointe La"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-portglaud",
+    "level": "admin1",
+    "name": "Port Glaud",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2773,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 34.7,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1224,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 76.8,
+        "count": 1788
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.3,
+        "count": 217
+      },
+      {
+        "group": "Other religion",
+        "pct": 7.6,
+        "count": 178
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.7,
+        "count": 63
+      },
+      {
+        "group": "Islam",
+        "pct": 2.7,
+        "count": 63
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.9,
+        "count": 20
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 95.3,
+        "count": 2150
+      },
+      {
+        "group": "English",
+        "pct": 3.9,
+        "count": 87
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.4,
+        "count": 9
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 6
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 3
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the West region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B13397871657541",
+    "population_note": "The 2022 census's count for Port Glaud.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 2,255 people aged 3 and over who gave one, of 2,686 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 2,329 people in households whose religion the census could classify, of 2,773 (Table B4.1).",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-rochecaiman",
+    "level": "admin1",
+    "name": "Roche Caiman",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3157,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 34.1,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1156,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 61.5,
+        "count": 1554
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.7,
+        "count": 296
+      },
+      {
+        "group": "Hindu",
+        "pct": 9.6,
+        "count": 242
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.3,
+        "count": 160
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.3,
+        "count": 160
+      },
+      {
+        "group": "Islam",
+        "pct": 4.5,
+        "count": 113
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 79.5,
+        "count": 1923
+      },
+      {
+        "group": "English",
+        "pct": 10.9,
+        "count": 264
+      },
+      {
+        "group": "Other languages",
+        "pct": 3.9,
+        "count": 95
+      },
+      {
+        "group": "Hindi",
+        "pct": 2.5,
+        "count": 60
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.8,
+        "count": 43
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.9,
+        "count": 21
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 13
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the Central region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B64732243105598",
+    "population_note": "The 2022 census's count for Roche Caiman.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 2,419 people aged 3 and over who gave one, of 3,036 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 2,525 people in households whose religion the census could classify, of 3,157 (Table B4.1).",
+    "aliases": [
+      "Roche Caïm"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-saintlouis",
+    "level": "admin1",
+    "name": "Saint Louis",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3267,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 36.2,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1116,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 65.1,
+        "count": 1873
+      },
+      {
+        "group": "Anglican",
+        "pct": 9.8,
+        "count": 282
+      },
+      {
+        "group": "Hindu",
+        "pct": 7.1,
+        "count": 205
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.7,
+        "count": 194
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.1,
+        "count": 176
+      },
+      {
+        "group": "Islam",
+        "pct": 5.0,
+        "count": 145
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 84.7,
+        "count": 2331
+      },
+      {
+        "group": "English",
+        "pct": 8.0,
+        "count": 219
+      },
+      {
+        "group": "Tamil",
+        "pct": 3.6,
+        "count": 98
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.4,
+        "count": 65
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.7,
+        "count": 18
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.6,
+        "count": 16
+      },
+      {
+        "group": "French",
+        "pct": 0.2,
+        "count": 6
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the Central region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B99490362371976",
+    "population_note": "The 2022 census's count for Saint Louis.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 2,753 people aged 3 and over who gave one, of 3,140 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 2,875 people in households whose religion the census could classify, of 3,267 (Table B4.1).",
+    "aliases": [
+      "Saint Loui"
+    ],
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-takamaka",
+    "level": "admin1",
+    "name": "Takamaka",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3528,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 36.1,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1389,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 73.4,
+        "count": 2306
+      },
+      {
+        "group": "Hindu",
+        "pct": 10.5,
+        "count": 330
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.4,
+        "count": 265
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.2,
+        "count": 133
+      },
+      {
+        "group": "Islam",
+        "pct": 1.8,
+        "count": 57
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.6,
+        "count": 49
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 82.1,
+        "count": 2488
+      },
+      {
+        "group": "Hindi",
+        "pct": 10.0,
+        "count": 303
+      },
+      {
+        "group": "English",
+        "pct": 5.5,
+        "count": 168
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.6,
+        "count": 50
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 16
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.2,
+        "count": 6
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7: this district is in the East-South region), not by district, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "4304713B51488395510296",
+    "population_note": "The 2022 census's count for Takamaka.",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 3,031 people aged 3 and over who gave one, of 3,408 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 3,140 people in households whose religion the census could classify, of 3,528 (Table B4.1).",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-central1mahe",
+    "level": "admin2",
+    "name": "Central 1 Mahe",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12172,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 37.0,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1043,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 69.2,
+        "count": 7720
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.1,
+        "count": 1019
+      },
+      {
+        "group": "Anglican",
+        "pct": 7.8,
+        "count": 876
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.7,
+        "count": 633
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.6,
+        "count": 512
+      },
+      {
+        "group": "Islam",
+        "pct": 3.6,
+        "count": 403
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 87.5,
+        "count": 9418
+      },
+      {
+        "group": "English",
+        "pct": 7.4,
+        "count": 801
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.0,
+        "count": 213
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.6,
+        "count": 177
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.5,
+        "count": 59
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.5,
+        "count": 59
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 39
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7); these districts are part of the Central region, which takes in districts drawn elsewhere, so no figure is shown for them, and it records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "34574756B27990728867894",
+    "population_note": "The 2022 census's counts for the 4 districts the map draws as one added together: Bel Air, English River, Mont Buxton and Saint Louis.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1).",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 10,766 people aged 3 and over who gave one, of 11,719 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 11,163 people in households whose religion the census could classify, of 12,172 (Table B4.1)."
+  },
+  {
+    "id": "SYC-2022-central2mahe",
+    "level": "admin2",
+    "name": "Central 2 Mahe",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12563,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.6,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1139,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 70.6,
+        "count": 7591
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.4,
+        "count": 1015
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.6,
+        "count": 602
+      },
+      {
+        "group": "Anglican",
+        "pct": 5.5,
+        "count": 593
+      },
+      {
+        "group": "Hindu",
+        "pct": 5.2,
+        "count": 558
+      },
+      {
+        "group": "Islam",
+        "pct": 3.6,
+        "count": 389
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 86.2,
+        "count": 8955
+      },
+      {
+        "group": "English",
+        "pct": 8.7,
+        "count": 909
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.3,
+        "count": 244
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.0,
+        "count": 105
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.9,
+        "count": 90
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.5,
+        "count": 50
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 37
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7); these districts are part of the Central region, which takes in districts drawn elsewhere, so no figure is shown for them, and it records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "34574756B38092183622343",
+    "population_note": "The 2022 census's counts for the 4 districts the map draws as one added together: Les Mamelles, Mont Fleuri, Plaisance and Roche Caiman.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1).",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 10,390 people aged 3 and over who gave one, of 12,120 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 10,748 people in households whose religion the census could classify, of 12,563 (Table B4.1)."
+  },
+  {
+    "id": "SYC-2022-eastmahe",
+    "level": "admin2",
+    "name": "East Mahe",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 27072,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.4,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1382,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 70.0,
+        "count": 16695
+      },
+      {
+        "group": "Other Christian",
+        "pct": 10.0,
+        "count": 2375
+      },
+      {
+        "group": "Hindu",
+        "pct": 9.3,
+        "count": 2229
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.5,
+        "count": 1066
+      },
+      {
+        "group": "Anglican",
+        "pct": 3.8,
+        "count": 908
+      },
+      {
+        "group": "Islam",
+        "pct": 2.4,
+        "count": 583
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 82.2,
+        "count": 19212
+      },
+      {
+        "group": "English",
+        "pct": 8.1,
+        "count": 1900
+      },
+      {
+        "group": "Hindi",
+        "pct": 4.0,
+        "count": 938
+      },
+      {
+        "group": "Gujarati",
+        "pct": 3.0,
+        "count": 693
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.5,
+        "count": 346
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.7,
+        "count": 161
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 115
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Seychellois nationals",
+        "pct": 78.6,
+        "count": 21282
+      },
+      {
+        "group": "Indian nationals",
+        "pct": 12.6,
+        "count": 3400
+      },
+      {
+        "group": "Sri Lankan nationals",
+        "pct": 1.7,
+        "count": 467
+      },
+      {
+        "group": "Bangladeshi nationals",
+        "pct": 1.6,
+        "count": 427
+      },
+      {
+        "group": "Other foreign nationals",
+        "pct": 1.6,
+        "count": 425
+      },
+      {
+        "group": "Nationality not stated",
+        "pct": 1.5,
+        "count": 393
+      },
+      {
+        "group": "Kenyan nationals",
+        "pct": 0.7,
+        "count": 177
+      },
+      {
+        "group": "Nepali nationals",
+        "pct": 0.6,
+        "count": 170
+      },
+      {
+        "group": "Malagasy nationals",
+        "pct": 0.5,
+        "count": 146
+      },
+      {
+        "group": "South African nationals",
+        "pct": 0.3,
+        "count": 69
+      },
+      {
+        "group": "Filipino nationals",
+        "pct": 0.2,
+        "count": 47
+      },
+      {
+        "group": "Mauritian nationals",
+        "pct": 0.2,
+        "count": 50
+      },
+      {
+        "group": "Indonesian nationals",
+        "pct": 0.1,
+        "count": 19
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "34574756B49819614716360",
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2022 census records no ethnic group, and its report counts each region's non-Seychellois by nationality (Table A7). East Mahe, its six districts, is the census's East-South region: of its 27,072 people (Table B4.1), 5,790 are non-Seychellois, the most of them 3,400 Indian, 467 Sri Lankan and 427 Bangladeshi; the rest are Seychellois.",
+    "population_note": "The 2022 census's counts for the 6 districts the map draws as one added together: Anse Aux Pins, Anse Royale, Au Cap, Cascade, Pointe Larue and Takamaka.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1).",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 23,365 people aged 3 and over who gave one, of 26,140 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 23,856 people in households whose religion the census could classify, of 27,072 (Table B4.1)."
+  },
+  {
+    "id": "SYC-2022-ladigue",
+    "level": "admin2",
+    "name": "La Digue",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3133,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "median_age": {
+      "value": 36.5,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1292,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Tables A2.1 and A2.2"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 70.6,
+        "count": 1989
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.3,
+        "count": 318
+      },
+      {
+        "group": "Other religion",
+        "pct": 8.2,
+        "count": 232
+      },
+      {
+        "group": "Hindu",
+        "pct": 5.6,
+        "count": 159
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.2,
+        "count": 62
+      },
+      {
+        "group": "Islam",
+        "pct": 2.1,
+        "count": 58
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 85.1,
+        "count": 2310
+      },
+      {
+        "group": "English",
+        "pct": 6.4,
+        "count": 174
+      },
+      {
+        "group": "Other languages",
+        "pct": 3.8,
+        "count": 102
+      },
+      {
+        "group": "Gujarati",
+        "pct": 1.6,
+        "count": 43
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.6,
+        "count": 43
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.9,
+        "count": 25
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 16
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7), for La Digue and Inner Islands as a whole and not for the island of La Digue alone, and records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Tables A2.1 and A2.2",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "34574756B18865708954128",
+    "population_note": "The 2022 census's count for the island of La Digue, which Tables A2.1, B3.1a and B4.1 give apart from the other islands of its district.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1).",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 2,713 people aged 3 and over who gave one, of 3,013 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 2,818 people in households whose religion the census could classify, of 3,133 (Table B4.1)."
+  },
+  {
+    "id": "SYC-2022-northmahe",
+    "level": "admin2",
+    "name": "North Mahe",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17843,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 36.5,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1100,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 70.6,
+        "count": 11386
+      },
+      {
+        "group": "Other Christian",
+        "pct": 8.6,
+        "count": 1381
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.7,
+        "count": 1086
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.3,
+        "count": 1021
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.9,
+        "count": 797
+      },
+      {
+        "group": "Islam",
+        "pct": 2.9,
+        "count": 467
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 83.3,
+        "count": 13034
+      },
+      {
+        "group": "English",
+        "pct": 10.5,
+        "count": 1650
+      },
+      {
+        "group": "Hindi",
+        "pct": 2.3,
+        "count": 353
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.0,
+        "count": 317
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.9,
+        "count": 148
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 100
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.3,
+        "count": 47
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Seychellois nationals",
+        "pct": 83.4,
+        "count": 14874
+      },
+      {
+        "group": "Indian nationals",
+        "pct": 6.5,
+        "count": 1159
+      },
+      {
+        "group": "Other foreign nationals",
+        "pct": 3.7,
+        "count": 652
+      },
+      {
+        "group": "Kenyan nationals",
+        "pct": 1.3,
+        "count": 224
+      },
+      {
+        "group": "Sri Lankan nationals",
+        "pct": 1.3,
+        "count": 240
+      },
+      {
+        "group": "Malagasy nationals",
+        "pct": 1.0,
+        "count": 182
+      },
+      {
+        "group": "Bangladeshi nationals",
+        "pct": 0.7,
+        "count": 124
+      },
+      {
+        "group": "Nepali nationals",
+        "pct": 0.7,
+        "count": 128
+      },
+      {
+        "group": "Filipino nationals",
+        "pct": 0.4,
+        "count": 79
+      },
+      {
+        "group": "Mauritian nationals",
+        "pct": 0.3,
+        "count": 56
+      },
+      {
+        "group": "Nationality not stated",
+        "pct": 0.3,
+        "count": 62
+      },
+      {
+        "group": "South African nationals",
+        "pct": 0.3,
+        "count": 48
+      },
+      {
+        "group": "Indonesian nationals",
+        "pct": 0.1,
+        "count": 15
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "34574756B41664711494427",
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2022 census records no ethnic group, and its report counts each region's non-Seychellois by nationality (Table A7). North Mahe, its four districts, is the census's North region: of its 17,843 people (Table B4.1), 2,969 are non-Seychellois, the most of them 1,159 Indian, 240 Sri Lankan and 224 Kenyan; the rest are Seychellois.",
+    "population_note": "The 2022 census's counts for the 4 districts the map draws as one added together: Anse Etoile, Beau Vallon, Belombre and Glacis.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1).",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 15,649 people aged 3 and over who gave one, of 17,243 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 16,138 people in households whose religion the census could classify, of 17,843 (Table B4.1)."
+  },
+  {
+    "id": "SYC-2022-otherislands",
+    "level": "admin2",
+    "name": "Other Islands",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1479,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "median_age": {
+      "value": 34.0,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 8860,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Tables A2.1 and A2.2"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "These islands' 1,479 people include the Outer Islands' 988, and the 2022 census report records the same 707 of those as Gujarati-speaking (Table B3.1a) and as Hindu (Table B4.1), island by island alike (all 353 on Platte, all 110 on Darros); its table of the non-Seychellois (Table A7) counts 707 men there whose nationality is missing; the religion of 607 more of these islands' people is missing or could not be classified. With most of these islands' answers missing or recorded alike, neither language nor religion is shown."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "These islands' 1,479 people include the Outer Islands' 988, and the 2022 census report records the same 707 of those as Gujarati-speaking (Table B3.1a) and as Hindu (Table B4.1), island by island alike (all 353 on Platte, all 110 on Darros); its table of the non-Seychellois (Table A7) counts 707 men there whose nationality is missing; the religion of 607 more of these islands' people is missing or could not be classified. With most of these islands' answers missing or recorded alike, neither language nor religion is shown."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2022 census report gives nationality by region (Table A7), and these islands are parts of two regions, the Outer Islands and La Digue and Inner Islands, so no figure is shown for them; it records no ethnic group."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Tables A2.1 and A2.2",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language note/religion note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Tables A7, B3.1a, B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "34574756B54247629098598",
+    "population_note": "The 2022 census's counts for the Outer Islands and for the inner islands other than La Digue added together: the tables' Outer Islands and La Digue and Inner Islands, less the island of La Digue, which they give apart.",
+    "sex_ratio_note": "Men per 1,000 women among the people the 2022 census counted here: 1,329 men and 150 women (Tables A2.1 and A2.2).",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1)."
+  },
+  {
+    "id": "SYC-2022-praslin",
+    "level": "admin2",
+    "name": "Praslin",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7882,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.3,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1249,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 59.3,
+        "count": 4086
+      },
+      {
+        "group": "Anglican",
+        "pct": 15.8,
+        "count": 1091
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.3,
+        "count": 845
+      },
+      {
+        "group": "Other religion",
+        "pct": 8.2,
+        "count": 568
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.0,
+        "count": 207
+      },
+      {
+        "group": "Islam",
+        "pct": 1.3,
+        "count": 92
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 89.9,
+        "count": 5956
+      },
+      {
+        "group": "English",
+        "pct": 7.2,
+        "count": 475
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.1,
+        "count": 76
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.9,
+        "count": 58
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 30
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 18
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.2,
+        "count": 13
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Seychellois nationals",
+        "pct": 83.1,
+        "count": 6552
+      },
+      {
+        "group": "Indian nationals",
+        "pct": 6.5,
+        "count": 509
+      },
+      {
+        "group": "Other foreign nationals",
+        "pct": 2.2,
+        "count": 172
+      },
+      {
+        "group": "Sri Lankan nationals",
+        "pct": 2.1,
+        "count": 164
+      },
+      {
+        "group": "Nepali nationals",
+        "pct": 1.7,
+        "count": 134
+      },
+      {
+        "group": "Bangladeshi nationals",
+        "pct": 1.2,
+        "count": 91
+      },
+      {
+        "group": "Kenyan nationals",
+        "pct": 0.7,
+        "count": 58
+      },
+      {
+        "group": "Mauritian nationals",
+        "pct": 0.6,
+        "count": 50
+      },
+      {
+        "group": "Filipino nationals",
+        "pct": 0.5,
+        "count": 41
+      },
+      {
+        "group": "Nationality not stated",
+        "pct": 0.5,
+        "count": 41
+      },
+      {
+        "group": "Malagasy nationals",
+        "pct": 0.4,
+        "count": 35
+      },
+      {
+        "group": "Indonesian nationals",
+        "pct": 0.3,
+        "count": 22
+      },
+      {
+        "group": "South African nationals",
+        "pct": 0.2,
+        "count": 13
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "34574756B43978553392406",
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2022 census records no ethnic group, and its report counts each region's non-Seychellois by nationality (Table A7). Praslin, its two districts, is the census's Praslin region: of its 7,882 people (Table B4.1), 1,330 are non-Seychellois, the most of them 509 Indian, 164 Sri Lankan and 134 Nepali; the rest are Seychellois.",
+    "population_note": "The 2022 census's counts for the 2 districts the map draws as one added together: Grand Anse Praslin and Baie Sainte Anne.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1).",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 6,626 people aged 3 and over who gave one, of 7,566 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 6,889 people in households whose religion the census could classify, of 7,882 (Table B4.1)."
+  },
+  {
+    "id": "SYC-2022-westmahe",
+    "level": "admin2",
+    "name": "West Mahe",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15058,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "median_age": {
+      "value": 35.2,
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1"
+    },
+    "sex_ratio": {
+      "value": 1233,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4"
+    },
+    "religion": [
+      {
+        "group": "Catholic",
+        "pct": 76.1,
+        "count": 9923
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.4,
+        "count": 1229
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.3,
+        "count": 827
+      },
+      {
+        "group": "Anglican",
+        "pct": 3.0,
+        "count": 396
+      },
+      {
+        "group": "Islam",
+        "pct": 2.8,
+        "count": 368
+      },
+      {
+        "group": "Hindu",
+        "pct": 2.3,
+        "count": 303
+      }
+    ],
+    "language": [
+      {
+        "group": "Seychellois Creole",
+        "pct": 90.7,
+        "count": 11436
+      },
+      {
+        "group": "English",
+        "pct": 6.1,
+        "count": 773
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.3,
+        "count": 160
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.9,
+        "count": 114
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.5,
+        "count": 60
+      },
+      {
+        "group": "French",
+        "pct": 0.4,
+        "count": 54
+      },
+      {
+        "group": "Gujarati",
+        "pct": 0.1,
+        "count": 13
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Seychellois nationals",
+        "pct": 82.4,
+        "count": 12404
+      },
+      {
+        "group": "Indian nationals",
+        "pct": 6.0,
+        "count": 901
+      },
+      {
+        "group": "Sri Lankan nationals",
+        "pct": 2.9,
+        "count": 443
+      },
+      {
+        "group": "Other foreign nationals",
+        "pct": 2.6,
+        "count": 395
+      },
+      {
+        "group": "Bangladeshi nationals",
+        "pct": 1.5,
+        "count": 219
+      },
+      {
+        "group": "Nepali nationals",
+        "pct": 1.2,
+        "count": 181
+      },
+      {
+        "group": "Mauritian nationals",
+        "pct": 0.7,
+        "count": 103
+      },
+      {
+        "group": "Filipino nationals",
+        "pct": 0.6,
+        "count": 88
+      },
+      {
+        "group": "Indonesian nationals",
+        "pct": 0.6,
+        "count": 94
+      },
+      {
+        "group": "Kenyan nationals",
+        "pct": 0.6,
+        "count": 92
+      },
+      {
+        "group": "Malagasy nationals",
+        "pct": 0.5,
+        "count": 69
+      },
+      {
+        "group": "South African nationals",
+        "pct": 0.3,
+        "count": 45
+      },
+      {
+        "group": "Nationality not stated",
+        "pct": 0.2,
+        "count": 24
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table 2.4",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "median_age",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A2.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B3.1a",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table B4.1",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "National Bureau of Statistics (Seychelles), Population and Housing Census 2022 report, Table A7",
+        "url": "https://www.nbs.gov.sc/downloads/1555-seychelles-population-and-housing-census-2022/viewdocument/1555",
+        "license": "National Bureau of Statistics publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "SYC",
+    "match_by": "shape_id",
+    "shape_id": "34574756B14018612202061",
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: the 2022 census records no ethnic group, and its report counts each region's non-Seychellois by nationality (Table A7). West Mahe, its four districts, is the census's West region: of its 15,058 people (Table B4.1), 2,654 are non-Seychellois, the most of them 901 Indian, 443 Sri Lankan and 219 Bangladeshi; the rest are Seychellois.",
+    "population_note": "The 2022 census's counts for the 4 districts the map draws as one added together: Anse Boileau, Baie Lazare, Grand Anse Mahé and Port Glaud.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's population by five-year age group (Table A2.1).",
+    "language_year": 2022,
+    "language_basis": "main first language spoken at home, population aged 3 and over",
+    "language_note": "Main first language spoken at home of the 12,610 people aged 3 and over who gave one, of 14,537 (Table B3.1a).",
+    "religion_year": 2022,
+    "religion_note": "Religion of the 13,046 people in households whose religion the census could classify, of 15,058 (Table B4.1)."
+  }
+]

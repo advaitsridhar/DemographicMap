@@ -14,11 +14,25 @@ before it ships.
 
 **Twenty regions into nine shapes.** The report tabulates the 2023 layout of
 19 regions and the District of Bamako. The boundary file draws the 2012
-layout of eight regions and Bamako, and every new region was carved whole out
+layout of eight regions and Bamako, and every new region was carved mostly out
 of one old one (Kita and Nioro from Kayes, Dioïla and Nara from Koulikoro,
 Bougouni and Koutiala from Sikasso, San from Ségou, Bandiagara and Douentza
 from Mopti, Taoudénit from Tombouctou, Ménaka from Gao), so the old region is
-the sum of the new ones. Every table prints percentages and each region's
+the sum of the new ones -- exactly for Kayes, Tombouctou, Gao and Kidal, and
+nearly for the rest: OCHA's 2025 boundaries of the 2023 regions and cercles,
+placed on the map's polygons point by point, put the cercle of Ouélessébougou
+and part of Sélingué (Koulikoro) in Bougouni, part of Bla (Ségou) in Koutiala,
+part of Ténenkou (Mopti) in Ségou as Nampala, and draw the District of Bamako
+of 2023 over ground of the Kati cercle. So only the four regions made exactly
+take the summed shares. The other five are not the ground of any regions of
+2023 (CROSSED: the District of Bamako of 2023 is about three times the district
+drawn; the regions summed for Koulikoro leave out the suburbs the District of
+2023 took from the Kati cercle), the same reason mali_census gives for their
+counts and ages, and they show no 2022 shares: their language is the 2009
+census's for the region as drawn (the US Census Bureau's tabulation of Tableau
+S-3, the region as it stood), with a note giving the 2022 census's reason, and
+their religion and ethnic groups are left to the survey of the regions as they
+stood (Afrobarometer). Every table prints percentages and each region's
 population, and the sum is taken on counts rebuilt from the two -- a percent
 of a stated population -- never on percentages, which cannot be added.
 
@@ -49,7 +63,9 @@ import unicodedata
 from pathlib import Path
 from typing import Any
 
-from ._shared import PROCESSED, log, record, shares, write_json
+from . import uscb
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, shares, write_json
+from .mali_census import COD_AB_2023, CROSSED as CROSSINGS
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import PAGE_BREAK, fetch_blob, tables_of  # noqa: E402
@@ -81,11 +97,32 @@ SPELLINGS = {"Taoudénit": "Taoudenni", "Segou": "Ségou", "Dioila": "Dioïla", 
 # geoBoundaries writes an extra u into Koulikoro and no accent on Ségou.
 ALIASES = {"Koulikoro": ["Koulikouro"], "Ségou": ["Segou"]}
 MERGED_NOTE = {
-    shape: "the report's " + ", ".join(r for r, s in REGIONS.items() if s == shape)
-    + " regions of the 2023 layout, summed"
+    shape: "The region as drawn here is the report's regions of "
+    + " and ".join([", ".join(parts[:-1]), parts[-1]] if len(parts) > 2 else parts)
+    + " of 2023, added together."
     for shape in set(REGIONS.values())
-    if sum(1 for s in REGIONS.values() if s == shape) > 1
+    for parts in [[r for r, s in REGIONS.items() if s == shape]]
+    if len(parts) > 1
 }
+# The shapes the regions of 2023 do not make exactly (OCHA's 2025 boundaries of
+# the 2023 regions and cercles, placed on the map's polygons point by point),
+# with mali_census's account of how their lines cross. The regions summed for
+# Koulikoro leave out the ground the District of Bamako of 2023 took from the
+# Kati cercle, its suburbs: the 2023 District counts 4,227,569 people against
+# OCHA's 2,231,344 (2018) for the district of before, so on the order of two
+# million live on Koulikoro's ground outside that sum. Bougouni, Koutiala and Ségou of 2023
+# take in or leave out cercles of their neighbours too, and no table of the
+# 2022 census counts those cercles. None of the five takes the 2022 shares.
+CROSSED = {"Koulikoro": CROSSINGS["koulikouro"], "Sikasso": CROSSINGS["sikasso"],
+           "Ségou": CROSSINGS["segou"], "Mopti": CROSSINGS["mopti"],
+           "Bamako": CROSSINGS["bamako"]}
+# The 2009 census's principal languages by region (Tableau S-3) as the US
+# Census Bureau tabulates them for HDX: the regions as they stood, the map's.
+REASON_2022 = ("The 2022 census tabulates mother tongue for the regions of 2023, and their "
+               "lines cross this {unit}'s: {crossing}.")
+LANGUAGE_2009 = ("The 2009 census's principal language of the {unit}'s residents aged 6 and "
+                 "over (Tableau S-3, as the US Census Bureau tabulates it); children under six "
+                 "were not asked. " + REASON_2022)
 
 RELIGIONS = ["Islam", "Christianity", "Animist", "No religion", "Other religion"]
 # Annex column labels as printed (a wrap or a mirror does not matter, only
@@ -126,7 +163,7 @@ NOTES = {
                 "19.1 million people the table covers against a resident population of "
                 "21.3 million; the report does not state the table's age floor. "
                 "Sonrhai/Songhoy/Zarma is shown as Sonrhai/Djerma and Sarakole/Sooninke as "
-                "Maraka/Soninke, the forms the 2009 census used on this map.",
+                "Maraka/Soninke.",
 }
 
 
@@ -349,14 +386,73 @@ def best(page_tables: list[list[list[str]]], groups: dict[str, str]
     raise SystemExit("mali: no table on the page reads as expected: " + "; ".join(errors))
 
 
-def build(fields: dict[str, dict[str, tuple[int, dict[str, float]]]]) -> list[dict[str, Any]]:
+def languages_2009() -> dict[str, tuple[float, dict[str, float]]]:
+    """The 2009 census's principal languages of the regions as they stood (the
+    map's nine), from the US Census Bureau's tabulation of Tableau S-3 for HDX,
+    read as uscb reads it: {shape: (people, {language: people})}."""
+    import io
+    import openpyxl
+
+    country = uscb.MALI
+    topic = country.topics[0]
+    url = uscb.workbook_url(country.dataset)
+    blob = http_get(url, binary=True, cache=False)
+    log(f"  2009 languages: {url}: {len(blob):,} bytes")
+    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+    areas = uscb.read(book, country, topic)
+    uscb.combine(country, topic, areas)
+    uscb.check_total(country, topic, areas)
+    by_key = {key(s): s for s in set(REGIONS.values())}
+    out: dict[str, tuple[float, dict[str, float]]] = {}
+    for (_parent, name), row in areas.items():
+        if row["level"] != 1:
+            continue
+        shape = by_key.get(key(name))
+        if shape is None:
+            raise SystemExit(f"mali: the 2009 language table names a region no shape is: "
+                             f"{name!r}")
+        out[shape] = (row["published"] or row["summed"],
+                      {country.relabel.get(k, k): v for k, v in row["counts"].items()})
+    missing = sorted(set(REGIONS.values()) - set(out))
+    if missing:
+        raise SystemExit(f"mali: the 2009 language table lacks {missing}")
+    return out
+
+
+def build(fields: dict[str, dict[str, tuple[int, dict[str, float]]]],
+          older: dict[str, tuple[float, dict[str, float]]] | None = None
+          ) -> list[dict[str, Any]]:
+    """The nine shapes: the four the regions of 2023 make, with the 2022
+    census's shares added up; the five they cross (CROSSED), with the 2009
+    census's languages (``older``) and the 2022 census's reason in the note,
+    and no religion or ethnic group of this report's (the survey's stand)."""
     per_shape = {field: summed(rows) for field, rows in fields.items()}
-    src = [{"field": "religion/ethnicity/language", "name": SOURCE, "url": URL,
-            "license": LICENCE}]
     records: list[dict[str, Any]] = []
     from common import slugify
     for shape in sorted(set(REGIONS.values())):
         values: dict[str, Any] = {}
+        if shape in CROSSED:
+            unit = "district" if shape == "Bamako" else "region"
+            src = [{"field": "language note", "name": SOURCE, "url": URL, "license": LICENCE,
+                    "year": YEAR}]
+            if shape == "Bamako":
+                src.append({**COD_AB_2023, "field": "language note"})
+            if older and shape in older:
+                people, counts = older[shape]
+                values.update(
+                    language=shares(counts, total=people), language_year=2009,
+                    language_note=LANGUAGE_2009.format(unit=unit, crossing=CROSSED[shape]))
+                src.insert(0, {"field": "language", "name": uscb.MALI.source,
+                               "url": uscb.dataset_url(uscb.MALI.dataset),
+                               "license": uscb.MALI.licence, "year": 2009})
+            else:
+                values["language"] = gap(NOT_AVAILABLE, REASON_2022.format(
+                    unit=unit, crossing=CROSSED[shape]))
+            records.append(record(
+                f"MLI-{slugify(shape)}-rgph5", shape, level="admin1", parent="MLI",
+                country="MLI", aliases=ALIASES.get(shape, []), sources=src, **values))
+            continue
+        src = [{"field": "/".join(per_shape), "name": SOURCE, "url": URL, "license": LICENCE}]
         for field in per_shape:
             pop, counts = per_shape[field][shape]
             values[field] = shares({k: v for k, v in counts.items() if v >= 0.5}, total=pop)
@@ -364,7 +460,7 @@ def build(fields: dict[str, dict[str, tuple[int, dict[str, float]]]]) -> list[di
                     f"two decimals and its population, and the counts here are the one "
                     f"applied to the other.")
             if shape in MERGED_NOTE:
-                note += f" This shape is {MERGED_NOTE[shape]}."
+                note += f" {MERGED_NOTE[shape]}"
             values[f"{field}_note"] = note
             values[f"{field}_year"] = YEAR
         records.append(record(
@@ -377,6 +473,7 @@ def build(fields: dict[str, dict[str, tuple[int, dict[str, float]]]]) -> list[di
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
     ap.parse_args()
     import io
     from pypdf import PdfReader
@@ -394,7 +491,13 @@ def main() -> int:
     fields = read_all(text, tables, where)
     for field, rows in fields.items():
         log(f"  {field}: {len(rows)} regions, {sum(p for p, _ in rows.values()):,} people")
-    records = build(fields)
+    older = languages_2009()
+    for shape in sorted(CROSSED):
+        people, counts = older[shape]
+        top = sorted(counts.items(), key=lambda kv: -kv[1])[:3]
+        log(f"  {shape}: the 2009 census's languages, {people:,.0f} people aged 6 and over: "
+            + ", ".join(f"{k} {100 * v / people:.1f}%" for k, v in top))
+    records = build(fields, older)
     log(f"  {len(records)} shapes")
     if len(records) != 9:
         raise SystemExit(f"mali: expected 9 shapes, built {len(records)}")

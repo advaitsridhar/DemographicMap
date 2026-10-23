@@ -507,7 +507,8 @@ class TheTailOfNamesTheTablesNowCarry(unittest.TestCase):
                 # owner's rule of 25 September 2026.)
                 # Ethiopia's 2007 tail, written with the Amharic language
                 # suffix on a root no reference spells the same way.
-                ("language", "Shetagna"),
+                # ("Shetagna" was here: it is Silt'e, 96.9% of Selti zone,
+                # whose people the same census counts 97.3% Silt'e.)
                 ("language", "Gedoligna"),
                 # And the Central African Republic's, which is mostly
                 # Ubangian and not reliably so.

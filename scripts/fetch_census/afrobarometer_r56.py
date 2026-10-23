@@ -78,7 +78,7 @@ from typing import Any
 
 from ._shared import (NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, gap, log,
                       record, shares, write_json)
-from .afrobarometer import LOW_PRECISION, MIN_SAMPLE, clean
+from .afrobarometer import LOW_PRECISION, MIN_SAMPLE, NATIONAL_ONLY_LABEL, clean
 
 HERE = RAW / "afrobarometer"
 EXTRACT = HERE / "r56_extract.csv.gz"
@@ -112,13 +112,14 @@ REFUSED = {"DZA"}
 NOT_ANSWERED = {"missing", "refused", "don't know", "don’t know", "",
                 "nan", "no further reply"}
 NOT_ASKED = ("not asked in country", "not asked in this country")
-# A respondent who names no ethnic group, which is an answer and not a gap.
-# Matched on its opening words because the two releases punctuate the rest
-# differently -- Round 5 writes 'or "doesn\'t think of self in those terms"'
-# and Round 6 writes "or 'doesnt think of self in those terms'" -- and an
-# exact match would quietly stop recognising one of them.
+# A respondent who answers with their nationality, or does not think of
+# themselves in those terms, which is an answer and not a gap; written as
+# Round 9 writes it (NATIONAL_ONLY_LABEL), not as "No ethnic group", which
+# is not what was said. Matched on its opening words because the two releases
+# punctuate the rest differently -- Round 5 writes 'or "doesn\'t think of
+# self in those terms"' and Round 6 writes "or 'doesnt think of self in those
+# terms'" -- and an exact match would quietly stop recognising one of them.
 NATIONAL_ONLY = "national identity only"
-NATIONAL_ONLY_LABEL = "No ethnic group"
 OTHER = {"others": "Other", "other": "Other"}
 
 # Survey stratum -> the name the map draws. Burundi's two Bujumburas are the
@@ -196,8 +197,8 @@ NEVER_ASKED = ("Afrobarometer did not ask about {field} in this country in "
 ONE_VALUE = (
     "Afrobarometer asked about language here but coded every one of its "
     "{n:,} Egyptian respondents, across both rounds, to a single value. A "
-    "variable with one value is a constant the field team entered rather "
-    "than a composition anyone measured, so none is built from it.")
+    "question with one answer for everyone is a constant, not a measured "
+    "composition, so no shares are shown.")
 
 
 def extract(paths: dict[str, str]) -> int:

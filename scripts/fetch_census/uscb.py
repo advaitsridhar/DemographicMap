@@ -472,6 +472,15 @@ ETHIOPIA = Country(
             "Addis Ketema", "Akaki Kaliti", "Arada", "Bole", "Gulele",
             "Kirkos", "Kolfe Keranyo", "Lideta", "Nefas Silk Lafto", "Yeka"),
     },
+    # Three of the workbook's language names are another language's. Its
+    # "Ignaciano" (a language of Bolivia) follows the Opuuo people wherever
+    # they are counted -- Gambela 999 speakers to 990 of the people, Agnuak
+    # 48 to 38, Addis Ababa 58 to 50 -- and its "Mossi" (Burkina Faso's
+    # Mooré) the Dullay peoples of the south, where the census counts the
+    # Mossiye people: Segen 7,114 speakers to 13,415, with Bussa beside it
+    # as a language of its own. "Suri (Suri)" is Suri named twice. None of
+    # the three names is used for religion or ethnicity.
+    relabel={"Ignaciano": "Opuuo", "Mossi": "Mosiye", "Suri (Suri)": "Suri"},
     note=("2007 Population and Housing Census -- the last census Ethiopia has "
           "completed. The 2017 round was postponed and never held, so this is "
           "the most recent measurement in existence, not the most recent "
@@ -801,9 +810,8 @@ DEMOCRATIC_REPUBLIC_OF_THE_CONGO = Country(
         "Nord-Kivu": ("North Kivu",),
         "Sud-Kivu": ("South Kivu",),
     },
-    note=("Enquête 1-2-3, pooling the 2005 and 2012 rounds. This is the only "
-          "source on this map that is a survey rather than a census, and it "
-          "is reported differently for that reason: the shares are of the "
+    note=("Enquête 1-2-3, pooling the 2005 and 2012 rounds: a household "
+          "survey, not a census. The shares are of the "
           "31,755 heads of household the survey reached, about 1,200 per "
           "province, and no count is published because the count is of "
           "households sampled rather than of people. A provincial share here "

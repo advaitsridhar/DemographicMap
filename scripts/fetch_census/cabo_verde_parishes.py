@@ -26,7 +26,8 @@ collective dwellings are counted only by municipality, and each parish's note
 says how many that leaves out in its municipality. Written for each of these
 parishes: population and sex ratio (males per 100 females, among the people
 in private households), 2010. The workbooks count ages only in three broad
-groups and the 2021 report gives mean ages only, so there is no median age.
+groups and the 2021 report gives mean ages only, so there is no median age, and
+each of these parishes says so.
 
 **Checks before anything is written.** Every zone's men and women make its
 total (the localities listed under a zone do not always make it, and are
@@ -62,7 +63,7 @@ import time
 import unicodedata
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
 
 ARCHIVE = "https://web.archive.org/web/{stamp}id_/{original}"
 POPULATION = "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/"
@@ -98,6 +99,22 @@ REPORT_SOURCE = ("Instituto Nacional de Estatística (INE) Cabo Verde, V Recense
 REPORT_TABLE = "tabela 7 - reparticao da populacao residente, segundo o concelho"
 YEAR_2021 = 2021
 NATIONAL_2021 = (491_233, 246_363, 244_870)          # both sexes, men, women
+# Why a parish of a municipality with several has no median age.
+NO_MEDIAN = ("No median age is published for the parish: the 2021 census and OCHA's population "
+             "projections give ages for the municipality of {municipality} as a whole, and the "
+             "2010 census's tables by parish give no ages fine enough to take a median from.")
+# What that reason quotes besides the 2010 parish table: the 2021 report and
+# OCHA's projections, cited for the note.
+NO_MEDIAN_SOURCES = [
+    {"field": "median_age note",
+     "name": ("Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da "
+              "População e Habitação (Censo 2021), Estado e Estrutura da População"),
+     "url": REPORT_ORIGINAL, "license": LICENCE, "year": YEAR_2021},
+    {"field": "median_age note",
+     "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+     "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+     "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"},
+]
 # Each municipality's name in Tabela 7, by INE's code.
 NAMES_2021 = {
     11: "Ribeira Grande", 12: "Paul", 13: "Porto Novo", 21: "São Vicente", 31: "Ribeira Brava",
@@ -620,8 +637,12 @@ def records_of(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[
             continue
         own = table[fold(ine)]
         source = SOURCE.format(island=p["island_name"])
-        sources = [{"field": "population/sex_ratio", "name": source, "url": p["url"],
-                    "page": POPULATION + p["island"], "license": LICENCE, "year": YEAR}]
+        # The parish table is quoted by the median-age reason too, beside the
+        # 2021 report and OCHA's projections.
+        sources = [{"field": "population/sex_ratio/median_age note", "name": source,
+                    "url": p["url"], "page": POPULATION + p["island"], "license": LICENCE,
+                    "year": YEAR},
+                   *(dict(src) for src in NO_MEDIAN_SOURCES)]
         population = measure(round(p["total"]), year=YEAR, source=source)
         sex_note = None
         whole = len(parishes[p["code"] // 10]) == 1 and p["total"] == own["households"]
@@ -642,13 +663,16 @@ def records_of(parishes: dict[int, list[dict[str, Any]]], table: dict[str, dict[
             sex_ratio=measure(round(100 * p["men"] / p["women"], 1), unit="males_per_100_females",
                               year=YEAR, source=source),
             sex_ratio_note=sex_note,
+            median_age=gap(NOT_AVAILABLE, NO_MEDIAN.format(municipality=municipality)),
             sources=sources))
     return out
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--run", default="", help="a label that tells one dispatch from another")
+    ap.parse_args()
     blob, _ = fetch(REPORT_ORIGINAL, REPORT_STAMP, magic=b"%PDF")
     counts_2021 = read_2021(table_7(blob))
     for code, row in counts_2021.items():

@@ -88,6 +88,9 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
     "East Asian religions": (
         "Taoism", "Confucianism", "Shinto", "Caodaism", "Chondogyo",
         "Cheondoism", "Tenrikyo", "Buddhist or Taoist",
+        # The Church of World Messianity (Sekai Kyūseikyō), a Japanese new
+        # religion that Sao Tome and Principe's 2012 census counts by name.
+        "Church of World Messianity",
     ),
     "African diaspora religions": ("Spiritism and Afro-Brazilian religions",
                                   # Jamaica's Revival, which its census
@@ -371,7 +374,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Somali", "Oromo", "Afar", "Sidamo", "Sidama", "Beja", "Saho",
         "Agaw", "Hadiyya", "Kambaata", "Konso", "Gedeo", "Bilen", "Awngi",
         "Agew-Kamyrnya", "Kemant", "Libido", "Alaba-K'abeena", "Burji",
-        "Daasanach", "Arbore", "Tsamai", "Baiso", "Dirasha", "Bussa",
+        "Daasanach", "Arbore", "Tsamai", "Baiso", "Dirasha", "Bussa", "Mosiye",
+        # Tanzania's Iraqw, of the Southern Cushitic languages of the Rift.
+        "Iraqw",
     ),
     "Chadic languages": ("Hausa", "Bura", "Marghi", "Kanakuru"),
     "Omotic languages": ("Wolaytta", "Wolayita", "Gamo", "Dawro", "Kafa",
@@ -406,29 +411,45 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Ganda", "Gikuyu", "Luba-Kasai", "Mwani", "Rundi (Kirundi)",
         "Kinyarwanda (Rwanda)", "Bobangi", "Babango", "Mpiemo",
         "Nyankole", "Soga", "Fipa", "Kota", "Ciyao", "Mijikenda", "Jaruo",
+        # The Comoros' own language (Shikomori), Sabaki Bantu like Swahili.
+        "Comorian",
+        # Subiya (Ikuhane), Zone K of Bantu, the first language of Namibia's
+        # Zambezi region beside Lozi.
+        "Subiya",
     ),
     # Tiv and Berom are Benue-Congo rather than Volta-Niger proper; this tree
     # does not separate the two at branch level and Bantu already occupies the
     # other half of Benue-Congo, so they sit with their nearest neighbours
-    # here and take the right family colour.
+    # here and take the right family colour. So does the Basa of central
+    # Nigeria (CLEAR Global's "Basa (Nigeria)", the Abuja territory's largest
+    # language), a Kainji language of Benue-Congo.
     "Volta-Niger languages": ("Yoruba", "Igbo", "Ewe", "Fon", "Edo", "Idoma",
                               "Igala", "Nupe", "Gun", "Aja", "Tiv", "Berom",
-                              "Urhobo", "Ibibio", "Efik", "Esan", "Tarok"),
+                              "Urhobo", "Ibibio", "Efik", "Esan", "Tarok",
+                              "Basa (Nigeria)"),
     "Kwa languages": ("Akan", "Twi", "Fante", "Ga", "Baoulé", "Anyi",
                       "Guang", "Dangme", "Gonja"),
     # Gio is Dan under Liberia's name for it and Lorma is Loma: both Mande,
     # not Kru, although Liberia's Kru languages sit beside them.
+    # Sierra Leone's 2015 census names Kono and Koranko (Mande), and Limba
+    # and Sherbro, which sit with Temne, Kissi and Gola in the old Atlantic
+    # grouping this branch follows.
     "Mande languages": ("Bambara", "Malinke", "Maninka", "Dioula", "Jula",
                         "Soninke", "Mende", "Kpelle", "Susu", "Vai", "Bozo",
-                        "Dan", "Mano", "Gio", "Lorma", "Loma"),
+                        "Dan", "Mano", "Gio", "Lorma", "Loma", "Kono", "Koranko"),
     "Atlantic languages": ("Wolof", "Fula", "Fulfulde", "Pulaar", "Serer",
                            "Diola", "Jola", "Temne", "Balanta", "Manjak",
-                           "Kissi", "Gola"),
-    "Gur languages": ("Mooré", "More", "Dagbani", "Dagaare", "Gurma",
-                      "Senufo", "Lobiri", "Kabiyé", "Bwamu", "Bariba",
+                           "Kissi", "Gola", "Limba", "Sherbro"),
+    # Mooré is the Mossi's language, Gur (Oti-Volta), not Mande: Mossi and
+    # Mòoré are the names surveys and CLEAR Global give it.
+    "Gur languages": ("Mooré", "More", "Mossi", "Mòoré", "Dagbani", "Dagaare",
+                      "Gurma", "Senufo", "Lobiri", "Kabiyé", "Bwamu", "Bariba",
                       "Moba", "Mampruli", "Ditammari", "Kulango",
                       "Karaboro", "Dagaari", "Frafra", "Farefare",
                       "Likpakpaln", "Konkomba", "Tem"),
+    # Dogon is a branch of its own, not Mande (Mali's Bandiagara plateau and
+    # Burkina Faso's Kossi).
+    "Dogon languages": ("Dogon",),
     # Two Niger-Congo branches the tree had no member of until Afrobarometer
     # Round 8's language question brought Liberia's and the Niger delta's.
     "Kru languages": ("Kru", "Krahn", "Grebo", "Klao", "Bassa (Liberia)"),
@@ -536,6 +557,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Seychellois Creole", "Krio", "Patois", "Jamaican Patois",
         "Antillean Creole", "Guianese Creole", "Pidgin", "Nigerian Pidgin",
         "Sango creole",
+        # The Portuguese creoles of the Gulf of Guinea, as Sao Tome and
+        # Principe's 2012 census names them (sao_tome_census).
+        "Forro", "Angolar", "Lung'ie",
     ),
     "Sign languages": ("Sign language", "Auslan", "New Zealand Sign Language",
                        "British Sign Language", "American Sign Language"),
@@ -563,7 +587,9 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
     ),
     "Central Sudanic languages": ("Kresh", "Birri", "Sara", "Sara Proper",
                                   "Ngam (Sara)", "Yulu", "Runga", "Lugbara",
-                                  "Ma'di", "Bongo"),
+                                  "Ma'di", "Bongo",
+                                  # The DRC's Lese, of the Ituri forest (Mambasa).
+                                  "Lese"),
     "Surmic and Koman languages": (
         "Suri", "Suri (Suri)", "Mursi", "Me'en", "Me’en", "Murle", "Bodi",
         "Kwegu", "Kwegu (Kwegoi)", "Komo", "Komo (Sudan)", "Gumuz",
@@ -629,6 +655,7 @@ LANGUAGE_FAMILY: dict[str, tuple[str, ...]] = {
         "Bantu languages", "Volta-Niger languages", "Kwa languages",
         "Mande languages", "Atlantic languages", "Gur languages",
         "Adamawa-Ubangi languages", "Kru languages", "Ijoid languages",
+        "Dogon languages",
     ),
     "Austronesian languages": ("Malayo-Polynesian languages",
                                "Oceanic languages", "Formosan languages"),
@@ -728,7 +755,7 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
     "Malayo-Polynesian languages": ("Bisaya, n.o.s.", "Kinaray-a",
                                     "Waray-Waray", "Kankanaey",
                                     "Pampangan"),
-    "Mande languages": ("Bamanankan", "Wojenaka", "Mossi", "Mòoré"),
+    "Mande languages": ("Bamanankan", "Wojenaka"),
     "Creole languages": ("Morisyen", "Jamaican English Creole", "Sango",
                          "Sango Riverain", "Plautdietsch", "Pennsylvania German",
                          "Low Saxon", "Mina"),
@@ -971,6 +998,10 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Balanta", "Manjak", "Papel", "Bijago", "Sarakole", "Songhai",
         "Tukulor", "Dioula", "Kabye", "Fon", "Adja", "Bariba", "Yom",
         "Betamaribe", "Mandingo", "Vai", "Sherbro", "Kono", "Loko",
+        # Sierra Leone's 2015 census: the Krim of Bonthe and Pujehun.
+        "Krim",
+        # Guinea-Bissau's 2009 census (the Biafada of Quinara and Tombali).
+        "Beafada",
     ),
     "Nilotic peoples": (
         "Luo", "Kalenjin", "Maasai", "Turkana", "Samburu", "Dinka", "Nuer",
@@ -1440,6 +1471,9 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
         "Afghan national", "Iraqi national", "Pakistani national",
         "Turkish national",
         "Nigerian", "Kenyan", "Cameroonian", "Malian", "Senegalese",
+        # Côte d'Ivoire's 2021 census: the share of Ivorians among a region's
+        # residents (the regional pages print no ethnic group).
+        "Ivorian",
         "Congolese (Kinshasa)", "Congolese (Brazzaville)", "Chadian",
         "Pakistani", "Indian", "Bangladeshi", "Sri Lankan", "Nepalese",
         "Burmese", "Thai", "Indonesian", "Filipino national",
@@ -1471,6 +1505,9 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
         # Bhutan's census counts citizenship (bhutan.py, Table 2.2) and the
         # Maldives' nationality (maldives_census.py): the home row of each.
         "Bhutanese", "Maldivian",
+        # Rwanda's 2022 census counts nationality, Rwandan or foreign, and
+        # asks no ethnicity (rwanda_census.py, Main Indicators Table 6).
+        "Rwandan",
     ),
 }
 
@@ -1560,6 +1597,11 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     # nationally only: everyone the indigenous question does not count.
     "Not indigenous",
     "Other ethnicity", "Ethnicity not stated", "No ethnic group",
+    # Afrobarometer's answer for a respondent who names only their
+    # nationality, or does not think of themselves in those terms: 99% of
+    # Eswatini's respondents. An answer, but not an ethnic group, so filed
+    # beside the censuses' "No ethnic group" rather than under any people.
+    "National identity only",
     "No ethnicity data", "Other Central Africa",
     "Unknown ethnicity", "Not declared", "Not classified", "No ethnicity",
     "Some other race (non-Hispanic)", "Some other race", "Other",
@@ -1592,8 +1634,8 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     "other Liberian ethnic group", "other Togolese", "and other", "none",
     "Other Malian ethnic group",
     # Botswana's Factbook "other, including Kgalagadi and people of European
-    # ancestry", as its row keeps it without the "other".
-    "including Kgalagadi and people of European ancestry",
+    # ancestry", a residual however much it names.
+    "other, including Kgalagadi and people of European ancestry",
     # A person counted as not being from here, which says nothing about
     # where they are from.
     "Foreign", "foreign", "foreign population", "non-Gambian",
@@ -1737,7 +1779,11 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     # under their families.
     "Bantu languages": (
         # CLEAR Global, DR Congo, Namibia, Uganda, Kenya and Malawi, at district level.
-        "Yombe", "Tetela", "Nande", "Songe", "Budja (C.37)", "Dengese",
+        "Yombe", "Tetela", "Nande", "Songe", "Budja", "Dengese",
+        # Ruund (Uruund), the Lunda language of Kapanga, and the Ngiri's Baloi;
+        # Ituri's Bila and Ndaka, Maniema's Ombo and Sankuru's Ohendo (Kole), all
+        # of Guthrie's zones C and D.
+        "Ruund", "Baloi", "Bila", "Ndaka", "Ombo", "Ohendo",
         "Bangala", "Bembe", "Havu", "Mashi", "Lambya", "Tooro", "Embu",
         "Diriku-Shambyu",
         "Ovambo", "Herero", "Kwangali", "Lozi", "Yeyi", "Mbukushu",
@@ -1772,10 +1818,22 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Mande languages": (
         # CLEAR Global, Guinea and Sierra Leone.
         "Manenkan", "Western Maninkakan", "Kono (Guinea)", "Toma",
-        "Kuranko", "Kono (Sierra Leone)","Mandingo", "Dogon",
+        "Kuranko", "Kono (Sierra Leone)","Mandingo",
                         # Mali and Burkina Faso.
                         "Khassonke", "Samogo", "Dafing", "Marka", "Bissa",
-                        "Bobo"),
+                        "Bobo",
+                        # Guinea's 2014 census (the Konyanka of the forest
+                        # region) and Benin's Boo, the Boko of Segbana;
+                        # Burkina Faso's Samo (San) of the Sourou.
+                        "Konyanka", "Boo", "Samo",
+                        # Afrobarometer, Guinea: Jahanka, a Manding language
+                        # of the Diakhanké, as both rounds now spell it.
+                        "Diakanké"),
+    # Afrobarometer Round 9, Madagascar: the official language and its
+    # regional varieties, in English (afrobarometer.RELABEL); the survey's
+    # French had filed both under Malagasy by its first word, and the second
+    # in English was read as a sibling of it.
+    "Malagasy": ("Official Malagasy", "Malagasy (regional variety)"),
     "Indo-Aryan languages": (
         "Halabi", "Avadhi", "Sarnami Hindustani",
         # ALI, Iran: an Indo-Aryan island on the Hormozgān coast,
@@ -1834,12 +1892,23 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Nilo-Saharan languages": ("Songhai", "Zarma", "Kanuri", "Fur", "Gula",
                                "Dendi"),
     "Gur languages": (
-        # CLEAR Global, Benin and Ghana.
-        "Kusaal", "Yom", "Biali", "Waama", "Talni", "Mamara Senoufo","Gurma", "Bwamu", "Lobi", "Dagara",
+        # CLEAR Global, Benin and Ghana. Syenara is a Senufo language of
+        # Mali, Burkina Faso and Côte d'Ivoire, a tenth of a percent of
+        # Benin's towns and border markets, as Mamara is of Mali's.
+        "Kusaal", "Yom", "Biali", "Waama", "Talni", "Mamara Senoufo", "Syenara Senoufo",
+        "Gurma", "Bwamu", "Lobi", "Dagara",
                       # Togo's Lama (Lamba), a Gur language of the Kara
                       # region, not Zambia's Bantu Lamba.
                       "Lama, Lamba",
-                      "Gurunsi", "Minianka", "Kassena", "Konkomba"),
+                      "Gurunsi", "Minianka", "Kassena", "Konkomba",
+                      # Burkina Faso's 2019 census, by province: the Grusi
+                      # Nuni, Ko (Winyé) and Lyélé, the Oti-Volta Koussassé
+                      # (Kusaal), Birifor, Nankana, Ninkare and Yana, and
+                      # Toussian, Gouin (Cerma), Turka, Koromfé, Dyan, Kaansa
+                      # (Gan) and Dogosé.
+                      "Nuni", "Ko", "Lyélé", "Koussassé", "Birifor", "Nankana",
+                      "Ninkare", "Yana", "Toussian", "Gouin", "Turka", "Koromfé",
+                      "Dyan", "Kaansa", "Dogosé"),
     # Central African Republic: the Ubangian languages its census lists, which
     # the tree reached only through the "Banda" and "Gbaya" cover terms.
     "Adamawa-Ubangi languages": (
@@ -2251,13 +2320,17 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Lephuthing", "Tsoeneng", "Thepu", "Nareng", "Kubung", "Mosiea",
         "Kwena", "Ngwato", "Ngwaketse", "Rolong", "Tswapong", "Kgalagadi",
         "Hurutshe", "Khurutshe", "Yeyi", "Mbukushu", "Birwa", "Mmirwa",
+        # Botswana's districts as Afrobarometer's Round 9 pools them: the
+        # Tlharo of Kgalagadi and the Tawana of Ngamiland, Tswana peoples,
+        # and the Ngologa, a Kgalagadi people.
+        "Tlharo", "Tawana", "Ngologa",
         # Namibia, Angola and Zimbabwe.
         "Subia", "Zezuru", "Kwanyama", "Humbi", "Fiote", "Luvale",
         "Lunda", "Ndau", "Nambya",
         # Cameroon, Gabon and the Republic of the Congo. The Grassfields
         # peoples are Bantoid rather than narrow Bantu, and are filed here
         # for the same reason Bamileke already is.
-        "Bafia", "Bafut", "Balikumbat", "Bamoun", "Bamum", "Bangwa",
+        "Bafia", "Bafut", "Balikumbat", "Batibo", "Bamoun", "Bamum", "Bangwa",
         "Batanga", "Bayangi", "Bakweri", "Mbo", "Nso", "Njikwa", "Mbam",
         "Mbamois", "Grassfields", "Sawa", "Kako", "Meka", "Makaa",
         "Myene", "Kele", "Tsogho", "Okande", "Shira", "Eshira", "Echira",
@@ -2389,8 +2462,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Mesmedje/Massalat/Kadjakse",
         # Northern Cameroon, whose peoples are Adamawa and Chadic rather
         # than Bantu, and the Ubangian and Central Sudanic peoples of the
-        # Congo's north-east.
-        "Dii", "Biu-Mandara", "Mayogo", "Mba", "Mbandja", "Mono",
+        # Congo's north-east. The Factbook's Cameroon names the first two
+        # by their language groups.
+        "Dii", "Biu-Mandara", "Adamawa-Ubangi", "Mafa", "Mayogo", "Mba", "Mbandja", "Mono",
         "Lendu", "Logo", "Mamvu", "Mangbetu",
         # The Central Sudanic peoples of the West Nile, who are the same
         # cluster as Lendu, Logo and Mamvu above and live on the other side
@@ -2551,8 +2625,12 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # together, so two of its four are a faith. Reading "Hindou" as South
     # Asian ancestry would be the likelier guess and still a guess: the
     # census asks about religion there, and the honest answer is to say the
-    # category is not an ancestry rather than to pick one for it.
-    "Unclassified ethnicity answers": ("Hindou", "Musulman",
+    # category is not an ancestry rather than to pick one for it. The survey
+    # writes the two in French and the map in English (afrobarometer.RELABEL).
+    "Unclassified ethnicity answers": (
+        # Côte d'Ivoire's other nationals, a remainder that names no state.
+        "Non-Ivorian",
+        "Hindou", "Musulman", "Hindu community", "Muslim community",
                                        # Registers' residual rows: STATEC's
                                        # unknown and stateless, CBS's other
                                        # migration background.
@@ -2803,8 +2881,8 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Mauritius's community of African and Malagasy descent, the census
         # category beside "Euro-Mauricien (Blanc)" below. Its bracketed
         # "Creole" had filed it with the Afro-descendant peoples of the
-        # Americas.
-        "Afro-Mauricien (Creole)",
+        # Americas, and does so in English too.
+        "Afro-Mauricien (Creole)", "Afro-Mauritian (Creole)",
         # Honduras's P06 "Otro" for someone who told P05 they are
         # Afro-Honduran or Black: of no people the form lists, neither
         # Garifuna nor the English-speaking Black people of the Bay Islands.
@@ -2835,8 +2913,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Mauritius's fourth community, and the bands the small European
         # territories write for "somewhere else in Europe", which sit beside
         # "Other European" already in this category.
-        "Euro-Mauricien (Blanc)", "other Europe", "other EU", "other Nordic",
-        "other Nordic peoples", "other Crown Dependencies",
+        "Euro-Mauricien (Blanc)", "Euro-Mauritian (White)", "other Europe",
+        "other EU", "other Nordic", "other Nordic peoples",
+        "other Crown Dependencies",
     ),
     "Pacific Islander (census category)": (
         "Other Native Hawaiian and Other Pacific Islander",
@@ -2852,7 +2931,12 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     # deliberately NOT folded to "Yao": that name already resolves to the
     # Hmong-Mien Yao of southern China, and folding Malawi's Bantu Ciyao into
     # it would put a Mozambican border district in the wrong language family.
-    "Haoussa": "Hausa", "Fongbé": "Fon", "Soussou": "Susu",
+    # Malawi's spelling of the same Bantu language is Chiyao.
+    "Haoussa": "Hausa", "Fongbé": "Fon", "Soussou": "Susu", "Chiyao": "Ciyao",
+    # Ethiopia's 2007 census tables, as the US Census Bureau prepared them,
+    # name Silt'e "Shetagna": 96.9% of Selti zone, whose people are 97.3%
+    # Silt'e by ethnic group in the same census.
+    "Shetagna": "Silt'e",
     "Fufuldé": "Fulfulde", "\u200eFulfudé": "Fulfulde", "Fulfudé": "Fulfulde",
     # "Songhai", not "Songhay": the latter is itself a variant of it, and
     # variants do not chain.
@@ -2867,6 +2951,11 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     "Tigirigna": "Tigrinya", "Themne": "Temne", "Sénoufo": "Senufo",
     "Somaligna": "Somali", "Oromiffa": "Oromo", "Afarigna": "Afar",
     "Amazigh": "Tamazight", "Runyankole": "Nyankole", "Lusoga": "Soga",
+    # Three languages Afrobarometer's two rounds now write alike
+    # (afrobarometer_r8.SPELLING, afrobarometer.LABEL_TYPOS): Runyankore,
+    # Ngakarimojong (the Karamojong's name for their language) and Kiiraqw
+    # (Iraqw with the Swahili ki- prefix).
+    "Runyankore": "Nyankole", "Ngakarimojong": "Karamojong", "Kiiraqw": "Iraqw",
     "Ateso": "Teso", "Masai/Samburu": "Maasai", "Makua": "Makhuwa",
     "Changana": "Tsonga", "Kifipa": "Fipa", "Gulmacema": "Gurma",
     "Ditamari": "Ditammari", "Koulango": "Kulango", "Ben, Moba": "Moba",
@@ -2874,6 +2963,7 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     # Fula, across a dozen colonial orthographies.
     "Fulah": "Fula", "Fulata": "Fula", "Peulh": "Fula", "Peul": "Fula",
     "Pular": "Fula", "Mbororo": "Fula", "Fulani": "Fula", "Poular": "Fula",
+    "Fullah": "Fula",
     # Madagascar's census names the highland dialect, not the language.
     "Merina": "Malagasy",
     # Ghana's census names the Akan dialects separately.
@@ -2995,6 +3085,8 @@ ETHNIC_VARIANTS: dict[str, str] = {
     "Peule": "Fula", "Fullah": "Fula",
     "Madingo": "Mandingo", "Mandinga": "Mandingo", "Manjago": "Manjak",
     "Manjaco": "Manjak", "Manjack": "Manjak", "Sereer": "Serer",
+    # The Gambia's census spellings.
+    "Wollof": "Wolof", "Serere": "Serer",
     "Kissien": "Kissi", "Serahuleh": "Soninke", "Grusi": "Gurunsi",
     "Gourounsi": "Gurunsi", "Sonrai": "Songhai",
     "Afrikaaner": "Afrikaner", "Masai": "Maasai", "Mosarwa": "Sarwa",

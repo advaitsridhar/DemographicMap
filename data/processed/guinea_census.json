@@ -1,0 +1,3144 @@
+[
+  {
+    "id": "GIN-RGPH-region-boke",
+    "level": "admin1",
+    "name": "Boke",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1628656,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "value": 18.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires, Tableau 2"
+    },
+    "sex_ratio": {
+      "value": 963,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 96.8,
+        "count": 1048486
+      },
+      {
+        "group": "Christianity",
+        "pct": 2.8,
+        "count": 30328
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 3249
+      },
+      {
+        "group": "Animist",
+        "pct": 0.1,
+        "count": 1083
+      }
+    ],
+    "language": [
+      {
+        "group": "Pular",
+        "pct": 45.8
+      },
+      {
+        "group": "Susu",
+        "pct": 32.2
+      },
+      {
+        "group": "Jahanka",
+        "pct": 5.8
+      },
+      {
+        "group": "Landoma",
+        "pct": 3.9
+      },
+      {
+        "group": "Baga",
+        "pct": 2.3
+      },
+      {
+        "group": "Maninka",
+        "pct": 2.0
+      },
+      {
+        "group": "Mikhifore",
+        "pct": 2.0
+      },
+      {
+        "group": "Other national language",
+        "pct": 1.1
+      },
+      {
+        "group": "Badyara",
+        "pct": 0.8
+      },
+      {
+        "group": "Coniagui",
+        "pct": 0.8
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.7
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.5
+      },
+      {
+        "group": "Nalu",
+        "pct": 0.4
+      },
+      {
+        "group": "Kissi",
+        "pct": 0.3
+      },
+      {
+        "group": "Kpelle",
+        "pct": 0.3
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.3
+      },
+      {
+        "group": "No national language",
+        "pct": 0.2
+      },
+      {
+        "group": "Toma",
+        "pct": 0.2
+      },
+      {
+        "group": "Kono",
+        "pct": 0.1
+      },
+      {
+        "group": "Konyanka",
+        "pct": 0.1
+      },
+      {
+        "group": "Mano",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "median_age"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion/language"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "385441B97135885584055",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the region of Boké.",
+    "median_age_note": "The 2025 census's preliminary results give each region's median age in whole years.",
+    "religion_year": 2014,
+    "religion_note": "Religion of the resident population as the 2014 census tabulates it by region (Tableau 5.10): Muslim, Christian, animist, other, none.",
+    "language_year": 2014,
+    "language_note": "The principal language spoken, as the 2014 census tabulates it by region (Tableau 5.08); its national column is the one the report gives for everyone aged 3 and over (Tableau 5.07)."
+  },
+  {
+    "id": "GIN-RGPH-region-conakry",
+    "level": "admin1",
+    "name": "Conakry",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2456802,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "value": 19.3,
+      "unit": "years",
+      "year": 2014,
+      "source": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017), Tableau 3.06"
+    },
+    "sex_ratio": {
+      "value": 938,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 94.8,
+        "count": 1574602
+      },
+      {
+        "group": "Christianity",
+        "pct": 4.8,
+        "count": 79726
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 4982
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1,
+        "count": 1660
+      }
+    ],
+    "language": [
+      {
+        "group": "Susu",
+        "pct": 37.0
+      },
+      {
+        "group": "Pular",
+        "pct": 34.0
+      },
+      {
+        "group": "Maninka",
+        "pct": 18.7
+      },
+      {
+        "group": "Kissi",
+        "pct": 1.7
+      },
+      {
+        "group": "Konyanka",
+        "pct": 1.6
+      },
+      {
+        "group": "Kpelle",
+        "pct": 1.4
+      },
+      {
+        "group": "Jahanka",
+        "pct": 1.3
+      },
+      {
+        "group": "Toma",
+        "pct": 0.8
+      },
+      {
+        "group": "Other national language",
+        "pct": 0.6
+      },
+      {
+        "group": "Baga",
+        "pct": 0.5
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.5
+      },
+      {
+        "group": "Coniagui",
+        "pct": 0.4
+      },
+      {
+        "group": "Kono",
+        "pct": 0.3
+      },
+      {
+        "group": "Kuranko",
+        "pct": 0.2
+      },
+      {
+        "group": "Landoma",
+        "pct": 0.2
+      },
+      {
+        "group": "Mano",
+        "pct": 0.2
+      },
+      {
+        "group": "Mikhifore",
+        "pct": 0.2
+      },
+      {
+        "group": "No national language",
+        "pct": 0.2
+      },
+      {
+        "group": "Lele",
+        "pct": 0.1
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.1
+      },
+      {
+        "group": "Toma-Mania",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "median_age"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion/language"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "385441B29247776226513",
+    "population_note": "The 2025 census (preliminary results) counts the city of Conakry as thirteen communes, 3,407,327 people; three of them -- Kagbélen, from Dubréka, and Manéah and Sanoyah, from Coyah -- lie outside the city as drawn here. This is the other ten communes, the city on the ground the map draws: 2,456,802.",
+    "median_age_note": "The 2025 census's median for Conakry, 19, is for the city of thirteen communes, not the ground drawn here; this is the 2014 census's median for the region on its earlier lines.",
+    "religion_year": 2014,
+    "religion_note": "Religion of the resident population as the 2014 census tabulates it by region (Tableau 5.10): Muslim, Christian, animist, other, none.",
+    "language_year": 2014,
+    "language_note": "The principal language spoken, as the 2014 census tabulates it by region (Tableau 5.08); its national column is the one the report gives for everyone aged 3 and over (Tableau 5.07)."
+  },
+  {
+    "id": "GIN-RGPH-region-faranah",
+    "level": "admin1",
+    "name": "Faranah",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1460931,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "value": 16.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires, Tableau 2"
+    },
+    "sex_ratio": {
+      "value": 911,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 89.1,
+        "count": 838924
+      },
+      {
+        "group": "Christianity",
+        "pct": 9.7,
+        "count": 91330
+      },
+      {
+        "group": "No religion",
+        "pct": 0.8,
+        "count": 7532
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 1883
+      },
+      {
+        "group": "Animist",
+        "pct": 0.1,
+        "count": 941
+      }
+    ],
+    "language": [
+      {
+        "group": "Maninka",
+        "pct": 36.3
+      },
+      {
+        "group": "Pular",
+        "pct": 27.9
+      },
+      {
+        "group": "Kissi",
+        "pct": 13.2
+      },
+      {
+        "group": "Kuranko",
+        "pct": 12.1
+      },
+      {
+        "group": "Yalunka",
+        "pct": 6.7
+      },
+      {
+        "group": "Lele",
+        "pct": 2.3
+      },
+      {
+        "group": "Susu",
+        "pct": 0.4
+      },
+      {
+        "group": "Kpelle",
+        "pct": 0.3
+      },
+      {
+        "group": "Jahanka",
+        "pct": 0.2
+      },
+      {
+        "group": "No national language",
+        "pct": 0.2
+      },
+      {
+        "group": "Toma",
+        "pct": 0.2
+      },
+      {
+        "group": "Konyanka",
+        "pct": 0.1
+      },
+      {
+        "group": "Other national language",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "median_age"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion/language"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "385441B61717407014046",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the region of Faranah.",
+    "median_age_note": "The 2025 census's preliminary results give each region's median age in whole years.",
+    "religion_year": 2014,
+    "religion_note": "Religion of the resident population as the 2014 census tabulates it by region (Tableau 5.10): Muslim, Christian, animist, other, none.",
+    "language_year": 2014,
+    "language_note": "The principal language spoken, as the 2014 census tabulates it by region (Tableau 5.08); its national column is the one the report gives for everyone aged 3 and over (Tableau 5.07)."
+  },
+  {
+    "id": "GIN-RGPH-region-kankan",
+    "level": "admin1",
+    "name": "Kankan",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4110215,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "value": 15.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires, Tableau 2"
+    },
+    "sex_ratio": {
+      "value": 1008,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 98.7,
+        "count": 1946894
+      },
+      {
+        "group": "Christianity",
+        "pct": 1.1,
+        "count": 21697
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2,
+        "count": 3945
+      }
+    ],
+    "language": [
+      {
+        "group": "Maninka",
+        "pct": 87.1
+      },
+      {
+        "group": "Kuranko",
+        "pct": 3.9
+      },
+      {
+        "group": "Pular",
+        "pct": 3.9
+      },
+      {
+        "group": "Konyanka",
+        "pct": 2.6
+      },
+      {
+        "group": "Kissi",
+        "pct": 0.6
+      },
+      {
+        "group": "Kpelle",
+        "pct": 0.3
+      },
+      {
+        "group": "Susu",
+        "pct": 0.3
+      },
+      {
+        "group": "No national language",
+        "pct": 0.2
+      },
+      {
+        "group": "Toma",
+        "pct": 0.2
+      },
+      {
+        "group": "Toma-Mania",
+        "pct": 0.2
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.2
+      },
+      {
+        "group": "Coniagui",
+        "pct": 0.1
+      },
+      {
+        "group": "Jahanka",
+        "pct": 0.1
+      },
+      {
+        "group": "Kono",
+        "pct": 0.1
+      },
+      {
+        "group": "Lele",
+        "pct": 0.1
+      },
+      {
+        "group": "Mano",
+        "pct": 0.1
+      },
+      {
+        "group": "Other national language",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "median_age"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion/language"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "385441B85233176952124",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the region of Kankan.",
+    "median_age_note": "The 2025 census's preliminary results give each region's median age in whole years.",
+    "religion_year": 2014,
+    "religion_note": "Religion of the resident population as the 2014 census tabulates it by region (Tableau 5.10): Muslim, Christian, animist, other, none.",
+    "language_year": 2014,
+    "language_note": "The principal language spoken, as the 2014 census tabulates it by region (Tableau 5.08); its national column is the one the report gives for everyone aged 3 and over (Tableau 5.07)."
+  },
+  {
+    "id": "GIN-RGPH-region-kindia",
+    "level": "admin1",
+    "name": "Kindia",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3226145,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "value": 15.8,
+      "unit": "years",
+      "year": 2014,
+      "source": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017), Tableau 3.06"
+    },
+    "sex_ratio": {
+      "value": 937,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 97.2,
+        "count": 1517618
+      },
+      {
+        "group": "Christianity",
+        "pct": 2.3,
+        "count": 35910
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5,
+        "count": 7806
+      }
+    ],
+    "language": [
+      {
+        "group": "Susu",
+        "pct": 54.9
+      },
+      {
+        "group": "Pular",
+        "pct": 35.2
+      },
+      {
+        "group": "Maninka",
+        "pct": 5.3
+      },
+      {
+        "group": "Kissi",
+        "pct": 1.0
+      },
+      {
+        "group": "Kpelle",
+        "pct": 0.7
+      },
+      {
+        "group": "Jahanka",
+        "pct": 0.5
+      },
+      {
+        "group": "Toma",
+        "pct": 0.4
+      },
+      {
+        "group": "Konyanka",
+        "pct": 0.3
+      },
+      {
+        "group": "Kono",
+        "pct": 0.2
+      },
+      {
+        "group": "No national language",
+        "pct": 0.2
+      },
+      {
+        "group": "Other national language",
+        "pct": 0.2
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.2
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.2
+      },
+      {
+        "group": "Baga",
+        "pct": 0.1
+      },
+      {
+        "group": "Coniagui",
+        "pct": 0.1
+      },
+      {
+        "group": "Kuranko",
+        "pct": 0.1
+      },
+      {
+        "group": "Lele",
+        "pct": 0.1
+      },
+      {
+        "group": "Mano",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "median_age"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion/language"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "385441B58689174477974",
+    "population_note": "The 2025 census (preliminary results) counts the region of Kindia as 2,275,620 people, without Kagbélen, Manéah and Sanoyah, communes of the city of Conakry since 2024; the region is drawn with them, so it carries them added: 3,226,145.",
+    "median_age_note": "The 2025 census's median for Kindia, 17, is for the region without the three communes it gave the city, not the ground drawn here; this is the 2014 census's median for the region on its earlier lines.",
+    "religion_year": 2014,
+    "religion_note": "Religion of the resident population as the 2014 census tabulates it by region (Tableau 5.10): Muslim, Christian, animist, other, none.",
+    "language_year": 2014,
+    "language_note": "The principal language spoken, as the 2014 census tabulates it by region (Tableau 5.08); its national column is the one the report gives for everyone aged 3 and over (Tableau 5.07)."
+  },
+  {
+    "id": "GIN-RGPH-region-labe",
+    "level": "admin1",
+    "name": "Labe",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1239897,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "value": 18.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires, Tableau 2"
+    },
+    "sex_ratio": {
+      "value": 772,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.4,
+        "count": 988491
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.4,
+        "count": 3977
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2,
+        "count": 1988
+      }
+    ],
+    "language": [
+      {
+        "group": "Pular",
+        "pct": 94.5
+      },
+      {
+        "group": "Jahanka",
+        "pct": 1.7
+      },
+      {
+        "group": "Yalunka",
+        "pct": 1.2
+      },
+      {
+        "group": "Maninka",
+        "pct": 0.9
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.7
+      },
+      {
+        "group": "Susu",
+        "pct": 0.3
+      },
+      {
+        "group": "Kpelle",
+        "pct": 0.2
+      },
+      {
+        "group": "No national language",
+        "pct": 0.2
+      },
+      {
+        "group": "Kissi",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "median_age"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion/language"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "385441B21537995001042",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the region of Labé.",
+    "median_age_note": "The 2025 census's preliminary results give each region's median age in whole years.",
+    "religion_year": 2014,
+    "religion_note": "Religion of the resident population as the 2014 census tabulates it by region (Tableau 5.10): Muslim, Christian, animist, other, none.",
+    "language_year": 2014,
+    "language_note": "The principal language spoken, as the 2014 census tabulates it by region (Tableau 5.08); its national column is the one the report gives for everyone aged 3 and over (Tableau 5.07)."
+  },
+  {
+    "id": "GIN-RGPH-region-mamou",
+    "level": "admin1",
+    "name": "Mamou",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 916535,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "value": 19.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires, Tableau 2"
+    },
+    "sex_ratio": {
+      "value": 794,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.4,
+        "count": 726800
+      },
+      {
+        "group": "Christianity",
+        "pct": 0.5,
+        "count": 3655
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 731
+      }
+    ],
+    "language": [
+      {
+        "group": "Pular",
+        "pct": 92.4
+      },
+      {
+        "group": "Maninka",
+        "pct": 4.3
+      },
+      {
+        "group": "Susu",
+        "pct": 1.9
+      },
+      {
+        "group": "Other national language",
+        "pct": 0.4
+      },
+      {
+        "group": "Jahanka",
+        "pct": 0.2
+      },
+      {
+        "group": "Kissi",
+        "pct": 0.2
+      },
+      {
+        "group": "Kpelle",
+        "pct": 0.2
+      },
+      {
+        "group": "Kono",
+        "pct": 0.1
+      },
+      {
+        "group": "Mikhifore",
+        "pct": 0.1
+      },
+      {
+        "group": "No national language",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "median_age"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion/language"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "385441B8345275251802",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the region of Mamou.",
+    "median_age_note": "The 2025 census's preliminary results give each region's median age in whole years.",
+    "religion_year": 2014,
+    "religion_note": "Religion of the resident population as the 2014 census tabulates it by region (Tableau 5.10): Muslim, Christian, animist, other, none.",
+    "language_year": 2014,
+    "language_note": "The principal language spoken, as the 2014 census tabulates it by region (Tableau 5.08); its national column is the one the report gives for everyone aged 3 and over (Tableau 5.07)."
+  },
+  {
+    "id": "GIN-RGPH-region-nzerekore",
+    "level": "admin1",
+    "name": "Nzerekore",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2481986,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "value": 17.0,
+      "unit": "years",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires, Tableau 2"
+    },
+    "sex_ratio": {
+      "value": 935,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 46.7,
+        "count": 736957
+      },
+      {
+        "group": "Christianity",
+        "pct": 28.1,
+        "count": 443437
+      },
+      {
+        "group": "No religion",
+        "pct": 14.2,
+        "count": 224085
+      },
+      {
+        "group": "Animist",
+        "pct": 10.4,
+        "count": 164119
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.6,
+        "count": 9468
+      }
+    ],
+    "language": [
+      {
+        "group": "Konyanka",
+        "pct": 24.4
+      },
+      {
+        "group": "Kpelle",
+        "pct": 23.4
+      },
+      {
+        "group": "Kissi",
+        "pct": 15.4
+      },
+      {
+        "group": "Maninka",
+        "pct": 9.2
+      },
+      {
+        "group": "Toma",
+        "pct": 7.8
+      },
+      {
+        "group": "Kono",
+        "pct": 4.9
+      },
+      {
+        "group": "Toma-Mania",
+        "pct": 4.5
+      },
+      {
+        "group": "Mano",
+        "pct": 4.0
+      },
+      {
+        "group": "Pular",
+        "pct": 3.5
+      },
+      {
+        "group": "Lele",
+        "pct": 0.9
+      },
+      {
+        "group": "Other national language",
+        "pct": 0.6
+      },
+      {
+        "group": "Coniagui",
+        "pct": 0.4
+      },
+      {
+        "group": "Kuranko",
+        "pct": 0.3
+      },
+      {
+        "group": "Susu",
+        "pct": 0.3
+      },
+      {
+        "group": "Bassari",
+        "pct": 0.1
+      },
+      {
+        "group": "Jahanka",
+        "pct": 0.1
+      },
+      {
+        "group": "No national language",
+        "pct": 0.1
+      },
+      {
+        "group": "Yalunka",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "median_age"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion/language"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "385441B82784678606818",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the region of Nzérékoré.",
+    "median_age_note": "The 2025 census's preliminary results give each region's median age in whole years.",
+    "religion_year": 2014,
+    "religion_note": "Religion of the resident population as the 2014 census tabulates it by region (Tableau 5.10): Muslim, Christian, animist, other, none.",
+    "language_year": 2014,
+    "language_note": "The principal language spoken, as the 2014 census tabulates it by region (Tableau 5.08); its national column is the one the report gives for everyone aged 3 and over (Tableau 5.07)."
+  },
+  {
+    "id": "GIN-RGPH-beyla",
+    "level": "admin2",
+    "name": "Beyla",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 511095,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 954,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B61238663992809",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Beyla."
+  },
+  {
+    "id": "GIN-RGPH-boffa",
+    "level": "admin2",
+    "name": "Boffa",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 287648,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1014,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B38864499602181",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Boffa."
+  },
+  {
+    "id": "GIN-RGPH-boke",
+    "level": "admin2",
+    "name": "Boke",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 777101,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 985,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B57120226425021",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Boké."
+  },
+  {
+    "id": "GIN-RGPH-conakry",
+    "level": "admin2",
+    "name": "Conakry",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2456802,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "value": 19.3,
+      "unit": "years",
+      "year": 2014,
+      "source": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017), Tableau 3.06"
+    },
+    "sex_ratio": {
+      "value": 938,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/median_age note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "median_age"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B29247776226513",
+    "population_note": "The 2025 census (preliminary results) counts the city of Conakry as thirteen communes, 3,407,327 people; three of them -- Kagbélen, from Dubréka, and Manéah and Sanoyah, from Coyah -- lie outside the city as drawn here. This is the other ten communes, the city on the ground the map draws: 2,456,802.",
+    "median_age_note": "The 2025 census's median for Conakry, 19, is for the city of thirteen communes, not the ground drawn here; this is the 2014 census's median for the region on its earlier lines. The region is this one prefecture."
+  },
+  {
+    "id": "GIN-RGPH-coyah",
+    "level": "admin2",
+    "name": "Coyah",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 899896,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B61702032280321",
+    "population_note": "The 2025 census (preliminary results) counts the prefecture of Coyah as 344,741 people, without Manéah (232,736) and Sanoyah (322,419), communes of the city of Conakry since 2024; the polygon is drawn with them, so it carries them added: 899,896."
+  },
+  {
+    "id": "GIN-RGPH-dabola",
+    "level": "admin2",
+    "name": "Dabola",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 295613,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 907,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B93693461345641",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Dabola."
+  },
+  {
+    "id": "GIN-RGPH-dalaba",
+    "level": "admin2",
+    "name": "Dalaba",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 169069,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 781,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B54901917722686",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Dalaba."
+  },
+  {
+    "id": "GIN-RGPH-dinguiraye",
+    "level": "admin2",
+    "name": "Dinguiraye",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 327941,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 926,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B8348239056405",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Dinguiraye."
+  },
+  {
+    "id": "GIN-RGPH-dubreka",
+    "level": "admin2",
+    "name": "Dubreka",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 883939,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 964,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B20116898332008",
+    "population_note": "The 2025 census (preliminary results) counts the prefecture of Dubréka as 488,569 people, without Kagbélen (395,370), communes of the city of Conakry since 2024; the polygon is drawn with them, so it carries them added: 883,939."
+  },
+  {
+    "id": "GIN-RGPH-faranah",
+    "level": "admin2",
+    "name": "Faranah",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 444040,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 904,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B80456504828542",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Faranah."
+  },
+  {
+    "id": "GIN-RGPH-forecariah",
+    "level": "admin2",
+    "name": "Forecariah",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 415895,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 957,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B90846257605457",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Forecariah."
+  },
+  {
+    "id": "GIN-RGPH-fria",
+    "level": "admin2",
+    "name": "Fria",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 126205,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 961,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B99930178329351",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Fria."
+  },
+  {
+    "id": "GIN-RGPH-gaoual",
+    "level": "admin2",
+    "name": "Gaoual",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 257328,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 878,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B28661548838550",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Gaoual."
+  },
+  {
+    "id": "GIN-RGPH-gueckedou",
+    "level": "admin2",
+    "name": "Gueckedou",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 376885,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 891,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B20526276358370",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Guéckedou."
+  },
+  {
+    "id": "GIN-RGPH-kankan",
+    "level": "admin2",
+    "name": "Kankan",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 841969,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 971,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B29721322070698",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Kankan."
+  },
+  {
+    "id": "GIN-RGPH-kerouane",
+    "level": "admin2",
+    "name": "Kerouane",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 297935,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 970,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B6018429350706",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Kerouane."
+  },
+  {
+    "id": "GIN-RGPH-kindia",
+    "level": "admin2",
+    "name": "Kindia",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 680635,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 920,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B82751767083924",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Kindia."
+  },
+  {
+    "id": "GIN-RGPH-kissidougou",
+    "level": "admin2",
+    "name": "Kissidougou",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 393337,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 908,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B59034527585113",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Kissidougou."
+  },
+  {
+    "id": "GIN-RGPH-koubia",
+    "level": "admin2",
+    "name": "Koubia",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 125401,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 832,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B77076064318361",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Koubia."
+  },
+  {
+    "id": "GIN-RGPH-koundara",
+    "level": "admin2",
+    "name": "Koundara",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 180374,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 918,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B96982587885478",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Koundara."
+  },
+  {
+    "id": "GIN-RGPH-kouroussa",
+    "level": "admin2",
+    "name": "Kouroussa",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 451205,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 965,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B25969650419510",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Kouroussa."
+  },
+  {
+    "id": "GIN-RGPH-labe",
+    "level": "admin2",
+    "name": "Labe",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 475961,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 809,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B62226026687736",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Labé."
+  },
+  {
+    "id": "GIN-RGPH-lelouma",
+    "level": "admin2",
+    "name": "Lelouma",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 179384,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 668,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B79531384041877",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Lelouma."
+  },
+  {
+    "id": "GIN-RGPH-lola",
+    "level": "admin2",
+    "name": "Lola",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 267869,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 929,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B14657084308206",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Lola."
+  },
+  {
+    "id": "GIN-RGPH-macenta",
+    "level": "admin2",
+    "name": "Macenta",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 408414,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 924,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B89321000346935",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Macenta."
+  },
+  {
+    "id": "GIN-RGPH-mali",
+    "level": "admin2",
+    "name": "Mali",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 313119,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 763,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B49159513129654",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Mali."
+  },
+  {
+    "id": "GIN-RGPH-mamou",
+    "level": "admin2",
+    "name": "Mamou",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 460786,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 849,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B72815389499799",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Mamou."
+  },
+  {
+    "id": "GIN-RGPH-mandiana",
+    "level": "admin2",
+    "name": "Mandiana",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 800959,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1025,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B67473886511689",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Mandiana."
+  },
+  {
+    "id": "GIN-RGPH-nzerekore",
+    "level": "admin2",
+    "name": "Nzerekore",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 717120,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 954,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B90650861539484",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Nzérékoré."
+  },
+  {
+    "id": "GIN-RGPH-pita",
+    "level": "admin2",
+    "name": "Pita",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 286680,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 720,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B45846614697329",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Pita."
+  },
+  {
+    "id": "GIN-RGPH-siguiri",
+    "level": "admin2",
+    "name": "Siguiri",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1718147,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1037,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B83328532988272",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Siguiri."
+  },
+  {
+    "id": "GIN-RGPH-telimele",
+    "level": "admin2",
+    "name": "Telimele",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 345780,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 828,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B50480493924889",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Telimelé."
+  },
+  {
+    "id": "GIN-RGPH-tougue",
+    "level": "admin2",
+    "name": "Tougue",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 146032,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 760,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B49131951551470",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Tougué."
+  },
+  {
+    "id": "GIN-RGPH-yomou",
+    "level": "admin2",
+    "name": "Yomou",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 200603,
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 937,
+      "unit": "males_per_1000_females",
+      "year": 2025,
+      "source": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2014 census tabulates religion by region only (Etat et structure de la population, Tableau 5.10), and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2014 census's report on the state and structure of the population tabulates no ethnic group, and the 2025 census's preliminary results give each prefecture's population by sex only."
+    },
+    "sources": [
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Quatrième Recensement Général de la Population et de l'Habitation (RGPH-4) 2025, Résultats préliminaires",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2025,
+        "field": "population/sex_ratio/religion note/ethnicity note"
+      },
+      {
+        "name": "Institut National de la Statistique (INS) de Guinée, Troisième Recensement Général de la Population et de l'Habitation (RGPH-3) 2014, Etat et structure de la population (2017)",
+        "url": "https://www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH3/RGPH3_etat_structure.pdf",
+        "license": "INS Guinée publication (reuse with attribution)",
+        "year": 2014,
+        "field": "religion note/ethnicity note"
+      }
+    ],
+    "country": "GIN",
+    "match_by": "shape_id",
+    "shape_id": "49546643B93814621089544",
+    "population_note": "The 2025 census (RGPH-4) preliminary count for the prefecture of Yomou."
+  }
+]

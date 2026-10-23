@@ -1143,7 +1143,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of São Filipe as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 100.1,
@@ -1162,12 +1163,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo",
         "url": "https://web.archive.org/web/20131106001925id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -1241,7 +1255,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Nicolau"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Ribeira Brava as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 104.5,
@@ -1260,12 +1275,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Nicolau",
         "url": "https://web.archive.org/web/20131106000907id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Nicolau.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Nicolau.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -1339,7 +1367,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of São Domingos as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 93.3,
@@ -1358,12 +1387,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -1486,7 +1528,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Ribeira Grande as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 105.7,
@@ -1505,12 +1548,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão",
         "url": "https://web.archive.org/web/20131106000623id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -1535,7 +1591,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Brava"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Brava as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 95.8,
@@ -1554,12 +1611,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Brava",
         "url": "https://web.archive.org/web/20131105235641id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Brava.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Brava.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -1584,7 +1654,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Nicolau"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Ribeira Brava as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 104.9,
@@ -1603,12 +1674,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, São Nicolau",
         "url": "https://web.archive.org/web/20131106000907id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Nicolau.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/S%C3%A3o%20Nicolau.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -1633,7 +1717,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Ribeira Grande as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 104.5,
@@ -1652,12 +1737,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão",
         "url": "https://web.archive.org/web/20131106000623id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -1780,7 +1878,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Boa Vista"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Boa Vista as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 133.3,
@@ -1799,12 +1898,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Boa Vista",
         "url": "https://web.archive.org/web/20131105235259id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Boa%20Vista.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Boa%20Vista.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -1878,7 +1990,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Ribeira Grande de Santiago as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 93.3,
@@ -1897,12 +2010,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -1976,7 +2102,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Porto Novo as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 115.9,
@@ -1995,12 +2122,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão",
         "url": "https://web.archive.org/web/20131106000623id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -2074,7 +2214,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Ribeira Grande as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 115.1,
@@ -2093,12 +2234,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão",
         "url": "https://web.archive.org/web/20131106000623id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -2172,7 +2326,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Brava"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Brava as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 99.7,
@@ -2191,12 +2346,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Brava",
         "url": "https://web.archive.org/web/20131105235641id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Brava.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Brava.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -2221,7 +2389,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Boa Vista"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Boa Vista as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 138.4,
@@ -2240,12 +2409,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Boa Vista",
         "url": "https://web.archive.org/web/20131105235259id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Boa%20Vista.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Boa%20Vista.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -2270,7 +2452,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Porto Novo as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 108.2,
@@ -2289,12 +2472,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão",
         "url": "https://web.archive.org/web/20131106000623id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -2319,7 +2515,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Ribeira Grande de Santiago as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 87.9,
@@ -2338,12 +2535,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -2368,7 +2578,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of São Filipe as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 93.8,
@@ -2387,12 +2598,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Fogo",
         "url": "https://web.archive.org/web/20131106001925id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Fogo.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -2515,7 +2739,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of São Domingos as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 94.7,
@@ -2534,12 +2759,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santiago",
         "url": "https://web.archive.org/web/20131106001403id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santiago.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",
@@ -2564,7 +2802,8 @@
       "source": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No median age is published for the parish: the 2021 census and OCHA's population projections give ages for the municipality of Ribeira Grande as a whole, and the 2010 census's tables by parish give no ages fine enough to take a median from."
     },
     "sex_ratio": {
       "value": 110.5,
@@ -2583,12 +2822,25 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population/sex_ratio/median_age note",
         "name": "Instituto Nacional de Estatística (INE) Cabo Verde, Recenseamento Geral da População e Habitação 2010: resident population by zone and locality, Santo Antão",
         "url": "https://web.archive.org/web/20131106000623id_/http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "page": "http://www.ine.cv/censo/2010/POPULA%C3%87%C3%83O/Santo%20Ant%C3%A3o.xls",
         "license": "INE Cabo Verde publication (reuse with attribution)",
         "year": 2010
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística (INE) Cabo Verde, V Recenseamento Geral da População e Habitação (Censo 2021), Estado e Estrutura da População",
+        "url": "https://ine.cv/wp-content/uploads/2022/11/estado-e-estrutura-da-populacao.pdf",
+        "license": "INE Cabo Verde publication (reuse with attribution)",
+        "year": 2021
+      },
+      {
+        "field": "median_age note",
+        "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cpv)",
+        "url": "https://data.humdata.org/dataset/cod-ps-cpv",
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
       }
     ],
     "country": "CPV",

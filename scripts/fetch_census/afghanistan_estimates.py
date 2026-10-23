@@ -94,6 +94,7 @@ from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, write_json
 from .south_asia_common import load_units, males_per_100
+from common import tidy  # noqa: E402
 
 OUT = "afghanistan_estimates.json"
 YEAR = 2017
@@ -376,7 +377,7 @@ CROSSWALK: dict[str, dict[str, str]] = {
         'Injil': '3202',  # Enjil
         'Guzara': '3203',  # Guzera (Nizam-i- Shahid)
         'Karukh': '3204',  # Karrukh
-        'Zanda  Jan': '3205',  # Zendahjan
+        'Zanda Jan': '3205',  # Zendahjan
         'Pashtun Zarghun': '3206',  # Pashtun Zarghun
         'Koshk': '3207',  # Kushk (Rubat-i-Sangi)
         'Gulran': '3208',  # Gulran
@@ -595,7 +596,7 @@ CROSSWALK: dict[str, dict[str, str]] = {
         'Sia Gird ( Ghorbund)': '0307',  # syahgird  ('Ghurband)
         'Kohi Safi': '0308',  # Koh-e- Safi
         'Surkhi Parsa': '0309',  # Surkhi  parsa
-        'Shekh  Ali': '0310',  # Shaykh  Ali
+        'Shekh Ali': '0310',  # Shaykh  Ali
         'Shutul': '0806',  # Shutul
     },
     'Samangan': {
@@ -858,7 +859,9 @@ def drawn_districts(units1: list[dict[str, Any]], units2: list[dict[str, Any]]
     out, used = [], set()
     for unit in units2:
         province = prov_label.get(unit.get("parent"), "")
-        key = CROSSWALK.get(province, {}).get(unit["name"])
+        # Spaced as the map shows it: the boundary file writes "Shekh  Ali" and
+        # "Zanda  Jan" with two spaces, which the build reads as one.
+        key = CROSSWALK.get(province, {}).get(tidy(unit["name"]))
         if key is None:
             raise SystemExit(f"afghanistan_estimates: no row for the drawn {unit['name']!r} "
                              f"({province})")

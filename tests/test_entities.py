@@ -229,7 +229,10 @@ class SettlementFiguresOnDistricts(unittest.TestCase):
         refused, pop = self.run_guard([["Q3957", "town"]])
         self.assertEqual(refused, 1)
         self.assertEqual(pop["status"], common.NOT_AVAILABLE)
-        self.assertIn("Q985548, is a town, and Wikidata calls it nothing else", pop["note"])
+        self.assertIn("item of this name is a town, and Wikidata calls it nothing else",
+                      pop["note"])
+        # The item is linked from the citation, not quoted by its code.
+        self.assertNotIn("Q985548", pop["note"])
         self.assertIn("7,739 (2012)", pop["note"])
 
     def test_a_town_that_is_also_a_municipality_is_kept(self):
@@ -7719,7 +7722,7 @@ class ASurveyIsNotACount(unittest.TestCase):
     def test_the_rounds_run_oldest_first(self):
         """Each round fills what the newer ones are short of, never the reverse.
 
-        Round 9 is the newest and reaches 442 regions in 39 countries against
+        Round 9 is the newest and reaches 435 regions in 39 countries against
         Round 8's 356 in 34; Rounds 5 and 6 are older still and are read only
         for the two countries Round 9 does not survey. A later file wins, so
         the oldest goes first.

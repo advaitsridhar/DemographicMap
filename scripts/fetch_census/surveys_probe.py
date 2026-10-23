@@ -56,9 +56,40 @@ def uri(url: str) -> str:
     return urllib.parse.quote(url, safe="%/:=&?~#+!$,;'@()*[]")
 
 
+# Query parameters that carry a signed credential: HDX answers a download with
+# a redirect to a presigned S3 address (AWSAccessKeyId, Signature,
+# x-amz-security-token), and the log a probe prints is committed. Those
+# parameters never reach the log; the address without them still says which
+# file was served.
+CREDENTIALS = re.compile(
+    r"(?i)^(x-amz-[\w-]+|awsaccesskeyid|signature|expires|x-goog-[\w-]+|googleaccessid"
+    r"|sig|se|sp|sv|sr|st|skoid|sktid|skt|ske|sks|skv|token|access_token|security[-_]token)$")
+
+
+def safe(url: str) -> str:
+    """An address as it may be printed: any signed credential in its query removed."""
+    if not url or "?" not in url:
+        return url
+    parts = urllib.parse.urlsplit(url)
+    pairs = urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
+    kept = [(k, v) for k, v in pairs if not CREDENTIALS.match(k)]
+    if len(kept) == len(pairs):
+        return url
+    return urllib.parse.urlunsplit(parts._replace(query=urllib.parse.urlencode(kept)))
+
+
+def unsigned(headers) -> dict:
+    """Response headers as they may be printed: a redirect's Location made safe."""
+    out = dict(headers or {})
+    if out.get("Location"):
+        out["Location"] = safe(out["Location"])
+    return out
+
+
 def fetch(url: str, data: bytes | None = None, headers: dict | None = None,
           timeout: int = TIMEOUT) -> tuple[int, str, dict, bytes]:
-    """(status, final url, headers, body); an HTTP error is an answer, not a raise."""
+    """(status, final url, headers, body); an HTTP error is an answer, not a raise.
+    The final address and any Location header come back without credentials."""
     hdrs = {"User-Agent": USER_AGENT, "Accept": "*/*"}
     hdrs.update(headers or {})
     req = urllib.request.Request(uri(url), data=data, headers=hdrs)
@@ -68,7 +99,7 @@ def fetch(url: str, data: bytes | None = None, headers: dict | None = None,
                 body = resp.read()
                 if resp.headers.get("Content-Encoding") == "gzip":
                     body = gzip.decompress(body)
-                return resp.status, resp.geturl(), dict(resp.headers), body
+                return resp.status, safe(resp.geturl()), unsigned(resp.headers), body
         except urllib.error.HTTPError as exc:
             if exc.code in (429, 503) and wait is not None and "archive.org" in url:
                 time.sleep(wait)
@@ -77,7 +108,7 @@ def fetch(url: str, data: bytes | None = None, headers: dict | None = None,
                 body = exc.read() or b""
             except Exception:  # noqa: BLE001 - a body we cannot read is empty
                 body = b""
-            return exc.code, exc.geturl() or url, dict(exc.headers or {}), body
+            return exc.code, safe(exc.geturl() or url), unsigned(exc.headers), body
         except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
             if wait is None:
                 return -1, url, {}, str(exc).encode()
@@ -106,6 +137,7 @@ def say(line: str) -> None:
 
 
 def summary(url: str, status: int, final: str, headers: dict, body: bytes) -> None:
+    final, headers = safe(final), unsigned(headers)
     moved = f" -> {final}" if final and final != uri(url) and final != url else ""
     extra = ""
     for h in ("Content-Disposition", "WWW-Authenticate", "Location"):
@@ -197,7 +229,7 @@ def probe(arg: str) -> None:
             href, label = html.unescape(m.group(1)), strip(m.group(2))
             if rx and not (rx.search(href) or rx.search(label)):
                 continue
-            say(f"  {urllib.parse.urljoin(final or url, href)}  [{label[:90]}]")
+            say(f"  {safe(urllib.parse.urljoin(final or url, href))}  [{label[:90]}]")
             shown += 1
             if shown >= n:
                 break
@@ -213,7 +245,7 @@ def probe(arg: str) -> None:
         for src in srcs[:12]:
             full = urllib.parse.urljoin(final or url, html.unescape(src))
             s2, _, h2, b2 = fetch(full)
-            say(f"  -- {full} HTTP {s2} {len(b2):,} bytes")
+            say(f"  -- {safe(full)} HTTP {s2} {len(b2):,} bytes")
             if s2 == 200:
                 grep(decode(b2, h2), rx, n, ctx)
     elif mode == "zip":

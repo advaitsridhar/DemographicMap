@@ -48,7 +48,7 @@ from common import (  # noqa: E402
     DERIVED, MODELLED, NOT_APPLICABLE, NOT_AVAILABLE, NOT_COLLECTED, PROCESSED,
     RAW, ROOT,
     apply_collection_policy, collection_gap, estimate, gap, is_estimate, is_gap,
-    known_as, log, measure, read_json, repair, respell, shard_path, write_json,
+    as_read, known_as, log, measure, read_json, shard_path, write_json,
 )
 
 SITE_DATA = ROOT / "site" / "data"
@@ -79,7 +79,7 @@ ADAPTER_FILES = [
     # a survey ranks below a count whatever happens to be present.
     "afrobarometer_r56.json",
     # Then Round 8, for language alone. Round 9 is two years newer and
-    # reaches 442 regions in 39 countries against Round 8's 356 in 34, so
+    # reaches 435 regions in 39 countries against Round 8's 356 in 34, so
     # Round 8 fills a region Round 9 is short of and overwrites none.
     "afrobarometer_r8_language.json",
     "afrobarometer_region.json",
@@ -721,17 +721,185 @@ ADAPTER_FILES = [
     "senegal_rgph5.json", "morocco_rgph2024.json", "zambia_census.json",
     "guinea_bissau_census.json", "tanzania_census.json", "ghana_census.json",
     "south_africa_districts.json", "cabo_verde_parishes.json",
+    # West Africa and the Sahel, after the COD-PS files for the same reason:
+    # Guinea's 2025 preliminary count by region and prefecture (2014 census
+    # compositions), Niger's 2012 census (regions' ages, sexes and religion,
+    # departments' sexes), Togo's 2022 census by region and prefecture, Mali's
+    # 2022 census for the four regions the regions of 2023 make and the 2009
+    # census for the five they cross, with the cercles' 2009 sexes,
+    # Mauritania's 2023 census by wilaya and moughataa, Côte d'Ivoire's 2021
+    # census by region, Burkina Faso's 2019 census by province and region
+    # (sexes, religion, language; the regions' medians), Senegal's 2023
+    # regional reports (median age, language),
+    # Benin's 2013 census (departments' ages and sexes, communes' sexes), and
+    # the seats OCHA's boundary sets name where no source named a capital (and
+    # why none, where they name none).
+    "guinea_census.json", "niger_census.json", "togo_census.json", "mali_census.json",
+    "mauritania_census.json", "cote_divoire_census.json", "burkina_provinces.json",
+    "senegal_regional_reports.json", "benin_census.json", "sahel_capitals.json",
     "philippines_province.json", "ethiopia_region.json",
+    # North Africa's own counts, likewise after the COD-PS tables: Tunisia's
+    # 2024 census by governorate and delegation (the 15 delegations made since
+    # 2014 added to the polygons they were carved from); Algeria's 2008 census
+    # by wilaya; Libya's 2006 census by area, put together from its baladiyat
+    # (Tripoli and Al Jifarah say why they carry none); Egypt's 2017 census and
+    # 2023 estimate on the kisms and markazes of 2006 whose ground is unchanged,
+    # the 2006 census where redrawn; Sudan's 2008 census (sex ratio, and the
+    # median of the states not divided since) and South Sudan's (median and sex
+    # ratio by state and county, Warrap without Abyei); and Morocco's 2024
+    # census for the regions and provinces morocco_rgph2024.json binds: by sex
+    # and mother tongue (without Al Mahbass, across the Western Sahara line),
+    # and the median age where HCP's regional directorates publish five-year
+    # ages, the rest saying why.
+    "tunisia_census.json", "algeria_census.json", "libya_census.json",
+    "egypt_census.json", "sudan_census.json", "south_sudan_census.json",
+    "morocco_rgph2024_sexes.json", "morocco_rgph2024_ages.json",
+    # Anglophone West Africa's censuses, likewise after the COD-PS files and
+    # the surveys: Nigeria's 2006 Table DS5 by state and local government area
+    # (a local government area's count only fills, OCHA's 2020 projection
+    # being newer; a state's count is what its newer figures are weighed
+    # against; its sex ratios and median ages stand in front of the
+    # projection's), Sierra Leone's 2015 census by region and district, with
+    # its 2021 mid-term census offered behind it (HELD_ROWS), Liberia's 2022
+    # census by county and by the districts drawn as the census counts them,
+    # and The Gambia's 2024 census by local government area with its 2013
+    # census's districts and ages; and the seats their census reports do not
+    # name: Ghana's and Sierra Leone's districts' from Wikipedia's lists of the
+    # districts, and Nigeria's local government areas', The Gambia's units'
+    # and Liberia's districts' from each unit's own Wikipedia article, written
+    # only for the polygons Wikidata names no seat for.
+    "nigeria_census.json", "sierra_leone_census.json", "sierra_leone_mtphc.json",
+    "liberia_census.json", "gambia_census.json", "ghana_capitals.json",
+    "sierra_leone_capitals.json", "nigeria_capitals.json", "gambia_capitals.json",
+    "liberia_capitals.json",
+    # Ethiopia's 2007 census by region and zone (count, men per 1,000 women,
+    # median age from five-year groups), the special weredas it counted apart
+    # added to the zone polygons that hold them; then the statistics office's
+    # projection for July 2022 by region and by zone, summed from the weredas
+    # that lie in each zone as drawn, for the zones that are whole weredas but
+    # for slivers of the weredas straddling their lines, in people or in area
+    # (a 2022 zone that is a drawn zone's ground, East Gojam, Siti, Majang,
+    # South Omo or West Gojam, is its weredas' sum here: 56 of the 74).
+    # The projection is newer, so it gives the population where it is
+    # written; OCHA's zone table, on 2022's redrawn zones, gives way to it
+    # (SUPERSEDED_ROWS).
+    "ethiopia_census.json", "ethiopia_projection.json",
+    # Uganda's 2024 census from the Bureau's dashboard: regions as the sums of
+    # their districts, and the 151 counties as drawn (around 2002) as the sums
+    # of the 2024 counties, cities and municipalities that make them, measured
+    # from the 2024 outlines (84 polygons), or of whole counties and
+    # sub-counties (2, from the 2024 sub-county tables); the 65 whose line a
+    # 2024 unit's ground crosses by more than 2 km say why they have none.
+    # OCHA's table is by district and stood on county polygons of the same
+    # names; its rows give way (SUPERSEDED_ROWS).
+    "uganda_census.json",
+    # Uganda's 2002 census, its last to publish religion below the country: the
+    # regions, and the drawn counties that were a district on their own in
+    # 2002 and are whole 2024 districts still (Kampala, Buruli, Samia-Bugwe,
+    # Bufumbira, Kinkiizi); the other five of the ten such counties say why
+    # not. uganda_census.json states no religion for these ten.
+    "uganda_2002.json",
+    # Rwanda's 2022 census by province and district: count, sex ratio, the
+    # Institute's median age in whole years, religion from the district
+    # profiles (provinces as their districts' sums), nationality by province
+    # under ethnicity_basis "nationality". OCHA's table projects the 2012
+    # census to 2023, and gives way (SUPERSEDED_ROWS).
+    "rwanda_census.json",
+    # Djibouti's 2024 census by region, as citypopulation.de tabulates it (the
+    # city's 767,250 where Wikipedia's 776,966 overran the national total, and
+    # Obock's 2024 count where 2009's stood), with each region's men per 1,000
+    # women from its men and women, and stated reasons for the second level
+    # (an older division, whose units the census's sub-prefectures are not
+    # shown to make) and for ages, which no region's results give.
+    "djibouti_census.json",
+    # Stated reasons where nothing measures: Eritrea, which has taken no
+    # census, for median age and sex ratio at both levels; Somalia's 118
+    # districts, for which no survey published an estimate.
+    "eritrea_census.json", "somalia_districts.json",
+    # Somalia's 2014 Population Estimation Survey by region (median age, sex
+    # ratio): a survey, fill-only behind any count (FILL_ONLY).
+    "somalia_survey.json",
+    # Burundi's 2008 census: men per 1,000 women for the 18 provinces and 119
+    # communes as drawn (Bujumbura's three communes as its communes of 2008,
+    # now their zones). A census's sex ratio stands in front of OCHA's 2022
+    # projection's, which is fill-only (cod_ps_age.json); the projection keeps
+    # the head counts and medians, the census having published no ages below
+    # the country.
+    "burundi_census.json",
     # After Afrobarometer, which is first: Kenya's counties carried the survey
     # and now carry the 2019 census, and merge_adapter lets the count win the
     # religion field while the survey keeps any field the census did not ask.
     "kenya_county.json",
+    # Kenya's 2019 census by county (Volume I's count with intersex persons,
+    # men per 1,000 women, median age from single years) and by constituency
+    # where its ground is one sub-county or a set of whole ones (131 of 290);
+    # after kenya_county.json, whose county totals are Volume IV's religion
+    # table's, a little short of Volume I's.
+    "kenya_census.json",
     # Likewise after Afrobarometer: Angola's 18 provinces carried the survey
     # and now carry the 2024 census for all three fields.
     "angola_province.json",
+    # Central Africa's offices, after cod_ps_admin2.json and cod_ps_age.json so
+    # each count stands in front of OCHA's projection for the same unit, and
+    # after Afrobarometer so a census composition replaces the survey's: the
+    # Central African Republic's 2021 census-mapping count on the 2003
+    # sub-prefectures with the 2016 yearbook's prefecture ages (car_census),
+    # Sao Tome and Principe's 2012 census by district (sao_tome_census), and
+    # Gabon's 2013 census by department (gabon_census).
+    "car_census.json", "sao_tome_census.json", "gabon_census.json",
+    # Cameroon's 2005 census by department (BUCREP), Equatorial Guinea's 2015
+    # census by province and district (INEGE's yearbook), the Republic of the
+    # Congo's 2023 census by department, Chad's provinces for 2023 (OCHA, after
+    # cod_ps_admin2 so the provinces stop showing their departments' 2021
+    # total), and the seats of Chad's departments and Angola's municipalities.
+    # drc_gaps writes no figure: why the DRC's provinces and territories show no
+    # median age or sex ratio (OCHA's ratios are the province's) and why fifteen
+    # towns show nothing (OCHA counts them in a territory).
+    "cameroon_census.json", "equatorial_guinea_census.json", "congo_census.json",
+    "chad_departments.json", "angola_seats.json", "drc_gaps.json",
+    # Angola's 2024 census on the 2016 municipalities the map draws, from the
+    # provincial reports (after cod_ps_admin2 and cod_ps_age, whose 2024
+    # projections it stands in front of; after angola_province, whose national
+    # report's compositions stay on the provinces).
+    "angola_municipios.json",
+    # OCHA's newer tables for units the censuses above count: Cameroon's
+    # regions, Wouri and Mfoundi for 2025 and Gabon's provinces for 2022, the
+    # newest figures for those units (the censuses keep the sex ratios and the
+    # regions' medians); and the DRC's territories and cities for 2024 (the
+    # humanitarian planning projection by health zone, added up) and Chad's
+    # departments for 2024, held behind OCHA's 2020 and 2021 rows, and the
+    # Central African Republic's sub-prefectures and prefectures for 2025
+    # (ICASEES's projection, added up where its 2020 sub-prefectures lie whole
+    # in the 2003 ones), held behind the 2021 census mapping (HELD_ROWS).
+    "cameroon_projection.json", "gabon_projection.json", "drc_hpc.json",
+    "chad_departments_2024.json", "car_projection.json",
     # Likewise: Zimbabwe's provinces and Burkina Faso's regions carried the
     # survey and now carry their census for the fields it publishes by region.
     "zimbabwe_province.json", "burkina_region.json",
+    # Southern Africa and the Indian Ocean, each office's own count after
+    # cod_ps_admin2.json and cod_ps_age.json, so it stands in front of a
+    # projection for the same unit and year (one from an older census is
+    # dropped outright: SUPERSEDED_ROWS): Zimbabwe's 2022 census by district
+    # and province (ZIMSTAT's ward tables; Harare Rural is the ward the
+    # preliminary report names so), Malawi's 2018 census by district and
+    # region (sex ratio, median age, religion, tribe), Mozambique's 2017 census
+    # by district and province (INE's archived quadros; religion and mother
+    # tongue by province), Lesotho's 2016 village list by council, Madagascar's
+    # 2018 census by district and region (Tome 2: Tableau 8's sexes, the
+    # health age bands' medians by region), the Comoros' 2017 census by island
+    # and prefecture (the islands' nationality and languages spoken too),
+    # Namibia's 2023 census by region (count, sex ratio, median age) and by
+    # constituency where a polygon is the census's ground (the census site's
+    # region pages; OCHA's projections, of the 2003-2013 constituencies the
+    # polygons follow, stay elsewhere), Mauritius' 2022 census by district and
+    # island (Rodrigues' nationality too), Seychelles' 2022 census by district
+    # and by the larger polygons of its second level (whole districts, La Digue
+    # island, the other islands; nationality where a polygon is a census
+    # region), and Botswana's 2022 census by district.
+    "zimbabwe_districts.json", "malawi_census.json", "mozambique_census.json",
+    "lesotho_census.json", "madagascar_census.json", "comoros_census.json",
+    "namibia_census.json", "namibia_constituencies.json", "mauritius_census.json",
+    "seychelles_census.json", "botswana_census.json",
     "thailand_province.json",
     # Papua New Guinea's own office, two of its publications: the 2024 census's
     # head count and sex ratio for the 22 provinces and all 87 district shapes, and
@@ -901,8 +1069,10 @@ ADAPTER_FILES = [
     # the municipios stand.
     "guatemala_census.json",
     "mali_region.json",
-    # After both Afrobarometer and the 2009 census file: Mali's nine regions
-    # now carry RGPH5 2022 for all three fields.
+    # After both Afrobarometer and the 2009 census file: the four Mali regions
+    # the regions of 2023 make carry RGPH5 2022 for all three fields; the five
+    # they cross carry the 2009 census's languages with the 2022 census's
+    # reason, and their survey religion and ethnic groups stand (mali.py).
     "mali_rgph5_region.json",
     "drc_province.json", "russia_subject.json",
     # Russia's 2020 census count and men per hundred women for the municipal
@@ -1326,13 +1496,22 @@ FIELD_GAPS: dict[str, dict[str, str | dict[str, str]]] = {
         },
         "language": "Afrobarometer asked about language in Egypt but coded every "
                     "one of its 2,388 Egyptian respondents, across both rounds, to a "
-                    "single value, so no composition is built from it, and no census "
-                    "table of language by governorate or district has been read.",
+                    "single value, so it gives no shares, and no census table of "
+                    "language by governorate or district has been found.",
         "ethnicity": "Afrobarometer did not ask about ethnicity in Egypt in either "
                      "round that surveyed it, and no census table of ethnicity by "
-                     "governorate or district has been read.",
+                     "governorate or district has been found.",
     },
     "IRN": {"language": IRAN_LANGUAGE},
+    "SWZ": {
+        "ethnicity": {
+            "admin1": "Asked their ethnic group, 1,186 of the 1,200 people "
+                      "Afrobarometer's Round 9 (2021-2023) interviewed in Eswatini "
+                      "named only their national identity, or did not think of "
+                      "themselves in those terms, so the survey gives no shares of "
+                      "ethnic groups here.",
+        },
+    },
 }
 
 
@@ -1956,8 +2135,7 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
                 continue
             point = geom.representative_point()
             bounds = geom.bounds
-            name = respell(repair((props.get("shapeName") or "").strip()),
-                           props.get("shapeGroup"))
+            name = as_read(props.get("shapeName"), props.get("shapeGroup"), level)
             row = {
                 "shape_id": props.get("shapeID") or props.get("shapeGroup"),
                 "name": name,
@@ -2528,6 +2706,10 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
     # polygon takes in the south of Lake Malawi, and by area 76.7% of it lay
     # in the Northern Region's.
     "42251766B89682559169951": ("MWI", "Southern Region"),  # Mangochi; by area in Northern Region
+    # Burundi: Muha is one of Bujumbura Mairie's three communes (OCHA's
+    # cod-ps-bdi, BDI017014, with Mukaza and Ntahangwa; ROW_SHAPES); by area
+    # 53.8% of it lay in Bujumbura Rural's polygon.
+    "21766830B84199363749171": ("BDI", "Bujumbura Mairie"),  # Muha; by area in Bujumbura Rural
     # Madagascar: Vohipeno is Vatovavy-Fitovinany's (OCHA's cod-ps-mdg);
     # by area 91.2% of it lay in Atsimo-Atsinanana.
     "10022922B81120329184352": ("MDG", "Vatovavy-Fitovinany"),  # Vohipeno; by area in Atsimo-Atsinanana
@@ -2595,6 +2777,18 @@ DECLARED_PARENTS: dict[str, tuple[str, str]] = {
     "79292919B30079585867882": ("SVN", "Vzhodna"),  # Postojna; by area in Zahodna
     "79292919B19554174708410": ("SVN", "Vzhodna"),  # Bloke; by area in Zahodna
     "79292919B16697278472922": ("SVN", "Vzhodna"),  # Cerknica; by area in Zahodna
+    # Egypt and Tunisia: a markaz, two of Port Said's districts and a
+    # delegation filed by area under the governorate beside the one that counts
+    # them. Birkat as-Sab' (CAPMAS 1705, 340,131 in 2023) is Monufia's, with 59%
+    # of its outline in Gharbiyya's; Al-Ganoub (0307, 42,035) and Al-Manasra
+    # (0306, 5,604) are Port Said's, with 54% and 56% of theirs in Dakahlia's;
+    # Ouled Chamekh (INS 3353, 23,893 in 2024) is Mahdia's, with 52% in
+    # Sousse's. Filed as counted, Monufia's twelve divisions make its 4,736,945,
+    # Mahdia's eleven its 449,985 and Sousse's sixteen its 762,281.
+    "37247803B30511282692114": ("EGY", "Monufia Governorate"),  # Birkat as-Sab'; by area in Gharbiyya
+    "37247803B91562573257971": ("EGY", "Port Said Governorate"),  # Al-Ganoub; by area in Dakahlia
+    "37247803B61040397145628": ("EGY", "Port Said Governorate"),  # Al-Manasra; by area in Dakahlia
+    "11933810B93469460723803": ("TUN", "Mahdia"),  # Ouled Chamekh; by area in Sousse
 }
 
 
@@ -2822,6 +3016,19 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 #        and a stated reason on the 11 drawn as they were before a district
 #        was cut from them; OCHA's 2023 figures are projections made before
 #        that count, a median 31% above it.
+#   RWA  rwanda_census.json, the 2022 census's count of the 30 districts.
+#        OCHA's table is for 2023, projected from the 2012 census, and puts
+#        Nyagatare at 917,054 where the census counted 653,861.
+#   ZWE  zimbabwe_districts.json, the 2022 census's count of all 91 districts
+#        (ZIMSTAT's ward tables); OCHA's 2023 figures are a projection from the
+#        2012 census and make 17,408,564 against the count's 15,178,957.
+#   MDG  madagascar_census.json, the 2018 census's count of the districts
+#        (RGPH-3 Tome 2, Tableau 8); OCHA's figures for the same year are a
+#        projection made before that count, 10.8% above it in Ambatondrazaka
+#        and 17.3% below it in Andilamena, and put Antananarivo's six
+#        arrondissements at 1,587,779 where the census counts the district they
+#        make, Antananarivo Renivohitra, at 1,274,225 (the arrondissements say
+#        so instead of carrying a figure).
 #   CRI  costa_rica_census.json, the 2011 census of the 83 cantons as drawn.
 #        OCHA's 2021 figures are INEC's projection from that census, and the
 #        2022 census, which the provinces show, counted fewer: Heredia's
@@ -2833,6 +3040,26 @@ def declare_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]],
 # municipalities it can place are for 2026, OCHA's for 2014, and these stood
 # on four of the 13 it cannot place (Khobi, Lanchkhuti, Terjola, Tkibuli),
 # whose polygons hold Poti's or Kutaisi's ground or none of it.
+# Two are other units' figures under the same names:
+#   ETH  ethiopia_projection.json. OCHA's table is the office's July 2022
+#        projection by the zones of 2022, which split, merged and renamed the
+#        74 zones of 2007 the map draws: its Bale is without East Bale, the
+#        zone it calls Nogob lies mostly in the drawn Shabelle (the drawn
+#        Nogob is today's Erer), its Southern Tigray is without Mekelle and
+#        South Eastern. The projection file sums the same
+#        projection's weredas into the zones as drawn where they are whole
+#        weredas but for slivers of those straddling a line (so a 2022 zone
+#        that is a drawn zone's ground -- East Gojam, Siti, Eastern, the
+#        Oromo zone, Majang, Sheka, South Omo, West Gojam -- is its weredas'
+#        sum there), and every zone has the 2007 census's count besides; the
+#        rows it does not replace are other ground (Basketo's 2022 outline
+#        lies a quarter outside the drawn polygon; West and South West Shewa
+#        of 2022 leave out the weredas of the zone around Addis Ababa).
+#   UGA  uganda_census.json. OCHA's table is by district (135 for 2022), and
+#        54 of its figures stood on county polygons of the same names --
+#        Mityana's with Busujju in it, Serere's with Kasilo. The census file
+#        gives the counties as drawn from the 2024 census, or says why not.
+#        Its medians and sex ratios (cod_ps_age.json) go the same way.
 # Myanmar is not listed although its 2014 census file binds all 74
 # districts: its states and the composed districts (sea_composed.json) carry
 # the same OCHA table for 2023, so the projection is one vintage at both
@@ -2842,11 +3069,19 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
     "cod_ps_admin2.json": {"AFG": "afghanistan_estimates.json",
                            "CRI": "costa_rica_census.json",
                            "DOM": "dominican_census.json",
+                           "ETH": "ethiopia_projection.json",
                            "GEO": "georgia.json",
                            "GTM": "guatemala_census.json",
+                           "MDG": "madagascar_census.json",
                            "PRY": "paraguay_census.json",
+                           "RWA": "rwanda_census.json",
                            "SLB": "solomon_census.json",
-                           "THA": "wikidata_admin2.json"},
+                           "THA": "wikidata_admin2.json",
+                           "UGA": "uganda_census.json",
+                           "ZWE": "zimbabwe_districts.json"},
+    # Uganda's: OCHA's district medians and sex ratios stood on the county
+    # polygons of the same names, as its head counts did.
+    "cod_ps_age.json": {"UGA": "uganda_census.json"},
     "wiki_population_admin1.json": {"AFG": "afghanistan_estimates.json",
                                     "KIR": "kiribati_census.json"},
 }
@@ -2865,7 +3100,7 @@ SUPERSEDED_ROWS: dict[str, dict[str, str]] = {
 # province the row itself names, from the same release as every sibling that
 # did join. Each was checked against the shapes of its province before it was
 # listed; none of the labels is used twice in its country.
-#   * Spellings: Quiculungo/Quiculongo, Nyarusange/Nyanrusang,
+#   * Spellings: Quiculungo/Quiculongo, Nyabitsunda/Nyabitsinda,
 #     Kourittenga/Kouritenga, Komandjari/Komonjdjari, Nangha/Nagha Boguila,
 #     Baraouéli/Baroueli, Ngwa/Nwga, Damban/Dambam, Igueben/Iguegben,
 #     Mbaitoli/Mbatoli, Bagudo/Bagudu, Wamako/Wamakko, Raja/Raga,
@@ -2907,17 +3142,64 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "BLR-WD-Q173822": ("Brest",),
         "BLR-WD-Q191061": ("Grodno",),
         "BLR-WD-Q189822": ("Mogilev",),
+        # Ethiopia's Harari region, which the boundary file spells "Hareri",
+        # and Somalia's Banaadir (SO-BN), its "Banadir": both joined nothing
+        # and showed no capital. Their seats, Harar and Mogadishu, stand inside
+        # the polygons (GeoNames points); the rows' populations are older than
+        # the counts the regions carry and fill nothing. (Benishangul-Gumuz,
+        # once "Beneshangul Gumu", is now spelt right where the shapes are read,
+        # common.MISSPELLED, and its row joins by its own name.)
+        "ETH-WD-Q1033855": ("Hareri",),
+        "SOM-WD-Q806070": ("Banadir",),
+        # The boundary file spells Niger's Dosso region "Dossa".
+        "NER-WD-Q850055": ("Dossa",),
     },
     "wikidata_admin2.json": {
         "THA-WD-Q1019417": ("Vadhana",),
         "THA-WD-Q475772": ("Khwao Sin Rin",),
         "THA-WD-Q476889": ("Tap Khlo",),
+        # Ethiopian zones Wikidata labels in Amharic (Mirab "west", Misraq
+        # "east", Semien "north", Debub "south", Mehakelegnaw "central",
+        # Semien Mi'irabawi "north-western") or spells otherwise (Illubabor,
+        # Silt'e, Horo Gudru Welega; Gabi Rasu is Afar's Zone 3), where the
+        # boundary file draws the 2007 census's zones by their English names.
+        # Each is the drawn zone, and each seat it names stands inside the
+        # zone's polygon (GeoNames points); none of them joined, so the zones
+        # showed no capital.
+        "ETH-WD-Q646859": ("Arsi",),
+        "ETH-WD-Q1709377": ("West Wellega",),
+        "ETH-WD-Q1109870": ("East Wellega",),
+        "ETH-WD-Q768586": ("Ilubabor",),
+        "ETH-WD-Q2916300": ("North Wollo",),
+        "ETH-WD-Q7449411": ("North Western",),
+        "ETH-WD-Q2902680": ("Central",),
+        "ETH-WD-Q7515593": ("Selti",),
+        "ETH-WD-Q1070736": ("West Gojam",),
+        "ETH-WD-Q5904662": ("Horo Guduru",),
+        "ETH-WD-Q3020952": ("South Omo",),
+        "ETH-WD-Q3444674": ("Zone 3",),
+        # Two units the boundary file labels wrongly and common.MISSPELLED puts
+        # right, whose items Wikidata spells otherwise: Amhara's "Argobba
+        # special woreda", drawn as Argoba Special Woreda, and Gitega's
+        # "Commune of Nyanrusange", drawn as Nyarusange. Each met its polygon
+        # under the old label.
+        "ETH-WD-Q4789635": ("Argoba Special Woreda",),
+        "BDI-WD-Q4018199": ("Nyarusange",),
     },
     "cod_ps_admin2.json": {
         "AGO-CODPS-AO06048": ("Quiculongo",),
         "AGO-CODPS-AO09073": ("Gambos(Chiange)",),
-        "BDI-CODPS-BDI006011": ("Nyanrusang",),
-        "BDI-CODPS-BDI016006": ("Nyabitsind",),
+        # Nyabitsinda and Mugongomanga (Bujumbura Rural), which OCHA spells
+        # "Nyabitsunda" and "Mugougomanga". The boundary file cuts both at ten
+        # letters, and Nyarusange too, which common.MISSPELLED puts right
+        # where the shapes are read; Nyarusange then joins by OCHA's own name.
+        "BDI-CODPS-BDI016006": ("Nyabitsinda",),
+        "BDI-CODPS-BDI002006": ("Mugongomanga",),
+        # Eritrea's two subregions of the Southern Red Sea, which OCHA writes as
+        # the boundary file did ("Maekel Deb.Keih Bahri", "Debub Deb.Keih
+        # Bahri") before common.MISSPELLED gave them their names.
+        "ERI-CODPS-ER102": ("Central Denkalia",),
+        "ERI-CODPS-ER103": ("Southern Denkalia",),
         "BFA-CODPS-BF4803": ("Kouritenga",),
         "BFA-CODPS-BF5203": ("Komonjdjari",),
         "CAF-CODPS-CF324": ("Nagha Boguila",),
@@ -2932,6 +3214,38 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "NGA-CODPS-NG017011": ("Mbatoli",),
         "NGA-CODPS-NG022005": ("Bagudu",),
         "NGA-CODPS-NG034021": ("Wamakko",),
+        # OCHA's spellings of Nigeria's other areas, each the one area of its
+        # state so spelled: sixteen of them the 2006 census's own
+        # (nigeria_census) -- Isiukwuato, Bekwara, Ilejemeji, Unuimo, Kiri
+        # Kasamma, Garum Mallam, Olamabolo, Nasarawa-Eggon, Muya, Aiyedade,
+        # Aiyedire, Atakumosa, Barikin Ladi, Emohua, Obia/Akpor, Tarmua; two
+        # the census's names for areas since renamed, Egbado for Yewa and
+        # Atigbo for Atisbo; and Birni Kudu, Markafi and Zango-Kataf, which
+        # neither census volume uses (it prints Birnin Kudu, Makarfi and
+        # Zangon-Kataf).
+        "NGA-CODPS-NG001008": ("Isuikwuato",),
+        "NGA-CODPS-NG009006": ("Bekwarra",),
+        "NGA-CODPS-NG013012": ("Ilejemeje",),
+        "NGA-CODPS-NG017027": ("Onuimo",),
+        "NGA-CODPS-NG018004": ("Birnin Kudu",),
+        "NGA-CODPS-NG018018": ("Kiri Kasama",),
+        "NGA-CODPS-NG019018": ("Makarfi",),
+        "NGA-CODPS-NG019022": ("Zangon Kataf",),
+        "NGA-CODPS-NG020015": ("Garun Malam",),
+        "NGA-CODPS-NG023018": ("Olamaboro",),
+        "NGA-CODPS-NG026010": ("Nasarawa Egon",),
+        "NGA-CODPS-NG027018": ("Munya",),
+        "NGA-CODPS-NG028004": ("Yewa North",),
+        "NGA-CODPS-NG028005": ("Yewa South",),
+        "NGA-CODPS-NG030001": ("Ayedade",),
+        "NGA-CODPS-NG030002": ("Ayedire",),
+        "NGA-CODPS-NG030003": ("Atakunmosa East",),
+        "NGA-CODPS-NG030004": ("Atakunmosa West",),
+        "NGA-CODPS-NG031004": ("Atisbo",),
+        "NGA-CODPS-NG032001": ("Barkin Ladi",),
+        "NGA-CODPS-NG033010": ("Emuoha",),
+        "NGA-CODPS-NG033015": ("Obio/Akpor",),
+        "NGA-CODPS-NG036015": ("Tarmuwa",),
         "SSD-CODPS-SS0902": ("Raga",),
         "STP-CODPS-ST0206": ("Mé-zóxi",),
         "TZA-CODPS-TZ0105": ("Dodoma Urban",),
@@ -2942,22 +3256,126 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "TZA-CODPS-TZ0607": ("Kibaha Urban",),
         "TZA-CODPS-TZ0806": ("Lindi Urban",),
         "TZA-CODPS-TZ0905": ("Mtwara Urban",),
-        "TZA-CODPS-TZ0907": ("Masasi  Township Authority",),
+        "TZA-CODPS-TZ0907": ("Masasi Township Authority",),
         "TZA-CODPS-TZ1004": ("Songea Urban",),
         "TZA-CODPS-TZ1103": ("Iringa Urban",),
         "TZA-CODPS-TZ1304": ("Singida Urban",),
         "TZA-CODPS-TZ1406": ("Tabora Urban",),
         "TZA-CODPS-TZ1504": ("Sumbawanga Urban",),
-        "TZA-CODPS-TZ1604": ("Kigoma  Urban",),
+        "TZA-CODPS-TZ1604": ("Kigoma Urban",),
         "TZA-CODPS-TZ1608": ("Kasulu Township Authority",),
         "TZA-CODPS-TZ1701": ("Shinyanga Urban",),
         "TZA-CODPS-TZ1705": ("Kahama Township Authority",),
         "TZA-CODPS-TZ1806": ("Bukoba Urban",),
         "TZA-CODPS-TZ2005": ("Musoma Urban",),
-        "TZA-CODPS-TZ2106": ("Babati UrbanBabati Urban",),
+        "TZA-CODPS-TZ2106": ("Babati Urban",),
         "TZA-CODPS-TZ2201": ("Njombe Urban",),
         "TZA-CODPS-TZ2206": ("Makambako Township Authority",),
         "TZA-CODPS-TZ2301": ("Mpanda Urban",),
+    },
+    # OCHA's age-and-sex table names Nigeria's areas as its population table
+    # does, under row ids of its own: the same thirty spellings, so that the
+    # projection's median age and sex ratio stay behind the 2006 census's for
+    # these areas too, as they do for the other 744 (cod_ps_age.json fills
+    # only).
+    "cod_ps_age.json": {
+        "NGA-CODPSAGE-NG001009": ("Obi Nwga",),
+        "NGA-CODPSAGE-NG005004": ("Dambam",),
+        "NGA-CODPSAGE-NG012010": ("Iguegben",),
+        "NGA-CODPSAGE-NG015002": ("Municipal Area Council",),
+        "NGA-CODPSAGE-NG017011": ("Mbatoli",),
+        "NGA-CODPSAGE-NG022005": ("Bagudu",),
+        "NGA-CODPSAGE-NG034021": ("Wamakko",),
+        "NGA-CODPSAGE-NG001008": ("Isuikwuato",),
+        "NGA-CODPSAGE-NG009006": ("Bekwarra",),
+        "NGA-CODPSAGE-NG013012": ("Ilejemeje",),
+        "NGA-CODPSAGE-NG017027": ("Onuimo",),
+        "NGA-CODPSAGE-NG018004": ("Birnin Kudu",),
+        "NGA-CODPSAGE-NG018018": ("Kiri Kasama",),
+        "NGA-CODPSAGE-NG019018": ("Makarfi",),
+        "NGA-CODPSAGE-NG019022": ("Zangon Kataf",),
+        "NGA-CODPSAGE-NG020015": ("Garun Malam",),
+        "NGA-CODPSAGE-NG023018": ("Olamaboro",),
+        "NGA-CODPSAGE-NG026010": ("Nasarawa Egon",),
+        "NGA-CODPSAGE-NG027018": ("Munya",),
+        "NGA-CODPSAGE-NG028004": ("Yewa North",),
+        "NGA-CODPSAGE-NG028005": ("Yewa South",),
+        "NGA-CODPSAGE-NG030001": ("Ayedade",),
+        "NGA-CODPSAGE-NG030002": ("Ayedire",),
+        "NGA-CODPSAGE-NG030003": ("Atakunmosa East",),
+        "NGA-CODPSAGE-NG030004": ("Atakunmosa West",),
+        "NGA-CODPSAGE-NG031004": ("Atisbo",),
+        "NGA-CODPSAGE-NG032001": ("Barkin Ladi",),
+        "NGA-CODPSAGE-NG033010": ("Emuoha",),
+        "NGA-CODPSAGE-NG033015": ("Obio/Akpor",),
+        "NGA-CODPSAGE-NG036015": ("Tarmuwa",),
+        # The same rows in the age file: the two Burundian communes, and six
+        # Tanzanian towns whose counts joined through the labels above while
+        # their medians and sex ratios stood unread beside them. The 2022 census
+        # gives the towns none (tanzania_census.py holds them back: Kahama's and
+        # Katavi's councils were split along lines the map does not draw, and the
+        # other four fail its ratio test with the districts drawn beside them), so
+        # the 2020 projection behind their head counts gives their ages too, as it
+        # does for those districts.
+        "BDI-CODPSAGE-BDI016006": ("Nyabitsinda",),
+        "BDI-CODPSAGE-BDI002006": ("Mugongomanga",),
+        "TZA-CODPSAGE-TZ0806": ("Lindi Urban",),
+        "TZA-CODPSAGE-TZ1504": ("Sumbawanga Urban",),
+        "TZA-CODPSAGE-TZ1608": ("Kasulu Township Authority",),
+        "TZA-CODPSAGE-TZ1705": ("Kahama Township Authority",),
+        "TZA-CODPSAGE-TZ2106": ("Babati Urban",),
+        "TZA-CODPSAGE-TZ2301": ("Mpanda Urban",),
+        # OCHA's age tables and Afrobarometer spell a few West African units another
+        # way: Benin's Atacora and Couffo (Atakora, Kouffo), Mauritania's Hodh El
+        # Chargi and Tris-Zemmour (Hodh ech Chargui, Tiris Zemmour), Burkina Faso's
+        # Kourittenga and Komandjari (Kouritenga, Komonjdjari). Each is its
+        # country's only unit of the name, in the region the row gives.
+        "BEN-CODPSAGE-BJ02": ("Atakora",),
+        "BEN-CODPSAGE-BJ06": ("Kouffo",),
+        "MRT-CODPSAGE-MR07": ("Hodh ech Chargui",),
+        "MRT-CODPSAGE-MR13": ("Tiris Zemmour",),
+        "BFA-CODPSAGE-BF4803": ("Kouritenga",),
+        "BFA-CODPSAGE-BF5203": ("Komonjdjari",),
+    },
+    "afrobarometer_region.json": {
+        "BEN-AB9-101": ("Atakora",),
+        "BEN-AB9-105": ("Kouffo",),
+        # Niger's Dosso, which the boundary file spells Dossa; Mauritania's
+        # Guidimaka and the two Hodhs as the survey spells them.
+        "NER-AB9-1102": ("Dossa",),
+        # Mali's Koulikoro, which the boundary file spells Koulikouro: the
+        # survey samples the region as drawn, and its religion and ethnic
+        # groups stand there now that the 2022 census's shares, for the
+        # regions of 2023, which cross it, are not shown (mali.py).
+        "MLI-AB9-502": ("Koulikouro",),
+        "MRT-AB9-1885": ("Guidimaka",),
+        "MRT-AB9-1886": ("Hodh ech Chargui",),
+        "MRT-AB9-1887": ("Hodh el Gharbi",),
+        # Tiris Zemmour, which the survey spells Tiris Zemour. Abidjan, which
+        # the boundary file calls District Autonome D'Abidjan: the apostrophe
+        # folds "D'Abidjan" into one word, so the city's name alone never
+        # meets the district, and Round 9's 312 respondents there were shown
+        # nowhere while the district said the survey does not reach it.
+        "MRT-AB9-1891": ("Tiris Zemmour",),
+        "CIV-AB9-1260": ("District Autonome D'Abidjan",),
+        # Nigeria's "FCT ABUJA", whose 24 respondents the survey's row says are
+        # too few: the territory then says so, as Kwara and the rest do.
+        "NGA-AB9-634": ("Abuja Federal Capital Territory",),
+        # Mauritius' Plaines Wilhems, which the survey writes "Plaine Wilhems":
+        # its 336 respondents reached no district, and the most populous one
+        # showed only the census's reason for giving no ethnic group.
+        "MUS-AB9-906": ("Plaines Wilhems",),
+    },
+    # Egypt's Minya, as the boundary file spells it now (common.MISSPELLED):
+    # Round 5's stratum carried the old spelling, "Minya Governate".
+    "afrobarometer_r56.json": {
+        "EGY-AB5-Minya Governate": ("Minya Governorate",),
+    },
+    # Amhara's Argoba special woreda, which the census tables write "Argoba
+    # Special Wereda" and which reached the polygon under its old label,
+    # "Special Woreda".
+    "ethiopia_region.json": {
+        "ETH-āmara-argoba-special-wereda": ("Argoba Special Woreda",),
     },
     "clear_global_language.json": {
         "MAR-CG-MA001001": ("Province d'Azilal إقليم أزيلال",),
@@ -2981,6 +3399,44 @@ ROW_ALIASES: dict[str, dict[str, tuple[str, ...]]] = {
         "SOM-CG-SO1701": ("GAROWE",),
     },
 }
+
+# Central Africa (kept apart from the table above so that it merges into it):
+#   * OCHA's age tables name three units as its population tables do: the
+#     Angolan spelling above, Gambos (ex-Chiange), is the same row's in
+#     cod_ps_age.json; Chad's "Barh-El-Gazel" is the boundary file's "Bahr el
+#     Gazel", Cameroon's "Adamawa" its "Adamaoua". (Quiculungo's age row is not
+#     bound: the polygon drawn as Quiculongo is only half Quiculungo, and
+#     NOT_THIS_GROUND states so on it.)
+#   * OCHA's 2022 row for Principe, "Região Autónoma do Príncipe", is the
+#     island the map draws as its one district, Pagué; and the Central African
+#     Republic's 2015 row "Dédé Mokoumba" is the sub-prefecture drawn as
+#     Dédé-Mokouba.
+#   * Afrobarometer's Round 9 strata in Cameroon are the regions in French,
+#     and seven reach no polygon: Est, Extreme- Nord, Nord, Nord Ouest,
+#     Ouest, Sud and Sud Ouest are the boundary file's East, Far North,
+#     North, North-West, West, South and South-West (Round 8's own rows,
+#     read in English, join every one).
+for _file, _rows in {
+    "cod_ps_admin2.json": {
+        "STP-CODPS-ST0101": ("Pagué",),
+        "CAF-CODPS-CF216": ("Dédé-Mokouba",),
+    },
+    "cod_ps_age.json": {
+        "AGO-CODPSAGE-AO09073": ("Gambos(Chiange)",),
+        "TCD-CODPSAGE-TD19": ("Bahr el Gazel",),
+        "CMR-CODPSAGE-CM001": ("Adamaoua",),
+    },
+    "afrobarometer_region.json": {
+        "CMR-AB9-1224": ("East",),
+        "CMR-AB9-1225": ("Far North",),
+        "CMR-AB9-1227": ("North",),
+        "CMR-AB9-1228": ("North-West",),
+        "CMR-AB9-1229": ("West",),
+        "CMR-AB9-1230": ("South",),
+        "CMR-AB9-1231": ("South-West",),
+    },
+}.items():
+    ROW_ALIASES.setdefault(_file, {}).update(_rows)
 
 # Rows whose name is drawn more than once in their country and which do not
 # say which province they are in, keyed by file and row id, with the province
@@ -3017,13 +3473,42 @@ ROW_PARENTS: dict[str, dict[str, str]] = {
 # of the two polygons and outside the other (measured on the boundary file):
 # Q475250, 48,065 in 2018, at 14.21N 100.50E in บางไทร's, and Q475251, 19,366,
 # at 14.32N 100.30E in บางซ้าย's.
+#
+# Bujumbura Mairie has been three communes since 2014, Muha, Mukaza and
+# Ntahangwa, made from the city's thirteen former communes, now its zones.
+# OCHA's table has three rows for the city, BDI017014 to BDI017016, labelled
+# with one zone of each -- "Kanyosha", "Buyenzi", "Buterere" -- so none
+# reached a polygon (and the boundary file files Muha under Bujumbura Rural).
+# They are the three communes: their P-codes run in the communes' alphabetical
+# order, Kanyosha is a zone of Muha, Buyenzi of Mukaza and Buterere of
+# Ntahangwa, and together they make the city (1,117,744 in 2022, their medians
+# weighted to the city row's 21.0).
 ROW_SHAPES: dict[str, dict[str, tuple[str, str]]] = {
+    # Uganda's census rows are bound to their counties already; these give four
+    # of them their names in place of the boundary file's: a second "Soroti"
+    # north of Amuria, which is Kapelebyong County (its row's note says so),
+    # "Bujumbura" (Burundi's capital) for Rukungiri's Rujumbura, "Bukuto" for
+    # Bukoto and "Bughendra" for Bughendera.
+    "uganda_census.json": {
+        "UGA-2024-47994165B8099782863608": ("47994165B8099782863608", "Kapelebyong"),
+        "UGA-2024-47994165B34585576880018": ("47994165B34585576880018", "Rujumbura"),
+        "UGA-2024-47994165B51876264217150": ("47994165B51876264217150", "Bukoto"),
+        "UGA-2024-47994165B11452154134589": ("47994165B11452154134589", "Bughendera"),
+    },
     "cod_ps_admin2.json": {
         "TZA-CODPS-TZ0203": ("72390352B90906351205470", "Arusha Urban"),
         "TZA-CODPS-TZ1208": ("72390352B25057310038558", "Mbeya Urban"),
         "LAO-CODPS-LA0610": ("54806243B97421577673591", "Viengkham"),
         "LAO-CODPS-LA0612": ("54806243B14812805317737", "Phonthong"),
         "LAO-CODPS-LA1606": ("54806243B67434402908614", "Phonthong"),
+        "BDI-CODPS-BDI017014": ("21766830B84199363749171", "Muha"),
+        "BDI-CODPS-BDI017015": ("21766830B10562197966638", "Mukaza"),
+        "BDI-CODPS-BDI017016": ("21766830B87038696970617", "Ntahangwa"),
+    },
+    "cod_ps_age.json": {
+        "BDI-CODPSAGE-BDI017014": ("21766830B84199363749171", "Muha"),
+        "BDI-CODPSAGE-BDI017015": ("21766830B10562197966638", "Mukaza"),
+        "BDI-CODPSAGE-BDI017016": ("21766830B87038696970617", "Ntahangwa"),
     },
     "wikidata_admin2.json": {
         "THA-WD-Q475250": ("78962969B26505935473539", "Bang Sai"),
@@ -3054,7 +3539,54 @@ ENGURI_VILLAGES = (
     "The outline drawn here also takes in the villages along the Enguri that the de "
     "facto authorities in Abkhazia count in their Gal district (Chuburkhinji, Otobaia, "
     "Tagiloni, Pichori and others), 12,000 or more people at their 2011 census, ")
+CABO_VERDE_ETHNICITY = (
+    "Asked for their ethnic community or cultural group, most Cape Verdeans in the "
+    "survey named only their nationality, or none, or an identity of another kind -- "
+    "the part of the islands "
+    "they come from (badiu, sampadjudu), their religion, occupation, class, race, "
+    "gender, age or party -- and most of these shares count those answers rather "
+    "than ethnic groups.")
+TURKANA_ILEMI = (
+    "The outline drawn here takes in part of the Ilemi Triangle, which Kenya administers "
+    "and South Sudan claims; the rest of the triangle, around Kibish, is drawn in South "
+    "Sudan. The 2019 census counted Turkana County as Kenya administers it, the whole "
+    "triangle included.")
+
+
+def before_rumonge(province: str, communes: str, when: str) -> str:
+    """Burundi's survey shares for a province as it was before Rumonge was cut from it."""
+    return (f"Afrobarometer interviewed here in {when}, when {province} still held "
+            f"{communes}, which became part of Rumonge province in 2015; these are the "
+            f"shares of the province as it then was.")
+
+
+BURURI_COMMUNES = "the communes of Burambi, Buyengero and Rumonge"
+BUJUMBURA_RURAL_COMMUNES = "the communes of Bugarama and Muhuta"
 ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
+    "kenya_census.json": {
+        "KEN-2019-32016919B72266624462344": {
+            field: TURKANA_ILEMI
+            for field in ("population", "median_age", "sex_ratio", "religion")},
+    },
+    "afrobarometer_r56.json": {
+        "BDI-AB6-Bururi": {
+            "religion": before_rumonge("Bururi", BURURI_COMMUNES, "October 2014"),
+            "language": before_rumonge("Bururi", BURURI_COMMUNES, "October 2014"),
+            "ethnicity": before_rumonge("Bururi", BURURI_COMMUNES, "November 2012")},
+        "BDI-AB6-Bujumbura Rural": {
+            "religion": before_rumonge("Bujumbura Rural", BUJUMBURA_RURAL_COMMUNES,
+                                       "October 2014"),
+            "language": before_rumonge("Bujumbura Rural", BUJUMBURA_RURAL_COMMUNES,
+                                       "October 2014"),
+            "ethnicity": before_rumonge("Bujumbura Rural", BUJUMBURA_RURAL_COMMUNES,
+                                        "November 2012")},
+    },
+    "clear_global_language.json": {
+        "BDI-CG-BDI003": {"language": before_rumonge("Bururi", BURURI_COMMUNES,
+                                                     "October 2014")},
+        "BDI-CG-BDI002": {"language": before_rumonge("Bujumbura Rural",
+                                                     BUJUMBURA_RURAL_COMMUNES, "October 2014")},
+    },
     "cod_ps_admin2.json": {
         "AGO-CODPS-AO09077": {"population": (
             "The map draws no polygon for Cacula, the municipality to the "
@@ -3069,6 +3601,64 @@ ROW_NOTES: dict[str, dict[str, dict[str, str]]] = {
             "ethnicity": ENGURI_VILLAGES + "whom the 2002 census did not count.",
         },
     },
+    # Niger: Round 8 gives French as the home language of 12.5% of Tillabéri's
+    # respondents and 6.8% of Maradi's; Round 9 gives 0.5% in each, and no
+    # ethnic group answers to it (WITHDRAWN_FIELDS).
+    # Asked for their ethnic community or cultural group, most Cape Verdeans
+    # in Round 9 named none, or another kind of identity; the tree files those
+    # answers as unclassified, and the panel says what they are.
+    "afrobarometer_region.json": {
+        row: {"ethnicity": CABO_VERDE_ETHNICITY} for row in ("CPV-AB9-221", "CPV-AB9-223")},
+    "afrobarometer_r8_language.json": {
+        "NER-AB8-TILLABERI": {"language": (
+            "Round 9 of the same survey (2021-2023) puts French at 0.5% of the region's "
+            "homes, against the 12.5% here.")},
+        "NER-AB8-MARADI": {"language": (
+            "Round 9 of the same survey (2021-2023) puts French at 0.5% of the region's "
+            "homes, against the 6.8% here.")},
+    },
+    # Three cities of the DRC drawn apart from the territory around them, whose
+    # people OCHA's 2020 estimate counts in that territory (its note says so):
+    # the cities show Wikidata's figures, Kolwezi's with no date.
+    "wikidata_admin2.json": {
+        "COD-WD-Q271404": {"population": (
+            "Wikidata gives this figure without a date. OCHA's 2020 estimate for the "
+            "DRC counts the city's people within Mutshatsha territory's figure, so they "
+            "are counted in both.")},
+        "COD-WD-Q648298": {"population": (
+            "OCHA's 2020 estimate for the DRC counts the city's people within Irumu "
+            "territory's figure, so they are counted in both.")},
+        "COD-WD-Q277966": {"population": (
+            "OCHA's 2020 estimate for the DRC counts the city's people within Kamonia "
+            "territory's figure, so they are counted in both.")},
+    },
+    # Red Sea State keeps Wikidata's 2018 figure: its localities make no sum
+    # for it, Hala'ib's figure being withheld (NOT_THIS_GROUND).
+    "wikidata_admin1.json": {
+        "SDN-WD-Q310120": {"population": (
+            "OCHA's projection for 2025 gives the nine localities drawn here other than "
+            "Hala'ib 1,878,562 people; Hala'ib's 33,932 are not shown, Sudan drawing that "
+            "locality north across the 22nd parallel, so the localities make no figure "
+            "for the state.")},
+    },
+    # East Gonja's seat, which the outline drawn under its name does not hold.
+    "ghana_capitals.json": {
+        "GHA-SEAT-2480657B20562210440652": {"capital": (
+            "Salaga, the municipality's seat, stands outside the outline drawn here, 37 km "
+            "to the east-north-east, inside the one drawn as North East Gonja.")},
+    },
+    # Malawi's districts drawn with the city inside them (ROW_UNIONS): CLEAR
+    # Global gives the district and the city apart, and nothing to weigh them
+    # by; Blantyre's and Zomba's two rows meet on one name and neither is
+    # kept, and Mzimba's district row is withdrawn (WITHDRAWN_FIELDS).
+    "malawi_census.json": {
+        f"MWI-2018-{key}": {"language": (
+            f"CLEAR Global's tabulation of the 1998 census gives {district} district and "
+            f"{city} separately, with no counts or populations to weigh them by, so its "
+            f"shares are not combined for this polygon.")}
+        for key, district, city in (("mzimba", "Mzimba", "Mzuzu City"),
+                                    ("blantyre", "Blantyre", "Blantyre City"),
+                                    ("zomba", "Zomba", "Zomba City"))},
 }
 
 # The sources ROW_NOTES' sentences quote, cited on the row for its notes: Gal
@@ -3078,12 +3668,49 @@ GAL_VILLAGES_2011 = {
             "census of Gal district by village administration",
     "url": "http://ethno-kavkaz.narod.ru/gal11.html", "year": 2011,
     "license": "Transcription of the census; terms of reuse not stated"}
+AFROBAROMETER_R9 = {"name": "Afrobarometer Round 9 (2021-2023)",
+                    "url": "https://www.afrobarometer.org/data/", "year": 2023}
+# Written as the rows of cod_ps_admin2.json and clear_global_language.json cite
+# them, so that each merges with the unit's entry for the same source.
+OCHA_COD_2020 = {
+    "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-cod), "
+            "reference year 2020",
+    "url": "https://data.humdata.org/dataset/cod-ps-cod", "year": 2020,
+    "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) "
+               "-- license_id='cc-by-igo', isopen=False"}
+OCHA_SDN_2025 = {
+    "name": "OCHA, Common Operational Dataset -- population statistics (cod-ps-sdn), "
+            "reference year 2025",
+    "url": "https://data.humdata.org/dataset/cod-ps-sdn", "year": 2025,
+    "license": "Creative Commons Attribution International (CC BY) -- license_id='cc-by', "
+               "isopen=True"}
+CLEAR_MALAWI = {"name": "CLEAR Global (formerly Translators without Borders), Malawi: "
+                        "Languages",
+                "url": "https://data.humdata.org/dataset/malawi-languages",
+                "license": "Creative Commons Attribution Share-Alike (CC BY-SA) -- "
+                           "license_id='cc-by-sa', isopen=True"}
 ROW_NOTE_SOURCES: dict[str, dict[str, list[dict[str, Any]]]] = {
+    "afrobarometer_r8_language.json": {
+        row: [{"field": "language note", **AFROBAROMETER_R9}]
+        for row in ("NER-AB8-TILLABERI", "NER-AB8-MARADI")},
     "georgia.json": {
         "GEO-GEOSTAT-92138335B56355921545740": [
             {"field": f"{field} note", **GAL_VILLAGES_2011}
             for field in ("population", "median_age", "sex_ratio", "ethnicity")],
     },
+    "wikidata_admin2.json": {
+        **{row: [{"field": "population note", **OCHA_COD_2020}]
+           for row in ("COD-WD-Q271404", "COD-WD-Q648298", "COD-WD-Q277966")},
+        # Hala'ib's three notes quote OCHA's 2025 projection for the locality
+        # (NOT_THIS_GROUND); its Wikidata item is the row that reaches it.
+        "SDN-WD-Q796684": [{"field": "population note/median_age note/sex_ratio note",
+                            **OCHA_SDN_2025}],
+    },
+    "wikidata_admin1.json": {
+        "SDN-WD-Q310120": [{"field": "population note", **OCHA_SDN_2025}]},
+    "malawi_census.json": {
+        f"MWI-2018-{key}": [{"field": "language note", **CLEAR_MALAWI}]
+        for key in ("mzimba", "blantyre", "zomba")},
 }
 
 # Rows that are not a unit of today's map, keyed by file and row id, with the
@@ -3098,12 +3725,233 @@ ROW_NOTE_SOURCES: dict[str, dict[str, list[dict[str, Any]]]] = {
 DROPPED_ROWS: dict[str, dict[str, str]] = {
     "wikidata_admin2.json": {
         "THA-WD-Q6580711": "Thonburi Province, merged into Bangkok in 1971",
+        # Sidama Region's Southern Sidama Zone (seat Aleta Wendo), which joined
+        # Tigray's Southern zone by its short name and gave it Aleta Wendo as
+        # its capital; its Central Sidama Zone, which joined Tigray's Central
+        # zone the same way and cited itself as the zone's Wikidata item.
+        # Arsi Negele, a wereda of West Arsi, met the Arsi Zone item on Arsi's
+        # polygon by its first word, and neither was placed.
+        "ETH-WD-Q126285407": "Southern Sidama Zone of Sidama Region, not Tigray's Southern zone",
+        "ETH-WD-Q126280182": "Central Sidama Zone of Sidama Region, not Tigray's Central zone",
+        "ETH-WD-Q2864413": "Arsi Negele, a wereda of West Arsi Zone, not the Arsi zone",
+        # Items for a larger or another unit, reaching a constituency, a district
+        # or a county by its name: Kenya's Nandi Hills wore Nandi County's seat
+        # (Kapsabet, 6.9 km outside it) and Makueni constituency the county's
+        # population; Somalia's Marka, the city's 2014 figure where the
+        # district's item, which has none, was refused; Uganda's Moroto County
+        # in Lango, Karamoja's Moroto Municipality.
+        "KEN-WD-Q1964569": "Nandi County, not the Nandi Hills constituency",
+        "KEN-WD-Q473717": "Makueni County, not the Makueni constituency",
+        "KEN-WD-Q1852189": "Malindi District before 2010, not the Malindi constituency",
+        "SOM-WD-Q657428": "Merca, the city, not Marka District",
+        "UGA-WD-Q49298225": "Moroto Municipality in Karamoja, not the Moroto County of "
+                            "Alebtong District",
+        # Tajura, a town of Tripoli District 4.3 km outside the outline that
+        # carries its district's 2001 name; and Port Said, the city, which met
+        # the port police district drawn under the city's name.
+        "LBY-WD-Q2271093": "Tajura, a town of Tripoli District, not the outline",
+        "EGY-WD-Q134509": "Port Said, the city, not the port police district",
+        # Tunisian towns and municipalities whose items carry their
+        # delegation's names: written under the statistics institute's French
+        # names (tunisia_census), each delegation is named as the town is, and
+        # the town's item took the polygon from the delegation's, which reaches
+        # it by the same names.
+        "TUN-WD-Q816364": "Bembla, the town, not the delegation",
+        "TUN-WD-Q816443": "Ben Arous, the town, not the delegation",
+        "TUN-WD-Q3062876": "Ezzahra, the town, not the delegation",
+        "TUN-WD-Q3104850": "Ghezala, the town, not the delegation",
+        "TUN-WD-Q208715": "Monastir, the city, not the delegation",
+        "TUN-WD-Q867615": "Nabeul, the city, not the delegation",
+        "TUN-WD-Q1020989": "Sahline Moôtmar, the town, not the delegation of Sahline",
+        "TUN-WD-Q3574882": "Zarzouna, the town, not the delegation",
+        "TUN-WD-Q22948382": "Bembla-Mnara, the municipality, not the delegation of Bembla",
+        "TUN-WD-Q49364945": "Sahline, the municipality, not the delegation",
     },
     "wiki_population_admin1.json": {
         "MDG-WP-vatovavy-fitovinany": "Fitovinany's 2018 figure, three of the "
                                       "polygon's six districts",
+        # English Wikipedia's Mali regions now describe the regions of 2023:
+        # Kayes without Kita and Nioro, Koulikoro without Dioila and Nara (and
+        # the ground the 2023 Bamako and Bougouni took). The polygons are the
+        # regions of before; their cercles carry OCHA's figures, summed.
+        "MLI-WP-kayes": "the Kayes region of 2023, without Kita and Nioro",
+        "MLI-WP-koulikouro": "the Koulikoro region of 2023, without Dioila and Nara",
+    },
+    "wikidata_admin1.json": {
+        # The 2022 census's count for the District of Bamako as redrawn in
+        # 2023, which OCHA's boundaries draw about three times the size of the
+        # polygon, over the Kati cercle; the polygon's one cercle carries
+        # OCHA's figure for the district of before.
+        "MLI-WD-Q3703": "the District of Bamako of 2023, larger than the polygon",
+    },
+    # Cabo Verde's survey regions are islands, or halves of Santiago, and two
+    # of them reach one municipality by name or by CLEAR Global's code:
+    # Afrobarometer's "Fogo" (80 respondents) is the whole island -- Sao
+    # Filipe, Mosteiros and Santa Catarina do Fogo -- and CLEAR Global's
+    # tabulation of Round 8 gives its stratum Fogo the code of Santa Catarina
+    # do Fogo and its stratum Santiago - Interior, eight municipalities, the
+    # code of Ribeira Grande de Santiago (Santo Antao and Fogo answer 100%
+    # Crioulo in Round 8; CV10's Portuguese 0.2% is Santiago's interior).
+    "afrobarometer_region.json": {
+        "CPV-AB9-224": "the island of Fogo (Sao Filipe, Mosteiros and Santa Catarina "
+                       "do Fogo), not the municipality its name reaches",
+        # Seychelles' Praslin, the census's region of two districts, reached
+        # Grand'Anse Praslin by its name and left the district the survey's
+        # note on ethnicity, which it did not ask, and its citation. The 2022
+        # census gives the region, drawn at the second level, all three fields.
+        "SYC-AB9-1684": "the Praslin region, Grand'Anse Praslin and Baie Sainte Anne, "
+                        "not the district its name reaches",
+    },
+    "clear_global_language.json": {
+        "CPV-CG-CV13": "Afrobarometer Round 8's stratum Fogo, the whole island",
+        "CPV-CG-CV10": "Afrobarometer Round 8's stratum Santiago - Interior, eight "
+                       "municipalities",
     },
 }
+
+
+# CLEAR Global's tabulations of Afrobarometer rounds, read where the survey
+# interviewed too few people for shares: the map reads the survey itself only
+# where a region holds 25 respondents, and the same interviews tabulated by
+# another hand are no larger. Kenya's ten counties, Tanzania's Katavi and
+# Kusini Unguja, the Republic of the Congo's Cuvette-Ouest and Sangha,
+# Botswana's Chobe and Nigeria's seven states where Afrobarometer is CLEAR's only
+# source (Yobe's rows draw on REACH's assessment too) each say, in the survey's
+# own row, that it interviewed 8 to 24 people there; Samburu showed "Turkana
+# 100%" from eight. (Ghana's districts and Namibia's constituencies, tabulated
+# below the regions the survey samples, are written with the reason by the
+# reader itself: clear_global.SMALL_SAMPLE.)
+FEW_INTERVIEWS = ("CLEAR Global's shares tabulate an Afrobarometer round that interviewed "
+                  "too few people here for shares")
+
+# Fields of a file's rows that are not used, keyed by file, then a country (all
+# its rows) or one row's id, then field, with the reason; the rows keep their
+# other fields. The field goes before any union is pooled, so a pooled row
+# never carries it, and a lower-ranked file's figure stands where this one's
+# would have.
+#   SWZ  Asked their ethnic group, 1,186 of the 1,200 people Round 9
+#        interviewed in Eswatini gave code 9990, "(national identity) only, or
+#        doesn't think of self in those terms": each region would show
+#        "National identity only" at 97 to 99.9%, and the country's sum would
+#        stand where the Factbook's ethnic groups do. FIELD_GAPS says why
+#        instead.
+#   NER  Afrobarometer Round 9's home languages for Niger contradict the same
+#        survey's ethnic groups: Tamasheq is 20.1% of Dosso's languages where
+#        no respondent gave Tuareg ethnicity, 26.2% of Niamey's against 1.9%
+#        by ethnicity, 27.1% of Tillabéri's against 9.9%, while Zinder's
+#        Tuareg (14.0%) speak Tamasheq at 1.4% and Zarma/Songhay is 15.8% of
+#        Diffa's languages against 2.1% by ethnicity -- the language codes look
+#        misassigned. Round 8's languages (afrobarometer_r8_language) stand on
+#        all six polygons instead: they follow the ethnic groups, Tamasheq where
+#        the Tuareg are, except French, which Round 8 gives 12.5% of Tillabéri's
+#        homes and 6.8% of Maradi's against Round 9's 0.5% in each; those two
+#        say so (ROW_NOTES). Round 9's religion is behind the 2012 census's for
+#        every polygon (niger_census), and pooled for the two merged polygons it
+#        would be appended after the census and stand in front of it.
+#   Seats Wikidata gives three first-level units of West Africa that are not
+#        their seats, where GeoNames' seat of the first-order division (PPLA),
+#        inside the polygon, is: Togo's Savanes is Dapaong's, not "Durum Town";
+#        Senegal's Louga is Louga's, not Nguer Malal (a village of the region);
+#        Benin's Atlantique has been Allada's since the decree of 2016 that
+#        made the twelve departments' seats, not Ouidah's. Taking the capital
+#        off the row lets GeoNames' seat stand (fill_capitals_from_geonames).
+#        North Africa has three more: Libya's Misrata District is given Al
+#        Bayda (in Arabic), the seat of Al Jabal al Akhdar 600 km east, and
+#        Marj District an "encampment of Al Marj", where GeoNames' PPLA inside
+#        each polygon is Misratah and Al Marj; Algeria's Tizi Ouzou Province
+#        is given Kouba (in Arabic), a commune of Algiers, and its seat is
+#        Tizi Ouzou (DECLARED_SEATS). The final sweep found five more:
+#        Ethiopia's Afar is given Asaita, its seat until 2007 (Semera since);
+#        Tanzania's South Pemba Mkoani, a district town (Chake Chake);
+#        Rwanda's Northern Province "Byumba hospital", the building Wikidata's
+#        capital points to (Byumba); Gabon's Estuaire Akanda, a commune beside
+#        Libreville (Libreville); Angola's Bengo Dande, its municipality
+#        (Caxito, the town). And four in its second pass: Zambia's Southern
+#        Province Livingstone, its seat until 2012 (Choma since); Namibia's
+#        Oshikoto Tsumeb, its largest town (Omuthiya, GeoNames' PPLA);
+#        Mauritius's Pamplemousses Triolet, a village of the district
+#        (Pamplemousses, the seat its second-level copy shows); and Morocco's
+#        Laâyoune-Sakia El Hamra Laâyoune, which lies south of 27°40'N in the
+#        polygon drawn as Western Sahara, outside this one (NO_SEAT_HERE says
+#        so on it).
+#   MWI  CLEAR Global's Mzimba is the district without Mzuzu City, which the
+#        polygon holds with it (ROW_UNIONS); its shares stood for both.
+WITHDRAWN_FIELDS: dict[str, dict[str, dict[str, str]]] = {
+    "clear_global_language.json": {
+        "UGA-CG-UG2063": {"language": "CLEAR Global's 'Tororo' row holds the Tooro "
+                                      "sub-region's languages, not Tororo's"},
+        "MWI-CG-MW105": {"language": "Mzimba district without Mzuzu City, which the "
+                                     "polygon holds"},
+        **{row: {"language": FEW_INTERVIEWS} for row in (
+            "KEN-CG-KE004", "KEN-CG-KE005", "KEN-CG-KE006", "KEN-CG-KE008", "KEN-CG-KE010",
+            "KEN-CG-KE011", "KEN-CG-KE013", "KEN-CG-KE025", "KEN-CG-KE028", "KEN-CG-KE031",
+            "TZA-CG-TZ23", "TZA-CG-TZ52", "COG-CG-CG04", "COG-CG-CG12",
+            "BWA-CG-BW15", "BWA-CG-BW1501",
+            "NGA-CG-NG006", "NGA-CG-NG011", "NGA-CG-NG015", "NGA-CG-NG016", "NGA-CG-NG024",
+            "NGA-CG-NG026", "NGA-CG-NG035")},
+    },
+    "afrobarometer_region.json": {
+        "NER": {"language": "Round 9's language codes for Niger look misassigned",
+                "religion": "the 2012 census gives every polygon's religion"},
+        "SWZ": {"ethnicity": "1,186 of 1,200 respondents gave national identity only"},
+    },
+    "wikidata_admin1.json": {
+        "TGO-WD-Q279945": {"capital": "the Savanes region's seat is Dapaong"},
+        "SEN-WD-Q738061": {"capital": "the Louga region's seat is Louga"},
+        "BEN-WD-Q29147": {"capital": "the Atlantique department's seat is Allada"},
+        "LBY-WD-Q32845": {"capital": "Misrata District's seat is Misrata, not Al Bayda"},
+        "LBY-WD-Q26023": {"capital": "Marj District's seat is the town of Al Marj"},
+        "DZA-WD-Q233645": {"capital": "Tizi Ouzou Province's seat is Tizi Ouzou, not Kouba"},
+        "ETH-WD-Q193494": {"capital": "Afar Region's seat has been Semera since 2007"},
+        "TZA-WD-Q498067": {"capital": "South Pemba Region's seat is Chake Chake, not Mkoani"},
+        "RWA-WD-Q845807": {"capital": "the Northern Province's seat is Byumba, not its hospital"},
+        "GAB-WD-Q281109": {"capital": "Estuaire Province's seat is Libreville, not Akanda"},
+        "AGO-WD-Q191299": {"capital": "Bengo Province's seat is Caxito; Dande is its municipality"},
+        "ZMB-WD-Q738382": {"capital": "Southern Province's seat has been Choma since 2012, "
+                                      "not Livingstone"},
+        "NAM-WD-Q876512": {"capital": "Oshikoto Region's seat is Omuthiya (GeoNames PPLA), "
+                                      "not Tsumeb"},
+        "MUS-WD-Q934126": {"capital": "Pamplemousses District's seat is Pamplemousses "
+                                      "(GeoNames PPLA), as at the second level"},
+        "MAR-WD-Q19951088": {"capital": "the region's seat, Laâyoune, lies south of "
+                                        "27°40'N, in the polygon drawn as Western Sahara"},
+    },
+}
+
+# A value whose label carries the source's disambiguation, which the place
+# itself is not called: Wikidata labels Kouilou's seat "Loango, Republic of
+# Congo" and Kamenica's "Kamenica, Kosovo", to tell them from places of the
+# same name elsewhere. Keyed by file, row id and field; the place's name is
+# written instead, still cited to the row's source.
+DISAMBIGUATED: dict[str, dict[str, dict[str, str]]] = {
+    # And Zambia's Eastern Province's seat, labelled with its colonial name
+    # beside its own, "Chipata (Fort Jameson)".
+    "wikidata_admin1.json": {
+        "COG-WD-Q855327": {"capital": "Loango"},
+        "XKX-WD-Q2043136": {"capital": "Kamenica"},
+        "ZMB-WD-Q823810": {"capital": "Chipata"},
+    },
+    # Horo Guduru's seat, labelled "Shambu city", and Akinyele's, a town north
+    # of Ibadan labelled "Moniya, Ibadan".
+    "wikidata_admin2.json": {
+        "ETH-WD-Q5904662": {"capital": "Shambu"},
+        "NGA-WD-Q4701091": {"capital": "Moniya"},
+    },
+}
+
+
+def withdraw_fields(row: dict[str, Any], fields: Sequence[str] | set[str]) -> None:
+    """Take ``fields`` off a row read from a file, and off its citations."""
+    gone = set(fields)
+    for field in gone:
+        for key in (field, f"{field}_note", f"{field}_year", f"{field}_basis"):
+            row.pop(key, None)
+    kept = []
+    for src in row.get("sources") or []:
+        cited = [f for f in str(src.get("field") or "").split("/") if f and f not in gone]
+        if cited:
+            kept.append({**src, "field": "/".join(cited)})
+    row["sources"] = kept
 
 
 def superseded(filename: str) -> set[str]:
@@ -3135,6 +3983,8 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
         parents = ROW_PARENTS.get(filename, {})
         placed_by_id = ROW_SHAPES.get(filename, {})
         notes = ROW_NOTES.get(filename, {})
+        withdrawn = WITHDRAWN_FIELDS.get(filename, {})
+        disambiguated = DISAMBIGUATED.get(filename, {})
         # A row a declared union pools stays although its country's rows in
         # this file give way: the union names it by id, and the office's file
         # that supersedes the rest says the polygon is not one of its units.
@@ -3146,6 +3996,22 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
                 continue
             if row.get("sources"):
                 row["sources"] = spell_fields(row["sources"])
+            # Wikidata's rows are cited for "population/capital/coordinates"
+            # whatever the item states. An item with no capital is not the
+            # source of the seat the unit shows: Al Kufrah's oasis item stood
+            # cited for the seat Kufra District's item names, and pushed that
+            # item's citation off the record (tidy_citations).
+            if filename.startswith("wikidata_") and is_gap(row.get("capital")):
+                withdraw_fields(row, {"capital"})
+            if iso3 in withdrawn:
+                withdraw_fields(row, withdrawn[iso3])
+            if row.get("id") in withdrawn:
+                withdraw_fields(row, withdrawn[row["id"]])
+            for field, name in disambiguated.get(row.get("id"), {}).items():
+                if not isinstance(row.get(field), str):
+                    raise SystemExit(f"DISAMBIGUATED: {filename} {row['id']} has no "
+                                     f"{field} to name")
+                row[field] = name
             if row.get("id") in aliases:
                 row["aliases"] = [*(row.get("aliases") or []), *aliases[row["id"]]]
             if row.get("id") in parents and not row.get("parent_name"):
@@ -3179,20 +4045,30 @@ def load_adapters() -> dict[str, list[dict[str, Any]]]:
     return by_country
 
 
-# What a held row keeps besides its population (load_adapters): what places it.
+# What a held row keeps besides its population (load_adapters): what places it,
+# and the note on that population, which goes with the figure wherever it is
+# shown (Chad's 2024 departments say by what proportion OCHA's table raised
+# their province's 2021 figures).
 HELD_KEYS = frozenset({"id", "level", "name", "parent", "parent_name", "parent_aliases",
                        "country", "match_by", "shape_id", "shape_label", "no_shape",
-                       "aliases", "wikidata", "sources", "_source"})
+                       "aliases", "wikidata", "sources", "_source", "population_note"})
 
 
 def offer_only(row: dict[str, Any]) -> dict[str, Any]:
-    """A HELD_ROWS row as it is read: what places it, its population and that
-    figure's citation, marked as an offer (``_offer``), which merge_adapter
-    holds behind whatever the unit carries."""
+    """A HELD_ROWS row as it is read: what places it, its population, the note
+    on it and that figure's citation, marked as an offer (``_offer``), which
+    merge_adapter holds behind whatever the unit carries.
+
+    The note goes with the figure, as merge_adapter keeps any held figure's
+    (``unit_note``), and is shown where the figure is taken: Sierra Leone's
+    2021 mid-term counts say they are the mid-term census's and that its
+    results were disputed, and Kambia's 367,699 stood without it."""
     kept = {key: value for key, value in row.items()
             if key in HELD_KEYS or key == "population"}
+    # The note goes with the figure, and so does what the note cites.
     kept["sources"] = [src for src in row.get("sources") or []
-                       if set(str(src.get("field") or "").split("/")) <= {"population"}]
+                       if set(str(src.get("field") or "").split("/"))
+                       <= {"population", "population note"}]
     kept["_offer"] = True
     return kept
 
@@ -3629,7 +4505,11 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "sea_cod_ps_age.json",
                        # Yemen's median ages from the CSO's 2017 district
                        # projection: a projection never replaces a count.
-                       "yemen_census_age.json"})
+                       "yemen_census_age.json",
+                       # Somalia's 2014 Population Estimation Survey: a
+                       # survey's median age and sex ratio rank below every
+                       # count, as its compositions do.
+                       "somalia_survey.json"})
 FILL_ONLY_FIELDS = frozenset({"population", "median_age", "sex_ratio"})
 
 # A file's rows for a country, held behind the statistics office's own count
@@ -3663,7 +4543,32 @@ HELD_ROWS: dict[str, dict[str, str]] = {
                            "NPL": "nepal_district.json",
                            "PHL": "philippines_age.json"},
     "wikidata_points_admin2.json": {"JPN": "japan_municipal.json"},
+    # Sierra Leone's 2021 mid-term census, put together on the 2015 census's
+    # districts and regions: newer word of the same units, and disputed --
+    # its Western Area Urban count is 42% below the 2015 census's -- so each
+    # unit shows it only where prefer_newer_figures finds the change from the
+    # figure shown one a population makes, and names it otherwise.
+    "sierra_leone_mtphc.json": {"SLE": "sierra_leone_census.json"},
 }
+# Central Africa (kept apart from the table above so that it merges into it):
+# three newer tables held behind older rows for the same units, which stand as
+# the units' figures where the newer one is not the same ground.
+#   COD  drc_hpc.json, OCHA's humanitarian planning projection for 2024 by
+#        health zone, added up to 164 of the territories and cities the map
+#        draws, against cod_ps_admin2's 2020 rows.
+#   TCD  chad_departments_2024.json, OCHA's 2024 table of the departments,
+#        against cod_ps_admin2's 2021 rows: it raises all but one province's
+#        departments by one proportion (11.0%) and Sila's by 48.7%, which the
+#        departments' notes say.
+#   CAF  car_projection.json, ICASEES's projection for 2025 by sub-prefecture
+#        of the 2020 division (OCHA's humanitarian table), added up on the 2003
+#        sub-prefectures that hold its units whole, against car_census's 2021
+#        census-mapping counts.
+HELD_ROWS.update({
+    "drc_hpc.json": {"COD": "cod_ps_admin2.json"},
+    "chad_departments_2024.json": {"TCD": "cod_ps_admin2.json"},
+    "car_projection.json": {"CAF": "car_census.json"},
+})
 
 
 def is_fill_only(source: str | None, iso3: str | None) -> bool:
@@ -3742,6 +4647,14 @@ COMPOSED_COUNT = re.compile(
 # ... unless the clause says there is none: China's county notes say "its
 # prefecture lists no development zone counted apart".
 COMPOSED_DENIED = re.compile(r"\bno\b", re.I)
+
+# Files whose figure for a polygon is itself put together for it, the units of
+# a newer table that make up the polygon's ground added up, so that their offer
+# may stand in front of a count put together the same way: the Central African
+# Republic's 2025 projection on the 2003 sub-prefectures (car_projection),
+# where a 2021 count is the communes of several 2020 sub-prefectures added up
+# (Carnot is Carnot and Senkpa-Mbaéré, and so is its 2025 figure).
+COMPOSED_OFFERS = frozenset({"car_projection.json"})
 
 
 def composed(said: str) -> bool:
@@ -3822,6 +4735,16 @@ def year_of(container: dict[str, Any], key: str) -> int | None:
     return None
 
 
+def without_fields(src: dict[str, Any], gone: set[str]) -> dict[str, Any] | None:
+    """A source entry with ``gone`` taken out of its field list: the entry
+    itself when it cites none of them, None when it cites nothing else."""
+    parts = str(src.get("field") or "").split("/")
+    rest = [part for part in parts if part not in gone]
+    if rest == parts:
+        return src
+    return dict(src, field="/".join(rest)) if rest else None
+
+
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     """Adapter values override seeds; gap markers never overwrite real values.
 
@@ -3897,8 +4820,11 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
             entity.setdefault("_held", {}).setdefault(key, []).append({
                 "value": row[key], "wikidata": row.get("wikidata"),
                 "file": row.get("_source"), "match": row.get("_match"),
+                # The figure's citations, and its note's: the DRC's 2024
+                # territories say their figure is OCHA's 2020 estimate times a
+                # factor, and cite that estimate for it.
                 "sources": [src for src in row.get("sources") or []
-                            if key in str(src.get("field") or "").split("/")],
+                            if {key, f"{key} note"} & set(str(src.get("field") or "").split("/"))],
                 "row": row.get("id"),
                 # The note beside the figure goes with it, to wherever it is
                 # later shown: a union's says what was added up.
@@ -3921,6 +4847,16 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
             if not (str(src.get("field") or "").split("/")
                     and all(part in replaced
                             for part in str(src.get("field") or "").split("/")))]
+        # And an entry cited for a composition another file now gives, beside
+        # fields it still gives, keeps only those: Afrobarometer's
+        # "religion/ethnicity/language" on The Gambia's areas, whose religion
+        # and ethnicity are now the census's, cites the survey for language
+        # alone. (A figure's citation is tidied the same way at the end, by
+        # tidy_citations, which also keeps an entry a note names.)
+        gone = replaced & set(COMPOSITION_FIELDS)
+        if gone:
+            entity["sources"] = [src for src in (without_fields(src, gone)
+                                                 for src in entity["sources"]) if src]
     for key, value in row.items():
         if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases",
                    "match_by", "shape_label", "_source", "_match", "_offer",
@@ -3929,9 +4865,20 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
             continue
         if key == "sources":
             # A citation for a figure that was held back describes nothing
-            # on the record, so it is not added either.
+            # on the record, so it is not added either; nor one for the note
+            # beside it, which is held with the figure (unit_note) and comes
+            # with it if it is ever shown. Matadi's 2024 offer is not shown,
+            # and its note's citation of OCHA's 2020 table stood on the unit.
+            covered = held | {f"{field} note" for field in held}
             kept = [src for src in (value or [])
-                    if not (held and set(str(src.get("field") or "").split("/")) <= held)]
+                    if not (held and set(str(src.get("field") or "").split("/")) <= covered)]
+            # Nor is a composition held back cited among the fields of an
+            # entry that is added for others: Liberia's counties cited the
+            # survey for the religion and ethnicity the census shows.
+            held_shares = held & set(COMPOSITION_FIELDS)
+            if held_shares:
+                kept = [src for src in (without_fields(src, held_shares) for src in kept)
+                        if src]
             entity.setdefault("sources", []).extend(kept)
             continue
         if key in held or any(key == f"{f}{suffix}" for f in held for suffix in SATELLITES):
@@ -4790,7 +5737,7 @@ def year_sort_key(year: Any) -> tuple[int, str]:
     return (int(m.group()) if m else 0, str(year))
 
 
-def counted_noun(basis: Any) -> str:
+def counted_noun(basis: Any, surveyed: bool = False) -> str:
     """What the divisions' own counts are counts of, for the roll-up's note.
 
     People, unless the basis every division counts on says otherwise.
@@ -4798,11 +5745,22 @@ def counted_noun(basis: Any) -> str:
     them, and the country's note read "the divisions' own counts, of 123,416
     people in 2004" above a sentence saying they are households. Gilgit-
     Baltistan's survey, which counts the language of each household's head,
-    counts households too.
+    counts households too. Where every division's figures are a survey's
+    (``surveyed``), its counts are the people it interviewed: Cameroon's
+    regions added up to "1,171 people", Afrobarometer's respondents there.
     """
     said = basis.casefold() if isinstance(basis, str) else ""
-    return ("households" if said.startswith("households") or "household head" in said
-            else "people")
+    if said.startswith("households") or "household head" in said:
+        return "households"
+    return "survey respondents" if surveyed else "people"
+
+
+def survey_shares(entity: dict[str, Any], field: str) -> bool:
+    """Whether a unit's figures for a composition are a survey's, by what its
+    note says of them: Afrobarometer's give the region's respondents, and
+    CLEAR Global's tabulations of its rounds name the survey."""
+    said = str(entity.get(f"{field}_note") or "").casefold()
+    return "respondents" in said or "afrobarometer" in said
 
 
 def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
@@ -5008,6 +5966,16 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                for c, pop, base in zip(children, kid_pop, bases)
                if pop and base is not None and base < SAMPLE_SHARE * pop]
     weighted = 0 < len(sampled) < len(children)
+    # The rest count people only where their source did: Kenya's counties
+    # that are not the survey's carried CLEAR Global's tabulations of the same
+    # Afrobarometer round, a survey's shares with no respondents given.
+    tabulated = sum(1 for c, pop, base in zip(children, kid_pop, bases)
+                    if not (pop and base is not None and base < SAMPLE_SHARE * pop)
+                    and survey_shares(c, field))
+    rest = (" and the rest give a survey's shares without its respondents"
+            if tabulated and tabulated == len(children) - len(sampled) else
+            f", {tabulated} give a survey's shares without its respondents and the rest "
+            f"count people" if tabulated else " and the rest count people")
     if weighted and unpriced:
         return (f"{field}: {len(sampled)} children count a survey's respondents "
                 f"and the rest count people, and {unpriced} have no population "
@@ -5102,9 +6070,8 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                                 "at this level in the country carries these "
                                 "figures, so these are certainly all of its "
                                 "children." if whole_country else
-                                "the sum was taken anyway because these are the "
-                                "country's own divisions and it publishes no "
-                                "shares of its own for the sum to overrule."))
+                                "these are the country's own divisions, and it "
+                                "publishes no shares of its own."))
 
     # Computed before the note, because a sum that carries no date owes the
     # reader the reason. Pakistan is the case: four provinces and Islamabad
@@ -5240,8 +6207,9 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
             and abs(denominator - total_pop) > ROLLUP_TOLERANCE * total_pop):
         when = (f" in {next(iter(years))}" if len(years) == 1 else
                 f", nearly all of them in {dated}" if dated is not None else "")
+        surveyed = all(survey_shares(c, field) for c in children)
         counted = (f" The figures added are the divisions' own counts, of "
-                   f"{denominator:,.0f} {counted_noun(usual)}{when}.")
+                   f"{denominator:,.0f} {counted_noun(usual, surveyed)}{when}.")
     parent[f"{field}_note"] = (
         f"Summed from {'all ' if not left_out else ''}{len(children)} {level} "
         # The semicolon introduces the clause that follows it, so a sum that
@@ -5276,7 +6244,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
              "the country has these figures, so these are all of its children.")
         + counted
         + (f" Weighted by population: {len(sampled)} of them count a survey's "
-           "respondents and the rest count people, so every division's shares "
+           f"respondents{rest}, so every division's shares "
            "are taken of its own published population." if weighted else
            f" {len(derived)} of them publish shares and no counts"
            f"{' (' + ', '.join(sorted(derived)[:3]) + ')' if len(derived) <= 3 else ''}"
@@ -5987,14 +6955,33 @@ def note_country_not_summed(admin0: list[dict[str, Any]]) -> list[str]:
         if is_gap(value) and isinstance(value, dict):
             note = value.get("note") or ""
             if sentence not in note:
-                country[field] = {**value, "note": f"{note} {sentence}".strip()}
+                country[field] = {**value, "note": f"{ended(note)} {sentence}".strip()}
         else:
             note = country.get(f"{field}_note") or ""
             if sentence in note:
                 continue
-            country[f"{field}_note"] = f"{note} {sentence}".strip()
+            country[f"{field}_note"] = f"{ended(note)} {sentence}".strip()
         said.append(f"{iso3} {field}")
     return said
+
+
+SENTENCE_END = re.compile(r"[.!?…][\"'”’)]*$")
+
+
+def ended(note: str) -> str:
+    """A note that another sentence can follow.
+
+    The Factbook's line for a country it describes only in words has no full
+    stop, and PLAIN_PATTERNS makes it a sentence only while it is the whole
+    note: Mauritius's ethnicity read "... Sino-Mauritian, Franco-Mauritian Its
+    first-level divisions are not added up into this figure". Put in plain
+    words first, then given a full stop if it still has none.
+    """
+    note = note.strip()
+    if not note or SENTENCE_END.search(note):
+        return note
+    note = plain_wording(note)
+    return note if SENTENCE_END.search(note) else f"{note}."
 
 
 # Sex ratios reach the build in three units -- males per 100 females (most
@@ -6419,6 +7406,39 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     ("MMR", "religion"): "its states' religion counts 49.0 million people; the census's "
                          "national table, which the country carries, counts 51.5 million, "
                          "with the 1.2 million it did not enumerate",
+    # Southern Africa (kept together so that the reasons read alike): every
+    # region of Namibia, and every province of Zimbabwe for ethnicity, carries
+    # Afrobarometer's Round 9 shares, and so do Mauritius's districts for the
+    # ethnic group, which its census has not asked since 1972, and nine of
+    # Botswana's ten districts for all three, each district's survey strata
+    # taken together (afrobarometer.POOLED; Chobe's 16 respondents are too
+    # few). Namibia's and Zimbabwe's sums were held back only by the
+    # population gate, against the Factbook's estimate, and with the census's
+    # count beside it (admin0_detail's check rows) they would pass; Botswana's
+    # 2022 district counts (botswana_census) brought its sums within the gate
+    # too; Mauritius's was held back only by Plaines Wilhems, whose survey row
+    # joined nothing. A survey's sum would then stand where the country's own
+    # figure does: Botswana's census figures of 2011, and for its ethnic groups
+    # the Tswana's own peoples (Mongwato, Mokwena) where the country's figure
+    # counts Tswana as one.
+    ("NAM", "religion"): "its regions' shares are survey estimates, from Afrobarometer's "
+                         "ninth round",
+    ("NAM", "language"): "its regions' shares are survey estimates, from Afrobarometer's "
+                         "ninth round",
+    ("NAM", "ethnicity"): "its regions' shares are survey estimates, from Afrobarometer's "
+                          "ninth round",
+    ("ZWE", "ethnicity"): "its provinces' shares are survey estimates, from Afrobarometer's "
+                          "ninth round; the 2022 census gives ethnic groups for the whole "
+                          "country only",
+    ("MUS", "ethnicity"): "its districts' shares are survey estimates, from Afrobarometer's "
+                          "ninth round, and Rodrigues' are the census's, by nationality",
+    ("BWA", "religion"): "its districts' shares are survey estimates, from Afrobarometer's "
+                         "ninth round, and the country's figure is of 2011",
+    ("BWA", "language"): "its districts' shares are survey estimates, from Afrobarometer's "
+                         "ninth round, and the country's figure is of 2011",
+    ("BWA", "ethnicity"): "its districts' shares are survey estimates, from Afrobarometer's "
+                          "ninth round, which name the Tswana's own peoples (Mongwato, "
+                          "Mokwena) where the country's figure counts Tswana as one",
 }
 
 
@@ -6751,6 +7771,13 @@ def disputed_record(entity: dict[str, Any], profiles: dict[str, dict[str, Any]])
         value = entity.get(field)
         if isinstance(value, dict) and value.get("status") and not value.get("note"):
             entity[field] = gap(value["status"], DISPUTED_GAP)
+    # Its seat and largest settlement went out bare (Abyei, Koualou, the Gaza
+    # Strip and the rest): they say the same, in words for a place.
+    for field, what in (("capital", "a seat"), ("largest_settlement", "a largest settlement")):
+        value = entity.get(field)
+        if isinstance(value, dict) and value.get("status") and not value.get("note"):
+            entity[field] = gap(value["status"],
+                                f"{DISPUTED_NOTE} No source used here names {what} for it.")
 
 
 def mark_disputed_or_hint(entity: dict[str, Any], group: str) -> None:
@@ -6856,9 +7883,160 @@ def joined_here(rows: Sequence[dict[str, Any]]) -> dict[str, Any]:
         fields[field] = {"n": len(carrying), "sources": cited_names(
             [src for r in carrying for src in r.get("sources", [])
              if field in cited_fields(src)])}
+    for field in SCALAR_REASON_FIELDS:
+        carrying = [r for r in live if isinstance(r.get(field), dict) and "value" in r[field]]
+        fields[field] = {"n": len(carrying), "sources": cited_names(
+            [src for r in carrying for src in r.get("sources", [])
+             if field in cited_fields(src)])}
     return {"sources": listed(cited_names([src for r in matched
                                            for src in r.get("sources", [])])),
             "matched": len(matched), "units": len(live), "fields": fields}
+
+
+def country_phrase(country: str) -> str:
+    """A country's name as a sentence carries it mid-way: "The Gambia" and
+    "The Bahamas" lower-cased, and "the" before a name that takes one: "the
+    units of the DRC", "of the United States"."""
+    country = re.sub(r"^The ", "the ", country)
+    if re.search(r"^(?:United |Central African |Federated |Holy See\b|Isle of )"
+                 r"|^(?:Comoros|DRC|Maldives|Netherlands|Philippines)$|\bIslands(?: \(|$)",
+                 country):
+        country = f"the {country}"
+    return country
+
+
+# A bare population, median age or sex ratio, in the words the panel prints:
+# what the sources used give at this level, as for the compositions above.
+# Nothing here claims a census did not count ages or sexes -- every census
+# does -- only where the figures shown come from and how far they reach.
+# Before this pass 5,700 median ages, 5,300 sex ratios and 850 populations
+# went out bare, nearly all of them in Africa.
+SCALAR_REASON_FIELDS = {"population": "population", "median_age": "median age",
+                        "sex_ratio": "sex ratio"}
+SCALAR_ELSEWHERE = (
+    "No {field} figure has been found for this unit. {carriers} {give} it for "
+    "{n} of the {units} units of {country} at this level, not for this one.")
+SCALAR_NOWHERE = (
+    "None of the sources used for the units of {country} at this level "
+    "({sources}) gives a {field} for them, and no figure has been found for "
+    "this unit.")
+
+
+# The countries whose seats were looked for unit by unit (the Africa round,
+# October 2026): every source of seats this map reads, and the census
+# reports, OCHA's boundary sets and the lists of each country's units. Where
+# none names a unit's seat the panel says so; elsewhere nobody has looked
+# that hard, and a bare capital stays bare until someone does.
+SEATS_SOUGHT = frozenset(
+    "AGO BDI BEN BFA BWA CAF CIV CMR COD COG COM CPV DJI DZA EGY ERI ETH GAB GHA GIN GMB "
+    "GNB GNQ KEN LBR LBY LSO MAR MDG MLI MOZ MRT MUS MWI NAM NER NGA RWA SDN SEN SLE SOM "
+    "SSD STP SWZ SYC TCD TGO TUN TZA UGA ZAF ZMB ZWE".split())
+# What is known of a level's seats, where it is more than that no source names
+# them: Kenya's constituencies are electoral areas, and Algeria's second level
+# redraws its wilayas.
+NO_SEAT_REASONS = {
+    ("EGY", "admin2"): (
+        "No seat is shown: neither CAPMAS's census tables nor OCHA's table of the 2006 "
+        "census names a seat for a kism or a markaz."),
+    ("KEN", "admin2"): (
+        "No seat is shown: Kenya's constituencies are electoral areas, and neither the "
+        "2019 census reports nor Wikidata name a seat for them."),
+    ("TUN", "admin2"): (
+        "No seat is shown: the National Institute of Statistics' census tables name "
+        "none for the delegations, and no other source used here does."),
+    ("MAR", "admin2"): (
+        "No seat is shown: the High Commission for Planning's census tables name none "
+        "for the provinces and prefectures, and no other source used here does."),
+    ("SDN", "admin2"): (
+        "No seat is shown: the 2008 census tables, as the US Census Bureau tabulates "
+        "them, identify each locality only by its name and code, and no other source "
+        "used here names a seat."),
+    ("SSD", "admin2"): (
+        "No seat is shown: the 2008 census tables, as the US Census Bureau tabulates "
+        "them, identify each county only by its name and code, and no other source "
+        "used here names a seat."),
+    ("DZA", "admin2"): (
+        "No seat is shown: this outline draws the wilaya a second time, out of register "
+        "with the first level, where the wilaya's seat is shown."),
+}
+NO_SEAT_NAMED = "No seat is shown: none of the sources used here names one for this unit."
+
+# A polygon whose seat is known and stands outside it, by shapeID. The outline
+# labelled Tajura' wa an Nawahi al Arba, named Tripoli for the district it is
+# close to, is the city's outskirts: Tripoli stands 2.4 km north of it, on a
+# strip of coast no outline of Libya's divisions covers (the same id at both
+# levels). Laâyoune-Sakia El Hamra is drawn north of 27°40'N only; its seat,
+# Laâyoune, is 58 km south of the outline (WITHDRAWN_FIELDS).
+NO_SEAT_HERE = {
+    "10800210B53685260454781": (
+        "No seat is shown: the district's seat, Tripoli, stands on a strip of coast "
+        "north of the outline drawn here."),
+    "70788906B89532291078161": (
+        "No seat is shown: the region's seat, Laâyoune, lies south of 27°40'N in Western "
+        "Sahara, which the map draws apart as disputed ground; this polygon is the part "
+        "of the region north of that line."),
+}
+
+
+def say_why_no_capital(entity: dict[str, Any], iso3: str) -> bool:
+    """Say why a unit in a country whose seats were looked for shows none."""
+    value = entity.get("capital")
+    if (iso3 not in SEATS_SOUGHT or entity.get("water") or entity.get("disputed")
+            or not (isinstance(value, dict) and value.get("status") and not value.get("note"))):
+        return False
+    entity["capital"] = gap(value["status"], NO_SEAT_HERE.get(entity.get("id")) or
+                            NO_SEAT_REASONS.get((iso3, entity.get("level")), NO_SEAT_NAMED))
+    return True
+
+
+def say_why_no_country_seat(admin0: list[dict[str, Any]]) -> int:
+    """A country with no seat both claimants recognise says so at the country
+    too, in the words its units already use (Western Sahara)."""
+    said = 0
+    for entity in admin0:
+        value = entity.get("capital")
+        if (entity.get("id") in NO_SEAT and isinstance(value, dict)
+                and value.get("status") and not value.get("note")):
+            entity["capital"] = gap(value["status"], NO_SEAT[entity["id"]])
+            said += 1
+    return said
+
+
+def say_why_scalar_empty(entity: dict[str, Any], country: str,
+                         joined: dict[str, Any] | None = None) -> str | None:
+    """Give every bare population, median age and sex ratio its reason.
+
+    The scalar counterpart of say_why_empty, run beside it at the very end:
+    it only names what every earlier pass left bare, and never overwrites a
+    figure, a note or a status. Returns which case applied, or None.
+    """
+    case = None
+    country = country_phrase(country)
+    for field, word in SCALAR_REASON_FIELDS.items():
+        value = entity.get(field)
+        if not (isinstance(value, dict) and value.get("status")
+                and not value.get("note")):
+            continue
+        reach = ((joined or {}).get("fields") or {}).get(field) or {"n": 0, "sources": []}
+        if entity.get("disputed"):
+            note, case = DISPUTED_GAP, "disputed"
+        elif joined and reach["n"]:
+            named = [named_source(name) for name in reach["sources"]] or ["a source"]
+            named[0] = named[0][:1].upper() + named[0][1:]
+            note = SCALAR_ELSEWHERE.format(
+                field=word, carriers=listed(named),
+                give="give" if len(named) > 1 else "gives",
+                n=f"{reach['n']:,}", country=country, units=f"{joined['units']:,}")
+            case = "others at this level carry it"
+        elif joined and joined["matched"]:
+            note = SCALAR_NOWHERE.format(country=country, sources=joined["sources"],
+                                         field=word)
+            case = "no unit at this level carries it"
+        else:
+            note = NO_SOURCE_READ.format(country=country, field=word)
+            case = "no source read"
+        entity[field] = gap(value["status"], note)
+    return case
 
 
 def say_why_empty(entity: dict[str, Any], country: str,
@@ -6876,13 +8054,7 @@ def say_why_empty(entity: dict[str, Any], country: str,
     Returns which case applied, for the build log to count, or None.
     """
     case = None
-    # "The Gambia" and "The Bahamas" mid-sentence, and "the" before a name
-    # that takes one: "the units of the DRC", "of the United States".
-    country = re.sub(r"^The ", "the ", country)
-    if re.search(r"^(?:United |Central African |Federated |Holy See\b|Isle of )"
-                 r"|^(?:Comoros|DRC|Maldives|Netherlands|Philippines)$|\bIslands(?: \(|$)",
-                 country):
-        country = f"the {country}"
+    country = country_phrase(country)
     for field in COMPOSITION_FIELDS:
         value = entity.get(field)
         if not (isinstance(value, dict) and value.get("status")
@@ -6915,7 +8087,11 @@ def say_why_empty(entity: dict[str, Any], country: str,
                 give="give" if len(carriers) > 1 else "gives",
                 n=f"{reach['n']:,}", country=country, units=f"{joined['units']:,}")
             case = "others at this level carry it"
-        elif entity.get("match"):
+        # A unit whose sources are named. One matched only by a row that cites
+        # nothing -- Libya's Tripoli, which holds only the 2006 census's
+        # reason it can give no count -- read "None of the sources used for
+        # this unit (an unnamed source)"; it takes the level's sentence below.
+        elif entity.get("match") and any(s.get("name") for s in entity.get("sources", [])):
             sources = listed(cited_names(entity.get("sources", [])))
             present = [f for f in COMPOSITION_FIELDS
                        if isinstance(entity.get(f), list)]
@@ -7494,8 +8670,6 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r"\bso this county's row may be short of the ground drawn here\."), r"so the yearbook's count for this county may not cover all the ground drawn here."),
     # build-words: PHL 100 religion notes: '... the alternative would decide, on this map's authority rather than the census's, which churches count as one religion.'
     (re.compile(r"\bthe alternative would decide, on this map's authority rather than the census's, which churches count as one religion\."), r"collapsing them would decide which churches count as one religion on the map's own judgment rather than the census's."),
-    # build-words: EGY 17 language notes: 'A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it.'
-    (re.compile(r"\bA variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it\."), r"A question with one answer for everyone is a constant, not a measured composition, so no shares are shown."),
     # file-names: BRB language notes: '(Census-2020-Tables.xlsx)' and '(Census-Tables-2010.xlsx)'
     (re.compile(r" \(Census-2020-Tables\.xlsx\)| \(Census-Tables-2010\.xlsx\)"), r""),
     # file-names: THA 928 districts' gap notes cite one province's workbook as though it were the district's own: '(Ranong: Malay 0.5%, Burmese and Mon 7.0%)', '(Ranong's tables, web.archive.org/...ranong1.xls)'
@@ -7640,6 +8814,22 @@ def tidy_citations(entity: dict[str, Any]) -> int:
             if not named and src.get("name") != "Wikidata":
                 continue
             rest = [f for f in cites if f != field]
+            sources[i] = dict(src, field="/".join(rest)) if rest else None
+            changed += 1
+    # A Wikidata item cited for a capital or a population the unit shows none
+    # of, where no note on the cell names it: the Central African Republic's
+    # sub-prefectures cited it for a capital beside "No seat is shown: none of
+    # the sources used here names one". It stays cited for what it gives.
+    for field in ("capital", "population"):
+        value = entity.get(field)
+        if not (isinstance(value, dict) and is_gap(value)):
+            continue
+        said = notes_said(entity, field)
+        for i, src in enumerate(sources):
+            if (src is None or src.get("name") != "Wikidata"
+                    or field not in cited_fields(src) or named_in(src, said)):
+                continue
+            rest = [f for f in cited_fields(src) if f != field]
             sources[i] = dict(src, field="/".join(rest)) if rest else None
             changed += 1
     sources = [src for src in sources if src is not None]
@@ -7912,7 +9102,8 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
                 together = composed(said)
                 best = None
                 for held in (entity.get("_held") or {}).get("population", []):
-                    if together and "-POOL-" not in str(held.get("row") or ""):
+                    if (together and "-POOL-" not in str(held.get("row") or "")
+                            and held.get("file") not in COMPOSED_OFFERS):
                         continue
                     offered, when = published(held.get("value")), vintage(held.get("value"))
                     if (not is_fill_only(held.get("file"), iso3) or not offered
@@ -8012,6 +9203,9 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
             # show the census "where no newer figure is published", and
             # Farwaniya's and Jahra's are published and were not taken.
             entity["_not_taken"] = {"shown": published(shown), "offer": best["value"],
+                                    "sources": [src for src in best.get("sources") or []
+                                                if "population" in str(src.get("field") or "")
+                                                .split("/")],
                                     "sentence": (
                 f"A newer figure is not shown: {published(best['value']):,.0f} for "
                 f"{vintage(best['value'])} from "
@@ -8025,18 +9219,21 @@ def prefer_newer_figures(admin1: dict[str, list[dict[str, Any]]],
         # citing the population alone is held with the count, and one citing
         # other fields too stays for those alone, its population held. Mexico's
         # 2,234 municipios cited INEGI's 2020 census for "population/sex
-        # ratio/religion/language" beside OCHA's 2024 figure.
+        # ratio/religion/language" beside OCHA's 2024 figure. The count's note
+        # goes with it (unit_note), and so do the note's citations.
+        moving = {"population", "population note"}
         cited: list[dict[str, Any]] = []
         kept_sources: list[dict[str, Any]] = []
         for src in entity.get("sources") or []:
             cites = str(src.get("field") or "").split("/")
-            if "population" not in cites:
+            mine = [f for f in cites if f in moving]
+            if not mine:
                 kept_sources.append(src)
                 continue
-            cited.append(dict(src, field="population") if len(cites) > 1 else src)
-            if len(cites) > 1:
-                kept_sources.append(dict(src, field="/".join(f for f in cites
-                                                             if f != "population")))
+            rest = [f for f in cites if f not in moving]
+            cited.append(dict(src, field="/".join(mine)) if rest else src)
+            if rest:
+                kept_sources.append(dict(src, field="/".join(rest)))
         held_list = entity["_held"]["population"]
         held_list.remove(best)
         # Held as the count it is, not as a figure of the item the unit is
@@ -8082,6 +9279,13 @@ def say_newer_not_taken(*tables: dict[str, list[dict[str, Any]]]) -> int:
                 entity["population_note"] = (f"{note} {why['sentence']}" if note
                                              else why["sentence"])
                 said += 1
+                # The figure the sentence names is cited for the note: Matadi's
+                # 662,833 for 2024 is OCHA's projection, not the 2020 table the
+                # figure shown is from.
+                for src in why.get("sources") or []:
+                    entry = dict(src, field="population note")
+                    if entry not in entity.setdefault("sources", []):
+                        entity["sources"].append(entry)
                 # A median or ratio from the same table as the figure not
                 # shown says so: 52 of Mexico's municipios show OCHA's 2024
                 # median age, worked out from the age groups whose total is
@@ -8247,6 +9451,90 @@ GEONAMES_SOURCE = {"field": "largest settlement", "name": "GeoNames",
 GEONAMES_SEATS = PROCESSED / "geonames_seats.json"
 
 
+def declared_seat(name: str, geonameid: str, code: str, lon: float, lat: float,
+                  cite: dict[str, Any] | None = None) -> dict[str, Any]:
+    """A seat in geonames_seats.json's form; ``cite`` is the source that names
+    it where that is not GeoNames, whose point only places it."""
+    seat = {"name": name, "geonameid": geonameid, "feature_code": code,
+            "coordinates": [lon, lat], "source": "GeoNames (CC BY 4.0)"}
+    if cite:
+        seat["cite"] = cite
+    return seat
+
+
+# GeoNames seats for units in countries whose seats scripts/fetch_geonames.py
+# does not take wholesale (it takes a country's only where GeoNames' units are
+# the map's and their seats agree with the capitals other sources give). Each
+# is the seat GeoNames files under the unit -- the first-order seat (PPLA;
+# PPLC for a capital city), or for a second-level unit its own (PPLA2) -- its
+# point checked to lie inside the polygon, for a unit that showed no seat or a
+# wrong one (WITHDRAWN_FIELDS). Where GeoNames files none, or a village as the
+# seat, the seat is Wikidata's district item's, placed by GeoNames' point and
+# cited to Wikidata. Keyed by shapeID, in geonames_seats.json's form; Tripoli
+# is not here, its point lying 2 km outside the outline labelled Tajura' wa an
+# Nawahi al Arba (NO_SEAT_HERE). A declared seat stands over the one GeoNames'
+# own file puts in the polygon.
+DECLARED_SEATS: dict[str, dict[str, Any]] = {
+    "46179711B78983565091897": declared_seat("Tanta", "347497", "PPLA", 31.00192, 30.78847),
+    "46179711B33216026370082": declared_seat("Marsá Maţrūḩ", "352733", "PPLA", 27.23725, 31.3529),
+    "43142294B44506325294932": declared_seat("Tipasa", "2476028", "PPLA", 2.44889, 36.58972),
+    "43142294B98309179755088": declared_seat("Tizi Ouzou", "2475744", "PPLA", 4.04591, 36.71182),
+    "48771326B10235544430886": declared_seat("Juba", "373303", "PPLC", 31.58247, 4.85165),
+    # Semera, which GeoNames, and so the largest settlement beside it, calls Samara.
+    "75662566B25357223982520": declared_seat("Samara", "6913519", "PPLA", 41.00578, 11.79342),
+    "98808126B6174087794558": declared_seat("Libreville", "2399697", "PPLC", 9.45356, 0.39241),
+    "26408823B1629995979425": declared_seat("Caxito", "2242001", "PPLA", 13.66425, -8.57848),
+    # Ouham as drawn, before Ouham-Fafa was cut from it in 2020: GeoNames'
+    # seat inside it is Batangafo, Ouham-Fafa's; Ouham's is Bossangoa.
+    "63714938B89906779781300": declared_seat("Bossangoa", "2388036", "PPLA", 17.45518, 6.49263),
+    # Analamanga holds Antananarivo, the country's capital, which GeoNames
+    # files under it as PPLC and no other seat.
+    "27540722B10144800929043": declared_seat("Antananarivo", "1070940", "PPLC", 47.53613,
+                                             -18.91368),
+    # Joe Gqabi District Municipality (DC14), a second-level unit: its seat,
+    # Barkly East, is GeoNames' PPLA2 for DC14 (with a second record at the same
+    # spot, Ekhephini, which carries no population).
+    "47623444B23123045321242": declared_seat("Barkly East", "1021046", "PPLA2", 27.59567,
+                                             -30.9683),
+    # Libya's Wadi al Shatii: GeoNames' first-order seat for it is Idrī, a
+    # village of 4,696; Wikidata's district item names Brak, the district's
+    # main town (16,200), whose point is used. Al Kufrah's second-level copy:
+    # Wikidata's Kufra District names Al Jawf, which the first level shows, and
+    # GeoNames files no first-order seat under the district, only towns.
+    "10800210B20515568933500": declared_seat(
+        "Brak", "2218478", "PPL", 14.27139, 27.54956,
+        cite={"field": "capital", "name": "Wikidata",
+              "url": "https://www.wikidata.org/wiki/Q48232", "license": "CC0"}),
+    "10800210B89898169718474": declared_seat(
+        "Al Jawf", "88962", "PPL", 23.29093, 24.1989,
+        cite={"field": "capital", "name": "Wikidata",
+              "url": "https://www.wikidata.org/wiki/Q48200", "license": "CC0"}),
+}
+
+# GeoNames seats that stand inside a polygon and are another unit's: the
+# polygon says so rather than wear it. Uganda's Rwampara holds Kibingo, 1.2 km
+# inside its outline, which GeoNames files as the seat of Sheema District
+# (its second-order code H6) beside it.
+NOT_ITS_SEAT: dict[str, str] = {
+    "47994165B31232091804297": (
+        "No seat is shown: the one GeoNames places inside this outline, Kibingo, is "
+        "the seat of Sheema District beside it."),
+}
+
+
+# Territories whose drawn unit has no seat both claimants recognise, where
+# GeoNames' seat inside the polygon would be read as its capital. Western
+# Sahara is drawn as one unit at both levels; the seat GeoNames puts in it is
+# Bir Ghandouz, a rural commune's seat near the Mauritanian border.
+NO_SEAT = {
+    "ESH": ("Western Sahara has no capital that both its claimants recognise: Morocco "
+            "administers Laâyoune as the seat of one of its regions, and the Sahrawi Arab "
+            "Democratic Republic, which names Laâyoune its capital, holds Tifariti as its "
+            "provisional capital and governs from the refugee camps near Tindouf in "
+            "Algeria."),
+}
+
+
 def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                                 admin2: dict[str, list[dict[str, Any]]]) -> int:
     """Each unit's seat from GeoNames, where no source named its capital.
@@ -8258,14 +9546,20 @@ def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
     an item with no English label) is a blank shown as a code, and is
     replaced too.
     """
-    seats = read_json(GEONAMES_SEATS, {}) or {}
+    seats = {**(read_json(GEONAMES_SEATS, {}) or {}), **DECLARED_SEATS}
     filled = 0
     for table in (admin1, admin2):
-        for rows in table.values():
+        for iso3, rows in table.items():
             for entity in rows:
                 seat = seats.get(entity["id"])
                 held = entity.get("capital")
                 if not seat or entity.get("water"):
+                    continue
+                if entity["id"] in NOT_ITS_SEAT and (is_gap(held) or held == seat.get("name")):
+                    entity["capital"] = gap(NOT_AVAILABLE, NOT_ITS_SEAT[entity["id"]])
+                    continue
+                if iso3 in NO_SEAT and (is_gap(held) or held == seat.get("name")):
+                    entity["capital"] = gap(NOT_AVAILABLE, NO_SEAT[iso3])
                     continue
                 # A capital the unit's own seat contradicts, and that names a
                 # town elsewhere in the country (Central Kalimantan's
@@ -8286,8 +9580,11 @@ def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                 if "name" not in seat or not (is_gap(held) or bare_id):
                     continue
                 entity["capital"] = seat["name"]
+                # A declared seat a source other than GeoNames names is cited
+                # to it: GeoNames files Brak as a plain town, and Idrī as the
+                # seat it is put in place of.
                 entity.setdefault("sources", []).append(
-                    {**GEONAMES_SOURCE, "field": "capital"})
+                    dict(seat.get("cite") or {**GEONAMES_SOURCE, "field": "capital"}))
                 filled += 1
     return filled
 
@@ -8307,6 +9604,130 @@ GEONAMES_ELSEWHERE: dict[tuple[str, str, str], str] = {
     # Dalseong-gun's own polygon holds no GeoNames place at all.
     ("KOR", "Dalseo-gu", "Hwawŏn"): "Dalseong-gun",
 }
+
+# GeoNames places credited to a unit whose town they are not, where the
+# sentence above -- a place just across a simplified line from the unit it
+# belongs to -- is not what happened: {shapeID: {place: what is said
+# instead}}. The sentence stands only while GeoNames still gives the unit
+# that place.
+#   LBY  The outline drawn as Tripoli (the boundary file's Tajura' wa an
+#        Nawahi al Arba) is the city's outskirts to the south and east:
+#        GeoNames' Tripoli stands 2.4 km north of it and Tajura 4.3 km, on a
+#        strip of coast of about 156 km2 that no first- or second-level
+#        outline covers. The same id is drawn at both levels.
+#   GHA  Salaga, East Gonja Municipal's seat, stands 37 km east of the outline
+#        drawn as East Gonja Municipal, inside the one drawn as North East
+#        Gonja, whose seat is Kpalbe.
+#   EGY  Six of the outlines of land outside the zimam hold a new town each:
+#        10th of Ramadan City (4.9 km from the kism drawn as 10 Ramadan 2),
+#        Al-'Ubur (2.1 km from Abour's), Wadi an-Natrun (2.8 km from its
+#        markaz's), 6th of October City (16.7 km from 6 October-2), New Minya
+#        (0.3 km from its kism) and Abu Simbel (78.7 km from the kism drawn
+#        under its name). The census counts each in a division of its own and
+#        none on the zimam's outside land.
+#   SYC  Perseverance stands 400 m outside Anse Etoile's outline, on Ile
+#        Perseverance, which the 2022 census counts as a district of its own
+#        (seychelles_census) and no polygon draws.
+ZIMAM_TOWN = ("No settlement is named: this is land outside the zimam, the bounds of the "
+              "governorate's towns and villages, and the town GeoNames places on it, "
+              "{town}, is counted by the census in a division of its own.")
+GEONAMES_NOT_ITS_TOWN: dict[str, dict[str, str]] = {
+    "10800210B53685260454781": {"Tripoli": (
+        "No settlement is named: Tripoli and Tajura stand on a strip of coast north of "
+        "this outline that no outline of Libya's divisions covers.")},
+    "2480657B30922977157044": {"Salaga": (
+        "No GeoNames place is named: the most populous place GeoNames puts inside this "
+        "outline, Salaga (25,472), is the seat of East Gonja Municipal, drawn as a unit "
+        "of its own.")},
+    **{shape_id: {town: ZIMAM_TOWN.format(town=town)} for shape_id, town in (
+        ("37247803B97784107411787", "Al ‘Āshir min Ramaḑān"),
+        ("37247803B42023857067519", "Al-'Ubūr"),
+        ("37247803B42276960376835", "Madīnat Wādī an Naţrūn"),
+        ("37247803B81980397210132", "6th of October City"),
+        ("37247803B6993574009783", "Al-Minyā al-Jadīdah"),
+        ("37247803B74353300773864", "Abu Simbel"))},
+    "4304713B87843643892528": {"Perseverance": (
+        "No GeoNames place is named: the nearest, Perseverance, stands on Ile "
+        "Perseverance, which the 2022 census counts as a district of its own and no "
+        "outline of the Seychelles' districts holds.")},
+}
+
+# GeoNames places named for a unit that are not its largest town, and the
+# GeoNames place that is: {shapeID: (the place GeoNames' placement names,
+# the geonameid of the one named instead)}. Each place named instead stands
+# inside the polygon and is the most populous one there but for the place it
+# replaces.
+#   *  A district's figure on a town, ranking it above the unit's largest
+#      town: Jirapa's 91,279 is Jirapa District's 2021 census count; Kom Ombo's
+#      409,311 and Esna's 462,787 are within 3% of the markazes of Kom Ombo and
+#      Isna (CAPMAS 2023, 420,790 and 475,034); Japekrom's 96,000 is near Jaman
+#      South Municipal's 109,768 (2021 census), and Winejok's 300,000 nearer
+#      Aweil East County's 395,769 (OCHA 2025) than any town's -- seven times
+#      Aweil's 38,745, the state's seat. In each the place named instead is
+#      the region's, governorate's or state's seat. (GEONAMES_DISTRICT_FIGURES
+#      keeps the figure off such a place wherever else it is named.)
+#   BWA  Francistown (103,417) and Gaborone (246,325), which GeoNames files
+#      under city councils of their own and fetch_geonames therefore passed
+#      over, stand inside the districts drawn around them, North-East and
+#      South-East, whose census counts include them; Tati Siding (12,404) and
+#      Tlokweng (55,508) were named instead.
+#   ZAF  Joe Gqabi: GeoNames holds its seat twice, as Barkly East (11,965) and,
+#      280 m away, as Ekhephini with no population, and that unsized seat kept
+#      any place from being named. Aliwal North (44,436) is the largest place
+#      in the district either way.
+GEONAMES_PASSED_OVER: dict[str, tuple[str, str]] = {
+    "69750345B48673213774244": ("Jirapa", "2294206"),        # Upper West: Wa
+    "69750345B13833050062966": ("Japekrom", "2295021"),      # Bono: Sunyani
+    "46179711B96058986091554": ("Kom Ombo", "359792"),       # Aswan: Aswān
+    "46179711B60822011452178": ("Esna", "350550"),           # Qena: Qina
+    "48771326B49579010016854": ("Winejok", "364367"),        # Northern Bahr el Ghazal: Aweil
+    "57670837B74109899498700": ("Tati Siding", "933778"),    # North-East District: Francistown
+    "57670837B20379019036464": ("Tlokweng", "933773"),       # South-East District: Gaborone
+    "47623444B23123045321242": ("Ekhephini", "1023309"),     # Joe Gqabi: Aliwal North
+}
+
+# GeoNames places whose figure is a district's or a local government area's
+# rather than the town's (above; Twifu Praso's 100,851 is Twifo Atti-Morkwa
+# District's 2021 count, Ikire's 222,160 and Igboho's 136,764 are within 2% of
+# Irewole's and Orelope's), by geonameid: named, where they are a unit's
+# largest place, without that figure.
+GEONAMES_DISTRICT_FIGURES = frozenset({
+    "2300068", "2300182", "353802", "355449", "363807", "2294308", "2338273", "2338711"})
+
+
+def town_named(town: dict[str, Any]) -> str | None:
+    """The place a GeoNames placement names, or the one its refusal is about."""
+    if town.get("name"):
+        return town["name"]
+    reason = town.get("none") or ""
+    spans = SPANS_REASON.match(reason) or SEAT_WITHOUT_PEOPLE.match(reason)
+    return spans["town"] if spans else None
+
+
+@lru_cache(maxsize=1)
+def geonames_places() -> dict[str, dict[str, Any]]:
+    """GeoNames' populated places by geonameid (fetch_geonames' file)."""
+    from fetch_geonames import PLACES, read_places
+
+    return {p["geonameid"]: p for p in read_places()} if PLACES.exists() else {}
+
+
+def placed_instead(shape_id: str, town: dict[str, Any] | None) -> dict[str, Any] | None:
+    """A unit's GeoNames place, with GEONAMES_PASSED_OVER's in place of the one
+    it replaces, and GEONAMES_DISTRICT_FIGURES' named without their figure."""
+    declared = GEONAMES_PASSED_OVER.get(shape_id)
+    if town and declared and town_named(town) == declared[0]:
+        place = geonames_places().get(declared[1])
+        if place is None:
+            raise SystemExit(f"GEONAMES_PASSED_OVER: {shape_id}'s place {declared[1]} is "
+                             f"not among GeoNames' places")
+        return {"name": place["name"], "population": place["population"],
+                "geonameid": place["geonameid"], "feature_code": place["code"],
+                "coordinates": [round(place["lon"], 5), round(place["lat"], 5)],
+                "source": "GeoNames (CC BY 4.0)"}
+    if town and town.get("geonameid") in GEONAMES_DISTRICT_FIGURES and "population" in town:
+        return {k: v for k, v in town.items() if k != "population"}
+    return town
 
 
 @lru_cache(maxsize=1)
@@ -8415,13 +9836,17 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
             seat = own_seats.get(sid)
             taken = ({seat["geonameid"]} if seat and held_by.get(seat["geonameid"], set()) - {sid}
                      else set())
-            placed[sid] = with_own_seat(towns.get(sid), seat, taken)
+            placed[sid] = placed_instead(sid, with_own_seat(towns.get(sid), seat, taken))
         moved: dict[tuple[str, str], dict[str, Any]] = {}
         for iso3, rows in table.items():
             for entity in rows:
                 town = placed.get(entity["id"])
                 # A lake is water whatever town stands on its islands or shore.
                 if not town or entity.get("water") or not is_gap(entity.get("largest_settlement")):
+                    continue
+                said = GEONAMES_NOT_ITS_TOWN.get(entity["id"], {}).get(town_named(town))
+                if said:
+                    entity["largest_settlement"] = gap(NOT_AVAILABLE, said)
                     continue
                 where = GEONAMES_ELSEWHERE.get((iso3, entity.get("name"), town.get("name")))
                 if where:
@@ -8450,14 +9875,64 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
     return filled
 
 
+# scripts/fetch_geonames.py names no place where a seat inside the unit has no
+# population in GeoNames, since that seat may be the largest, and calls it the
+# unit's seat. Where it is not -- another unit's seat (NOT_ITS_SEAT), not the
+# seat the unit shows, or the unit shows none -- the sentence says only what
+# is known of it: Angola's municipalities hold their comunas' seats (Lobito
+# shows Lobito and held Egito Praia), Rwampara Sheema's, and Congo's Kindamba,
+# whose own town is Divenié, was credited Nyanga, 1.7 km outside its outline.
+SEAT_WITHOUT_PEOPLE = re.compile(r"^its seat (?P<town>.+) has no population in GeoNames$")
+NO_GEONAMES_PLACE = "No GeoNames place is named: "
+
+
+def no_place_reason(entity: dict[str, Any], none: str) -> str:
+    """fetch_geonames' reason for naming no place, true of this unit.
+
+    Read against the capital the unit finally shows (say_unsized_seats): "its
+    seat" stands only where that capital is the place named.
+    """
+    seat = SEAT_WITHOUT_PEOPLE.match(none)
+    capital = entity.get("capital")
+    if seat and (entity.get("id") in NOT_ITS_SEAT
+                 or (isinstance(capital, str) and norm(capital) != norm(seat["town"]))
+                 or (isinstance(capital, dict) and is_gap(capital))):
+        return (f"GeoNames gives no population for {seat['town']}, the seat of a "
+                f"division it places in this unit, so which place is the largest "
+                f"cannot be told")
+    return none
+
+
+def say_unsized_seats(*tables: dict[str, list[dict[str, Any]]]) -> int:
+    """Say what is known of a seat GeoNames gives no population, once the
+    capitals are placed: fill_capitals_from_geonames runs after the
+    settlements, and a capital it places is the unit's own seat."""
+    said = 0
+    for table in tables:
+        for rows in table.values():
+            for entity in rows:
+                held = entity.get("largest_settlement")
+                note = held.get("note") if isinstance(held, dict) else None
+                if not (isinstance(note, str) and note.startswith(NO_GEONAMES_PLACE)):
+                    continue
+                reason = note[len(NO_GEONAMES_PLACE):].rstrip(".")
+                true = no_place_reason(entity, reason)
+                if true != reason:
+                    held["note"] = f"{NO_GEONAMES_PLACE}{true}."
+                    said += 1
+    return said
+
+
 def name_geonames_place(entity: dict[str, Any], town: dict[str, Any]) -> int:
     """Name a GeoNames place as the unit's largest settlement, or say why none is."""
     if "none" in town:
         held = entity.get("largest_settlement") or {}
         if not held.get("note"):
+            # As fetch_geonames gives it: whether a seat it names is the unit's
+            # is said once the capitals are placed (say_unsized_seats).
             entity["largest_settlement"] = gap(
                 held.get("status") or NOT_AVAILABLE,
-                f"No GeoNames place is named: {town['none']}.")
+                f"{NO_GEONAMES_PLACE}{town['none']}.")
             # The one refusal that turns on the unit's population, which is
             # weighed again once the populations are final
             # (settle_geonames_spans).
@@ -8834,6 +10309,34 @@ NATURAL_EARTH_MISFILED: dict[tuple[str, str, str], str] = {
     ("TCD", "Mandoul", "Sarh"): "Moyen-Chari",
     ("TWN", "Chiayi", "Puzi"): "Chiayi County",
     ("TWN", "Hsinchu", "Zhubei"): "Hsinchu County",
+    # Filed under the 2001 district; its point is 2.4 km north of the outline
+    # that carries the district's name, on a strip of coast no first-level
+    # outline covers (GEONAMES_NOT_ITS_TOWN).
+    ("LBY", "Tajura' wa an Nawahi al Arba", "Tripoli"):
+        "the strip of coast no first-level outline covers",
+}
+
+# Natural Earth places joined by a first-level unit's name that are not its
+# largest town: a larger one stands inside the polygon -- the unit's seat in
+# most, Okene, Onitsha, Ganta and Khorixas elsewhere -- and GeoNames'
+# placement, which names it, fills the cell once the smaller place is left
+# out. (country, unit, place) -> the larger town, for the log. Ikare's
+# 1,099,931 is four times its local government area's 269,085 (OCHA 2020);
+# Natural Earth's points for "Karma" and "Taza" are Dongola's and Oujda's.
+NATURAL_EARTH_PASSED_OVER: dict[tuple[str, str, str], str] = {
+    ("SSD", "Central Equatoria", "Yei"): "Juba",
+    ("NGA", "Ondo", "Ikare"): "Akure",
+    ("NGA", "Adamawa", "Mubi"): "Yola",
+    ("NGA", "Kogi", "Idah"): "Okene",
+    ("NGA", "Anambra", "Awka"): "Onitsha",
+    ("SDN", "Northern", "Karma"): "Dongola",
+    ("MAR", "Oriental", "Taza"): "Oujda",
+    ("LBY", "Al Jabal al Akhdar", "Shahhat"): "Al Bayda",
+    ("LBR", "Nimba", "Sanniquellie"): "Ganta",
+    ("ZWE", "Mashonaland Central", "Shamva"): "Bindura",
+    ("NAM", "Oshana", "Ongwediva"): "Oshakati",
+    ("NAM", "Kunene", "Outjo"): "Khorixas",
+    ("SWZ", "Shiselweni", "Golela"): "Nhlangano",
 }
 
 # The words that make a unit's name the metropolitan government of a place,
@@ -8942,8 +10445,10 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
             what = (labels[0] if len(labels) == 1
                     else ", ".join(labels[:-1]) + " and " + labels[-1])
             article = "an" if what[0] in "aeiou" else "a"
+            # The item is linked from the unit's citation; its code in the
+            # sentence was one more thing to read past.
             entity["population"] = gap(NOT_AVAILABLE, (
-                f"Wikidata's item of this name, {entity['wikidata']}, is "
+                f"Wikidata's item of this name is "
                 f"{article} {what}, and Wikidata calls it nothing else -- no "
                 f"municipality or district; its "
                 f"{pop['value']:,}"
@@ -8999,6 +10504,21 @@ def settle_outline_mixtures(admin2: dict[str, list[dict[str, Any]]]) -> int:
             entity.pop("adapter_hint", None)
             for field in UNIT_FIELDS:
                 entity[field] = gap(NOT_AVAILABLE, note)
+                # And what the rows it took said about their figures, which is
+                # not about this ground: Endola and part of Omulonga kept CLEAR
+                # Global's sentence on its language and OCHA's on its median
+                # age, and both stayed cited, beside gaps saying no published
+                # figure describes it.
+                for suffix in SATELLITES:
+                    entity.pop(f"{field}{suffix}", None)
+            refused = set(UNIT_FIELDS)
+            kept = []
+            for src in entity.get("sources") or []:
+                rest = [f for f in cited_fields(src)
+                        if field_name(f.removesuffix(" note")).replace(" ", "_") not in refused]
+                if rest:
+                    kept.append({**src, "field": "/".join(rest)})
+            entity["sources"] = kept
             settled += 1
     return settled
 
@@ -9283,20 +10803,29 @@ def shares_of(rows: Any) -> list[tuple[str, float]]:
             and isinstance(e.get("pct"), (int, float))]
 
 
+# A survey's sentences on one region's size, which describe a part and not
+# the pool even where every part's reads the same: Vatovavy and Fitovinany
+# have 32 respondents each, and their union read "This region: 32
+# respondents. Fewer than 50 respondents, so this share is imprecise" of 64.
+PART_SIZE = re.compile(r"This region: [\d,]+ respondents\.(?: Fewer than 50 respondents"
+                       r"[^.]*\.)?\s*")
+
+
 def shared_sentences(notes: Sequence[Any]) -> str:
     """The whole sentences every part's note opens with, to keep on the pool.
 
     A survey's caveat -- "Regional shares are survey estimates, not census
     counts ..." -- is true of the pool too, and was being dropped with the
     parts' notes; the sentence that differs ("This region: 112 respondents")
-    describes one part and is left out.
+    describes one part and is left out, and so is it where it does not differ.
     """
     if not notes or not all(isinstance(n, str) and n for n in notes):
         return ""
     prefix = os.path.commonprefix(list(notes))
     cut = prefix.rfind(". ")
     if len(set(notes)) == 1:
-        return notes[0].rstrip() + " "
+        kept = PART_SIZE.sub("", notes[0]).rstrip()
+        return kept + " " if kept else ""
     return prefix[:cut + 2] if cut > 0 else ""
 
 
@@ -9374,19 +10903,30 @@ def grouped_median(groups: Sequence[tuple[int, int | None, float]]) -> float | N
 
 
 def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
-              filename: str) -> dict[str, Any]:
+              filename: str, weigh: str | None = None) -> dict[str, Any]:
     """One row for a shape, from the rows a source publishes for its parts.
 
     Counts are summed where every part carries them; otherwise the shares are
     weighted by the parts' populations; otherwise the field is left out and
     the log says so. A survey's counts are respondents and a census's are
     people, and both pool correctly because the parts come from one file.
+    A union that declares ``weigh="respondents"`` (ROW_UNIONS) has each
+    part's shares weighed by its respondents instead of its counts added: a
+    survey's counts are weighted respondents cut to whole numbers, which lose
+    its small groups (Gôh's Muslims, 2.3% of 40, count 0).
     """
     pooled: dict[str, Any] = {
         "id": f"{iso3}-POOL-{norm(name)}-{norm(filename)}",
         "level": parts[0].get("level") or "admin1", "name": name,
         "parent": parts[0].get("parent") or iso3, "country": iso3,
         "_source": filename, "sources": []}
+    # Rows held behind an office's count (HELD_ROWS) are offers, and so is
+    # their sum: it waits for prefer_newer_figures like each of its parts,
+    # wherever it stands among the country's rows. OCHA's 2024 figures for
+    # Mexico's municipios drawn with those made out of them are weighed so
+    # against the 2020 census's sums for the same polygons.
+    if all(part.get("_offer") for part in parts):
+        pooled["_offer"] = True
     seen: set[tuple[Any, ...]] = set()
     for part in parts:
         for src in part.get("sources", []) or []:
@@ -9448,7 +10988,7 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
         totals: dict[str, float] = defaultdict(float)
         counted = all(all(isinstance(e.get("count"), (int, float)) for e in v)
                       for v in lists)
-        if counted:
+        if counted and weigh != "respondents":
             for v in lists:
                 for e in v:
                     totals[e["group"]] += float(e["count"])
@@ -9459,6 +10999,20 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
             for row in rows:
                 row["count"] = int(round(totals[row["group"]]))
             basis = "their published counts"
+        elif counted:
+            # Declared by the union: each part's shares weighed by its
+            # respondents, as the file counts them.
+            weights = [sum(float(e["count"]) for e in v) for v in lists]
+            for v, w in zip(lists, weights):
+                for g, pct in shares_of(v):
+                    totals[g] += pct * w / 100
+            whole = sum(weights)
+            if whole <= 0:
+                continue
+            rows = whole_hundred([(g, c / whole * 100) for g, c in totals.items()])
+            for row in rows:
+                row["count"] = int(round(totals[row["group"]]))
+            basis = "their respondents"
         elif all(v is not None for v in pops):
             for v, w in zip(lists, pops):
                 for g, pct in shares_of(v):
@@ -9529,11 +11083,27 @@ def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
                     f"{', '.join(missing)}, not pooled")
                 continue
             pooled = pool_rows(shape_name, [found[p] for p in part_names], iso3, filename)
+            at = first_place(rows, [found[p] for p in part_names])
             for p in part_names:
                 rows.remove(found[p])
-            rows.append(pooled)
+            rows.insert(at, pooled)
             done.append(f"{iso3} {shape_name} from {' + '.join(part_names)} ({filename})")
     return done
+
+
+def first_place(rows: list[dict[str, Any]], parts: list[dict[str, Any]]) -> int:
+    """Where the first of ``parts`` stands among ``rows``, which is where the row
+    pooled from them goes.
+
+    load_adapters keeps a country's rows in authority order, later files
+    winning, and a pooled row has its parts' file, so it takes their place
+    rather than the end of the list. Appended, it stood in front of every
+    row of the same year bound to the same polygon, whatever their files:
+    OCHA's projections for Namibia's Epukiro and Otjinene, summed, over the
+    2023 census's count, and Afrobarometer's respondents in Maputo City and
+    Province, pooled, over the 2017 census's religion and mother tongue.
+    """
+    return min(i for i, row in enumerate(rows) if any(row is part for part in parts))
 
 
 # Unions of named rows of one file, pooled onto the polygon given by its id.
@@ -9558,6 +11128,19 @@ def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
 #   STP  Afrobarometer's ninth round divides São Tomé island into three
 #        strata, Norte Oeste, Centro Este and Sul Este, which together are the
 #        island and so the province; Príncipe is its fourth.
+#   CIV  Afrobarometer's rows are Côte d'Ivoire's 31 regions, the map's second
+#        level; two found a district by part of its name, each one region's
+#        respondents standing for a district of two: Gôh's 40 for Gôh-Djiboua,
+#        Marahoué's 40 for Sassandra-Marahoué. Each district is its two
+#        regions, whose shares are weighed by their respondents (72 and 96 in
+#        all; "weigh": "respondents", pool_rows). So are the NER and TGO
+#        unions below; the other unions add their counts as before.
+#   NER  The boundary file draws Tahoua with Agadez and Zinder with Diffa as
+#        single polygons; the survey samples each region (232 and 32, 248 and
+#        40 respondents). Only their ethnic groups are pooled: Round 9's
+#        languages and religion for Niger are not used (WITHDRAWN_FIELDS).
+#   TGO  The survey samples Lomé (168 respondents) apart from the rest of the
+#        Maritime region (368); the map's Maritime region includes Lomé.
 #   PRY  The polygon is Bella Vista (Amambay) and Bella Vista (Itapúa) drawn
 #        as one, as both were before Cerro Corá was cut from the first in
 #        2020; OCHA's 2023 table has both districts and no Cerro Corá. The
@@ -9609,11 +11192,38 @@ ROW_UNIONS: dict[tuple[str, str], dict[str, Any]] = {
         "file": "afrobarometer_region.json",
         "rows": ("MOZ-AB9-540", "MOZ-AB9-541"),
         "shapes": (("admin1", "27363107B47421408423272"),)},
+    # Pooled where its parts stood (first_place), so the 2012 census's
+    # religion and languages for the island (sao_tome_census, read later)
+    # stand in front of the survey's, as they do on Príncipe, and the
+    # country's sum of its two provinces reads one source's labels.
     ("STP", "São Tomé Province"): {
         "file": "afrobarometer_region.json",
         "rows": ("STP-AB9-1660", "STP-AB9-1661", "STP-AB9-1662"),
         "shapes": (("admin1", "19237168B40253326356618"),),
         "note": "The three are the survey's divisions of São Tomé island."},
+    ("CIV", "Goh-Djiboua"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("CIV-AB9-1271", "CIV-AB9-1281"),
+        "shapes": (("admin1", "83157122B34711482467037"),), "weigh": "respondents",
+        "note": "The district is the regions of Gôh and Lôh-Djiboua."},
+    ("CIV", "Sassandra-Marahoue"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("CIV-AB9-1276", "CIV-AB9-1282"),
+        "shapes": (("admin1", "83157122B74959515955757"),), "weigh": "respondents",
+        "note": "The district is the regions of Haut-Sassandra and Marahoué."},
+    ("NER", "Tahoua/Agadez"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("NER-AB9-1104", "NER-AB9-1100"),
+        "shapes": (("admin1", "87150794B58281898249288"),), "weigh": "respondents"},
+    ("NER", "Zinder/Diffa"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("NER-AB9-1106", "NER-AB9-1101"),
+        "shapes": (("admin1", "87150794B17606801029036"),), "weigh": "respondents"},
+    ("TGO", "Maritime Region"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("TGO-AB9-1141", "TGO-AB9-1140"),
+        "shapes": (("admin1", "44829518B32493797453601"),), "weigh": "respondents",
+        "note": "The region as drawn includes Lomé, which the survey samples apart."},
     ("PRY", "Bella Vista"): {
         "file": "cod_ps_admin2.json",
         "rows": ("PRY-CODPS-PY1302", "PRY-CODPS-PY0702"),
@@ -9742,6 +11352,64 @@ ROW_UNIONS: dict[tuple[str, str], dict[str, Any]] = {
         "shapes": (("admin2", "50627088B55174657645518"),),
         "note": "Puerto Morelos has no outline of its own and lies inside this one."},
 }
+# Cameroon (kept apart from the table above so that it merges into it):
+# Afrobarometer's Round 9 samples Yaoundé and Douala as strata of their own,
+# beside the Centre and Littoral strata that hold the rest of each region, so
+# each region's row alone describes the region without its capital.
+ROW_UNIONS.update({
+    ("CMR", "Centre"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("CMR-AB9-1223", "CMR-AB9-1220"),
+        "shapes": (("admin1", "27767025B11866847137657"),),
+        "note": "The survey samples Yaoundé apart from the rest of the region; the two "
+                "together are the Centre region."},
+    ("CMR", "Littoral"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("CMR-AB9-1226", "CMR-AB9-1221"),
+        "shapes": (("admin1", "27767025B72594666306589"),),
+        "note": "The survey samples Douala apart from the rest of the region; the two "
+                "together are the Littoral region."},
+})
+# Southern Africa (kept apart likewise). Each key is the polygon's own label,
+# since the pooled row, bound by id, names the polygon.
+#   BWA  OCHA's age table for 2023 counts Botswana's seven town and city
+#        councils apart from the ten districts, and the boundary file draws
+#        no town: Francistown lies inside North-East District's polygon,
+#        Gaborone and Lobatse inside South-East's, Selebi-Phikwe, Orapa and
+#        Sowa inside Central's and Jwaneng inside Southern's (GeoNames
+#        points), and the 2022 census's counts on those polygons add the towns
+#        in. The districts' medians without them were the ground less its
+#        towns: North-East's 24.6 is 26.4 with Francistown's age groups added.
+#   MDG  The polygon is Vatovavy-Fitovinany as it was before it was made two
+#        regions in 2021; Afrobarometer's ninth round samples Vatovavy and
+#        Fitovinany apart (32 respondents each), and neither row reached it.
+ROW_UNIONS.update({
+    ("BWA", "North-East District"): {
+        "parts": {"cod_ps_age.json": ("BWA-CODPSAGE-BW13", "BWA-CODPSAGE-BW02")},
+        "shapes": (("admin1", "57670837B74109899498700"),),
+        "note": "Francistown has no polygon of its own and lies inside this one."},
+    ("BWA", "South-East District"): {
+        "parts": {"cod_ps_age.json": ("BWA-CODPSAGE-BW09", "BWA-CODPSAGE-BW01",
+                                      "BWA-CODPSAGE-BW03")},
+        "shapes": (("admin1", "57670837B20379019036464"),),
+        "note": "Gaborone and Lobatse have no polygons of their own and lie inside this one."},
+    ("BWA", "Central District"): {
+        "parts": {"cod_ps_age.json": ("BWA-CODPSAGE-BW12", "BWA-CODPSAGE-BW04",
+                                      "BWA-CODPSAGE-BW05", "BWA-CODPSAGE-BW07")},
+        "shapes": (("admin1", "57670837B77729612727439"),),
+        "note": ("Selibe Phikwe, Orapa and Sowa have no polygons of their own and lie "
+                 "inside this one.")},
+    ("BWA", "Southern District"): {
+        "parts": {"cod_ps_age.json": ("BWA-CODPSAGE-BW08", "BWA-CODPSAGE-BW06")},
+        "shapes": (("admin1", "57670837B18017563073821"),),
+        "note": "Jwaneng has no polygon of its own and lies inside this one."},
+    ("MDG", "Vatovavy-Fitovinany"): {
+        "file": "afrobarometer_region.json",
+        "rows": ("MDG-AB9-441", "MDG-AB9-442"),
+        "shapes": (("admin1", "27540722B59950383788875"),), "weigh": "respondents",
+        "note": ("The region as drawn is Vatovavy and Fitovinany, made two regions in "
+                 "2021, which the survey samples apart.")},
+})
 
 
 def union_groups(spec: dict[str, Any]) -> list[tuple[str, tuple[str, ...]]]:
@@ -9777,7 +11445,7 @@ def pool_row_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
                     f"{', '.join(missing)}, not pooled")
                 continue
             parts = [found[rid] for rid in wanted]
-            pooled = pool_rows(shape_name, parts, iso3, filename)
+            pooled = pool_rows(shape_name, parts, iso3, filename, weigh=spec.get("weigh"))
             extra = spec.get("note")
             if extra:
                 for key in ("population", "sex_ratio", *ROLLUP_FIELDS):
@@ -9786,13 +11454,14 @@ def pool_row_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
                         value["note"] = f"{value['note']} {extra}"
                     elif pooled.get(f"{key}_note"):
                         pooled[f"{key}_note"] = f"{pooled[f'{key}_note']} {extra}"
+            at = first_place(rows, parts)
             for part in parts:
                 rows.remove(part)
-            for level, shape_id in spec["shapes"]:
-                rows.append({**copy.deepcopy(pooled), "level": level,
-                             "id": f"{pooled['id']}-{level}", "match_by": "shape_id",
-                             "shape_id": shape_id,
-                             "aliases": [p["name"] for p in parts]})
+            for k, (level, shape_id) in enumerate(spec["shapes"]):
+                rows.insert(at + k, {**copy.deepcopy(pooled), "level": level,
+                                     "id": f"{pooled['id']}-{level}", "match_by": "shape_id",
+                                     "shape_id": shape_id,
+                                     "aliases": [p["name"] for p in parts]})
             done.append(f"{iso3} {shape_name} from {' + '.join(wanted)} ({filename})")
     return done
 
@@ -10249,9 +11918,6 @@ SOLE_CHILD_DECLARED: dict[tuple[str, str], tuple[str, str, bool]] = {
            ("São Vicente", "Nossa Senhora da Luz"),
            ("Tarrafal", "Santo Amaro Abade"),
            ("Tarrafal de São Nicolau", "Sao Francisco de Assis"))},
-    # The boundary file spells Ali Sabieh region "Ali Sabeh" at the second level.
-    ("DJI", "Ali Sabieh"): ("Ali Sabeh", "Ali Sabeh is Ali Sabieh as the boundary file "
-                                         "spells it", False),
     # Qatar's zones are numbered, and zone 71 is all of Umm Salal municipality.
     ("QAT", "Umm Slal"): ("71", "zone 71 is the whole of Umm Salal municipality", False),
     # Bangui is one commune with no sub-prefecture (car_prefecture lists it
@@ -10280,11 +11946,6 @@ SOLE_CHILD_NOT_ITS_GROUND: dict[tuple[str, str], dict[str, Any]] = {
     # that figure is refused: the 2021 census's own row is the municipality's.
     ("CPV", "Tarrafal"): {"population": (30000, "its 30,000 is not the census's count "
                                                 "(18,565 in 2010)")},
-    # Afrobarometer's North East region leaves out Francistown, its own
-    # region in the survey, which lies inside this polygon.
-    ("BWA", "North-East District"): {
-        f: "its survey region leaves out Francistown, which this polygon holds"
-        for f in _SURVEY_FIELDS},
     # The census's settlement table puts North Abaco at 3,772 in 2010; only
     # the 9,578 is refused.
     ("BHS", "North Abaco"): {"population": (9578, "its 9,578 is not the census's count of "
@@ -10301,6 +11962,12 @@ SOLE_CHILD_NOT_ITS_GROUND: dict[tuple[str, str], dict[str, Any]] = {
     # counts the two apart: ET1501 and ET1502).
     ("ETH", "Dire Dawa"): {"population": "its figure is the city's alone, without the "
                                           "administration's rural part"},
+    # The second level's "Ali Sabeh" is an older division's unit drawn larger
+    # than Ali Sabieh region: about 2,150 km2 against the region's 1,830, some
+    # 390 km2 of it outside the region's polygon (equal-area measures on the
+    # boundary file), so the region's figures are not its own.
+    ("DJI", "Ali Sabieh"): {"*": "the polygon called Ali Sabeh is drawn larger than the "
+                                 "region, some 390 km2 of it outside the region's outline"},
     # The census's own Central Andros district files Fresh Creek, the
     # local-government district's seat, under North Andros.
     ("BHS", "Central Andros"): {"population": "the census's Central Andros is not the "
@@ -11305,8 +12972,10 @@ def add_known_as(index: dict[str, list[dict[str, Any]]],
     for entity in entities:
         for alias in known_as(entity["name"], entity.get("country")):
             key = norm(alias)
-            if key and key not in own and entity not in index[key]:
-                index[key].append(entity)
+            # Any mapping will do, not only a defaultdict: a test's plain
+            # index met Mauritania's Guidimakha, which no shape is named.
+            if key and key not in own and entity not in index.get(key, []):
+                index.setdefault(key, []).append(entity)
                 added += 1
     return added
 
@@ -11748,6 +13417,35 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
 #        by island and supervisory district); the polygon is the 189 km2
 #        local-government district, and Grand Cay is drawn apart.
 NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
+    # SDN "Hala'ib" is Sudan's locality of Halaib as Sudan draws it, north
+    # across 22°N over the Hala'ib triangle, which Egypt and Sudan both claim
+    # and Egypt administers: 17,964 of its 40,553 km2 lie north of the
+    # parallel. Sudan's counts, and OCHA's 2025 projection from them, reach
+    # only the part south of it.
+    ("SDN", "16777658B65142556264342"): {
+        field: (source, (
+            "OCHA's 2025 projection gives Sudan's locality of Halaib 33,932 people. Sudan "
+            "draws the locality north across the 22nd parallel over the Hala'ib triangle, "
+            "which Egypt and Sudan both claim and Egypt administers (about 18,000 of its "
+            "40,600 km²), and Sudan's counts reach only the part south of the parallel, so "
+            "no figure describes this outline."))
+        for field, source in (("population", "cod_ps_admin2.json"),
+                              ("median_age", "cod_ps_age.json"),
+                              ("sex_ratio", "cod_ps_age.json"))
+    },
+    # Cross River's polygon is the state without the Bakassi peninsula, which
+    # passed to Cameroon in 2008; nigeria_census counts it so, as the 2006
+    # census's table for the state less Bakassi local government area's.
+    # Wikidata's 3,866,269 for 2016 is the Commission's projection of the
+    # state as the 2006 census counted it, Bakassi with its peninsula
+    # included, and is not offered in front of that count.
+    ("NGA", "27671186B81745654473385"): {
+        "population": ("wikidata_admin1.json", (
+            "Wikidata's figure for Cross River State, 3,866,269 for 2016, projects the "
+            "state as the 2006 census counted it, with Bakassi local government area and "
+            "the peninsula that passed to Cameroon in 2008, so it is not this polygon's "
+            "ground.")),
+    },
     ("MAR", "70788906B89532291078161"): {
         "population": (None, (
             "The figure published for the Laâyoune-Sakia El Hamra region, 451,028 "
@@ -11908,6 +13606,94 @@ NOT_THIS_GROUND: dict[tuple[str, str], dict[str, tuple[str | None, str]]] = {
             "for which no count has been read, so the figure is left out.")),
     },
 }
+# Angola (kept apart from the table above so that it merges into it): the
+# polygons that OCHA's boundaries of the 2016 municipalities (cod-ab-ago),
+# measured against the CGAZ polygons, show are not the municipality of their
+# name -- less than 70% of the one lying inside the other -- or hold part of
+# Cacula, which is drawn nowhere. Any figure published for the municipality of
+# the polygon's name, the 2024 census's or OCHA's 2024 projection, describes
+# other ground, whichever file carries it (angola_municipios gives the same
+# reasons on the compositions):
+#   AGO  Caluquembe, Quilengues, Quipungo and Lubango hold 28%, 19%, 11% and
+#        16% of their ground in Cacula; Pango-Aluquem is 39% Pango Aluquém and
+#        48% Cambambe (and OCHA's row for it is Bengo's Pango Aluquém);
+#        Quiculongo is 53% Quiculungo; a third of Cambundi-Catembo lies in the
+#        polygon drawn as Xá-Muteba, 27% of which is Cambundi-Catembo; Luanda's
+#        Belas is 63% Belas and 30% Viana, Cacuaco 40% Cacuaco and 36% Dande,
+#        and Luanda 55% the municipality of Luanda and 18% Cazenga (Viana and
+#        Cazenga have no polygon).
+NOT_THIS_GROUND.update({
+    ("AGO", shape_id): {field: (None, note)
+                        for field in ("population", "median_age", "sex_ratio")}
+    for shape_id, note in (
+        # Caluquembe
+        ("91424787B79663411061170", (
+            "About 28% of this polygon lies in the municipality of Cacula, which has no "
+            "polygon of its own, so no figure published for Caluquembe, whether the "
+            "2024 census's or a projection, describes it; nor do Cacula's, which cover "
+            "the rest of Cacula as well.")),
+        # Quilengues
+        ("91424787B76902935205568", (
+            "About 19% of this polygon lies in the municipality of Cacula, which has no "
+            "polygon of its own, so no figure published for Quilengues, whether the "
+            "2024 census's or a projection, describes it; nor do Cacula's, which cover "
+            "the rest of Cacula as well.")),
+        # Quipungo
+        ("91424787B65395745560852", (
+            "About 11% of this polygon, a quarter of Cacula, lies in the municipality "
+            "of Cacula, which has no polygon of its own, so no figure published for "
+            "Quipungo, whether the 2024 census's or a projection, describes it; nor do "
+            "Cacula's, which cover the rest of Cacula as well.")),
+        # Lubango
+        ("91424787B12923410016524", (
+            "About 16% of this polygon lies in the municipality of Cacula, whose seat "
+            "is inside it and which has no polygon of its own, so no figure published "
+            "for Lubango, whether the 2024 census's or a projection, describes it; nor "
+            "do Cacula's, which cover the rest of Cacula as well.")),
+        # Pango-Aluquem
+        ("91424787B4488869677577", (
+            "Only about 39% of this polygon lies in Pango Aluquém as OCHA's boundaries "
+            "of the municipalities draw it, and about 48% in Cambambe, so no figure "
+            "published for Pango Aluquém, whether the 2024 census's or a projection, "
+            "describes it.")),
+        # Quiculongo
+        ("91424787B64555741816921", (
+            "Only about 53% of this polygon lies in Quiculungo as OCHA's boundaries of "
+            "the municipalities draw it, and the rest in Banga and Samba Cajú, so no "
+            "figure published for Quiculungo, whether the 2024 census's or a "
+            "projection, describes it.")),
+        # Cambundi-Catembo
+        ("91424787B22609176467527", (
+            "About a third of Cambundi-Catembo, as OCHA's boundaries of the "
+            "municipalities draw it, lies outside this polygon, most of it in the "
+            "polygon drawn as Xá-Muteba, so no figure published for Cambundi-Catembo, "
+            "whether the 2024 census's or a projection, describes it.")),
+        # Xa-Muteba
+        ("91424787B55001564307677", (
+            "About 27% of this polygon lies in Cambundi-Catembo, in Malanje, as OCHA's "
+            "boundaries of the municipalities draw it, so no figure published for "
+            "Xá-Muteba, whether the 2024 census's or a projection, describes it.")),
+        # Belas
+        ("91424787B66059706224288", (
+            "About 63% of this polygon lies in Belas as OCHA's boundaries of the "
+            "municipalities draw it, and about 30% in Viana, which has no polygon of "
+            "its own, so no figure published for Belas, whether the 2024 census's or a "
+            "projection, describes it.")),
+        # Cacuaco
+        ("91424787B14243133178966", (
+            "Only about 40% of this polygon lies in Cacuaco as OCHA's boundaries of the "
+            "municipalities draw it, about 36% in Dande, in Bengo, and about 22% in "
+            "Viana, so no figure published for Cacuaco, whether the 2024 census's or a "
+            "projection, describes it.")),
+        # Luanda
+        ("91424787B55521153380221", (
+            "About 55% of this polygon lies in the municipality of Luanda as OCHA's "
+            "boundaries of the municipalities draw it, and most of the rest in Cazenga, "
+            "which has no polygon of its own, Belas and Cacuaco, so no figure published "
+            "for the municipality of Luanda, whether the 2024 census's or a projection, "
+            "describes it.")),
+    )
+})
 
 
 def refuse_not_this_ground(admin1: dict[str, list[dict[str, Any]]],
@@ -12457,6 +14243,10 @@ def main() -> int:
         entity = blank(shape, "admin1", iso3)
         city = cities["by_admin1"].get(f"{iso3}||{norm_city(shape['name'])}")
         why = natural_earth_elsewhere(city, shape, held_by) if city and held_by else None
+        larger = (NATURAL_EARTH_PASSED_OVER.get((iso3, shape["name"], city["name"]))
+                  if city else None)
+        if larger:
+            why = f"smaller than {larger}, which stands inside it"
         if why:
             elsewhere.append(f"{iso3} {shape['name']}: {city['name']}, {why}")
             city = None
@@ -12469,7 +14259,8 @@ def main() -> int:
         adm1_index[iso3][norm(shape["name"])] = entity["id"]
     if elsewhere:
         log(f"  {len(elsewhere)} Natural Earth places filed under a first-level unit "
-            f"stand in another and are left to GeoNames: " + "; ".join(elsewhere))
+            f"stand in another, or are not its largest town, and are left to GeoNames: "
+            + "; ".join(elsewhere))
 
     for iso3, rows in curated_rows.items():
         prov = provenance.get(iso3, {})
@@ -12648,7 +14439,11 @@ def main() -> int:
                 # an alias added here would be overwritten a moment later and
                 # the boundary file's own spelling would become unsearchable.
                 label = entity.get("name")
-                wanted_name = row.get("name")
+                # Read as the label was: a record that copied a cut or garbled
+                # label ("Anse Boile", "Kigoma  Urban") would otherwise put it
+                # back on the polygon.
+                wanted_name = (as_read(row["name"], iso3, entity.get("level"))
+                               if row.get("name") else None)
                 if wanted_name and label and label != wanted_name:
                     entity["name"] = wanted_name
                     # An unnamed polygon's label is its id, not a spelling.
@@ -12852,6 +14647,10 @@ def main() -> int:
     placed_seats = fill_capitals_from_geonames(admin1_by_country, admin2_by_country)
     if placed_seats:
         log(f"  {placed_seats} capitals placed from GeoNames seats")
+    unsized = say_unsized_seats(admin1_by_country, admin2_by_country)
+    if unsized:
+        log(f"  {unsized} seats GeoNames gives no population said not to be the "
+            f"capital shown")
     fell_back = 0
     for table in (admin1_by_country, admin2_by_country):
         for rows in table.values():
@@ -13034,6 +14833,7 @@ def main() -> int:
     # it existed, 83% of them on units no adapter had ever touched.
     country_name = {r["id"]: r.get("name") or r["id"] for r in admin0}
     why: dict[str, int] = defaultdict(int)
+    why_scalar: dict[str, int] = defaultdict(int)
     for table in (admin1_by_country, admin2_by_country):
         for iso3, rows in table.items():
             joined = joined_here(rows)
@@ -13041,10 +14841,22 @@ def main() -> int:
                 case = say_why_empty(entity, country_name.get(iso3, iso3), joined)
                 if case:
                     why[case] += 1
+                case = say_why_scalar_empty(entity, country_name.get(iso3, iso3), joined)
+                if case:
+                    why_scalar[case] += 1
+                if say_why_no_capital(entity, iso3):
+                    why_scalar["no seat named"] += 1
+    said = say_why_no_country_seat(admin0)
+    if said:
+        why_scalar["no seat both claimants recognise"] += said
     if why:
         log("  every bare composition field now says why: "
             + ", ".join(f"{n} units where {k}" for k, n in
                         sorted(why.items(), key=lambda kv: -kv[1])))
+    if why_scalar:
+        log("  every bare population, median age and sex ratio (and capital, where seats were sought) now says why: "
+            + ", ".join(f"{n} units where {k}" for k, n in
+                        sorted(why_scalar.items(), key=lambda kv: -kv[1])))
     # After the reasons are written, since it reads them.
     answered = sum(drop_answered_hint(entity)
                    for table in (admin1_by_country, admin2_by_country)

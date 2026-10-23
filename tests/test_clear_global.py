@@ -232,7 +232,170 @@ class CountryRecords(unittest.TestCase):
         kept, _, _ = cg.compose(rows, 1, cg.LANGUAGE_RELABEL["NPL"])
         self.assertEqual({r["group"]: r["pct"] for r in kept["NP61"]["shares"]},
                          {"Khash": 50.0, "Nepali": 50.0})
-        self.assertEqual(cg.LANGUAGE_RELABEL, {"NPL": {"Khasi": "Khash"}})
+        self.assertEqual(kept["NP61"]["relabelled"], ["Khasi"])
+        self.assertEqual(cg.LANGUAGE_RELABEL["NPL"], {"Khasi": "Khash"})
+
+    def test_every_relabelled_name_says_what_it_was(self):
+        import group_tree as gt
+        for iso, names in cg.LANGUAGE_RELABEL.items():
+            for name, target in names.items():
+                self.assertIn((iso, name), cg.RELABEL_NOTES, (iso, name))
+                self.assertIn(name, cg.RELABEL_NOTES[(iso, name)], (iso, name))
+                # Whatever it becomes, the tree files it where it belongs:
+                # the residual, or a family of its own continent.
+                # (The DRC's Lande, Zola and Bombo, which nothing identifies
+                # beyond the source's name, are left unplaced.)
+                parent = gt.parent_of("language", target)
+                if target not in ("Lande", "Zola", "Bombo"):
+                    self.assertIsNotNone(parent, target)
+                self.assertNotIn(parent, ("Hmong-Mien languages",
+                                          "Indigenous languages of Australia"), target)
+
+    def test_the_drc_s_names_are_its_source_s(self):
+        # Fizi's Mexican and Bomongo's Philippine names, put in one unit, and
+        # Kapanga's Burundian one: each is the CAID data's own name.
+        rows = [row("CD62", "Sud-Kivu", "Bembe", 0.9), row("CD62", "Sud-Kivu", "Tamazola Mixtec", 0.06),
+                row("CD62", "Sud-Kivu", "Ibaloi", 0.04),
+                row("CD41", "Equateur", "Lingala", 0.95), row("CD41", "Equateur", "Ibaloi", 0.05),
+                row("CD72", "Lualaba", "Rundi", 0.889), row("CD72", "Lualaba", "Chokwe", 0.111),
+                row("CD54", "Ituri", "Swahili", 0.9996), row("CD54", "Ituri", "Mokilese", 0.0004)]
+        self.serve(csv_text(rows))
+        drc = dict(PACKAGE, name="democratic-republic-of-the-congo-languages",
+                   groups=[{"name": "cod"}])
+        records, _ = quiet(cg.country_records, drc)
+        by_name = {r["name"]: r for r in records}
+        kivu = {g["group"]: g["pct"] for g in by_name["Sud-Kivu"]["language"]}
+        self.assertEqual(kivu, {"Bembe": 90.0, "Zola": 6.0, "Baloi": 4.0})
+        note = by_name["Sud-Kivu"]["language_note"]
+        self.assertIn("writes it 'Tamazola Mixtec', a Mixtec language of Oaxaca, Mexico", note)
+        self.assertIn("writes it 'Ibaloi', a language of northern Luzon", note)
+        self.assertNotIn("Tamazola", by_name["Equateur"]["language_note"])
+        self.assertIn("'Baloi' is the name the DRC's CAID territory data", by_name["Equateur"]["language_note"])
+        lualaba = {g["group"]: g["pct"] for g in by_name["Lualaba"]["language"]}
+        self.assertEqual(lualaba, {"Ruund": 88.9, "Chokwe": 11.1})
+        self.assertIn("names it Urund", by_name["Lualaba"]["language_note"])
+        # A share too small to show says nothing about the name it had.
+        self.assertNotIn("Lese", {g["group"] for g in by_name["Ituri"]["language"]})
+        self.assertNotIn("Mokilese", by_name["Ituri"]["language_note"])
+
+    def test_a_name_wrong_in_one_unit_is_relabelled_there_only(self):
+        # Mambasa's "Ombo" is the source's Bandaka (the Ndaka people);
+        # Kailo's Ombo, in Maniema where Ombo is spoken, stands.
+        rows = [row("CD5403", "Mambasa", "Congo Swahili", 0.927, level="2"),
+                row("CD5403", "Mambasa", "Ombo", 0.073, level="2"),
+                row("CD6302", "Kailo", "Lega-Mwenga", 0.886, level="2"),
+                row("CD6302", "Kailo", "Ombo", 0.114, level="2")]
+        kept, _, _ = cg.compose(rows, 2, cg.LANGUAGE_RELABEL["COD"], cg.UNIT_RELABEL["COD"])
+        self.assertEqual({r["group"] for r in kept["CD5403"]["shares"]}, {"Congo Swahili", "Ndaka"})
+        self.assertEqual(kept["CD5403"]["relabelled"], ["Ombo"])
+        self.assertEqual({r["group"] for r in kept["CD6302"]["shares"]}, {"Lega-Mwenga", "Ombo"})
+        self.assertEqual(kept["CD6302"]["relabelled"], [])
+        self.assertIn("names it Bandaka", cg.RELABEL_NOTES[("COD", "Ombo")])
+
+    def test_names_kept_unnamed_in_one_unit_share_one_sentence(self):
+        rows = [row("NG002001", "Demsa", "Bacama", 0.9), row("NG002001", "Demsa", "Sibalenhon", 0.06),
+                row("NG002001", "Demsa", "Tambo", 0.04),
+                row("NG002002", "Fufore", "Fulfulde", 1.0)]
+        self.serve(csv_text(rows))
+        nigeria = dict(PACKAGE, name="nigeria-languages", groups=[{"name": "nga"}])
+        records, _ = quiet(cg.country_records, nigeria)
+        note = next(r for r in records if r["name"] == "Demsa")["language_note"]
+        self.assertEqual(note.count("'Other languages' includes"), 1)
+        self.assertIn("languages it names Sibalenhon, a language of the Philippines and Tambo, ",
+                      note)
+        self.assertIn("which languages of this area are meant cannot be told", note)
+
+    def test_a_level_too_thin_for_shares_says_why_in_every_unit(self):
+        rows = [row("GH13", "Upper West", "Dagaare", 1.0),
+                row("GH06", "Eastern", "Akan", 1.0),
+                row("GH1302", "Jirapa", "Nyamal", 1.0, level="2"),
+                row("GH0902", "Chereponi", "Unknown", 1.0, level="2"),
+                row("GH0101", "Asunafo North", "Akan", 0.9, level="2"),
+                row("GH0101", "Asunafo North", "Ewe", 0.1, level="2")]
+        self.serve(csv_text(rows))
+        ghana = dict(PACKAGE, name="ghana-languages", groups=[{"name": "gha"}])
+        records, _ = quiet(cg.country_records, ghana, 2)
+        self.assertEqual(sorted(r["name"] for r in records),
+                         ["Asunafo North", "Chereponi", "Jirapa"])
+        for r in records:
+            self.assertEqual(r["language"], {"status": "not_available",
+                                             "note": cg.SMALL_SAMPLE[("GHA", 2)]})
+            self.assertEqual(r["sources"][0]["field"], "language note")
+        # The regions, which the survey samples, keep their shares.
+        records, _ = quiet(cg.country_records, ghana, 1)
+        self.assertEqual({r["name"]: r["language"][0]["group"] for r in records},
+                         {"Upper West": "Dagaare", "Eastern": "Akan"})
+
+    def test_a_guthrie_code_is_not_part_of_the_name(self):
+        rows = [row("BI01", "Bujumbura Mairie", "Swahili (G.40)", 0.4),
+                row("BI01", "Bujumbura Mairie", "Kirundi", 0.6),
+                row("BI02", "Bururi", "Kirundi", 1.0)]
+        kept, _, _ = cg.compose(rows)
+        self.assertEqual({r["group"] for r in kept["BI01"]["shares"]}, {"Swahili", "Kirundi"})
+        self.assertEqual(kept["BI01"]["relabelled"], [])
+
+    def test_namibia_s_ndonga_r20_is_the_oshiwambo_group(self):
+        import group_tree as gt
+        rows = [row("NA0801", "Eenhana", "Ndonga (R.20)", 0.97), row("NA0801", "Eenhana", "English", 0.03),
+                row("NA0802", "Endola", "Ndonga (R.20)", 1.0)]
+        self.serve(csv_text(rows))
+        namibia = dict(PACKAGE, name="namibia-languages", groups=[{"name": "nam"}])
+        records, _ = quiet(cg.country_records, namibia)
+        self.assertEqual({g["group"] for r in records for g in r["language"]},
+                         {"Oshiwambo", "English"})
+        self.assertIn("Oshikwanyama and Oshindonga", records[0]["language_note"])
+        self.assertEqual(gt.parent_of("language", "Oshiwambo"), "Bantu languages")
+
+    def test_a_unit_that_names_no_language_is_not_written(self):
+        rows = [row("NA0104", "Kongola", "Unknown", 1.0),
+                row("GH1302", "Jirapa", "Nyamal", 1.0)] + TWO_UNITS
+        kept, refused, unnamed = cg.compose(rows, 1, cg.LANGUAGE_RELABEL["GHA"])
+        self.assertEqual(sorted(kept), ["A1", "A2"])
+        self.assertEqual(refused, [])
+        self.assertEqual(len(unnamed), 2)
+        self.assertIn("only 'Unknown'", unnamed[0])
+
+    def test_the_year_is_said_once(self):
+        rows = [dict(r, dataset_name="Kenya Round 9 data (2009)", source="AfroBarometer")
+                for r in TWO_UNITS]
+        self.serve(csv_text(rows))
+        records, _ = quiet(cg.country_records, PACKAGE)
+        note = records[0]["language_note"]
+        self.assertIn("from Kenya Round 9 data (2009) (AfroBarometer). ", note)
+
+    def test_malawi_s_and_mozambique_s_yao_are_the_bantu_language(self):
+        import group_tree as gt
+        rows = [row("MW301", "Mangochi", "Yao", 0.7), row("MW301", "Mangochi", "Nyanja", 0.3),
+                row("MW302", "Machinga", "Yao", 0.56), row("MW302", "Machinga", "Nyanja", 0.44)]
+        for iso, spelt in (("MWI", "Chiyao"), ("MOZ", "Ciyao")):
+            with self.subTest(iso=iso):
+                self.serve(csv_text(rows))
+                package = dict(PACKAGE, name=f"{iso.lower()}-languages",
+                               groups=[{"name": iso.lower()}])
+                records, _ = quiet(cg.country_records, package)
+                groups = {g["group"] for r in records for g in r["language"]}
+                self.assertEqual(groups, {spelt, "Nyanja"})
+                self.assertIn("which CLEAR Global's table writes 'Yao'",
+                              records[0]["language_note"])
+                self.assertEqual(gt.parent_of("language", spelt), "Bantu languages")
+
+    def test_the_drc_s_australian_language_is_the_source_s_lande(self):
+        # Lomami's 12.4% and Kabinda's 25.0%: a share of real households
+        # under the name of an Aboriginal language of Australia, which the
+        # CAID data CLEAR Global matched it from calls Lande.
+        rows = [row("CD81", "Lomami", "Luba-Lulua", 0.4), row("CD81", "Lomami", "Songe", 0.35),
+                row("CD81", "Lomami", "Lander River Warlpiri", 0.25),
+                row("CD82", "Sankuru", "Tetela", 1.0)]
+        self.serve(csv_text(rows))
+        drc = dict(PACKAGE, name="democratic-republic-of-the-congo-languages",
+                   groups=[{"name": "cod"}])
+        records, _ = quiet(cg.country_records, drc)
+        by_name = {r["name"]: r for r in records}
+        lomami = {g["group"]: g["pct"] for g in by_name["Lomami"]["language"]}
+        self.assertEqual(lomami, {"Luba-Lulua": 40.0, "Songe": 35.0, "Lande": 25.0})
+        self.assertIn("'Lander River Warlpiri', an Aboriginal language of Australia",
+                      by_name["Lomami"]["language_note"])
+        self.assertNotIn("Warlpiri", by_name["Sankuru"]["language_note"])
 
     def test_the_tree_files_khash_with_the_indo_aryan_languages(self):
         import group_tree as gt
@@ -256,14 +419,32 @@ class Written(unittest.TestCase):
         import json
         self.rows = json.loads(self.PATH.read_text(encoding="utf-8"))
 
+    def shares(self):
+        """The rows that carry shares; a level too thin for them carries a reason."""
+        return [r for r in self.rows if isinstance(r["language"], list)]
+
     def test_every_record_carries_a_language_a_year_and_a_licence(self):
         for row_ in self.rows:
+            self.assertTrue(row_["sources"][0]["license"], row_["id"])
+            if isinstance(row_["language"], dict):
+                self.assertTrue(row_["language"]["note"], row_["id"])
+                self.assertEqual(row_["sources"][0]["field"], "language note", row_["id"])
+                continue
             self.assertTrue(row_["language"], row_["id"])
             self.assertIsInstance(row_["language_year"], int, row_["id"])
-            self.assertTrue(row_["sources"][0]["license"], row_["id"])
+
+    def test_ghana_s_and_namibia_s_second_levels_say_why_they_show_none(self):
+        for iso in ("GHA", "NAM"):
+            thin = [r for r in self.rows if r["country"] == iso and r["level"] == "admin2"]
+            self.assertTrue(thin, iso)
+            for r in thin:
+                self.assertEqual(r["language"]["note"], cg.SMALL_SAMPLE[(iso, 2)], r["id"])
+            # The first level, which the survey samples, keeps its shares.
+            self.assertTrue(all(isinstance(r["language"], list) for r in self.rows
+                                if r["country"] == iso and r["level"] == "admin1"), iso)
 
     def test_no_unit_claims_more_than_a_whole_population(self):
-        for row_ in self.rows:
+        for row_ in self.shares():
             total = sum(r["pct"] for r in row_["language"])
             self.assertLessEqual(total, 100.6, f"{row_['id']}: {total}")
 
@@ -280,18 +461,23 @@ class Written(unittest.TestCase):
         self.assertEqual(next(g["pct"] for g in jumla["language"] if g["group"] == "Khash"), 51.2)
         self.assertIn("Meghalaya", jumla["language_note"])
         # The relabel is Nepal's alone: no other country's record says it.
-        for r in self.rows:
+        for r in self.shares():
             if r["country"] != "NPL":
                 self.assertNotIn("Khash", {g["group"] for g in r["language"]}, r["id"])
                 self.assertNotIn("Karnali", r["language_note"], r["id"])
 
+    def test_no_record_carries_a_name_its_country_s_relabel_replaces(self):
+        for r in self.shares():
+            replaced = set(cg.LANGUAGE_RELABEL.get(r["country"], {}))
+            self.assertFalse(replaced & {g["group"] for g in r["language"]}, r["id"])
+
     def test_no_country_says_the_same_thing_in_every_unit(self):
         by_country: dict[str, set] = {}
-        for row_ in self.rows:
+        for row_ in self.shares():
             key = tuple(sorted((r["group"], r["pct"]) for r in row_["language"]))
             by_country.setdefault(row_["parent"], set()).add(key)
         for iso, signatures in by_country.items():
-            if len([r for r in self.rows if r["parent"] == iso]) > 1:
+            if len([r for r in self.shares() if r["parent"] == iso]) > 1:
                 self.assertGreater(len(signatures), 1, iso)
 
 

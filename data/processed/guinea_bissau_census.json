@@ -16,7 +16,10 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.9,
+      "unit": "years",
+      "year": 2009,
+      "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B"
     },
     "sex_ratio": {
       "value": 938,
@@ -24,15 +27,124 @@
       "year": 2009,
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 43.0,
+        "count": 38722
+      },
+      {
+        "group": "Animist",
+        "pct": 24.1,
+        "count": 21748
+      },
+      {
+        "group": "Not stated",
+        "pct": 17.8,
+        "count": 16020
+      },
+      {
+        "group": "Christianity",
+        "pct": 14.7,
+        "count": 13225
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 369
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 44
+      }
+    ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken (Características Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural residence only, not by region."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Balanta",
+        "pct": 46.9,
+        "count": 42276
+      },
+      {
+        "group": "Fula",
+        "pct": 20.9,
+        "count": 18861
+      },
+      {
+        "group": "Nalu",
+        "pct": 11.6,
+        "count": 10498
+      },
+      {
+        "group": "Beafada",
+        "pct": 5.7,
+        "count": 5156
+      },
+      {
+        "group": "Mandinga",
+        "pct": 4.9,
+        "count": 4386
+      },
+      {
+        "group": "Susu",
+        "pct": 3.0,
+        "count": 2700
+      },
+      {
+        "group": "Papel",
+        "pct": 1.6,
+        "count": 1437
+      },
+      {
+        "group": "Bijago",
+        "pct": 1.3,
+        "count": 1165
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 1.3,
+        "count": 1215
+      },
+      {
+        "group": "Manjaco",
+        "pct": 1.2,
+        "count": 1042
+      },
+      {
+        "group": "Mansoanca",
+        "pct": 0.8,
+        "count": 711
+      },
+      {
+        "group": "Mancanha",
+        "pct": 0.3,
+        "count": 280
+      },
+      {
+        "group": "Balanta Mane",
+        "pct": 0.2,
+        "count": 148
+      },
+      {
+        "group": "Felupe",
+        "pct": 0.1,
+        "count": 58
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 67
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.1,
+        "count": 128
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -40,12 +152,37 @@
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Tombali_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
+      },
+      {
+        "field": "median_age",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
     "shape_id": "76643164B14801811690770",
-    "population_note": "The 2009 census's resident population of Tombali region."
+    "population_note": "The 2009 census's resident population of Tombali region.",
+    "religion_year": 2009,
+    "religion_note": "Religion practised, of the 90,128 people of Guinean nationality the census counted in the region; 15.9% of the country's nationals did not answer the question, shown as not stated.",
+    "ethnicity_year": 2009,
+    "ethnicity_note": "Ethnic group, of the 90,128 people of Guinean nationality the census counted in the region."
   },
   {
     "id": "GNB-2009-13655514B24413703823033",
@@ -64,7 +201,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 900,
@@ -73,19 +211,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Tombali_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -112,7 +274,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 940,
@@ -121,19 +284,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Tombali_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -160,7 +347,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 968,
@@ -169,19 +357,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Tombali_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -208,7 +420,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 999,
@@ -217,19 +430,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Tombali_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -256,7 +493,10 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.8,
+      "unit": "years",
+      "year": 2009,
+      "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B"
     },
     "sex_ratio": {
       "value": 965,
@@ -264,15 +504,124 @@
       "year": 2009,
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 45.8,
+        "count": 27753
+      },
+      {
+        "group": "Not stated",
+        "pct": 21.5,
+        "count": 13061
+      },
+      {
+        "group": "Christianity",
+        "pct": 19.4,
+        "count": 11752
+      },
+      {
+        "group": "No religion",
+        "pct": 7.1,
+        "count": 4289
+      },
+      {
+        "group": "Animist",
+        "pct": 6.2,
+        "count": 3767
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 2
+      }
+    ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken (Características Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural residence only, not by region."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Beafada",
+        "pct": 36.7,
+        "count": 22231
+      },
+      {
+        "group": "Balanta",
+        "pct": 35.2,
+        "count": 21329
+      },
+      {
+        "group": "Fula",
+        "pct": 7.9,
+        "count": 4788
+      },
+      {
+        "group": "Mandinga",
+        "pct": 5.0,
+        "count": 3041
+      },
+      {
+        "group": "Mansoanca",
+        "pct": 3.7,
+        "count": 2215
+      },
+      {
+        "group": "Papel",
+        "pct": 3.4,
+        "count": 2088
+      },
+      {
+        "group": "Manjaco",
+        "pct": 2.7,
+        "count": 1650
+      },
+      {
+        "group": "Bijago",
+        "pct": 2.5,
+        "count": 1491
+      },
+      {
+        "group": "Mancanha",
+        "pct": 1.2,
+        "count": 749
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 0.8,
+        "count": 505
+      },
+      {
+        "group": "Nalu",
+        "pct": 0.4,
+        "count": 218
+      },
+      {
+        "group": "Susu",
+        "pct": 0.3,
+        "count": 175
+      },
+      {
+        "group": "Felupe",
+        "pct": 0.1,
+        "count": 63
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.1,
+        "count": 47
+      },
+      {
+        "group": "Balanta Mane",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 17
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -280,12 +629,37 @@
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de%20Quinara_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
+      },
+      {
+        "field": "median_age",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
     "shape_id": "76643164B25325276017448",
-    "population_note": "The 2009 census's resident population of Quinara region."
+    "population_note": "The 2009 census's resident population of Quinara region.",
+    "religion_year": 2009,
+    "religion_note": "Religion practised, of the 60,624 people of Guinean nationality the census counted in the region; 15.9% of the country's nationals did not answer the question, shown as not stated.",
+    "ethnicity_year": 2009,
+    "ethnicity_note": "Ethnic group, of the 60,624 people of Guinean nationality the census counted in the region."
   },
   {
     "id": "GNB-2009-13655514B37452641895852",
@@ -304,7 +678,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 994,
@@ -313,19 +688,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de%20Quinara_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -352,7 +751,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 982,
@@ -361,19 +761,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de%20Quinara_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -400,7 +824,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 957,
@@ -409,19 +834,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de%20Quinara_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -448,7 +897,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 921,
@@ -457,19 +907,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de%20Quinara_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -496,7 +970,10 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.4,
+      "unit": "years",
+      "year": 2009,
+      "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B"
     },
     "sex_ratio": {
       "value": 921,
@@ -504,15 +981,124 @@
       "year": 2009,
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 42.1,
+        "count": 90341
+      },
+      {
+        "group": "Animist",
+        "pct": 20.8,
+        "count": 44683
+      },
+      {
+        "group": "Not stated",
+        "pct": 20.5,
+        "count": 44008
+      },
+      {
+        "group": "Christianity",
+        "pct": 15.8,
+        "count": 33904
+      },
+      {
+        "group": "No religion",
+        "pct": 0.9,
+        "count": 1829
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 26
+      }
+    ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken (Características Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural residence only, not by region."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Balanta",
+        "pct": 43.6,
+        "count": 93737
+      },
+      {
+        "group": "Mandinga",
+        "pct": 32.9,
+        "count": 70739
+      },
+      {
+        "group": "Fula",
+        "pct": 11.2,
+        "count": 23980
+      },
+      {
+        "group": "Mansoanca",
+        "pct": 3.7,
+        "count": 8029
+      },
+      {
+        "group": "Manjaco",
+        "pct": 3.1,
+        "count": 6561
+      },
+      {
+        "group": "Balanta Mane",
+        "pct": 2.1,
+        "count": 4530
+      },
+      {
+        "group": "Beafada",
+        "pct": 1.0,
+        "count": 2186
+      },
+      {
+        "group": "Papel",
+        "pct": 0.7,
+        "count": 1587
+      },
+      {
+        "group": "Mancanha",
+        "pct": 0.6,
+        "count": 1391
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 0.5,
+        "count": 1097
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.2,
+        "count": 437
+      },
+      {
+        "group": "Bijago",
+        "pct": 0.1,
+        "count": 147
+      },
+      {
+        "group": "Felupe",
+        "pct": 0.1,
+        "count": 158
+      },
+      {
+        "group": "Susu",
+        "pct": 0.1,
+        "count": 112
+      },
+      {
+        "group": "Nalu",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 45
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -520,12 +1106,37 @@
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Oio_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
+      },
+      {
+        "field": "median_age",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
     "shape_id": "76643164B92913079273182",
-    "population_note": "The 2009 census's resident population of Oio region."
+    "population_note": "The 2009 census's resident population of Oio region.",
+    "religion_year": 2009,
+    "religion_note": "Religion practised, of the 214,791 people of Guinean nationality the census counted in the region; 15.9% of the country's nationals did not answer the question, shown as not stated.",
+    "ethnicity_year": 2009,
+    "ethnicity_note": "Ethnic group, of the 214,791 people of Guinean nationality the census counted in the region. The table prints the Fula of Oio as 2,980, which leaves both the Fula row and Oio's column 21,000 short of the totals it prints; 23,980, the figure that makes both, is used."
   },
   {
     "id": "GNB-2009-13655514B57740331915335",
@@ -544,7 +1155,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 936,
@@ -553,19 +1165,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Oio_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -592,7 +1228,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 921,
@@ -601,19 +1238,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Oio_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -640,7 +1301,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 907,
@@ -649,19 +1311,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Oio_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -688,7 +1374,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 951,
@@ -697,19 +1384,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Oio_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -736,7 +1447,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 845,
@@ -745,19 +1457,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Oio_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -784,7 +1520,10 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 17.9,
+      "unit": "years",
+      "year": 2009,
+      "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B"
     },
     "sex_ratio": {
       "value": 888,
@@ -792,15 +1531,124 @@
       "year": 2009,
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Animist",
+        "pct": 40.1,
+        "count": 37193
+      },
+      {
+        "group": "Christianity",
+        "pct": 30.2,
+        "count": 27997
+      },
+      {
+        "group": "Not stated",
+        "pct": 20.8,
+        "count": 19295
+      },
+      {
+        "group": "Islam",
+        "pct": 6.3,
+        "count": 5828
+      },
+      {
+        "group": "No religion",
+        "pct": 2.5,
+        "count": 2346
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken (Características Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural residence only, not by region."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Papel",
+        "pct": 64.7,
+        "count": 59995
+      },
+      {
+        "group": "Balanta",
+        "pct": 19.4,
+        "count": 17983
+      },
+      {
+        "group": "Fula",
+        "pct": 4.4,
+        "count": 4065
+      },
+      {
+        "group": "Mancanha",
+        "pct": 2.7,
+        "count": 2539
+      },
+      {
+        "group": "Manjaco",
+        "pct": 2.7,
+        "count": 2487
+      },
+      {
+        "group": "Mandinga",
+        "pct": 1.6,
+        "count": 1503
+      },
+      {
+        "group": "Felupe",
+        "pct": 1.0,
+        "count": 930
+      },
+      {
+        "group": "Bijago",
+        "pct": 0.9,
+        "count": 849
+      },
+      {
+        "group": "Mansoanca",
+        "pct": 0.8,
+        "count": 708
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 0.7,
+        "count": 612
+      },
+      {
+        "group": "Beafada",
+        "pct": 0.5,
+        "count": 451
+      },
+      {
+        "group": "Balanta Mane",
+        "pct": 0.2,
+        "count": 151
+      },
+      {
+        "group": "Nalu",
+        "pct": 0.2,
+        "count": 149
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 108
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.1,
+        "count": 75
+      },
+      {
+        "group": "Susu",
+        "pct": 0.1,
+        "count": 60
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -808,12 +1656,37 @@
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Biombo_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
+      },
+      {
+        "field": "median_age",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
     "shape_id": "76643164B78535055467734",
-    "population_note": "The 2009 census's resident population of Biombo region."
+    "population_note": "The 2009 census's resident population of Biombo region.",
+    "religion_year": 2009,
+    "religion_note": "Religion practised, of the 92,665 people of Guinean nationality the census counted in the region; 15.9% of the country's nationals did not answer the question, shown as not stated.",
+    "ethnicity_year": 2009,
+    "ethnicity_note": "Ethnic group, of the 92,665 people of Guinean nationality the census counted in the region."
   },
   {
     "id": "GNB-2009-13655514B66751603958816",
@@ -832,7 +1705,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 846,
@@ -841,19 +1715,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Biombo_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -880,7 +1778,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 930,
@@ -889,19 +1788,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Biombo_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -928,7 +1851,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 921,
@@ -937,19 +1861,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Biombo_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -976,7 +1924,10 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 18.7,
+      "unit": "years",
+      "year": 2009,
+      "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B"
     },
     "sex_ratio": {
       "value": 947,
@@ -984,15 +1935,124 @@
       "year": 2009,
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 30.7,
+        "count": 9864
+      },
+      {
+        "group": "Not stated",
+        "pct": 25.7,
+        "count": 8265
+      },
+      {
+        "group": "Animist",
+        "pct": 24.6,
+        "count": 7897
+      },
+      {
+        "group": "Islam",
+        "pct": 14.9,
+        "count": 4773
+      },
+      {
+        "group": "No religion",
+        "pct": 4.2,
+        "count": 1340
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken (Características Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural residence only, not by region."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Bijago",
+        "pct": 64.3,
+        "count": 20670
+      },
+      {
+        "group": "Beafada",
+        "pct": 6.2,
+        "count": 2004
+      },
+      {
+        "group": "Papel",
+        "pct": 5.6,
+        "count": 1805
+      },
+      {
+        "group": "Mancanha",
+        "pct": 5.2,
+        "count": 1676
+      },
+      {
+        "group": "Mandinga",
+        "pct": 4.5,
+        "count": 1462
+      },
+      {
+        "group": "Balanta",
+        "pct": 4.4,
+        "count": 1403
+      },
+      {
+        "group": "Fula",
+        "pct": 3.6,
+        "count": 1154
+      },
+      {
+        "group": "Manjaco",
+        "pct": 2.8,
+        "count": 893
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 1.9,
+        "count": 602
+      },
+      {
+        "group": "Susu",
+        "pct": 0.4,
+        "count": 122
+      },
+      {
+        "group": "Felupe",
+        "pct": 0.3,
+        "count": 110
+      },
+      {
+        "group": "Mansoanca",
+        "pct": 0.2,
+        "count": 60
+      },
+      {
+        "group": "Nalu",
+        "pct": 0.2,
+        "count": 69
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 50
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.2,
+        "count": 55
+      },
+      {
+        "group": "Balanta Mane",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -1000,12 +2060,37 @@
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bolama_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
+      },
+      {
+        "field": "median_age",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
     "shape_id": "76643164B18917431809987",
-    "population_note": "The 2009 census's resident population of Bolama region."
+    "population_note": "The 2009 census's resident population of Bolama region.",
+    "religion_year": 2009,
+    "religion_note": "Religion practised, of the 32,140 people of Guinean nationality the census counted in the region; 15.9% of the country's nationals did not answer the question, shown as not stated.",
+    "ethnicity_year": 2009,
+    "ethnicity_note": "Ethnic group, of the 32,140 people of Guinean nationality the census counted in the region."
   },
   {
     "id": "GNB-2009-13655514B77006902429960",
@@ -1024,7 +2109,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 981,
@@ -1033,19 +2119,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bolama_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1072,7 +2182,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 922,
@@ -1081,19 +2192,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bolama_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1120,7 +2255,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 1001,
@@ -1129,19 +2265,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bolama_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1168,7 +2328,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 906,
@@ -1177,19 +2338,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bolama_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1216,7 +2401,10 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.6,
+      "unit": "years",
+      "year": 2009,
+      "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B"
     },
     "sex_ratio": {
       "value": 938,
@@ -1224,15 +2412,124 @@
       "year": 2009,
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 77.1,
+        "count": 154402
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.3,
+        "count": 22611
+      },
+      {
+        "group": "Christianity",
+        "pct": 6.8,
+        "count": 13670
+      },
+      {
+        "group": "Animist",
+        "pct": 3.9,
+        "count": 7814
+      },
+      {
+        "group": "No religion",
+        "pct": 0.9,
+        "count": 1739
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken (Características Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural residence only, not by region."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Fula",
+        "pct": 60.0,
+        "count": 120183
+      },
+      {
+        "group": "Mandinga",
+        "pct": 22.9,
+        "count": 45818
+      },
+      {
+        "group": "Balanta",
+        "pct": 8.0,
+        "count": 16094
+      },
+      {
+        "group": "Manjaco",
+        "pct": 2.2,
+        "count": 4498
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 1.5,
+        "count": 2909
+      },
+      {
+        "group": "Beafada",
+        "pct": 1.3,
+        "count": 2567
+      },
+      {
+        "group": "Papel",
+        "pct": 1.1,
+        "count": 2191
+      },
+      {
+        "group": "Soninke",
+        "pct": 1.0,
+        "count": 1920
+      },
+      {
+        "group": "Mansoanca",
+        "pct": 0.9,
+        "count": 1878
+      },
+      {
+        "group": "Mancanha",
+        "pct": 0.4,
+        "count": 788
+      },
+      {
+        "group": "Balanta Mane",
+        "pct": 0.3,
+        "count": 555
+      },
+      {
+        "group": "Bijago",
+        "pct": 0.1,
+        "count": 202
+      },
+      {
+        "group": "Felupe",
+        "pct": 0.1,
+        "count": 145
+      },
+      {
+        "group": "Nalu",
+        "pct": 0.1,
+        "count": 159
+      },
+      {
+        "group": "Susu",
+        "pct": 0.1,
+        "count": 257
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 78
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -1240,12 +2537,37 @@
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bafata_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
+      },
+      {
+        "field": "median_age",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
     "shape_id": "76643164B84174472060432",
-    "population_note": "The 2009 census's resident population of Bafatá region."
+    "population_note": "The 2009 census's resident population of Bafatá region.",
+    "religion_year": 2009,
+    "religion_note": "Religion practised, of the 200,242 people of Guinean nationality the census counted in the region; 15.9% of the country's nationals did not answer the question, shown as not stated.",
+    "ethnicity_year": 2009,
+    "ethnicity_note": "Ethnic group, of the 200,242 people of Guinean nationality the census counted in the region."
   },
   {
     "id": "GNB-2009-13655514B15077734082289",
@@ -1264,7 +2586,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 941,
@@ -1273,19 +2596,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bafata_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1312,7 +2659,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 941,
@@ -1321,19 +2669,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bafata_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1360,7 +2732,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 852,
@@ -1369,19 +2742,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bafata_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1408,7 +2805,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 942,
@@ -1417,19 +2815,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bafata_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1456,7 +2878,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 943,
@@ -1465,19 +2888,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bafata_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1504,7 +2951,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 956,
@@ -1513,19 +2961,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Bafata_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1552,7 +3024,10 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 16.3,
+      "unit": "years",
+      "year": 2009,
+      "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B"
     },
     "sex_ratio": {
       "value": 939,
@@ -1560,15 +3035,124 @@
       "year": 2009,
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 86.5,
+        "count": 177265
+      },
+      {
+        "group": "Not stated",
+        "pct": 10.5,
+        "count": 21409
+      },
+      {
+        "group": "Christianity",
+        "pct": 2.6,
+        "count": 5361
+      },
+      {
+        "group": "Animist",
+        "pct": 0.3,
+        "count": 654
+      },
+      {
+        "group": "No religion",
+        "pct": 0.1,
+        "count": 120
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken (Características Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural residence only, not by region."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Fula",
+        "pct": 79.6,
+        "count": 162970
+      },
+      {
+        "group": "Mandinga",
+        "pct": 14.2,
+        "count": 29017
+      },
+      {
+        "group": "Balanta",
+        "pct": 1.8,
+        "count": 3734
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 1.6,
+        "count": 3237
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.6,
+        "count": 1331
+      },
+      {
+        "group": "Manjaco",
+        "pct": 0.4,
+        "count": 916
+      },
+      {
+        "group": "Mansoanca",
+        "pct": 0.4,
+        "count": 904
+      },
+      {
+        "group": "Beafada",
+        "pct": 0.3,
+        "count": 613
+      },
+      {
+        "group": "Papel",
+        "pct": 0.3,
+        "count": 526
+      },
+      {
+        "group": "Bijago",
+        "pct": 0.2,
+        "count": 395
+      },
+      {
+        "group": "Mancanha",
+        "pct": 0.2,
+        "count": 452
+      },
+      {
+        "group": "Balanta Mane",
+        "pct": 0.1,
+        "count": 153
+      },
+      {
+        "group": "Nalu",
+        "pct": 0.1,
+        "count": 253
+      },
+      {
+        "group": "Susu",
+        "pct": 0.1,
+        "count": 206
+      },
+      {
+        "group": "Felupe",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.0,
+        "count": 52
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -1576,12 +3160,37 @@
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Gabu_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
+      },
+      {
+        "field": "median_age",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
     "shape_id": "76643164B38080973404583",
-    "population_note": "The 2009 census's resident population of Gabú region."
+    "population_note": "The 2009 census's resident population of Gabú region.",
+    "religion_year": 2009,
+    "religion_note": "Religion practised, of the 204,814 people of Guinean nationality the census counted in the region; 15.9% of the country's nationals did not answer the question, shown as not stated.",
+    "ethnicity_year": 2009,
+    "ethnicity_note": "Ethnic group, of the 204,814 people of Guinean nationality the census counted in the region."
   },
   {
     "id": "GNB-2009-13655514B65296626482863",
@@ -1600,7 +3209,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 947,
@@ -1609,19 +3219,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Gabu_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1648,7 +3282,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 903,
@@ -1657,19 +3292,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Gabu_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1696,7 +3355,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 949,
@@ -1705,19 +3365,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Gabu_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1744,7 +3428,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 964,
@@ -1753,19 +3438,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Gabu_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1792,7 +3501,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 897,
@@ -1801,19 +3511,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Gabu_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1840,7 +3574,10 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 18.8,
+      "unit": "years",
+      "year": 2009,
+      "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B"
     },
     "sex_ratio": {
       "value": 909,
@@ -1848,15 +3585,124 @@
       "year": 2009,
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Animist",
+        "pct": 34.0,
+        "count": 62670
+      },
+      {
+        "group": "Christianity",
+        "pct": 30.7,
+        "count": 56597
+      },
+      {
+        "group": "Not stated",
+        "pct": 17.3,
+        "count": 31853
+      },
+      {
+        "group": "Islam",
+        "pct": 14.8,
+        "count": 27218
+      },
+      {
+        "group": "No religion",
+        "pct": 3.0,
+        "count": 5507
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 279
+      }
+    ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken (Características Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural residence only, not by region."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Manjaco",
+        "pct": 36.8,
+        "count": 67726
+      },
+      {
+        "group": "Balanta",
+        "pct": 28.8,
+        "count": 53072
+      },
+      {
+        "group": "Felupe",
+        "pct": 9.1,
+        "count": 16713
+      },
+      {
+        "group": "Mandinga",
+        "pct": 6.2,
+        "count": 11460
+      },
+      {
+        "group": "Fula",
+        "pct": 5.0,
+        "count": 9142
+      },
+      {
+        "group": "Mancanha",
+        "pct": 4.5,
+        "count": 8304
+      },
+      {
+        "group": "Balanta Mane",
+        "pct": 3.8,
+        "count": 7064
+      },
+      {
+        "group": "Papel",
+        "pct": 2.3,
+        "count": 4206
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 2.1,
+        "count": 3783
+      },
+      {
+        "group": "Mansoanca",
+        "pct": 0.6,
+        "count": 1049
+      },
+      {
+        "group": "Beafada",
+        "pct": 0.4,
+        "count": 744
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.2,
+        "count": 286
+      },
+      {
+        "group": "Bijago",
+        "pct": 0.1,
+        "count": 260
+      },
+      {
+        "group": "Nalu",
+        "pct": 0.1,
+        "count": 109
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.1,
+        "count": 100
+      },
+      {
+        "group": "Susu",
+        "pct": 0.1,
+        "count": 106
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -1864,12 +3710,37 @@
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
+      },
+      {
+        "field": "median_age",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
     "shape_id": "76643164B20603668674672",
-    "population_note": "The 2009 census's resident population of Cacheu region."
+    "population_note": "The 2009 census's resident population of Cacheu region.",
+    "religion_year": 2009,
+    "religion_note": "Religion practised, of the 184,124 people of Guinean nationality the census counted in the region; 15.9% of the country's nationals did not answer the question, shown as not stated.",
+    "ethnicity_year": 2009,
+    "ethnicity_note": "Ethnic group, of the 184,124 people of Guinean nationality the census counted in the region. The table prints the Mandinga of Cacheu as 1,460, which leaves both the Mandinga row and Cacheu's column 10,000 short of the totals it prints; 11,460, the figure that makes both, is used."
   },
   {
     "id": "GNB-2009-13655514B76388735674013",
@@ -1888,7 +3759,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 924,
@@ -1897,19 +3769,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1936,7 +3832,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 911,
@@ -1945,19 +3842,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -1984,7 +3905,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 929,
@@ -1993,19 +3915,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -2032,7 +3978,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 835,
@@ -2041,19 +3988,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -2080,7 +4051,8 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census publishes median age by region only (Estado e Estrutura da População, Quadro 9 B), not by sector."
     },
     "sex_ratio": {
       "value": 1004,
@@ -2089,19 +4061,43 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "religion": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates religion by region only (Características Socioculturais), not by sector."
     },
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken by ethnic group, sex and urban or rural residence only (Características Socioculturais, annex Quadros 4 to 6 A), not by region or sector."
     },
     "ethnicity": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates ethnic group by region only (Características Socioculturais), not by sector."
     },
     "sources": [
       {
         "field": "population/sex_ratio",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "median_age note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion note/ethnicity note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
       }
@@ -2145,7 +4141,7 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
@@ -2190,7 +4186,7 @@
     },
     "sources": [
       {
-        "field": "population/sex_ratio",
+        "field": "population note/sex_ratio note/median_age note",
         "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality",
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/Regiao_de_Cacheu_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
@@ -2218,7 +4214,10 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 20.2,
+      "unit": "years",
+      "year": 2009,
+      "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B"
     },
     "sex_ratio": {
       "value": 985,
@@ -2226,15 +4225,124 @@
       "year": 2009,
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 40.2,
+        "count": 145651
+      },
+      {
+        "group": "Islam",
+        "pct": 34.2,
+        "count": 124100
+      },
+      {
+        "group": "Not stated",
+        "pct": 14.4,
+        "count": 52196
+      },
+      {
+        "group": "Animist",
+        "pct": 7.9,
+        "count": 28704
+      },
+      {
+        "group": "No religion",
+        "pct": 3.3,
+        "count": 12003
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 45
+      }
+    ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken (Características Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural residence only, not by region."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Balanta",
+        "pct": 20.5,
+        "count": 74320
+      },
+      {
+        "group": "Fula",
+        "pct": 18.0,
+        "count": 65417
+      },
+      {
+        "group": "Papel",
+        "pct": 15.7,
+        "count": 56816
+      },
+      {
+        "group": "Mandinga",
+        "pct": 12.4,
+        "count": 44843
+      },
+      {
+        "group": "Manjaco",
+        "pct": 9.4,
+        "count": 34035
+      },
+      {
+        "group": "Mancanha",
+        "pct": 7.9,
+        "count": 28650
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 5.0,
+        "count": 18138
+      },
+      {
+        "group": "Beafada",
+        "pct": 4.0,
+        "count": 14591
+      },
+      {
+        "group": "Felupe",
+        "pct": 1.8,
+        "count": 6660
+      },
+      {
+        "group": "Bijago",
+        "pct": 1.4,
+        "count": 5115
+      },
+      {
+        "group": "Mansoanca",
+        "pct": 1.4,
+        "count": 4902
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.9,
+        "count": 3128
+      },
+      {
+        "group": "Balanta Mane",
+        "pct": 0.5,
+        "count": 1837
+      },
+      {
+        "group": "Nalu",
+        "pct": 0.5,
+        "count": 1910
+      },
+      {
+        "group": "Susu",
+        "pct": 0.4,
+        "count": 1580
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 757
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -2242,12 +4350,37 @@
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/SAB_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
+      },
+      {
+        "field": "median_age",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
     "shape_id": "76643164B96925829526723",
-    "population_note": "The 2009 census's resident population of Bissau (the Autonomous Sector of Bissau)."
+    "population_note": "The 2009 census's resident population of Bissau (the Autonomous Sector of Bissau).",
+    "religion_year": 2009,
+    "religion_note": "Religion practised, of the 362,699 people of Guinean nationality the census counted in the region; 15.9% of the country's nationals did not answer the question, shown as not stated.",
+    "ethnicity_year": 2009,
+    "ethnicity_note": "Ethnic group, of the 362,699 people of Guinean nationality the census counted in the region."
   },
   {
     "id": "GNB-2009-13655514B38974563194217",
@@ -2266,7 +4399,10 @@
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
     "median_age": {
-      "status": "not_available"
+      "value": 20.2,
+      "unit": "years",
+      "year": 2009,
+      "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B"
     },
     "sex_ratio": {
       "value": 985,
@@ -2274,15 +4410,124 @@
       "year": 2009,
       "source": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Tabela 1: resident population by sex and residence, by region, sector and locality"
     },
-    "religion": {
-      "status": "not_available"
-    },
+    "religion": [
+      {
+        "group": "Christianity",
+        "pct": 40.2,
+        "count": 145651
+      },
+      {
+        "group": "Islam",
+        "pct": 34.2,
+        "count": 124100
+      },
+      {
+        "group": "Not stated",
+        "pct": 14.4,
+        "count": 52196
+      },
+      {
+        "group": "Animist",
+        "pct": 7.9,
+        "count": 28704
+      },
+      {
+        "group": "No religion",
+        "pct": 3.3,
+        "count": 12003
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.0,
+        "count": 45
+      }
+    ],
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "The 2009 census tabulates the principal language spoken (Características Socioculturais, annex Quadros 4 to 6 A) by ethnic group, sex and urban or rural residence only, not by region."
     },
-    "ethnicity": {
-      "status": "not_available"
-    },
+    "ethnicity": [
+      {
+        "group": "Balanta",
+        "pct": 20.5,
+        "count": 74320
+      },
+      {
+        "group": "Fula",
+        "pct": 18.0,
+        "count": 65417
+      },
+      {
+        "group": "Papel",
+        "pct": 15.7,
+        "count": 56816
+      },
+      {
+        "group": "Mandinga",
+        "pct": 12.4,
+        "count": 44843
+      },
+      {
+        "group": "Manjaco",
+        "pct": 9.4,
+        "count": 34035
+      },
+      {
+        "group": "Mancanha",
+        "pct": 7.9,
+        "count": 28650
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 5.0,
+        "count": 18138
+      },
+      {
+        "group": "Beafada",
+        "pct": 4.0,
+        "count": 14591
+      },
+      {
+        "group": "Felupe",
+        "pct": 1.8,
+        "count": 6660
+      },
+      {
+        "group": "Bijago",
+        "pct": 1.4,
+        "count": 5115
+      },
+      {
+        "group": "Mansoanca",
+        "pct": 1.4,
+        "count": 4902
+      },
+      {
+        "group": "Soninke",
+        "pct": 0.9,
+        "count": 3128
+      },
+      {
+        "group": "Balanta Mane",
+        "pct": 0.5,
+        "count": 1837
+      },
+      {
+        "group": "Nalu",
+        "pct": 0.5,
+        "count": 1910
+      },
+      {
+        "group": "Susu",
+        "pct": 0.4,
+        "count": 1580
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.2,
+        "count": 757
+      }
+    ],
     "sources": [
       {
         "field": "population/sex_ratio",
@@ -2290,11 +4535,37 @@
         "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/SAB_RGPH_2009.pdf",
         "license": "INE Guinea-Bissau publication (reuse with attribution)",
         "year": 2009
+      },
+      {
+        "field": "median_age",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Estado e Estrutura da População, Quadro 9 B",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/estado_estrura_pop.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "religion/ethnicity",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 2 e 3",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
+      },
+      {
+        "field": "language note",
+        "name": "Instituto Nacional de Estatística da Guiné-Bissau, IV Recenseamento Geral da População e Habitação 2009, Características Socioculturais, Anexo, Quadros 4 a 6 A",
+        "url": "https://www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/caracteristicas_socio_cultural.pdf",
+        "license": "INE Guinea-Bissau publication (reuse with attribution)",
+        "year": 2009
       }
     ],
     "country": "GNB",
     "match_by": "shape_id",
     "shape_id": "13655514B38974563194217",
-    "population_note": "The 2009 census's resident population of the Autonomous Sector of Bissau, its eight urban sectors together."
+    "population_note": "The 2009 census's resident population of the Autonomous Sector of Bissau, its eight urban sectors together.",
+    "religion_year": 2009,
+    "religion_note": "Religion practised, of the 362,699 people of Guinean nationality the census counted in the region; 15.9% of the country's nationals did not answer the question, shown as not stated. The region is this one polygon.",
+    "ethnicity_year": 2009,
+    "ethnicity_note": "Ethnic group, of the 362,699 people of Guinean nationality the census counted in the region. The region is this one polygon.",
+    "median_age_note": "The 2009 census's median age for the region (Quadro 9 B), which is this one polygon."
   }
 ]

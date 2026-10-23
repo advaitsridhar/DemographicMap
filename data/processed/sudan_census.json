@@ -1,0 +1,4370 @@
+[
+  {
+    "id": "SDN-2008-bluenile",
+    "level": "admin1",
+    "name": "Blue Nile",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 16.1,
+      "unit": "years",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1028,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio/median_age note"
+      },
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "median_age"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B86272532082738",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in Blue Nile as drawn in 2020: 421,758 men and 410,354 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2008 census's table of the state's people by five-year age group (816,048 people of the 832,112 it counted; the state then as now)."
+  },
+  {
+    "id": "SDN-2008-centraldarfur",
+    "level": "admin1",
+    "name": "Central Darfur",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 956,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B67241023181859",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in Central Darfur as drawn in 2020: 270,473 men and 283,042 women."
+  },
+  {
+    "id": "SDN-2008-eastdarfur",
+    "level": "admin1",
+    "name": "East Darfur",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1156,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B42892304507154",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in East Darfur as drawn in 2020: 652,269 men and 564,450 women."
+  },
+  {
+    "id": "SDN-2008-SDN_03_01",
+    "level": "admin2",
+    "name": "Abu Jabrah",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1106,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B57508233382932",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Abū Jabrah as drawn in 2020: 50,924 men and 46,058 women.",
+    "codes": {
+      "uscb": "SDN_03_01"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_03_02",
+    "level": "admin2",
+    "name": "Abu Karinka",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1158,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B5227660159889",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Abū Karinka as drawn in 2020: 102,859 men and 88,859 women.",
+    "codes": {
+      "uscb": "SDN_03_02"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_03_06",
+    "level": "admin2",
+    "name": "Bahr Al Arab",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1145,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B76242579856769",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Bahr-alarab as drawn in 2020: 112,471 men and 98,258 women.",
+    "codes": {
+      "uscb": "SDN_03_06"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_03_07",
+    "level": "admin2",
+    "name": "Ad Du'ayn",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1441,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B96658977374271",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Ed Daein as drawn in 2020: 80,946 men and 56,157 women.",
+    "codes": {
+      "uscb": "SDN_03_07"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_03_09",
+    "level": "admin2",
+    "name": "Yassin",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1081,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B43092158713843",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Yaseen as drawn in 2020: 40,548 men and 37,525 women.",
+    "codes": {
+      "uscb": "SDN_03_09"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_03_03",
+    "level": "admin2",
+    "name": "Adila",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1179,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B87348298332109",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Adeela as drawn in 2020: 82,437 men and 69,925 women.",
+    "codes": {
+      "uscb": "SDN_03_03"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_03_04",
+    "level": "admin2",
+    "name": "Al Firdous",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 985,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B1174782743239",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Al Firdose as drawn in 2020: 57,323 men and 58,218 women.",
+    "codes": {
+      "uscb": "SDN_03_04"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_03_05",
+    "level": "admin2",
+    "name": "Assalaya",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1213,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B59060398252798",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Asalaya as drawn in 2020: 80,917 men and 66,703 women.",
+    "codes": {
+      "uscb": "SDN_03_05"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_03_08",
+    "level": "admin2",
+    "name": "Shia'ria",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1026,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B58097455185888",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Shiairyya as drawn in 2020: 43,844 men and 42,747 women.",
+    "codes": {
+      "uscb": "SDN_03_08"
+    }
+  },
+  {
+    "id": "SDN-2008-gedaref",
+    "level": "admin1",
+    "name": "Gedaref",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 16.6,
+      "unit": "years",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 987,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio/median_age note"
+      },
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "median_age"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B51630913908628",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in Gedaref as drawn in 2020: 669,817 men and 678,561 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2008 census's table of the state's people by five-year age group (1,334,947 people of the 1,348,378 it counted; the state then as now)."
+  },
+  {
+    "id": "SDN-2008-SDN_04_06",
+    "level": "admin2",
+    "name": "Madeinat Al Gedaref",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1026,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B2948733564305",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Gedaref as drawn in 2020: 136,434 men and 132,961 women.",
+    "codes": {
+      "uscb": "SDN_04_06"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_07",
+    "level": "admin2",
+    "name": "Wasat Al Gedaref",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1015,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B33675422970031",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Gedaref Central as drawn in 2020: 56,239 men and 55,430 women.",
+    "codes": {
+      "uscb": "SDN_04_07"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_08",
+    "level": "admin2",
+    "name": "Al Butanah",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1163,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B92441932102927",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Gedaref North as drawn in 2020: 38,375 men and 32,990 women.",
+    "codes": {
+      "uscb": "SDN_04_08"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_10",
+    "level": "admin2",
+    "name": "Galabat Ash-Shargiah",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 936,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B9065455828294",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Qallābāt East as drawn in 2020: 54,651 men and 58,410 women.",
+    "codes": {
+      "uscb": "SDN_04_10"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_11",
+    "level": "admin2",
+    "name": "Al Galabat Al Gharbyah - Kassab",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 950,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B97978388224054",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Qallābāt West as drawn in 2020: 44,768 men and 47,107 women.",
+    "codes": {
+      "uscb": "SDN_04_11"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_12",
+    "level": "admin2",
+    "name": "Al Qureisha",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 924,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B80860182226455",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Qurayshah as drawn in 2020: 40,059 men and 43,335 women.",
+    "codes": {
+      "uscb": "SDN_04_12"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_01",
+    "level": "admin2",
+    "name": "Al Fashaga",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 986,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B79230518314977",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Al Fashaqaa as drawn in 2020: 60,005 men and 60,830 women.",
+    "codes": {
+      "uscb": "SDN_04_01"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_02",
+    "level": "admin2",
+    "name": "Al Fao",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 967,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B5270052963378",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Al Fāw as drawn in 2020: 86,850 men and 89,812 women.",
+    "codes": {
+      "uscb": "SDN_04_02"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_03",
+    "level": "admin2",
+    "name": "Al Mafaza",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 967,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B27903182599838",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Al Mafāzah as drawn in 2020: 29,873 men and 30,883 women.",
+    "codes": {
+      "uscb": "SDN_04_03"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_04",
+    "level": "admin2",
+    "name": "Ar Rahad",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 970,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B55257137653826",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Alrraha as drawn in 2020: 66,798 men and 68,884 women.",
+    "codes": {
+      "uscb": "SDN_04_04"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_05",
+    "level": "admin2",
+    "name": "Basundah",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1053,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B35788536409023",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Basunda as drawn in 2020: 24,392 men and 23,170 women.",
+    "codes": {
+      "uscb": "SDN_04_05"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_04_09",
+    "level": "admin2",
+    "name": "Gala'a Al Nahal",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 903,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B80324044236150",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Qala‘ An Naḩl as drawn in 2020: 31,373 men and 34,749 women.",
+    "codes": {
+      "uscb": "SDN_04_09"
+    }
+  },
+  {
+    "id": "SDN-2008-gezira",
+    "level": "admin1",
+    "name": "Gezira",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 19.3,
+      "unit": "years",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 932,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio/median_age note"
+      },
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "median_age"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B80352504723135",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in Gezira as drawn in 2020: 1,724,330 men and 1,850,950 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2008 census's table of the state's people by five-year age group (3,549,026 people of the 3,575,280 it counted; the state then as now)."
+  },
+  {
+    "id": "SDN-2008-kassala",
+    "level": "admin1",
+    "name": "Kassala",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 19.0,
+      "unit": "years",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1240,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio/median_age note"
+      },
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "median_age"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B34113093603931",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in Kassala as drawn in 2020: 990,814 men and 798,992 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2008 census's table of the state's people by five-year age group (1,769,887 people of the 1,789,806 it counted; the state then as now)."
+  },
+  {
+    "id": "SDN-2008-SDN_06_01",
+    "level": "admin2",
+    "name": "Reifi Shamal Ad Delta",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1299,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B72922457996803",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Al Dalta North as drawn in 2020: 51,896 men and 39,955 women.",
+    "codes": {
+      "uscb": "SDN_06_01"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_06_02",
+    "level": "admin2",
+    "name": "Reifi Aroma",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1313,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B59678801632413",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Aroma Rural as drawn in 2020: 58,336 men and 44,423 women.",
+    "codes": {
+      "uscb": "SDN_06_02"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_06_04",
+    "level": "admin2",
+    "name": "Reifi Hamashkureib",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1807,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B48283750984727",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Hamashkoreeb as drawn in 2020: 164,339 men and 90,949 women.",
+    "codes": {
+      "uscb": "SDN_06_04"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_06_05",
+    "level": "admin2",
+    "name": "Madeinat Kassala",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1026,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B62122659764533",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Kassala as drawn in 2020: 151,152 men and 147,377 women.",
+    "codes": {
+      "uscb": "SDN_06_05"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_06_06",
+    "level": "admin2",
+    "name": "Reifi Kassla",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1255,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B3769079063022",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Kassala Rural as drawn in 2020: 86,045 men and 68,585 women.",
+    "codes": {
+      "uscb": "SDN_06_06"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_06_07",
+    "level": "admin2",
+    "name": "Reifi Gharb Kassala",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1124,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B99769220544106",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Kassala West as drawn in 2020: 42,003 men and 37,373 women.",
+    "codes": {
+      "uscb": "SDN_06_07"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_06_08",
+    "level": "admin2",
+    "name": "Reifi Khashm Elgirba",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1062,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B57943425693206",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Khashm Al Qirbah as drawn in 2020: 50,954 men and 47,985 women.",
+    "codes": {
+      "uscb": "SDN_06_08"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_06_10",
+    "level": "admin2",
+    "name": "Reifi Telkok",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1596,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B60092664698782",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Talkook as drawn in 2020: 169,062 men and 105,916 women.",
+    "codes": {
+      "uscb": "SDN_06_10"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_06_11",
+    "level": "admin2",
+    "name": "Reifi Wad Elhilaiw",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1018,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B67194501280165",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Wad Al Ḩulaywah as drawn in 2020: 42,725 men and 41,956 women.",
+    "codes": {
+      "uscb": "SDN_06_11"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_06_03",
+    "level": "admin2",
+    "name": "Halfa Aj Jadeedah",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1020,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B66580925278761",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Halfā Al Gadīdah as drawn in 2020: 107,006 men and 104,858 women.",
+    "codes": {
+      "uscb": "SDN_06_03"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_06_09",
+    "level": "admin2",
+    "name": "Reifi Nahr Atbara",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 967,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B85894147141116",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Nahr Atbara as drawn in 2020: 67,296 men and 69,615 women.",
+    "codes": {
+      "uscb": "SDN_06_09"
+    }
+  },
+  {
+    "id": "SDN-2008-khartoum",
+    "level": "admin1",
+    "name": "Khartoum",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 22.0,
+      "unit": "years",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1132,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio/median_age note"
+      },
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "median_age"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B69351377969837",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in Khartoum as drawn in 2020: 2,800,024 men and 2,474,297 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2008 census's table of the state's people by five-year age group (5,181,186 people of the 5,274,321 it counted; the state then as now)."
+  },
+  {
+    "id": "SDN-2008-SDN_07_01",
+    "level": "admin2",
+    "name": "Jebel Awlia",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1128,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B74371618965754",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Jabal Awlya as drawn in 2020: 499,622 men and 442,807 women.",
+    "codes": {
+      "uscb": "SDN_07_01"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_07_03",
+    "level": "admin2",
+    "name": "Khartoum",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1161,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B94119143973525",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Khartoum as drawn in 2020: 343,621 men and 295,977 women.",
+    "codes": {
+      "uscb": "SDN_07_03"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_07_04",
+    "level": "admin2",
+    "name": "Bahri",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1142,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B15021592307574",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Khartoum North as drawn in 2020: 324,632 men and 284,185 women.",
+    "codes": {
+      "uscb": "SDN_07_04"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_07_02",
+    "level": "admin2",
+    "name": "Karrari",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1106,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B93959590111568",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Karari as drawn in 2020: 375,001 men and 339,078 women.",
+    "codes": {
+      "uscb": "SDN_07_02"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_07_05",
+    "level": "admin2",
+    "name": "Um Durman",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1139,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B47170165092486",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Omdurman as drawn in 2020: 273,218 men and 239,870 women.",
+    "codes": {
+      "uscb": "SDN_07_05"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_07_06",
+    "level": "admin2",
+    "name": "Sharg An Neel",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1083,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B39366456594232",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Shareq Al Neel as drawn in 2020: 451,466 men and 416,681 women.",
+    "codes": {
+      "uscb": "SDN_07_06"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_07_07",
+    "level": "admin2",
+    "name": "Um Bada",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1168,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B32712127220798",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Umm Badda as drawn in 2020: 532,464 men and 455,699 women.",
+    "codes": {
+      "uscb": "SDN_07_07"
+    }
+  },
+  {
+    "id": "SDN-2008-northdarfur",
+    "level": "admin1",
+    "name": "North Darfur",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 17.0,
+      "unit": "years",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1045,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio/median_age note"
+      },
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "median_age"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B32784125865646",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in North Darfur as drawn in 2020: 1,079,936 men and 1,033,690 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2008 census's table of the state's people by five-year age group (2,089,801 people of the 2,113,626 it counted; the state then as now)."
+  },
+  {
+    "id": "SDN-2008-northern",
+    "level": "admin1",
+    "name": "Northern",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 22.2,
+      "unit": "years",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1024,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio/median_age note"
+      },
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "median_age"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B89646054714247",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in Northern as drawn in 2020: 353,745 men and 345,320 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2008 census's table of the state's people by five-year age group (686,098 people of the 699,065 it counted; the state then as now)."
+  },
+  {
+    "id": "SDN-2008-SDN_10_01",
+    "level": "admin2",
+    "name": "Ad Dabbah",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1038,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B45906237385518",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Ad Dabbah as drawn in 2020: 75,674 men and 72,871 women.",
+    "codes": {
+      "uscb": "SDN_10_01"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_10_02",
+    "level": "admin2",
+    "name": "Al Golid",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 938,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B20227076213030",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Agori as drawn in 2020: 38,493 men and 41,054 women.",
+    "codes": {
+      "uscb": "SDN_10_02"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_10_03",
+    "level": "admin2",
+    "name": "Al Burgaig",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1016,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B75799368386758",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Bergeig as drawn in 2020: 44,015 men and 43,304 women.",
+    "codes": {
+      "uscb": "SDN_10_03"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_10_04",
+    "level": "admin2",
+    "name": "Delgo",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 903,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B54397395103229",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Dalqū as drawn in 2020: 19,991 men and 22,142 women.",
+    "codes": {
+      "uscb": "SDN_10_04"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_10_05",
+    "level": "admin2",
+    "name": "Dongola",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1002,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B3318260280309",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Dongola as drawn in 2020: 75,149 men and 75,012 women.",
+    "codes": {
+      "uscb": "SDN_10_05"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_10_06",
+    "level": "admin2",
+    "name": "Merwoe",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1074,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B43097500879952",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Marawī as drawn in 2020: 81,690 men and 76,039 women.",
+    "codes": {
+      "uscb": "SDN_10_06"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_10_07",
+    "level": "admin2",
+    "name": "Halfa",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1257,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B39778167930026",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Wādī Ḩalfā’ as drawn in 2020: 18,733 men and 14,898 women.",
+    "codes": {
+      "uscb": "SDN_10_07"
+    }
+  },
+  {
+    "id": "SDN-2008-northkordofan",
+    "level": "admin1",
+    "name": "North Kordofan",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 925,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B75144405979625",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in North Kordofan as drawn in 2020: 980,078 men and 1,059,417 women."
+  },
+  {
+    "id": "SDN-2008-SDN_09_01",
+    "level": "admin2",
+    "name": "Ar Rahad",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 858,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B34397203362025",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Ar Rahad as drawn in 2020: 72,898 men and 84,940 women.",
+    "codes": {
+      "uscb": "SDN_09_01"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_09_03",
+    "level": "admin2",
+    "name": "Gharb Bara",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 823,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B80207598805247",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Bārah West as drawn in 2020: 80,336 men and 97,613 women.",
+    "codes": {
+      "uscb": "SDN_09_03"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_09_04",
+    "level": "admin2",
+    "name": "Gebrat Al Sheikh",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1105,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B91752448930430",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Jabrat Elshiekh as drawn in 2020: 121,378 men and 109,830 women.",
+    "codes": {
+      "uscb": "SDN_09_04"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_09_06",
+    "level": "admin2",
+    "name": "Soudari",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1056,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B52132204049815",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Sawdirī as drawn in 2020: 139,447 men and 132,018 women.",
+    "codes": {
+      "uscb": "SDN_09_06"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_09_02",
+    "level": "admin2",
+    "name": "Bara",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 827,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B73241781951906",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Bārah as drawn in 2020: 82,947 men and 100,310 women.",
+    "codes": {
+      "uscb": "SDN_09_02"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_09_05",
+    "level": "admin2",
+    "name": "Um Dam Haj Ahmed",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 756,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B82514176386469",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Om Dama Haj Ahmad as drawn in 2020: 56,405 men and 74,599 women.",
+    "codes": {
+      "uscb": "SDN_09_05"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_09_07",
+    "level": "admin2",
+    "name": "Sheikan",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 978,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B67659775145128",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Sheekan as drawn in 2020: 267,380 men and 273,518 women.",
+    "codes": {
+      "uscb": "SDN_09_07"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_09_08",
+    "level": "admin2",
+    "name": "Um Rawaba",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 854,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B38678989817787",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Umm Ruwaba as drawn in 2020: 159,287 men and 186,589 women.",
+    "codes": {
+      "uscb": "SDN_09_08"
+    }
+  },
+  {
+    "id": "SDN-2008-redsea",
+    "level": "admin1",
+    "name": "Red Sea",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1339,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B7664605185235",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in Red Sea as drawn in 2020: 756,715 men and 565,243 women. It leaves out the locality of Ḩalā’ib (74,152 people), which reaches onto the triangle north of the 22nd parallel that Sudan and Egypt both claim."
+  },
+  {
+    "id": "SDN-2008-SDN_11_02",
+    "level": "admin2",
+    "name": "Dordieb",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1378,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B19100050508345",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Dērudēb as drawn in 2020: 38,820 men and 28,163 women.",
+    "codes": {
+      "uscb": "SDN_11_02"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_11_03",
+    "level": "admin2",
+    "name": "Jubayt Elma'aadin",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1424,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B74984958768129",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Gebeit as drawn in 2020: 20,540 men and 14,425 women.",
+    "codes": {
+      "uscb": "SDN_11_03"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_11_05",
+    "level": "admin2",
+    "name": "Haya",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1481,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B79531940846564",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Haya as drawn in 2020: 130,454 men and 88,103 women.",
+    "codes": {
+      "uscb": "SDN_11_05"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_11_06",
+    "level": "admin2",
+    "name": "Agig",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1258,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B73946128996237",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Hillat ‘Agig as drawn in 2020: 44,004 men and 34,988 women.",
+    "codes": {
+      "uscb": "SDN_11_06"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_11_07",
+    "level": "admin2",
+    "name": "Port Sudan",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1233,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B42019308608710",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Port Sudan as drawn in 2020: 220,373 men and 178,767 women.",
+    "codes": {
+      "uscb": "SDN_11_07"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_11_08",
+    "level": "admin2",
+    "name": "Sawakin",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1294,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B58699373531896",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Sawākin as drawn in 2020: 46,342 men and 35,808 women.",
+    "codes": {
+      "uscb": "SDN_11_08"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_11_09",
+    "level": "admin2",
+    "name": "Sinkat",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1317,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B46905215541980",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Sinkat as drawn in 2020: 90,429 men and 68,656 women.",
+    "codes": {
+      "uscb": "SDN_11_09"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_11_01",
+    "level": "admin2",
+    "name": "Al Ganab",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1380,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B97228063474151",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Al Ghanib as drawn in 2020: 64,832 men and 46,981 women.",
+    "codes": {
+      "uscb": "SDN_11_01"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_11_10",
+    "level": "admin2",
+    "name": "Tawkar",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1455,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B45805430370558",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Tokār as drawn in 2020: 100,921 men and 69,352 women.",
+    "codes": {
+      "uscb": "SDN_11_10"
+    }
+  },
+  {
+    "id": "SDN-2008-rivernile",
+    "level": "admin1",
+    "name": "River Nile",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 21.5,
+      "unit": "years",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 1042,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio/median_age note"
+      },
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "median_age"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B58839150544065",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in River Nile as drawn in 2020: 571,802 men and 548,639 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2008 census's table of the state's people by five-year age group (1,097,356 people of the 1,120,441 it counted; the state then as now)."
+  },
+  {
+    "id": "SDN-2008-sennar",
+    "level": "admin1",
+    "name": "Sennar",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 17.9,
+      "unit": "years",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 949,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio/median_age note"
+      },
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "median_age"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B212901614698",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in Sennar as drawn in 2020: 625,733 men and 659,325 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2008 census's table of the state's people by five-year age group (1,272,766 people of the 1,285,058 it counted; the state then as now)."
+  },
+  {
+    "id": "SDN-2008-SDN_13_01",
+    "level": "admin2",
+    "name": "Abu Hujar",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1009,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B38113510529879",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Abu Ḩujār as drawn in 2020: 66,118 men and 65,530 women.",
+    "codes": {
+      "uscb": "SDN_13_01"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_13_02",
+    "level": "admin2",
+    "name": "Ad Dali",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1097,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B21682317034415",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Ad Dāli as drawn in 2020: 37,537 men and 34,233 women.",
+    "codes": {
+      "uscb": "SDN_13_02"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_13_04",
+    "level": "admin2",
+    "name": "As Suki",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 910,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B86319641369334",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of As Sūkī as drawn in 2020: 99,508 men and 109,325 women.",
+    "codes": {
+      "uscb": "SDN_13_04"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_13_05",
+    "level": "admin2",
+    "name": "Sennar",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 926,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B61797456915649",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Sennar as drawn in 2020: 142,701 men and 154,170 women.",
+    "codes": {
+      "uscb": "SDN_13_05"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_13_06",
+    "level": "admin2",
+    "name": "Sharg Sennar",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 903,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B19062452623819",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Sennar Shareq as drawn in 2020: 107,885 men and 119,514 women.",
+    "codes": {
+      "uscb": "SDN_13_06"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_13_03",
+    "level": "admin2",
+    "name": "Ad Dinder",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 965,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B21408858343438",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Ad Dindar as drawn in 2020: 95,026 men and 98,440 women.",
+    "codes": {
+      "uscb": "SDN_13_03"
+    }
+  },
+  {
+    "id": "SDN-2008-SDN_13_07",
+    "level": "admin2",
+    "name": "Sinja",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 985,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "16777658B54691568406545",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in the locality of Singa as drawn in 2020: 76,958 men and 78,113 women.",
+    "codes": {
+      "uscb": "SDN_13_07"
+    }
+  },
+  {
+    "id": "SDN-2008-southdarfur",
+    "level": "admin1",
+    "name": "South Darfur",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 1097,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B33888251991816",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in South Darfur as drawn in 2020: 1,505,266 men and 1,371,609 women."
+  },
+  {
+    "id": "SDN-2008-southkordofan",
+    "level": "admin1",
+    "name": "South Kordofan",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 957,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B95962932854573",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in South Kordofan as drawn in 2020: 424,460 men and 443,458 women."
+  },
+  {
+    "id": "SDN-2008-westdarfur",
+    "level": "admin1",
+    "name": "West Darfur",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 959,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B73786067507541",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in West Darfur as drawn in 2020: 369,434 men and 385,276 women."
+  },
+  {
+    "id": "SDN-2008-westkordofan",
+    "level": "admin1",
+    "name": "West Kordofan",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "value": 950,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B26042209819562",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in West Kordofan as drawn in 2020: 595,385 men and 626,917 women. It leaves out the locality of Abyei (197,681 people), in the Abyei Area, which Sudan and South Sudan both claim."
+  },
+  {
+    "id": "SDN-2008-whitenile",
+    "level": "admin1",
+    "name": "White Nile",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 18.3,
+      "unit": "years",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX"
+    },
+    "sex_ratio": {
+      "value": 963,
+      "unit": "males_per_1000_females",
+      "year": 2008,
+      "source": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, priority results by sex, retabulated to the states and localities of 2020 by the US Census Bureau for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "sex_ratio/median_age note"
+      },
+      {
+        "name": "Central Bureau of Statistics (Sudan), Fifth Population and Housing Census 2008, Table P01: population by five-year age group and sex, as the US Census Bureau tabulates it for HDX",
+        "url": "https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data",
+        "year": 2008,
+        "license": "Creative Commons Attribution International (CC BY), published via HDX",
+        "field": "median_age"
+      }
+    ],
+    "country": "SDN",
+    "match_by": "shape_id",
+    "shape_id": "86620642B32971775067484",
+    "sex_ratio_note": "Men per 1,000 women at the 2008 census in White Nile as drawn in 2020: 849,143 men and 881,445 women.",
+    "median_age_note": "Interpolated within the five-year age group that holds the middle person, from the 2008 census's table of the state's people by five-year age group (1,713,360 people of the 1,730,588 it counted; the state then as now)."
+  }
+]

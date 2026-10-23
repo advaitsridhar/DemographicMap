@@ -16,6 +16,19 @@ total, and its rural and urban parts make it too; each province's districts
 make the province; the provinces make the national line, which must be the
 final count.
 
+**Median ages.** Table 5.1 counts each province's people in five-year age
+groups, and a province's median is interpolated within the group that holds
+the middle person. Below the province the volume counts the people of each
+district aged 0-18 (Table 5.3), 16 and over (Table 5.4) and 18 and over
+(Table 5.6), which say how many are under 16, 18 and 19: where a district's
+middle person is between 16 and 19 its median is interpolated within that
+band (16-17 or 18), and where it is under 16 or 19 and over -- bands the tables
+do not split -- the district says so instead of carrying a figure. Each
+band's districts make their province and the provinces the country. A
+first-level polygon drawn otherwise than the census's province (below) takes
+its median from the bands of the districts drawn in it, the same way, since
+Table 5.1's is the census province's.
+
 **Binding.** Districts are matched to the map's second level by name across
 the whole country, since district names are unique and the boundary file files
 a few districts under a different province from the census's (Chama, Chirundu,
@@ -54,6 +67,18 @@ PAGES = range(40, 140)               # 1-based; the table is read where its titl
 TITLE = "TABLE 5.2"
 OUT = "zambia_census.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
+AGE_SOURCE = ("Zambia Statistics Agency, 2022 Census of Population and Housing, final results "
+              "(Summary Report Volume II, Table 5.1)")
+BAND_SOURCE = ("Zambia Statistics Agency, 2022 Census of Population and Housing, final results "
+               "(Summary Report Volume II, Tables 5.3, 5.4 and 5.6)")
+# The district tables a median age's stated reason quotes: Table 5.5 counts
+# the people aged 19 to 34, the band above the three the medians use.
+NOTE_SOURCE = ("Zambia Statistics Agency, 2022 Census of Population and Housing, final results "
+               "(Summary Report Volume II, Tables 5.3 to 5.6)")
+# The volume's tables read for ages: number -> what its lines count.
+BANDS = {"5.3": "under19", "5.4": "from16", "5.6": "from18"}
+TITLED = re.compile(r"^TABLE (5\.\d):")
+AGE_ROW = re.compile(r"^(?P<lo>\d+)\s*(?:-\s*(?P<hi>\d+)|(?P<top>\+))\s+(?P<nums>.+)$")
 
 # The boundary file's reduced label -> the census's.
 ALIASES = {
@@ -150,6 +175,191 @@ def read(blob: bytes) -> dict[str, Any]:
     return parse(lines)
 
 
+def page_tables(blob: bytes) -> dict[str, list[str]]:
+    """{table number: its lines} for Tables 5.1 to 5.6, each page given to the
+    table its own head names."""
+    import pdfplumber                               # noqa: PLC0415
+    out: dict[str, list[str]] = defaultdict(list)
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for page in pdf.pages:
+            lines = (page.extract_text() or "").splitlines()
+            number = next((m.group(1) for m in (TITLED.match(ln.strip()) for ln in lines[:8])
+                           if m), None)
+            if number:
+                out[number] += lines
+    return out
+
+
+def parse_ages(lines: list[str]) -> dict[str, list[tuple[int, int | None, int]]]:
+    """{area key: [(lower age, width, people)]} from Table 5.1's blocks, both
+    sexes, each checked against its Total line."""
+    out: dict[str, list[tuple[int, int | None, int]]] = {}
+    totals: dict[str, int] = {}
+    area = None
+    for raw in lines:
+        line = raw.strip()
+        if line == "ZAMBIA" or re.fullmatch(r"[A-Z -]+ PROVINCE", line):
+            area = key(line)
+            out.setdefault(area, [])
+            continue
+        if area is None:
+            continue
+        if line.startswith("Total "):
+            totals[area] = numbers(line[len("Total "):])[0]
+            continue
+        hit = AGE_ROW.match(line)
+        if hit:
+            lo = int(hit.group("lo"))
+            width = None if hit.group("top") else int(hit.group("hi")) - lo + 1
+            out[area].append((lo, width, numbers(hit.group("nums"))[0]))
+    for area, groups in out.items():
+        if sum(n for _, _, n in groups) != totals.get(area):
+            raise SystemExit(f"zambia_census: Table 5.1 {area}: age groups make "
+                             f"{sum(n for _, _, n in groups):,}, not {totals.get(area)}")
+    return out
+
+
+def parse_counts(lines: list[str], what: str) -> dict[str, Any]:
+    """{"national": n, "provinces": {key: n}, "districts": {key: n}} from one of
+    the age-band tables, whose lines are laid out as Table 5.2's."""
+    out: dict[str, Any] = {"national": None, "provinces": {}, "districts": {}}
+    province = None
+    for line in lines:
+        hit = LINE.match(line.strip())
+        if not hit:
+            continue
+        name = hit.group("name").strip()
+        upper = name.upper()
+        total = numbers(hit.group("nums"))[0]
+        if upper.startswith("ZAMBIA"):
+            out["national"] = total
+        elif re.search(r"\bPROVINCE\b", upper):
+            province = key(name)
+            out["provinces"][province] = total
+        elif re.search(r"\bDISTRICT\b", upper) and province is not None:
+            out["districts"].setdefault(key(name), (province, total))
+    if out["national"] is None or sum(out["provinces"].values()) != out["national"]:
+        raise SystemExit(f"zambia_census: {what}: the provinces do not make the country")
+    for k, n in out["provinces"].items():
+        made = sum(t for p, t in out["districts"].values() if p == k)
+        if made != n:
+            raise SystemExit(f"zambia_census: {what}: {k}'s districts make {made:,}, not {n:,}")
+    out["districts"] = {k: t for k, (p, t) in out["districts"].items()}
+    return out
+
+
+def band_median(total: int, under19: int, from16: int, from18: int) -> tuple[float | None, str]:
+    """A district's median age from the people under 16, 18 and 19, or None
+    and the band its middle person falls in."""
+    below16, below18, below19 = total - from16, total - from18, under19
+    if not 0 <= below16 <= below18 <= below19 <= total:
+        raise SystemExit(f"zambia_census: the bands disagree ({total}, {under19}, {from16}, "
+                         f"{from18})")
+    half = total / 2
+    if below16 <= half < below18:
+        return round(16 + 2 * (half - below16) / (below18 - below16), 1), ""
+    if below18 <= half < below19:
+        return round(18 + (half - below18) / (below19 - below18), 1), ""
+    return None, "under16" if half < below16 else "from19"
+
+
+BAND_NOTES = {
+    "under16": ("The census's district tables count the people under 16, 18 and 19 (Summary "
+                "Report Volume II, Tables 5.3, 5.4 and 5.6); more than half of this district's "
+                "people are under 16, and no table splits the ages below that, so the census's "
+                "tables give no median age for it."),
+    "from19": ("The census's district tables count the people under 16, 18 and 19 (Summary "
+               "Report Volume II, Tables 5.3, 5.4 and 5.6); half or more of this district's "
+               "people are 19 or older, and the tables give no finer band above 19 than 19 to "
+               "34 (Table 5.5), so the census's tables give no median age for it."),
+}
+# A province drawn otherwise than the census draws it: Table 5.1's median is
+# the census province's, so the polygon's comes from its districts' bands.
+SUMMED_NOTE = ("Interpolated within the age band that holds the middle person, from the 2022 "
+               "census's counts of the people under 16, 18 and 19 in the districts drawn here "
+               "(Summary Report Volume II, Tables 5.3, 5.4 and 5.6); the census's median by "
+               "province (Table 5.1) is for the province as the census draws it.")
+SUMMED_GAP = {
+    "under16": ("The census gives the median age of the province as it draws it (Summary Report "
+                "Volume II, Table 5.1), not of the districts drawn here, and its district tables "
+                "count the people under 16, 18 and 19 (Tables 5.3, 5.4 and 5.6): more than half "
+                "of these districts' people are under 16, and no table splits the ages below "
+                "that, so the census's tables give no median age for these districts "
+                "together."),
+    "from19": ("The census gives the median age of the province as it draws it (Summary Report "
+               "Volume II, Table 5.1), not of the districts drawn here, and its district tables "
+               "count the people under 16, 18 and 19 (Tables 5.3, 5.4 and 5.6): half or more of "
+               "these districts' people are 19 or older, and the tables give no finer band above "
+               "19 than 19 to 34 (Table 5.5), so the census's tables give no median age for "
+               "these districts together."),
+}
+
+
+def summed_median(table: dict[str, Any], districts: list[str]) -> dict[str, Any]:
+    """The median age of several districts together, from their bands, or a
+    stated reason; nothing where the bands were not read."""
+    bands = table.get("bands")
+    if not bands or not districts:
+        return {}
+    total = sum(table["districts"][d]["total"] for d in districts)
+    value, where = band_median(total, *(sum(bands[b]["districts"][d] for d in districts)
+                                        for b in ("under19", "from16", "from18")))
+    if value is None:
+        return {"median_age": {"status": "not_available", "note": SUMMED_GAP[where]}}
+    return {"median_age": measure(value, year=YEAR, source=BAND_SOURCE),
+            "median_age_note": SUMMED_NOTE}
+
+
+def median_fields(table: dict[str, Any], level: str, k: str) -> dict[str, Any]:
+    """The median age of a district (from the bands) or province (from Table
+    5.1), with its note, or a stated reason; nothing where the tables were not
+    read."""
+    if level == "admin1":
+        groups = (table.get("ages") or {}).get(k)
+        if not groups:
+            return {}
+        return {"median_age": measure(grouped_median(groups), year=YEAR, source=AGE_SOURCE),
+                "median_age_note": ("Interpolated within the five-year age group that holds "
+                                    "the middle person, from the 2022 census's counts by age "
+                                    "group (Summary Report Volume II, Table 5.1).")}
+    bands = table.get("bands")
+    if not bands:
+        return {}
+    total = table["districts"][k]["total"]
+    value, where = band_median(total, bands["under19"]["districts"][k],
+                               bands["from16"]["districts"][k], bands["from18"]["districts"][k])
+    if value is None:
+        return {"median_age": {"status": "not_available", "note": BAND_NOTES[where]}}
+    return {"median_age": measure(value, year=YEAR, source=BAND_SOURCE),
+            "median_age_note": ("Interpolated within the age band that holds the middle person, "
+                                "from the 2022 census's counts of the people under 16, 18 and "
+                                "19 (Summary Report Volume II, Tables 5.3, 5.4 and 5.6).")}
+
+
+def median_sources(extra: dict[str, Any], cited: str) -> list[dict[str, Any]]:
+    """The citation for a median age, or for the tables its stated reason quotes."""
+    median = extra.get("median_age") or {}
+    if median.get("value") is not None:
+        return [{"field": "median_age", "name": cited, "url": URL, "license": LICENCE,
+                 "year": YEAR}]
+    if median.get("note"):
+        return [{"field": "median_age note", "name": NOTE_SOURCE, "url": URL,
+                 "license": LICENCE, "year": YEAR}]
+    return []
+
+
+def grouped_median(groups: list[tuple[int, int | None, int]]) -> float:
+    rows = sorted(groups)
+    half, before = sum(n for _, _, n in rows) / 2, 0
+    for lo, width, n in rows:
+        if n and before + n >= half:
+            if width is None:
+                raise SystemExit("zambia_census: the median falls in the open top age group")
+            return round(lo + width * (half - before) / n, 1)
+        before += n
+    raise SystemExit("zambia_census: no median")
+
+
 def fields(row: dict[str, Any], note: str) -> dict[str, Any]:
     return {"population": measure(row["total"], year=YEAR, source=SOURCE),
             "population_note": note,
@@ -243,10 +453,12 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
         drawn[shape["parent"]].append(k)
         label[k] = shape["name"]
         polygon[k] = first.get(shape["parent"], "")
+        values = fields(row, f"The 2022 census's final count for {shape['name']} district.")
+        extra = median_fields(table, "admin2", k)
+        values["sources"] = values["sources"] + median_sources(extra, BAND_SOURCE)
         records.append(record(
             f"ZMB-2022-{k}", shape["name"], level="admin2", parent="ZMB", country="ZMB",
-            match_by="shape_id", shape_id=shape["id"],
-            **fields(row, f"The 2022 census's final count for {shape['name']} district.")))
+            match_by="shape_id", shape_id=shape["id"], **values, **extra))
     names = {key(p["name"]): k for k, p in table["provinces"].items()}
     census_name = {k: label.get(k) for k in table["districts"]}
     for shape in admin1:
@@ -275,9 +487,17 @@ def build(table: dict[str, Any], admin1: list[dict[str, Any]],
                           f"({row['total']:,}): {note}")
         # Lusaka is a province and a district: the level is in the id, so no
         # table keyed by a row's id can reach both.
+        values = fields(row, note)
+        # Table 5.1's median is the census province's, so only where the
+        # polygon is it; elsewhere the drawn districts' bands give it.
+        if sorted(here) == own:
+            extra, cited = median_fields(table, "admin1", k), AGE_SOURCE
+        else:
+            extra, cited = summed_median(table, here), BAND_SOURCE
+        values["sources"] = values["sources"] + median_sources(extra, cited)
         records.append(record(f"ZMB-2022-province-{k}", shape["name"], level="admin1", parent="ZMB",
                               country="ZMB", match_by="shape_id", shape_id=shape["id"],
-                              **fields(row, note)))
+                              **values, **extra))
     return records, report
 
 
@@ -289,9 +509,24 @@ def main() -> int:
         raise SystemExit(f"zambia_census: {URL} is not a PDF: {blob[:80]!r}")
     # Which bytes were read, for anyone checking the rows against the file.
     log(f"  read {URL}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
-    table = read(blob)
+    tables = page_tables(blob)
+    table = parse(tables["5.2"])
     log(f"  {len(table['provinces'])} provinces and {len(table['districts'])} districts, "
         f"making {table['national']['total']:,}")
+    table["ages"] = parse_ages(tables["5.1"])
+    table["bands"] = {what: parse_counts(tables[number], f"Table {number}")
+                      for number, what in BANDS.items()}
+    for what, band in table["bands"].items():
+        missing = sorted(set(table["districts"]) - set(band["districts"]))
+        if missing:
+            raise SystemExit(f"zambia_census: {what} lacks the districts {missing}")
+    national = grouped_median(table["ages"]["zambia"])
+    by_band, _ = band_median(NATIONAL, table["bands"]["under19"]["national"],
+                             table["bands"]["from16"]["national"],
+                             table["bands"]["from18"]["national"])
+    log(f"  the country's median age: {national} from Table 5.1, {by_band} from the bands")
+    if by_band is None or abs(national - by_band) > 0.5:
+        raise SystemExit("zambia_census: the bands and Table 5.1 disagree on the country's median")
     admin1 = json.loads((SITE / "admin1" / "ZMB.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "ZMB.units.json").read_text())
     records, report = build(table, admin1, admin2)

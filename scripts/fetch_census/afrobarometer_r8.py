@@ -32,9 +32,11 @@ nothing currently trips it.
 
 **"Other" is carried, not dropped.** Code 9995 is a language the questionnaire
 did not enumerate, which is an answer; excluding it would inflate every named
-language in the region. It is published as ``Other language``. Refusals, don't
-knows and missing values are excluded from the denominator, which is the usual
-treatment and the one Round 9 already uses.
+language in the region. It is published as ``Other``, the label Round 9 gives
+the same code, and the languages the two rounds spell differently are written
+as Round 9 writes them (``SPELLING``). Refusals, don't knows and missing values
+are excluded from the denominator, which is the usual treatment and the one
+Round 9 already uses.
 
 **The extract stores labels, not codes.** Round 9's does the opposite, because
 its source is a workbook of numeric codes with a separate codebook; this one is
@@ -89,8 +91,23 @@ COLUMNS = {"country": "COUNTRY", "region": "REGION", "language": "Q2",
 # What the questionnaire calls a non-answer. "Other" is deliberately absent:
 # it is an answer, and appears below under its own label.
 NOT_ANSWERED = {"Missing", "Refused", "Don't know", "Don’t know"}
-OTHER = "Other"
-OTHER_LABEL = "Other language"
+
+# Round 8's names for languages Round 9 spells otherwise, written Round 9's
+# way, so that a country's sum of regions read from the two rounds names each
+# language once: Uganda's read Runyankole 9.4% beside Runyankore 0.9%. Only a
+# language written two ways is here -- Ghana's Dagaare and Waale, which
+# Round 9 asks as one, are not -- and where Round 9's own label is the
+# misspelling ("Kiiraq" for Iraqw, "Adergigna orHarari") it is corrected there
+# instead (afrobarometer.LABEL_TYPOS). Burkina Faso's Fulfudé carries a stray
+# left-to-right mark in this release. "Other", code 9995 in both rounds, is
+# written as both write it: it read "Other language" here, beside Round 9's
+# "Other" in the same sums.
+SPELLING = {
+    "Runyankole": "Runyankore", "Ngakarimajong": "Ngakarimojong",
+    "Oromiffa": "Afan Oromo", "Adergigna (Harari)": "Adergigna or Harari",
+    "Arabe": "Arabic", "Diakanke": "Diakanké", "Fafra": "Frafra",
+    "Shangaan / Tsonga": "Shangaan/Tsonga", "\u200eFulfudé": "Fulfudé",
+}
 
 # Afrobarometer's country name -> ISO3, written out rather than matched, for
 # the reason Round 9's map gives: a name match is how one country's figures
@@ -216,13 +233,29 @@ REGIONS: dict[tuple[str, str], str] = {
     ("UGA", "Tooro"): "Western Region", ("UGA", "Bunyoro"): "Western Region",
     ("UGA", "Buganda"): "Central Region", ("UGA", "Busoga"): "Eastern Region",
     # Côte d'Ivoire: the survey uses the 31-region layout, the file the 14
-    # districts those regions make up.
-    ("CIV", "Agneby-Tiassa"): "Lagunes", ("CIV", "Gbeke"): "Valle Du Bandama",
-    ("CIV", "Gontougo"): "Zanzan", ("CIV", "Guemon"): "Montagnes",
-    ("CIV", "Tonkpi"): "Montagnes", ("CIV", "Gôh"): "Goh-Djiboua",
+    # districts those regions make up -- every region of each, or a district
+    # stands for the one or two of its regions that happen to be listed, and
+    # the rest, each under the floor alone, are dropped (440 of the 1,200
+    # respondents were, until all 31 were here).
+    ("CIV", "Agneby-Tiassa"): "Lagunes", ("CIV", "Grands-Ponts"): "Lagunes",
+    ("CIV", "La Me"): "Lagunes",
+    ("CIV", "Gbeke"): "Valle Du Bandama", ("CIV", "Hambol"): "Valle Du Bandama",
+    ("CIV", "Gontougo"): "Zanzan", ("CIV", "Bounkani"): "Zanzan",
+    ("CIV", "Guemon"): "Montagnes", ("CIV", "Tonkpi"): "Montagnes",
+    ("CIV", "Cavally"): "Montagnes",
+    ("CIV", "Gôh"): "Goh-Djiboua", ("CIV", "Lôh-Djiboua"): "Goh-Djiboua",
     ("CIV", "Haut-Sassandra"): "Sassandra-Marahoue",
     ("CIV", "Marahoue"): "Sassandra-Marahoue",
-    ("CIV", "Nawa"): "Bas-Sassandra", ("CIV", "Poro"): "Savanes",
+    ("CIV", "Nawa"): "Bas-Sassandra", ("CIV", "San-Pedro"): "Bas-Sassandra",
+    ("CIV", "Gbôkle"): "Bas-Sassandra",
+    ("CIV", "Poro"): "Savanes", ("CIV", "Bagoue"): "Savanes",
+    ("CIV", "Tchologo"): "Savanes",
+    ("CIV", "Belier"): "Lacs", ("CIV", "Iffou"): "Lacs", ("CIV", "Moronou"): "Lacs",
+    ("CIV", "N'zi"): "Lacs",
+    ("CIV", "Indenie-Djuablin"): "Comoe", ("CIV", "Sud-Comoe"): "Comoe",
+    ("CIV", "Bere"): "Woroba", ("CIV", "Worodougou"): "Woroba",
+    ("CIV", "Bafing"): "Woroba",
+    ("CIV", "Kabadougou"): "Denguele", ("CIV", "Folon"): "Denguele",
 }
 
 # Countries whose survey stratum is *coarser* than the shapes the map draws.
@@ -244,8 +277,8 @@ UNIVERSE = (
     "regions with fewer than 25 respondents are omitted rather than estimated.")
 NO_LANGUAGE = (
     "Afrobarometer Round 8 records no language for any respondent in this "
-    "country, so no composition is built from the round. That is a limit of "
-    "this release, not a statement that the question is never asked.")
+    "country, so it gives no language shares for its regions. That is a limit "
+    "of this release, not a statement that the question is never asked.")
 
 
 def extract(path: str) -> int:
@@ -310,7 +343,7 @@ def tabulate() -> tuple[dict[tuple[str, str], dict[str, float]],
             if not name or name in NOT_ANSWERED:
                 continue
             answered.add(country)
-            name = OTHER_LABEL if name == OTHER else name
+            name = SPELLING.get(name, name)
             cell = tally.setdefault(key, {})
             cell[name] = cell.get(name, 0.0) + weight
     return tally, sample, seen - answered

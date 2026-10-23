@@ -4,12 +4,36 @@
 Statistics South Africa's census portal (census.statssa.gov.za) is a script
 that draws every figure it shows from a public JSON service, and the same
 service answers a plain request: the provinces, each province's district and
-metropolitan municipalities, and for each of those the census's counts by sex.
-The province totals in south_africa.py come from the census's statistical
-release; these are the same census's counts one level down.
+metropolitan municipalities, and for each of those the census's counts by sex,
+by population group and by five-year age group and sex. The province totals in
+south_africa.py come from the census's statistical release; these are the same
+census's counts one level down.
 
 Written for each of the 52 districts and metros: population and sex ratio
-(males per 100 females), Census 2022.
+(males per 100 females); population group as counts (the five groups the
+census asks, on the ethnicity field); median age, interpolated within the
+five-year age group that holds the middle person. For each of the nine
+provinces: the median age the same way (the release prints it only as a
+chart, see south_africa.py).
+
+Language for the eight metros: Statistics South Africa's report on cultural
+dynamics (Census 2022: Cultural Dynamics in South Africa, Report 03-01-84)
+prints, in its Table 2.3, each metro's population by the language spoken most
+often in the household, in percentages to one decimal place. The other 44
+districts' language, and every district's religion, say why they are empty:
+the census asked both, and the statistical release (P0301.4, Tables 2.9 and
+2.10), the nine provincial profiles (Reports 03-01-70 to 03-01-78, whose
+language and religion tables are each the province's) and the report on
+cultural dynamics (religion by province, Table 4.1) give them for the
+provinces, the metros' language aside; the service carries neither.
+
+**Which group is which.** The service's rows name their population group and
+age group by number only (the descriptions come back null). The numbering is
+the census's own order, and it is checked rather than assumed: groups 1 to 3
+must make the share of children under 15 and groups 14 to 18 the share aged 65
+and over that the service's own district summary (DsMains) prints, to a tenth
+of a percent; the Western Cape's largest group must be number 2 (Coloured) and
+KwaZulu-Natal's share of number 3 (Indian/Asian) the largest of any province.
 
 **The ground.** Census 2022 counts the districts as they have stood since the
 boundary changes of 2016. The boundary file's districts are those too, though
@@ -26,9 +50,14 @@ by 2,533 of 4,772,846), and its share of men is the one the service prints.
 Each province's districts make the province's total from the same service,
 to a hundredth of a percent (Limpopo's five make 6,572,665 against 6,572,721:
 each count is weighted and rounded on its own); the provinces make the
-census's 62,027,503, to the same rounding. Districts
-are matched to the boundary file's within their province, by name, and every
-polygon must get exactly one district and every district one polygon.
+census's 62,027,503, to the same rounding. A district's population groups and
+age groups make its total less the people whose group or age was not given,
+never short by more than ``UNSTATED`` of it and never more than the weighting's
+rounding over it (``OVER``: Nkangala's age groups make 1,588,777 against
+1,588,684, each of the 36 cells weighted and rounded on its own); each province's
+districts make its groups and ages to the same rounding. Districts are matched
+to the boundary file's within their province, by name, and every polygon must
+get exactly one district and every district one polygon.
 
 Usage:
     python -m scripts.fetch_census.south_africa_districts
@@ -44,11 +73,17 @@ import time
 import unicodedata
 from typing import Any
 
-from ._shared import PROCESSED, http_json, log, measure, record, write_json
+from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure, record, write_json
 
 API = "https://disseminationapi-a2f6fff8f7a3f3ff.z01.azurefd.net/api/"
 PAGE = "https://census.statssa.gov.za/"
 SOURCE = "Statistics South Africa, Census 2022, census dissemination service: population by sex"
+GROUP_SOURCE = ("Statistics South Africa, Census 2022, census dissemination service: "
+                "population by population group")
+AGE_SOURCE = ("Statistics South Africa, Census 2022, census dissemination service: "
+              "population by five-year age group and sex")
+RELEASE = ("https://census.statssa.gov.za/assets/documents/2022/"
+           "P03014_Census_2022_Statistical_Release.pdf")
 LICENCE = "Statistics South Africa, reuse with acknowledgement of the source"
 YEAR = 2022
 CENSUS = 1                           # the service's time series: 1 is Census 2022
@@ -59,8 +94,62 @@ SEX_SHORT = 0.005                    # how far short of the total the counts by 
 # How far a province's districts may miss its total: each count is weighted and
 # rounded on its own (Limpopo's five districts make 6,572,665 against 6,572,721).
 ROUNDING = 0.0001
+# How far a district's population groups or age groups may fall short of its
+# total: the people whose group or age the census did not record.
+UNSTATED = 0.01
+# How far a district's groups or ages may exceed its total: each cell is
+# weighted and rounded on its own (Nkangala's ages, 93 people over 1,588,684).
+OVER = 0.001
 OUT = "south_africa_districts.json"
 SITE = PROCESSED.parent.parent / "site" / "data"
+
+# The census's five population groups, in the service's numbering (checked in
+# check_numbering), under the release's own names (south_africa.GROUPS).
+GROUPS = {1: "Black African", 2: "Coloured", 3: "Indian/Asian", 4: "White", 5: "Other"}
+# The service's eighteen age groups: 0-4, 5-9, ... 80-84 and 85 and over.
+AGE_GROUPS = {i: (5 * (i - 1), 5 if i < 18 else None) for i in range(1, 19)}
+
+RELIGION_NOTE = (
+    "Census 2022 asked religious affiliation, and Statistics South Africa gives the answers "
+    "for each province -- in the statistical release (P0301.4, Table 2.10), the province's "
+    "Census 2022 provincial profile and the report on cultural dynamics (Report 03-01-84, "
+    "Table 4.1) -- not for its districts or metros, so no figure is published for this one.")
+LANGUAGE_NOTE = (
+    "Census 2022 asked the language spoken most often in the household, and Statistics "
+    "South Africa gives the answers for each province (the statistical release P0301.4, "
+    "Table 2.9, and the province's Census 2022 provincial profile) and for the eight "
+    "metropolitan municipalities (Report 03-01-84, Table 2.3), not for the other districts, "
+    "so no figure is published for this district.")
+
+# Census 2022: Cultural Dynamics in South Africa (Report 03-01-84), Table 2.3:
+# the language spoken most often in the household by metro, in percentages.
+CULTURAL = "https://www.statssa.gov.za/publications/03-01-84/03-01-84.pdf"
+CULTURAL_NAME = "Statistics South Africa, Census 2022: Cultural Dynamics in South Africa " \
+                "(Report 03-01-84)"
+METRO_TITLE = "Table 2.3 - Percentage distribution of population by language spoken in the " \
+              "household and Metropolitan"
+# The table's columns, in the order printed (its heads run over two lines).
+METRO_COLUMNS = ("Buffalo City", "City of Cape Town", "Ekurhuleni", "eThekwini",
+                 "City of Johannesburg", "Mangaung", "Nelson Mandela Bay", "City of Tshwane",
+                 "Non-Metros")
+METRO_HEAD = "Language Buffalo City Town Ekurhuleni EThekwini Johannesburg Mangaung " \
+             "Mandela Bay Tshwane Non-Metros"
+# The table's rows -> the names the release's provincial table uses (south_africa.py).
+METRO_LANGUAGES = {"afrikaans": "Afrikaans", "english": "English", "isindebele": "isiNdebele",
+                   "isixhosa": "isiXhosa", "isizulu": "isiZulu", "sepedi": "Sepedi",
+                   "sesotho": "Sesotho", "setswana": "Setswana",
+                   "signlanguage": "South African Sign Language", "siswati": "siSwati",
+                   "tshivenda": "Tshivenda", "xitsonga": "Xitsonga", "other": "Other"}
+METRO_NOTE = ("The language spoken most often in the household, as Census 2022 asked it, for "
+              "the metro's population, as Statistics South Africa publishes it: percentages to "
+              "one decimal place, with no counts (Census 2022: Cultural Dynamics in South "
+              "Africa, Report 03-01-84, Table 2.3).")
+# The provincial profiles (Census 2022 Provincial Profile, Reports 03-01-70 to
+# 03-01-78), by province (reduced): their language and religion tables are the
+# province's.
+PROFILES = {"westerncape": 70, "easterncape": 71, "northerncape": 72, "freestate": 73,
+            "kwazulunatal": 74, "northwest": 75, "gauteng": 76, "mpumalanga": 77,
+            "limpopo": 78}
 
 # The boundary file's reduced name -> the census's, where the district has
 # been renamed since the boundary file was drawn.
@@ -108,17 +197,110 @@ def by_sex(value: str) -> tuple[int, int]:
     return int(got[1]), int(got[2])
 
 
+def by_group(level: int, value: Any) -> dict[int, int]:
+    """{population group number: people} in one area."""
+    rows = get(f"DsPopulationGroups/listDsByParams/{CENSUS}/{level}/{value}")
+    got = {int(r["populationGroupId"]): int(r["counts"] or 0) for r in rows
+           if r.get("timeSeriesId") == CENSUS}
+    if set(got) != set(GROUPS):
+        raise SystemExit(f"south_africa_districts: {value}: population groups {sorted(got)}")
+    return got
+
+
+def by_age(level: int, value: Any) -> dict[int, tuple[int, int]]:
+    """{age group number: (men, women)} in one area."""
+    rows = get(f"DsAgeGroups/listDsByParams/{CENSUS}/{level}/{value}")
+    got = {int(r["ageGroupId"]): (int(r["countsMales"] or 0), int(r["countsFemales"] or 0))
+           for r in rows if r.get("timeSeriesId") == CENSUS}
+    if set(got) != set(AGE_GROUPS):
+        raise SystemExit(f"south_africa_districts: {value}: age groups {sorted(got)}")
+    return got
+
+
+def summary(level: int, value: Any) -> dict[str, Any]:
+    """The service's own summary of an area (DsMains): its shares of children
+    and of the old, against which the age groups' numbering is checked."""
+    rows = get(f"DsMains/listDsByParams/{CENSUS}/{level}/{value}")
+    # A list of one row for a district, the row itself for a province.
+    if isinstance(rows, dict):
+        return rows
+    return rows[0] if isinstance(rows, list) and rows and isinstance(rows[0], dict) else {}
+
+
+def median_of(ages: dict[int, tuple[int, int]]) -> float | None:
+    """The median age, interpolated within the five-year group that holds it."""
+    people = [(AGE_GROUPS[i][0], AGE_GROUPS[i][1], sum(ages[i])) for i in sorted(ages)]
+    total = sum(n for _, _, n in people)
+    if total <= 0:
+        return None
+    half, before = total / 2, 0.0
+    for low, width, n in people:
+        if n > 0 and before + n >= half:
+            if width is None:
+                raise SystemExit("south_africa_districts: the median falls in the open "
+                                 "top age group")
+            return round(low + width * (half - before) / n, 1)
+        before += n
+    return None
+
+
+def check_parts(name: str, total: int, parts: int, what: str) -> None:
+    """A district's groups or ages make its total less the unstated, and never
+    more than the weighting's rounding over it."""
+    if parts > total + max(SLACK, OVER * total) or parts < total * (1 - UNSTATED):
+        raise SystemExit(f"south_africa_districts: {name}: its {what} make {parts:,} "
+                         f"against a total of {total:,}")
+
+
+def check_numbering(name: str, ages: dict[int, tuple[int, int]], main: dict[str, Any]) -> None:
+    """Groups 1-3 are the children under 15 and 14-18 the people of 65 and over,
+    as the service's own summary of the same area says."""
+    total = sum(sum(v) for v in ages.values())
+    if not total or not main:
+        return
+    young = 100 * sum(sum(ages[i]) for i in (1, 2, 3)) / total
+    old = 100 * sum(sum(ages[i]) for i in range(14, 19)) / total
+    for share, field in ((young, "ageYoungPeople0to14Percentage"),
+                         (old, "ageElderly65PlusPercentage")):
+        printed = main.get(field)
+        if isinstance(printed, (int, float)) and abs(share - printed) > 0.15:
+            raise SystemExit(f"south_africa_districts: {name}: the age groups give "
+                             f"{share:.1f}% where the service prints {field} {printed}")
+
+
+def check_groups(provinces: dict[str, dict[str, Any]]) -> None:
+    """Group 2 is the Western Cape's largest and group 3 is KwaZulu-Natal's
+    largest share of any province: the numbering is the census's."""
+    shares = {name: {g: n / sum(p["groups"].values()) for g, n in p["groups"].items()}
+              for name, p in provinces.items() if p.get("groups")}
+    if not shares:
+        return
+    west = shares.get("Western Cape")
+    if west and max(west, key=west.get) != 2:
+        raise SystemExit("south_africa_districts: the Western Cape's largest population "
+                         "group is not number 2 (Coloured)")
+    if "KwaZulu-Natal" in shares and \
+            max(shares, key=lambda p: shares[p][3]) != "KwaZulu-Natal":
+        raise SystemExit("south_africa_districts: KwaZulu-Natal's Indian/Asian share is not "
+                         "the largest of any province")
+
+
 def read() -> dict[str, Any]:
-    """{"provinces": {name: {"id", "total"}}, "districts": [{code, name, province,
-    men, women}]}, checked."""
+    """{"provinces": {name: {"id", "total", "groups", "ages"}}, "districts":
+    [{code, name, province, men, women, total, groups, ages}]}, checked."""
     provinces: dict[str, dict[str, Any]] = {}
     districts: list[dict[str, Any]] = []
     for p in get("Provinces/getAll/"):
         name = " ".join(str(p["provinceDesc"]).split())
         total = indicators(PROVINCE, p["provinceId"]).get("Total population")
-        provinces[name] = {"id": p["provinceId"], "total": total}
+        groups = by_group(PROVINCE, p["provinceId"])
+        ages = by_age(PROVINCE, p["provinceId"])
+        check_numbering(name, ages, summary(PROVINCE, p["provinceId"]))
+        provinces[name] = {"id": p["provinceId"], "total": total, "groups": groups,
+                           "ages": ages}
         for d in get(f"Districts/listByProvince/{p['provinceId']}"):
             code = d["districtMdbc"]
+            label = " ".join(str(d["districtName"]).split())
             men, women = by_sex(code)
             own = indicators(DISTRICT, code)
             total = own.get("Total population")
@@ -129,24 +311,32 @@ def read() -> dict[str, Any]:
             # misreading, not that.
             if (not isinstance(total, (int, float)) or men + women > total + SLACK
                     or men + women < total * (1 - SEX_SHORT)):
-                raise SystemExit(f"south_africa_districts: {d['districtName']}: {men:,} men and "
+                raise SystemExit(f"south_africa_districts: {label}: {men:,} men and "
                                  f"{women:,} women against a total of {total}")
             if men + women != total:
-                log(f"  {d['districtName']}: men and women {men + women:,}, total {total:,}")
+                log(f"  {label}: men and women {men + women:,}, total {total:,}")
             if abs(100 * men / (men + women) - float(own.get("Male") or 0)) > 0.06:
-                raise SystemExit(f"south_africa_districts: {d['districtName']}: the first count "
+                raise SystemExit(f"south_africa_districts: {label}: the first count "
                                  f"by sex is not the men's ({own.get('Male')}% men)")
-            districts.append({"code": code, "name": " ".join(str(d["districtName"]).split()),
-                              "province": name, "men": men, "women": women, "total": int(total)})
+            groups = by_group(DISTRICT, code)
+            ages = by_age(DISTRICT, code)
+            check_parts(label, int(total), sum(groups.values()), "population groups")
+            check_parts(label, int(total), sum(sum(v) for v in ages.values()), "age groups")
+            check_numbering(label, ages, summary(DISTRICT, code))
+            districts.append({"code": code, "name": label, "province": name, "men": men,
+                              "women": women, "total": int(total), "groups": groups,
+                              "ages": ages})
             time.sleep(0.2)
     check(provinces, districts)
+    check_groups(provinces)
     return {"provinces": provinces, "districts": districts}
 
 
 def check(provinces: dict[str, dict[str, Any]], districts: list[dict[str, Any]]) -> None:
     """The provinces make the country and each province's districts make it,
     to the rounding of separately rounded counts (``SLACK`` people a district,
-    or ``ROUNDING`` of the total, whichever is more)."""
+    or ``ROUNDING`` of the total, whichever is more) -- its head count, and
+    where both are given its population groups and age groups too."""
     national = sum(p["total"] or 0 for p in provinces.values())
     if abs(national - NATIONAL) > ROUNDING * NATIONAL:
         raise SystemExit(f"south_africa_districts: the provinces make {national:,}, "
@@ -154,11 +344,27 @@ def check(provinces: dict[str, dict[str, Any]], districts: list[dict[str, Any]])
     for name, p in provinces.items():
         mine = [d for d in districts if d["province"] == name]
         made = sum(d["total"] for d in mine)
-        if not mine or abs(made - p["total"]) > max(SLACK * len(mine), ROUNDING * p["total"]):
+        allowed = max(SLACK * len(mine), ROUNDING * p["total"])
+        # A population group or an age group is a sum of smaller weighted
+        # cells, each rounded on its own, so it may miss by up to OVER.
+        loose = max(SLACK * len(mine), OVER * p["total"])
+        if not mine or abs(made - p["total"]) > allowed:
             raise SystemExit(f"south_africa_districts: {name}'s districts make {made:,}, "
                              f"not {p['total']:,}")
         if made != p["total"]:
             log(f"  {name}: its {len(mine)} districts make {made:,} against {p['total']:,}")
+        if p.get("groups") and all(d.get("groups") for d in mine):
+            for g in GROUPS:
+                got = sum(d["groups"][g] for d in mine)
+                if abs(got - p["groups"][g]) > loose:
+                    raise SystemExit(f"south_africa_districts: {name}'s districts make "
+                                     f"{got:,} {GROUPS[g]}, not {p['groups'][g]:,}")
+        if p.get("ages") and all(d.get("ages") for d in mine):
+            for a in AGE_GROUPS:
+                got = sum(sum(d["ages"][a]) for d in mine)
+                if abs(got - sum(p["ages"][a])) > loose:
+                    raise SystemExit(f"south_africa_districts: {name}'s districts make "
+                                     f"{got:,} in age group {a}, not {sum(p['ages'][a]):,}")
 
 
 def bind(districts: list[dict[str, Any]], admin1: list[dict[str, Any]],
@@ -194,8 +400,92 @@ def bind(districts: list[dict[str, Any]], admin1: list[dict[str, Any]],
     return bound
 
 
+def group_fields(d: dict[str, Any]) -> dict[str, Any]:
+    """Population group as counts, and what the shares are of."""
+    counts = {GROUPS[g]: n for g, n in d["groups"].items()}
+    base = sum(counts.values())
+    rows = [{"group": g, "pct": round(100 * n / base, 1), "count": n} for g, n in counts.items()]
+    rows.sort(key=lambda r: (-r["pct"], r["group"]))
+    unstated = d["total"] - base
+    note = (f"Census 2022 population group, as counts: the {base:,} people whose group the "
+            f"census recorded")
+    note += (f", of the {d['total']:,} it counts here." if unstated > 0 else ".")
+    return {"ethnicity": rows, "ethnicity_year": YEAR, "ethnicity_note": note}
+
+
+def age_fields(ages: dict[int, tuple[int, int]]) -> dict[str, Any]:
+    median = median_of(ages)
+    if median is None:
+        return {}
+    return {"median_age": measure(median, unit="years", year=YEAR, source=AGE_SOURCE),
+            "median_age_note": ("Interpolated within the five-year age group that holds the "
+                                "middle person, from Census 2022's counts by age group and "
+                                "sex.")}
+
+
+def sources_of(code: str, level: int, fields: str) -> list[dict[str, Any]]:
+    return [{"field": fields, "name": GROUP_SOURCE if "ethnicity" in fields else AGE_SOURCE,
+             "url": API + (f"DsPopulationGroups/listDsByParams/{CENSUS}/{level}/{code}"
+                           if "ethnicity" in fields else
+                           f"DsAgeGroups/listDsByParams/{CENSUS}/{level}/{code}"),
+             "page": PAGE, "license": LICENCE, "year": YEAR}]
+
+
+def metro_languages(text: str) -> dict[str, list[tuple[str, float]]]:
+    """{metro (reduced): [(language, percentage), ...]} from Report 03-01-84's
+    Table 2.3, each column checked to make 100."""
+    lines = [" ".join(raw.split()) for raw in text.splitlines()]
+    try:
+        start = next(i for i, ln in enumerate(lines) if ln.startswith(METRO_TITLE))
+    except StopIteration:
+        raise SystemExit("south_africa_districts: no Table 2.3 in Report 03-01-84") from None
+    if METRO_HEAD not in lines[start + 1:start + 4]:
+        raise SystemExit(f"south_africa_districts: Table 2.3's columns are not "
+                         f"{METRO_COLUMNS}: {lines[start + 1:start + 4]}")
+    figures: dict[str, list[float]] = {}
+    for line in lines[start + 1:start + 30]:
+        hit = re.fullmatch(r"(?P<name>[A-Za-z ]+?)((?: \d+,\d){9})", line)
+        if not hit:
+            continue
+        label = re.sub(r"[^a-z]", "", hit.group("name").lower())
+        values = [float(v.replace(",", ".")) for v in hit.group(2).split()]
+        if label == "total":
+            break
+        if label not in METRO_LANGUAGES:
+            raise SystemExit(f"south_africa_districts: Table 2.3 row {line!r}")
+        figures[METRO_LANGUAGES[label]] = values
+    if len(figures) != len(METRO_LANGUAGES):
+        raise SystemExit(f"south_africa_districts: Table 2.3 has {sorted(figures)}")
+    out: dict[str, list[tuple[str, float]]] = {}
+    for i, metro in enumerate(METRO_COLUMNS):
+        column = [(g, v[i]) for g, v in figures.items()]
+        made = sum(v for _, v in column)
+        if abs(made - 100) > 0.5:
+            raise SystemExit(f"south_africa_districts: {metro}'s languages make {made:.1f}%")
+        if metro != "Non-Metros":
+            out[key(metro)] = sorted(((g, v) for g, v in column if v > 0),
+                                     key=lambda x: (-x[1], x[0]))
+    return out
+
+
+def cultural_text() -> str:
+    """The pages of Report 03-01-84 that hold Table 2.3."""
+    import io                                       # noqa: PLC0415
+    import pdfplumber                               # noqa: PLC0415
+    from ._shared import http_get                   # noqa: PLC0415
+    blob = http_get(CULTURAL, binary=True, cache=False, timeout=300)
+    if not blob.startswith(b"%PDF"):
+        raise SystemExit(f"south_africa_districts: {CULTURAL} is not a PDF")
+    log(f"  read {CULTURAL}: {len(blob):,} bytes, sha256 {hashlib.sha256(blob).hexdigest()}")
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        return "\n".join(pdf.pages[i].extract_text() or "" for i in range(14, 26)
+                         if i < len(pdf.pages))
+
+
 def records_of(table: dict[str, Any], admin1: list[dict[str, Any]],
-               admin2: list[dict[str, Any]]) -> list[dict[str, Any]]:
+               admin2: list[dict[str, Any]],
+               metros: dict[str, list[tuple[str, float]]] | None = None
+               ) -> list[dict[str, Any]]:
     bound = bind(table["districts"], admin1, admin2)
     out = []
     for shape in admin2:
@@ -204,6 +494,43 @@ def records_of(table: dict[str, Any], admin1: list[dict[str, Any]],
         if key(d["name"]) != key(shape["name"]):
             note += f" (the boundary file's {shape['name']!r})"
         note += "."
+        extra: dict[str, Any] = {}
+        sources = [{"field": "population/sex_ratio", "name": SOURCE,
+                    "url": API + f"DsSexes/listDsByParams/{CENSUS}/{DISTRICT}/{d['code']}",
+                    "page": PAGE, "license": LICENCE, "year": YEAR}]
+        if d.get("groups"):
+            extra.update(group_fields(d))
+            sources += sources_of(d["code"], DISTRICT, "ethnicity")
+        if d.get("ages"):
+            extra.update(age_fields(d["ages"]))
+            sources += sources_of(d["code"], DISTRICT, "median_age")
+        if d.get("groups") or d.get("ages"):
+            spoken = (metros or {}).get(key(d["name"]))
+            extra["religion"] = gap(NOT_AVAILABLE, RELIGION_NOTE)
+            if spoken:
+                extra.update(language=[{"group": g, "pct": v} for g, v in spoken],
+                             language_year=YEAR,
+                             language_basis="language spoken most often in the household",
+                             language_note=METRO_NOTE)
+                sources.append({"field": "language", "name": f"{CULTURAL_NAME}, Table 2.3",
+                                "url": CULTURAL, "license": LICENCE, "year": YEAR})
+            else:
+                extra["language"] = gap(NOT_AVAILABLE, LANGUAGE_NOTE)
+            notes = "religion note" if spoken else "religion note/language note"
+            sources.append({"field": notes,
+                            "name": "Statistics South Africa, Census 2022 Statistical Release "
+                                    "P0301.4", "url": RELEASE, "license": LICENCE,
+                            "year": YEAR})
+            profile = PROFILES.get(key(d["province"]))
+            if profile:
+                sources.append({"field": notes,
+                                "name": f"Statistics South Africa, Census 2022 Provincial "
+                                        f"Profile: {d['province']} (Report 03-01-{profile})",
+                                "url": f"https://statssa.gov.za/publications/Report-03-01-"
+                                       f"{profile}/Report-03-01-{profile}2022.pdf",
+                                "license": LICENCE, "year": YEAR})
+            sources.append({"field": notes, "name": CULTURAL_NAME, "url": CULTURAL,
+                            "license": LICENCE, "year": YEAR})
         out.append(record(
             f"ZAF-2022-{d['code']}", shape["name"], level="admin2", parent="ZAF", country="ZAF",
             match_by="shape_id", shape_id=shape["id"],
@@ -211,9 +538,19 @@ def records_of(table: dict[str, Any], admin1: list[dict[str, Any]],
             population_note=note,
             sex_ratio=measure(round(100 * d["men"] / d["women"], 1), unit="males_per_100_females",
                               year=YEAR, source=SOURCE),
-            sources=[{"field": "population/sex_ratio", "name": SOURCE,
-                      "url": API + f"DsSexes/listDsByParams/{CENSUS}/{DISTRICT}/{d['code']}",
-                      "page": PAGE, "license": LICENCE, "year": YEAR}]))
+            sources=sources, **extra))
+    by_name = {key(s["name"]): s for s in admin1}
+    for name, p in sorted((table.get("provinces") or {}).items()):
+        shape = by_name.get(key(name))
+        if shape is None or not p.get("ages"):
+            continue
+        fields = age_fields(p["ages"])
+        if not fields:
+            continue
+        out.append(record(
+            f"ZAF-2022-province-{p['id']}", shape["name"], level="admin1", parent="ZAF",
+            country="ZAF", match_by="shape_id", shape_id=shape["id"],
+            sources=sources_of(str(p["id"]), PROVINCE, "median_age"), **fields))
     return out
 
 
@@ -225,10 +562,22 @@ def main() -> int:
         f"making {sum(p['total'] for p in table['provinces'].values()):,}")
     admin1 = json.loads((SITE / "admin1" / "ZAF.units.json").read_text())
     admin2 = json.loads((SITE / "admin2" / "ZAF.units.json").read_text())
-    records = records_of(table, admin1, admin2)
+    metros = metro_languages(cultural_text())
+    for k, langs in sorted(metros.items()):
+        log(f"  {k}: {langs[:4]}")
+    records = records_of(table, admin1, admin2, metros)
+    written = sum(1 for r in records if isinstance(r.get("language"), list))
+    if written != 8:
+        raise SystemExit(f"south_africa_districts: {written} metros given Table 2.3's languages, "
+                         f"not 8")
     for r in records:
+        if r["level"] == "admin1":
+            log(f"  {r['name']}: median age {r['median_age']['value']}")
+            continue
+        groups = ", ".join(f"{g['group']} {g['pct']}" for g in r.get("ethnicity") or [])
+        median = (r.get("median_age") or {}).get("value")
         log(f"  {r['name']}: {r['population']['value']:,}, {r['sex_ratio']['value']} men per "
-            f"100 women; {r['population_note']}")
+            f"100 women, median age {median}; {groups}; {r['population_note']}")
     write_json(PROCESSED / OUT, records)
     return 0
 

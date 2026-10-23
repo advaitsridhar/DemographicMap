@@ -1,0 +1,3652 @@
+[
+  {
+    "id": "MUS-2022-admin1-agalega",
+    "level": "admin1",
+    "name": "Agaléga",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and Agaléga has no line."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and Agaléga has no line."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and Agaléga has no line."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and Agaléga has no line."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), so there is no census figure for it."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B83452679821580"
+  },
+  {
+    "id": "MUS-2022-admin1-blackriver",
+    "level": "admin1",
+    "name": "Black River",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 87701,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 35.4,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 1069,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 46.7,
+        "count": 40693
+      },
+      {
+        "group": "Hindu",
+        "pct": 33.4,
+        "count": 29065
+      },
+      {
+        "group": "Other Christian",
+        "pct": 10.9,
+        "count": 9470
+      },
+      {
+        "group": "Islam",
+        "pct": 5.2,
+        "count": 4504
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 1.6,
+        "count": 1372
+      },
+      {
+        "group": "No religion",
+        "pct": 1.5,
+        "count": 1334
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.4,
+        "count": 367
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.3,
+        "count": 272
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 81.3,
+        "count": 71311
+      },
+      {
+        "group": "French",
+        "pct": 8.0,
+        "count": 7050
+      },
+      {
+        "group": "Hindi",
+        "pct": 3.8,
+        "count": 3293
+      },
+      {
+        "group": "Bengali",
+        "pct": 2.5,
+        "count": 2188
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 1.8,
+        "count": 1595
+      },
+      {
+        "group": "English",
+        "pct": 1.7,
+        "count": 1494
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.8,
+        "count": 665
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B99203907341133",
+    "population_note": "The 2022 census's resident population of Black River.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 87,077 residents who stated one, of 87,701 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin1-flacq",
+    "level": "admin1",
+    "name": "Flacq",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 138529,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 37.9,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 972,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 66.5,
+        "count": 91825
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 15.0,
+        "count": 20652
+      },
+      {
+        "group": "Islam",
+        "pct": 12.6,
+        "count": 17434
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.9,
+        "count": 6742
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.7,
+        "count": 929
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2,
+        "count": 289
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.0,
+        "count": 55
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 77.8,
+        "count": 107828
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 19.0,
+        "count": 26343
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.3,
+        "count": 1739
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.6,
+        "count": 842
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 722
+      },
+      {
+        "group": "English",
+        "pct": 0.4,
+        "count": 523
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.2,
+        "count": 224
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.1,
+        "count": 183
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 49
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B3325932502431",
+    "population_note": "The 2022 census's resident population of Flacq.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 137,984 residents who stated one, of 138,529 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin1-grandport",
+    "level": "admin1",
+    "name": "Grand Port",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 110783,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 38.8,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 61.2,
+        "count": 67613
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 18.7,
+        "count": 20635
+      },
+      {
+        "group": "Islam",
+        "pct": 13.9,
+        "count": 15385
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.9,
+        "count": 5405
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.8,
+        "count": 840
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 324
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 105
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.1,
+        "count": 95
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 87.8,
+        "count": 97226
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 9.8,
+        "count": 10831
+      },
+      {
+        "group": "French",
+        "pct": 1.1,
+        "count": 1197
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.6,
+        "count": 688
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 333
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.2,
+        "count": 213
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.1,
+        "count": 93
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.1,
+        "count": 79
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 19
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B660734165567",
+    "population_note": "The 2022 census's resident population of Grand Port.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 110,402 residents who stated one, of 110,783 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin1-moka",
+    "level": "admin1",
+    "name": "Moka",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 85538,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 38.7,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 1007,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 55.4,
+        "count": 47143
+      },
+      {
+        "group": "Islam",
+        "pct": 24.3,
+        "count": 20714
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 13.4,
+        "count": 11392
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.9,
+        "count": 4199
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 1.2,
+        "count": 995
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 378
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 202
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.1,
+        "count": 58
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 85.3,
+        "count": 72977
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 8.2,
+        "count": 6985
+      },
+      {
+        "group": "French",
+        "pct": 2.1,
+        "count": 1756
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.4,
+        "count": 1190
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.4,
+        "count": 1215
+      },
+      {
+        "group": "English",
+        "pct": 1.0,
+        "count": 871
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.4,
+        "count": 303
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.1,
+        "count": 48
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.1,
+        "count": 68
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 74
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B64352145242214",
+    "population_note": "The 2022 census's resident population of Moka.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 85,081 residents who stated one, of 85,538 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin1-pamplemousses",
+    "level": "admin1",
+    "name": "Pamplemousses",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 140856,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 37.3,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 984,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 55.2,
+        "count": 77369
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 19.1,
+        "count": 26798
+      },
+      {
+        "group": "Islam",
+        "pct": 19.0,
+        "count": 26625
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.0,
+        "count": 6984
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.6,
+        "count": 835
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5,
+        "count": 674
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.4,
+        "count": 579
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.2,
+        "count": 292
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 76.7,
+        "count": 108041
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 17.2,
+        "count": 24160
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.9,
+        "count": 2734
+      },
+      {
+        "group": "French",
+        "pct": 1.5,
+        "count": 2094
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.4,
+        "count": 1953
+      },
+      {
+        "group": "English",
+        "pct": 0.8,
+        "count": 1103
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.3,
+        "count": 447
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.1,
+        "count": 124
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 107
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.1,
+        "count": 82
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B91551715822340",
+    "population_note": "The 2022 census's resident population of Pamplemousses.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 140,156 residents who stated one, of 140,856 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin1-plaineswilhems",
+    "level": "admin1",
+    "name": "Plaines Wilhems",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 340780,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 40.8,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 942,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 44.3,
+        "count": 149521
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 25.7,
+        "count": 86797
+      },
+      {
+        "group": "Islam",
+        "pct": 20.0,
+        "count": 67678
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.3,
+        "count": 24577
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.9,
+        "count": 3020
+      },
+      {
+        "group": "No religion",
+        "pct": 0.8,
+        "count": 2819
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.7,
+        "count": 2288
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.3,
+        "count": 1110
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 88.2,
+        "count": 300538
+      },
+      {
+        "group": "French",
+        "pct": 4.1,
+        "count": 14060
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 2.7,
+        "count": 9101
+      },
+      {
+        "group": "English",
+        "pct": 1.4,
+        "count": 4611
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.4,
+        "count": 4919
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.1,
+        "count": 3749
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.8,
+        "count": 2671
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.1,
+        "count": 410
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 395
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 159
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B21568199301359",
+    "population_note": "The 2022 census's resident population of Plaines Wilhems.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 337,810 residents who stated one, of 340,780 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin1-portlouis",
+    "level": "admin1",
+    "name": "Port Louis",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 106332,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 37.9,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 953,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 41.1,
+        "count": 43463
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 30.6,
+        "count": 32350
+      },
+      {
+        "group": "Hindu",
+        "pct": 19.6,
+        "count": 20725
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.2,
+        "count": 6546
+      },
+      {
+        "group": "Buddhist",
+        "pct": 1.0,
+        "count": 1096
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.8,
+        "count": 794
+      },
+      {
+        "group": "No religion",
+        "pct": 0.6,
+        "count": 647
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.2,
+        "count": 235
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 95.3,
+        "count": 101300
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 2.0,
+        "count": 2101
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.7,
+        "count": 768
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 597
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.6,
+        "count": 685
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 367
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.2,
+        "count": 242
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.2,
+        "count": 196
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 38
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B53255720811613",
+    "population_note": "The 2022 census's resident population of Port Louis.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 105,856 residents who stated one, of 106,332 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin1-rivieredurempart",
+    "level": "admin1",
+    "name": "Rivière du Rempart",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 111195,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 38.8,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 974,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 64.1,
+        "count": 70988
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 15.7,
+        "count": 17410
+      },
+      {
+        "group": "Islam",
+        "pct": 12.6,
+        "count": 13976
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.3,
+        "count": 5848
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 1.2,
+        "count": 1302
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7,
+        "count": 732
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 305
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.1,
+        "count": 143
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 74.7,
+        "count": 83036
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 18.6,
+        "count": 20635
+      },
+      {
+        "group": "French",
+        "pct": 1.9,
+        "count": 2072
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.5,
+        "count": 1613
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.2,
+        "count": 1321
+      },
+      {
+        "group": "English",
+        "pct": 1.0,
+        "count": 1117
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 1.0,
+        "count": 1133
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.1,
+        "count": 122
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 69
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.1,
+        "count": 67
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B93227578092779",
+    "population_note": "The 2022 census's resident population of Rivière du Rempart.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 110,704 residents who stated one, of 111,195 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin1-rodrigues",
+    "level": "admin1",
+    "name": "Rodrigues",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 43604,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 29.9,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 956,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 87.8,
+        "count": 38220
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.6,
+        "count": 3309
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 2.0,
+        "count": 862
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9,
+        "count": 372
+      },
+      {
+        "group": "No religion",
+        "pct": 0.8,
+        "count": 334
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.7,
+        "count": 291
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.4,
+        "count": 155
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 99.6,
+        "count": 43423
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 117
+      },
+      {
+        "group": "English",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.1,
+        "count": 23
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Mauritian nationals",
+        "pct": 99.8,
+        "count": 43514
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 90
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B37057547030311",
+    "population_note": "The 2022 census's resident population of Rodrigues.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 43,553 residents who stated one, of 43,604 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9).",
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Mauritius has not asked residents' ethnic group in its census since 1972, and the 2022 census's Table D4 gives Rodrigues' residents by nationality, which is shown in its place. Of its 43,604 residents, 43,514 are Mauritian nationals and 90 foreign nationals (the most by country: France 38, India 7, Madagascar 7)."
+  },
+  {
+    "id": "MUS-2022-admin1-savanne",
+    "level": "admin1",
+    "name": "Savanne",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 67779,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 38.0,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 997,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 52.9,
+        "count": 35723
+      },
+      {
+        "group": "Islam",
+        "pct": 21.8,
+        "count": 14734
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 18.6,
+        "count": 12568
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.6,
+        "count": 3803
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.6,
+        "count": 408
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 222
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.1,
+        "count": 42
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 88.3,
+        "count": 59878
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 7.1,
+        "count": 4826
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.7,
+        "count": 1181
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.3,
+        "count": 909
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 374
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 175
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.3,
+        "count": 203
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.2,
+        "count": 138
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 51
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 19
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B93866494923153",
+    "population_note": "The 2022 census's resident population of Savanne.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 67,543 residents who stated one, of 67,779 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin1-stbrandon",
+    "level": "admin1",
+    "name": "St. Brandon",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and St. Brandon has no line."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and St. Brandon has no line."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and St. Brandon has no line."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and St. Brandon has no line."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), so there is no census figure for it."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B12885462064369"
+  },
+  {
+    "id": "MUS-2022-admin2-agalega",
+    "level": "admin2",
+    "name": "Agaléga",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and Agaléga has no line."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and Agaléga has no line."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and Agaléga has no line."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and Agaléga has no line."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), so there is no census figure for it."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B83452679821580"
+  },
+  {
+    "id": "MUS-2022-admin2-blackriver",
+    "level": "admin2",
+    "name": "Black River",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 87701,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 35.4,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 1069,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 46.7,
+        "count": 40693
+      },
+      {
+        "group": "Hindu",
+        "pct": 33.4,
+        "count": 29065
+      },
+      {
+        "group": "Other Christian",
+        "pct": 10.9,
+        "count": 9470
+      },
+      {
+        "group": "Islam",
+        "pct": 5.2,
+        "count": 4504
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 1.6,
+        "count": 1372
+      },
+      {
+        "group": "No religion",
+        "pct": 1.5,
+        "count": 1334
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.4,
+        "count": 367
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.3,
+        "count": 272
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 81.3,
+        "count": 71311
+      },
+      {
+        "group": "French",
+        "pct": 8.0,
+        "count": 7050
+      },
+      {
+        "group": "Hindi",
+        "pct": 3.8,
+        "count": 3293
+      },
+      {
+        "group": "Bengali",
+        "pct": 2.5,
+        "count": 2188
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 1.8,
+        "count": 1595
+      },
+      {
+        "group": "English",
+        "pct": 1.7,
+        "count": 1494
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.8,
+        "count": 665
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B99203907341133",
+    "population_note": "The 2022 census's resident population of Black River.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 87,077 residents who stated one, of 87,701 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin2-flacq",
+    "level": "admin2",
+    "name": "Flacq",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 138529,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 37.9,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 972,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 66.5,
+        "count": 91825
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 15.0,
+        "count": 20652
+      },
+      {
+        "group": "Islam",
+        "pct": 12.6,
+        "count": 17434
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.9,
+        "count": 6742
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.7,
+        "count": 929
+      },
+      {
+        "group": "No religion",
+        "pct": 0.2,
+        "count": 289
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 58
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.0,
+        "count": 55
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 77.8,
+        "count": 107828
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 19.0,
+        "count": 26343
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.3,
+        "count": 1739
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.6,
+        "count": 842
+      },
+      {
+        "group": "French",
+        "pct": 0.5,
+        "count": 722
+      },
+      {
+        "group": "English",
+        "pct": 0.4,
+        "count": 523
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.2,
+        "count": 224
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.1,
+        "count": 183
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 49
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B3325932502431",
+    "population_note": "The 2022 census's resident population of Flacq.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 137,984 residents who stated one, of 138,529 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin2-grandport",
+    "level": "admin2",
+    "name": "Grand Port",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 110783,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 38.8,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 958,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 61.2,
+        "count": 67613
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 18.7,
+        "count": 20635
+      },
+      {
+        "group": "Islam",
+        "pct": 13.9,
+        "count": 15385
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.9,
+        "count": 5405
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.8,
+        "count": 840
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 324
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 105
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.1,
+        "count": 95
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 87.8,
+        "count": 97226
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 9.8,
+        "count": 10831
+      },
+      {
+        "group": "French",
+        "pct": 1.1,
+        "count": 1197
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.6,
+        "count": 688
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 333
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.2,
+        "count": 213
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.1,
+        "count": 93
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.1,
+        "count": 79
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 19
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B660734165567",
+    "population_note": "The 2022 census's resident population of Grand Port.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 110,402 residents who stated one, of 110,783 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin2-moka",
+    "level": "admin2",
+    "name": "Moka",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 85538,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 38.7,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 1007,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 55.4,
+        "count": 47143
+      },
+      {
+        "group": "Islam",
+        "pct": 24.3,
+        "count": 20714
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 13.4,
+        "count": 11392
+      },
+      {
+        "group": "Other Christian",
+        "pct": 4.9,
+        "count": 4199
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 1.2,
+        "count": 995
+      },
+      {
+        "group": "No religion",
+        "pct": 0.4,
+        "count": 378
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.2,
+        "count": 202
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.1,
+        "count": 58
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 85.3,
+        "count": 72977
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 8.2,
+        "count": 6985
+      },
+      {
+        "group": "French",
+        "pct": 2.1,
+        "count": 1756
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.4,
+        "count": 1190
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.4,
+        "count": 1215
+      },
+      {
+        "group": "English",
+        "pct": 1.0,
+        "count": 871
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.4,
+        "count": 303
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.1,
+        "count": 48
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.1,
+        "count": 68
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 74
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 33
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B64352145242214",
+    "population_note": "The 2022 census's resident population of Moka.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 85,081 residents who stated one, of 85,538 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin2-pamplemousses",
+    "level": "admin2",
+    "name": "Pamplemousses",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 140856,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 37.3,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 984,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 55.2,
+        "count": 77369
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 19.1,
+        "count": 26798
+      },
+      {
+        "group": "Islam",
+        "pct": 19.0,
+        "count": 26625
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.0,
+        "count": 6984
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.6,
+        "count": 835
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5,
+        "count": 674
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.4,
+        "count": 579
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.2,
+        "count": 292
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 76.7,
+        "count": 108041
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 17.2,
+        "count": 24160
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.9,
+        "count": 2734
+      },
+      {
+        "group": "French",
+        "pct": 1.5,
+        "count": 2094
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.4,
+        "count": 1953
+      },
+      {
+        "group": "English",
+        "pct": 0.8,
+        "count": 1103
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.3,
+        "count": 447
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.1,
+        "count": 124
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 107
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.1,
+        "count": 82
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 9
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B91551715822340",
+    "population_note": "The 2022 census's resident population of Pamplemousses.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 140,156 residents who stated one, of 140,856 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin2-plaineswilhems",
+    "level": "admin2",
+    "name": "Plaines Wilhems",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 340780,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 40.8,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 942,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 44.3,
+        "count": 149521
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 25.7,
+        "count": 86797
+      },
+      {
+        "group": "Islam",
+        "pct": 20.0,
+        "count": 67678
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.3,
+        "count": 24577
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.9,
+        "count": 3020
+      },
+      {
+        "group": "No religion",
+        "pct": 0.8,
+        "count": 2819
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.7,
+        "count": 2288
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.3,
+        "count": 1110
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 88.2,
+        "count": 300538
+      },
+      {
+        "group": "French",
+        "pct": 4.1,
+        "count": 14060
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 2.7,
+        "count": 9101
+      },
+      {
+        "group": "English",
+        "pct": 1.4,
+        "count": 4611
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.4,
+        "count": 4919
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.1,
+        "count": 3749
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.8,
+        "count": 2671
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.1,
+        "count": 410
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 395
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 95
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 159
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B21568199301359",
+    "population_note": "The 2022 census's resident population of Plaines Wilhems.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 337,810 residents who stated one, of 340,780 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin2-portlouis",
+    "level": "admin2",
+    "name": "Port Louis",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 106332,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 37.9,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 953,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 41.1,
+        "count": 43463
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 30.6,
+        "count": 32350
+      },
+      {
+        "group": "Hindu",
+        "pct": 19.6,
+        "count": 20725
+      },
+      {
+        "group": "Other Christian",
+        "pct": 6.2,
+        "count": 6546
+      },
+      {
+        "group": "Buddhist",
+        "pct": 1.0,
+        "count": 1096
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.8,
+        "count": 794
+      },
+      {
+        "group": "No religion",
+        "pct": 0.6,
+        "count": 647
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.2,
+        "count": 235
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 95.3,
+        "count": 101300
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 2.0,
+        "count": 2101
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.7,
+        "count": 768
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 597
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.6,
+        "count": 685
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 367
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.2,
+        "count": 242
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.2,
+        "count": 196
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 38
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B53255720811613",
+    "population_note": "The 2022 census's resident population of Port Louis.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 105,856 residents who stated one, of 106,332 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin2-rivieredurempart",
+    "level": "admin2",
+    "name": "Rivière du Rempart",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 111195,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 38.8,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 974,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 64.1,
+        "count": 70988
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 15.7,
+        "count": 17410
+      },
+      {
+        "group": "Islam",
+        "pct": 12.6,
+        "count": 13976
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.3,
+        "count": 5848
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 1.2,
+        "count": 1302
+      },
+      {
+        "group": "No religion",
+        "pct": 0.7,
+        "count": 732
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.3,
+        "count": 305
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.1,
+        "count": 143
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 74.7,
+        "count": 83036
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 18.6,
+        "count": 20635
+      },
+      {
+        "group": "French",
+        "pct": 1.9,
+        "count": 2072
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.5,
+        "count": 1613
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.2,
+        "count": 1321
+      },
+      {
+        "group": "English",
+        "pct": 1.0,
+        "count": 1117
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 1.0,
+        "count": 1133
+      },
+      {
+        "group": "Chinese languages",
+        "pct": 0.1,
+        "count": 122
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 69
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.1,
+        "count": 67
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B93227578092779",
+    "population_note": "The 2022 census's resident population of Rivière du Rempart.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 110,704 residents who stated one, of 111,195 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin2-rodrigues",
+    "level": "admin2",
+    "name": "Rodrigues",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 43604,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 29.9,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 956,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 87.8,
+        "count": 38220
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.6,
+        "count": 3309
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 2.0,
+        "count": 862
+      },
+      {
+        "group": "Islam",
+        "pct": 0.9,
+        "count": 372
+      },
+      {
+        "group": "No religion",
+        "pct": 0.8,
+        "count": 334
+      },
+      {
+        "group": "Hindu",
+        "pct": 0.7,
+        "count": 291
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.4,
+        "count": 155
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 99.6,
+        "count": 43423
+      },
+      {
+        "group": "French",
+        "pct": 0.3,
+        "count": 117
+      },
+      {
+        "group": "English",
+        "pct": 0.1,
+        "count": 22
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.1,
+        "count": 23
+      },
+      {
+        "group": "Bengali",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.0,
+        "count": 8
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Mauritian nationals",
+        "pct": 99.8,
+        "count": 43514
+      },
+      {
+        "group": "Foreign nationals",
+        "pct": 0.2,
+        "count": 90
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B37057547030311",
+    "population_note": "The 2022 census's resident population of Rodrigues.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 43,553 residents who stated one, of 43,604 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9).",
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "nationality",
+    "ethnicity_note": "Nationality, not ethnicity: Mauritius has not asked residents' ethnic group in its census since 1972, and the 2022 census's Table D4 gives Rodrigues' residents by nationality, which is shown in its place. Of its 43,604 residents, 43,514 are Mauritian nationals and 90 foreign nationals (the most by country: France 38, India 7, Madagascar 7)."
+  },
+  {
+    "id": "MUS-2022-admin2-savanne",
+    "level": "admin2",
+    "name": "Savanne",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 67779,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "median_age": {
+      "value": 38.0,
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "sex_ratio": {
+      "value": 997,
+      "unit": "males_per_1000_females",
+      "year": 2022,
+      "source": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2"
+    },
+    "religion": [
+      {
+        "group": "Hindu",
+        "pct": 52.9,
+        "count": 35723
+      },
+      {
+        "group": "Islam",
+        "pct": 21.8,
+        "count": 14734
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 18.6,
+        "count": 12568
+      },
+      {
+        "group": "Other Christian",
+        "pct": 5.6,
+        "count": 3803
+      },
+      {
+        "group": "Assembly of God",
+        "pct": 0.6,
+        "count": 408
+      },
+      {
+        "group": "No religion",
+        "pct": 0.3,
+        "count": 222
+      },
+      {
+        "group": "Buddhist",
+        "pct": 0.1,
+        "count": 43
+      },
+      {
+        "group": "Church of England/ Protestant",
+        "pct": 0.1,
+        "count": 42
+      }
+    ],
+    "language": [
+      {
+        "group": "Mauritian Creole",
+        "pct": 88.3,
+        "count": 59878
+      },
+      {
+        "group": "Bhojpuri",
+        "pct": 7.1,
+        "count": 4826
+      },
+      {
+        "group": "Bengali",
+        "pct": 1.7,
+        "count": 1181
+      },
+      {
+        "group": "Hindi",
+        "pct": 1.3,
+        "count": 909
+      },
+      {
+        "group": "French",
+        "pct": 0.6,
+        "count": 374
+      },
+      {
+        "group": "English",
+        "pct": 0.3,
+        "count": 175
+      },
+      {
+        "group": "Other languages or not stated",
+        "pct": 0.3,
+        "count": 203
+      },
+      {
+        "group": "Marathi",
+        "pct": 0.2,
+        "count": 138
+      },
+      {
+        "group": "Tamil",
+        "pct": 0.1,
+        "count": 51
+      },
+      {
+        "group": "Telugu",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Urdu",
+        "pct": 0.0,
+        "count": 19
+      }
+    ],
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), and the census's tables give residents' nationality by island (Volume II, Table D4), not by district, so there is no census figure for this district."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "religion",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D6",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "language",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D9",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      },
+      {
+        "field": "ethnicity note",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D4",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B93866494923153",
+    "population_note": "The 2022 census's resident population of Savanne.",
+    "median_age_note": "Interpolated within the age group that holds the middle person, from the 2022 census's counts by age group (Table D2).",
+    "religion_year": 2022,
+    "religion_note": "Religious group of the 67,543 residents who stated one, of 67,779 (Table D6). The census's five Hindu groups -- Hindu & Other Hindu, Tamil, Telugu, Marathi and Vedic -- are one Hindu group here.",
+    "language_year": 2022,
+    "language_basis": "language usually spoken at home",
+    "language_note": "Language usually spoken at home, as the 2022 census records it for every resident (Table D9)."
+  },
+  {
+    "id": "MUS-2022-admin2-stbrandon",
+    "level": "admin2",
+    "name": "St. Brandon",
+    "parent": "MUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and St. Brandon has no line."
+    },
+    "sex_ratio": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and St. Brandon has no line."
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and St. Brandon has no line."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Statistics Mauritius' 2022 census tables of age, sex, religion and language give the Island of Mauritius, by district, and Rodrigues; the Republic's 1,233,097 residents in them are those two islands' alone, and St. Brandon has no line."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Mauritius has not asked residents' ethnic group in its census since 1972 (the 2022 census records religion, language usually spoken at home and language of forefathers), so there is no census figure for it."
+    },
+    "sources": [
+      {
+        "field": "population/sex_ratio/median_age",
+        "name": "Statistics Mauritius, 2022 Housing and Population Census, Volume II: Demographic and Fertility Characteristics, Table D2",
+        "url": "https://statsmauritius.govmu.org/Documents/Census_and_Surveys/Census2022/HPC_TR_Vol2_Demography_Yr22.xlsx",
+        "license": "Statistics Mauritius publication (reuse with attribution)",
+        "year": 2022
+      }
+    ],
+    "country": "MUS",
+    "match_by": "shape_id",
+    "shape_id": "65221844B12885462064369"
+  }
+]

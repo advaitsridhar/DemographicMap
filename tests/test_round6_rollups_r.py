@@ -31,7 +31,7 @@ import check_rollups as cr  # noqa: E402
 
 OCHA = "OCHA, Common Operational Dataset -- population statistics (cod-ps-xyz)"
 CENSUS = "Instituto Nacional de Estadística, census"
-FACTBOOK = "CIA World Factbook (public domain), factbook.json mirror"
+FACTBOOK = "CIA World Factbook (public domain)"
 
 
 def quiet(fn, *args, **kwargs):

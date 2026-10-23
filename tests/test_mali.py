@@ -258,8 +258,13 @@ class TwentyRegionsSumIntoNineShapes(unittest.TestCase):
         for region in list(language):
             language[region] = (totals[region][0], language[region][1])
         language = mali.checked("language", language)
+        # The 2009 census's languages of the regions as they stood (Tableau S-3),
+        # as the Bureau's tabulation gives them: constructed counts.
+        older = {shape: (1000.0, {"Bambara": 860.0, "Malinke": 100.0, "Dogon": 40.0})
+                 for shape in ("Bamako", "Koulikoro", "Sikasso", "Ségou", "Mopti", "Kayes",
+                               "Tombouctou", "Gao", "Kidal")}
         records = mali.build({"religion": religion, "ethnicity": ethnicity,
-                              "language": language})
+                              "language": language}, older)
         self.assertEqual([r["name"] for r in records],
                          ["Bamako", "Gao", "Kayes", "Kidal", "Koulikoro", "Mopti",
                           "Sikasso", "Ségou", "Tombouctou"])
@@ -271,9 +276,34 @@ class TwentyRegionsSumIntoNineShapes(unittest.TestCase):
         self.assertEqual(kayes["religion"][0]["group"], "Islam")
         self.assertEqual(kayes["ethnicity"][0]["group"], "Soninke")
         self.assertEqual(by["Kidal"]["ethnicity"][0], {"group": "Tuareg", "pct": 86.2, "count": 49612})
-        self.assertIn("Kayes, Kita, Nioro", kayes["ethnicity_note"])
-        self.assertNotIn("This shape is", by["Kidal"]["language_note"])
-        self.assertEqual(by["Ségou"]["language"][0]["group"], "Bambara")
+        self.assertIn("regions of Kayes, Kita and Nioro of 2023, added together",
+                      kayes["ethnicity_note"])
+        self.assertNotIn("added together", by["Kidal"]["language_note"])
+        self.assertNotIn("shape", kayes["language_note"])
+        self.assertEqual([s["field"] for s in kayes["sources"]], ["religion/ethnicity/language"])
+        # The five shapes the regions of 2023 cross show none of the 2022
+        # shares: the 2009 census's languages, with the reason in the note, and
+        # no religion or ethnic group (the survey's of the old region stand).
+        for shape in ("Bamako", "Koulikoro", "Sikasso", "Ségou", "Mopti"):
+            rec = by[shape]
+            self.assertEqual(rec["language_year"], 2009)
+            self.assertEqual(rec["language"][0], {"group": "Bambara", "pct": 86.0, "count": 860})
+            self.assertIn("Tableau S-3", rec["language_note"])
+            self.assertIn("lines cross this", rec["language_note"])
+            for field in ("religion", "ethnicity"):
+                self.assertEqual(rec[field], {"status": "not_available"})
+                self.assertNotIn(f"{field}_note", rec)
+            cited = [(s["field"], s["name"]) for s in rec["sources"]]
+            self.assertEqual(cited[0], ("language", mali.uscb.MALI.source))
+            self.assertEqual(cited[1], ("language note", mali.SOURCE))
+        self.assertIn("Ouélessébougou", by["Koulikoro"]["language_note"])
+        self.assertIn("three times the size", by["Bamako"]["language_note"])
+        self.assertEqual(by["Bamako"]["sources"][2]["name"], mali.COD_AB_2023["name"])
+        self.assertEqual(len(by["Koulikoro"]["sources"]), 2)
+        # Without the 2009 table the reason stands alone.
+        bare = {r["name"]: r for r in mali.build({"religion": religion, "ethnicity": ethnicity,
+                                                  "language": language})}
+        self.assertTrue(bare["Mopti"]["language"]["note"].startswith("The 2022 census"))
 
 
 if __name__ == "__main__":

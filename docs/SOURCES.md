@@ -229,7 +229,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Malaysia | DOSM OpenDOSM `population_state` / `population_district` CSV | state, district | Annual population estimates by ethnicity carried forward from Census 2020, in thousands; the latest year is read and the records say "estimate". The non-citizen row is DOSM's own category of the resident population and is kept. |
 | Malaysia (religion) | DOSM Kawasanku dashboard, `kawasanku_admin_barmeter.parquet` (storage.dosm.gov.my), built on MyCensus 2020 | state, district | Religion is a census question but OpenDOSM's catalogue has no religion table; the dashboard DOSM built on the 2020 census carries the six-category shares (Islam, Buddhism, Christianity, Hinduism, other religions, no religion) for the country, 16 states and 160 districts as unrounded percentages, and the state rows equal the census's published state table to the decimal. Counts are those shares applied to each area's 2020 population from the OpenDOSM series and rounded, and the note says so; the census's "unknown" answers are not separated from the last two categories. The country row is checked against DOSM's Key Findings figures (63.5 / 18.7 / 9.1 / 6.1 / 2.7) and states and districts, weighted, against their parent. Language: the census has never asked it (policy entry `MYS`). `scripts/fetch_census/malaysia_religion.py`. |
 | Brunei | DEPS, Population and Housing Census (BPP) 2021, annex tables A3 (race by district), A4 (religion by district) and C1 (population by mukim), read from the department's own annex workbook `wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx` | district, mukim | Race and religion for all 4 districts, 440,715 people, checked against the figures the census report prints in prose and reconciling to the person at every level. "Malay" is the state's administrative group, defined by the report as covering Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut, whose shares are published for the country only; the religion residual pools other faiths, unstated answers and no religious belief, so it is carried as "Other, none, or not stated". All 38 mukims carry the census head count and a gap naming the three annexes that put no composition below the district; Gadong is the sum of the census's Gadong A and Gadong B, which the boundary file draws as one, and Bokok carries the file's spelling Bunkok as an alias. Language is asked (question E27, the language mainly spoken at home) and never tabulated, so it is `not_available` with that reason rather than `not_collected`. `scripts/fetch_census/brunei.py`. |
-| Kenya | KNBS 2019 Census Volume IV, Table 2.30 (openAFRICA mirror) | county | Religion for all 47 counties, replacing the Afrobarometer survey rows; ethnicity stays Afrobarometer's. KNBS's own site fails TLS verification (incomplete chain) and this project does not turn verification off. |
+| Kenya | KNBS, 2019 Kenya Population and Housing Census: Volume I (population by sex and county), Volume II (by sex and sub-county), Volume III (by single year of age, sex, county and sub-county) and Volume IV, Table 2.30 (religion by county), all through Code for Africa's openAFRICA portal | county, constituency | All 47 counties carry the census's population (intersex persons included), sex ratio and median age, and its religion in place of the Afrobarometer survey rows; ethnicity stays Afrobarometer's, since Volume IV prints it for the country only, and no volume tabulates language. 131 of the 290 constituencies carry the census's count, sex ratio and median age, where a constituency's ground is one sub-county or a set of whole ones, measured by name and by area; the other 159 say why. The Bomet polygon takes in Bureti, which the census counts under Kericho, so Bomet's figures add the two and Kericho's leave Bureti out. KNBS's own site fails TLS verification (incomplete chain) and this project does not turn verification off. See "Kenya: the 2019 census by county and by constituency". `scripts/fetch_census/kenya_census.py`, `scripts/fetch_census/kenya.py`. |
 | Thailand | NSO 2000 Population and Housing Census, provincial final reports (`web.nso.go.th/pop2000/finalrep/`), transcribed in the Wikipedia article *Nationality, religion, and language data for the provinces of Thailand* | province | Buddhist, Muslim and Christian shares for 2000 as printed, read through the MediaWiki API because the NSO's own hosts refuse this client; the rest of 100% is one 'Other or not stated' group; an N/A is absent, not zero. 76 of 77 provinces: Bueng Kan was carved out of Nong Khai in 2011 and has no 2000 row. Nationality is citizenship and is not read as ethnicity; the 'linguistic minorities' cells name a few languages and not the rest, so language stays a gap. `scripts/fetch_census/thailand.py`. |
 | Thailand (ethnicity) | NSO 2000 Population and Housing Census, language spoken at home, the 'linguistic minorities' cell of the same provincial reports and the same Wikipedia transcription; Suwilai Premsrirat et al., *Ethnolinguistic Maps of Thailand* (Mahidol University Institute of Language and Culture, 2004) for the regional Tai groups and the national figures, as transcribed in *Demographics of Thailand* | province | By the map owner's decision of 19 September 2026, and every province a `modelled` estimate, never a list: the census's minorities as printed under its own category names, everyone else assigned to the region's Tai group (Central Thai, Isan (Lao), Northern Thai, Southern Thai). The run prints the national composition the provinces imply beside the maps' figures; no backtest is possible. 76 of 77 provinces, Bueng Kan having no 2000 row. See "Thailand: ethnicity from secondary sources, by the owner's decision". `scripts/fetch_census/thailand_ethnicity.py`. |
 | Kazakhstan | Bureau of National Statistics, 2021 National Population Census, religious affiliation by region, transcribed in the Wikipedia article *Religion in Kazakhstan* | region | The percent columns are read (one count in the article is mistyped; its percent is not). The article lists 16 regions and omits Shymkent (a city of republican significance since 2018); the boundary file draws the 2017 layout in which Shymkent sits inside South Kazakhstan Region, so the article's Turkistan Region is deliberately not matched to that shape and South Kazakhstan stays a visible gap: 15/16. `scripts/fetch_census/wiki_census.py`. |
@@ -2512,7 +2512,8 @@ of them at once, which is asserted by a test rather than assumed.
 
 ### The Democratic Republic of the Congo: the first source here that is not a census
 
-Everything else on this map is a census. This is the *Enquête 1-2-3*, and it is
+When it was added, everything else on this map was a census. This is the
+*Enquête 1-2-3*, and it is
 reported differently for that reason -- because the difference is invisible
 once a figure is drawn on a shape.
 
@@ -6373,6 +6374,2881 @@ naming those files. The nineteen `not_collected` declarations added to
 `NOT_COLLECTED_POLICY` in `scripts/common.py` came from the tier-C findings,
 each resting on a named fact about the questionnaire.
 
+### Africa: the latest census below the country, and a reason wherever none reaches
+
+The Africa round (October 2026) took the continent's 54 countries a region at a
+time -- North Africa; Nigeria and Anglophone West Africa; Francophone and
+Lusophone West Africa and the Sahel; Central Africa; East Africa and the Horn;
+Southern Africa and the Indian Ocean -- and looked, for every first- and
+second-level unit, for its population, median age, sex ratio, religion,
+language, ethnicity and seat. A unit takes the latest census or statistics
+office's table that reaches its own ground, read from the office's own
+publication where its site answers, and otherwise from the Internet Archive's
+copy of the office's file or the copy a United Nations agency publishes. Every
+figure names the publication and the table it comes from, and every cell that
+nothing fills says why.
+
+The rules the sections below apply:
+
+* **A unit's own ground.** A subdivision shows the most recent population for
+  the ground it is drawn on. Where the map draws a unit as it stood before a
+  reform and the census counts the units made since, a figure is written only
+  for ground the census's units make exactly (Mali's regions of 2023, Togo's
+  prefectures of 2017-2019, Tunisia's delegations of 2014, Uganda's counties
+  of 2002); elsewhere the unit keeps an older figure for its own ground and
+  says why the newer one is not shown. Where an outline is not the ground a
+  figure counts -- five of Egypt's governorates, Libya's Tripoli and Jifarah --
+  the cell says so instead of showing it.
+* **A region's figure is never copied onto its children**, whether a source
+  repeats it (OCHA's tables that give every district its region's age
+  structure) or a unit is its parent's only division drawn on other ground.
+* **A census's median age and sex ratio stand in front of a projection's**,
+  whatever the years; OCHA's projections fill only.
+* **A survey ranks behind any count.** Afrobarometer's figures stand only where
+  no census gives the field, and a unit cites the survey only for the fields
+  it still gives.
+* **Ethnicity may be a nationality**, and then says so: Morocco's, Libya's,
+  Rwanda's, Equatorial Guinea's, Côte d'Ivoire's, the Comoros', Mauritius' and
+  Seychelles' censuses count nationalities, not ethnic groups.
+* **No figure crosses a claim line**: Western Sahara, Abyei, Hala'ib and the
+  other disputed ground are drawn, and say why they show what they show.
+
+What the round changed, across Africa's 778 first-level units and 5,337
+second-level ones (cells with a figure / cells that say why / cells left bare):
+
+| Field | First level, before | First level, after | Second level, before | Second level, after |
+|---|---|---|---|---|
+| Population | 776 / 2 / 0 | 769 / 9 / 0 | 3,683 / 809 / 845 | 4,711 / 626 / 0 |
+| Median age | 17 / 2 / 759 | 680 / 98 / 0 | 261 / 65 / 5,011 | 3,403 / 1,934 / 0 |
+| Sex ratio | 111 / 2 / 665 | 730 / 48 / 0 | 685 / 67 / 4,585 | 4,320 / 1,017 / 0 |
+| Religion | 449 / 329 / 0 | 506 / 272 / 0 | 427 / 4,910 / 0 | 630 / 4,707 / 0 |
+| Language | 506 / 272 / 0 | 535 / 243 / 0 | 1,004 / 4,333 / 0 | 1,161 / 4,176 / 0 |
+| Ethnicity | 419 / 359 / 0 | 487 / 291 / 0 | 427 / 4,910 / 0 | 762 / 4,575 / 0 |
+| Seat | 725 / 0 / 53 | 737 / 41 / 0 | 1,032 / 3 / 4,302 | 2,249 / 3,088 / 0 |
+
+The seven first-level populations that went from a figure to a reason are the
+outlines that are not the ground the figure counts (above).
+
+### OCHA's population tables for Africa: ages and sexes, and the tables that copy a parent's
+
+Before this round, of Africa's 778 first-level units 17 had a median age and
+111 a sex ratio. OCHA's Common Operational Dataset population statistics
+(COD-PS) split most African countries' units by sex and five-year age group,
+as they do Latin America's, so `scripts/fetch_census/cod_ps_age.py`, written
+for the Americas, now reads the 54 African countries too (its default is both).
+From each unit it takes men per 1,000 women and the median age interpolated
+within the five-year group that holds the middle person, after the checks it
+already made: the groups start at 0 and run without a gap to an open last
+group, they and the two sexes add up to the unit's total, and the median falls
+inside a closed group. A figure from these tables only fills: a census's own
+median or ratio stands in front of it whatever the years (`FILL_ONLY`).
+
+**Who has a table.** HDX holds a cod-ps dataset for 49 of the 54 countries
+(none for the Republic of the Congo, Algeria, Equatorial Guinea, Guinea-Bissau
+or Libya). Thirty-two give a table the reader takes: Angola, Burundi, Benin,
+Burkina Faso, Botswana, Cameroon, Cabo Verde, Gabon, Ghana, Guinea, the Gambia,
+Liberia, Lesotho, Morocco, Mozambique, Mauritania, Malawi, Namibia, Niger,
+Nigeria, Rwanda, Sudan, South Sudan, Sao Tome and Principe, Eswatini, Chad,
+Togo, Tunisia, Tanzania, Uganda, South Africa and Zimbabwe. Twelve have no
+table split by both sex and five-year age group (the Central African Republic,
+the DRC, Djibouti, Egypt, Eritrea, Ethiopia, Kenya, Madagascar, Mali,
+Mauritius, Seychelles, Zambia). Two are refused for their licences, Côte
+d'Ivoire's ("humanitarian use only") and Somalia's ("Restricted for use only in
+HRP and Humanitarian Operations"). Three have tables whose level cannot be
+told from their names: Comoros (three rows whose names match none of the
+map's), Senegal (fourteen names that are both its regions' and those of the
+departments named after the regions' capitals) and Sierra Leone (four rows of
+which three name a first-level unit, and 166 chiefdoms that name none).
+
+**A table that is another level's namesakes is refused.** Niger's 2024 table of
+its eight regions, filed as admin1, matched the map by name only at the second
+level: each region is named after its capital, and so is the department that
+holds it. Read, it would have put eight regions' figures on eight departments
+and kept the real table of 67 departments out as a second table for the same
+level. A table whose file says one level, whose names land on the other, and
+which has fewer than a third as many rows as the map draws there is now
+refused (`namesake_level`), and the departments' own table is read.
+
+**A median a table copies from elsewhere is withdrawn.** A projection is often
+split below the country by giving every unit one age structure, or every
+district its region's. The median of such a unit is the country's or the
+region's, on a unit never measured for it, and the map never copies a region's
+figure onto its children. So each table is tested as a whole after it is read
+(`drop_copied_structures`; the same five-year shares within 0.3 points in every
+group count as the same structure):
+
+* **Liberia** (reference year 2020): all 15 counties and all 132 districts
+  carry the same proportions. Every median is withdrawn; the sex ratios differ
+  and stay.
+* **Burkina Faso** (2023): all 45 provinces carry their region's proportions
+  and sex ratio. Medians and ratios are withdrawn.
+* **Chad** (2021): 67 of the 70 departments carry their province's proportions
+  and 68 its sex ratio. All 70 medians and ratios are withdrawn.
+* **Niger** (2024): 65 of the 67 departments carry one structure, the table's
+  own; the cities of Maradi and Zinder carry proportions no other row of the
+  2024 tables has, their regions' included (1.6 and 1.4 points from them in a
+  five-year group), and keep their medians.
+
+(Paraguay's 246 districts, in the Americas, carry their department's ages but
+their own share of men: their medians are withdrawn and their ratios kept.)
+Each withdrawn cell says why, in the words of the record: "OCHA's population
+table for this country (reference year 2023) gives each second-level division
+the age proportions of the first-level division it lies in, so no median age
+of this division's own can be taken from it."
+
+### Where a figure is missing, the panel says why: populations, ages, sexes and seats
+
+The build already gave every bare religion, language and ethnicity the reason
+the sources used allow (`say_why_empty`). A bare population, median age or sex
+ratio went out with a status and nothing else: 5,700 median ages, 5,300 sex
+ratios and 850 populations before this round, nearly all of them in Africa.
+The regions' readers now give most of these a reason of their own -- what the
+census tabulates and at which level, or why its figure is not this unit's.
+`say_why_scalar_empty` gives every one still bare, last of all, one of three
+sentences, chosen by what the sources used for the unit's country give at its
+level:
+
+* where other units of that country and level carry the figure -- "No median
+  age figure has been found for this unit. OCHA's common operational dataset
+  gives it for 4 of the 25 units of Botswana at this level, not for this
+  one.";
+* where none of them does -- "None of the sources used for the units of
+  Andorra at this level (GeoNames, Govern d'Andorra and Wikidata) gives a
+  median age for them, and no figure has been found for this unit.";
+* where no source reaches the level at all, the sentence the compositions
+  already use, and on disputed ground the disputed sentence.
+
+None of them claims that a census did not count ages or sexes -- every census
+does -- only where the figures shown come from and how far they reach. It never
+touches a figure, a status or a note something earlier wrote. In Africa it
+speaks for Eswatini's tinkhundla, 21 of Botswana's districts and one Comorian
+unit; elsewhere for the few bare cells of Andorra, Greenland, Monaco, the
+Bahamas, the Vatican and some of Mexico's and Ecuador's units.
+
+**Seats.** In Africa's 54 countries the seats were looked for unit by unit --
+the census reports, OCHA's boundary sets, Wikidata and GeoNames, and the lists
+of each country's units -- so a unit there that still shows none says "No seat
+is shown: none of the sources used here names one for this unit." Three levels
+say what is known of them instead: Egypt's kisms (an urban police district,
+part of a town, with no seat of its own; a markaz is named after the town that
+is its seat), Kenya's constituencies (electoral areas, for which neither the
+2019 census reports nor Wikidata name a seat) and Tunisia's delegations (the
+National Institute of Statistics' tables name none). Elsewhere a bare seat stays
+bare until someone has looked as hard (`SEATS_SOUGHT` in `build_entities.py`).
+Disputed polygons, whose figures already said why they are empty, now say the
+same of their seat and largest settlement (Abyei and Koualou in Africa, and the
+Gaza Strip, Aksai Chin and the rest elsewhere), and Western Sahara says at the
+country what its units say: that it has no capital both its claimants
+recognise.
+
+**Wrong seats.** Wikidata gives six first-level units a seat that is not
+theirs: Togo's Savanes "Durum Town" (Dapaong), Senegal's Louga Nguer Malal (a
+village of the region), Benin's Atlantique Ouidah (Allada since 2016), Libya's
+Misrata Al Bayda (the seat of Al Jabal al Akhdar, 600 km east) and Marj an
+"encampment of Al Marj", and Algeria's Tizi Ouzou Kouba (a commune of
+Algiers). Each is withdrawn from its row (`WITHDRAWN_FIELDS`), so GeoNames'
+seat inside the polygon stands. Five units in countries whose GeoNames seats
+are not taken wholesale -- Egypt's Gharbia and Matrouh, Algeria's Tipaza and
+Tizi Ouzou, South Sudan's Central Equatoria -- take GeoNames' seat by shape,
+each point checked to lie inside its polygon (`DECLARED_SEATS`; Tripoli's
+point lies 2 km outside the outline drawn for it and is left out). And two
+seats lose the disambiguation Wikidata labels them with: "Loango, Republic of
+Congo" and "Kamenica, Kosovo" (`DISAMBIGUATED`).
+
+**Citations.** A survey cited for religion, ethnicity and language, beside a
+census that gives the first two, is now cited for language alone: when a later
+source replaces a composition, the earlier citation loses the fields it no
+longer gives, and a source held behind a count is cited only for what it still
+shows (`without_fields`). Before, Afrobarometer stayed cited for religion on
+units whose religion the census had replaced.
+
+**Pooled rows.** A row added up from several (`ROW_UNIONS`) takes the place of
+its first part in the country's authority order (`first_place`). Appended at
+the end, it stood in front of every row of the same year on the same polygon,
+whatever its file: OCHA's projections for Namibia's Epukiro and Otjinene,
+summed, over the 2023 census's count, and Afrobarometer's respondents in Maputo
+City and Province, pooled, over the 2017 census's religion and mother tongue.
+
+### The built map, swept once more
+
+When the six regions were integrated and built, every African country was
+read once more as a visitor sees it -- each panel at both levels, the colours
+of each layer, the names on the shapes -- and every fault the sweep claimed was
+put to a second reader whose job was to refute it before it was fixed. What
+that found, and what was done:
+
+**Languages from other continents.** CLEAR Global's files gave shares to
+languages no household of the unit can speak (the DRC's Mexican, Philippine,
+Micronesian and Burundian names beside the Australian one already caught,
+Benin's "Central Malay", Ghana's "Nyamal", thirteen names in Nigeria's North
+East, Somalia's sign language, Senegal's Chadian creole) and the US Census Bureau's
+workbook of Ethiopia's 2007 census two more: "Ignaciano", a language of
+Bolivia, which follows the Opuuo people wherever they are counted (Gambela
+999 speakers to 990 people), and "Mossi", Burkina Faso's Mooré, which follows
+the Dullay peoples of the south, where the census counts the Mossiye. The
+DRC's are written under its source's own names and the rest are kept unnamed
+(see CLEAR Global above); the Ethiopian two are written
+Opuuo (Surmic) and Mosiye (Cushitic), and "Suri (Suri)" as Suri. Malawi's and
+Mozambique's Yao, filed by its bare name under the Yao (Mien) of China, is
+written Chiyao and Ciyao, and Namibia's "Ndonga (R.20)" is the Oshiwambo group
+it stands for.
+
+**Survey shares on the wrong ground, or too thin.** Afrobarometer Round 9's
+312 respondents in Abidjan reached no unit -- the apostrophe folds "D'Abidjan"
+into one word, so the city's name never met "District Autonome D'Abidjan" --
+and the district said the survey did not reach it (`ROW_ALIASES`). Round 8's
+reader mapped 10 of Côte d'Ivoire's 31 survey regions to their districts and
+dropped the rest one by one under the floor, 440 of 1,200 respondents, so
+Lagunes was Agnéby-Tiassa's 32 people and Lacs, Comoé and Woroba showed
+nothing; all 31 are mapped now. Cabo Verde's survey regions are islands: the
+whole island of Fogo, and CLEAR Global's stratum of Santiago's interior (eight
+municipalities), no longer stand on one municipality each, and Praia's and São
+Vicente's ethnicity answers -- mostly none, or the part of the islands people
+come from -- say what they are. CLEAR Global's tabulations of Afrobarometer
+where the survey interviewed too few people are withdrawn (see above).
+
+**Wrong items and wrong seats.** Wikidata items for a larger or another unit
+leave the units they reached by name: Nandi and Makueni counties on two of
+Kenya's constituencies, Malindi District before 2010, Marka's city figure on
+the district, Karamoja's Moroto Municipality on Lango's Moroto County.
+Afar's seat is written as GeoNames and the largest settlement beside it write
+it (Samara), Horo Guduru's without "city".
+
+**Names.** Uganda's census rows give four counties their names in place of
+the boundary file's: Kapelebyong, not a second "Soroti"; Rujumbura, not
+"Bujumbura"; Bukoto; Bughendera.
+
+**What a figure is.** Turkana says its outline takes in part of the Ilemi
+Triangle, which Kenya administers and South Sudan claims, and that the 2019
+census counted the county as Kenya administers it. Bururi and Bujumbura Rural
+say their survey shares are of the provinces before Rumonge was cut from them
+in 2015. Djibouti's country sex ratio is its 2024 census's, its six regions
+added up (98.9 men per 100 women, not the Factbook's 83.0). The DRC's
+Enquête 1-2-3 no longer calls itself "the only source on this map that is a
+survey". A GeoNames seat that is not the unit's own is no longer called its
+seat where the panel says why no largest settlement is named.
+
+**Names as the sources write them.** Tunisia's 264 delegations were labelled
+in Arabic script alone; they are written under the statistics institute's
+French names (La Medina, Bab El Bhar), the Arabic kept as a second name.
+Morocco's provinces carried French and Arabic in one label ("Province de
+Berkane إقليم بركان") and keep the Latin part. Egypt's governorates are
+"{name} Governorate" throughout (Sharqia and Gharbia, not "Al Sharqia" and
+"Gharbiyya"; Minya and Luxor, not "Governate"), its districts take the names
+their notes use, and where a governorate holds a kism and a markaz of one
+name each says which it is (20 pairs, as "Aswān (kism)" and "Aswān
+(markaz)"). Somalia's 118 districts were labelled in capitals ("BENDER
+BAYLA") and are written as a sentence would write them; Gabon's departments
+take the census's Tableau 6 spelling (Lopé, Komo-Océan, Lekoko, and Mulundu
+where the outline is labelled Mouloundou). Every earlier label stays a second
+name, so no row stops reaching its outline. Ten Tunisian delegations then bore
+the names of the towns in them, and the towns' Wikidata items (Bembla,
+Monastir, Nabeul, Sahline and the rest) took the polygons from the
+delegations' items; the towns' items leave the delegations (`DROPPED_ROWS`).
+
+**Notes that cite what they quote.** Where a note quotes a figure, the unit now
+cites the publication it comes from: Egypt's 2017 count beside a 2023
+estimate, both 2006 tables where they are compared, and the governorates the
+2023 estimates leave out; Morocco's reasons, the statistics office's workbook
+and, for Guelmim's median age, its note on the southern provinces of
+September 2025; Sudan's state medians, the retabulation of 2008 they are
+read from; and Tripoli's and Al Jifarah's reasons, the 2006 census. Somalia's
+regional figures are written as what they are, OCHA Somalia's calculation for
+1 January 2019 for the eighteen pre-war regions, as City Population tabulates
+it; Djibouti's and the Republic of the Congo's censuses name City Population's
+compiler rather than its web address.
+
+**A sex ratio far from its country's says whose men and women it is.**
+Tunisia's governorates and delegations, Gabon's provinces and departments,
+Mauritania's and Nigeria's units, and Seychelles' units past two men to a
+woman give the men and women counted beside the ratio ("at the 2023 census
+of the moughataa: 9,151 men and 2,195 women", Benichab). Uganda's sixteen
+lopsided counties compared themselves with "946 men per 1,000 women" beside
+ratios shown per 100; the country's figure reads 94.6 per 100.
+
+**Reasons that stand beside another source's figure.** Liberia's 55 districts
+that the 2022 tables cannot be placed on say so beside OCHA's 2020 figures.
+Oshikoto says what OCHA's projections of its constituencies add up to
+(227,737, against the census's 257,302 for the region). Eritrea's regions and
+sub-regions say themselves why they show no religion, language or ethnic
+group: the country has never taken a census, and no source read gives them.
+Ethiopia's zone notes name the weredas they are added up from without the
+marks OCHA's table tells namesakes apart by ("Dera", not "Dera (AM)").
+
+**Afrobarometer, read again.** Botswana's survey regions are the 24 strata
+Afrobarometer samples, from Barolong to Selibe Phikwe, and Round 9's reached
+five districts by name and no other: North-East's without Francistown and
+South-East's without Gaborone and Lobatse, though each polygon holds them. Each
+district now takes its strata together, 32 to 352 respondents (Chobe's 16 too
+few), and the country keeps its census-based figures (`COUNTRY_NOT_SUMMED`).
+Code 9990, which the codebook gives as "(national identity) only, or doesn't
+think of self in those terms", is written "National identity only", not "No
+ethnic group"; Eswatini's regions, where 1,186 of the 1,200 respondents gave
+it, say so in place of shares, and the country keeps its own figure. Madagascar's, Mauritius's and Namibia's answers are in English (Official
+Malagasy, the Hindu and Muslim communities, Afrikaner), misspellings in the
+codebook are corrected ("IIa" is Ila), and Round 8's spellings follow Round 9's
+so one language is not two. Zambézia listed Lomwe twice in the codebook, and the
+second code overwrote the first: Lomwe is 34.6% of the region, its largest
+language, not 5.2%.
+
+**Labels as read.** The boundary file's cut, coded or garbled names are put
+right where the shapes are read (`common.as_read`, `MISSPELLED`), and again
+where a record bound to its polygon by id renames it: Seychelles' fourteen
+districts, cut at ten letters ("Anse Boile", "La Digue a"), Burundi's seven
+communes, Ethiopia's zones under codes ("KT", "Region 14") and its two North
+Shewas, now North Shewa (Amhara) and North Shewa (Oromia), Argoba Special
+Woreda, Eritrea's two Denkalias, Tanzania's doubled Babati, Djibouti's Dikhil
+and Yoboki, Lesotho's Maseru (Berea District) and Maoa-Mafubelu, Egypt's Luxor
+and Minya ("Governate"), and Kenya's Tharaka-Nithi at the first level only.
+Doubled spaces ("Bolga  East", "Kigoma  Urban") and invisible direction marks
+(one followed Bordj Bou Arreridj into a search box) go from every label.
+
+**Seats.** Brak, Wadi al Shatii's main town (GeoNames' seat for the district is
+Idrī, a village of 4,696), and Al Jawf, on Al Kufrah's second-level copy, are
+declared and cited to Wikidata; Antananarivo and Barkly East to GeoNames.
+Wikidata's Livingstone (Southern Province's seat until 2012; Choma since),
+Tsumeb (Oshikoto's largest town; its seat is Omuthiya), Triolet (a village of
+Pamplemousses) and Laâyoune (south of 27°40'N, in the polygon drawn as Western
+Sahara) leave the regions they are not the seats of, and "Chipata (Fort
+Jameson)" and "Moniya, Ibadan" lose their glosses. The second levels of Egypt,
+Morocco, Sudan, South Sudan and Algeria say what is known of their seats, and
+a seat GeoNames gives no population is called the unit's own only where the
+unit shows it (Lobito's and Kindamba's outlines hold Egito Praia's and
+Nyanga's).
+
+**Largest settlements.** Natural Earth files a region's town by the region's
+name, and thirteen were smaller towns than another in the same outline (Yei
+before Juba, Ikare before Akure, Sanniquellie before Ganta); the largest now
+stands.
+GeoNames places whose figure is their district's (Jirapa's 91,279 is Jirapa
+District's 2021 count) give way to the seat or are named without it. Tripoli,
+Salaga, Perseverance and six new towns on Egypt's land outside the zimam are
+not named for outlines that are not theirs: Tripoli and Tajura stand on a strip
+of coast no district covers, Salaga in the outline drawn as North East Gonja,
+Perseverance on an island the census counts as a district of its own, and the
+census counts each new town in a division of its own.
+
+**Rows and notes.** Botswana's districts take OCHA's age groups with their
+towns' (Gaborone with South-East, Francistown with North-East), Vatovavy-Fitovinany
+its two halves' survey respondents, and Plaines Wilhems its survey row, which
+the survey spells "Plaine Wilhems"; Malawi's Mzimba drops CLEAR Global's
+shares for the district without Mzuzu City, which the polygon holds; Wikidata's
+items for Tajura and for Port Said city, and the survey's Praslin region, leave
+units that are not theirs. Kolwezi, Bunia, Tshikapa, Red Sea State and three
+Malawian districts say what their figures are and cite them, and four
+divisions are filed under the governorate that counts them.
+
+**Sums and the Factbook.** A sum of survey shares says it counts survey
+respondents; Namibia's three compositions and Zimbabwe's and Mauritius's
+ethnic groups, all Round 9 survey estimates on every unit, are not summed over
+the country's own, and Zimbabwe's religion and language are summed from its
+2022 census now that the country is checked against it. The Comoros carry
+their census's national columns. The Factbook's misprinted shares for
+Cameroon, the Central African Republic and the DRC ("Beti/Bassa, Mbam 13.1%",
+"Christian 93/1%") are corrected before they are parsed, the reader stopping
+if a misprint is gone; a group closed by "or" or "including" keeps its whole
+name ("other, including Kgalagadi and people of European ancestry"); and the
+source a visitor reads is the Factbook alone, without the mirror's file name.
+
+### Tunisia: the 2024 census by sector, added up to 264 delegations drawn for 2014
+
+The Institut National de la Statistique took the Recensement Général de la
+Population et de l'Habitat on 6 November 2024 and published with its first
+results (May 2025) a workbook of the whole population by **sector** (imada),
+sex and five-year age group: 70,722 rows, every sector with its delegation and
+governorate by code and by name in French and Arabic
+([Population_Secteur_Age_Sexe_Dynamique.xlsx](https://www.ins.tn/sites/default/files-ftp3/files/2025-05/Population_Secteur_Age_Sexe_Dynamique.xlsx),
+from the [RGPH 2024 page](https://www.ins.tn/enquetes/recensement-general-de-la-population-et-de-lhabitat-2024)).
+Added up, it is every delegation and governorate: the head count, men per
+1,000 women, and the median age interpolated within the five-year group that
+holds the middle person. The sectors make the national count INS announced,
+11,972,169, or the run stops.
+
+**279 delegations counted, 264 drawn.** The map's second level is the 264
+delegations of 2014, labelled mostly in Arabic (with stray direction marks and
+Persian letters) and a few in French. Matching within the governorate on the
+folded Arabic or French name binds 250; seven need a declared label (Bab Bhar,
+the two Ezzouhours, Jendouba Sud, Balta-Bou Aouane, Zaouia-Ksiba-Thrayet, and
+Mahdia's Ouled Chamekh, whose outline is filed under Sousse); seven more bind
+on the closest spelling, each the other's best (El Mnihla, Hammam El Guezaz,
+Grombalia, Oued Meliz, Sfax Ouest, Cebalet Ouled Asker, Mdhila). The **fifteen delegations made since 2014** --
+Etouiref, Rejiche, El Bradaa, Ain Jeloula, Menzel Mhiri, Essaida, El Hichria,
+Dkhilet Toujen, Ouedhref, El Hamma Ouest, Beni Mhira, Sidi Boubaker,
+Zanouche, Hammat Ejrid and Rjim Maatoug -- are put back, sector by sector, on
+the polygon of the 2014 delegation their sectors belonged to, read from INS's
+2014 table of the population by sector
+([fr_population_logement_menages_par_secteurs_2014.xlsx](https://www.ins.tn/sites/default/files-ftp3/files/2021-03/fr_population_logement_menages_par_secteurs_2014.xlsx));
+that polygon's figures are its 2014 delegation and the sectors it gave up,
+added together age group by age group, and its note names what it adds: the
+new delegation whole, or only the part that had been its own (El Hichria's
+three sectors went back 3,939 people to Sidi Bouzid Est and 11,175 to Sidi
+Bouzid Ouest). A new delegation that cannot be placed stops the run: leaving
+it out would leave the polygon it came from short.
+
+Two traps on the way. The 2014 table writes "Gouvernorat du Kef" where the
+2024 one writes "Le Kef", and "Délégation de Faouar" where 2024 has "El
+Faouar": joined on the raw names, Etouiref and Rjim Maatoug looked unplaceable.
+Both censuses' names are now joined without their articles. And a region's
+heading row (Centre Est, 2,590,032 people) sits between two governorates in
+the 2014 sheet, where it read as a 2.6-million-person sector of El Aroussa; a
+"sector" bigger than its delegation is skipped.
+
+On the map: all 24 governorates and all 264 delegations carry the 2024 count,
+median age and sex ratio (the delegations had 13 silent populations, 237
+stated, and no median or sex ratio at all).
+
+### Algeria: the 2008 census's ages, and a certificate chain one link short
+
+The Office National des Statistiques published the RGPH of April 2008 in its
+*Collections* series; one table gives every wilaya's resident population by
+five-year age group and sex
+([pop3_national.pdf](https://www.ons.dz/collections/pop3_national.pdf),
+"Population résidente par âge, par sexe et par wilaya", eight pages, two
+wilayas side by side). ons.dz sends its certificate without the intermediate
+above it; the missing link is fetched from the certificate's own Authority
+Information Access address and the chain verified in full (the Internet
+Archive's copy is the fallback). The 48 wilayas must make the national
+34,080,030, each row's men and women its total to within two people (the
+office rounds each cell on its own: Chlef's 20-24 row prints 61,818 men,
+62,127 women and 123,946 in all), and one row whose label is printed once for
+both wilayas ("85 ans & + 1414 1509 2923 1692 1583 3274") is read in threes.
+
+On the map: the 48 wilayas' median age and sex ratio (2008), with the 2008
+count the office publishes, which replaces the encyclopaedias' differing 2008
+figures for five wilayas (Wikidata's 279,759 for Laghouat against the census's
+455,602 and 940,581 for Batna against 1,119,791, a few people apart for Bordj
+Bou Arreridj and Mila, and English Wikipedia's 617,661 for Tipaza against
+591,010). The map's second level draws the
+48 wilayas a second time, out of register with the first, so nothing is
+written there; its cells already say so.
+
+### Libya: the 2006 census, put back together on 22 areas that are not the shabiyat
+
+The US Census Bureau's subnational tables for HDX
+([libya-subnational-boundaries-and-tabular-data](https://data.humdata.org/dataset/libya-subnational-boundaries-and-tabular-data),
+sheet Age-Sex) carry the Bureau of Statistics and Census's 2006 census, Table
+10: every resident, Libyan or not, by mahallah, five-year age group and sex,
+with the 22 shabiyat and 100 baladiyat above the 667 mahallas; 5,657,692 in
+all.
+
+The map draws 22 areas twice (both levels, the same outlines), but they are
+not quite the census's shabiyat: five carry the 2001 system's labels
+(Ajdabiya, Al Qubbah, Ghadamis, Mizdah, Tajura' wa an Nawahi al Arba), and
+GeoNames' seats of the baladiyat show eleven baladiyat lying in another area
+than the shabiyah the census counts them in (Al Abyar and Tukrah in Al Marj,
+not Benghazi; Al Abraq in Al Jabal al Akhdar; Zliten in Al Marqab; Garabulli,
+Qasr al Khayar and Qasr bin Ghashir in the area labelled Tajura'; Janzur, Al
+Mayah, Az Zahra and As Sawani in Az Zawiyah). Each area's figures are put
+together from its baladiyat, and its note names what it takes from or leaves
+to a neighbour, and an area that is not its census shabiyah exactly is called
+close to the shabiyah of 2007, not the same. The outline labelled Tajura' and
+Al Jifarah's cannot be put together: three baladiyat of about 66,000 people
+(Sidi as Sayih, Suq al Khamis, As Sabiah) lie on or near the line between
+them, and both say why instead.
+
+The same workbook carries two more tables used here. Its Population sheet
+gives the Bureau's estimate for 2020 by shabiyah ("Demographic Indicators,
+2020, Estimated Population by Regions for the Year 2020"): the thirteen areas
+drawn as their census shabiyah unchanged show it as their population, the 2006
+count in the note; the seven put together from baladiyat keep the 2006 count,
+since the estimates are of the shabiyat, and say so. Its Households sheet
+holds the census's Table 1, Libyans and non-Libyans by mahallah, added up the
+same way: every area's ethnicity field gives nationality at the 2006 census
+(basis "nationality"), Libyans 88.5-95.5% of the residents.
+
+### Egypt: CAPMAS's 2017 census and 2023 estimate on the kisms of 2006
+
+CAPMAS's own site serves nothing to a reader outside Egypt (capmas.gov.eg is
+a 1,385-byte stub; censusinfo.capmas.gov.eg does not resolve). Its figures
+reach the map two ways:
+
+* citypopulation.de tabulates CAPMAS's units
+  ([egypt/admin](https://www.citypopulation.de/en/egypt/admin/)): every
+  governorate, kism, markaz and police district with its counts at the 1996,
+  2006 and 2017 censuses and CAPMAS's estimate for 1 July 2023, and on each
+  unit's page the 2017 census by sex and ten-year age group;
+* OCHA publishes the 2006 census's count of every kism and markaz by sex on
+  HDX ([egypt-population-statistics-0](https://data.humdata.org/dataset/egypt-population-statistics-0)).
+
+**The outlines are 2006's.** The map's 364 second-level outlines carry the
+English labels of OCHA's 2006 table -- including its slips: three rows
+labelled "Waraq" are Waraq, Shaykh Zayed and Awsim, two kisms of 6th of
+October are labelled as dates ("06-Oct-01"), a row of Daba's people is
+labelled Siwa. Each outline is bound to the 2006 unit of its label (a kism and
+a markaz of one name by size; eighteen outlines filed under the wrong
+governorate in the boundary data, such as Mit Salsil under Damietta, in the
+governorate that has the label), and each 2006 unit to today's units by their
+Arabic names: the same name, the parts numbered since (2006's Muntaza is
+today's Muntaza 1 and 2), and where those fall short, the one or two units of
+other names whose 2006 people make up the rest (Abu Suwir out of Ismailia's
+markaz, Dar as-Salam out of Basatin, Munsha'at Abu Umar and San al-Hajar out
+of Husayniya).
+
+**The ground test.** CAPMAS's 2006 counts of today's units must add up to the
+2006 unit's own count, to within 2% (or 3% once scaled by the two
+tabulations' governorate totals, which differ by about 1% nationally). 281
+outlines pass and carry the 2023 estimate (the 2017 count in the note) and
+the 2017 census's median age and men per 1,000 women; 64 do not -- their units
+were redrawn since, or CAPMAS's later tables give no 2006 count to compare
+(Hilwan, Raml 1 and 2, Al-Haram, Muharram Bik, Kafr el-Sheikh, Sharm
+el-Sheikh, ...) -- and carry the 2006 census's own count and sex ratio, with a
+median that says why there is none. The fourteen outlines labelled Zemam Out
+(the land outside the bounds of the towns and villages, in no census table),
+the four port police districts (listed with no population) and New Akhmim (no
+one there in 2017) say why; New Tushka carries the 2,655 people CAPMAS's later
+tables give it in 2006 (OCHA's table has 0), with no sexes or ages.
+
+**OCHA's 2006 table has keying slips** that leave a row's total whole: 19 of
+its sub-district rows of 1,000 people or more have more than twice as many of
+one sex as the other (Beni Suef markaz's al-Hakamina, 4,696 men and 43,731
+women). Where CAPMAS's own count of the unit in 2006 shows the slip to be one
+digit and the ground the same, the outline is declared the same ground and
+carries today's figures (Beni Suef markaz, Fariskur, Nuzha, Abu Tisht, Awlad
+Saqr, Asyut markaz); elsewhere no 2006 ratio of men to women is written for a
+unit holding a row with three times as many women as men or more, which no
+village of Egypt holds, or for one far below every other unit's. Rows with
+many more men than women can be real (workers' housing at Sharm el-Sheikh,
+Abu Rudeis and Hurghada's tourist villages): those ratios stand, with a
+sentence on where such a share of men comes from. No ratio is written
+from fewer than 1,000 people: El Alamein's outline (labelled Alamn) carries
+CAPMAS's 2023 estimate for the kism of Al-'Alamayn, 12,580, which the 2006
+census counted as the kism of Marina al-Alamein (41 men and 1 woman).
+
+**The governorate outlines are not all CAPMAS's.** The boundary file's
+governorates hold or leave out kisms and markazes that CAPMAS counts in a
+neighbour: seven by a tenth of the governorate's people or more (Cairo,
+Qalyubia, Damietta, Qena, Luxor, New Valley, Matrouh -- As-Salam and Al-Marj
+drawn in Qalyubia, Qus and Naqada in Luxor, Juhayna al-Gharbiya in New Valley,
+Burj al-Arab in Matrouh) say why instead of showing the governorate's
+figures; six (Alexandria, Dakahlia, Sharqia, Giza, Asyut, Sohag) show the 2023
+estimate and the 2017 census's median and sex ratio with a note naming the
+difference; the other fourteen are CAPMAS's ground.
+
+Hala'ib, the kism of the triangle north of 22°N that Egypt and Sudan both
+claim, is not drawn on Egypt's side; the Red Sea governorate is written
+without its 8,339 people. Bir Tawil, south of 22°N and claimed by neither, is
+drawn inside the Aswan governorate polygon; Aswan's note says Egypt's count
+does not include it.
+
+Sex ratios of the institutions: the 2017 census counts people in barracks,
+camps and prisons where they are, so Tura (Cairo) has 2,700 men per 1,000
+women; its note says so.
+
+### Sudan: the 2008 census, two tabulations, and two claim lines
+
+The US Census Bureau's tables for HDX
+([sudan-subnational-boundaries-and-tabular-data](https://data.humdata.org/dataset/sudan-subnational-boundaries-and-tabular-data))
+hold the Fifth Population and Housing Census of 2008 twice: its priority
+results by sex retabulated to the 18 states and 173 localities of 2020
+(30,894,000 people), and Table P01 by five-year age group and sex for the 15
+states of 2008. The two count the same state 0.7-2.1% apart (P01 has
+Khartoum's 5,181,186 of the 5,274,321 counted) and the states divided since
+-- West and South Darfur in 2012 for Central and East Darfur, North and South
+Kordofan in 2013 for West Kordofan -- 30-70% apart, which separates the eleven
+states whose ground is unchanged.
+
+On the map, in front of OCHA's 2025 projections: men per 1,000 women for all
+18 states, the median age for ten (the eleven unchanged, less Red Sea, whose
+ages P01 gives only with Hala'ib's), and men per 1,000 women for the 70
+localities of the eight states whose localities the retabulation and the map
+count alike. Where the map draws more localities than 2008 had (ten states),
+some have been divided since and none is written. The Abyei locality (in the
+Abyei Area) and Hala'ib's are never written; West Kordofan and Red Sea are
+written without them, which their notes say.
+
+Sudan's polygon "Hala'ib" is the locality of Halaib as Sudan draws it, north
+across 22°N over the triangle Egypt administers: about 18,000 of its 40,600
+km² lie north of the parallel, and Sudan's counts, and OCHA's projection from
+them, reach only the part south of it. Its population, median age and sex
+ratio say why instead of showing OCHA's 33,932.
+
+### South Sudan: the 2008 census by county
+
+The same Bureau's tables for South Sudan
+([south-sudan-subnational-boundaries-and-tabular-data](https://data.humdata.org/dataset/south-sudan-subnational-boundaries-and-tabular-data),
+sheet Age-Sex) give the 2008 census by state, county, payam and boma, five-year
+groups to 95+ (8,260,490 people). All 10 states and 78 counties carry the
+census's median age and sex ratio in front of OCHA's projections; Warrap is
+written without Abyei county (52,883 people), in the Abyei Area. The cards
+name the Southern Sudan Centre for Census Statistics and Evaluation (SSCCSE)
+whole.
+
+The population is OCHA's newer figure: its population dataset
+([cod-ps-ssd](https://data.humdata.org/dataset/cod-ps-ssd)) carries, beside the
+2022 tables the map read before, an estimates workbook
+(SSD_2024_population_estimates_data.xlsx, sheet Pop_Stats_Summary) with every
+county's population for 2025 by P-code: 13,297,195 in the 78 counties, the
+Abyei Area's row (145,358) never read. Each county carries it, the 2008 count
+in the note, and each state its counties' sum; every state's counties must
+make the workbook's own state total.
+
+### Morocco: the 2024 census by sex, mother tongue, nationality and age
+
+HCP's public results dashboard (resultats2024.rgphapps.ma) answers queries
+to its data service without a key (the dashboard's own chart-data endpoint,
+asked for one of its public datasets at a time): the municipal population of
+the Kingdom, every region, province and commune, by sex (36,490,591 people:
+18,195,488 men and 18,295,103 women), and the share of each unit's people
+whose mother tongue is Arabic and Amazigh. Every drawn region's provinces must
+make its men and its women, and no unit's two shares may pass 100%.
+
+On the map, for the 10 regions and 69 provinces bound as the legal-population
+table binds them (the polygons the Western Sahara line cuts say why):
+
+* men per 1,000 women in the municipal population, which leaves out the people
+  counted apart (barracks, boarding schools, prisons), as the notes say;
+* language: the shares whose mother tongue is Arabic and Amazigh (Tachelhit,
+  Tamazight or Tarifit), basis "mother tongue", in front of the 2014 census's
+  tabulation and the survey samples the map showed before;
+* ethnicity: nationality from the legal population (Moroccans and foreign
+  residents), basis "nationality";
+* the median age for 4 regions and 27 provinces, from HCP's regional
+  directorates: the workbooks of Rabat-Salé-Kénitra and Fès-Meknès (every
+  unit's share in each five-year age group, by HCP code), the annexes of five
+  provincial notes of Tanger-Tétouan-Al Hoceima (Tétouan, Ouezzane, Larache,
+  Tanger-Assilah, M'diq-Fnideq, with the region beside each), and Souss-Massa's
+  notes on the region and its six prefectures and provinces. Each table must
+  run from 0-4 to an open group, make 100%, and make the dashboard's own
+  shares under 15 and of 60 and over to within 0.6 points. The other units say
+  that no five-year table of theirs has been found, and that the dashboard and
+  HCP's provincial atlas give only the shares under 15, 15-59 and 60 and over.
+
+**Al Mahbass.** HCP counts the commune of Al Mahbass in Assa-Zag province
+(Guelmim-Oued Noun), but Mahbès, at about 27.42°N 9.03°W, lies south of
+27°40'N, in the polygon drawn for Western Sahara at both levels; the Assa-Zag
+polygon stops at 27.667°N. Assa-Zag and Guelmim-Oued Noun are written without
+it, and their notes name it: 19,139 of Assa-Zag's 53,298 legal population
+(mostly people counted apart), 318 men and 264 women of its municipal
+population, and their mother tongues. Guelmim-Oued Noun's median (31.3 years
+in HCP's note on the southern provinces, September 2025) counts it, and is
+stated, not shown.
+
+### Western Sahara: the line, and no capital
+
+No figure on the map is counted across the line. The part of Laâyoune-Sakia
+El Hamra drawn north of it, and the pieces of Es-Semara and Oued Ed-Dahab
+provinces drawn there, say why: HCP counts each with ground south of the
+line. Tarfaya Province is drawn north
+of the line only, and HCP counts it with the communes of Daoura (902 people,
+27.46°N) and El Hagounia (561, 27.43°N), both south of it: its cells say so.
+Assa-Zag and Guelmim-Oued Noun are written without Al Mahbass (above).
+
+The territory is drawn as one unit at both levels, and GeoNames' seat inside
+it is Bir Ghandouz, a rural commune's seat near the Mauritanian border, which
+had become its capital. No capital is recognised by both claimants -- Morocco
+administers Laâyoune as a regional seat; the Sahrawi Republic names Laâyoune
+its capital, holds Tifariti as its provisional one and governs from the camps
+near Tindouf -- and the field now says so.
+
+### North Africa: dead ends
+
+* **CAPMAS**: capmas.gov.eg answers with a 1,385-byte stub page;
+  censusinfo.capmas.gov.eg does not resolve. OCHA's COD-PS for Egypt
+  (cod-ps-egy) is CAPMAS's 2012 estimate for the governorates only, with no
+  ages.
+* **INS Tunisia**: the RGPH 2014 volumes 1 and 2 answer 404 at their
+  files-ftp1 paths; census.ins.tn and rgph2014.ins.tn do not resolve. Volume 3
+  has the 2014 governorates' ages and sex ratios, superseded by 2024's
+  sectors.
+* **Algeria**: no COD-PS dataset on HDX; the ONS's commune tables (w01_p3,
+  ages by commune) have no second level to stand on.
+* **Libya**: no COD-PS dataset; the 2012 National Population Survey in the
+  same workbook is a survey and was not used.
+* **Morocco**: the dashboard's dataset and column listings need a key (401),
+  and its saved charts answer only a cut of their data (the mother-tongue
+  chart's pivot table, 675, and the municipal population chart's first 10,000
+  rows); asking the data service for the dataset itself gives every unit. Its
+  "Démographie" chart holds only shares under 15, 15-59 and 60+. HCP's full
+  list of RGPH 2024 downloads holds five-year tables only for
+  Rabat-Salé-Kénitra (the region and its seven prefectures and provinces,
+  hcp.ma/file/248107-248115) and five provinces of Tanger-Tétouan-Al Hoceima
+  (file/244697-244701); the regional directorates' own sites add Fès-Meknès's
+  and Souss-Massa's. Nothing was found for Casablanca-Settat,
+  Marrakech-Safi, the Oriental, Béni Mellal-Khénifra, Drâa-Tafilalet, Al
+  Hoceima, Chefchaouen, Fahs-Anjra, or Guelmim-Oued Noun's provinces.
+* **Sudan**: the retabulation's 2008 localities do not match the map's 2020
+  localities in ten states (Central Darfur's 7 against 9, North Darfur's 14
+  against 17, ...).
+
+### Anglophone West Africa: four censuses, three of them from other hosts
+
+Nigeria, Ghana, Sierra Leone, Liberia and The Gambia. Ghana already carried its
+2021 census by district (`ghana_census`); the other four now carry their own
+census below the country, each read from the office's publication and naming
+the table it comes from. Three offices' files are read from other hosts: the
+2006 Nigerian census's priority tables from the IHSN survey catalogue (the
+National Population Commission's site no longer serves them), Liberia's 2022
+results from the Internet Archive (LISGIS's own host answers a script with a
+2 kB page), and Sierra Leone's 2015 reports from UNFPA Sierra Leone's site,
+where Statistics Sierra Leone's reports are published; Sierra Leone's 2021
+mid-term census from citypopulation.de's tabulation of it. This corrects the
+African census sweep above for Liberia and Sierra Leone: their offices' sites
+carry no links a reader can follow, but the same reports are reachable.
+
+### Nigeria: the 2006 census's priority tables, by state and local government area
+
+The National Population Commission published the 2006 census's final results
+in its Priority Table series (April 2010; the figures were gazetted in the
+Official Gazette No. 2 of 2 February 2009). The IHSN catalogue keeps them under
+entry 3340 (the census's study NGA_2006_PHC_v01_M):
+
+| Volume | Address | What it gives |
+| --- | --- | --- |
+| IV, Population Distribution by Age & Sex (State & LGA) | `datacatalog.ihsn.org/catalog/3340/download/48522` (371 pp, 34 MB) | Table DS5 for Nigeria, every state and the FCT, and all 774 local government areas: five-year age groups (0-4 ... 80-84, 85+) by sex, the total on top |
+| III, Population Distribution by Sex, State, LGA & Senatorial District | `.../download/48521` (64 pp) | each area's men, women and persons, land area and senatorial district |
+
+`scripts/fetch_census/nigeria_census.py` writes, for each of the 774 areas and
+the 37 states, population, sex ratio and median age (interpolated within the
+five-year group holding the middle person). The count is twenty years old.
+OCHA's COD-PS table carries the Commission's own projection of every area to
+2020 from this census, so an area's 2006 population fills only where nothing
+newer is shown. A state's 2006 count is the figure its newer ones -- its
+areas' 2020 projections added up, a 2016 projection -- are weighed against: the
+build shows the newer figure where the years between could make the one the
+other, and keeps the count where they could not. The Federal Capital
+Territory's areas add up to 4,834,747 for 2020 against 1,406,239 counted in
+2006, 9.2% a year (the Commission's own 2016 projection, 3,564,126, is the
+same pace), so the Territory shows its 2006 count and its note says what its
+areas add up to; and GeoNames' 2,690,000 for Abuja, more than one and a half
+times that count, is no longer shown as its largest settlement. Cross River's
+newer figure, Wikidata's 3,866,269 for 2016, is the Commission's projection of
+the state with Bakassi, and is not this polygon's ground (`NOT_THIS_GROUND`):
+the state shows its count less Bakassi (below). The other 35 states show their
+areas' 2020 projections added up. The census's sex ratios and medians stand in front of the
+projection's (a projection carries the census's structure forward, it does not
+measure it again).
+
+* **Reading Volume IV.** Its text layer was typeset from spreadsheets. A
+  figure broken at the end of a line ("64,80" over "9") is joined; a TOTAL row
+  running over several lines is read across them; the age groups are read in
+  order whatever their labels say -- Kebbi's and Nasarawa's print 5-9 and
+  10-14 as the dates "05-Sep" and "Oct-14" (one as the serial 41913), the
+  FCT's drop the dashes ("1014"), Lagos's and Niger's print 5-9 as "4 - 9",
+  one of Babura's is garbled: 51 rows are read by position and logged.
+* **Volume III names the areas.** Volume IV prints Sabon Gari's table under
+  Makarfi's name and misspells others (Aguta for Agatu, Bukuru for Buruku);
+  each Volume IV table is paired with the Volume III row of its state with
+  the same men, women and persons. Kaura (Kaduna) has no table in Volume IV:
+  its sex ratio comes from Volume III; its median age is OCHA's 2020
+  projection's, since Volume IV prints no table for it.
+* **Taraba's disputed areas.** Taraba's table counts 19,964 people "in
+  disputed areas" outside all of its local government areas; the state's
+  count, sex ratio and median age include them, and each says so. One of
+  Taraba's areas (Zing) prints no TOTAL row; its total is its men and women
+  added.
+* **Bakassi.** The census counted Bakassi local government area while it held
+  the peninsula, which passed to Cameroon in 2008. The polygon drawn under
+  that name is what is left on the Nigerian side, so the area's figures are
+  not written on it (it says why, citing Volume IV). Cross River's count, sex
+  ratio and median age are the state's table less Bakassi's, group by group:
+  2,861,347 people (sex ratio 103.3, not the 103.6 of the whole table), the
+  peninsula's people not counted across the border and the Nigerian remnant's,
+  which the census does not count apart, left out with them, as the notes say.
+* **Checks** stopping the run: men and women make every total and every age
+  group, the groups make the total, every state's areas make it, the states
+  make Nigeria, 140,431,790 (71,345,488 men, 69,086,302 women).
+* **COD-PS spellings.** 23 of OCHA's area names did not reach their polygon
+  (Isuikwuato, Obio/Akpor, Yewa North and South, Atakunmosa East and West,
+  Barkin Ladi ...), besides the seven aliased before (Obi Nwga, Dambam ...);
+  which is why four areas besides Bakassi had no population. The shared patch
+  adds the 23 as build-time aliases for OCHA's population table and all 30 for
+  its age-and-sex table, whose rows have ids of their own: the projection's
+  ages then stand behind the census's for these areas as for the others. The
+  census, not the aliases, gives the 30 areas their median age and sex ratio.
+
+Religion and ethnicity: the 2006 census did not ask them, as the section above
+says; nothing here changes that.
+
+### Sierra Leone: the 2015 census, from the reports UNFPA publishes
+
+Statistics Sierra Leone's 2015 Population and Housing Census reports are
+published on UNFPA Sierra Leone's site (`sierraleone.unfpa.org/sites/default/
+files/pub-pdf/`). Two are read (`scripts/fetch_census/sierra_leone_census.py`):
+
+* **National Analytical Report** (584 pp): Table A3.1, the population by
+  region, district and sex; Table 3.12, the median age by region and district
+  (Statistics Sierra Leone's own medians); Table 3.23, the three most common
+  main languages of each district's household population and everyone else.
+* **Thematic Report on Population Structure and Population Distribution**
+  (54 pp): Table 5.2, ethnic groups (16, with non-Sierra Leoneans apart) and
+  Table 5.3, religion, by region and district.
+
+The map draws the 4 regions and 14 districts of 2015 (before Falaba and
+Karene were made in 2017), so the census's units are the map's, bound by name;
+"Western" is the Western Area. The sex ratio is computed from Table A3.1's
+counts: the thematic report's Table 5.1 prints several wrong ratios (Bombali
+98.7 against 95.7 from its own counts, Moyamba 98.7 against 93.2). Table 3.23
+spells Temne "Time" once; its Southern row makes 99.5, logged. OCHA's 2020
+district projections are newer than the 2015 counts and are shown in front of
+them; a region shows its districts' 2020 sum where the years between the 2015
+count and that sum could make the one the other.
+
+* **CLEAR Global's Sierra Leone rows** are on the 16 districts of 2017: its
+  Bombali, Koinadugu and Port Loko are the smaller new districts, not the
+  polygons the map draws under those names (the census's language figures now
+  stand on every district).
+
+### Sierra Leone: the 2021 mid-term census, put together on the 2015 districts
+
+Statistics Sierra Leone took a mid-term census in December 2021. No report of
+its own could be reached; citypopulation.de (`citypopulation.de/en/
+sierraleone/admin/`) tabulates its counts for the sixteen districts of 2017
+and their 190 chiefdoms, with the 2004 and 2015 censuses beside them on the
+same 2017 boundaries, and notes that "the reasons for the significant
+differences between the 2015 and 2021 figures are unclear". The results were
+disputed: Western Area Urban's count, 609,174, is 42% below the 2015 census's
+1,055,964, and Freetown's mayor and opposition parties rejected them.
+
+`scripts/fetch_census/sierra_leone_mtphc.py` puts each 2015 district together
+from the 2017 units that make it, and the run stops unless the 2015 column so
+put together is the 2015 census's own count of every district:
+
+| 2015 district | 2017 units | 2021 |
+| --- | --- | --- |
+| Kailahun, Kenema, Kono, Kambia, Bo, Bonthe, Moyamba, Pujehun, Western Area Rural and Urban | the district of the same name | as tabulated |
+| Koinadugu | Koinadugu and Falaba | 372,338 |
+| Tonkolili | Tonkolili and Mara chiefdom (listed under Bombali since 2017) | 569,052 |
+| Bombali | Bombali less Mara, with eight of Karene's chiefdoms (Gbanti, Libeisaygahun/Gbombahun, Mafonda Makerembay, Sanda Loko, Sanda Tendaran, Sella Limba, Tambakha Simibungie and Yobangie) | 562,437 |
+| Port Loko | Port Loko with Karene's other five (Buya, Dibia, Romende, Safroko, Sanda Magbolontor) | 631,355 |
+
+Karene's thirteen chiefdoms split between Bombali (201,035 in 2015) and Port
+Loko (84,511) in one way only that makes both old districts' 2015 counts, and
+Mara's 17,451 in 2015 is exactly what Tonkolili lost in 2017. The regions are
+their 2015 districts added up (the Northern Region with the North West
+Province made out of it in 2017); the districts make 7,548,702, the table's
+total. These counts are held behind the 2015 census (`HELD_ROWS`) and offered
+to each unit as a newer figure: shown where the change from the figure shown
+is one a population makes, and otherwise named on the unit as a newer figure
+not shown. Only the population is offered, with its note naming the mid-term
+census and the dispute; the 2015 census's sex ratios, ages and compositions
+stand. The Eastern and Northern regions and Kambia, Moyamba and Tonkolili
+districts show the 2021 count. The other districts keep OCHA's 2020
+projection, against which the 2021 count moves 2% to 46% in a year, and name
+the 2021 count as a newer figure not shown. The Southern Region showed
+Wikidata's 1,830,881 for 2021 (the mid-term census's count) and now keeps the
+2015 census's 1,441,308, since the change is 4.1% a year; it names the newer
+figure. The Western Area shows its two districts' 2020 projections added up.
+
+### Liberia: the 2022 census, from the Internet Archive's copies
+
+LISGIS published the final results of the 2022 Population and Housing Census
+in 2023 and a thematic report on population size, distribution and structure
+in June 2024. `www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf` answers
+a script with a 2,452-byte page; both files are read as the Internet Archive
+keeps them (`web.archive.org/web/2024id_/...` and `.../2025id_/...`), and the
+records cite the LISGIS address with the capture beside it
+(`scripts/fetch_census/liberia_census.py`).
+
+* **Final Results** (92 pp): Table A3, population by sex and county; Table A7,
+  population by ethnic group, nationally; Appendix B, Tables B1-B15,
+  population by county, administrative district and sex.
+* **Thematic report**: Appendices 4a-18a, each county's population by
+  five-year age group and sex; Table 4.3, religious affiliation by county;
+  Table 4.1, each ethnic group's spread across the counties (each row 100).
+
+Counties: population and sex ratio (A3), median age (interpolated), religion
+(4.3), and ethnicity, which the census publishes for no county as such: a
+county's count of a group is Table 4.1's share times Table A7's national count,
+its composition those counts over its population. Every share carries the
+rounding of Table 4.1 (a twentieth of a per cent of the group's national
+count), and the note says so. A7 does not print "Other African": it is the
+national population less the groups printed, less the 0.2% non-Africans of
+Table 4.2 (155,971), and the note says that too.
+
+**The districts.** The map draws the 136 districts of the 2008 census; the
+2022 census counts 155. Where a county's districts are the same in both
+lists -- Bong, Gbarpolu, Grand Bassa, Grand Cape Mount, Grand Gedeh, Maryland,
+Nimba, River Cess, River Gee -- each polygon gets its district's count and sex
+ratio (81 districts). Two corrections the arithmetic makes: Gounwolaila
+(17,986) is printed under Grand Cape Mount and Margibi, whose districts make
+their totals only without it, and not under Gbarpolu, whose districts fall
+short by exactly its figures, so it is read as Gbarpolu's; and Grand Bassa
+prints seven districts that fall 14,422 short of the county (7,391 men, 7,031
+women), which is Owensgrove's count, the one district it does not print
+(sex ratio 105.1; 13,914 in 2008).
+
+Every bound district's count is set beside the 2008 census's count of the
+district of the same name, as Statoids (`statoids.com/ylr.html`) lists the
+2008 census report's 136 districts (3,476,608 people). Fourteen change by more
+than a population does in fourteen years (5% a year up, 3% down, the build's
+own bounds) and say so in their note, giving the 2008 count: Potupo (River
+Gee, 4.3 times its 2008 count), Nyenawliken, Nanee and Tuobo; Cavala, Tchien
+and Putu (Grand Gedeh); Beawor and Central Rivercess; Commonwealth (Grand Cape
+Mount); Boinsen (Bong); Gwelekpoken and Whojah (Maryland, half or less of their
+2008 counts while Pleebo/Sodoken nearly doubled); Yarpea Mahn (Nimba). Most
+of the rises are county capitals' and mining districts' (Zwedru in Tchien,
+Fish Town in Potupo, Robertsport in Commonwealth, Cestos City in Central
+Rivercess); Maryland's pattern looks like ground moved between districts.
+Their 2022 counts are shown, as the district the 2022 census counts. One
+largest settlement goes with the counts: Commonwealth's 2022 count, 35,740, is
+on the polygon drawn as Commonwealth 2, and GeoNames' 75,854 for Buchanan, which
+stands in it, is more than one and a half times that, so Buchanan is not shown
+as the district's largest settlement.
+
+Elsewhere the 2022 list cannot be laid on the districts drawn, and the
+publications do not say which drawn district a new one was made from:
+
+* Bomi (Table B1): the four drawn districts and Tehr, which the 2008 list
+  does not hold;
+* Grand Kru (B10): all eighteen drawn districts and Penicess (2,828), made out
+  of one it does not name;
+* Lofa (B14): the seven drawn and Lukameh, Wahasa, Waum and Tengia;
+* Margibi (B5): Gibi, Kakata and Mambahn Kabah, Farmington and Kabah
+  Administrative, and no Firestone;
+* Montserrado (B6): Careysburg, St. Paul River, Todee and Greater Monrovia,
+  eleven townships apart from them (Paynesville, Gardnersville, New Georgia
+  and others), and no Commonwealth district;
+* Sinoe (B8): sixteen of the seventeen drawn, not Dugbe River, and Jlah, Krah,
+  Sarboh and Bar-Nakay.
+
+Each of those 55 polygons carries that reason for its 2022 count, citing the
+Final Results, but shows OCHA's 2020 projection from the 2008 census, which
+fills the population and sex ratio, and the build shows no gap's note beside a
+figure: the reason is in the record, not on the map, except on Kpi and Wlogba
+(Grand Kru), which OCHA gives no sex ratio and which give the reason for it.
+
+### The Gambia: the 2024 preliminary results and the 2013 census's reports
+
+The Gambia Bureau of Statistics' download site (`www.gbosdata.org/downloads/`)
+serves every file directly at `downloads-file/<id>`. Three are read
+(`scripts/fetch_census/gambia_census.py`):
+
+| Publication | What it gives |
+| --- | --- |
+| 2024 Population and Housing Census, Preliminary Report (25 pp) | Table 12, the de facto population by sex and LGA (2,422,712); Table 8, the ethnic groups of each LGA's Gambian nationals (2,306,066) |
+| 2013 census, Volume 5: Spatial Distribution (373 pp) | Annex F, each LGA by five-year age group and sex; Annex H, by religion |
+| 2013 census, Volume 10: Directory of Settlements (83 pp) | every LGA, district and settlement: both sexes and women, in broad age bands |
+
+The eight LGAs: population, sex ratio and ethnic groups from 2024; median age
+and religion from 2013 (the 2024 report gives ages by LGA only in three broad
+groups, and no religion). Table 8 counts Gambian nationals only, and each LGA's
+note says how many of its people that is (Banjul 21,982 of 26,461). Annex H's
+table of Kerewan's people of both sexes is a copy of its urban table (50,188
+people of 220,080); Kerewan's religions are its tables of men and of women
+added, and the eight LGAs then make the report's table of The Gambia exactly.
+The 2024 figures are preliminary.
+
+The districts: population and sex ratio from 2013 (the 2024 census has
+published its LGAs only). The census counts 44 districts, the map draws 48:
+it divides Kanifing municipality, one census district of 377,134, into five
+parts (Bakau, Jeshwang, Serrekunda Central, East and West), and the directory
+places the municipality's nineteen settlements in none of them, so those five
+say why they carry no figure, citing the directory. Every LGA's districts
+make it exactly and the LGAs make The Gambia, 1,857,181; in thirteen districts
+the settlements printed under the district make a little more than its count
+(Jarra East 17,810 against 16,034), and the district's count is the one used.
+Two largest settlements go with the counts: GeoNames' Banjul (37,274) is more
+than one and a half times Banjul Central's 11,562, and Nema Kunku (34,390), a
+Kombo North town, more than Foni Jarrol's 6,883.
+Median age, religion and ethnicity are published by LGA only, and each
+district says so, citing the reports.
+
+### Ghana: district capitals from Wikipedia's list of the districts
+
+The Ghana Statistical Service's 2021 census tables name the 261 districts and
+not their capitals, and its General Report Volume 3A (Population of Regions
+and Districts) has no list of them: the Service's own address for it answers
+404 and the Internet Archive's copy carries no capital column. English
+Wikipedia's *Districts of Ghana* lists every district region by region with
+its capital; `scripts/fetch_census/ghana_capitals.py` writes each capital for
+the polygon of the district it names, matched within the region
+(Akuapim/Akwapem, Assin Central drawn as Assin Fosu, Amenfi as Wassa Amenfi,
+Kassena-Nankana Municipal as Kasena Nankana East), and cites the revision read
+by its permanent address (`oldid=1359154973`, of June 2026). Guan district,
+made in 2019 and drawn inside Hohoe's polygon, gives none: Hohoe's polygon
+shows Hohoe.
+
+### Sierra Leone: district capitals from Wikipedia's list of the districts
+
+The 2015 census's National Analytical Report speaks of the "district
+headquarter towns" (pages 56, 62 and 66) without naming one. English
+Wikipedia's *Districts of Sierra Leone* (cited by its revision, `oldid=
+1267722421`, of January 2025) lists the sixteen districts of 2017 with their
+capitals; `scripts/fetch_census/sierra_leone_capitals.py` gives the fourteen
+drawn theirs. Bombali, Koinadugu and Port Loko, which Karene and Falaba were
+cut from in 2017, kept their capitals (Makeni, Kabala, Port Loko), and each
+says so. Bonthe is left out: the list names Bonthe town on Sherbro Island,
+while Bonthe District Council sits at Mattru Jong on the mainland.
+
+### Seats from each unit's Wikipedia article: Nigeria's areas, The Gambia's units, Liberia's districts
+
+Wikidata names no seat for 67 of Nigeria's 774 local government areas, two of
+The Gambia's eight LGAs and its 48 districts, or any of Liberia's 136
+districts, and the censuses' tables name none. Many of the units' own English
+Wikipedia articles do: "Its headquarters are in the town of Iragbiji"
+(Boripe), "Umunze is the headquarters of Orumba South", "The capital of the
+LGA is Gembu" (Sardauna), "The town is the seat of the Kuntaur Local
+Government Area", "The administrative seat of the District is Ziah Town"
+(Konobo). `scripts/fetch_census/nigeria_capitals.py` (with
+`gambia_capitals.py` and `liberia_capitals.py`) reads each unit's article,
+found through its Wikidata item or a declared title, and takes the seat from
+the infobox, from the opening's sentence naming the headquarters, from a
+sentence anywhere that names the unit, or from a town's article that calls the
+town the unit's seat; where the English article names nothing, from the French
+article's chef-lieu (Orumba North's, Ajali). A seat is written only where
+every place the article names one agrees, citing the revision read. Bakassi's
+polygon is not read (its article's headquarters would be the 2006 area's).
+
+| | Units without a seat | Seats read | Stated reasons |
+| --- | --- | --- | --- |
+| Nigeria, local government areas | 66 (and Bakassi) | 49 | 17: the article names none (15), or there is no article on the area (Municipal Area Council, Zaria) |
+| The Gambia, LGAs | 2 | Kuntaur (Kuntaur) | Kanifing: its article names none |
+| The Gambia, districts | 48 | Nianija (Chamen) | 47: 26 whose article names none, 16 that have no article, and Kanifing's five parts, which are not census districts |
+| Liberia, districts | 136 | 6: Careysburg (Bensonville), Gbehlay-Geh (Karnplay City), Kakata, Konobo (Ziah Town), Kparblee (Youkorway Old Town), Sanniquellie-Mahn (Sanniquellie) | 130 |
+
+An article that only says a county's capital lies in a district
+("Robertsport, the capital city of Grand Cape Mount County, is located in the
+district") names no seat for the district. Where a unit has no article, its
+reason cites the census and English Wikipedia's list of the units, which names
+no seats (*Local government areas of Nigeria*, *Districts of Liberia*,
+*Subdivisions of the Gambia*).
+
+### What the questionnaires could not settle: language in Nigeria and Ghana
+
+* **Nigeria.** The IHSN entry's related materials 48526, 48527 and 48528 (the
+  2006 census's forms, one to four pages each) are scans: the text layer of
+  the first two is noise and of the third empty, so whether the 2006 form asks
+  a language could not be read from them. The language field of the areas CLEAR
+  Global does not reach keeps its general note.
+* **Ghana.** The Ghana Statistical Service's *Information Sheet on the 2021
+  Population and Housing Census Questionnaire* (2 pages) lists, among the
+  modules' "highlights", religion and nationality and, under literacy, the
+  "ability to read and write with understanding (English and local
+  language)"; it does not list ethnicity either, which the census did ask, so
+  it does not show that no language question was asked. The 113 districts
+  CLEAR Global does not reach keep their general note.
+
+### Francophone and Lusophone West Africa and the Sahel: eleven censuses, read from the offices and their mirrors
+
+Senegal, Mauritania, Mali, Burkina Faso, Niger, Guinea, Guinea-Bissau, Cabo
+Verde, Côte d'Ivoire, Togo and Benin. Each country's subdivisions now carry
+their own latest census wherever its tables reach the map's units, and say
+why where they do not. Five offices' files are read from other hosts: ANStat's
+2021 regional pages and INStaD's 2013 workbook and leaflets from the Internet
+Archive (rp2021.anstat.ci answers a script with 403, instad.bj with 503),
+ANSADE's 2023 leaflet from the Archive's capture of ANSADE's own file
+(ansade.mr answers a script with a 2,886-byte page; the copy the Centre Rachad
+publishes is the same file and stands in only where the Archive refuses),
+Cabo Verde's 2010 and 2021 files from the Archive's copies of INE's own, and
+Mali's 2009 census from the US Census Bureau's tabulation on HDX. The rest are
+read from the offices' sites.
+
+A rule this region needed more than once: where the map draws a unit as it
+stood before a reform and the census counts the units after it, a figure is
+written only for ground the census's units make exactly (Mali's regions of
+2023, Togo's prefectures of 2017-2019, Mauritania's moughataas of 2014-2023,
+Guinea's communes of 2024); elsewhere the unit keeps a figure for its own
+ground, older if need be, and says why the newer one is not shown.
+
+### Senegal: the 2023 census's fourteen regional reports
+
+ANSD's *Rapport de présentation des résultats* of the RGPH-5 (2023), one per
+region (April 2026), at `www.ansd.sn/sites/default/files/recensements/rapport/`
+(listed on `www.ansd.sn/rapports/rgph-5-2023`; 12 to 25 MB each)
+(`scripts/fetch_census/senegal_regional_reports.py`):
+
+| Table (numbering varies by report) | What it gives |
+| --- | --- |
+| *Age moyen et âge médian de la population selon le sexe et le milieu de résidence* (II-4 or II-5; Thiès's 1.4) | the region's median age, whole years |
+| *Répartition de la population résidente de 3 ans ou plus par principale langue couramment parlée selon le sexe* (II-11 to II-13, III-12) | principal language usually spoken, residents aged 3 and over, counts or shares |
+| *Répartition de la population résidente par groupes d'âges selon le département et le milieu de résidence* (II-6) | each department's population in three broad groups (under 15, 15-64, 65 and over) |
+| *Répartition de la population résidente par regroupement de nationalités selon le sexe* (II-12) | nationality groupings, region only |
+
+Written: every region's median age (14) and language (14, replacing the
+survey's shares); every department's median age says why there is none (three
+broad groups only). Checks: the median is a whole number between 14 and 35, the
+last figure of its row; a language table's rows make its total row (counts:
+men and women make each row; shares: 100 within rounding).
+
+* **Reading the language tables.** The sign-language row ("Langage des signes
+  (Sourd-Muet)") wraps over two or three lines and is cut by a column heading
+  or a page break in Kaolack, Ziguinchor and Sédhiou; any label holding
+  "signe" or "muet" is sign language. Sédhiou prints the row as 5,964 people,
+  1.2% (the other regions 0.1 to 0.3%): the figure stands as printed.
+* **What the 2023 census does not publish.** The national report (*Rapport
+  définitif*, 666 pp, `.../rapport_national/Rapport-def-RGPH-5.pdf`) mentions
+  religion and ethnic group once, in a definition; no table gives either, at
+  any level. The regional reports give language and nationality by region
+  only. So each department says so for religion and ethnicity, citing the
+  national report and its region's; departments' languages are CLEAR Global's
+  tabulation of the 2013 census where it has a row (18), and regions keep the
+  survey's religion and ethnicity.
+
+### Mauritania: the 2023 census's leaflet, by wilaya and moughataa, and its ages by wilaya
+
+ANSADE, *Population des Wilayas, Moughataa et Communes*, first results of the
+RGPH 2023 (25 December 2023 to 8 January 2024), 2024: everyone by sex for the
+15 wilayas, 63 moughataas and every commune, 4,927,532 people. ANSADE's own
+file (`ansade.mr/wp-content/uploads/2024/09/Depliant-RGPH5-1.pdf`) is read and
+cited as the Internet Archive captured it on 25 September 2025 (eleven
+captures since November 2024). The copy the Centre Rachad publishes
+(`centre-rachad.org/wp-content/uploads/2024/10/Depliant-RGPH5_vf.pdf`) is the
+same file, byte for byte (sha256 ab6f0a1f...dc2d1ca), and is read only where
+the Archive refuses, the source then saying whose copy it is
+(`scripts/fetch_census/mauritania_census.py`).
+
+The map draws 13 wilayas (Nouakchott as one) and 57 moughataas on their 2013
+lines; OCHA's 2024 boundaries of the 63 moughataas were placed on the map's
+polygons point by point. Six moughataas were made from one each since (Adel
+Bagrou from Amourj, Touil from Tintane, Lexeiba 1 from Kaédi, Maal from Aleg,
+Tékane from R'Kiz, Wompou from Sélibaby): each of those polygons takes the two
+counts added. Chami is drawn in Inchiri and counted in Dakhlet Nouadhibou.
+Nouakchott is three wilayas since 2014 and the map's Nouakchott takes the
+three; its nine moughataas are not bound, because the lines drawn for them do
+not follow the census's units (29 of the 33 points of OCHA's Ksar fall in the
+polygon drawn as Ouad Naga), and each says why. OCHA's second-level labels
+swap Toujounine and Teyarett against its own commune layer and the ground
+(the communes and the points say which is which), so neither serves as the
+example. Written: population and sex ratio for every other wilaya and
+moughataa. Checks: each row's sexes make its total, communes make their
+moughataa, moughataas their wilaya, wilayas 4,927,532.
+
+**Ages.** ANSADE's report on the census's structure by sex and age, *Thème 2 :
+Structure par sexe et par âge de la population* (2024,
+`admin.ansade.mr/wp-content/uploads/2024/09/Theme-2.pdf`; admin.ansade.mr
+answers a script where ansade.mr does not), gives every wilaya's population by
+five-year age group in its annex (Tableau A.2.2), and no moughataa's. The
+eleven wilayas drawn on the census's ground take the median interpolated from
+that table (Nouakchott's three wilayas added group by group: 21.6), the
+census's own figure, in front of OCHA's projection for 2022. Inchiri and
+Dakhlet Nouadhibou keep OCHA's: the table counts Chami in Dakhlet Nouadhibou,
+with no ages of its own, and the map draws Chami in Inchiri. Every moughataa
+says the census tabulates ages by wilaya only, citing the leaflet and the
+report. Checks: each wilaya's eighteen groups make its total row and the
+leaflet's count within three people; the country's column is 4,927,532, and
+its median (18.7) the report's 18 in whole years (Tableau 2.6). The rest of
+ANSADE's series (sixteen thematic reports, the *Rapport général* and an atlas,
+2024 to 2026, listed on admin.ansade.mr) has, by its titles, no report on
+religion, language or ethnic group: the themes are the population's distribution, marital status,
+births, deaths, schooling, economic activity, households, housing, children,
+women, the disabled, the elderly, migration and foreign residents.
+
+### Mali: the 2022 census for the regions it can make, the 2009 census for the rest
+
+**2022.** INSTAT's *Rapport d'analyse, État et structure de la population*
+(RGPH5, 2024; `instat-mali.org/laravel-filemanager/files/shares/rgph/rapport-etat-structure-population-rgph5-rgph.pdf`):
+Tableau 2.3 (population by region and sex), Tableau 3.4 (median age by region),
+annex Tableaux A.02 to A.21 (five-year groups by region). The census counts the
+19 regions and the District of Bamako of the law of 13 March 2023 (Tableau 1.1:
+159 cercles, 481 arrondissements, 815 communes, "le district de Bamako est
+actuellement divisé en sept arrondissements"). The map draws the eight regions
+and Bamako of 2012. Kayes (with Kita and Nioro), Tombouctou (with Taoudénit),
+Gao (with Ménaka) and Kidal are made exactly by regions of 2023 and take their
+2022 population, sex ratio and median age (interpolated from the annex's groups
+added together). The 2023 regions cross the other five (CROSSED in
+`scripts/fetch_census/mali_census.py`).
+
+**2009, for the five the 2023 regions cross.** The US Census Bureau's
+tabulation of the 2009 census (HDX, *Mali - Subnational Population and Housing
+Data Tables with Administrative Boundaries*) gives the nine regions of 2009 --
+the map's -- by sex and five-year age group, and adds up: the nine make the
+census's 14,528,662, each region's men and women those of the census's
+final results (Tome 1, Tableau P-1). Koulikoro, Sikasso, Ségou, Mopti and the
+District of Bamako take its median age and sex ratio, each saying why the 2022
+census cannot give them. For their population, Koulikoro, Sikasso, Ségou and
+Mopti show their cercles' 2018 figures from INSTAT's projection (in OCHA's
+common operational dataset) added, newer and for the same ground, and name the
+2009 count they replace. The District of Bamako is drawn as one cercle: it
+shows the projection's 2,231,344 for 2018 at both levels, the note naming the
+2009 census's 1,810,366. The cercles' rows in the same table are blank, so no
+cercle has a census median, and each says why. Each cercle also says that the
+2022 census tabulates religion and ethnic group by region only, citing the
+report on cultural characteristics; 46 cercles' languages come from CLEAR
+Global's or INSTAT's tabulations of the 2009 census.
+
+**Their religion, ethnic groups and languages.** The 2022 census's
+*Caractéristiques culturelles de la population* tabulates them for the regions
+of 2023, and those regions cross all five: the Bougouni region of 2023 took in
+the cercle of Ouélessébougou and part of the cercle of Sélingué (drawn in
+Koulikoro), the Koutiala region part of the cercle of Bla (drawn in Ségou),
+the Ségou region, as the cercle of Nampala, part of the cercle of Ténenkou
+(drawn in Mopti), and the District of Bamako of 2023 ground drawn in the Kati
+cercle. So none of the five shows the 2022 shares. Their language is the 2009
+census's principal language of residents aged 6 and over (Tableau S-3, as the
+US Census Bureau tabulates it), its note naming the 2023 regions whose lines
+cross the unit's; their religion and ethnic groups are Afrobarometer Round 9's,
+which samples the regions as they stood (`mali.py`). Kayes, Tombouctou, Gao and
+Kidal, which the 2023 regions make exactly, show the 2022 census's shares.
+
+**The District of Bamako's ground.** The map draws the district of before 2023
+at both levels; its bounding box (8.068-7.912 W, 12.517-12.711 N) is about 365
+km². OCHA's boundaries of the 2023 units draw the district over 31 points of a
+0.045-degree grid, about 760 km², reaching 4 to 8 km beyond the polygon on
+three sides, over ground the map draws in the Kati cercle. So the 2022
+census's 4,227,569 is the enlarged district's, and Wikidata's figure for Bamako
+(Q3703, the same count) is dropped from the polygon; INSTAT's 2018 projection,
+2,231,344, is the polygon's own ground and is shown at both levels. The
+district's one cercle takes the 2009 census's median (19.1) and sex ratio
+(1,005), the same ground. The 2022 census's religion, ethnic groups and
+languages for Bamako are the enlarged district's too: Bamako shows
+Afrobarometer Round 9's religion and ethnic groups and the 2009 census's
+languages, as the other crossed regions do.
+
+**The cercles' sex ratios.** The 2009 census's final results (INSTAT, *RGPH
+2009, Résultats définitifs, Tome 1: Série démographique*, 2011, Tableau P-1,
+`instat-mali.org/laravel-filemanager/files/shares/rgph/tdemo09_rgph.pdf`) give
+every cercle's men and women: each region's cercles make its count, the regions
+the census's 7,204,990 men and 7,323,672 women. Every cercle takes the census's
+sex ratio, the note giving the men and women. INSTAT's projection for 2018 by
+sex (OCHA's common operational dataset, in the Bureau's workbook), each
+cercle's own, stays only for a cercle the table would not give. It spells two
+cercles otherwise: Ansongo as "ANSANGO" and Bamako as "DISTRICT DE BAMAKO";
+where a region has exactly one cercle left unmatched on each side, the two are
+paired (and logged) when the region has that cercle only or the names are
+alike.
+
+* **Dead end:** the 2022 census's village directory
+  (`.../rgph/repvil-rgph5_rgph.pdf`, under both host names) answers 404. The
+  2009 *Répertoire des villages* (`.../rgph/repvil09_rgph.pdf`, 318 pp) gives
+  the same counts by sex region by region, cercle by cercle and village by
+  village (the cercle of Kayes: 258,395 men, 254,777 women, as Tableau P-1).
+
+### Burkina Faso: the 2019 census's regional monographs, for the provinces' sexes, religions and languages
+
+INSD's monograph of each of the 13 regions from the fifth census (5e RGPH,
+2019; December 2022, July 2023), at `www.insd.bf/sites/default/files/2023-02/`
+and `.../2023-07/` (`scripts/fetch_census/burkina_provinces.py`):
+
+| Table | What it gives |
+| --- | --- |
+| Tableau 2.3 (in most), *Répartition (%) des effectifs de la population par province selon le sexe* | every province's men and women |
+| Graphique 3.2, *Répartition (%) de la population des communautés religieuses par province* | each province's six religious classes (Animiste, Musulman, Catholique, Protestant, Autre, Sans religion), to one decimal |
+| Tableau 3.3 (Nord: 3.3 and 3.4), *Répartition (%) de la population de 3 ans ou plus selon les principales langues parlées par sexe et la province* | the principal language spoken, by sex, for each province and the region |
+| Tableau 3.2, *... par principale langue parlée selon le milieu de résidence* | the region's languages, urban, rural and all |
+
+OCHA's projection for 2023 gave the provinces their region's split by sex, so
+no province had a ratio of its own; all 45 now carry the census's. Each
+province now also carries the census's religion and principal language, and
+each region its languages, in front of the survey's shares (the regions'
+religion is `burkina.py`'s). Each region takes the census's sex ratio (its
+count by sex, Tableau 2.1, or its provinces' added) and a median interpolated
+from its count by five-year age group (Tableau 2.3, 2.4 or 2.5 by monograph),
+taken only where the table's men and women make the region's count, in front of
+OCHA's projection; the monographs' own medians (Boucle du Mouhoun's 15.5 against
+16.7 from its own table) disagree with their counts and are not used, and each
+region's note gives the figure its table prints beside the one shown. The
+monographs spell the census *Cinquième Recensement Général de la Population et
+de l'Habitation*, and the sources do too. The Centre
+is the one province of Kadiogo: its regional count by sex (Tableau 2.1), median
+and tables are the province's.
+
+* **Communes the census could not enumerate.** Insecurity kept the census out
+  of Nasséré, Zimtanga and part of Bourzanga (Bam); Barsalogho, Dablo,
+  Namissiguima, Pensa and part of Pissila (Sanmatenga); Boundoré and Mansila
+  (Yagha); Koutougou and part of Arbinda, Baraboulé, Kelbo, Nassoumbou and
+  Tongomael (Soum); part of Déou (Oudalan). Their people are in the counts by
+  sex and age, estimated; the religion and language tables cover the residents
+  enumerated. The five provinces and the Centre-Nord and Sahel regions say so.
+
+* **The chart is read from its labels.** The text keeps a bar chart's labels in
+  a fixed order: the values series by series, the axis's ticks, the provinces
+  and the region's column, the legend. The ticks run from 0 at a constant step
+  (0, 10, 20 ...; Nord's 0, 20, 40 ...; Centre-Ouest's 0,0, 10,0 ...), and the
+  region's column is headed Ensemble, Total (Centre-Nord) or with the region's
+  name (Centre-Sud). A chart is taken only where the religions' legend stands
+  by its labels: the monographs chart nationality, literacy and work by
+  province too. A province's six shares must make 100 within the chart's
+  rounding (series by series or province by province, whichever does), and
+  they match the figures the monographs' text quotes (Bam 78.4% Muslim,
+  Namentenga 24.3% animist, Loroum 97.8% Muslim, Passoré 22.5% Catholic,
+  Nahouri 23.1% Protestant). In four monographs (Centre-Nord, Centre-Ouest,
+  Centre-Sud, Nord) the labels stand after the next caption, away from the
+  chart's own; a province whose monograph kept no labels would say the chart
+  prints no figures, and none does.
+* **The language table** is read block by block (a heading of provinces, then
+  the sexes, then the rows): each both-sexes figure must lie between the men's
+  and the women's, each column make 100 within the table's rounding. The text
+  breaks figures around their comma ("29 ,0", "0, 1"), which are joined, and
+  once inside a figure ("10 0,0" for 100,0), joined only where that alone
+  makes the row's count and the sexes agree.
+* The monographs tabulate ages by region only: the provinces keep their stated
+  reason for the median age.
+
+### Niger: the 2012 census's *Etat et structure de la population*
+
+INS Niger, RGPH 2012 (November 2015;
+`www.stat-niger.org/wp-content/uploads/2020/05/ETAT_STRUCTURE_POPULATION.pdf`;
+`scripts/fetch_census/niger_census.py`): Tableau 6 (every region and
+department by sex: 63 departments and the four cities with a department's
+standing), Tableaux A2-A4 (each region by sex and five-year group), Tableau
+A 11 (religion by region, counts), Tableau 11 (median age by region). Written:
+every department's and region's sex ratio, in front of OCHA's 2024 projection;
+median age and religion for every first-level polygon. The map draws Tahoua
+with Agadez and Zinder with Diffa as single polygons: each takes its two
+regions' counts added (sexes, every age group, every religion), its median
+interpolated from the added groups and checked against the report's whole-year
+medians. Checks: departments make their region, regions the country's
+17,138,707, each region's groups and religions its population.
+
+* **OCHA's 2024 age table copies one structure.** 65 of Niger's 67
+  departments carry the same age proportions, within 0.3 points in every
+  group (median 15.5): the country's structure, put on each. Only the cities
+  of Maradi and Zinder were projected apart. `cod_ps_age.py`'s check withdrew
+  medians only where every unit of a level carries the table's proportions;
+  it now also withdraws them where at least 80% do (`COPY_SHARE`), keeping
+  the few projected apart, and says so on each record. Niger is the only
+  country this changes. The two cities were tested against their regions' rows
+  in the same table: Maradi's proportions differ from the Maradi region's by up
+  to 1.6 points in a five-year group, Zinder's from the Zinder region's by 1.4
+  (and from the 2012 census's regions by 2.7 and 1.9), so they are projections
+  of their own and keep their medians. Every other department also says, from the census,
+  why it has no median of its own: the census publishes ages by region only; the
+  two cities carry no age reason, OCHA's medians standing there.
+* **The departments' compositions.** The report tabulates religion by region
+  only (Tableau A 11) and language and ethnic group not at all: every department
+  says so for each, citing the report.
+
+### Guinea: the 2025 census's preliminary results and the 2014 census's compositions
+
+INS Guinée, *Résultats préliminaires du RGPH-4* (2025, 233 MB;
+`www.stat-guinee.org/images/Documents/Publications/INS/rapports_enquetes/RGPH-4/Resultats_preliminaires_rgph_4.pdf`)
+and *Etat et structure de la population* of the RGPH-3 (2014; 2017;
+`.../RGPH3/RGPH3_etat_structure.pdf`) (`scripts/fetch_census/guinea_census.py`).
+The 2025 count gives every region and prefecture by sex and each region's
+median age; the 2014 census gives religion (Tableau 5.10) and principal
+language (Tableau 5.08) by region and medians to one decimal (Tableau 3.06).
+The 2025 census counts Conakry as thirteen communes: ten are the city as drawn,
+three (Kagbélen from Dubréka, Manéah and Sanoyah from Coyah) were added in
+January 2024, so Coyah, Dubréka and Kindia take them back for the ground the
+map draws, and Conakry and Kindia take 2014's medians for that ground; the
+prefecture of Conakry, the whole region, takes the region's. The 2014 shares are
+written as printed: religion's counts are the shares of each region's 2014
+population, and language carries none (its count row misprints Kindia's).
+Every prefecture but Conakry, its region's only one, says why it has no
+religion or ethnic group: the 2014 census tabulates religion by region only
+(Tableau 5.10) and no ethnic group, and the 2025 results give the prefectures
+by sex only.
+
+### Guinea-Bissau: the 2009 census's thematic reports, for the regions
+
+INE Guiné-Bissau, IV RGPH 2009, `www.stat-guinebissau.com/Menu_principal/IV_RGPH/rgph1/`
+(`scripts/fetch_census/guinea_bissau_census.py`): *Estado e Estrutura da
+População* (`estado_estrura_pop.pdf`), Quadro 9 B, each region's median age;
+*Características Socioculturais* (`caracteristicas_socio_cultural.pdf`),
+annex Quadros 2 and 3, the population of Guinean nationality by ethnic group
+and by religion in each region (each region's groups must make the same total
+in both, the regions the country's 1,442,227). Neither report goes below the
+region, and the principal language ("dialecto") is tabulated (annex Quadros
+4 to 6 A) by ethnic group, sex and urban or rural residence, not by region: the
+sectors' ages and compositions and the regions' language say so, citing the
+two reports.
+
+### Cabo Verde: why eighteen parishes have no median age
+
+The 2010 census's zone tables count the parishes of the eight municipalities
+with several in three broad age groups only, and the 2021 report (*Estado e
+Estrutura da População*, Tabela 7 and the age tables) gives mean ages by
+municipality only: those 18 parishes say so, citing the 2021 report and OCHA's
+projections they name (`cabo_verde_parishes.py`).
+
+### Côte d'Ivoire: the 2021 census's regional pages, from the Internet Archive
+
+ANStat published the RGPH 2021's results for each of the 31 regions and the two
+autonomous districts on `rp2021.anstat.ci`: a page per region with its seat,
+its departments' seats, a *Tableau synoptique de la région* (everyone by sex in
+2021 and 1998, the mean age, broad age groups) and a sentence giving the shares
+of Ivorians and of other nationals. The site answers a script with 403; the
+Archive's captures of January 2026 are read
+(`web.archive.org/web/2026id_/https://rp2021.anstat.ci/<page>/`;
+`scripts/fetch_census/cote_divoire_census.py`). Written for each region and
+autonomous district: population, sex ratio, its seat where the map names none,
+and the Ivorian and non-Ivorian shares on the ethnicity field under its basis,
+nationality (9 of the 33 pages print the sentence; an autonomous district's
+page is the unit's at both levels, so Yamoussoukro's shares are written at
+both); the median age says why there is none (the table gives the mean and
+broad groups only), citing the page it quotes. Each of the 14
+districts takes its regions added together. The pages name no seat for a
+district of several regions: each takes the one in English Wikipedia's table of
+the districts (*Districts of Ivory Coast*; the districts date from Décret n°
+2011-263 of 28 September 2011), written only where it is also the seat of one
+of its regions on the census's pages, as all twelve are (Lagunes: Dabou, the
+seat of Grands-Ponts). Checks: each table's sexes make its total for 2021 and 1998;
+the national column is 29,389,150; the regions make the country.
+
+* **Misprints read as far as the sexes make them.** Four pages print the
+  country's column wrongly ("29 276 660,00", "29 389150") or a region's figure
+  with a space misplaced (Hambol's "61 2029" for 612,029).
+* **The Archive refuses connections in bursts.** A page not reached is tried
+  in two more passes after a rest, and a page still refused keeps the figures
+  an earlier run read from it, checked as a fresh reading is, with the day
+  read kept beside the output (`cote_divoire_census_pages.json`).
+* **Dead ends.** `www.ins.ci` fails certificate verification; the regional
+  monographs' PDFs (`rp2021.anstat.ci/wp-content/uploads/2026/01/Monographie-*.pdf`)
+  are not in the Archive (404); the 2021 census's *Résultats définitifs*
+  (`www.ins.ci/RGPH2021/RESULTATS DEFINITIFSRP21.pdf`, 68 pp, 36 MB, captured
+  January 2024) is a scan with no text layer. Religion and ethnic group by
+  region, which the 2014 and 2021 censuses asked, are in neither the pages nor
+  any file reached.
+
+### Togo: the 2022 census's leaflet of definitive results
+
+INSEED, *Résultats définitifs du RGPH-5 de Novembre 2022* (April 2023;
+`inseed.tg/wp-content/uploads/2023/09/Depliant-Resultats-Definitifs_RGPH5_02Avril2023.pdf`;
+`scripts/fetch_census/togo_census.py`): every prefecture, region and the
+country by sex, 39 prefectures and Grand Lomé, 8,095,498 people. The map draws
+37 prefectures on their lines from before the reforms of 2017-2019: Kpendjal
+and Oti each take the two prefectures made from them; Grand Lomé (Golfe and
+Agoè-Nyivé) is not the ground of Golfe or Lomé Commune as drawn, so neither is
+written. Written: population and sex ratio for every region and every other
+prefecture.
+
+### Benin: the 2013 census's indicators workbook and departmental leaflets, as archived
+
+INSAE (now INStaD), RGPH-4 (2013): *Résultats globaux, principaux indicateurs*
+(`Doc_principaux_indicateurs.xlsx`: its tables *Structure de la population*
+and *État de la population*, by department) and the *Synthèse des principaux résultats du RGPH-4*
+leaflet of each department (2016, table 1: the population by commune and sex,
+2013 and 2002), under `instad.bj/images/docs/insae-statistiques/enquetes-recensements/RGPH/1.RGPH_4/resultats finaux/`.
+instad.bj answers a script with 503; the Archive's captures are read
+(`scripts/fetch_census/benin_census.py`). Written: each department's median age
+(interpolated from its five-year groups) and sex ratio, and each commune's sex
+ratio, all 2013, in front of OCHA's projections; no population (OCHA's are
+newer). Checks: the departments make 10,008,749; each department's groups make
+100%; each leaflet's rows make their totals, its communes the department, its
+department row the workbook's.
+
+* **Zou's leaflet** prints Zagnanado's growth rate with a minus sign and its
+  weight as "6, 5"; both are read. Where one commune of a leaflet were still
+  unread, it would be the department less its other communes, and say so.
+* **Littoral** is the one commune of Cotonou: its leaflet has no commune row,
+  and the department's row is the commune's; Cotonou also takes the
+  department's median.
+* **Dead ends.** Donga's leaflet (`Plaquette_Donga_Finale.pdf`) answers empty
+  at the Archive's 2016, 2018, 2019, 2021, 2022 and 2024 captures: Bassila,
+  Copargo, Djougou and Ouaké keep OCHA's projected ratios. The *Résultats
+  définitifs* volume and the *Principaux indicateurs* of each department, which
+  give religion and ethnic group, answer 503 at instad.bj and 404 at the
+  Archive (Borgou's tried).
+
+### Seats from OCHA's boundary sets: nine countries
+
+OCHA's administrative boundaries (COD-AB, `data.humdata.org/dataset/cod-ab-<iso3>`)
+carry a layer of the units' capitals beside the polygons
+(`scripts/fetch_census/sahel_capitals.py`). Where the map's second-level unit
+has no capital, it takes the layer's seat bound by name, every point placed on
+the map's polygons beforehand. Senegal 45 of 45 departments, Niger 59 of 67,
+Togo 29 of 37, Benin 70 of 77, Guinea-Bissau 36 of 39, Cabo Verde 20 of 32,
+Burkina Faso 16 of 16 empty (the layer names the provinces of 2025: Bassitenga
+for Oubritenga, seat Ziniaré; Sandbondtenga for Sanmatenga, seat Kaya), Mali 5
+of 5, Mauritania 41 of 57.
+
+* **Points the name rules miss.** Niger's layer names several departments
+  otherwise (Konni, Doutchi, Tagazar, Matameye, Guidan Roumji, Dioudiou,
+  Bankillare, Tasker) and spells some seats otherwise (Ayarou, Tillabery);
+  Boboye's seat is Birni N'Gaouré, Kantché's Matamèye; the cities of Maradi,
+  Zinder and Tahoua are units of their own, each holding its own point. Kozah's
+  seat is Kara (the layer has a point for each), Thiès's the city whose
+  commune Thiès Ouest holds the point, Malem Hodar's spelt Maleme Hoddar.
+  Akjoujt's and Adjarra's points lie 3.4 and 2.2 km outside the polygons drawn
+  under their names but are the towns the units are named for.
+* **Zouérat.** Mauritania's layer files its one point for Zouérat (12.452 W,
+  22.719 N) under F'Dérik; placed on the map's polygons it lies inside Zoueratt,
+  3.8 km from F'Derick and 2.6 km from GeoNames' Zouérat (2375558, the wilaya's
+  seat). Zoueratt takes Zouérat, its note saying where the layer files the
+  point; F'Derick keeps its reason.
+* **Not taken:** the layer names Athiémé (in Benin) for Bas-Mono, Zouérat for
+  F'Dérik, Agpro, Aguégué-Houédomè and Sèmè for three Beninese communes,
+  Porto dos Mosteiros for Nossa Senhora da Ajuda; each says so, and So-Ava
+  that the layer files its one point named So-Ava under Abomey-Calavi, inside
+  the polygon drawn for Abomey-Calavi.
+* **Guinea-Bissau.** A sector keeps the point's own name: the polygons' labels
+  carry the class word ("Setor de Bambadinca"), which is never taken for a
+  seat. The polygon labelled Boé is an island 1 km off Caió, in Cacheu, and
+  says so; the sector of Boé is the Gabú polygon labelled Madina do Boé, which
+  holds the layer's point for Boé. The layer labels every sector's seat with
+  the sector's name; this point (14.2167 W, 11.75 N) is the town of Madina do
+  Boé, which GeoNames places 0.6 km away, and the sector takes the town as its
+  seat, its note saying so.
+* **A first-level unit** takes its region's seat where the layer's region is
+  made of exactly the provinces drawn inside it: Burkina Faso's Centre
+  (Kadiogo, Ouagadougou) and Sud-Ouest (Djôrô, Gaoua).
+
+Every other unit the layer gives no seat says so, with how many of the units
+drawn here it gives one; Niger's departments say that the layer gives the
+communes' seats, and what it gives for the commune of the department's name.
+Each seat cites the boundary set with the year of its dataset.
+
+### Afrobarometer's regions where the map draws them otherwise
+
+Afrobarometer's ninth round (`afrobarometer_region.json`) samples units the
+map draws together or apart:
+
+* **Côte d'Ivoire.** Its rows are the 31 regions, the map's second level; two
+  had found a first-level district by part of its name, one region's
+  respondents standing for a district of two (Gôh's 40 for Gôh-Djiboua,
+  Marahoué's 40 for Sassandra-Marahoué). Each district now pools its two
+  regions (72 and 96 respondents), each region's published shares weighed by
+  its respondents: the survey's counts are weighted and cut to whole numbers,
+  so a small group's count can fall to nought (Gôh's Muslims, 2.3%). Only this
+  region's unions (these two, Niger's two and Togo's Maritime region) are
+  weighed so (`"weigh": "respondents"` in `ROW_UNIONS`); every other union
+  keeps its published counts.
+* **Niger.** Tahoua with Agadez (232 and 32 respondents) and Zinder with Diffa
+  (248 and 40) are pooled for the two polygons that draw them as one; Dosso
+  is spelt Dossa on the map. Only the round's ethnic groups are used for
+  Niger: its home languages contradict the same respondents' ethnic groups
+  (Tamasheq is 20.1% of Dosso's languages where none gave Tuareg ethnicity),
+  so Round 8's languages stand, and the 2012 census gives every polygon's
+  religion. Round 8 has its own anomaly, French as the home language of 12.5%
+  of Tillabéri's respondents and 6.8% of Maradi's, against 0.5% in Round 9:
+  those two say so in their language note, citing Round 9.
+* **Togo.** The survey samples Lomé (168) apart from the rest of the Maritime
+  region (368); the map's Maritime region includes Lomé, and pools both.
+* **Mauritania.** Guidimagha, Hodh Echargui and Hodh El Garbi are the map's
+  Guidimaka and the two Hodhs (80, 136 and 88 respondents).
+* **Mali.** The map spells Koulikoro Koulikouro: the survey's row (256
+  respondents) reaches it by that name, and its religion and ethnic groups
+  stand there now that the 2022 census's shares, for the regions of 2023, are
+  not shown.
+
+### First-level seats that Wikidata gives wrongly
+
+Three regions' seats in Wikidata's first-level rows (`wikidata_admin1.json`)
+are not their seats: Togo's Savanes (Durum Town), Senegal's Louga (Nguer
+Malal) and Benin's Atlantique (Ouidah, a town of the department, which
+GeoNames does not mark as a seat). GeoNames marks the seats as first-level
+capitals (PPLA): Dapaong, Louga and Allada. The three rows' capitals are
+withdrawn (`WITHDRAWN_FIELDS`, by row), so GeoNames' seats fill them.
+
+### Central Africa: nine countries, three of them through the Internet Archive
+
+Central Africa's statistics offices publish their censuses as PDF reports, and
+several of their sites no longer answer: Cameroon's BUCREP site is suspended,
+Equatorial Guinea's INEGE answers an automated client with a challenge page,
+Gabon's instatgabon.org redirects every address to its home page. Each was read
+another way -- the Internet Archive's copy of the office's own file, or a copy
+an agency of the United Nations publishes -- and each figure names the
+publication and table it comes from.
+
+### Central African Republic: the 2021 census mapping on the 2003 sub-prefectures
+
+The map draws the 2003 census's 17 prefectures and 72 sub-prefectures. ICASEES
+counted the population at the mapping stage of the fourth census (reference
+date 1 March 2021: 6,091,097 people) on the 2020 division -- 20 prefectures, 79
+sub-prefectures, 181 communes. OCHA's edition of that count (cod-ps-caf,
+`icasees_cartocensitaire2021_formatocha_public_V2.xlsx`, sheet `PrevCommune`)
+places each commune on its 2003 commune by P-code; the communes are summed to
+the 72 sub-prefecture polygons (Bangui's eight arrondissements to Bangui) and
+the 17 prefectures. The U.S. Census Bureau's workbook on HDX tabulates the
+same count on the 2020 division, and its communes, placed by name within the
+prefecture each descends from (Mambéré, Lim-Pendé and Ouham-Fafa were cut from
+Mambéré-Kadéï, Ouham-Pendé and Ouham in 2020; Bégoua, a sub-prefecture of
+Bangui since 2020, goes to Bimbo, whose polygon surrounds Bangui), are
+compared with OCHA's polygon by polygon on every run.
+
+* **No sex ratio from it**: the mapping table splits every unit 49 to 51, to
+  the person, urban and rural alike (0 of 280 units depart from it); each
+  sub-prefecture says so.
+* **Counts the table gives twice**: Haute-Kadéi, Dédé-Mokouba's one
+  commune, carries exactly the 23,708 people the table gives Mobaye commune in
+  Basse-Kotto, and Lissa and Pouyamba (both in Grimari) carry the same 8,825
+  (the table splits every unit 49 to 51, so their men and women match too and
+  add nothing). Which of each pair is the copy cannot be told. Dédé-Mokouba
+  shows no 2021 count and says why; it shows OCHA's 2015 figure for it
+  (24,926) with that sentence beside it, and says that ICASEES's 2025
+  projection (24,253, below) is not shown: a fall of 0.3% a year from the
+  2015 figure, far from the change the other sub-prefectures' newer figures
+  make. Mobaye and Grimari say so beside their 2021 counts, which their 2025
+  notes repeat, and the prefectures whose 2021 sums include those counts --
+  Mambéré-Kadéï (538,645, with Haute-Kadéi's 23,708), Basse-Kotto and Ouaka
+  -- say so on those sums; all five show ICASEES's 2025 figures. Djoukou,
+  which had no figure, now has its 2021 count (46,627) and shows the 2025
+  figure (50,881).
+* **2025**: ICASEES's projection of the population for 2025 by sub-prefecture
+  of the 2020 division, from the 2003 census (OCHA's humanitarian table in
+  cod-ps-caf, *Projection population-2025*: 85 sub-prefectures, 6,567,382
+  people), is matched to the mapping table's sub-prefectures by name within
+  their prefecture (its spellings differ: Baminigui, Djemah, Bantangafo,
+  Dede-Makouba, Nana-Gribizi) and added up on the 2003 polygons that hold its
+  units whole, by the commune crosswalk: 56 sub-prefectures and 11
+  prefectures. Where the 2025 table divides a prefecture into units of its own
+  -- Bangui into four (Bangui Centre, Fleuve, Kaga and Rapide; 1,486,900
+  people), which also hold Bimbo and Bégoua; Haute-Kotto, Haut-Mbomou, Lobaye
+  and Vakaga with units the mapping table does not have -- the polygon keeps
+  its 2021 count and says why. The build holds the 2025 figures behind the 2021
+  counts and shows each where the change from 2021 is one a population makes,
+  near the change of the other units at its level: 49 sub-prefectures and 10
+  prefectures show 2025. Where it is not -- Amada-Gaza 15,151 to 20,319, 7.6%
+  a year; Gadzi, 8.0%; Bogangolo, 5.3%; Carnot, 4.3%; Paoua 307,172 to
+  244,426 and Ngaoundaye 134,979 to 111,426, falls of 5.6% and 4.7% a year,
+  which take Ouham-Pendé down by 2.7% a year -- the 2021 count stays and the
+  unit says which newer figure is not shown. Carnot, Kabo, Kaga-Bandoro and
+  Ngaoundaye are 2003 polygons that are two 2020 sub-prefectures each; their
+  2021 counts, put together from those sub-prefectures' communes, are weighed
+  against the 2025 figures of the same two sub-prefectures added up, and Kabo
+  (60,873) and Kaga-Bandoro (197,936) show them. The table gives every
+  sub-prefecture of a prefecture one share of men, so no sex ratio is taken
+  from it.
+* **Prefectures' ages and sexes**: the 2016 statistical yearbook's estimates
+  by sex and five-year age (tables 110-116, as the same workbook tabulates
+  them) give each prefecture a sex ratio (Haute-Kotto 1,106 men per 1,000
+  women, Vakaga 873) and a median age, each prefecture's age proportions being
+  its own (none shares the country's or another's within 0.3 points). The
+  notes name ICASEES's *Annuaire statistique de la République Centrafricaine
+  2016*, and the sub-prefectures' notes say that its estimates stop at the
+  prefecture.
+* **Seats**: no published list of the sub-prefectures' seats was found (the
+  census tables and English Wikipedia's list name the sub-prefectures, not
+  their seats); each sub-prefecture says so, except Bangui's one division,
+  which is the city and has it as its seat.
+
+### Cameroon: the 2005 census by department, from BUCREP's own table
+
+BUCREP's *Répartition de la population du Cameroun (par département,
+arrondissement, district) en 2010 par sexe* (71 pages) is the 3e RGPH's
+resident population of every province, department and arrondissement by sex,
+then again for urban and for rural residents. "En 2010" is the year of
+publication: the figures are the census's (Mfoundi 1,881,876, Diamaré
+642,227, Mayo-Sava 348,890). bucrep.cm is a suspended page now; the Internet
+Archive kept the file on 2 April 2016 (`download=70`).
+
+* **Read** with pdfplumber; a line ends in total, men, women and the ratio.
+  Thousands are mostly unspaced (`10465`) but sometimes spaced (`10 465`), so
+  the figures are the fewest digit groups that read as three figures whose
+  first is the sum of the other two; a name keeps its own trailing number
+  (`YAOUNDE 3`, `DOUALA 1`). A name too long for its cell is printed above and
+  below its figures (`Département du FARO ET` / figures / `DEO`) and is joined.
+* **Checks**, each stopping the run: men and women make every total; every
+  department's arrondissements make it; every province's departments make it;
+  every department's urban and rural residents make it. The ten provinces make
+  **17,463,836**, the census's published total.
+* **Bound** by name within the region: 58 departments, 58 polygons. Four are
+  spelled otherwise on the map (Kadey/Kadei, Ngo-Ketundjia/Ngo-ketunjia,
+  Nyong & So'o/Nyong-et-So, Koupé & Manengouba/Kupe-Manenguba), and the table
+  writes `&` for "et".
+* **Written**: population and sex ratio for the 58 departments and the 10
+  regions (the census's sex ratio stands in front of OCHA's 2025 projection,
+  which only fills). No ages: the table has none, and the department's median
+  age says so. Seats: French Wikipedia's *Départements du Cameroun*
+  (*préfecture*), all 58.
+* **2025**: BUCREP's projection from the 2005 census, as OCHA publishes it
+  (cod-ps-cmr; the dataset's explanatory note names BUCREP as its source and
+  the 2005 census as its base, by the cohort-component method with zero net
+  internal migration): the regions' projected populations (29,442,318 in all)
+  and the two metropolises' -- Ville de Douala, which is the Wouri department
+  (3,816,532), and Ville de Yaoundé, Mfoundi (3,762,931), bound by P-code and
+  checked by name -- are the newest figures for those units and stand in
+  front of the 2005 counts; each note names BUCREP and the 3e RGPH. The two
+  cities' five-year ages are their own (not their region's proportions), so
+  each gets a median from them (26.3 and 25.5), which its note calls a
+  projection. The census keeps the sex ratios.
+* **Afrobarometer** (Round 9) names its Cameroonian strata in French and
+  samples Yaoundé and Douala apart from the Centre and Littoral regions; the
+  seven French names are aliased to the map's regions and each capital's
+  stratum is pooled with its region's, so all ten regions now carry the
+  survey's religion and ethnic group (three did before).
+
+### Equatorial Guinea: the 2015 census in INEGE's yearbook, and a second level that is not its districts
+
+The *Anuario Estadístico de Guinea Ecuatorial 2020* prints the IV Censo General
+de Población y Vivienda (2015): Tabla 20 (provinces at each census), Tabla 21
+(provinces by sex, nationality and zone, in shares to one decimal) and Tabla 23
+(the 18 districts, with the shares of nationals and foreigners). inege.org is
+behind a challenge page; the Internet Archive's copy of 30 May 2025 is read.
+
+* **Checks**: the provinces make 1,225,377; each province's districts make it;
+  every pair of shares makes 100.
+* **Provinces**: count, sex ratio from the shares (52.3% men in Litoral is
+  1,096 men per 1,000 women; the note gives the shares), and nationality on the
+  ethnicity field (`ethnicity_basis` "nationality") -- the tables publish no
+  ethnic group.
+* **Districts**: the map draws 25 polygons against the census's 18 districts.
+  Bioko Norte, Bioko Sur and Annobón are drawn as exactly their districts, and
+  those five polygons get the district's count and nationality (Annobón
+  district, the whole of its province, also the province's sex ratio). The
+  four mainland provinces are drawn as 20 polygons against 13 districts:
+  Bitica, Machinda, Bicurga, Nkimi, Nkue, Ayene and Mongomoyen are
+  municipalities drawn apart from the district each belongs to. Spanish
+  Wikipedia's *Organización territorial de Guinea Ecuatorial* lists each
+  district's municipalities, so a district none of whose municipalities is
+  drawn apart is exactly its polygon: Acurenam (23,614), Ebibeyin (94,019),
+  Nsok Nsomo (37,920), Cogo (29,341), Aconibe (24,346) and Nsork (16,421) get
+  their count and nationality. A district drawn as two polygons (Evinayong
+  with Bicurga, Niefang with Nkimi, Micomiseng with Nkue, Bata with Machinda,
+  Mbini with Bitica, Añisok with Ayene, Mongomo with Mongomoyen) says on both
+  why the census, which counts the district, describes neither, quoting the
+  district's count, and displaces Wikidata's older figures (Micomiseng's
+  5,813 is the town's). Sex ratios are published by province only, and each
+  district says so. The yearbook prints the 2015 census's ages for the whole
+  country only (its population pyramid), and each province and district says
+  so, naming it. Spanish Wikipedia's *Organización territorial de Guinea
+  Ecuatorial* is cited only for the notes its list of the districts'
+  municipalities supports, and its table of the provinces for Annobón's seat,
+  San Antonio de Palé, which the district shares with its province.
+
+### Republic of the Congo: the 2023 census by department, and a second level whose names are out of place
+
+The INS took the fifth census on 17 May 2023; its preliminary results count
+6,142,180 people. citypopulation.de tabulates them by department and district,
+citing INS, with each department's men and women. The 12 departments' counts
+and sex ratios are read from its pages (the departments make 6,142,180; each
+department's men and women make its count). The preliminary results give no
+ages, and each department's median age says so. The census counts the
+district of Tchiamba-Nzassi (21,800) under Pointe-Noire department; the map
+draws Pointe-Noire as the city alone and Tchiamba-Nzassi inside Kouilou, so
+its count moves to Kouilou (119,162, against Pointe-Noire's 1,398,812), and
+Kouilou's sex ratio, which the preliminary results do not give for the
+district apart, says it leaves it out.
+
+The 46 second-level polygons cannot carry any district's figure. Their names
+are out of place: Brazzaville's point lies inside "Zanaga", Pointe-Noire inside
+"Gamboma", Impfondo inside "Owando", Owando and Oyo inside "Mbomo", Dolisie
+inside "Abala" (GeoNames, measured on CGAZ); one polygon of 46, Mossendjo,
+holds its namesake. And the census counts the 92 districts and communes of
+today. Each polygon says so, naming the town it does hold, and the statement
+puts aside an older encyclopaedia figure bound to the polygon by its name
+(Komono's 8,941 stood on the polygon that holds Zanaga). Its seat says what
+the polygon holds: its namesake town (Mossendjo, which still cannot be taken
+for the district), another district's town, or no town that shows which
+district it is.
+
+### The Democratic Republic of the Congo: what OCHA's ratios are, and fifteen towns
+
+OCHA's 2020 table (cod-ps-cod, built from the health zones' figures by the DRC
+Information Management Working Group) is the population the map shows; its own
+caveat is that "all age and sex disaggregations are based on estimated ratios
+at the administrative level 1". Read, both tables show it:
+
+* every territory and city of a province has the province's proportions (the
+  shares agree to the fourth decimal: Matadi's and Boma's girls under five are
+  both 50.31% of the age group, both 930 men per 1,000 women);
+* ages come in four groups (0-4, 5-19, 20-64, 65+), which place no median;
+* in 19 of 26 provinces the two sex splits disagree: Kinshasa has 5,220,436
+  women in the total column and 4,961,399 across the age groups.
+
+So no median age or sex ratio is shown for any province, territory or city, and
+each record says which of these is true of it (premises re-checked on every
+run). OCHA gives 21 towns no figure ("Population is reflected in CDxxxx");
+fifteen had no reason on the map, and now say which territory counts them,
+checked against the polygons they touch (Aba inside Faradje; Bangu on the edge
+of Songololo and Mbanza-Ngungu, counted in Songololo). Bunia, Kolwezi and
+Tshikapa carry Wikidata figures while OCHA counts them in Irumu, Mutshatsha and
+Kamonia: those territories' notes say the people are counted in both.
+
+Seats: French Wikipedia's *Territoire (république démocratique du Congo)*,
+matched by name and province -- not by its codes, nine of which are not OCHA's
+(it gives 9102, OCHA's Dibaya, to Kamonia); Makanza is the article's
+Mankanza. 144 of the 145 territories get their seat; the territory of Beni,
+which OCHA names Oïcha, gets none, since published sources place its seat
+either at Beni, a city drawn apart, or at Oïcha, and says so. The 19 cities
+drawn apart, and Kinshasa, are their own seats; a unit neither in the article
+nor a known city gets none.
+
+OCHA's humanitarian planning projection for 2024 by health zone (cod-ps-cod,
+519 health zones) is added up to 164 territories and cities the map draws
+(117,808,872 people, the workbook's total). A health zone's territory code is
+the 2020 table's unit of the same name, or, where the two codes differ, the
+unit of that name in its province: Kasongo-Lunda is CD3106 in the workbook
+and CD3107 in the 2020 table, and every such match is logged. Within a
+province every territory's 2024 figure is its 2020 estimate times one factor
+(Kongo-Central 1.95, Lualaba 1.63, Kwilu 1.47, Ituri 0.82, Équateur 0.84),
+and each note gives its province's. The build holds the projection behind the
+2020 table and shows it where the change from 2020 is one a population
+makes.
+
+### Chad: the provinces for 2023, N'Djamena, and the departments' seats
+
+OCHA's cod-ps-tcd has the provinces' 2023 projection (tcd_admpop_adm1_2023,
+18,033,749 people), which its metadata sheet and quality note give as INSEED's
+projection from the 2009 census (RGPH2); each province's note says so. The
+departments' figures are OCHA's 2021. The provinces had
+shown their departments' 2021 totals, and N'Djamena an encyclopaedia's 2012
+figure: its one department is drawn askew of the province (284 of the
+province's 378 km², reaching 73 km² beyond it), so the build had not summed it.
+The province's own 2023 figure is written; the department keeps OCHA's 2021
+figure for the department, and nothing is carried from one to the other.
+
+OCHA's 2024 table of the departments raises each province's 2021 department
+figures by one proportion -- 11.0% in every province but Sila, 48.7% there --
+so it is held behind the 2021 table: a department shows its 2024 figure where
+the change is one a population makes, and each says its province's
+proportion.
+
+OCHA's provincial age tables give Ennedi Est and Ennedi Ouest one age
+structure (their proportions differ by at most 0.0022 points in all 17
+groups) and one sex ratio (1,139 men per 1,000 women), and give Guéra 3.6
+times as many people aged 10-14 as aged 5-9: those medians, and the Ennedis'
+sex ratios, are withdrawn with the reason. Chari-Baguirmi and Hadjer-Lamis,
+and Mayo-Kebbi Est, Mayo-Kebbi Ouest and Tandjilé, are alike to 0.26-0.27
+points, which is neighbours' likeness, not a copy, and stay.
+
+Seats from English Wikipedia's *Departments of Chad*: 61 of 70. Six
+departments are not in its tables, and three (Fada, Mourtcha, Wadi Hawar) are
+listed without a seat; each says which.
+
+Afrobarometer has surveyed Chad once, in 2025 (Round 10, with LAEREAG); no
+region's figures from it were found among its published results, so the
+provinces' religion, language and ethnic group remain without a source.
+
+### Gabon and Sao Tome and Principe: two census reports and their seats
+
+Gabon's RGPL 2013 *Résultats globaux*, Tableau 6 (UNFPA Gabon's copy): 49
+department polygons, 9 provinces, both making 1,811,079 (Estuaire 895,689);
+Owendo, a department drawn inside Komo-Mondah, is added to it (169,396).
+Tableau 1 and Tableaux 5-6 split the country by sex 361 people apart
+(934,072/877,007 against 933,711/877,368); Tableau 6 is read. A few small
+departments have extreme sex ratios as printed (Haute-Banio, 1,413 people:
+2,614 men per 1,000 women; Komo-Océan, 553 people: 1,738; Mougalaba: 652).
+Seats from French Wikipedia's *Départements du Gabon*, each written only where
+the article's 2013 count is the census's for that department -- which keeps
+off its row giving Libreville's 703,940 under Akanda's name. UNFPA's 2022
+projection of the provinces from the 2013 census, as OCHA publishes it
+(cod-ps-gab, 2,290,715 people; the dataset's methodology says "Projected by
+UNFPA from the 2013 census"), is the newest figure for them and stands in
+front of the 2013 counts; each note says whose projection it is and from which
+census. The census keeps the sex ratios, and the departments' median-age notes
+cite the Résultats globaux they rest on.
+
+Sao Tome and Principe's 2012 district reports (INE): Quadro 2 (residents by
+sex), Quadro 5 (five-year ages), Quadro 6 (religion, 13 answers) and Quadro 10
+(languages spoken, several answers allowed, so the shares pass 100 and the
+record says so). The national Quadro 2 prints each district's name sideways,
+a letter or two to a line; a block is the district whose name has exactly its
+letters. The districts make 179,200; the religion columns, added up, are the
+country's published shares (Catholic 55.7%, none 21.2%, Adventist 4.1%).
+The two provinces' records give no population of their own: the 2012
+counts (São Tomé 171,856, Príncipe 7,344) are said in a note, so each province
+shows the newest figure for its ground -- São Tomé its six districts' 2022
+projections added up, Príncipe that of Pagué, its one district, the whole
+island -- with the census's sex ratio, median age, religion and languages.
+São Tomé Province keeps the census's religion and languages in front of
+Afrobarometer's (its three survey divisions are pooled in place, so the
+census read after it still comes first). Seats: English Wikipedia's
+*Districts of São Tomé and Príncipe*. The records keep the polygons' own
+labels (Mé-zóxi, Lemba, Pagué, São Tomé Province): a record bound to a shape
+gives it its name, and the census's spellings would rename the polygons other
+tables name.
+
+### Angola: each municipality's seat, from the law that drew them
+
+Lei n.º 18/16 (Lei da Divisão Político-Administrativa) opens each
+municipality's article "O Município de X, com sede em Y". lex.ao publishes the
+text; all 164 municipalities' seats are taken from it, and 156 of the 157
+polygons get their seat (Luanda's polygon is drawn over several of the
+capital's municipalities, and says so).
+
+### Angola: the 2024 census on the municipalities of 2016, from the provincial reports
+
+INE's *Relatório dos Resultados Definitivos* of the 2024 census has a report
+for each of the 21 provinces created in 2024, linked from
+censo2024.ine.gov.ao. Uíge's and Cuanza Sul's addresses there answer 404, and
+INE's own site, www.ine.gov.ao, publishes both reports
+(Publicacao_639105199780531702.pdf and Publicacao_639065784580611643.pdf),
+which are read. Each report tabulates its province by the 326 municipalities
+of Lei n.º 14/24, while the map draws the 164 municipalities of Lei n.º 18/16
+as 157 polygons.
+
+* **The old division's count.** Most reports print the population by sex at
+  the 2014 and 2024 censuses on the municipalities of Lei 18/16 ("Quadro 11 -
+  População residente por município, segundo o sexo, Censos 2014 e 2024" in
+  Bengo's): each drawn municipality's own 2024 count and sex ratio. Luanda's,
+  Icolo e Bengo's, Moxico's, Moxico Leste's, Cubango's and Cuando's reports
+  print no such table. Cuanza Norte's and Huambo's print one whose 2024 column
+  repeats the 2024 municipalities of the same names and leaves out the seven
+  and six municipalities created in 2024 (its rows make 562,692 of Cuanza
+  Norte's 659,097 and 2,243,641 of Huambo's 2,691,902): it is not on the 2016
+  division, and those provinces' polygons say so. Huíla's makes 3,275,939
+  against the province's 3,302,866 (its 2014 column adds up), so only the
+  municipalities the 2024 ones make exactly are taken from it.
+* **The provinces' totals** are each report's own: Quadro 10's province row,
+  or, where Quadro 10 prints none, the province row of Quadro 11 or Quadro 8
+  (Malanje 1,298,250, 638,369 men and 659,881 women; Moxico 574,253), not its
+  municipalities added up (1,298,254; 574,251).
+* **Ethnic group, mother tongue, religion and age** (Quadros 6.1, 6.2, 7.1,
+  1.4-1.6) are printed for the 2024 municipalities only. Each 2016
+  municipality is matched with the 2024 municipalities it is made of by their
+  counts: the province's one exact assignment if there is one (total, men and
+  women each adding up), otherwise each municipality on its own -- its
+  namesake and the one set of up to five other 2024 municipalities that makes
+  the rest exactly -- repeated as each match frees the next. Where an area
+  moved between municipalities in 2024 (Benguela and Navegantes hold 620,123
+  people against Benguela's 618,545 as it stood; Baía Farta and Dombe Grande
+  138,912 against 140,490), the one set within 2% is taken and the record
+  gives both figures. A municipality that more than one set makes within 2%
+  says so, with the sets' counts (Saurimo, Muconda and Dala in Lunda Sul;
+  Malanje), and one that no set makes within 2% says that (Cacuso, Marimba
+  and Cahombo in Malanje).
+* **Checks**, each refusing what it covers: every composition row's groups
+  make its total (within 0.5%), and its column groups the same rows; a
+  municipality's communes make it (to the rounding of their figures: the
+  reports' counts are rounded from weighted ones, Cabinda's Necuto is 16,441
+  and its communes 14,099 and 2,343); every table row is within reach of the
+  municipality's residents in Quadro 10 (the age tables equal to them, the
+  others 85-100% of them, being the population aged 2 and over); each
+  province's composition equals the national report's (angola_province) for
+  that province within a tenth in every group of some size but one. Where one
+  group differs -- the provincial reports count far more people under "no
+  religion" than the national report does in Benguela (149,908 against
+  83,806), Cabinda and Lunda Norte -- the polygons' note gives both figures
+  and cites both reports; where two or more differ (Bié's, Luanda's, Moxico's
+  and Namibe's religion) the field is left out and says so. A table printed
+  without some of the census's answers is left out: Uíge's Quadro 7.1 prints
+  11 of the 21 religions, 61% of the province's people aged 2 and over, and
+  the page after it is blank in both of INE's copies, so its polygons say
+  which ten answers are not printed by municipality. Uíge's mother-tongue
+  rows for Puri and Maquela do Zombo do not add up as printed (52,087 against
+  46,493; 100,663 against 106,323, the page checked by eye), and those two
+  polygons say so. Each note cites the table it speaks of.
+* **Median ages**: Quadro 1.7 prints the census's median age, in completed
+  years, for the province and each 2024 municipality and commune, in one, two
+  or three column groups (Uíge's three); a municipality is the first row of
+  its name, before its communes. Huambo's report prints no Quadro 1.7 (its
+  age tables end with Quadro 1.6), and its province's median is the key
+  indicators' (Quadro 1, indicator 1.4: 16.0 for 2024). A polygon that is one 2024
+  municipality shows the published median (27 polygons); one whose 2024
+  municipalities all have the same median shows it (15); otherwise the median
+  of their counts by age group added up (0-14, 15-19, 20-29, 30-54, 55-64,
+  65-74 and 75 and over, from Quadros 1.4 and 1.5), in completed years as the
+  census gives its medians, which must lie between the parts' published
+  medians or is not shown (53 polygons; all 64 merged polygons whose parts
+  are all published lie between them). Benguela's report prints no median
+  for a municipality of several communes, only for its communes (Bocoio,
+  Balombo, Caimbambo, Chongorói, Egito Praia), and those polygons' notes say
+  the census publishes none for them. Luanda, Moxico and Cuando Cubango, each
+  two provinces of 2024, show their parts' common median (Cuando Cubango 18)
+  or the median of their five-year groups added up, between the two
+  published medians (Luanda 22, between 23 and 21; Moxico 17, between 18 and
+  16).
+* **Polygons**: a polygon gets its namesake's figures where OCHA's boundaries
+  of the 2016 municipalities (cod-ab-ago) and the polygon agree, at least 70%
+  of each lying inside the other. Lobito's polygon holds Catumbela (98% of
+  it) and Chitato's holds Lóvua, and their counts are added. Eleven polygons
+  show no figure published for their namesake, the census's or OCHA's 2024
+  projection, and say why: Caluquembe, Quilengues, Quipungo and Lubango hold
+  parts of Cacula, which has no polygon; Pango-Aluquem, Quiculongo,
+  Cambundi-Catembo and Xá-Muteba depart from their municipality by more than
+  30%; and Luanda's Belas, Cacuaco and Luanda hold large parts of Viana,
+  Dande and Cazenga (the shared patch states it on OCHA's rows for them).
+  The census's labels are written as names in the notes ("Boa Entrada
+  (Cadá)", "Gangula (Kuvu)", "Cacongo (ex-Lândana)").
+* **Written**: 18 provinces (Luanda, Moxico and Cuando Cubango as the sums of
+  the 2024 provinces made out of them) with the 2024 count, sex ratio and
+  median age; 104 municipality polygons with the 2024 count and sex ratio, 95
+  with a median age, 97 with ethnic groups, 93 with mother tongue and 67 with
+  religion. The others say why the census describes none of them (no 2016
+  table, a table of namesakes, other ground, a municipality the 2024 ones do
+  not make in one way, a table refused by its checks). The census's figures
+  stand in front of OCHA's 2024 projection.
+
+### Central Africa: dead ends
+
+* Chad's 2009 census: ANAD's catalogue (catalog 26) lists the Résultats
+  globaux définitifs, its Arabic version and the results by sub-prefecture as
+  page images without a text layer, which were not transcribed; INSEED's own
+  download pages hold no file. No age, religion, language or ethnic table by
+  department or province was taken from them.
+* Cameroon: ins-cameroun.cm's village directory answers 404; the WHO AFRO
+  copy of the 2005 presentation report fails DNS. BUCREP's tables were read
+  through the Internet Archive instead.
+* Gabon: instatgabon.org redirects every file to its home page.
+* Equatorial Guinea: inege.org's challenge page; the yearbooks' archived
+  copies were read instead.
+* Republic of the Congo: ins-congo.cg links no census tables; cnsee.org's
+  archived pages hold the 2007 analysis only as article stubs.
+* Angola: the census site's addresses for Uíge's and Cuanza Sul's provincial
+  reports (`Relatorio_Provincial_Uige_Censo2024.pdf`,
+  `Relatorio_Provincial_Cuanza_Sul_Censo2024.pdf`, and the province-name
+  addresses `UIGE.pdf`, `CUANZA_SUL.pdf`) answer 404 and `Uíge.pdf` 500
+  ("rejected by the HTTP filter"); the copies on INE's own site are read
+  instead. Uíge's table of religions by municipality prints 11 of the
+  census's 21 answers, and no other table or page of either of INE's copies
+  prints the other ten by municipality.
+* The DHS indicator API has no composition (religion, ethnicity), household
+  sex ratio or median-age indicator by region for any of these countries.
+* The Central African Republic's 72 sub-prefectures: no published list of
+  their seats was found.
+
+### Kenya: the 2019 census by county and by constituency, and a county drawn on another's ground
+
+KNBS published the 2019 Kenya Population and Housing Census in four volumes; its
+own site fails TLS verification (an incomplete chain), and Code for Africa's
+openAFRICA portal holds the Bureau's tables as CSV. `kenya_census` reads three of
+them: Volume I's population by sex and county (male, female, intersex), Volume
+II's population by sex and sub-county (totals with intersex persons), and Volume
+III's population by single year of age, sex, county and sub-county. Volume I's
+national row must be 47,564,296 and its counties must make it; every Volume III
+row's single years must make its total and its sexes make it too; Volume III's
+county totals must be Volume I's without the intersex persons; Volume II's
+sub-counties must make Volume I's counties exactly, and its men and women must
+be Volume III's (341 of 345 sub-counties are found in both and agree; the other
+four are Kinango, whose Volume III rows are cut short in the CSV, and the Mount
+Kenya Forest rows of Embu, Kirinyaga and Tharaka-Nithi, which Volume III calls
+"MT. KENYA FOREST" and Volume II "MOUNT KENYA FOREST"; none of the four is used). Volume III's Kwale rows fall 12 people short of
+the county total with no "not stated" row: taken as ages not stated, logged.
+
+**Counties.** Population is Volume I's count with the intersex persons; men per
+1,000 women; the median age is interpolated within the single year that holds
+the middle person. The map had carried Volume IV's religion-table totals, a
+little short of Volume I's (Baringo 662,760 against 666,763).
+
+**Constituencies.** The map's 290 second-level units are constituencies; the
+census tabulates 345 sub-counties (including forest and park rows). OCHA's
+boundary dataset has no sub-county outlines -- its second level is the
+constituencies too -- so which constituencies are sub-counties cannot be
+measured from outlines. It is measured from areas: Volume II prints each
+sub-county's land area, and the constituency polygons' areas were computed on
+the map's own outlines. A constituency is taken to be one sub-county or a set of
+whole ones where the names correspond (the same name, or the sub-county it was
+known by: Rachuonyo North for Karachuonyo, Athi River for Mavoko) and the areas
+agree -- within 7% where every constituency of the county is accounted for, and
+within 3% (or 1 km2 for the smallest) where only some are. A lakeside polygon
+takes in water of Lake Victoria that the census leaves out (Siaya's map area is
+39% above its census land area), so it is settled by name once the county's
+other constituencies are. The calibration on the 38 constituencies already
+matched by name showed why a tolerance and not equality: CGAZ's simplification
+moves small units by several km2 (Changamwe 18 km2 against 22.8). The result,
+`CROSSWALK`, covers ten whole counties (Busia, Homa Bay, Isiolo, Kajiado,
+Machakos, Nandi, Siaya, Tana River, Trans Nzoia, West Pokot; 54 constituencies)
+and 39 more in eighteen other counties; with the seven counties whose constituencies are all
+sub-counties of the same names, 131 of 290 carry the census's count, sex ratio
+and median age. The rest say the census was published for sub-counties and this
+constituency's ground cannot be shown to be one or a set of whole ones. Where the
+areas say a boundary moved (Gilgil against Naivasha, Mumias East against West,
+Thika against Juja and Ruiru), the constituencies are left out even though their
+unions match. Every constituency also says why it has no religion, ethnicity or
+language: Volume IV publishes religion by county and ethnicity for the country
+only, and no volume tabulates language.
+
+**Bomet and Kericho.** The map's Bomet County polygon takes in Bureti, which the
+census counts as a sub-county of Kericho (OCHA's boundaries put Buret
+constituency in Kericho too): Bomet's 2,507 km2 and Bureti's 321 make 2,828
+against the polygon's 2,819, and Kericho's 2,436 less Bureti's make 2,115 against
+2,102. The Bomet polygon gets Bomet County and Bureti added up (1,075,159), the
+Kericho polygon Kericho County less Bureti (702,307), and the Buret constituency
+polygon Bureti's count. Religion is published by county only (Volume IV), so the
+two counties' religion notes say the shares are the counties' as counted.
+
+Source: Kenya National Bureau of Statistics, 2019 Kenya Population and Housing
+Census, Volumes I-III, via openAFRICA
+(https://open.africa/dataset/2019-kenya-population-and-housing-census).
+
+### Uganda: the 2024 census from the Bureau's dashboard, onto counties drawn in 2002
+UBOS publishes the National Population and Housing Census 2024 through the
+dissemination dashboard on statistics.ubos.org/nphc, whose JSON interface gives
+every district and every 2024 county, city division and municipality with its
+population by sex and its age groups (0-4, 0-17, 15+, 15-24, 18-30, 18+, 60+,
+65+, 80+), and each unit's outline; asked for sub-counties, it answers with the
+county layer and empty figures. The host sends its leaf certificate without
+the intermediate; the missing link is completed from the certificate's AIA
+record, still verified. The Bureau's publication PDFs on ubos.org fail the
+certificate check too and time out; the Internet Archive's copies of them are
+read instead, among them the 2024 sub-county profile tables
+(NPHC-2024-Subcounty-Profiles-Excel-Tables.xlsx, October 2025): every district,
+county, sub-county and parish with its men and women (Table 1) and its people
+in the same age groups (Table 3). Its districts make the final 45,905,417 with
+Apaa, the ground Adjumani and Amuru both claim, a row of 9,456 people with
+nothing below it -- the 9,456 the dashboard's districts fall short by.
+
+The map's 151 second-level polygons are the counties of about 2002 with a few
+municipalities; the census counts 312 units, many cut from those counties since.
+`uganda_census --points` samples points over every 2024 outline, and
+`uganda_crosswalk` (run where the boundary files are) writes `uganda_counties`:
+a unit is placed in the polygon holding three quarters of its points, and a
+polygon is written as its units' sum only where no other unit has a quarter of
+its points inside it, none has one point in twenty inside it farther than 2 km
+from its line, and none of its own units has one in twenty beyond it farther
+than 2 km. Nearer than 2 km, two drawings of one line disagree (Koboko's lines,
+unmoved since 2002, by up to 3 km; Kira Municipality's 16% inside the Kampala
+polygon lies within 1.6 km of it); beyond, it is another unit's ground. 84
+polygons are written so (Kampala and Buvuma set by hand); Butembe's, which
+holds parts of Jinja North Division and Kagoma North County farther in, is not,
+nor 66 others. A refused polygon is settled from the 2024 sub-counties where
+every unit crossing it splits into sub-counties matched by name to OCHA's
+sub-county outlines of 2020 (cod-ab-uga) that lie cleanly in one polygon:
+Buhweju (Buhweju and Buhweju West counties and Kyabakara sub-county of Katerera
+County) and Dodoth. The other 65's crossing units have sub-counties made since
+2020, with no outline, or outlines crossing the line too, and say so. Regions
+are the sums of their 146 districts. Medians are interpolated within the age
+group holding the middle person, from the dashboard's overlapping groups
+differenced into disjoint ones (0-4, 5-14, 15-17, 18-24, 25-30, 31-59, 60-64,
+65-79, 80+).
+
+OCHA's COD-PS table for Uganda is by district (135, for 2022), and 54 of its
+figures stood on county polygons of the same names (Mityana's with Busujju in
+it, Serere's with Kasilo); its population and age rows for Uganda give way.
+Sex ratios outside 850 to 1,150 men per 1,000 women say they are the census's
+own figures, which the dashboard and the sub-county tables both give: Kampala
+1,267 (1,004,884 men, 792,838 women), Bufumbira as drawn 1,382, Kooki 1,283,
+and Kalangala's islands (Bujjumba 1,479, Kyamuswa 1,669), which counted far
+more men than women in 2002 too.
+
+The 2024 census publishes religion and ethnicity for the country only: the
+Final Report, Volume 1 (Main), December 2024, Tables 3.1 and 3.2 (read from the
+Internet Archive's capture of 3 January 2025). So did the 2014 census (Main
+Report, Tables A8 and A9, by sex and residence). Every county says so for
+religion and ethnicity, and every region for ethnicity, citing the report for
+the notes.
+
+Source: Uganda Bureau of Statistics, National Population and Housing Census 2024,
+census dissemination dashboard (https://statistics.ubos.org/nphc/); Sub-county
+Profiles, Tables 1 and 3 (https://www.ubos.org/wp-content/uploads/2025/10/NPHC-2024-Subcounty-Profiles-Excel-Tables.xlsx);
+Final Report, Volume 1 (https://www.ubos.org/wp-content/uploads/2024/12/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf);
+OCHA, Uganda subnational administrative boundaries (cod-ab-uga, 2020).
+
+### Uganda: religion from the 2002 census, by region and for five counties
+The 2002 Population and Housing Census was the last to publish religion below
+the country. Its tabulations, which UBOS publishes as one ZIP of PDF tables
+(`10_20212002_census_tabulations_pdf.zip`, read from the Internet Archive's
+capture of 16 November 2021), give religion by district in Table B7 (Annex 2):
+Catholic, Anglican, Seventh-day Adventist, Pentecostal, Muslim, other and none,
+for the 56 districts of 2002 under their regions, with each region's total row,
+leaving out people enumerated in hotels. `uganda_2002` checks that every row's
+religions make its total, that each region's districts make its total row and
+the regions the national 24,433,132.
+
+The four regions take their total rows (Uganda's regions are the same ground in
+2002 and now). Being a count, it stands in front of Afrobarometer's 2021-2023
+estimates for the Central and Eastern regions as well as filling the Northern
+and Western, which had none.
+
+The map's counties are those of about 2002, and Table 3A (population by county)
+shows ten 2002 districts that were one county each: a district row followed by
+one county row with the same figures, and every district's counties making
+it (56 districts, 24,442,084). A county that was a district on its own takes
+its district's religion where the 2024 crosswalk places in the drawn polygon
+every county of the 2024 districts it holds and nothing else (by its tests,
+which let a neighbour's points lie within 2 km of the line and no farther in):
+Kampala, Buruli (Nakasongola), Samia-Bugwe (Busia), Bufumbira (Kisoro) and
+Kinkiizi (Kanungu). Kiboga, East Moyo and Aringa are refused by the crosswalk
+(Kiboga East County, Kilak North and Obongi counties, and Aringa's 2024
+counties cross their lines), Bukooli's polygon holds Namayingo's counties but
+not its island county, and Bunya's takes in Jinja South Division of Jinja City,
+so these five say why they have none. "Other religion" is the census's "Other":
+Orthodox, Baha'i, other Christian, non-Christian and traditional religions.
+
+Source: Uganda Bureau of Statistics, 2002 Uganda Population and Housing Census,
+Tables B7 and 3A
+(https://www.ubos.org/wp-content/uploads/publications/10_20212002_census_tabulations_pdf.zip).
+
+### Ethiopia: the 2007 census by zone, and the 2022 projection summed from weredas
+The map draws Ethiopia's 11 regions and the 74 zones of the 2007 census
+("Region 14", "KT", "Zone 1"...). `ethiopia_census` reads the 2007 census by
+region and zone from the US Census Bureau's Ethiopia workbook on HDX (age and
+sex by five-year group): every row's groups and sexes make its total, the
+regions make 73,750,932, and the zones make each region; Finfinne Zuria is listed
+without a count. The special weredas the census counted apart are added to the
+zone polygons that hold them (Adama to East Shewa, Mekele to Southern, Hawassa
+to Sidama, Mao-Komo to Asosa, whose polygon holds 94% of its outline, and four
+more); Bahir Dar, whose centre lies 0.3 km inside North Gonder's polygon and
+most of whose outline lies in West Gojam's, is placed in neither, and both
+zones' notes say so (221,991 people in 2007), their medians' and sex ratios'
+too. Each region and zone gets its 2007 count, men per 1,000 women and median
+age.
+
+The newer word is the statistics office's projection for July 2022, which OCHA's
+COD-PS tabulates by region, zone and wereda -- by the zones of 2022, which split,
+merged and renamed the 2007 zones (Bale without East Bale, a "Nogob" that is
+mostly the drawn Shabelle while the drawn Nogob is today's Erer, Southern Tigray
+without Mekelle). The projection's 2021 wereda codes are matched to OCHA's wereda
+outlines by code and name, by the same code under a spelling alike (Kelete
+Awelallo, Kilte Awulaelo), or by a unique name, and the outlines are placed in
+the drawn zones from points sampled over them (`ethiopia_zones`): an outline
+goes to the polygon holding three quarters of its points, or else three
+quarters of its points lying more than 2 km inside a line (nearer one, two
+drawings of it disagree, so a point there tells no side). A zone as drawn
+takes its weredas' sum where it is their ground but for slivers: the parts of
+the weredas straddling its line that lie more than 2 km across it are no more
+than one in twenty, both of its ground the sum leaves out and beyond its line
+the sum takes in, counted in people (each wereda's people spread evenly over
+its outline) or in area; the note names any straddling wereda whose part,
+counted in people, is more than one in two hundred of the sum. A wereda
+matched to no outline is placed with its 2022 zone's other weredas when they
+all lie in one drawn zone, or by the zone's code. 56 of 74 zones and all 11
+regions carry the 2022 projection, among them the zones whose ground is one
+2022 zone's: East Gojam (2,902,200), Siti, Eastern, the Oromo zone, Majang,
+Sheka, South Omo (with Ari, 651,951) and West Gojam (2,760,852, with Bahir Dar,
+which the projection counts as a wereda of the zone); Region 14, Dire Dawa and
+Hareri, regions drawn as one zone, take their region's. OCHA's zone rows give
+way. The projection's Yem (67,586) is below the 2007 count (80,687): the
+source's figure.
+
+Sources: US Census Bureau, Ethiopia subnational population workbook (2007 census
+age and sex), on HDX; Ethiopian Statistics Service, population projection for
+July 2022, as OCHA's COD-PS (cod-ps-eth) tabulates it.
+
+### Tanzania: median age by council from the Age and Sex report
+
+The 2022 census's Volume 2a, *Age and Sex Distribution Report*, prints for every
+region and council everyone by single year of age to 79 and 80 and over, by
+sex. `tanzania_census` reads it from page 55, checks each table's single years
+and sexes against its total and the total against Volume 1a's count of the same
+unit, and interpolates the median within the single year holding the middle
+person. Ten councils are named otherwise in the two volumes (a council's type,
+"Busekelo" for Busokelo, Mtama for the former Lindi District Council); a table so
+joined must still count Volume 1a's people exactly. Dodoma Region's own table is
+broken across pages in the text layer; its median is from its eight councils'
+tables added up, which make the region exactly; a median's note names its
+councils as Volume 1a does. Bariadi District Council's table
+is garbled (its single years make three times its total) and carries no median.
+Chunya and Songwe are written apart, their outlines checked by area (17,505 and
+16,070 km2).
+
+Six towns get no census figures from `tanzania_census`: Kahama's and Katavi's
+councils were split after 2012 along lines the map does not draw (Kahama
+Township Authority, Mpanda Urban), and Babati Urban, Kasulu Township Authority,
+Lindi Urban and Sumbawanga Urban fail its ratio test together with the
+districts drawn beside them. They carry OCHA's 2020 projection (cod-ps-tza),
+joined through the labels the build already gave their head counts; their
+medians and sex ratios now come from the same table's age rows through the same
+labels, as their neighbouring districts' do.
+
+Source: National Bureau of Statistics (Tanzania), 2022 Population and Housing
+Census, Age and Sex Distribution Report, Volume 2a.
+
+### Rwanda: the 2022 census by province and district
+
+NISR's Fifth Population and Housing Census (August 2022): the *Main Indicators*
+workbook (Table 1, population by sex, province and district; Table 6, Rwandan
+and foreign residents by province), the thematic report *Population size,
+structure and spatial distribution* (Tables 4.3 and 4.4, median age by province
+and district, printed in whole years), and the 30 *District Profiles* (September
+2023), each with its district's population by religious affiliation in counts
+and by nationality (Table 2.1, Rwandan or foreign, the district's row above its
+sectors'). The districts must make their provinces and the provinces
+13,246,394; a profile's religions must make Table 1's count for the district,
+and so must its Rwandans and foreigners, which must also give the shares the
+profile prints beside them (to whatever precision each profile prints them: two
+decimals in Kicukiro's, one in Nyarugenge's, and a Rwandan share that rounds to
+"100" where foreigners are a few dozen -- Gakenke's 98, Ngororero's 72); a
+province's districts' Rwandans and foreigners must make Table 6's, or none of
+them is written. All 30 districts are read, and all five provinces' districts
+make Table 6. Provinces' religion is their
+districts' counts added up; nationality goes on the ethnicity field (basis:
+nationality), Table 6's for the provinces and the profiles' for the districts,
+the census asking no ethnicity. The language table (Table 8) is literacy, the
+languages people aged 15 and over read and write, in combinations, by province,
+and is not a language composition: every unit says so, citing Table 8 for the
+note. A province's religion cites the census's publication page, which lists
+the district profiles it is added up from. OCHA's table projected the 2012 census
+to 2023 (Nyagatare 917,054 against the census's 653,861) and gives way. The
+statistics.gov.rw "datasource" listing pages answer 404 and the www host fails
+TLS (a certificate for another name); the files are reached on the bare host.
+
+Source: National Institute of Statistics of Rwanda, Fifth Population and Housing
+Census 2022 (https://statistics.gov.rw).
+
+### Somalia: the 2014 Population Estimation Survey by region
+Somalia has published no census since 1975. The Population Estimation Survey of
+2014 (UNFPA with the Somali authorities) sampled the 18 pre-war regions, the
+map's first level; its Volume 2 (2016, held on nbs.gov.so) prints each region's
+men and women as shares of its people (Table 2) and its median age in whole
+years (Table A.2). `somalia_survey` writes both as survey estimates in
+`somalia_survey.json`, fill-only behind any count (FILL_ONLY); sex ratios from
+shares printed to a tenth of a percent are good to about three per 1,000.
+Middle Juba is left out with a reason: the report says it was inaccessible, and
+its Table A.2 gives the region's men a median of 30 against its women's 18.
+The survey's report estimates the population of the 18 regions only: the
+district figures that circulate (HDX's "Somalia Population Data - UNFPA 2014",
+whose description says so) were derived afterwards from UNDP's 2005 district
+estimates, for the 74 districts of 1986. The Somali Health and Demographic
+Survey 2020 (Directorate of National Statistics with UNFPA) reports ages and
+sexes for regions at most (a main report and one report per region). So every
+one of the 118 districts the map draws says why it carries no estimate
+(`somalia_districts.json`).
+
+Sources: UNFPA Somalia, Population Estimation Survey 2014, Volume 2: Population
+Composition and Demographic Characteristics of the Somali People (2016); Federal
+Government of Somalia and UNFPA, The Somali Health and Demographic Survey 2020.
+
+### Djibouti: the 2024 census by region, at second hand
+The third general census (RGPH-3) counted 1,066,809 people on 20 May 2024. The
+national institute's own report was not found online; City Population
+(citypopulation.de) tabulates the final results by region and sub-prefecture,
+and each region's own page gives its men and women ("Gender (C 2024)"): the
+city of Djibouti 378,351 men and 388,899 women, Dikhil 32,959 and 33,237.
+`djibouti_census` reads the index and the six region pages, checks that the
+regions make the national row, that each region's sub-prefectures and towns
+make the region and that its men and women make its count, and writes the
+regions' counts and sex ratios (the city 973 men per 1,000 women): English
+Wikipedia's 776,966 for the city of Djibouti overran the national total by
+9,716 with the other regions' counts, and Obock carried 2009's 37,856. No
+count of people by age below the country has been found. The map's eleven
+second-level units are an older division (the unit named Djibouti holds the
+city, Balbala and the town of Arta), and the census gives no outlines, so they
+say why they carry no count and no sex ratio -- Ali Sabeh too, whose polygon
+(about 2,150 km2) is larger than Ali Sabieh region's (about 1,830 km2), some
+390 km2 of it outside the region's, so the region's figures are not repeated on
+it.
+
+Source: Institut National de la Statistique de Djibouti, RGPH-3 (2024), as City
+Population tabulates it (https://www.citypopulation.de/en/djibouti/admin/).
+
+### Eritrea: no census
+
+Eritrea has never taken a national census. The Eritrea Population and Health
+Survey 2010 (National Statistics Office with Fafo) gives the household
+population by age, sex and residence for the country, its towns and its
+countryside; its regional tables are of fertility, mortality and health. So
+every region and sub-region says why it has no median age or sex ratio
+(`eritrea_census.json`, no network read).
+
+### Burundi: the 2008 census's men and women, and OCHA's 2022 table on four communes it named otherwise
+The 119 communes carry OCHA's 2022 projection (cod-ps-bdi) for their head counts
+and medians, and the provinces their communes' sums. Four communes had none, for
+want of a join. OCHA writes Mugongomanga (Bujumbura Rural) "Mugougomanga" and
+the boundary file cuts it to "Mugongoman". Bujumbura Mairie has been three
+communes since 2014 -- Muha (Kanyosha, Kinindo, Musaga), Mukaza (Buyenzi, Bwiza,
+Nyakabiga, Rohero) and Ntahangwa (Buterere, Cibitoke, Gihosha, Kamenge, Kinama,
+Ngagara), made from the city's thirteen former communes, now its zones -- and
+OCHA's three rows for the city (BDI017014 to BDI017016) are labelled with one
+zone of each: "Kanyosha", "Buyenzi", "Buterere". They are the three communes:
+their P-codes run in the communes' alphabetical order and together they make the
+city (1,117,744 in 2022). They are bound to their polygons, and Muha, which the
+boundary file puts 53.8% inside Bujumbura Rural's polygon, is filed under
+Bujumbura Mairie; Nyarusange and Nyabitsinda take their medians through the
+aliases their head counts already had.
+
+A census's sex ratio stands in front of a projection's. The 2008 census (16
+August 2008; final results published by the decree of 5 April 2010, whose annex
+gives the population by province, commune and sex) is republished by INSBU as
+the workbook Chapitre-1.xlsx (Tableau 1.6, population by province and commune
+by sex; Tableau 1.4 the same by household type), read from the Internet
+Archive's capture of 25 December 2025. `burundi_census` checks every row's men
+and women against its total, each province's communes against its row and the
+provinces against 8,053,574 (3,964,906 men, 4,088,668 women), and the two
+tables against each other row by row; the workbook calls two of Makamba's
+communes "MAKAMBA", and the first is the decree's Mabanda (22,910 men, 22,926
+women), as the annex and the table's alphabetical order both say. Every commune
+and province drawn gets its 2008 men per 1,000 women, with the counts in the
+note: Bujumbura's three communes as their communes of 2008 added up (Mukaza
+1,396, the city 1,238 men per 1,000 women), Rumonge province (2015) as its five
+communes of Bururi and Bujumbura Rural. The census published no ages by
+province or commune (its age tables are by residence, urban or rural, for the
+country), so the projection's medians stay.
+
+Sources: OCHA, Common Operational Dataset -- population statistics (cod-ps-bdi),
+reference year 2022 (https://data.humdata.org/dataset/cod-ps-bdi); ISTEEBU/INSBU,
+Troisième Recensement Général de la Population et de l'Habitat 2008, Tableaux 1.4
+and 1.6 (https://www.insbu.bi/documents/recensements/Chapitre-1.xlsx).
+
+### Seats of Ethiopia's zones and three regions, from Wikidata
+
+Wikidata labels many of Ethiopia's zones in Amharic (Mirab "west", Misraq
+"east", Semien "north", Debub "south", Mehakelegnaw "central") or spells them
+otherwise (Illubabor, Silt'e, Horo Gudru Welega; Gabi Rasu is Afar's Zone 3),
+so its items joined none of the 2007 zones the map draws under English names.
+Twelve whose seats stand inside the drawn zone (GeoNames points) are joined by
+name: Arsi (Asella), West and East Wellega (Gimbi, Nekemte), Ilubabor (Metu),
+North Wollo (Weldiya), Tigray's North Western and Central (Shire, Aksum), Selti
+(Worabe), West Gojam (Finote Selam), Horo Guduru (Shambu), South Omo (Jinka)
+and Zone 3 (Awash); so are Benishangul-Gumuz (Asosa) and Harari (Harar), which
+the boundary file spells "Beneshangul Gumu" and "Hareri", and Somalia's
+Banaadir (Mogadishu), its "Banadir". Two of Sidama Region's zones, Southern and
+Central Sidama, had joined Tigray's Southern and Central zones by their
+first word -- Aleta Wendo showed as Southern Tigray's capital -- and are left
+out, as is Arsi Negele, a wereda, which met the Arsi zone item by its first
+word. Not joined: Gedeo (Dila's point lies just outside the drawn zone),
+Alaba, Majang, Siti (no GeoNames point for Halaba Kulito, Meti or Shinile) and
+Zone 2 (Abala's point lies in another zone); and the items of zones made since
+2007 from a drawn one (Gamo for Gamo Gofa, Bench Sheko for Bench Maji, Kembata
+for Kembata Tembaro).
+
+Source: Wikidata (https://www.wikidata.org/), checked against GeoNames
+(https://www.geonames.org/).
+
+### Seats of Ethiopia's chartered cities and of SNNPR
+Addis Ababa and Dire Dawa are chartered cities, each its own seat, and each is
+drawn as a region and again as one zone ("Region 14", "Dire Dawa"); Harari
+Region is drawn as one zone too ("Hareri"), whose seat is Harar. Their Wikidata
+items carry no seat of their own (the cities are the items), so `ethiopia_census`
+writes these with a note saying so. SNNPR, drawn as it was before Sidama Region
+was made from it in 2020, had Hawassa as its seat until the region was divided
+in 2023 (English Wikipedia's article on the region).
+
+Sources: Wikidata (Q3624, Q193486, Q1033855); English Wikipedia, "Southern
+Nations, Nationalities, and Peoples' Region".
+
+### East Africa and the Horn: dead ends
+
+* **Kenya, ethnicity below the nation.** Volume IV publishes ethnicity for the
+  country only (openAFRICA resource b1199ddd); the counties keep their survey
+  figures.
+* **Kenya, the High Court and three counties.** A 2025 ruling on the 2019
+  results for Garissa, Wajir and Mandera was reported; the published census
+  tables are what is written, and no figure was changed on a report not
+  verified.
+* **Kenya, the constituencies' own counts.** The Independent Electoral and
+  Boundaries Commission's final report on the 2012 delimitation (Volume I, 6
+  March 2012; iebc.or.ke fails certificate checks, read from the Internet
+  Archive) prints the 2009 census population of the 210 old constituencies
+  (Table 6) and the number of new constituencies per county (Table 4), not the
+  population of each of the 290 drawn; its Volume II and the schedule of Legal
+  Notice 14 of 2012 were not found online. The 159 constituencies whose ground
+  is not a set of whole sub-counties keep their stated reason.
+* **Uganda, below the region.** UBOS's publication PDFs on ubos.org fail
+  certificate checks from the runner and its report pages time out; the
+  Internet Archive holds them. None publishes religion or ethnicity by district
+  or county since 2002: the 2014 Main Report (Tables A8, A9) and the 2024 Final
+  Report (Tables 3.1, 3.2) give both for the country only; the 2014 Area
+  Specific Profiles of each district (BULIISA.pdf, 48 pages) mention neither;
+  the 2024 sub-county profile workbook (NPHC-2024-Subcounty-Profiles-Excel-
+  Tables.xlsx, 15 tables down to parish) and the 2024 sub-region profile reports
+  (Bunyoro's, 484 pages) have population, ages, households and services, not
+  religion or ethnicity. The 2002 census's ethnicity is national (Table B10);
+  the analytical report's "Table A1.4: Ethnicity by Region" is in fact religion
+  by ethnic group.
+* **Burundi's censuses.** INSBU moved its files: the old address of the 2008
+  final-results decree (wp-content/uploads/2023/04/RGPH-RESULTATS-DEFINITIFS.pdf)
+  now answers with a page of about 1 KB, which is what the first attempt
+  received; the decree and the census's chapter workbooks are at
+  insbu.bi/documents/recensements/, captured by the Internet Archive in December
+  2025, and the 2008 sex ratios are written from them (above). The 2008 census
+  published no ages by province or commune. The RGPHAE 2024 results (12,332,788
+  people) are by the provinces and communes of the 2025 reform (City
+  Population's Burundi pages now show only those, with 2008 re-totalled), not
+  the 119 communes the map draws, so the communes keep OCHA's 2022 head counts
+  and medians.
+* **Uganda's 2024 sub-county outlines.** The census dashboard, asked for its
+  sub-county layer (get_geospatial_data.php?level=subcounty), answers with the
+  county layer and empty figures; OCHA's sub-county outlines (cod-ab-uga) are
+  of 2020 and lack the sub-counties and town councils made since, so most
+  counties crossing a drawn county's line cannot be split (Buhweju and Dodoth
+  are settled so).
+* **Ethiopia, OCHA's zone table on the drawn zones.** Its figures stood on 45
+  zones by name; many are other ground (above), so they give way to the
+  projection summed by wereda, with the 2007 count beneath. Where a 2022 zone
+  is a drawn zone's ground (East Gojam, Siti, Eastern, the Oromo zone, Majang,
+  Sheka, South Omo, West Gojam), the sum of its weredas is OCHA's figure for
+  it. Where it is not, the 2007 count stands: Basketo's 2022 outline lies a
+  quarter outside the drawn polygon, the Somali zones were redrawn across the
+  old lines, and West and South West Shewa of 2022 leave out the weredas that
+  went to the zone around Addis Ababa.
+* **Somalia's districts.** citypopulation.de's 2005, 2014 and 2019 district
+  columns are the 74 districts of 1986; whether a district drawn today keeps one
+  of their grounds is not established.
+
+### South Africa: the census service's population groups and ages by district
+
+Statistics South Africa's Census 2022 dissemination service (the JSON behind
+`census.statssa.gov.za`) answers by geography level -- 1 the country, 2 the
+province, 5 the district municipality -- and three of its datasets carry what
+the districts lacked: `DsPopulationGroups` (the five population groups, as
+counts), `DsAgeGroups` (eighteen five-year groups, men and women) and
+`DsMains` (a summary of the same area). The service names nothing: its nested
+names are null and its ids are bare numbers, so the numbering is proved, not
+assumed. Group 2 must be the Western Cape's largest and group 3 KwaZulu-Natal's
+largest share (Coloured and Indian/Asian); age groups 1-3 must give the
+summary's share under 15 and 14-18 its share 65 and over, to 0.15 points.
+`DsLanguages` and `DsSingleAges` are empty at every level, and no dataset
+gives religion.
+
+`south_africa_districts.py` writes, for the 52 districts, population group as
+counts (with the people whose group was not recorded named in the note) and
+the median age interpolated in the five-year group that holds the middle
+person; for the nine provinces the median age only. A district's groups and
+ages make its total less the unstated, never short by more than 1% and never
+over by more than 0.1%: each of the 36 age cells is weighted and rounded on its
+own, and Nkangala's make 1,588,777 against 1,588,684.
+
+The eight metros take Census 2022's language from Statistics South Africa's
+*Census 2022: Cultural Dynamics in South Africa* (Report 03-01-84), Table 2.3:
+the population of each metro by the language spoken most often in the
+household, in percentages to one decimal place, every column making 100
+(eThekwini isiZulu 65.6%, City of Cape Town isiXhosa 37.4%, English 30.6%,
+Afrikaans 26.1%). The other 44 districts' language, and every district's
+religion, stay empty with their reason, which is not that the census did not
+ask: Census 2022 asked both, and what Statistics South Africa publishes gives
+them for the provinces -- the statistical release (P0301.4, Tables 2.9 and
+2.10), the nine provincial profiles (Reports 03-01-70 to 03-01-78, whose
+language table, 2.10 or 2.11, and religion table are the province's; Gauteng's
+language is a figure, 2.7) and the report on cultural dynamics (religion by
+province, Table 4.1) -- with only the metros' language below that. Each note
+names those publications, and each district cites its own province's profile.
+
+### Zimbabwe: ZIMSTAT's ward tables, and the ward that is Harare Rural
+
+ZIMSTAT's *2022 Population and Housing Census: Population Distribution by
+District, Ward, Sex and Number of Households* (106 pages) prints the provinces
+on one page and then every district, town council and local board on its own
+page, ward by ward, with a Total line. `zimbabwe_districts.py` checks every
+ward line's men and women, every district's wards against its Total line, the
+districts against the province page and the provinces against the census's
+15,178,957. Three printing habits had to be read: a ward whose figures the
+text layer puts on one line and its label on the next (Chipinge Rural's wards
+23, 24, 29 and 30), a total printed without its thousands comma (Rushinga's
+ward 25: 1190) and "-" for none (Matobo's ward 20). Households are checked the
+same way and only logged: they are not written, and Mashonaland Central's
+districts make 337,985 against the province's 337,778.
+
+The census's 90 units are the map's 91 polygons but one: the map draws Harare
+Rural, and the final tables print Harare Province as Harare Urban District,
+Chitungwiza and Epworth. Harare Urban's page opens with a Ward 01 of 357,863
+people and 92,661 households; the census's *Preliminary Report on Population
+Figures* lists Harare Province as four districts, Harare Rural among them with
+one ward of 357,860 people and 92,662 households (page 160), and Harare
+Urban's wards there start at Ward 02 (30,229 people, as in the final tables).
+So Harare Rural is given Ward 01 and Harare Urban the rest of its page, and
+both say so.
+
+OCHA's 2023 district figures for Zimbabwe are a projection from the 2012
+census (they make 17,408,564 against the count's 15,178,957) and give way to
+the count (`SUPERSEDED_ROWS`). Religion and mother tongue are published by
+province only (2022 PHC Report, Tables 2.14 and 2.17), ethnicity for the
+country only (Table 2.15), and ages below the province not at all; the
+districts say so, and keep OCHA's projected median age as a fill.
+
+### Malawi: the 2018 census's Series A and E workbooks
+
+The National Statistical Office's site serves the 2018 census tables as
+workbooks (`cms.nsomalawi.mw/api/download/<id>/...`): Series A, Population
+Tables (277), and Series E, Social Tables (281). `malawi_census.py` reads A1
+(population by sex), A6 (age groups by district: under 1, 1-4, five-year
+groups to 90+), E4 (tribe of Malawian citizens) and E5 (religious
+denomination). A1's districts and cities make their regions and the regions
+the country's 17,563,749; every district's A6 groups and E5 denominations make
+its A1 total; E4's tribes make its own total, which counts Malawians only and
+so is never more than A1's. The four cities -- Mzuzu, Lilongwe, Zomba,
+Blantyre -- are listed beside the districts they lie in, and the map draws
+each within its district, so those four districts are district and city added
+together. Series E has no language table; the districts say so. The
+district's population stays OCHA's 2023 figure, the NSO's projection from this
+census: the newer figure stands.
+
+### Mozambique: INE's 2017 census quadros, from the Internet Archive
+
+INE published the IV RGPH 2017 tables as one workbook a table on its former
+site (`www.ine.gov.mz/iv-rgph-2017/<province>/quadro-N-...xlsx`), which no
+longer exists; the new site does not answer the runner. The Internet Archive
+holds the province folders from November 2019. `mozambique_census.py` reads,
+for each province, Quadro 3 (population by five-year age group, district and
+sex), Quadro 11 (religion) and Quadro 22 (mother tongue, people aged 5 and
+over), and the country's Quadro 3 (by province). Zambézia's Quadro 3 was never
+archived (only its Quadros 1, 2 and 10-22), so its districts carry no census
+figure; the province's comes from the country's table.
+
+Checks: every unit's men and women and its age groups make its total, and its
+population of 15 and over is its groups from 15; a province's units make its
+total line to ten people (Tete's make 2,551,824 against 2,551,826) and that
+line is the country's table's; Quadro 11's religions and unknown and Quadro
+22's languages make their totals, which are the province's population and its
+people aged 5 and over.
+
+A province's Quadro 3 lists cities ("CIDADE DE PEMBA") and districts
+("DISTRITO DE ANCUABE"). They are matched to the map's polygons by name within
+the province, a city also under its bare name (Maxixe, Nacala); a label still
+left over is paired with the polygon left over closest to it in spelling, each
+the other's closest (Tete's "Maoatize" and "Zumbo", Sofala's "Gorongoza").
+Nampula's table prints "Ilha de" before Mogincual and Mossuril and calls
+Nacala's city Nacala-Porto; those three are named in the reader. Ibo's
+islands are on no polygon of the map (none holds Ibo, Matemo or Quirimba), so
+its count is on none. Maputo's first-level unit is Maputo Province and Maputo
+City added together; Maputo City's seven municipal districts are one polygon.
+
+Religion's Zione/Sião class is written "Zionist churches" and placed under
+Christianity in the group tree (it leads Gaza, Inhambane and Manica). INE
+publishes religion and mother tongue by province only, and no ethnic group;
+the districts say so. INE's district statistics booklets (Chiure's, read) carry
+no religion or language either. The districts' population stays OCHA's 2025
+figure (INE's projection from this census); their sex ratio and median age are
+the census's, in front of OCHA's projected ones.
+
+The quadros count the people enumerated: the country's Quadro 3 makes
+26,899,105, where INE's published total for the census, 27,909,798, adds an
+estimate of the people the count missed (about 3.7%). Every count says so in
+its note, Zambézia's above all, the one province whose census count is shown
+(the others give way to OCHA's 2025 sums).
+
+### Lesotho: the 2016 census village list
+
+The Bureau of Statistics' *2016 Population and Housing Census Village List*
+(a zipped workbook, 16,655 rows; the Bureau's copy is gone, the Internet
+Archive's of November 2022 is read) gives every village under its district,
+constituency, council and enumeration area, with households, men, women and
+total, and a Total line after each enumeration area. `lesotho_census.py` adds
+the areas up by council. The list disagrees with itself in places -- 40 lines
+whose men and women do not make their total, 69 of 5,675 areas whose villages
+do not make their Total line, among them one in Matsoku where a village line
+doubles its women to make 898 people and the Total line, whose men and women
+agree with it, has 449 -- so an area counts as its Total line where it has one
+(the Bureau's own sum) and as its villages where it has none (three). Each
+district then makes the census's district total to within 2% (Qacha's Nek
+74,547 against 74,566; Maseru 522,277 against 519,186), and the country
+2,009,062 against 2,007,201.
+
+The map's 78 councils are matched by name within their district; the urban
+councils are drawn under their towns' names (Berea's urban council as
+Tayateyaneng, Hlotse as Leribe, Maseru Municipality as Maseru), and five
+spellings are named. Berea's council called Maseru (60,936, the part of the
+city in Berea) takes the polygon drawn as Maseru in Berea. Two polygons --
+Thota-ea-Moli (Maseru) and Mphaki (Quthing) -- have no council of their name
+in the list (which has Mazenod and Tsitsong there) and say so rather than take
+a guess. The list gives no ages, religion or language; the councils say so.
+
+The list also names a council Nts'upe under Thaba-Tseka district: three
+enumeration areas of Lebakeng constituency (10700233001-003; six villages,
+Ha Moramang, Ha Ramaepho, Ha Sefaha, Ha Mahamo, Maphotong and Mechachane),
+1,664 people. Thaba-Tseka has no council of that name; Qacha's Nek's Nts'upe
+(22,662) is the only one, and its areas' codes begin with Qacha's Nek's 8
+where these begin with Thaba-Tseka's 10. The district totals agree: with them,
+Thaba-Tseka's list makes 135,213 against the census's 135,347 and Qacha's Nek's
+74,547 against 74,566, where moving them would put Qacha's Nek 1,645 over. So
+they are Thaba-Tseka's people on no council polygon, as are Mazenod's 17,193
+(Maseru) and Tsitsong's 21,075 (Quthing).
+
+### Madagascar: RGPH-3 Tome 2, Tableau 8 and the health age bands
+
+INSTAT's *Résultats globaux du RGPH-3 de 2018, Tome 2* prints in Tableau 8 the
+resident population of every region and district by sex, with weight, sex
+ratio, share of women and density, each count written with spaces between its
+thousands. `madagascar_census.py` reads the counts by the one split of the
+digit groups whose men and women make the total. Region names are printed
+rotated, so the text layer gives them reversed ("agnamalanA"); a region is
+known by its Total Région line and its districts, which must all lie in one
+first-level polygon. Districts make their regions and the regions the census's
+25,674,196.
+
+The map draws Antananarivo Renivohitra as six arrondissements, which the
+census does not count apart; they say so. OCHA's district figures for the same
+year are a projection made before the count -- 10.8% above it in
+Ambatondrazaka, 17.3% below it in Andilamena, and the six arrondissements at
+1,587,779 against the census's 1,274,225 for Renivohitra -- and give way to it
+(`SUPERSEDED_ROWS`).
+
+Median ages by region come from the same volume's age bands for health
+programmes: Tableau 6 (15, 18 and 25 and over), Tableau 5 (18-24, 19-24,
+20-24) and Tableau 4 (10-14, 15-17), each a left page of names and a right
+page of figures, read as (men, women, both) triples where every triple adds up.
+They give the people under 10, 15, 18, 19, 20 and 25, and the median is
+interpolated in the band that holds the middle person. The country's comes to
+18.5, between 18 and 19, where INSTAT's Tome 1 (Tableau 14) puts its median of
+18; Androy's, under 15, is read between 10 and 15 (14.5); Analamanga's is 22.2.
+The bands' own checks: 18 and over less 25 and over is Tableau 5's 18-24, and
+15 and over less 18 and over is Tableau 4's 15-17. No table gives ages below
+the region, so the districts carry none and say so; the six arrondissements'
+note says the census counts them as one district, Antananarivo Renivohitra.
+A district name broken over two lines after a hyphen is joined whole
+(Port-Berge (Boriziny-Vaovao)).
+
+### Zambia: Table 5.1's ages, and the district tables' age bands
+
+The Zambia Statistics Agency's *2022 Census Summary Report Volume II* has, beside
+Table 5.2 (already read), Table 5.1 (population by five-year age group, sex,
+rural and urban, by province) and Tables 5.3, 5.4 and 5.6 (the people aged
+0-18, 16 and over and 18 and over, by district, constituency and ward).
+`zambia_census.py` now gives each province the median interpolated within its
+five-year group, and each district its median where the tables can place it:
+they say how many are under 16, 18 and 19, so a middle person between 16 and
+19 is interpolated within 16-17 or 18. A district whose middle person is under
+16 or 19 and over -- bands no table splits -- says so instead of carrying a
+figure. The country's median comes to 18.3 both ways. Each band's districts
+make their province and the provinces the country. Five provinces are drawn
+otherwise than the census draws them (Chama under Muchinga, Chirundu under
+Lusaka, Itezhi-Tezhi under Central), and Table 5.1's median is the census
+province's, so those polygons take theirs from the bands of the districts
+drawn in them: Central 17.6, Eastern 17.7, Muchinga 17.4, Southern 17.0;
+Lusaka's middle person is 19 or older, which no band splits, and it says so.
+The next band the volume prints is 19 to 34 (Table 5.5), too wide to place a
+middle person in; the notes cite it, and say the census's tables give no
+median for such a district.
+
+### Namibia: the Main Report's regional tables
+
+The Namibia Statistics Agency's *2023 Population and Housing Census Main Report*
+(28 October 2024) is no longer at its address on the census site; the Internet
+Archive's copy is read. Tables 2.2 (population by sex), 2.3 (percent by major
+age group, with the total) and 2.4 (the youth population, 15-34, and its
+percent by five-year group) give, for the fourteen regions, the count, the sex
+ratio and a median age: the people under 15 (Table 2.3) and in each five-year
+youth group (the youth count spread by its percentages) put the middle person
+in a five-year group, and the median is interpolated in it (the country's
+22.2). The shares are printed to a tenth of a percent, so a median may be off
+by a few hundredths of a year. The map draws the regions as before 2013:
+Kavango is Kavango East and West added together, Caprivi is Zambezi, Karas is
+//Kharas. A table line may end with the page's number (Oshikoto's youth line,
+"... 21.3 11").
+
+### Namibia: the census site's constituency tables, where a polygon is the census's ground
+
+The census site's region pages (`census.nsa.org.na/<region>/`) open with a
+table of each 2023 constituency's population and area in km2 (a chart's
+`data-chart_data`). Every region's constituencies make its Main Report count
+exactly but Oshikoto's, which make 226,947 against 257,302 (Oniipa is printed
+3,372, and Onayena's area "371.47.5"), so Oshikoto is left out. The map draws
+103 constituencies of an older delimitation against the census's 121, under
+the names of the constituencies they overlap, so a name is not enough:
+`namibia_constituencies.py` gives a polygon the census's count only where its
+area, measured on the map's outlines (CGAZ, equal-area), agrees with the
+census's area for the constituency of its name -- or the constituencies it is
+drawn over (Karasburg East and West, Ondangwa Rural and Urban, Epukiro and
+Otjinene, Okahao and Otamanzi) -- to within 5%, or 2% where more than 500
+people live to the km2. Forty-nine pass (six of Erongo's seven, to within
+2.5%; Walvis Bay Urban is drawn over 16 km2 against 19), two of them as a
+constituency with the one the 2013 delimitation cut from it, which has no
+polygon: Gibeon with Daweb (50,366 km2 against the polygon's 50,525) and
+Mariental Rural with Aranos (41,761 against 41,862); no other combination of
+the new constituencies comes within 1% of any polygon. Each record cites the
+region page its rows are on (Kavango East's or West's). The rest keep OCHA's
+2023 projection: Kapako is drawn over 6,168 km2 against the census's 1,224,
+Tsumeb over 273 against 3,609; Rundu Urban (16 km2 against 156), Katima
+Mulilo Urban and Windhoek East have grown; the two Windhoek constituencies
+drawn as one (50.9 km2 against 53.2) fail the 2% a town needs. OCHA's table
+(cod-ps-nam) is of the 107 constituencies of 2003-2013, the 2011 census's,
+region by region the polygons' (Kahenge, Rundu Rural West and East, Endola,
+Ondobe and Omulonga apart): its projections are for the polygons' own
+ground, and it is the census's 2013 delimitation that differs from them. The
+region pages give no constituency's sexes or ages. (The site's Walvis Bay
+Urban page serves //Kharas's table.)
+
+### Botswana: the Analytical Report's census districts
+
+Statistics Botswana's *Population and Housing Census 2022 Analytical Report
+Volume 1*, Appendix Table 3, gives the 28 census districts by sex (the Bureau's
+site answers the runner 406; the Internet Archive's copy is read).
+`botswana_census.py` adds them into the map's ten districts -- the towns into
+the districts they lie in (Selebi-Phikwe, Orapa and Sowa in Central,
+Francistown in North-East, Gaborone and Lobatse in South-East, Jwaneng in
+Southern) and the CKGR into Ghanzi, Delta into North-West -- making 2,359,609.
+Four second-level polygons are census districts or their sums, by area as well
+as name: Chobe, Kgatleng, Ghanzi (Ghanzi and CKGR) and Masungu (North East and
+Francistown). The other 21 are sub-districts of an older division whose lines
+are not the census's (the map's Gaborone polygon is 1,293 km2, the city's
+council area a seventh of that; Ngamiland East and West split the census's
+Delta) and say so.
+
+The districts' census counts bring Botswana's first level within the 2%
+population gate of the country sums, and the districts' language is survey
+shares -- Afrobarometer Rounds 8 and 9, and CLEAR Global's tabulation of Round
+6 for Chobe -- that name Setswana and Tswana apart, which stopped the build
+("parent and child reported together"). `COUNTRY_NOT_SUMMED` now keeps the
+country's own figure for Botswana's language, with that reason.
+
+### Comoros: INSEED's Tableau A.2
+
+INSEED's *Rapport des résultats globaux du RGPH 2017* (NADA catalogue 8,
+download 70) closes with Tableau A.2, every island, prefecture and commune by
+sex, counts with spaces between thousands. `comoros_census.py` splits each
+line where men and women make the total, and checks communes against their
+prefecture, prefectures against their island and the islands against 758,316.
+The map draws Anjouan's six prefectures as five polygons -- the town of Moya
+falls in the Sima polygon, so Sima's is Sima and Moya added together -- and
+Grande Comore's Mitsamiouli and Mboudé as one; its Kartala is the 5.5 km2
+crater of Mount Karthala, which no prefecture is, and says so. The reports
+give the median age for the country (19.4) and by urban and rural area only,
+and no religion by island or prefecture.
+
+Two tables of the same report are by island, and the islands carry them.
+Tableau 3 counts the foreign residents by the region of the world of their
+nationality (3,708 in all, 0.5%; a person with two nationalities is counted
+under the nationality of origin): the islands carry Comorian and foreign
+nationals in place of ethnicity, the regions named in the note. Tableau 4
+counts the speakers of six languages on each island, several answers
+allowed (French 33.6% of the country, Arabic 6.6%, as the report's text
+says): the islands carry them as languages spoken, which add up to more than
+100. Two of its lines' islands miss the printed total by one person
+(Shicomor, Français). Neither table is published by prefecture, and the
+prefectures say so. Comorian (Shikomori) is placed with the Bantu languages
+in the group tree.
+
+### Mauritius: Volume II's district tables
+
+Statistics Mauritius' *2022 Housing and Population Census, Volume II:
+Demographic and Fertility Characteristics* (`HPC_TR_Vol2_Demography_Yr22.xlsx`)
+gives by district and island D2 (age group and sex), D6 (religious group) and
+D9 (language usually spoken at home). `mauritius_census.py` writes, for the
+nine districts and Rodrigues, the count, sex ratio, median age, religion and
+home language, the same record at both levels (each drawn once). The census's
+five Hindu groups (Hindu & Other Hindu, Tamil, Telugu, Marathi, Vedic) are
+written as one Hindu group and the note says so. D6 abbreviates Rivière du
+Rempart as "R. DU REMPART". The Republic's 1,233,097 in these tables are the
+Island of Mauritius' and Rodrigues' alone, so Agaléga and St. Brandon have no
+line and say so. No ethnic group has been counted since the 1972 census.
+Table D4 gives residents by nationality for each island: Rodrigues carries its
+43,514 Mauritian and 90 foreign nationals in place of ethnicity (each
+region's countries checked against its line, and the island's total against
+D2's); the districts of the Island of Mauritius say nationality is given by
+island only (Volume II, Table D4; Volume III's Table G4 is by island too).
+
+### Seychelles: the census report's district and island tables
+
+The National Bureau of Statistics' *Population and Housing Census 2022* report
+(the Bureau's download refuses the runner; the Internet Archive's copy of
+August 2024 is read) gives by district Table 2.4 (population by sex), A2.1 and
+A2.2 (five-year age groups, both sexes and men), B3.1a (main first language at
+home, aged 3 and over) and B4.1 (religion, people in households), the last
+three also island by island outside Mahé and Praslin. `seychelles_census.py`
+writes the 26 districts the map draws; the map's names are cut at ten letters
+("Anse Boile", "Baie Saint") and are joined by prefix, and La Rivière is
+English River. The census's 27th district, Ile Perseverance (5,410), is the
+reclaimed islands off Victoria, which no polygon holds.
+
+Tables A2.1 and A2.2 are printed rotated: the text layer gives each line's
+name a word or two a line, then its 22 figures one a line, bottom up. Every
+line's groups make its total and the districts the country's 102,612 (the
+country's median comes to 35.5). Table 2.4 and the other tables place 87
+islanders (77 men) differently between La Digue and Inner Islands and the
+Outer Islands; the two districts' median notes say so.
+
+The map's second level is eight larger polygons: six over whole districts
+(the overlaps were measured: Central Mahé 1 is Bel Air, English River, Mont
+Buxton and Saint Louis; Central Mahé 2 Les Mamelles, Mont Fleuri, Plaisance and
+Roche Caïman; East Mahé is the census's East-South region, North and West Mahé
+and Praslin its regions of those names), the island of La Digue (9.9 km2, a
+third of its district's polygon) and the other islands. The six get their
+districts' figures added together; La Digue the tables' lines for the island
+(3,133 people); the other islands the Outer Islands and La Digue and Inner
+Islands less La Digue (1,479).
+
+Table A7 counts the non-Seychellois by nationality for the census's seven
+regions (19,948 in all; India 8,035). Five polygons are regions -- East, North
+and West Mahé and Praslin at the second level, La Digue and Inner Islands at
+the first -- and carry nationality in place of ethnicity: their Seychellois are
+the region's people (Table B4.1) less its non-Seychellois (East Mahé 78.6%).
+Every other polygon says nationality is given by region.
+
+Tables B3.1a and B4.1 put 707 of the Outer Islands' 988 people in the fourth
+column of each -- Gujarati in one, Hindu in the other -- with the same figure
+island by island in both (all 353 on Platte, all 110 on Darros, all 22 on
+Coëtivy). Table A7 counts 707 men on the Outer Islands as non-Seychellois
+whose nationality is missing (and only 29 Indian nationals there), and
+Tables B3.1b (second language) and C2.1 (education) give every one of the
+Outer Islands' 985 people aged 3 or 15 and over as missing, as C1.1 does
+school attendance. So the islands' answers are mostly missing, and the 707
+are recorded alike in three tables: their language, religion and nationality
+are withheld, and the notes give those facts, not a judgement. The other
+islands' language and religion are withheld the same way: of their 1,479
+people, 707 are those, and the religion of 607 more is missing or could not
+be classified.
+
+### Eswatini (dead end): no table by inkhundla
+
+The 2017 census's tinkhundla figures were not found in a form that can be read.
+The Government's census atlas (`gov.sz/images/planningministry/census2017.pdf`,
+40 pages) maps population, density and growth by inkhundla without printing a
+figure; the census volumes the Government links (`FinanceDocuments/Volume-3.pdf`,
+`Volume-5.pdf`, `Volume-6.pdf`, read from the Internet Archive) have no table
+naming an inkhundla; Volumes 1, 2 and 4 are not linked from the Government's
+census documents page (archived 8 March 2026), and the Internet Archive holds
+no copy at the addresses the others have (`Volume-1.pdf`, `-2`, `-4`: "has not archived that URL"; its captures under `FinanceDocuments/Vol` are Volumes 3, 5 and 6 alone). The Central
+Statistical Office's *2017-2038 Population Projections Report* (94 pages,
+published through UNFPA Eswatini, `eswatini.unfpa.org/sites/default/files/
+pub-pdf/eswatini_population_projections_report_2017-2038.pdf`) projects the
+country, rural and urban areas and the four regions; no page names an
+inkhundla. The tinkhundla keep their stated reasons.
+
+### Southern Africa: dead ends and limits recorded on the way
+
+* Zimbabwe: the 2022 PHC Report's religion and mother tongue are by province
+  (already read by `zimbabwe.py`); no district table of either exists.
+* Malawi: no language table in the 2018 census series.
+* Mozambique: Zambézia's Quadro 3 was never archived; the district statistics
+  booklets (`documents/20119/...`) carry no religion or language.
+* Madagascar: Tome 1, Tableau 31 gives the ability to speak a language by
+  region (percentages, more than one per person); not read, as it is not a
+  language of each person.
+* Seychelles: nationality (Table A7) is by the census's seven regions only;
+  the districts, the island of La Digue and the other islands say so.
+* Comoros: no religion and no language each person speaks most, by island or
+  prefecture; nationality and languages spoken by island only.
+* South Africa: `DsLanguages` and `DsSingleAges` of the census dissemination
+  service are empty at every level, and no dataset gives religion; the nine
+  provincial profiles print language and religion for the province only, and
+  Report 03-01-84 language for the metros and religion by province.
+* Namibia: the Main Report gives no language or religion by region and
+  ethnicity for the country only; the census site's region pages give no
+  constituency's sexes or ages.
+* Saint Helena, Mayotte and Réunion: the map draws no units below the
+  country for them.
+
 ## Afrobarometer: the first sampled source, and the rules that keep it honest
 
 Every other figure on this map is a count. Afrobarometer Round 9 is a survey of
@@ -6404,9 +9280,10 @@ So three rules, none of them invented here:
 * **Under 25 respondents a region is dropped, not estimated.** That is the
   Demographic and Health Surveys' own suppression threshold, and using the
   field's convention keeps this comparable to how the source is normally read.
-  442 of 519 regions survive it.
+  435 of 505 regions survive it (Botswana's 24 survey strata are read as its
+  ten districts).
 * **Between 25 and 49 the region says it is imprecise**, which is what DHS's
-  parentheses mean. 117 regions carry that.
+  parentheses mean. 113 regions carry that.
 * **A question never asked is `not_collected`, never a composition.** The code
   is `9994`, and it is the whole of a country when it appears: Mauritania was
   not asked about religion, and Sudan, Tunisia and the Seychelles were not
@@ -6449,7 +9326,7 @@ columns, and Q2 was not among them. Nothing reported a missing question,
 because nothing had looked for one. The SPSS release, whose variables are
 named, is now the source for Round 9, and `--extract` reads it.
 
-Round 9 carries **Q2 "Language spoken in home" for all 442 regions it
+Round 9 carries **Q2 "Language spoken in home" for all 435 regions it
 publishes, in all 39 countries**. So language comes from Round 9, like
 religion and ethnicity.
 
@@ -6457,7 +9334,7 @@ Round 8 stays, for the one thing it is still good for: a region Round 9 is
 short of. It is registered **before** Round 9 in `ADAPTER_FILES`, which is
 lower authority, so a later file wins and Round 9 takes any region both hold.
 Round 8 is 48,084 interviews over 34 countries and 356 shapes; Round 9 is
-53,444 over 39 and 442, two years newer. `scripts/fetch_census/afrobarometer_r8.py`
+53,444 over 39 and 435, two years newer. `scripts/fetch_census/afrobarometer_r8.py`
 and `scripts/fetch_census/afrobarometer.py`.
 
 Language at first level in Africa went from **three countries to thirty-one**
@@ -6475,7 +9352,7 @@ only the newest two are read:
 | R6 | 2014-15 | 53,935 | 36 | 403 | 403 | 403 | 403 |
 | R7 | 2016-18 | 45,823 | 34 | 349 | 349 | 336 | 349 |
 | R8 | 2019-21 | 48,084 | 34 | 396 | 396 | 383 | 396 |
-| **R9** | **2021-23** | **53,444** | **39** | **442** | **433** | **423** | **442** |
+| **R9** | **2021-23** | **53,444** | **39** | **435** | **426** | **416** | **435** |
 
 Round 9's countries are a **superset** of every earlier round's once renames
 are resolved -- eSwatini/Swaziland, Cape Verde/Cabo Verde, Cote d'Ivoire/Côte
@@ -7736,6 +10613,84 @@ A language whose share rounds to less than 0.05% is not written, so a unit's
 shares can add to slightly under 100 and the panel says which share of the
 population the record describes.
 
+**A language the file names wrongly for one country is renamed for that
+country only** (`LANGUAGE_RELABEL`), and every unit that shows the share says
+which name the table gave it. Nepal's file names the Khas language of Karnali
+"Khasi", the name of a language of Meghalaya in India; it is written as Khash,
+as Nepal's 2021 census names it.
+
+The African files give shares to languages that no household of the unit can
+have as its main language. Each name in these files is Glottolog's, so each
+was read against Glottolog's own table of languages (where it is spoken, and
+its family).
+
+The DRC's are CLEAR Global's matches for the names its source, the CAID
+territory data of 2016, gives, and that source's wide table, published beside
+the long one, shows what each share was called before it was matched; the
+shares agree to the decimal. Kabinda's "Lander River Warlpiri" 25.0% (an
+Aboriginal language of Australia) is the source's "Lande"; Fizi's "Tamazola
+Mixtec" 7.9% (Oaxaca) its "Zola"; Bomongo's "Ibaloi" 5.0% (Luzon) its "Baloi";
+Mambasa's "Mokilese" 5.5% (a Micronesian atoll) its "Kilese" and its
+"Mpongmpong" 3.5% (south-eastern Cameroon) its "Bombo"; and Kapanga's "Rundi"
+88.9%, the language of Burundi, its "Urund" -- Ruund, the Lunda language of
+Kapanga. Each is written as the source names it, Kilese and Urund under
+Glottolog's names for them (Lese and Ruund), and the note says what CLEAR
+Global's table wrote. Mambasa's "Ombo" 7.3% is the source's "Bandaka", the
+Ndaka people, matched to Ombo, a language of Kailo in Maniema, where the file's
+own Ombo (11.4%) is right; it is relabelled in Mambasa alone (`UNIT_RELABEL`).
+Ruund, Baloi, Bila, Ndaka, Ombo and Kole's Ohendo join the Bantu languages, and
+Lese the Central Sudanic.
+
+Elsewhere no table gives the source's own name, so every name from another
+continent, or from the far end of Africa, is kept unnamed as the residual
+"Other languages" -- leaving the share out would shrink the unit, and putting a
+language in its place would be a guess, however good: Benin's "Central Malay"
+follows the Lokpa country of Ouaké and Djougou, but the file does not say
+Lokpa.
+
+| Country | Names kept unnamed | Largest share |
+|---|---|---|
+| Benin | Central Malay (Sumatra and the Malay peninsula), Tagwana Senoufo (central Côte d'Ivoire) | Ouaké 54.1% |
+| Ghana | Nyamal (the Pilbara, Australia) | Upper West districts, all of their interviews |
+| Nigeria | Kokata, Nguburindi (Australia); Chavacano, Sibalenhon (the Philippines); Nyindrou, Gama (Papua New Guinea); Bateri (Pakistan), Takari (India), Western Mewahang (Nepal), Lamunkhin (Siberia); Northwest Jujuy (the Andes); Bari (South Sudan); Tambo (Zambia and Tanzania) | Bama 5.2% |
+| Somalia | Kenya-Somali Sign Language | Bulo Burto 23.3% |
+| Senegal | Babalia Creole Arabic (Chad), Zenaga (south-western Mauritania) | Saint-Louis 3.5% |
+| Mozambique | Southern Sama (the southern Philippines) | Manica 2.5% |
+
+A unit holding two of them says both in one sentence. Two names are right but
+read wrongly. Malawi's and Mozambique's "Yao" is the Bantu language of the Yao
+people (Glottolog yaoo1241), but the language tree files the bare name under
+the Yao (Mien) languages of southern China, and Mangochi, Machinga and Niassa
+were coloured as Hmong-Mien: it is written Chiyao and Ciyao, as each country
+spells it (Chiyao is now a spelling of Ciyao). Namibia's and Angola's "Ndonga
+(R.20)" is the whole Oshiwambo group -- R.20 is its code in Guthrie's
+classification -- under one member's name, on constituencies that speak
+Oshikwanyama: it is written as the group, Oshiwambo in Namibia, Ovambo in
+Angola. Guthrie's codes come off the other labels that carry them ("Swahili
+(G.40)", "Budja (C.37)"). A unit whose only answers are "Unknown" or the
+unnamed residual is not written (Namibia's Kongola, six districts of Ghana),
+and the note gives the study's year once.
+
+**Survey tabulations too thin to stand.** Ten of the African files are
+CLEAR Global's tabulations of an Afrobarometer round, and the map reads the
+survey itself only where a region holds 25 respondents. The same interviews,
+tabulated by another hand, are no more: where the survey's own row says it
+interviewed 8 to 24 people in a region, CLEAR Global's language is withdrawn
+there too (`WITHDRAWN_FIELDS`, `FEW_INTERVIEWS`) -- Kenya's ten counties
+(Samburu showed "Turkana 100%" from eight people), Tanzania's Katavi and
+Kusini Unguja, the Republic of the Congo's Cuvette-Ouest and Sangha,
+Botswana's Chobe, and the seven Nigerian states for which Afrobarometer is
+the file's only source (Yobe's draws on REACH's assessment as well and stays);
+each of them then shows the survey's own sentence, that it interviewed too few
+people there. Ghana's districts and Namibia's constituencies are tabulated
+below the regions the survey samples, one to three enumeration areas of eight
+interviews each (half of Ghana's 147 district rows are a single answer or
+multiples of 12.5%), and the file grades them below a 95% confidence level or
+above a 10% margin of error: the reader writes every one of them with that
+reason in place of its shares (`SMALL_SAMPLE`), so each says why it shows none.
+Uganda's "Tororo" row holds the Tooro sub-region's languages, not Tororo's,
+and goes too.
+
 ### Admin 1 only, and why not admin 2
 
 The files carry admin2 rows too — Somalia 217 of them, Kyrgyzstan 627 — and
@@ -8840,6 +11795,21 @@ Burkina Faso became adapters. The rest:
   RGPH-4 2025 preliminary results are counts only.
 * **Liberia (LISGIS), Sierra Leone (Stats SL)** -- the sites carry no report
   links a reader can follow (a redirect stub of 168 bytes for Stats SL).
+
+**Since then, in the Africa round (October 2026),** every office above has been
+read, none with verification turned off. Uganda's census dashboard and
+Senegal's 2023 regional reports are read from the offices' own sites, each
+certificate chain completed from the certificate's own Authority Information
+Access record and still verified in full, and UBOS's report files from the
+Internet Archive. Mozambique's 2017 tables come from the Internet Archive's
+copies of INE's former site; Côte d'Ivoire's 2021 regional pages, Benin's 2013
+indicators workbook and departmental leaflets, and Liberia's 2022 results from
+the Internet Archive too. Malawi's 2018 Series A and E workbooks come from the
+NSO's own download interface, Guinea's 2025 preliminary results and 2014 *Etat
+et structure de la population* from INS's own site, and Sierra Leone's 2015
+census reports from UNFPA Sierra Leone, which publishes Statistics Sierra
+Leone's reports. Each is described in its country's section under
+"Subnational demographics".
 
 ### Collecting vs. not, in the EU
 

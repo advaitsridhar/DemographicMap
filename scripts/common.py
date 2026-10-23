@@ -1232,8 +1232,9 @@ MISSPELLED: dict[tuple[str, str], str] = {
     # Seychelles is not misspelled -- it is cut off. Every one of its 26
     # district names in CGAZ is at most ten characters ("Anse Boile", "Baie
     # Saint", "Roche Caïm", "La Digue a"), which is a field width, not a
-    # spelling. Most survived because ten characters still uniquely prefix one
-    # district. These four did not: "Anse Aux P" stops mid-word, so no
+    # spelling. Eighteen of them are cut. Fourteen still joined, ten characters
+    # uniquely beginning one district, and were shown cut; they are below.
+    # These four did not join at all: "Anse Aux P" stops mid-word, so no
     # whole-word pass can reach "Anse aux Pins", and the two Grand'Anses --
     # one on Mahé, one on Praslin, 45 km apart -- are cut down to a pair of
     # names that differ only by an apostrophe and prefix both districts
@@ -1248,7 +1249,101 @@ MISSPELLED: dict[tuple[str, str], str] = {
     ("SYC", "Grand Anse"): "Grand'Anse Praslin",
     ("SYC", "Grand'Anse"): "Grand'Anse Mahé",
     ("SYC", "Outer Isla"): "Outer Islands",
+    # The fourteen that joined although cut: the map showed them cut ("Anse
+    # Boile", "La Digue a"), and so did every record that copied the label.
+    # Each is the district's name as the 2022 census writes it
+    # (seychelles_census), except English River, which takes the name Wikidata
+    # gives it and the label begins, La Rivière Anglaise, so Wikidata's item
+    # stays joined. "La Rivière" is the label once repair() has read it.
+    ("SYC", "Anse Boile"): "Anse Boileau",
+    ("SYC", "Anse Etoil"): "Anse Etoile",
+    ("SYC", "Anse Royal"): "Anse Royale",
+    ("SYC", "Baie Lazar"): "Baie Lazare",
+    ("SYC", "Baie Saint"): "Baie Sainte Anne",
+    ("SYC", "Beau Vallo"): "Beau Vallon",
+    ("SYC", "La Digue a"): "La Digue and Inner Islands",
+    ("SYC", "La Rivière"): "La Rivière Anglaise",
+    ("SYC", "Les Mamell"): "Les Mamelles",
+    ("SYC", "Mont Buxto"): "Mont Buxton",
+    ("SYC", "Mont Fleur"): "Mont Fleuri",
+    ("SYC", "Pointe La"): "Pointe Larue",
+    ("SYC", "Roche Caïm"): "Roche Caiman",
+    ("SYC", "Saint Loui"): "Saint Louis",
+    # Burundi's communes, cut at the same ten characters, and Kanyosha with a
+    # stray digit; each is OCHA's name for the commune (cod-ps-bdi) but
+    # Nyabitsinda, which OCHA writes "Nyabitsunda", and Mugongomanga, which it
+    # writes "Mugougomanga" (ROW_ALIASES).
+    ("BDI", "Bukinanyan"): "Bukinanyana",
+    ("BDI", "Bwambarang"): "Bwambarangwe",
+    ("BDI", "Mpinga-Kay"): "Mpinga-Kayove",
+    ("BDI", "Mugongoman"): "Mugongomanga",
+    ("BDI", "Nyabitsind"): "Nyabitsinda",
+    ("BDI", "Nyanrusang"): "Nyarusange",
+    ("BDI", "Kanyosha1"): "Kanyosha",
+    # A town council written twice over, Djibouti's Dikhil and Yoboki
+    # misspelt, and Lesotho's "Distict" -- each label otherwise the unit's
+    # own name.
+    ("TZA", "Babati UrbanBabati Urban"): "Babati Urban",
+    ("DJI", "Dilkhil"): "Dikhil",
+    ("DJI", "YobokiI"): "Yoboki",
+    ("LSO", "Maseru (Berea Distict)"): "Maseru (Berea District)",
+    # Egypt's Luxor and Minya, the only two of its 27 governorates written
+    # "Governate".
+    ("EGY", "Luxor Governate"): "Luxor Governorate",
+    ("EGY", "Minya Governate"): "Minya Governorate",
+    # Ethiopia's zones under a code or an abbreviation: Kembata Tembaro as
+    # "KT", Amhara's Argoba special woreda as "Special Woreda", Addis Ababa's
+    # one zone as "Region 14" (the region's number), and the North Shewa zones
+    # of Amhara (region 3) and Oromia (region 4), kept apart by their regions;
+    # and the region of Benishangul-Gumuz, cut and misspelt. Eritrea's two
+    # subregions of the Southern Red Sea, Debub (southern) and Maekel
+    # (central) Denkalia, under an abbreviation of the region's name.
+    ("ETH", "KT"): "Kembata Tembaro",
+    ("ETH", "Special Woreda"): "Argoba Special Woreda",
+    ("ETH", "Region 14"): "Addis Ababa",
+    ("ETH", "North Shewa(R3)"): "North Shewa (Amhara)",
+    ("ETH", "North Shewa(R4)"): "North Shewa (Oromia)",
+    ("ETH", "Beneshangul Gumu"): "Benishangul-Gumuz",
+    ("ERI", "Debub Deb.Keih Bahri"): "Southern Denkalia",
+    ("ERI", "Maekel Deb.Keih Bahri"): "Central Denkalia",
 }
+
+# Misspellings at one level only, where the other draws a unit rightly under
+# the same label: Kenya's county of Tharaka-Nithi is cut to "Tharaka" at the
+# first level, and the second level's Tharaka is the constituency of that
+# name. Keyed (ISO3, level as the boundary file names it, label); read before
+# MISSPELLED.
+MISSPELLED_AT: dict[tuple[str, str, str], str] = {
+    ("KEN", "ADM1", "Tharaka"): "Tharaka-Nithi",
+}
+
+# Characters a label carries that no reader sees and no source writes:
+# direction marks and embeddings, left in by a right-to-left editor (Tunisia's
+# Arabic labels, Algeria's "Bordj Bou Arreridj" with a left-to-right mark
+# after it). Only these: the zero-width joiner and non-joiner spell words in
+# Persian and the Indic scripts.
+_BIDI = re.compile(r"[\u200e\u200f\u202a-\u202e\u2066-\u2069]")
+
+
+def tidy(name: str) -> str:
+    """A label with its direction marks gone and its spacing made single.
+
+    Neither changes a join -- norm() drops both -- but the map showed them:
+    Ghana's "Bolga  East", Tanzania's "Kigoma  Urban" with two spaces, and an
+    invisible mark that would follow Bordj Bou Arreridj into a search box.
+    """
+    return re.sub(r"\s+", " ", _BIDI.sub("", name)).strip()
+
+
+# A stray mark on one label, which norm() drops as it drops the spacing above,
+# so no join misses it and MISSPELLED -- whose every entry must change a join
+# -- cannot hold it; the map showed it all the same: Lesotho's community
+# council of Maoa-Mafubelu, labelled "'Maoa-Mafubelu" with an apostrophe
+# before its name. Keyed (ISO3, label as tidy() leaves it).
+MISPRINTED: dict[tuple[str, str], str] = {
+    ("LSO", "'Maoa-Mafubelu"): "Maoa-Mafubelu",
+}
+
 
 # The other half of the same problem, and the opposite remedy. Above, the
 # boundary file is wrong and correcting it fixes both the label and the join.
@@ -1370,7 +1465,7 @@ def known_as(name: str, group: str | None = None) -> tuple[str, ...]:
     return ALSO_KNOWN_AS.get((group, name), ())
 
 
-def respell(name: str, group: str | None = None) -> str:
+def respell(name: str, group: str | None = None, level: str | None = None) -> str:
     """The boundary file's name, with a declared misspelling corrected.
 
     Applied where the shapes are read, so the correct spelling is what the
@@ -1378,10 +1473,31 @@ def respell(name: str, group: str | None = None) -> str:
     map labels a South African province "Nothern Cape" -- the data on it right,
     the name on it wrong -- and every source that spells the province correctly
     has to carry an alias to reach the shape at all.
+
+    ``level`` is the boundary file's ("ADM1") or a record's ("admin1"); a
+    correction declared for one level (MISSPELLED_AT) is made only there.
     """
     if not group:
         return name
+    if level:
+        at = MISSPELLED_AT.get((group, level.upper().replace("ADMIN", "ADM"), name))
+        if at:
+            return at
     return MISSPELLED.get((group, name), name)
+
+
+def as_read(name: str | None, group: str | None = None, level: str | None = None) -> str:
+    """A boundary-file label as the map shows it: mojibake undone, spacing
+    and direction marks tidied, a stray mark or a declared misspelling
+    corrected.
+
+    The same for a record that copied a label as for the label itself: a
+    record bound to its polygon by id renames the polygon to its own name, and
+    Seychelles' census records carried "Anse Boile" back onto the polygon the
+    reader had just named Anse Boileau.
+    """
+    name = tidy(repair(name or ""))
+    return respell(MISPRINTED.get((group, name), name), group, level)
 
 
 def parse_number(text: str | None) -> float | int | None:
@@ -1604,6 +1720,21 @@ def parse_composition(text: str | None, *, source: str | None = None) -> list[di
         # as the estimate it is rather than as false precision.
         pct = low if high is None else (low + float(high.replace(",", ""))) / 2
         label = part[: match.start()].strip(" .-")
+        # The name a run closed by "or" or "including" begins before this part
+        # (_shareless_member, rule 3), and the group is the whole run: South
+        # Africa's "ancestral, tribal, animist, or other traditional African
+        # religions", Botswana's "other, including Kgalagadi and people of
+        # European ancestry". Read from this part alone it was "or other
+        # traditional African religions", and Botswana's other 7% a group
+        # called "including Kgalagadi ...".
+        if re.match(r"^(?:or|including)\b", label, re.I):
+            run: list[str] = []
+            for before in reversed(parts[:i]):
+                if _SHARE.search(re.sub(r"\([^()]*\)", " ", before)):
+                    break
+                run.insert(0, re.sub(r"\s+", " ", re.sub(r"\([^()]*\)", " ", before))
+                           .strip(" .,;-"))
+            label = ", ".join([*[r for r in run if r], label])
         label = re.sub(r"\s*\([^)]*\)?\s*", " ", label)
         label = re.sub(r"\s+", " ", label)
         # A qualifier sitting between the group and its figure -- "approximately

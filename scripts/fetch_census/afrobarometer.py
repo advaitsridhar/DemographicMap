@@ -25,7 +25,9 @@ map. Three rules keep that from being published as though it were precision:
 * **Regions under MIN_SAMPLE respondents are dropped**, not estimated. 25 is
   the Demographic and Health Surveys' own threshold, and using the field's
   convention rather than inventing one keeps this comparable to how the source
-  material is normally read. It leaves 442 of 519 regions.
+  material is normally read. Botswana's 24 strata are first added into the
+  ten districts they make up (POOLED), and the floor leaves 435 of the 505
+  regions that gives.
 * **A region between 25 and 49 is marked low precision** so the map can say so.
   DHS prints those in parentheses for the same reason.
 * **"Not asked in the country" is honoured as a refusal to answer, not a zero.**
@@ -77,8 +79,14 @@ LOW_PRECISION = 50
 # the others are one person declining, 9994 is the country never being asked.
 NOT_ANSWERED = {"-1", "9998", "9999"}
 NOT_ASKED = "9994"
-# A respondent who claims no ethnic group, which is an answer and not a gap.
+# A respondent who answered with their nationality, or said they do not think
+# of themselves in those terms: the codebook's "(National identity) only, or
+# 'doesn't think of self in those terms'". It is an answer and not a gap. It
+# was written "No ethnic group", which is not what was said: 1,186 of
+# Eswatini's 1,200 respondents carry the code, and its four regions read
+# "No ethnic group" at 97 to 99.9%.
 NATIONAL_ONLY = "9990"
+NATIONAL_ONLY_LABEL = "National identity only"
 
 # Afrobarometer's country code -> ISO3. Written out rather than matched on
 # name: "Congo- Brazzaville" (the codebook's own spacing) is COG, the Republic
@@ -99,6 +107,21 @@ UNIVERSE = ("Afrobarometer Round 9, a nationally representative sample of "
             "citizens of voting age. Regional shares are survey estimates, not "
             "census counts: they carry sampling error, and regions with fewer "
             "than 25 respondents are omitted rather than estimated.")
+
+# Countries whose strata are added into the units the map draws before the
+# 25-respondent floor is applied, with the word the note calls such a unit.
+# Botswana is sampled in 24 strata over its ten districts: Francistown beside
+# North East, Gaborone and Lobatse beside South East, Selibe Phikwe and five
+# "Central" sub-districts in Central, and two to four in Kweneng, North-West,
+# Southern and Kgalagadi. Read stratum by stratum, North-East District showed
+# North East's 40 respondents for a polygon that holds Francistown too (56
+# more), South-East District showed South East's 56 without Gaborone's 120,
+# and Central, Kweneng, North-West, Southern and Kgalagadi showed nothing,
+# though the survey interviewed 32 to 352 people in each. The strata are
+# Round 8's, so its table says which district holds each
+# (afrobarometer_r8.REGIONS), and their weighted answers and their
+# respondents are added together as Round 8's are.
+POOLED = {"BWA": "district"}
 
 
 # The SPSS release's variables, which are named rather than counted from the
@@ -157,11 +180,54 @@ def code(value: Any) -> str | None:
 UNSPECIFIED = {"Christian only": "Christian", "Muslim only": "Muslim",
                "Sunni only": "Sunni"}
 
+# The release's misspellings of a group's name. Q2's code 837 is "IIa", two
+# capital I's, where Q84A's same code reads "Ila": Zambia's Ila, which the
+# tree places and "IIa" was not. Q2 also writes Tanzania's Iraqw "Kiiraq",
+# where Round 8 writes "Kiiraqw", and Ethiopia's Harari "Adergigna orHarari";
+# Round 8's spelling of Harari is given the same form
+# (afrobarometer_r8.SPELLING), so that a country's sum of the two rounds'
+# regions names each language once.
+LABEL_TYPOS = {"IIa": "Ila", "Kiiraq": "Kiiraqw",
+               "Adergigna orHarari": "Adergigna or Harari"}
+
+# Labels the release writes in French, by field, and Namibia's "Afrikaaner".
+# Madagascar asks after "Malagasy officiel" and "Malagasy avec spécificité
+# régionale", and Mauritius's ethnic list is written in French. "Hindou" and
+# "Musulman" are two of the four communities Mauritius counts by religion and
+# origin together, and are written as its constitution names them, "Hindu
+# community" and "Muslim community": a bare "Muslim" is already the
+# Factbook's name for Montenegro's Muslims, a people, and the two would be
+# one group in the legend. "Euro-Mauricien" is Euro-Mauritian, not the
+# narrower Franco-Mauritian the Factbook writes. Kept by field, because a
+# religion label could be spelled like an ethnic one.
+RELABEL: dict[str, dict[str, str]] = {
+    "language": {
+        "Malagasy officiel": "Official Malagasy",
+        "Malagasy avec spécificité régionale": "Malagasy (regional variety)",
+    },
+    "ethnicity": {
+        "Hindou": "Hindu community", "Musulman": "Muslim community",
+        "Tamoul": "Tamil", "Telegou": "Telugu", "Chinois": "Chinese",
+        "Afro-Mauricien (Creole)": "Afro-Mauritian (Creole)",
+        "Euro-Mauricien (Blanc)": "Euro-Mauritian (White)",
+        "Afrikaaner": "Afrikaner",
+    },
+}
+
 
 def clean(label: str) -> str:
     """Drop the codebook's parenthetical gloss, keeping the group's name."""
     name = re.sub(r"\s*\((?:e\.g\.|i\.e\.|Do not).*$", "", label).strip().rstrip(",")
-    return UNSPECIFIED.get(name, name)
+    name = UNSPECIFIED.get(name, name)
+    return LABEL_TYPOS.get(name, name)
+
+
+def named(field: str, value: str, table: dict[str, str]) -> str:
+    """The group a code names, as it is written on the map."""
+    if field == "ethnicity" and value == NATIONAL_ONLY:
+        return NATIONAL_ONLY_LABEL
+    name = clean(table.get(value, value))
+    return RELABEL.get(field, {}).get(name, name)
 
 
 def extract(path: str) -> int:
@@ -222,6 +288,59 @@ def tabulate() -> tuple[dict[tuple[str, str], dict[str, dict[str, float]]],
     return tally, sample, {pair for pair in never_asked if pair not in asked}
 
 
+def units(tally: dict[tuple[str, str], dict[str, dict[str, float]]],
+          sample: dict[tuple[str, str], int],
+          labels: dict[str, dict[str, str]]) -> list[dict[str, Any]]:
+    """What is published: each region as the survey samples it, and a POOLED
+    country's units with their strata's weighted answers and respondents
+    added together -- not their shares averaged.
+
+    Listed in the order of the survey's codes; a pooled unit stands where its
+    first stratum did.
+    """
+    # Round 8's module imports this one for its sampling rules, so its table
+    # is read here rather than at the top.
+    from .afrobarometer_r8 import REGIONS            # noqa: PLC0415
+    out: list[dict[str, Any]] = []
+    pooled: dict[tuple[str, str], dict[str, Any]] = {}
+    for (country, region), cell in sorted(tally.items()):
+        name = labels["REGION"].get(region)
+        if not name:
+            continue
+        iso = ISO3.get(country)
+        if not iso:
+            raise SystemExit(f"afrobarometer: no ISO3 for country code {country}")
+        if iso not in POOLED:
+            out.append({"country": country, "iso": iso, "key": region, "name": name,
+                        "cell": cell, "n": sample[(country, region)], "strata": [name]})
+            continue
+        shape = REGIONS.get((iso, name))
+        if shape is None:
+            # A unit summed without one of its strata would be short of it
+            # and say nothing, so a stratum the table lacks stops the run.
+            raise SystemExit(f"afrobarometer: {iso} stratum {name!r} is in no unit "
+                             f"of afrobarometer_r8.REGIONS")
+        unit = pooled.get((iso, shape))
+        if unit is None:
+            unit = pooled[(iso, shape)] = {
+                "country": country, "iso": iso, "key": shape, "name": shape,
+                "cell": {field: {} for field in cell}, "n": 0, "strata": []}
+            out.append(unit)
+        for field, counts in cell.items():
+            into = unit["cell"][field]
+            for value, weight in counts.items():
+                into[value] = into.get(value, 0.0) + weight
+        unit["n"] += sample[(country, region)]
+        unit["strata"].append(name)
+    return out
+
+
+def listed(names: list[str]) -> str:
+    """Names as a sentence lists them: "A and B", "A, B and C"."""
+    names = sorted(names)
+    return ", ".join(names[:-1]) + " and " + names[-1] if len(names) > 1 else names[0]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -250,14 +369,10 @@ def main() -> int:
 
     records: list[dict[str, Any]] = []
     dropped = low = 0
-    for (country, region), cell in sorted(tally.items()):
-        n = sample[(country, region)]
-        name = labels["REGION"].get(region)
-        if not name:
-            continue
-        iso = ISO3.get(country)
-        if not iso:
-            raise SystemExit(f"afrobarometer: no ISO3 for country code {country}")
+    for unit in units(tally, sample, labels):
+        country, iso, name, cell, n = (unit["country"], unit["iso"], unit["name"],
+                                       unit["cell"], unit["n"])
+        row_id = f"{iso}-AB9-{unit['key']}"
         if n < MIN_SAMPLE:
             # Not estimated, and the region says why rather than reading as
             # never surveyed: a reason the panel shows where nothing else has
@@ -275,7 +390,7 @@ def main() -> int:
                         f"people in this region, too few to estimate {field} shares from, "
                         "so none are shown."))
             records.append(record(
-                f"{iso}-AB9-{region}", name, level="admin1", parent=iso, country=iso,
+                row_id, name, level="admin1", parent=iso, country=iso,
                 **thin,
                 sources=[{"field": "religion/ethnicity/language", "name": SOURCE,
                           "url": "https://www.afrobarometer.org/data/",
@@ -292,13 +407,22 @@ def main() -> int:
                 fields[f"{field}_note"] = (
                     f"Afrobarometer did not ask about {field} in this country.")
                 continue
-            counts = {clean(table.get(c, c)) if c != NATIONAL_ONLY
-                      else "No ethnic group": v
-                      for c, v in cell[field].items()}
+            # Added, not keyed: two codes can carry one label. Mozambique's
+            # list has "Lomue" twice (550 and 559), and Zambézia's 65 weighted
+            # answers under both read as the 7 under the second alone: 5.2%,
+            # where the two make 34.6%, the region's largest language.
+            counts: dict[str, float] = {}
+            for value, weight in cell[field].items():
+                group = named(field, value, table)
+                counts[group] = counts.get(group, 0.0) + weight
             rows = shares(counts)
             fields[field] = rows or gap(NOT_AVAILABLE)
             if rows:
                 note = f"{UNIVERSE} This region: {n} respondents."
+                if len(unit["strata"]) > 1:
+                    note += (f" The survey stratifies the {POOLED[iso]} as "
+                             f"{listed(unit['strata'])}, and these shares are of "
+                             "their respondents together.")
                 if n < LOW_PRECISION:
                     note += (" Fewer than 50 respondents, so this share is"
                              " imprecise and should be read as indicative.")
@@ -306,7 +430,7 @@ def main() -> int:
         if n < LOW_PRECISION:
             low += 1
         records.append(record(
-            f"{iso}-AB9-{region}", name, level="admin1", parent=iso,
+            row_id, name, level="admin1", parent=iso,
             country=iso,
             **fields,
             sources=[{"field": "religion/ethnicity/language", "name": SOURCE,
