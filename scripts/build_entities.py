@@ -1461,12 +1461,11 @@ IRAN_LANGUAGE = (
     "and Kermanshah is empty because its module reaches five of its fourteen "
     "counties and under a fifth of its people.")
 ADAPTER_GAPS: dict[str, str] = {
-    "THA": "The statistical office's own tables have not been obtained from its "
-           "websites. Religion, nationality and the language spoken at home by "
-           "province are the 2010 census's, from its provincial reports as the "
-           "Internet Archive kept them; Lampang and Suphan Buri, whose 2010 reports "
-           "it did not keep, carry the 2000 census's religion and nationality and no "
-           "language. No census table gives a district any of the three. "
+    "THA": "Religion, nationality and the language spoken at home by province are "
+           "the 2010 census's, from the statistical office's provincial reports as "
+           "the Internet Archive kept them; Lampang and Suphan Buri, whose 2010 "
+           "reports it did not keep, carry the 2000 census's religion and nationality "
+           "and no language. No census table gives a district any of the three. "
            "Ethnicity is not asked: the provinces carry the census's count of Thai "
            "and foreign nationals.",
     # Only language is left for this to explain. The 2016 census's religion
@@ -8691,7 +8690,7 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r"\(Ranong: Malay 0\.5%, Burmese and Mon 7\.0%\)"), r"(Ranong's report, for example, gives Malay 0.5% and Burmese and Mon 7.0%)"),
     (re.compile(r"\(Ranong's tables, web\.archive\.org/\S+?/ranong1\.xls\)"), r"(as in Ranong's report, for example)"),
     (re.compile(r": Ranong's tables, web\.archive\.org/\S+?/ranong1\.xls\)"), r", as in Ranong's report, for example)"),
-    # THA 77 provinces' language gap: the same quotation with its year, and the
+    # THA language gap on Lampang and Suphan Buri: the same quotation with its year, and the
     # workbook's address in brackets of its own
     (re.compile(r"\(Ranong: Malay 0\.5%, Burmese and Mon 7\.0% in 2000\)"),
      r"(Ranong's report, for example, gives Malay 0.5% and Burmese and Mon 7.0% for 2000)"),

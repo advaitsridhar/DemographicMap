@@ -30,7 +30,7 @@ misprinted later column (Krabi's "614"), Thai marks drawn from a font's
 private-use glyphs. Bangkok's nationality block is the one whose text comes
 apart; ``FROM_PAGE`` holds its rows as the page prints them. A footnote under
 the table that leaves out people whose answer was not known (Phuket's,
-Ratchaburi's) is said in the note.
+Ratchaburi's, Phra Nakhon Si Ayutthaya's) is said in the note.
 
 **Every block is checked against the report's own key indicators**, the page
 near the front that prints "Thai citizenship (%)" and "Buddhism (%)" for 1990,
@@ -41,18 +41,24 @@ within 0.05, each "a" under 0.1); otherwise the indicators stand in its place
 -- the Thai share and everyone else, as the 2000 reading does, and Buddhism
 with the other faiths they print -- and the note says why. Where the two part
 by more than a digit the table's Thai share is the higher every time (Mae Hong
-Son's prints 94.1% and its indicators 90.0%); why is not printed. Two tables'
+Son's prints 94.1% and its indicators 90.0%); why is not printed. Three tables'
 footnotes say they leave out people whose nationality was not known, which
-would raise the Thai share, but those two print their indicators' figure
-exactly. A block printed word for word in two reports is held to the exact
-figure in both.
+would raise the Thai share, but those three print their indicators' figure
+exactly. The reports themselves warn that their figures are rounded each on its
+own, so a table's sums and two tables' figures can differ (Phra Nakhon Si
+Ayutthaya's, section 9, "notes for data users"), which is the digit allowed. A
+block printed word for word in two reports is held to the exact figure in both.
 
 **Language** is table 6 of each report's statistical annex, its people by the
 languages they usually speak at home: only Thai, Thai and another language, or
 another language only, as counts that add up to the province, shown as shares
 in the words of the country's figure (the Factbook's line for the same census).
-Thai there takes in its regional varieties: Isan-speaking Bueng Kan counts
-361,914 of its 362,754 people as speaking only Thai.
+Thai there takes in most of its regional varieties -- Isan-speaking Bueng Kan
+counts 361,914 of its 362,754 people as speaking only Thai -- but the table
+counts a few local Tai varieties among the other languages, in rows of their
+own: Tai Khun, Thai Loei and Lao Loei in one (364,423 of Loei's 546,030 people,
+where 28.7% speak only Thai), and Lao Khrang. A province where that row holds a
+tenth of the people or more says so in its note (``LOCAL_TAI``).
 
 **Bueng Kan and Nong Khai.** Nong Khai's report counts the province as it
 was at the census, all seventeen districts: its district tables list Bueng
@@ -94,8 +100,9 @@ LANGUAGE_SOURCE = ("National Statistical Office, 2010 Population and Housing Cen
 # Seconds between two reports fetched from the Archive, which asks to be read
 # gently; a report already in the cache costs nothing and waits for nothing.
 PAUSE = 3.0
-# The pages searched for the table and the indicators; both sit in the first
-# thirty of a report of two hundred, and reading the rest costs minutes each.
+# The pages searched for the table and the indicators; both sit within the first
+# forty or so of a report of two hundred (Bangkok's on pages 34 and 35), and
+# reading the rest costs minutes each.
 PAGES = 60
 
 # Province, as the boundary file names it less "Province" -> (report, capture).
@@ -291,7 +298,8 @@ NOTE_INDICATOR_NATIONALITY = (
     " They print the share of Thai nationality and the share of people not of Thai "
     "nationality, shown here as '{residual}'.")
 # A footnote under the table that says it leaves out the people whose answer was
-# not known: Phuket's marks the whole table, Ratchaburi's its nationality rows.
+# not known: Phuket's and Phra Nakhon Si Ayutthaya's mark the whole table,
+# Ratchaburi's its nationality rows.
 NOTE_UNKNOWN = {"religion": " The table leaves out people whose answer was not known, as its "
                             "footnote says.",
                 "nationality": " The table leaves out people whose nationality was not known, "
@@ -299,10 +307,16 @@ NOTE_UNKNOWN = {"religion": " The table leaves out people whose answer was not k
 NOTE_LANGUAGE = (
     "The 2010 Population and Housing Census, the province's report, table 6: the province's "
     "people by the languages they usually speak at home, as shares of the table's counts. "
-    "Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of "
-    "its people as speaking only Thai -- and the table lists the other languages spoken, "
-    "Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who "
-    "speaks them. A share under 0.05% is left out.")
+    "Thai there takes in most of its regional varieties -- Isan-speaking Bueng Kan counts "
+    "99.8% of its people as speaking only Thai -- but the table counts a few local Tai "
+    "varieties among the other languages: Tai Khun, Thai Loei and Lao Loei, and Lao Khrang. "
+    "Its other languages also include Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese "
+    "and Burmese. A share under 0.05% is left out.")
+# Table 6's row of one group of local Tai varieties, said in a province's note
+# where it holds a tenth of the people or more: Loei's 364,423 of 546,030.
+LOCAL_TAI = "ไทยขึน/ไทยเลย/ลาวเลย"
+NOTE_LOCAL_TAI = (" The table counts {count:,} of the province's people, {share:.0f}%, as "
+                  "speaking Tai Khun, Thai Loei or Lao Loei at home, alone or with Thai.")
 NOTE_SPLIT = {
     "Bueng Kan": (" Bueng Kan was made from eight districts of Nong Khai in March 2011, six "
                   "months after the census was taken; the Office published those districts' "
@@ -487,6 +501,10 @@ def languages(lines: list[str]) -> dict[str, int | None] | None:
         near = [(abs(j - i), row[1]) for j in range(max(0, i - NEAR), i + NEAR)
                 if j < len(lines) and (row := counted(lines[j])) and row[0] == "ยอดรวม"]
         out["total"] = min(near)[1] if near else None
+        for other in lines[i + 3:i + 3 + NEAR]:
+            if (row := counted(other)) is not None and row[0] == LOCAL_TAI:
+                out["local Tai"] = row[1]
+                break
         return out
     return None
 
@@ -580,6 +598,11 @@ def read(province: str, lines: list[str],
     else:
         reading.language = language_shares(counts, reading.problems)
         reading.language_note = NOTE_LANGUAGE if reading.language else ""
+        people = sum(counts[group] or 0 for group in LANGUAGES.values())
+        local = counts.get("local Tai") or 0
+        if reading.language and people and local >= people / 10:
+            reading.language_note += NOTE_LOCAL_TAI.format(count=local,
+                                                           share=100 * local / people)
 
     for what in ("religion", "nationality", "language"):
         rows = getattr(reading, what)

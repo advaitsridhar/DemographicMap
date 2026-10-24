@@ -3,9 +3,12 @@
 Each composition comes from a block of section 1.5's table that the report's
 own key indicators bear out, or else from the indicators, and the note says
 why; language comes from table 6 of the report's statistical annex. The samples are cut from the reports' own text layer as the runner's
-probes of the archived reports printed it, except the 1990 and 2000 columns of
-the Mae Hong Son and Nakhon Phanom indicators, which stand in for figures no
-probe printed: only the 2010 column is read. No network.
+probes of the archived reports printed it, except what stands in for lines no
+probe printed as text: the 1990 and 2000 columns of the Mae Hong Son, Nakhon
+Phanom and Maha Sarakham indicators (only the 2010 column is read), the Mae Hong
+Son and Nakhon Phanom blocks, rebuilt from the reader's parsed rows with a
+footnote line, and Nakhon Phanom's table 6 total, written as its rows' sum.
+No network.
 """
 
 import json
@@ -380,7 +383,8 @@ class Language(unittest.TestCase):
         # 361,914, 829 and 11 of 362,754: the last is under 0.05%.
         self.assertEqual(groups(reading.language),
                          {"Thai only": 99.8, "Thai and other languages": 0.2})
-        self.assertIn("Thai there takes in its regional varieties", reading.language_note)
+        self.assertIn("Thai there takes in most of its regional varieties", reading.language_note)
+        self.assertNotIn("Thai Loei at home", reading.language_note)     # 0 of Bueng Kan's
         self.assertIn("Bueng Kan counts 99.8%", reading.language_note)
         self.assertTrue(reading.language_note.endswith(t.NOTE_SPLIT["Bueng Kan"]))
 
@@ -399,6 +403,21 @@ class Language(unittest.TestCase):
         self.assertEqual(groups(reading.language), {"Thai only": 92.3,
                                                     "Thai and other languages": 7.4,
                                                     "only other languages": 0.2})
+
+    def test_a_province_counted_in_a_local_tai_row_says_so(self):
+        # Loei's page 71: its own Tai varieties are counted as another language.
+        annex = ["    ภาษาไทยภาษาเดียว 156,757 77,921 78,837 Only Thai Language",
+                 "    ภาษาไทยและภาษาอื่น 328,037 163,758 164,279 Thai and other languages",
+                 "    ภาษาอื่นอย่างเดียว 61,236 30,583 30,654 Only other languages",
+                 "    ภาษาอื่นๆ ที่ใช้ Other languages",
+                 "       กระเหรี่ยง 590 280 310    Karen",
+                 "       ไทยขึน/ไทยเลย/ลาวเลย 364,423 181,889 182,534    Thaikueng"]
+        reading = t.read("Loei", BUENG_KAN, annex=annex)
+        self.assertEqual(groups(reading.language), {"Thai only": 28.7,
+                                                    "Thai and other languages": 60.1,
+                                                    "only other languages": 11.2})
+        self.assertIn("counts 364,423 of the province's people, 67%, as speaking Tai Khun, "
+                      "Thai Loei or Lao Loei at home", reading.language_note)
 
     def test_rows_that_do_not_make_the_total_are_a_problem(self):
         annex = [line.replace("361,914 178,999", "351,914 178,999") for line in BUENG_KAN_TABLE_6]

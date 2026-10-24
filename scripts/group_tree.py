@@ -823,6 +823,10 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # Romance language, and Catalonia's EULP pools every other pair of
         # languages as "other language combinations".
         "Basque and Spanish", "Other language combinations",
+        # Thailand's 2010 census counts the people who speak Thai and another
+        # language at home in one row, whatever the other is: Malay in
+        # Narathiwat and Yala, Khmer in Surin, Thai Loei in Loei.
+        "Thai and other languages",
         # And the CEO barometer's "altres llengües o combinacions" (catalonia_ceo),
         # every first language but Catalan, Spanish, both, Aranese, Arabic and
         # Romanian, alone or paired: no one language either.

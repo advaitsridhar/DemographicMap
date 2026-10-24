@@ -136,7 +136,7 @@ WHY_DEFAULT = "used because no table of the office's own gives these ages"
 UNUSUAL_RATIO = (85.0, 115.0)
 
 
-# Why Thailand's districts (and its provinces' languages) carry no composition,
+# Why Thailand's districts (and Lampang's and Suphan Buri's languages) carry no composition,
 # said on the units this reader already binds. Measured on the 2000 census's
 # provincial tables -- Ranong's workbook (tables 1-4 and the key indicators)
 # gives a district its people by sex, household type and age group only, and
