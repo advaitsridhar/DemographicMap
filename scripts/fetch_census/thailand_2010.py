@@ -232,18 +232,21 @@ FROM_PAGE: dict[str, dict[str, list[tuple[str, list[str]]]]] = {
                                 ("อื่นๆ", ["2.8"])]},
 }
 
+# A table's note, and the sentence on its remainder, said where the remainder is shown.
 NOTE_RELIGION = (
     "The 2010 Population and Housing Census, the province's report: the province's people "
-    "by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's "
-    "own remainder, every faith it does not name. A faith the table prints as under 0.1% is "
-    "left out.")
+    "by religion, in percent, as section 1.5 prints them.{remainder} A faith the table "
+    "prints as under 0.1% is left out.")
 NOTE_NATIONALITY = (
     "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the "
     "2010 census's count of the province's people by nationality, in percent, as section 1.5 "
     "of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, "
-    "Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other "
-    "nationalities' is the table's own remainder, and a nationality it prints as under 0.1% "
-    "is left out.")
+    "Kuy, hill peoples and Chinese who hold Thai nationality are all in it.{remainder} A "
+    "nationality the table prints as under 0.1% is left out.")
+REMAINDER = {"religion": ("Other religions", " 'Other religions' is the table's own "
+                          "remainder, every faith it does not name."),
+             "nationality": ("Other nationalities", " 'Other nationalities' is the table's "
+                             "own remainder, every nationality it does not name.")}
 NOTE_FROM_INDICATORS = (
     "The 2010 Population and Housing Census, the province's report: the province's people "
     "by {what}, in percent, as its key indicators print them. The report's section 1.5 "
@@ -451,8 +454,7 @@ def read(province: str, lines: list[str],
                 reading.problems.append(f"{what}: no key indicator to check the table by")
             setattr(reading, what, best[1])
             reading.raw[what] = best[2]
-            setattr(reading, f"{what}_note",
-                    NOTE_RELIGION if what == "religion" else NOTE_NATIONALITY)
+            setattr(reading, f"{what}_note", table_note(what, best[1]))
         elif printed is not None:
             setattr(reading, f"{what}_from", "indicators")
             setattr(reading, what, from_indicators(what, key))
@@ -468,6 +470,12 @@ def read(province: str, lines: list[str],
         setattr(reading, f"{what}_note",
                 getattr(reading, f"{what}_note") + NOTE_SPLIT.get(province, ""))
     return reading
+
+
+def table_note(what: str, rows: list[dict[str, Any]]) -> str:
+    group, sentence = REMAINDER[what]
+    note = NOTE_RELIGION if what == "religion" else NOTE_NATIONALITY
+    return note.format(remainder=sentence if any(r["group"] == group for r in rows) else "")
 
 
 def from_indicators(what: str, key: dict[str, Any]) -> list[dict[str, Any]]:

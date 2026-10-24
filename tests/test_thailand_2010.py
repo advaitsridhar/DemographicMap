@@ -271,6 +271,17 @@ class ReadingTheTable(unittest.TestCase):
         self.assertEqual(t.clean("    คริสต 0.5 0.3 0.6"), "    คริสต์ 0.5 0.3 0.6")
         self.assertEqual(t.clean("พมา​ 0.4"), "พม่า 0.4")
 
+    def test_the_note_speaks_of_a_remainder_only_where_one_is_shown(self):
+        bueng_kan = t.read("Bueng Kan", BUENG_KAN)                # "อื่นๆ a" in both
+        self.assertNotIn("remainder", bueng_kan.religion_note)
+        self.assertNotIn("remainder", bueng_kan.nationality_note)
+        self.assertTrue(bueng_kan.religion_note.endswith(
+            "is left out." + t.NOTE_SPLIT["Bueng Kan"]))
+        nong_khai = t.read("Nong Khai", NONG_KHAI)                # "อื่นๆ 0.1" for nationality
+        self.assertIn("'Other nationalities' is the table's own remainder",
+                      nong_khai.nationality_note)
+        self.assertNotIn("remainder", nong_khai.religion_note)
+
     def test_a_row_printed_0_0_is_left_out(self):
         lines = [line.replace("อื่นๆ a a a", "อื่นๆ 0.0 0.0 0.0") for line in BUENG_KAN]
         self.assertNotIn("Other religions", groups(t.read("Bueng Kan", lines).religion))
