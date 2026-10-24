@@ -407,7 +407,7 @@ class Language(unittest.TestCase):
         self.assertEqual(reading.language, [])
 
     def test_a_line_of_commas_is_not_a_count(self):
-        self.assertIsNone(t.counted("    รวม ,,, 1,2"))
+        self.assertIsNone(t.counted("    รวม ,,, ,"))
         self.assertEqual(t.counted("    ยอดรวม 362,754 179,422 Total"), ("ยอดรวม", 362754))
         self.assertEqual(t.counted("    ภาษาอื่นอย่างเดียว - - - Only others"),
                          ("ภาษาอื่นอย่างเดียว", 0))
