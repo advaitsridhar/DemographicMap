@@ -211,8 +211,11 @@ def cmd_xl(url: str, sheets: list[str], rows: int, cols: int, width: int,
             log(f"   {i:>4} | " + " | ".join(cells))
 
 
-def cmd_pdf(url: str, grep: str, after: int, pages: str, limit: int) -> None:
-    """Lines of a PDF's text layer matching ``grep``, page by page."""
+def cmd_pdf(url: str, grep: str, after: int, pages: str, limit: int,
+            escape: bool = False) -> None:
+    """Lines of a PDF's text layer matching ``grep``, page by page; with ``escape``,
+    each line's characters outside Thai and printable ASCII are shown as escapes,
+    which is how a font's private-use glyphs and zero-width marks are seen."""
     from pypdf import PdfReader
     status, ctype, body = fetch(url, timeout=300)
     log(f"{url}: HTTP {status} {ctype} {len(body)} B")
@@ -238,11 +241,17 @@ def cmd_pdf(url: str, grep: str, after: int, pages: str, limit: int) -> None:
         log(f"  p{number}: {len(lines)} lines, {len(hits)} matching")
         for i in hits[:6]:
             for line in lines[i:i + after + 1]:
-                log(f"    {line[:160]}")
+                log(f"    {escaped(line[:160]) if escape else line[:160]}")
         shown += 1
         if shown >= limit:
             log(f"  stopped after {limit} pages")
             break
+
+
+def escaped(line: str) -> str:
+    """A line with every character outside Thai and printable ASCII as \\uXXXX."""
+    return "".join(c if " " <= c <= "~" or "\u0e00" <= c <= "\u0e7f" else f"\\u{ord(c):04x}"
+                   for c in line)
 
 
 def cmd_zip(url: str, members: int, lines: int, encoding: str) -> None:
@@ -624,6 +633,8 @@ def main() -> int:
     pd.add_argument("--after", type=int, default=3, help="lines shown after each match")
     pd.add_argument("--pages", default="", help='page numbers to read, as "1-5,9"')
     pd.add_argument("--limit", type=int, default=12, help="pages shown at most")
+    pd.add_argument("--escape", action="store_true",
+                    help="show characters outside Thai and ASCII as escapes")
     x = sub.add_parser("cdx")
     x.add_argument("pattern")
     x.add_argument("--limit", type=int, default=2000)
@@ -680,7 +691,7 @@ def main() -> int:
     elif args.cmd == "zip":
         cmd_zip(args.url, args.members, args.lines, args.encoding)
     elif args.cmd == "pdf":
-        cmd_pdf(args.url, args.grep, args.after, args.pages, args.limit)
+        cmd_pdf(args.url, args.grep, args.after, args.pages, args.limit, args.escape)
     elif args.cmd == "cdx":
         cmd_cdx(args.pattern, args.limit, args.match)
     elif args.cmd == "wpmedia":
