@@ -230,9 +230,9 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Malaysia (religion) | DOSM Kawasanku dashboard, `kawasanku_admin_barmeter.parquet` (storage.dosm.gov.my), built on MyCensus 2020 | state, district | Religion is a census question but OpenDOSM's catalogue has no religion table; the dashboard DOSM built on the 2020 census carries the six-category shares (Islam, Buddhism, Christianity, Hinduism, other religions, no religion) for the country, 16 states and 160 districts as unrounded percentages, and the state rows equal the census's published state table to the decimal. Counts are those shares applied to each area's 2020 population from the OpenDOSM series and rounded, and the note says so; the census's "unknown" answers are not separated from the last two categories. The country row is checked against DOSM's Key Findings figures (63.5 / 18.7 / 9.1 / 6.1 / 2.7) and states and districts, weighted, against their parent. Language: the census has never asked it (policy entry `MYS`). `scripts/fetch_census/malaysia_religion.py`. |
 | Brunei | DEPS, Population and Housing Census (BPP) 2021, annex tables A3 (race by district), A4 (religion by district) and C1 (population by mukim), read from the department's own annex workbook `wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx` | district, mukim | Race and religion for all 4 districts, 440,715 people, checked against the figures the census report prints in prose and reconciling to the person at every level. "Malay" is the state's administrative group, defined by the report as covering Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut, whose shares are published for the country only; the religion residual pools other faiths, unstated answers and no religious belief, so it is carried as "Other, none, or not stated". All 38 mukims carry the census head count and a gap naming the three annexes that put no composition below the district; Gadong is the sum of the census's Gadong A and Gadong B, which the boundary file draws as one, and Bokok carries the file's spelling Bunkok as an alias. Language is asked (question E27, the language mainly spoken at home) and never tabulated, so it is `not_available` with that reason rather than `not_collected`. `scripts/fetch_census/brunei.py`. |
 | Kenya | KNBS, 2019 Kenya Population and Housing Census: Volume I (population by sex and county), Volume II (by sex and sub-county), Volume III (by single year of age, sex, county and sub-county) and Volume IV, Table 2.30 (religion by county), all through Code for Africa's openAFRICA portal | county, constituency | All 47 counties carry the census's population (intersex persons included), sex ratio and median age, and its religion in place of the Afrobarometer survey rows; ethnicity stays Afrobarometer's, since Volume IV prints it for the country only, and no volume tabulates language. 131 of the 290 constituencies carry the census's count, sex ratio and median age, where a constituency's ground is one sub-county or a set of whole ones, measured by name and by area; the other 159 say why. The Bomet polygon takes in Bureti, which the census counts under Kericho, so Bomet's figures add the two and Kericho's leave Bureti out. KNBS's own site fails TLS verification (incomplete chain) and this project does not turn verification off. See "Kenya: the 2019 census by county and by constituency". `scripts/fetch_census/kenya_census.py`, `scripts/fetch_census/kenya.py`. |
-| Thailand | NSO 2000 Population and Housing Census, provincial final reports (`web.nso.go.th/pop2000/finalrep/`), transcribed in the Wikipedia article *Nationality, religion, and language data for the provinces of Thailand* | province | Buddhist, Muslim and Christian shares for 2000 as printed, read through the MediaWiki API because the NSO's own hosts refuse this client; the rest of 100% is one 'Other or not stated' group; an N/A is absent, not zero. 76 of 77 provinces: Bueng Kan was carved out of Nong Khai in 2011 and has no 2000 row. The 2010 census's reports (below) replace these figures on 75 provinces, Bueng Kan's own among them, and leave them on Lampang and Suphan Buri. Nationality is citizenship and is not read as ethnicity; the 'linguistic minorities' cells name a few languages and not the rest, so language stays a gap. `scripts/fetch_census/thailand.py`. |
+| Thailand | NSO 2000 Population and Housing Census, provincial final reports (`web.nso.go.th/pop2000/finalrep/`), transcribed in the Wikipedia article *Nationality, religion, and language data for the provinces of Thailand* | province | Buddhist, Muslim and Christian shares for 2000 as printed, read through the MediaWiki API because the NSO's own hosts refuse this client; the rest of 100% is one 'Other or not stated' group; an N/A is absent, not zero. 76 of 77 provinces: Bueng Kan was carved out of Nong Khai in 2011 and has no 2000 row. The 2010 census's reports (below) replace these figures on 74 provinces, add Bueng Kan's, and leave Lampang's and Suphan Buri's standing. Nationality is citizenship and is not read as ethnicity; the 'linguistic minorities' cells name a few languages and not the rest, so the 2000 census gives no language (the 2010 reports' table 6 does). `scripts/fetch_census/thailand.py`. |
 | Thailand (ethnicity) | NSO 2000 Population and Housing Census, language spoken at home, the 'linguistic minorities' cell of the same provincial reports and the same Wikipedia transcription; Suwilai Premsrirat et al., *Ethnolinguistic Maps of Thailand* (Mahidol University Institute of Language and Culture, 2004) for the regional Tai groups and the national figures, as transcribed in *Demographics of Thailand* | province | By the map owner's decision of 19 September 2026, and every province a `modelled` estimate, never a list: the census's minorities as printed under its own category names, everyone else assigned to the region's Tai group (Central Thai, Isan (Lao), Northern Thai, Southern Thai). The run prints the national composition the provinces imply beside the maps' figures; no backtest is possible. 76 of 77 provinces, Bueng Kan having no 2000 row. See "Thailand: ethnicity from secondary sources, by the owner's decision". `scripts/fetch_census/thailand_ethnicity.py`. |
-| Thailand (2010) | NSO 2010 Population and Housing Census, provincial reports (`popcensus.nso.go.th/report/<Province>_T.pdf`), read from the Internet Archive's captures because the office's hosts refuse this client | province | Religion, and nationality as `ethnicity` with basis `nationality`, from each report's section 1.5 table in percent, every block checked against the same report's key indicators; where a block cannot be used the indicators' figures stand and the note says why (six provinces' nationality). 75 of 77 provinces, Bueng Kan's own among them; Lampang's and Suphan Buri's reports were not captured, and those two keep 2000. Nong Khai's report counts the province as it was at the census, Bueng Kan's eight districts included. See "Thailand: the 2010 census's provincial reports". `scripts/fetch_census/thailand_2010.py`. |
+| Thailand (2010) | NSO 2010 Population and Housing Census, provincial reports (`popcensus.nso.go.th/report/<Province>_T.pdf`), read from the Internet Archive's captures because that host no longer resolves and the office's others refuse this client | province | Religion, and nationality as `ethnicity` with basis `nationality`, from each report's section 1.5 table in percent, every block checked against the same report's key indicators; where a block cannot be used the indicators' figures stand and the note says why (seven provinces' nationality). Language from each report's annex, table 6: only Thai, Thai and other languages, only other languages, as counts, in the country's own words for the same split; Thai takes in its regional varieties. 75 of 77 provinces, Bueng Kan's own among them; Lampang's and Suphan Buri's reports were not captured, and those two keep 2000. Nong Khai's report counts the province as it was at the census, Bueng Kan's eight districts included. See "Thailand: the 2010 census's provincial reports". `scripts/fetch_census/thailand_2010.py`. |
 | Kazakhstan | Bureau of National Statistics, 2021 National Population Census, religious affiliation by region, transcribed in the Wikipedia article *Religion in Kazakhstan* | region | The percent columns are read (one count in the article is mistyped; its percent is not). The article lists 16 regions and omits Shymkent (a city of republican significance since 2018); the boundary file draws the 2017 layout in which Shymkent sits inside South Kazakhstan Region, so the article's Turkistan Region is deliberately not matched to that shape and South Kazakhstan stays a visible gap: 15/16. `scripts/fetch_census/wiki_census.py`. |
 | Kazakhstan (ethnicity) | Bureau of National Statistics, *Population by ethnic groups of the Republic of Kazakhstan at the start of 2025* (series 18, 27 March 2025), workbook committed under `data/raw/kazakhstan/` because the Bureau's site offers no file link | region, district | Register-based population at 1 January 2025 carried forward from the 2021 census, 73 ethnic rows, and the record says it is not a census count. The workbook's 20 regions are summed into the 16 shapes of the 2017 layout (Abai into East Kazakhstan, Jetisu into Almaty Region, Ulytau into Karaganda, Shymkent into South Kazakhstan), exact because these are counts, and every column is checked against its own total. Districts keep the Bureau's Cyrillic name with a transliteration as alias; `RENAMED` declares the shapes the boundary file still draws under a superseded name (Zelenovskiy for Bäiterek, Tselinniy for Gabit Musrepov, and so on). Almaty and Shymkent get their city totals as their one second-level shape; Astana has none. 173 of 174 district shapes filled; the boundary file draws Jambyl's Zhualy district twice and the second copy stays empty. `scripts/fetch_census/kazakhstan.py`. |
 | Cambodia | NIS General Population Census of Cambodia 2019, religion by province, transcribed in the Wikipedia article *Religion in Cambodia* (2008 and 2019 columns; 2019 read) | province | Buddhism, Islam, Christianity, Others as printed; 25/25 with four spellings declared as aliases (Bantey Meanchey, Kratie, Takeo, Tbong Khmum). `scripts/fetch_census/wiki_census.py`. |
@@ -5575,8 +5575,8 @@ for 2000. So Thailand is a gap about publication, as Viet Nam was until its Viet
 gap about access -- and the access problem is real too.
 That account is not quite right: the 2010 census's provincial reports, read
 later through the Internet Archive, print a language table of their own
-(table 6), and it is not a composition either -- see *Thailand: the 2010
-census's provincial reports*.
+(table 6), and the provinces carry it -- see *Thailand: the 2010 census's
+provincial reports*.
 
 **Religion, later.** The 2000 census did publish religion by province, in a
 final report per province under `web.nso.go.th/pop2000/finalrep/`, and the
@@ -5589,8 +5589,8 @@ so. The 2010 census's provincial tables are behind the same 418, and the
 Internet Archive kept 75 of their reports, which now replace it (see
 *Thailand: the 2010 census's provincial reports*). The article's nationality
 columns are citizenship and are not read as ethnicity, and its "linguistic
-minorities" cells are the partial list the paragraphs above describe, so
-language keeps its gap.
+minorities" cells are the partial list the paragraphs above describe, so the
+2000 census gives no language; the 2010 reports' table 6 does.
 
 ### Thailand: ethnicity from secondary sources, by the owner's decision
 
@@ -5680,7 +5680,8 @@ its own under East and Southeast Asian ancestry, since its peoples are half
 Tibeto-Burman and half not. Bueng Kan, carved out of Nong Khai in 2011, has
 no 2000 row and no estimate here; it carries the 2010 census's count by
 nationality (see *Thailand: the 2010 census's provincial reports*). Thailand stays in
-`ADAPTER_GAPS`, and its reason now names the model.
+`ADAPTER_GAPS`, and its reason names the census's count of Thai and foreign
+nationals.
 
 ### Thailand: the 2010 census's provincial reports
 
@@ -5690,9 +5691,10 @@ Khai in March 2011, so the 2000 census has no row for it, and the build gave it
 a stated gap rather than Nong Khai's figure. The 2010 Population and Housing
 Census, taken in September 2010, has one: the National Statistical Office
 published a report for each of its 77 provinces, Bueng Kan's among them, as
-`popcensus.nso.go.th/report/<Province>_T.pdf`. That host refuses this project
-as the office's others do (see *Thailand: a language table that cannot be a
-composition*), and the Internet Archive kept 75 of the 77; Lampang's and
+`popcensus.nso.go.th/report/<Province>_T.pdf`. That host no longer resolves --
+the runner finds no address for it -- and the office's others refuse this
+project (see *Thailand: a language table that cannot be a composition*); the
+Internet Archive kept 75 of the 77; Lampang's and
 Suphan Buri's were never captured, and those two provinces keep the 2000
 figures. `scripts/fetch_census/thailand_2010.py` reads the 75 from the
 Archive's raw captures, and its `CAPTURES` names each file and capture.
@@ -5706,13 +5708,17 @@ others the province has most of -- Lao along the Mekong, Burmese and Cambodian
 at the borders, Malaysian in the far south, Chinese, Japanese and British where
 they live -- and the table's own "Other". A row printed "a" (under 0.1%) or 0.0
 is left out. Nationality is not ethnicity, and the field says so with
-`ethnicity_basis: nationality`, as the 2000 figures did.
+`ethnicity_basis: nationality`, as the 2000 figures did. Phuket's and
+Ratchaburi's tables say in a footnote that they leave out people whose answer
+(Ratchaburi: whose nationality) was not known, and their notes say so.
 
 **Every block is checked against the report's own key indicators**, the page
 near the front that prints "Thai citizenship (%)" and "Buddhism (%)" for 1990,
 2000 and 2010. A block stands when its Thai or Buddhist row is the indicators'
-2010 figure, or one in the last digit from it, and its rows add to 100. All 75
-religion blocks stand. Six nationality blocks do not, and there the
+2010 figure, or one in the last digit from it, and its rows add to 100 within
+what rounding allows -- each printed figure within 0.05 of its share, each "a"
+under 0.1. All 75 religion blocks stand. Seven nationality blocks do not, and
+there the
 indicators' Thai share is shown with everyone else as one group, "Foreign,
 stateless or unknown", and the note says why:
 
@@ -5724,11 +5730,13 @@ stateless or unknown", and the note says why:
 | Phayao | 99.0 | 98.3 | it parts from the indicators |
 | Songkhla | 98.8 | 98.6 | it parts from the indicators |
 | Nakhon Phanom | 98.9 | 98.9 | its rows add to 100.9 |
+| Maha Sarakham | 99.1 | 99.1 | its rows -- Thai, Lao and Burmese, with no other row -- add to 99.7 |
 
-Where the two part, the table's Thai share is the higher every time, which is
-what a table that leaves out people whose nationality is not known would show
--- Ratchaburi's and Phuket's tables say in a footnote that theirs do -- while
-the indicators count everyone.
+Where the two part, the table's Thai share is the higher every time, and the
+reports do not say why. A table that left out people whose nationality was not
+known would show that, and Ratchaburi's and Phuket's footnotes say theirs do;
+but those two print their indicators' Thai share exactly, so the footnotes do
+not settle it.
 
 **How the text was read.** The reports were typeset in several hands, and
 their text layers differ: a nationality block continued on the next page
@@ -5753,16 +5761,28 @@ Nong Khai's figure is shown on Nong Khai as drawn now, as its 2000 figure is,
 with a note saying that it includes Bueng Kan's districts; `ROW_COVERS_SHAPES`
 does not split the 2010 file, which publishes Bueng Kan itself.
 
-**What else the reports hold.** Each report's statistical annex counts people
-by religion (table 4), by nationality country by country (table 5) and by
-"usual languages spoken at home" (table 6), by sex and area. The counts would
-let Nong Khai be taken apart from Bueng Kan exactly, and table 5 counts the
-people of unknown nationality whom two reports' section 1.5 footnotes say they
-leave out. Table 6 is not a language composition: it splits people into "only
-Thai", "Thai and other languages" and "only other languages" -- 99.8% only Thai
-in Bueng Kan, an Isan-speaking province, because the census counts Thai's
-regional varieties as Thai -- and then lists the other languages used by
-anyone. Language stays a gap.
+**Language** is table 6 of each report's statistical annex, its people by the
+languages they usually speak at home: only Thai, Thai and another language, or
+another language only, as counts that add up to the province. The reader
+shows them as shares in the words the country's figure already uses for the
+same split of the same census (the Factbook's line: Thai only 90.7%, Thai and
+other languages 6.4%, only other languages 2.9%). Thai there takes in its
+regional varieties: Isan-speaking Bueng Kan counts 361,914 of its 362,754
+people as speaking only Thai, and Nakhon Si Thammarat, where Southern Thai is
+spoken, 99.3%. Where a province's own language is another the table shows it:
+"only Thai" is 13.8% in Narathiwat, 18.7% in Pattani and 25.6% in Yala, where
+Malay is spoken, 27.0% in Mae Hong Son and 49.9% in Surin. The table then lists
+each other language by who speaks it -- Malay (Yawi), Khmer, Karen, Hmong,
+Mon, Lao, Chinese, Burmese and more -- which is not drawn, since one person can
+be counted under two. Table 6 is found by its rows, which no other table has:
+a text layer can put its heading and total after them (Nakhon Phanom's).
+Lampang and Suphan Buri carry no language.
+
+**What else the reports hold.** Each report's statistical annex also counts
+people by religion (table 4) and by nationality country by country (table 5),
+by sex and area. Those counts would let Nong Khai be taken apart from Bueng Kan
+exactly, and table 5 counts the people of unknown nationality; neither is read
+yet.
 
 **A lesson from the runner.** Two probes of two reports with the same layout,
 run at once, left one log on the branch that was the two merged line by line:
