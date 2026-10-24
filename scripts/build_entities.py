@@ -6289,8 +6289,8 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     else:
         parent.pop(f"{field}_basis", None)
     # The year belongs to the figure, not to the record, so it is rewritten
-    # with it. Thailand is what made this matter: its 76 provinces carry the
-    # 2000 census and stamp no year at all, so the sum inherited the 2021 the
+    # with it. Thailand is what made this matter: its 76 provinces carried the
+    # 2000 census and stamped no year at all, so the sum inherited the 2021 the
     # Factbook estimate had been wearing, and the country's panel dated a
     # quarter-century-old count to five years ago. Britain and Poland were the
     # same fault pointing the other way -- 2021 census children under an
