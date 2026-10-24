@@ -200,7 +200,7 @@ RESIDUAL_NATIONALITY = "Foreign, stateless or unknown"
 # country's figure, which is the Factbook's line for the same census.
 LANGUAGES = {"ภาษาไทยภาษาเดียว": "Thai only", "ภาษาไทยและภาษาอื่น": "Thai and other languages",
              "ภาษาอื่นอย่างเดียว": "only other languages"}
-COUNT_ROW = re.compile(r"^\s*(\D+?)\s+([\d,]+|-)(?=\s|$)")
+COUNT_ROW = re.compile(r"^\s*(\D+?)\s+(\d[\d,]*|-)(?=\s|$)")
 # How far from table 6's first row its "everyone" row is looked for: a text
 # layer can put the table's heading and total after its rows (Nakhon Phanom's).
 NEAR = 15

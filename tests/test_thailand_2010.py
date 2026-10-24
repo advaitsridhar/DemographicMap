@@ -406,6 +406,12 @@ class Language(unittest.TestCase):
         self.assertIn("language: table 6's rows add to 352,754 of 362,754", reading.problems)
         self.assertEqual(reading.language, [])
 
+    def test_a_line_of_commas_is_not_a_count(self):
+        self.assertIsNone(t.counted("    รวม ,,, 1,2"))
+        self.assertEqual(t.counted("    ยอดรวม 362,754 179,422 Total"), ("ยอดรวม", 362754))
+        self.assertEqual(t.counted("    ภาษาอื่นอย่างเดียว - - - Only others"),
+                         ("ภาษาอื่นอย่างเดียว", 0))
+
     def test_no_table_6_is_a_problem(self):
         self.assertIn("language: no table 6 with its three rows",
                       t.read("Bueng Kan", BUENG_KAN).problems)
