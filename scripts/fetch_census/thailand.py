@@ -36,8 +36,8 @@ prints 99.8 and 99.6, the article 99.6 and 99.8. ``CORRECTIONS`` puts the
 report's figure in, and refuses if the article's cell becomes anything else.
 
 **Bueng Kan** was carved out of Nong Khai in 2011, so the 2000 census has no
-row for it and it stays empty; Nong Khai's figure is Nong Khai's alone and is
-not stretched over both.
+row for it and this reader writes none; Nong Khai's figure is not stretched
+over both. Bueng Kan's own is the 2010 census's (``thailand_2010``).
 
 **Names.** The article spells four provinces as one word or with different
 spacing from the boundary file (Buriram / Buri Ram, Chonburi / Chon Buri,

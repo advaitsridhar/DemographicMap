@@ -65,8 +65,9 @@ reason the figure is an estimate. The population weights are the December
 provincial totals sit behind the same hosts as everything else the NSO
 publishes.
 
-**Bueng Kan** was carved out of Nong Khai in 2011 and has no 2000 row, so it
-stays empty, as it does for religion.
+**Bueng Kan** was carved out of Nong Khai in 2011 and has no 2000 row, so this
+model gives it no estimate; its religion, nationality and language are the 2010
+census's (``thailand_2010``).
 
 Usage:
     python -m scripts.fetch_census.thailand_ethnicity

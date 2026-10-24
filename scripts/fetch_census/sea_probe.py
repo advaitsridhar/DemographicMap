@@ -19,6 +19,9 @@ decides it.
 * ``pdf URL --grep RE`` -- a PDF's text layer: the pages whose text matches,
   with the matching lines and a few after each, so a table's page and whether
   its figures extract can be seen before a reader is written.
+* ``page URL --page N`` -- one page of a PDF as an image under
+  ``data/processed/page_images``, for a table whose text layer is scattered
+  past reading (Bangkok's 2010 nationality table); removed once read.
 * ``strips CDX-PATTERN`` -- Thailand's 2000 census provincial final reports,
   whose text layer is font-encoded: page 1 (the key indicators) of every
   captured report, cut to its title and three rows of the 2000 column --
@@ -211,8 +214,11 @@ def cmd_xl(url: str, sheets: list[str], rows: int, cols: int, width: int,
             log(f"   {i:>4} | " + " | ".join(cells))
 
 
-def cmd_pdf(url: str, grep: str, after: int, pages: str, limit: int) -> None:
-    """Lines of a PDF's text layer matching ``grep``, page by page."""
+def cmd_pdf(url: str, grep: str, after: int, pages: str, limit: int,
+            escape: bool = False) -> None:
+    """Lines of a PDF's text layer matching ``grep``, page by page; with ``escape``,
+    each line's characters outside Thai and printable ASCII are shown as escapes,
+    which is how a font's private-use glyphs and zero-width marks are seen."""
     from pypdf import PdfReader
     status, ctype, body = fetch(url, timeout=300)
     log(f"{url}: HTTP {status} {ctype} {len(body)} B")
@@ -238,11 +244,17 @@ def cmd_pdf(url: str, grep: str, after: int, pages: str, limit: int) -> None:
         log(f"  p{number}: {len(lines)} lines, {len(hits)} matching")
         for i in hits[:6]:
             for line in lines[i:i + after + 1]:
-                log(f"    {line[:160]}")
+                log(f"    {escaped(line[:160]) if escape else line[:160]}")
         shown += 1
         if shown >= limit:
             log(f"  stopped after {limit} pages")
             break
+
+
+def escaped(line: str) -> str:
+    """A line with every character outside Thai and printable ASCII as \\uXXXX."""
+    return "".join(c if " " <= c <= "~" or "\u0e00" <= c <= "\u0e7f" else f"\\u{ord(c):04x}"
+                   for c in line)
 
 
 def cmd_zip(url: str, members: int, lines: int, encoding: str) -> None:
@@ -581,6 +593,23 @@ def cmd_strips(pattern: str, dpi: int, per: int, match: str, pages: int, name: s
             f"{os.path.getsize(path):,} B")
 
 
+def cmd_page(url: str, page: int, dpi: int, name: str) -> None:
+    """One page of a PDF as a grey JPEG, to be read and then removed (``unstrip``)."""
+    import os
+
+    import pdfplumber
+    status, _, body = fetch(url, timeout=300)
+    log(f"{url}: HTTP {status} {len(body):,} B")
+    if status != 200 or body[:5] != b"%PDF-":
+        return
+    os.makedirs(STRIP_DIR, exist_ok=True)
+    with pdfplumber.open(io.BytesIO(body)) as pdf:
+        image = pdf.pages[page - 1].to_image(resolution=dpi).original.convert("L")
+    path = f"{STRIP_DIR}/{name}-p{page}.jpg"
+    image.save(path, "JPEG", quality=85, optimize=True)
+    log(f"  {path}: page {page}, {image.width}x{image.height}, {os.path.getsize(path):,} B")
+
+
 def cmd_unstrip(match: str) -> None:
     """Remove the page images whose names match, once read."""
     import os
@@ -624,6 +653,8 @@ def main() -> int:
     pd.add_argument("--after", type=int, default=3, help="lines shown after each match")
     pd.add_argument("--pages", default="", help='page numbers to read, as "1-5,9"')
     pd.add_argument("--limit", type=int, default=12, help="pages shown at most")
+    pd.add_argument("--escape", action="store_true",
+                    help="show characters outside Thai and ASCII as escapes")
     x = sub.add_parser("cdx")
     x.add_argument("pattern")
     x.add_argument("--limit", type=int, default=2000)
@@ -658,12 +689,20 @@ def main() -> int:
     s.add_argument("--name", default="tha2000", help="the images' name, before their number")
     s.add_argument("--pause", type=float, default=5.0, help="seconds between two reports")
     s.add_argument("--rows", default=STRIP_ROWS, help='rows of the 2000 column, as "1,11-16"')
+    pg = sub.add_parser("page")
+    pg.add_argument("url")
+    pg.add_argument("--page", type=int, required=True, help="the page, counted from 1")
+    pg.add_argument("--dpi", type=int, default=150)
+    pg.add_argument("--name", required=True, help="the image's name, before the page")
     u = sub.add_parser("unstrip")
     u.add_argument("match", help="a pattern the image names to remove match")
     args = ap.parse_args()
     if args.cmd == "strips":
         cmd_strips(args.pattern, args.dpi, args.per, args.match, args.pages, args.name,
                    args.pause, args.rows)
+        return 0
+    if args.cmd == "page":
+        cmd_page(args.url, args.page, args.dpi, args.name)
         return 0
     if args.cmd == "unstrip":
         cmd_unstrip(args.match)
@@ -680,7 +719,7 @@ def main() -> int:
     elif args.cmd == "zip":
         cmd_zip(args.url, args.members, args.lines, args.encoding)
     elif args.cmd == "pdf":
-        cmd_pdf(args.url, args.grep, args.after, args.pages, args.limit)
+        cmd_pdf(args.url, args.grep, args.after, args.pages, args.limit, args.escape)
     elif args.cmd == "cdx":
         cmd_cdx(args.pattern, args.limit, args.match)
     elif args.cmd == "wpmedia":

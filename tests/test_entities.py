@@ -104,6 +104,16 @@ class AdapterMerge(unittest.TestCase):
         self.assertEqual(entity["name"], "Kerala")
         self.assertEqual(entity["parent"], "IND")
 
+    def test_a_figure_drops_the_citation_of_why_its_field_was_empty(self):
+        entity = {"language": common.gap(common.NOT_AVAILABLE, "no table"),
+                  "sources": [{"name": "Ranong", "field": "language (why empty)"},
+                              {"name": "Ranong", "field": "religion (why empty)/"
+                                                          "language (why empty)"}]}
+        be.merge_adapter(entity, {"language": [{"group": "Thai only", "pct": 100.0}],
+                                  "sources": [{"name": "2010", "field": "language"}]})
+        self.assertEqual([(s["name"], s["field"]) for s in entity["sources"]],
+                         [("Ranong", "religion (why empty)"), ("2010", "language")])
+
     def test_sources_accumulate(self):
         entity = {"sources": [{"name": "a"}]}
         be.merge_adapter(entity, {"sources": [{"name": "b"}]})
@@ -2439,7 +2449,7 @@ class ACountryMostOfWhosePartsPublish(unittest.TestCase):
 class TheYearBelongsToTheFigure(unittest.TestCase):
     """A stamp does not outlive the value it described.
 
-    Thailand is the case. Its 76 provinces carry the 2000 census and stamp no
+    Thailand is the case. Its 76 provinces carried the 2000 census and stamped no
     year at all, so the country's sum inherited the 2021 that the Factbook
     estimate it replaced had been wearing, and the panel dated a
     quarter-century-old count to five years ago. Britain and Poland were the
@@ -5670,7 +5680,7 @@ class SiteFreshness(unittest.TestCase):
 class EstimatesAreIndexedButNotCounted(unittest.TestCase):
     """The group index classifies an estimate's groups without counting them.
 
-    Thailand's 76 provinces carry a modelled ethnicity and nothing read. The
+    Thailand's 76 provinces carried a modelled ethnicity and nothing read. The
     index skipped every estimate, so "Central Thai" and "Isan (Lao)" had no
     entry, no parent and no hue, and the map painted the whole country "not
     yet classified" with the estimates switched on. An estimate is still not
