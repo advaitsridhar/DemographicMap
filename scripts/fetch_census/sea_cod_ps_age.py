@@ -164,14 +164,20 @@ COMPOSITION_GAPS: dict[tuple[str, str], dict[str, str]] = {
             "only (key indicators of each provincial final report; a district gets its people "
             f"by sex, household type and age: Ranong's tables, {RANONG_2000})."),
     },
+    # The 2010 census's provincial reports (thailand_2010) print, in their table 6,
+    # the people who speak only Thai at home, Thai and another language, or another
+    # language only, and then each other language by who uses it: Bueng Kan's is
+    # 361,914 only Thai of 362,754.
     ("THA", "admin1"): {
         "language": (
             "Thailand's 2000 census asked the language spoken at home, but each province's final "
             "report gives only its largest minority languages, as shares among the key "
             "indicators (Ranong: Malay 0.5%, Burmese and Mon 7.0% in 2000), never the whole "
-            "distribution, so no province has a language composition that adds up "
-            f"({RANONG_2000}). The National Statistical Office's later census hosts refuse "
-            "automated requests."),
+            f"distribution ({RANONG_2000}). The 2010 census's provincial reports divide a "
+            "province's people into those who speak only Thai at home, Thai and another "
+            "language, or another language only, and count Thai's regional varieties as Thai "
+            "-- Isan-speaking Bueng Kan is 99.8% 'only Thai' -- so neither census gives a "
+            "composition of the province's languages."),
     },
 }
 # The report those sentences measure, in the sources of every unit that says
