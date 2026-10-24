@@ -2,8 +2,10 @@
 
 Each composition comes from a block of section 1.5's table that the report's
 own key indicators bear out, or else from the indicators, and the note says
-why. The samples are the reports' own text layer, as the runner's probes of
-the archived reports printed it. No network.
+why. The samples are cut from the reports' own text layer as the runner's
+probes of the archived reports printed it, except the 1990 and 2000 columns of
+the Mae Hong Son and Nakhon Phanom indicators, which stand in for figures no
+probe printed: only the 2010 column is read. No network.
 """
 
 import json

@@ -1062,6 +1062,13 @@ ADAPTER_FILES = [
     # census's Table 1), ethnicity_basis "nationality". A count, so it replaces
     # thailand_ethnicity's modelled estimate on the 76 provinces.
     "thailand_nationality.json",
+    # Thailand: religion and nationality by province, 2010 census (each
+    # provincial report's section 1.5 table, kept by the Internet Archive and
+    # checked against the report's own key indicators). After both 2000 files,
+    # which it replaces on the 75 provinces whose reports were kept -- Bueng
+    # Kan, made in 2011 and absent from 2000, among them -- and leaves standing
+    # on Lampang and Suphan Buri.
+    "thailand_2010.json",
     # Guatemala's 2018 census, read from INE's person database: pueblo and
     # the language each person learned to speak in, for all 22 departments
     # and 340 municipios. Below CLEAR Global, whose 2002 sample it replaces
@@ -1455,12 +1462,15 @@ IRAN_LANGUAGE = (
     "counties and under a fifth of its people.")
 ADAPTER_GAPS: dict[str, str] = {
     "THA": "The statistical office's own tables have not been obtained from its "
-           "websites. Religion by province is the 2000 census, taken from its "
-           "provincial final reports as transcribed on Wikipedia; language was "
-           "made public once, for 2000, in a table whose shares are not parts of "
-           "one whole. "
-           "Ethnicity is not asked: the provinces carry the 2000 census's count "
-           "of Thai and foreign nationals.",
+           "websites. Religion by province is the 2010 census, taken from its "
+           "provincial reports as the Internet Archive kept them, and the 2000 "
+           "census in Lampang and Suphan Buri, whose 2010 reports it did not keep. "
+           "Language is not a composition in either census's reports: the 2000 "
+           "reports give a province's largest minority languages alone, and the "
+           "2010 reports count Thai's regional varieties as Thai and list other "
+           "languages by who uses them. "
+           "Ethnicity is not asked: the provinces carry the census's count of Thai "
+           "and foreign nationals.",
     # Only language is left for this to explain. The 2016 census's religion
     # by province now comes from iran_census.json, which reads the Statistical
     # Centre's 1395 yearbook as the Internet Archive captured it (amar.org.ir
@@ -7346,15 +7356,18 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     # carries that table (data/curated/admin0_detail.json).
     ("TLS", "religion"): "its municipalities' religion is the 2015 census's, and the "
                          "country's is the 2022 census's",
-    # thailand_nationality and thailand give the 76 provinces the 2000
-    # census's provincial reports, the last to print nationality and religion
-    # by province. The country's figures are later: the Factbook's 2015
-    # nationality line (Thai 97.5%, Burmese 1.3%) and its 2021 religion line.
-    # A sum would put a count from 2000 over both.
-    ("THA", "ethnicity"): "its provinces' nationality is the 2000 census's, and the "
-                          "country's figure is of 2015",
-    ("THA", "religion"): "its provinces' religion is the 2000 census's, and the "
-                         "country's figure is of 2021",
+    # thailand_2010 gives 75 provinces the 2010 census's provincial reports,
+    # the last to print nationality and religion by province, and Lampang and
+    # Suphan Buri, whose 2010 reports the Internet Archive did not keep, keep
+    # the 2000 census's (thailand_nationality, thailand). The country's
+    # figures are later: the Factbook's 2015 nationality line (Thai 97.5%,
+    # Burmese 1.3%) and its 2021 religion line. A sum would put a count from
+    # 2010 over both.
+    ("THA", "ethnicity"): "its provinces' nationality is the 2010 census's (the 2000 "
+                          "census's in Lampang and Suphan Buri), and the country's figure "
+                          "is of 2015",
+    ("THA", "religion"): "its provinces' religion is the 2010 census's (the 2000 census's "
+                         "in Lampang and Suphan Buri), and the country's figure is of 2021",
     # vanuatu_census gives each province Table 6.16 of the 2020 census, first
     # language learned, which the census asked only of the people who speak
     # one of the islands' own languages: 84-97% of each province, every share
