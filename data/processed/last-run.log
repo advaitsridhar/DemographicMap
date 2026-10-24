@@ -1,1 +1,20 @@
-thailand_2010: no report for ['Nakhon.Pathom', 'Nakhon.Phanom', 'Phra.Nakhon.Si.Ayutthaya']
+thailand_2010: 4 provincial reports of the 2010 census
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/thailand_2010.py", line 777, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/thailand_2010.py", line 747, in main
+    texts[province] = report_text(fetch(province))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/thailand_2010.py", line 360, in report_text
+    if cut is not None and languages(lines) is not None:
+                           ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/thailand_2010.py", line 478, in languages
+    row = counted(line)
+          ^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/thailand_2010.py", line 468, in counted
+    return label(m.group(1)), 0 if m.group(2) == "-" else int(m.group(2).replace(",", ""))
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
