@@ -1309,6 +1309,10 @@ RESIDUAL: frozenset[str] = frozenset({
     # Liberia's and Sierra Leone's censuses: the citizens of no group the
     # table names, and the residents who are not citizens at all.
     "Other Liberian", "Non-Sierra Leonean",
+    # The nationalities a census table does not name, and Thailand's everyone
+    # not of Thai nationality: group_tree files both in the drawer each census
+    # keeps for the people it did not name, and neither may lead a unit.
+    "Other nationalities", "Foreign, stateless or unknown",
     "Some other race (non-Hispanic)", "Other and unspecified languages",
     # A marker the source prints where it has nothing to report. It is not a
     # group at all, and until it was named here it read as one: grey on the

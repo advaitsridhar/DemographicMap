@@ -1062,12 +1062,12 @@ ADAPTER_FILES = [
     # census's Table 1), ethnicity_basis "nationality". A count, so it replaces
     # thailand_ethnicity's modelled estimate on the 76 provinces.
     "thailand_nationality.json",
-    # Thailand: religion and nationality by province, 2010 census (each
-    # provincial report's section 1.5 table, kept by the Internet Archive and
-    # checked against the report's own key indicators). After both 2000 files,
-    # which it replaces on the 75 provinces whose reports were kept -- Bueng
-    # Kan, made in 2011 and absent from 2000, among them -- and leaves standing
-    # on Lampang and Suphan Buri.
+    # Thailand: religion, nationality and the language spoken at home by
+    # province, 2010 census (each provincial report's section 1.5 table, checked
+    # against the report's own key indicators, and its annex's table 6), as the
+    # Internet Archive kept the reports. After both 2000 files, which it replaces
+    # on 74 provinces; it adds Bueng Kan, made in 2011 and absent from 2000, and
+    # leaves Lampang and Suphan Buri standing.
     "thailand_2010.json",
     # Guatemala's 2018 census, read from INE's person database: pueblo and
     # the language each person learned to speak in, for all 22 departments
@@ -1462,13 +1462,11 @@ IRAN_LANGUAGE = (
     "counties and under a fifth of its people.")
 ADAPTER_GAPS: dict[str, str] = {
     "THA": "The statistical office's own tables have not been obtained from its "
-           "websites. Religion by province is the 2010 census, taken from its "
-           "provincial reports as the Internet Archive kept them, and the 2000 "
-           "census in Lampang and Suphan Buri, whose 2010 reports it did not keep. "
-           "Language is not a composition in either census's reports: the 2000 "
-           "reports give a province's largest minority languages alone, and the "
-           "2010 reports count Thai's regional varieties as Thai and list other "
-           "languages by who uses them. "
+           "websites. Religion, nationality and the language spoken at home by "
+           "province are the 2010 census's, from its provincial reports as the "
+           "Internet Archive kept them; Lampang and Suphan Buri, whose 2010 reports "
+           "it did not keep, carry the 2000 census's religion and nationality and no "
+           "language. No census table gives a district any of the three. "
            "Ethnicity is not asked: the provinces carry the census's count of Thai "
            "and foreign nationals.",
     # Only language is left for this to explain. The 2016 census's religion
@@ -7357,7 +7355,7 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     ("TLS", "religion"): "its municipalities' religion is the 2015 census's, and the "
                          "country's is the 2022 census's",
     # thailand_2010 gives 75 provinces the 2010 census's provincial reports,
-    # the last to print nationality and religion by province, and Lampang and
+    # the latest whose provincial tables have been obtained, and Lampang and
     # Suphan Buri, whose 2010 reports the Internet Archive did not keep, keep
     # the 2000 census's (thailand_nationality, thailand). The country's
     # figures are later: the Factbook's 2015 nationality line (Thai 97.5%,
@@ -11496,8 +11494,10 @@ def gaps_from(src: dict[str, Any], target: str, iso3: str) -> dict[str, Any] | N
             continue
         year = src.get(f"{field}_year")
         when = f" in {year}" if year else ""
-        # Not "no source publishes it": Thailand's 2010 census did, for the
-        # new province. What is true is that none read here does.
+        # Not "no source publishes it": Thailand's 2010 census did, for the new
+        # province. What is true is that this file does not; the gap is written
+        # for a file that carries the old row alone, and a file that publishes
+        # the new province (thailand_2010) fills it.
         row[field] = gap(NOT_AVAILABLE, (
             f"No {field} figure for {target} on its own has been read. The one "
             f"read for {src['name']}{when} counted this ground as part of it, and a "

@@ -138,10 +138,13 @@ UNUSUAL_RATIO = (85.0, 115.0)
 
 # Why Thailand's districts (and its provinces' languages) carry no composition,
 # said on the units this reader already binds. Measured on the 2000 census's
-# provincial tables, the one census whose district tables an archive keeps:
-# Ranong's workbook (tables 1-4 and the key indicators) gives a district its
-# people by sex, household type and age group only, and the province its
-# religion and minority languages only as shares among its key indicators.
+# provincial tables -- Ranong's workbook (tables 1-4 and the key indicators)
+# gives a district its people by sex, household type and age group only, and
+# the province its religion and minority languages only as shares among its key
+# indicators -- and on the 2010 census's provincial reports (thailand_2010),
+# whose tables also stop at the province: a district gets its people by sex,
+# household type and age, and religion, nationality and language (table 6) are
+# the province's.
 RANONG_2000 = ("web.archive.org/web/20110615044445/http://web.nso.go.th/pop2000/finalrep/"
                "tables/ranong/ranong1.xls")
 COMPOSITION_GAPS: dict[tuple[str, str], dict[str, str]] = {
@@ -150,34 +153,31 @@ COMPOSITION_GAPS: dict[tuple[str, str], dict[str, str]] = {
             "Thailand's censuses publish religion by province, not by district. The 2000 "
             "census's provincial final reports give a district (amphoe) only its population by "
             "sex, household type and five-year age group (tables 1 and 2) and put religion only "
-            f"among the province's key indicators (Ranong's tables, {RANONG_2000}); the "
-            "National Statistical Office's later census hosts refuse automated requests."),
+            f"among the province's key indicators (Ranong's tables, {RANONG_2000}); the 2010 "
+            "census's provincial reports likewise give religion for the province only."),
         "language": (
-            "Thailand's 2000 census asked the language spoken at home, and its provincial final "
-            "reports give only the province's largest minority languages, as shares among its "
-            "key indicators (Ranong: Malay 0.5%, Burmese and Mon 7.0%); no table gives a "
-            f"district's languages (Ranong's tables, {RANONG_2000}). The National Statistical "
-            "Office's later census hosts refuse automated requests."),
+            "Thailand's censuses publish the language spoken at home by province, not by "
+            "district. The 2000 census's provincial final reports give only the province's "
+            "largest minority languages, as shares among its key indicators (Ranong: Malay "
+            f"0.5%, Burmese and Mon 7.0%), and no table gives a district's languages (Ranong's "
+            f"tables, {RANONG_2000}); the 2010 census's provincial reports count it for the "
+            "province only."),
         "ethnicity": (
             "Thailand's census does not ask ethnicity; it asks nationality, religion and the "
-            "language spoken at home, and the 2000 census published those for the province "
-            "only (key indicators of each provincial final report; a district gets its people "
-            f"by sex, household type and age: Ranong's tables, {RANONG_2000})."),
+            "language spoken at home, and the 2000 and 2010 censuses published those for the "
+            "province only (in the 2000 census's provincial final reports a district gets its "
+            f"people by sex, household type and age: Ranong's tables, {RANONG_2000})."),
     },
-    # The 2010 census's provincial reports (thailand_2010) print, in their table 6,
-    # the people who speak only Thai at home, Thai and another language, or another
-    # language only, and then each other language by who uses it: Bueng Kan's is
-    # 361,914 only Thai of 362,754.
+    # Shown on the provinces whose 2010 report the Internet Archive did not keep,
+    # Lampang and Suphan Buri; thailand_2010 gives the others the report's table 6.
     ("THA", "admin1"): {
         "language": (
             "Thailand's 2000 census asked the language spoken at home, but each province's final "
             "report gives only its largest minority languages, as shares among the key "
             "indicators (Ranong: Malay 0.5%, Burmese and Mon 7.0% in 2000), never the whole "
-            f"distribution ({RANONG_2000}). The 2010 census's provincial reports divide a "
-            "province's people into those who speak only Thai at home, Thai and another "
-            "language, or another language only, and count Thai's regional varieties as Thai "
-            "-- Isan-speaking Bueng Kan is 99.8% 'only Thai' -- so neither census gives a "
-            "composition of the province's languages."),
+            f"distribution ({RANONG_2000}). The 2010 census counted it for each province, in "
+            "table 6 of the province's report, which is shown wherever the Internet Archive "
+            "kept the report: every province but Lampang and Suphan Buri."),
     },
 }
 # The report those sentences measure, in the sources of every unit that says

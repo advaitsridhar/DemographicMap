@@ -1,44 +1,58 @@
 #!/usr/bin/env python3
-"""Thailand: religion and nationality by province, from the 2010 census's provincial reports.
+"""Thailand: religion, nationality and language by province, from the 2010 census's provincial reports.
 
 The 2000 census is read for all of Thailand (``thailand``, ``thailand_nationality``)
 and has no row for **Bueng Kan**, which was made from eight districts of Nong
 Khai in March 2011. The 2010 Population and Housing Census was taken in
 September 2010, and the National Statistical Office published a report for
 each of the 77 provinces it had by then, Bueng Kan among them
-(``popcensus.nso.go.th/report/<Province>_T.pdf``). The Office's hosts refuse
-this project (``thailand``'s docstring has the evidence), and the Internet
-Archive kept 75 of the reports; ``CAPTURES`` names each file and the capture
-read. Lampang's and Suphan Buri's were not captured, and those two keep 2000.
+(``popcensus.nso.go.th/report/<Province>_T.pdf``). That host no longer
+resolves, and the Office's others refuse this project (docs/SOURCES.md,
+*Thailand: a language table that cannot be a composition*); the Internet
+Archive kept 75 of the reports, and ``CAPTURES`` names each file and the
+capture read. Lampang's and Suphan Buri's were not captured, and those two keep
+2000.
 
-**What is read.** Each report's section 1.5, "Religion and nationality",
-prints a table of the province's people by religion and by nationality, in
-percent, for the province and for its municipal and non-municipal areas; the
-province's own column, the first, is read. Its rows are the faiths and the
-nationalities the province has: Buddhist, Muslim, Christian and others; Thai
-and the few nationalities the province counts most of (Lao along the Mekong,
-Burmese and Cambodian on the borders, Chinese, Japanese and British where they
-live), and others. A row printed "a" (under 0.1%) or 0.0 is left out. The
-table is found by its 100.0 rows, not by its number, and read as the text
-layer lays it out: a nationality block continued on the next page (Nong
-Khai's), figures that fall to the line under their label (Yala's, Saraburi's),
-a footnote mark after a label (Ratchaburi's), a figure split at its point
-(Phuket's "3. 6"), a misprinted later column (Krabi's "614"), Thai marks drawn
-from a font's private-use glyphs. Bangkok's nationality block is the one whose
-text comes apart; ``FROM_PAGE`` holds its rows as the page prints them.
+**Religion and nationality.** Each report's section 1.5, "Religion and
+nationality", prints a table of the province's people by religion and by
+nationality, in percent, for the province and for its municipal and
+non-municipal areas; the province's own column, the first, is read. Its rows
+are the faiths and the nationalities the province has: Buddhist, Muslim,
+Christian and others; Thai and the few nationalities the province counts most
+of (Lao along the Mekong, Burmese and Cambodian on the borders, Malaysian in
+the far south, Chinese, Japanese and British where they live), and others. A
+row printed "a" (under 0.1%) or 0.0 is left out. The table is found by its
+100.0 rows, not by its number, and read as the text layer lays it out: a
+nationality block continued on the next page (Nong Khai's), figures that fall
+to the line under their label (Yala's, Saraburi's), a footnote mark after a
+label (Ratchaburi's), a figure split at its point (Phuket's "3. 6"), a
+misprinted later column (Krabi's "614"), Thai marks drawn from a font's
+private-use glyphs. Bangkok's nationality block is the one whose text comes
+apart; ``FROM_PAGE`` holds its rows as the page prints them. A footnote under
+the table that leaves out people whose answer was not known (Phuket's,
+Ratchaburi's) is said in the note.
 
 **Every block is checked against the report's own key indicators**, the page
 near the front that prints "Thai citizenship (%)" and "Buddhism (%)" for 1990,
 2000 and 2010. A block stands when its Thai (or Buddhist) row is the
-indicators' 2010 figure, or one in the last digit from it, and its rows add
-to 100; otherwise the indicators stand in its place -- the Thai share and
-everyone else, as the 2000 reading does, and Buddhism with the other faiths
-they print -- and the note says why. Where the two part by more than a digit,
-the table's Thai share is the higher, as it is in a table that leaves out
-people whose nationality is not known (Ratchaburi's and Phuket's footnotes say
-theirs do), and the indicators count everyone: Mae Hong Son's table prints
-94.1% Thai and its indicators 90.0%. A block printed word for word in two
-reports is held to the exact figure in both.
+indicators' 2010 figure, or one in the last digit from it, and its rows can
+add to 100 once rounding is allowed for (``adds_up``: each printed figure
+within 0.05, each "a" under 0.1); otherwise the indicators stand in its place
+-- the Thai share and everyone else, as the 2000 reading does, and Buddhism
+with the other faiths they print -- and the note says why. Where the two part
+by more than a digit the table's Thai share is the higher every time (Mae Hong
+Son's prints 94.1% and its indicators 90.0%); why is not printed. Two tables'
+footnotes say they leave out people whose nationality was not known, which
+would raise the Thai share, but those two print their indicators' figure
+exactly. A block printed word for word in two reports is held to the exact
+figure in both.
+
+**Language** is table 6 of each report's statistical annex, its people by the
+languages they usually speak at home: only Thai, Thai and another language, or
+another language only, as counts that add up to the province, shown as shares
+in the words of the country's figure (the Factbook's line for the same census).
+Thai there takes in its regional varieties: Isan-speaking Bueng Kan counts
+361,914 of its 362,754 people as speaking only Thai.
 
 **Bueng Kan and Nong Khai.** Nong Khai's report counts the province as it
 was at the census, all seventeen districts: its district tables list Bueng
@@ -51,7 +65,7 @@ covers both (the build's ``ROW_COVERS_SHAPES`` keeps a row on its own shape).
 Usage:
     python -m scripts.fetch_census.thailand_2010
     python -m scripts.fetch_census.thailand_2010 --probe          # print, write nothing
-    python -m scripts.fetch_census.thailand_2010 --only "Bueng Kan"
+    python -m scripts.fetch_census.thailand_2010 --only "Bueng Kan"   # print, write nothing
 """
 
 from __future__ import annotations
@@ -75,6 +89,8 @@ SOURCE = ("National Statistical Office, 2010 Population and Housing Census, {pro
           "report: section 1.5, people by religion and nationality (percent)")
 INDICATORS = ("National Statistical Office, 2010 Population and Housing Census, {province} "
               "report: key indicators, 2010")
+LANGUAGE_SOURCE = ("National Statistical Office, 2010 Population and Housing Census, {province} "
+                   "report: table 6, population by usual languages spoken at home")
 # Seconds between two reports fetched from the Archive, which asks to be read
 # gently; a report already in the cache costs nothing and waits for nothing.
 PAUSE = 3.0
@@ -179,6 +195,13 @@ NATIONALITIES = {"ไทย": "Thai", "ลาว": "Lao", "พม่า": "Burme
 LABELS = set(RELIGIONS) | set(NATIONALITIES)
 RESIDUAL_FAITH = "Other or not stated"
 RESIDUAL_NATIONALITY = "Foreign, stateless or unknown"
+# Table 6's first three rows, the people who usually speak only Thai at home,
+# Thai and another language, or another language only, in the words of the
+# country's figure, which is the Factbook's line for the same census.
+LANGUAGES = {"ภาษาไทยภาษาเดียว": "Thai only", "ภาษาไทยและภาษาอื่น": "Thai and other languages",
+             "ภาษาอื่นอย่างเดียว": "only other languages"}
+TABLE6 = re.compile(r"ตารางที่\s*6\s+ประชากร.*ภาษา")
+COUNT_ROW = re.compile(r"^\s*(\D+?)\s+([\d,]+|-)(?=\s|$)")
 
 VALUE = r"(?:a|-|\d+\.\d)"
 # A column after the first, as printed: only the first is read, and a later one
@@ -220,6 +243,9 @@ FAITH = re.compile(r"(\d+\.\d)\s+(Budd\w*|Muslims?|Islam\w*|Christian\w*)\s*\(%\
 # both seen, so that a block continued on the next page is read: Nong Khai's
 # nationality rows are on the page after its religion rows.
 MORE = 2
+# How far into a report its statistical annex is searched for table 6, which
+# sits some fifty to seventy pages in.
+ANNEX_PAGES = 140
 
 # Rows read from the printed page where its text layer comes apart. Bangkok's
 # nationality block, on page 35 of its report, extracts as scattered fragments
@@ -253,15 +279,28 @@ NOTE_FROM_INDICATORS = (
     "table cannot be used -- {why} -- so the key indicators' figures are shown.")
 WHY_ROW = "it prints {row} {table}% where the key indicators print {printed}%"
 WHY_MISSING = "it has no {row} row"
-WHY_SUM = "its rows add to {total:.1f}%"
+WHY_SUM = "its rows add to {total:.1f}%, further from 100 than rounding allows"
 WHY_COPY = ("its rows are {other}'s, word for word, and print {row} {table}% where the key "
             "indicators print {printed}%")
 WHY_NONE = "its rows cannot be read in the archived copy of the report"
 NOTE_INDICATOR_FAITHS = (
     " They name only the faiths shown; '{residual}' is what those leave of 100%.")
 NOTE_INDICATOR_NATIONALITY = (
-    " They print the share of Thai nationality alone; '{residual}' is everyone else: people "
-    "of another nationality, of none, and anyone whose nationality was not recorded.")
+    " They print the share of Thai nationality and the share of people not of Thai "
+    "nationality, shown here as '{residual}'.")
+# A footnote under the table that says it leaves out the people whose answer was
+# not known: Phuket's marks the whole table, Ratchaburi's its nationality rows.
+NOTE_UNKNOWN = {"religion": " The table leaves out people whose answer was not known, as its "
+                            "footnote says.",
+                "nationality": " The table leaves out people whose nationality was not known, "
+                               "as its footnote says."}
+NOTE_LANGUAGE = (
+    "The 2010 Population and Housing Census, the province's report, table 6: the province's "
+    "people by the languages they usually speak at home, as shares of the table's counts. "
+    "Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of "
+    "its people as speaking only Thai -- and the table lists the other languages spoken, "
+    "Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who "
+    "speaks them. A share under 0.05% is left out.")
 NOTE_SPLIT = {
     "Bueng Kan": (" Bueng Kan was made from eight districts of Nong Khai in March 2011, six "
                   "months after the census was taken; the Office published those districts' "
@@ -286,6 +325,8 @@ class Reading:
     nationality_from: str = "table"
     religion_note: str = ""
     nationality_note: str = ""
+    language: list[dict[str, Any]] = field(default_factory=list)
+    language_note: str = ""
     problems: list[str] = field(default_factory=list)
     # Every block found, and the block each composition stands on.
     found: dict[str, list[Block]] = field(default_factory=dict)
@@ -298,20 +339,25 @@ def clean(line: str) -> str:
     return re.sub(r"(?<=\d)\. (?=\d)", ".", line.translate(TEXT))
 
 
-def text_lines(body: bytes, pages: int = PAGES) -> list[str]:
-    """A report's text layer, line by line, to ``MORE`` pages past the one where
-    the table and the key indicators were first both seen."""
+def report_text(body: bytes) -> tuple[list[str], list[str]]:
+    """A report's text layer, line by line, twice: its front, to ``MORE`` pages
+    past the one where section 1.5's table and the key indicators were first
+    both seen (``PAGES`` at most), and all that was read, which goes on into the
+    statistical annex as far as its table 6."""
     from pypdf import PdfReader                      # noqa: PLC0415 -- optional
     reader = PdfReader(io.BytesIO(body))
     lines: list[str] = []
-    seen = None
-    for number, page in enumerate(reader.pages[:pages]):
+    cut = seen = None
+    for number, page in enumerate(reader.pages[:ANNEX_PAGES]):
         lines.extend(clean(line) for line in (page.extract_text() or "").splitlines())
-        if seen is None and all(blocks(lines).values()) and THAI.search("\n".join(lines)):
-            seen = number
-        if seen is not None and number >= seen + MORE:
+        if cut is None:
+            if seen is None and all(blocks(lines).values()) and THAI.search("\n".join(lines)):
+                seen = number
+            if (seen is not None and number >= seen + MORE) or number + 1 >= PAGES:
+                cut = len(lines)
+        if cut is not None and languages(lines) is not None:
             break
-    return lines
+    return lines[:cut], lines
 
 
 def label(text: str) -> str:
@@ -319,10 +365,11 @@ def label(text: str) -> str:
     return re.sub(r"\s+", "", text)
 
 
-def blocks(lines: list[str]) -> dict[str, list[Block]]:
+def blocks(lines: list[str], notes: list[str] | None = None) -> dict[str, list[Block]]:
     """Every religion block and every nationality block of section 1.5's table,
     in the order printed. A block is a 100.0 row and the rows under it, to a
-    footnote, the next block or the first line that is not a row."""
+    footnote, the next block or the first line that is not a row. ``notes``,
+    given, gathers the footnotes that end a block."""
     found: dict[str, list[Block]] = {"religion": [], "nationality": []}
     rows: Block | None = None
     i = 0
@@ -335,7 +382,12 @@ def blocks(lines: list[str]) -> dict[str, list[Block]]:
             continue
         if rows is None or not line.strip():
             continue
-        row = None if FOOTNOTE.search(line) else ROW.match(line)
+        if FOOTNOTE.search(line):
+            if notes is not None:
+                notes.append(line.strip())
+            rows = None
+            continue
+        row = ROW.match(line)
         if row is None and label(line) in LABELS:
             j = i
             while j < len(lines) and not lines[j].strip():
@@ -396,19 +448,68 @@ def frozen(block: Block) -> tuple:
     return tuple((text, tuple(values)) for text, values in block)
 
 
+def adds_up(block: Block) -> tuple[bool, float]:
+    """Whether a block's first column can be 100 once rounding is allowed for --
+    each printed figure within 0.05 of its share, each "a" under 0.1 -- and the
+    printed figures' sum."""
+    printed = [float(values[0]) for _, values in block if values[0] not in ("a", "-")]
+    small = sum(values[0] == "a" for _, values in block)
+    total = round(sum(printed), 1)
+    give = 0.05 * len(printed) + 1e-9
+    return total - give <= 100.0 <= total + give + 0.1 * small, total
+
+
+def languages(lines: list[str]) -> dict[str, int] | None:
+    """Table 6's first column: everyone, and the people who usually speak only
+    Thai at home, Thai and another language, or another language only. None
+    until a table 6 heading is followed by all four rows (the contents page
+    names the table too)."""
+    for i, line in enumerate(lines):
+        if not TABLE6.search(line):
+            continue
+        out: dict[str, int] = {}
+        for row in lines[i + 1:i + 16]:
+            if (m := COUNT_ROW.match(row)) is None:
+                continue
+            name = label(m.group(1))
+            count = 0 if m.group(2) == "-" else int(m.group(2).replace(",", ""))
+            if name == "ยอดรวม":
+                out.setdefault("total", count)
+            elif name in LANGUAGES:
+                out.setdefault(LANGUAGES[name], count)
+        if len(out) == 1 + len(LANGUAGES):
+            return out
+    return None
+
+
+def language_shares(counts: dict[str, int], problems: list[str]) -> list[dict[str, Any]]:
+    """Table 6's three rows as shares of its total, which they must add up to."""
+    total = counts["total"]
+    parts = sum(counts[group] for group in LANGUAGES.values())
+    if total <= 0 or abs(parts - total) > max(2, total // 1000):
+        problems.append(f"language: table 6's rows add to {parts:,} of {total:,}")
+        return []
+    shares = [(group, round(100.0 * counts[group] / total, 1)) for group in LANGUAGES.values()]
+    return [{"group": group, "pct": pct} for group, pct in shares if pct > 0]
+
+
 def read(province: str, lines: list[str],
-         copies: dict[str, tuple[str, tuple]] | None = None) -> Reading:
+         copies: dict[str, tuple[str, tuple]] | None = None,
+         annex: list[str] | None = None) -> Reading:
     """A report's religion and nationality, each from the block of section 1.5's
     table its key indicators bear out, or else from the indicators.
 
     A block stands when its Buddhist (or Thai) row is the indicators' 2010 figure,
-    or within ``SLACK`` of it, and its rows add to 100: an exact block before a
-    near one, an earlier before a later. ``copies`` names, for a composition, the
-    province whose block is word for word one of this report's, and that block:
-    it stands only on the exact figure."""
+    or within ``SLACK`` of it, and its rows add to 100 as far as rounding allows
+    (``adds_up``): an exact block before a near one, an earlier before a later.
+    ``copies`` names, for a composition, the province whose block is word for
+    word one of this report's, and that block: it stands only on the exact
+    figure. Language is table 6 of ``annex``, the report's text as far as its
+    statistical annex (``lines`` when not given)."""
     copies = copies or {}
     reading = Reading(province)
-    found = blocks(lines)
+    notes: list[str] = []
+    found = blocks(lines, notes)
     for what, rows in FROM_PAGE.get(province, {}).items():
         if not found[what]:
             found[what] = [rows]
@@ -426,7 +527,7 @@ def read(province: str, lines: list[str],
             if problems:
                 continue
             table = first(rows, group)
-            total = round(sum(r["pct"] for r in rows), 1)
+            whole, total = adds_up(block)
             copy = copies.get(what)
             copied_here = copy is not None and copy[1] == frozen(block)
             limit = 0.0 if copied_here else SLACK
@@ -436,7 +537,7 @@ def read(province: str, lines: list[str],
                 off = math.inf
             else:
                 off = round(abs(float(table) - float(printed)), 1)
-            if off <= limit and 99.5 <= total <= 100.5:
+            if off <= limit and whole:
                 if best is None or off < best[0]:
                     best = (off, rows, block)
                 continue
@@ -454,7 +555,7 @@ def read(province: str, lines: list[str],
                 reading.problems.append(f"{what}: no key indicator to check the table by")
             setattr(reading, what, best[1])
             reading.raw[what] = best[2]
-            setattr(reading, f"{what}_note", table_note(what, best[1]))
+            setattr(reading, f"{what}_note", table_note(what, best[1]) + unknown_note(what, notes))
         elif printed is not None:
             setattr(reading, f"{what}_from", "indicators")
             setattr(reading, what, from_indicators(what, key))
@@ -462,14 +563,32 @@ def read(province: str, lines: list[str],
         else:
             reading.problems.append(f"{what}: neither a table that adds up nor key indicators")
 
-    for what in ("religion", "nationality"):
+    counts = languages(lines if annex is None else annex)
+    if counts is None:
+        reading.problems.append("language: no table 6 with its four rows")
+    else:
+        reading.language = language_shares(counts, reading.problems)
+        reading.language_note = NOTE_LANGUAGE if reading.language else ""
+
+    for what in ("religion", "nationality", "language"):
         rows = getattr(reading, what)
         total = sum(r["pct"] for r in rows)
         if rows and not 99.5 <= total <= 100.5:
             reading.problems.append(f"{what} adds to {total:.1f}")
-        setattr(reading, f"{what}_note",
-                getattr(reading, f"{what}_note") + NOTE_SPLIT.get(province, ""))
+        if rows:
+            setattr(reading, f"{what}_note",
+                    getattr(reading, f"{what}_note") + NOTE_SPLIT.get(province, ""))
     return reading
+
+
+def unknown_note(what: str, notes: list[str]) -> str:
+    """The sentence for a footnote under the table that leaves out the unknown:
+    one about nationality speaks to the nationality rows alone."""
+    for note in notes:
+        if re.search(r"ไม่รวม.*ไม่ทราบ", note) and (what == "nationality"
+                                                   or "สัญชาติ" not in note):
+            return NOTE_UNKNOWN[what]
+    return ""
 
 
 def table_note(what: str, rows: list[dict[str, Any]]) -> str:
@@ -528,13 +647,16 @@ def build(readings: list[Reading], admin1: list[dict[str, Any]]) -> list[dict[st
         for what, rows, note, frm in (("religion", reading.religion, reading.religion_note,
                                        reading.religion_from),
                                       ("ethnicity", reading.nationality,
-                                       reading.nationality_note, reading.nationality_from)):
+                                       reading.nationality_note, reading.nationality_from),
+                                      ("language", reading.language, reading.language_note,
+                                       "annex")):
             if not rows:
                 continue
             fields[what] = rows
             fields[f"{what}_year"] = YEAR
             fields[f"{what}_note"] = note
-            name = (SOURCE if frm == "table" else INDICATORS).format(province=reading.province)
+            name = {"table": SOURCE, "indicators": INDICATORS,
+                    "annex": LANGUAGE_SOURCE}[frm].format(province=reading.province)
             sources.append({"field": what, "name": name, "url": url, "year": YEAR,
                             "license": LICENCE})
         if "ethnicity" in fields:
@@ -555,17 +677,21 @@ def fetch(province: str) -> bytes:
                     binary=True, timeout=300)
 
 
-def settle(texts: dict[str, list[str]]) -> tuple[dict[str, Reading], list[str]]:
+def settle(texts: dict[str, Any]) -> tuple[dict[str, Reading], list[str]]:
     """Every report read; then read again, for a block it stands on that another
     report's reading stands on too, word for word, with that block held to the
-    exact figure. With a line for each such block."""
-    readings = {province: read(province, lines) for province, lines in texts.items()}
+    exact figure. With a line for each such block. A report's text is its lines,
+    or (front, annex) as ``report_text`` gives them."""
+    texts = {p: t if isinstance(t, tuple) else (t, t) for p, t in texts.items()}
+    readings = {province: read(province, front, annex=annex)
+                for province, (front, annex) in texts.items()}
     held: dict[str, dict[str, tuple[str, tuple]]] = {}
     for province, what, other in copied(list(readings.values())):
         held.setdefault(province, {})[what] = (other, frozen(readings[province].raw[what]))
     lines = []
     for province, copies in sorted(held.items()):
-        readings[province] = read(province, texts[province], copies)
+        front, annex = texts[province]
+        readings[province] = read(province, front, copies, annex)
         for what, (other, block) in sorted(copies.items()):
             raw = readings[province].raw.get(what)
             stood = raw is not None and frozen(raw) == block
@@ -579,7 +705,8 @@ def show(reading: Reading, probe: bool) -> None:
     log(f"  {reading.province}: religion ({reading.religion_from}) "
         + ", ".join(f"{r['group']} {r['pct']}" for r in reading.religion)
         + f"; nationality ({reading.nationality_from}) "
-        + ", ".join(f"{r['group']} {r['pct']}" for r in reading.nationality))
+        + ", ".join(f"{r['group']} {r['pct']}" for r in reading.nationality)
+        + "; language " + ", ".join(f"{r['group']} {r['pct']}" for r in reading.language))
     for problem in reading.problems:
         log(f"    PROBLEM {problem}")
     if probe:
@@ -594,7 +721,8 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--probe", action="store_true",
                     help="print every report's blocks and indicators; write nothing")
-    ap.add_argument("--only", action="append", default=[], help="a province, repeatable")
+    ap.add_argument("--only", action="append", default=[],
+                    help="a province, repeatable; prints its reading and writes nothing")
     args = ap.parse_args()
 
     provinces = args.only or sorted(CAPTURES)
@@ -602,12 +730,13 @@ def main() -> int:
     if unknown:
         raise SystemExit(f"thailand_2010: no report for {unknown}")
     log(f"thailand_2010: {len(provinces)} provincial reports of the 2010 census")
-    texts: dict[str, list[str]] = {}
+    texts: dict[str, tuple[list[str], list[str]]] = {}
     for province in provinces:
         started = time.monotonic()
-        texts[province] = text_lines(fetch(province))
+        texts[province] = report_text(fetch(province))
         took = time.monotonic() - started
-        log(f"  {province}: {len(texts[province])} lines in {took:.0f} s")
+        log(f"  {province}: {len(texts[province][0])} lines, {len(texts[province][1])} "
+            f"with the annex, in {took:.0f} s")
         if took > 1.0:
             time.sleep(PAUSE)                        # a fetch, not the cache
     readings, held = settle(texts)
@@ -616,6 +745,10 @@ def main() -> int:
     for line in held:
         log(f"  copied: {line}")
     if args.probe:
+        return 0
+    if args.only:
+        # The file is every report's; some of them written alone would empty the rest.
+        log(f"  --only: {OUT} is not written")
         return 0
     problems = [f"{r.province}: {p}" for r in readings.values() for p in r.problems]
     if problems:

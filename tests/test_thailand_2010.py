@@ -2,7 +2,7 @@
 
 Each composition comes from a block of section 1.5's table that the report's
 own key indicators bear out, or else from the indicators, and the note says
-why. The samples are cut from the reports' own text layer as the runner's
+why; language comes from table 6 of the report's statistical annex. The samples are cut from the reports' own text layer as the runner's
 probes of the archived reports printed it, except the 1990 and 2000 columns of
 the Mae Hong Son and Nakhon Phanom indicators, which stand in for figures no
 probe printed: only the 2010 column is read. No network.
@@ -12,6 +12,7 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -216,8 +217,47 @@ NAKHON_PHANOM = """\
 """.splitlines()
 
 
+# Bueng Kan's table 6 (page 58), after the contents page that names it.
+BUENG_KAN_TABLE_6 = """\
+    ตารางที่   6  ประชากรจําแนกตามภาษาที่ใช้พูดในครัวเรือน เพศ และเขตการปกครอง
+    ตารางที่   7  ประชากรอายุ 3 ปีขึ้นไป จําแนกตามระดับชั้นที่กําลังเรียน กลุ่มอายุ เพศ และเขตการปกครอง
+    ตารางที่  6  ประชากร จําแนกตามภาษาที่ใช้พูดในครัวเรือน เพศ และเขตการปกครอง
+    Table   6   Population by usual languages spoken at home, sex and area
+    ภาษาที่ใช้พูด Usual languages
+    ในครัวเรือน รวม ชาย หญ ิงร ว ม ช า ย ห ญ ิงร ว ม ช า ย ห ญ ิง spoken at home
+    Total Male Female Total Male Female Total Male Female
+    ยอดรวม 362,754 179,422 183,333 89,227 43,956 45,271 273,527 135,466 138,062 Total
+    ภาษาไทยภาษาเดียว 361,914 178,999 182,915 88,815 43,752 45,062 273,099 135,246 137,853 Only Thai Language
+    ภาษาไทยและภาษาอื่น 829 419 411 405 199 205 424 219 205 Thai and others languages
+    ภาษาอื่นอย่างเดียว 11 4 7 7 4 3 4 - 4 Only others languages
+    ภาษาอื่นๆ ที่ใช้ 55 33 22 8 5 3 47 28 19 Others languages
+       กระเหรี่ยง 179 86 93 35 20 15 144 66 78    Karen
+""".splitlines()
+
+# Maha Sarakham's nationality block, which prints no other row and adds to 99.7.
+MAHA_SARAKHAM = """\
+      ประชากรที่มีสัญชาติไทย (%) na 99.5 99.1   Thai citizenship (%)
+      ประชากรที่นับถือศาสนาพุทธ (%) 99.6 99.5 99.4   Buddhism (%)
+    ศาสนา 100.0 100.0 100.0
+    พุทธ 99.4 99.5 97.0
+    คริสต์ 0.3 0.2 0.2
+    อิสลาม 0.2 0.3 0.3
+    สัญชาติ    100.0      100.0       100.0
+    ไทย 99.1        99.8         99.0
+    ลาว  0.4          0.0           0.4
+    พม่า        0.2          0.0           0.2
+\x20\x20\x20\x20
+    1.6  สถานภาพสมรส
+""".splitlines()
+
+
 def groups(rows):
     return {r["group"]: r["pct"] for r in rows}
+
+
+def problems(reading):
+    """A reading's problems with section 1.5's table, the samples having no table 6."""
+    return [p for p in reading.problems if not p.startswith("language:")]
 
 
 def nationality(lines, head=("      ประชากรที่มีสัญชาติไทย (%) 98.3   Thai citizenship (%)",)):
@@ -228,7 +268,7 @@ class ReadingTheTable(unittest.TestCase):
 
     def test_the_province_s_own_column_is_read_and_a_rows_are_left_out(self):
         reading = t.read("Bueng Kan", BUENG_KAN)
-        self.assertEqual(reading.problems, [])
+        self.assertEqual(problems(reading), [])
         self.assertEqual((reading.religion_from, reading.nationality_from), ("table", "table"))
         self.assertEqual(groups(reading.religion),
                          {"Buddhism": 99.4, "Islam": 0.1, "Christianity": 0.5})
@@ -236,13 +276,13 @@ class ReadingTheTable(unittest.TestCase):
 
     def test_a_block_continued_on_the_next_page_is_read(self):
         reading = t.read("Nong Khai", NONG_KHAI)
-        self.assertEqual(reading.problems, [])
+        self.assertEqual(problems(reading), [])
         self.assertEqual(groups(reading.nationality),
                          {"Thai": 99.4, "Lao": 0.5, "Other nationalities": 0.1})
 
     def test_figures_that_fall_to_the_next_line_join_their_label(self):
         reading = t.read("Yala", YALA)
-        self.assertEqual(reading.problems, [])
+        self.assertEqual(problems(reading), [])
         self.assertEqual(groups(reading.nationality),
                          {"Thai": 99.0, "Chinese": 0.1, "Malaysian": 0.1, "Lao": 0.1,
                           "Burmese": 0.6, "Other nationalities": 0.1})
@@ -259,13 +299,13 @@ class ReadingTheTable(unittest.TestCase):
 
     def test_a_figure_split_at_its_point_is_whole(self):
         reading = t.read("Phuket", [t.clean(line) for line in PHUKET])
-        self.assertEqual(reading.problems, [])
+        self.assertEqual(problems(reading), [])
         self.assertEqual(groups(reading.religion)["Christianity"], 3.6)
         self.assertEqual(groups(reading.nationality)["British"], 1.1)
 
     def test_only_the_first_column_must_be_a_figure(self):
         reading = t.read("Krabi", KRABI)
-        self.assertEqual(reading.problems, [])
+        self.assertEqual(problems(reading), [])
         self.assertEqual(groups(reading.religion)["Buddhism"], 65.0)
         self.assertEqual(reading.religion_from, "table")
 
@@ -297,6 +337,82 @@ class ReadingTheTable(unittest.TestCase):
         self.assertIn("nationality: two rows are Thai", t.read("Bueng Kan", lines).problems)
 
 
+class RowsThatAddUp(unittest.TestCase):
+    """A block's rows must make 100 within what rounding allows."""
+
+    def test_rounding_and_a_rows_are_allowed_for(self):
+        self.assertTrue(t.adds_up([("ไทย", ["99.7"]), ("ลาว", ["0.3"]), ("อื่นๆ", ["a"])])[0])
+        self.assertTrue(t.adds_up([("พุทธ", ["99.4"]), ("อิสลาม", ["0.1"]),
+                                   ("คริสต์", ["0.4"]), ("อื่นๆ", ["a"])])[0])
+
+    def test_a_block_short_of_what_rounding_allows_gives_way(self):
+        self.assertEqual(t.adds_up([("ไทย", ["99.1"]), ("ลาว", ["0.4"]), ("พม่า", ["0.2"])]),
+                         (False, 99.7))
+        reading = t.read("Maha Sarakham", MAHA_SARAKHAM)
+        self.assertEqual(problems(reading), [])
+        self.assertEqual(reading.nationality_from, "indicators")
+        self.assertIn("its rows add to 99.7%, further from 100 than rounding allows",
+                      reading.nationality_note)
+        self.assertEqual(groups(reading.nationality), {"Thai": 99.1, t.RESIDUAL_NATIONALITY: 0.9})
+        self.assertEqual(reading.religion_from, "table")       # 99.9: three rows of rounding
+
+
+class TheTablesFootnotes(unittest.TestCase):
+
+    def test_a_footnote_leaving_out_the_unknown_is_said(self):
+        phuket = t.read("Phuket", [t.clean(line) for line in PHUKET])
+        self.assertIn("leaves out people whose answer was not known", phuket.religion_note)
+        self.assertIn("leaves out people whose nationality was not known",
+                      phuket.nationality_note)
+        ratchaburi = nationality(RATCHABURI_NATIONALITY,
+                                 ("  ประชากรที่มีสัญชาติไทย (%) na 99.3 96.0   Thai citizenship (%)",))
+        self.assertIn("leaves out people whose nationality was not known",
+                      ratchaburi.nationality_note)
+        self.assertNotIn("not known", t.read("Bueng Kan", BUENG_KAN).nationality_note)
+
+
+class Language(unittest.TestCase):
+    """Table 6: only Thai, Thai and another language, or another language only."""
+
+    def test_table_6_is_read_past_the_contents_page(self):
+        reading = t.read("Bueng Kan", BUENG_KAN, annex=BUENG_KAN + BUENG_KAN_TABLE_6)
+        self.assertEqual(reading.problems, [])
+        # 361,914, 829 and 11 of 362,754: the last is under 0.05%.
+        self.assertEqual(groups(reading.language),
+                         {"Thai only": 99.8, "Thai and other languages": 0.2})
+        self.assertIn("Thai there takes in its regional varieties", reading.language_note)
+        self.assertIn("Bueng Kan counts 99.8%", reading.language_note)
+        self.assertTrue(reading.language_note.endswith(t.NOTE_SPLIT["Bueng Kan"]))
+
+    def test_rows_that_do_not_make_the_total_are_a_problem(self):
+        annex = [line.replace("361,914 178,999", "351,914 178,999") for line in BUENG_KAN_TABLE_6]
+        reading = t.read("Bueng Kan", BUENG_KAN, annex=annex)
+        self.assertIn("language: table 6's rows add to 352,754 of 362,754", reading.problems)
+        self.assertEqual(reading.language, [])
+
+    def test_no_table_6_is_a_problem(self):
+        self.assertIn("language: no table 6 with its four rows",
+                      t.read("Bueng Kan", BUENG_KAN).problems)
+
+    def test_the_record_cites_table_6_for_language(self):
+        reading = t.read("Bueng Kan", BUENG_KAN, annex=BUENG_KAN + BUENG_KAN_TABLE_6)
+        (record,) = t.build([reading], [{"id": "B", "name": "Bueng Kan Province"}])
+        self.assertEqual(record["language_year"], 2010)
+        cited = {s["field"]: s["name"] for s in record["sources"]}
+        self.assertIn("table 6, population by usual languages spoken at home", cited["language"])
+
+
+class OnlySomeProvinces(unittest.TestCase):
+
+    def test_only_writes_nothing(self):
+        with mock.patch.object(t, "fetch", return_value=b""), \
+                mock.patch.object(t, "report_text", return_value=(BUENG_KAN, BUENG_KAN)), \
+                mock.patch.object(t, "write_json") as write, \
+                mock.patch.object(sys, "argv", ["thailand_2010", "--only", "Bueng Kan"]):
+            self.assertEqual(t.main(), 0)
+        write.assert_not_called()
+
+
 class TheKeyIndicators(unittest.TestCase):
 
     def test_the_2010_column_is_the_last_before_the_english_label(self):
@@ -323,11 +439,14 @@ class TheKeyIndicators(unittest.TestCase):
         self.assertIn("it prints Thai nationality 94.1% where the key indicators print 90.0%",
                       reading.nationality_note)
         self.assertTrue(reading.nationality_note.startswith("Nationality, not ethnicity"))
+        self.assertIn("the share of Thai nationality and the share of people not of Thai "
+                      "nationality, shown here as 'Foreign, stateless or unknown'",
+                      reading.nationality_note)
         self.assertEqual(reading.religion_from, "table")       # its own, and agreeing
 
     def test_a_table_that_does_not_add_up_gives_way_to_them(self):
         reading = t.read("Nakhon Phanom", NAKHON_PHANOM)
-        self.assertEqual(reading.problems, [])
+        self.assertEqual(problems(reading), [])
         self.assertEqual(reading.nationality_from, "indicators")
         self.assertIn("its rows add to 100.9%", reading.nationality_note)
         self.assertEqual(groups(reading.nationality),
@@ -335,7 +454,7 @@ class TheKeyIndicators(unittest.TestCase):
 
     def test_a_report_whose_table_cannot_be_read_gives_their_figures(self):
         reading = t.read("Bueng Kan", BUENG_KAN[:4])
-        self.assertEqual(reading.problems, [])
+        self.assertEqual(problems(reading), [])
         self.assertEqual((reading.religion_from, reading.nationality_from),
                          ("indicators", "indicators"))
         self.assertEqual(groups(reading.religion),
@@ -348,7 +467,7 @@ class TheKeyIndicators(unittest.TestCase):
 
     def test_bangkok_s_nationality_rows_are_the_page_s(self):
         reading = t.read("Bangkok", BANGKOK)
-        self.assertEqual(reading.problems, [])
+        self.assertEqual(problems(reading), [])
         self.assertEqual((reading.religion_from, reading.nationality_from), ("table", "table"))
         self.assertEqual(groups(reading.religion),
                          {"Buddhism": 92.5, "Islam": 4.6, "Christianity": 1.9, "Hinduism": 0.3,

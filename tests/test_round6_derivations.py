@@ -569,7 +569,8 @@ class StatedSplits(unittest.TestCase):
     """Bueng Kan keeps a stated gap, which claims only what is true."""
 
     def test_the_gap_does_not_say_no_source_publishes_the_province(self):
-        # Thailand's 2010 census does tabulate Bueng Kan; none read here does.
+        # Thailand's 2010 census does tabulate Bueng Kan; a file with the old
+        # row alone does not, and its gap must not say that no source does.
         src = {"id": "THA-NK", "level": "admin1", "name": "Nong Khai Province",
                "country": "THA", "_source": "thailand_province.json", "sources": [],
                "religion": comp(Buddhism=99.1, Other=0.9), "religion_year": 2000}
