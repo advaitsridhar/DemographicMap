@@ -1,4 +1,18 @@
-usage: sea_probe.py [-h]
-                    {res,xl,zip,pdf,cdx,wpmedia,dgs,hdx,spa,table,get,strips,unstrip}
-                    ...
-sea_probe.py: error: unrecognized arguments: .{0,6}9[0-9].[0-9]|Religion .{0,6}100)
+http://web.archive.org/web/20160303180930id_/http://popcensus.nso.go.th/report/NongKhai_T.pdf: HTTP 200 application/pdf 5991716 B
+  220 pages
+  p25: 34 lines, 1 matching
+    ศาสนา 100.0 100.0 100.0 
+    พุทธ 99.5 99.4 99.5 
+    อิสลาม 0.1 0.1 0.1 
+    คริสต์ 0.4 0.5 0.4 
+    อื่นๆ a a a 
+     
+     
+  p26: 39 lines, 1 matching
+    สัญชาติ    100.0      100.0       100.0 
+    ไทย 99.4 99.2 99.6 
+    ลาว 0.5 0.6  0.4 
+    เวียดนาม a 0.1 a 
+    อื่นๆ  0.1  0.1  a 
+    a   น้อยกว่าร้อยละ 0.1 
+     
