@@ -104,6 +104,16 @@ class AdapterMerge(unittest.TestCase):
         self.assertEqual(entity["name"], "Kerala")
         self.assertEqual(entity["parent"], "IND")
 
+    def test_a_figure_drops_the_citation_of_why_its_field_was_empty(self):
+        entity = {"language": common.gap(common.NOT_AVAILABLE, "no table"),
+                  "sources": [{"name": "Ranong", "field": "language (why empty)"},
+                              {"name": "Ranong", "field": "religion (why empty)/"
+                                                          "language (why empty)"}]}
+        be.merge_adapter(entity, {"language": [{"group": "Thai only", "pct": 100.0}],
+                                  "sources": [{"name": "2010", "field": "language"}]})
+        self.assertEqual([(s["name"], s["field"]) for s in entity["sources"]],
+                         [("Ranong", "religion (why empty)"), ("2010", "language")])
+
     def test_sources_accumulate(self):
         entity = {"sources": [{"name": "a"}]}
         be.merge_adapter(entity, {"sources": [{"name": "b"}]})

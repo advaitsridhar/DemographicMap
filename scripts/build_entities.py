@@ -4863,6 +4863,10 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         # tidy_citations, which also keeps an entry a note names.)
         gone = replaced & set(COMPOSITION_FIELDS)
         if gone:
+            # And a citation of why the field was empty goes with the gap it
+            # explained: Thailand's provinces cited Ranong's 2000 workbook for
+            # "language (why empty)" beside the 2010 census's table 6.
+            gone |= {f"{field} (why empty)" for field in gone}
             entity["sources"] = [src for src in (without_fields(src, gone)
                                                  for src in entity["sources"]) if src]
     for key, value in row.items():
