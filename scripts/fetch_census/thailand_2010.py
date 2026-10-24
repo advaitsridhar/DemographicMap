@@ -200,8 +200,10 @@ RESIDUAL_NATIONALITY = "Foreign, stateless or unknown"
 # country's figure, which is the Factbook's line for the same census.
 LANGUAGES = {"ภาษาไทยภาษาเดียว": "Thai only", "ภาษาไทยและภาษาอื่น": "Thai and other languages",
              "ภาษาอื่นอย่างเดียว": "only other languages"}
-TABLE6 = re.compile(r"ตารางที่\s*6\s+ประชากร.*ภาษา")
 COUNT_ROW = re.compile(r"^\s*(\D+?)\s+([\d,]+|-)(?=\s|$)")
+# How far from table 6's first row its "everyone" row is looked for: a text
+# layer can put the table's heading and total after its rows (Nakhon Phanom's).
+NEAR = 15
 
 VALUE = r"(?:a|-|\d+\.\d)"
 # A column after the first, as printed: only the first is read, and a later one
@@ -459,33 +461,42 @@ def adds_up(block: Block) -> tuple[bool, float]:
     return total - give <= 100.0 <= total + give + 0.1 * small, total
 
 
-def languages(lines: list[str]) -> dict[str, int] | None:
-    """Table 6's first column: everyone, and the people who usually speak only
-    Thai at home, Thai and another language, or another language only. None
-    until a table 6 heading is followed by all four rows (the contents page
-    names the table too)."""
+def counted(line: str) -> tuple[str, int] | None:
+    """A count row's label and first figure ("-" is none)."""
+    if (m := COUNT_ROW.match(line)) is None:
+        return None
+    return label(m.group(1)), 0 if m.group(2) == "-" else int(m.group(2).replace(",", ""))
+
+
+def languages(lines: list[str]) -> dict[str, int | None] | None:
+    """Table 6's first column: the people who usually speak only Thai at home,
+    Thai and another language, or another language only, and as "total" the
+    table's "everyone" row nearest them (None when none is near). Found by its
+    rows, which no other table has, not by its heading; None until all three
+    have been read."""
     for i, line in enumerate(lines):
-        if not TABLE6.search(line):
+        row = counted(line)
+        if row is None or LANGUAGES.get(row[0]) != "Thai only":
             continue
-        out: dict[str, int] = {}
-        for row in lines[i + 1:i + 16]:
-            if (m := COUNT_ROW.match(row)) is None:
-                continue
-            name = label(m.group(1))
-            count = 0 if m.group(2) == "-" else int(m.group(2).replace(",", ""))
-            if name == "ยอดรวม":
-                out.setdefault("total", count)
-            elif name in LANGUAGES:
-                out.setdefault(LANGUAGES[name], count)
-        if len(out) == 1 + len(LANGUAGES):
-            return out
+        out: dict[str, int | None] = {"Thai only": row[1]}
+        for other in lines[i + 1:i + 6]:
+            if (row := counted(other)) is not None and row[0] in LANGUAGES:
+                out.setdefault(LANGUAGES[row[0]], row[1])
+        if len(out) < len(LANGUAGES):
+            continue
+        near = [(abs(j - i), row[1]) for j in range(max(0, i - NEAR), i + NEAR)
+                if j < len(lines) and (row := counted(lines[j])) and row[0] == "ยอดรวม"]
+        out["total"] = min(near)[1] if near else None
+        return out
     return None
 
 
-def language_shares(counts: dict[str, int], problems: list[str]) -> list[dict[str, Any]]:
-    """Table 6's three rows as shares of its total, which they must add up to."""
-    total = counts["total"]
-    parts = sum(counts[group] for group in LANGUAGES.values())
+def language_shares(counts: dict[str, int | None], problems: list[str]
+                    ) -> list[dict[str, Any]]:
+    """Table 6's three rows as shares of the people they count, which must be
+    its "everyone" row where one is near them."""
+    parts = sum(counts[group] or 0 for group in LANGUAGES.values())
+    total = counts.get("total") or parts
     if total <= 0 or abs(parts - total) > max(2, total // 1000):
         problems.append(f"language: table 6's rows add to {parts:,} of {total:,}")
         return []
@@ -565,7 +576,7 @@ def read(province: str, lines: list[str],
 
     counts = languages(lines if annex is None else annex)
     if counts is None:
-        reading.problems.append("language: no table 6 with its four rows")
+        reading.problems.append("language: no table 6 with its three rows")
     else:
         reading.language = language_shares(counts, reading.problems)
         reading.language_note = NOTE_LANGUAGE if reading.language else ""

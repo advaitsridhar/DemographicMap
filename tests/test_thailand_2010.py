@@ -384,6 +384,22 @@ class Language(unittest.TestCase):
         self.assertIn("Bueng Kan counts 99.8%", reading.language_note)
         self.assertTrue(reading.language_note.endswith(t.NOTE_SPLIT["Bueng Kan"]))
 
+    def test_a_text_layer_that_puts_the_heading_and_total_after_the_rows(self):
+        # Nakhon Phanom's page 59 puts its rows before the table's heading; its
+        # total row, which the probe did not print, is written here as their sum.
+        annex = ["    ภาษาไทยภาษาเดียว 538,888 263,842 275,046 121,202 58,511 62,692 417,685 "
+                 "205,331 212,354 Only Thai Language",
+                 "    ภาษาไทยและภาษาอื่น 43,463 21,191 22,272 2,477 1,149 1,328 40,986 20,042 "
+                 "20,944 Thai and other languages",
+                 "    ภาษาอื่นอย่างเดียว 1,375 666 709 41 23 18 1,334 642 692 Only other languages",
+                 "    ภาษาอื่นๆ ที่ใช้ Other languages",
+                 "    ตารางที่  6  ประชากร จําแนกตามภาษาที่ใช้พูดในครัวเรือน เพศ และเขตการปกครอง",
+                 "    ยอดรวม 583,726 Total"]
+        reading = t.read("Nakhon Phanom", NAKHON_PHANOM, annex=annex)
+        self.assertEqual(groups(reading.language), {"Thai only": 92.3,
+                                                    "Thai and other languages": 7.4,
+                                                    "only other languages": 0.2})
+
     def test_rows_that_do_not_make_the_total_are_a_problem(self):
         annex = [line.replace("361,914 178,999", "351,914 178,999") for line in BUENG_KAN_TABLE_6]
         reading = t.read("Bueng Kan", BUENG_KAN, annex=annex)
@@ -391,7 +407,7 @@ class Language(unittest.TestCase):
         self.assertEqual(reading.language, [])
 
     def test_no_table_6_is_a_problem(self):
-        self.assertIn("language: no table 6 with its four rows",
+        self.assertIn("language: no table 6 with its three rows",
                       t.read("Bueng Kan", BUENG_KAN).problems)
 
     def test_the_record_cites_table_6_for_language(self):
