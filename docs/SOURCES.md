@@ -5776,7 +5776,8 @@ spoken, 99.3%. Not all of them: the table gives a few local Tai varieties rows
 of their own among the other languages -- Tai Khun, Thai Loei and Lao Loei in
 one, Lao Khrang in another -- and in Loei that row holds 364,423 of the
 province's 546,030 people, so Loei is 28.7% only Thai; a province where it holds
-a tenth or more says so in its note. Where a province's own language is another
+a tenth or more says so in its note (Loei 67%, Lamphun 19%, Mae Hong Son 17%,
+Mukdahan 14%). Where a province's own language is another
 the table shows it: "only Thai" is 13.8% in Narathiwat, 18.7% in Pattani and
 25.6% in Yala, where Malay is spoken, 27.0% in Mae Hong Son and 49.9% in Surin.
 The table then lists each other language by who speaks it -- Malay (Yawi),

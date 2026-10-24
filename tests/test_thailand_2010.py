@@ -6,8 +6,9 @@ why; language comes from table 6 of the report's statistical annex. The samples 
 probes of the archived reports printed it, except what stands in for lines no
 probe printed as text: the 1990 and 2000 columns of the Mae Hong Son, Nakhon
 Phanom and Maha Sarakham indicators (only the 2010 column is read), the Mae Hong
-Son and Nakhon Phanom blocks, rebuilt from the reader's parsed rows with a
-footnote line, and Nakhon Phanom's table 6 total, written as its rows' sum.
+Son and Nakhon Phanom blocks and Maha Sarakham's religion block, rebuilt from the
+reader's parsed rows (the first two with a footnote line), and Nakhon Phanom's
+table 6 total, written as its rows' sum.
 No network.
 """
 
