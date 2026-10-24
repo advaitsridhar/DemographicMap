@@ -33,9 +33,20 @@
         "pct": 0.6
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 96.6
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.6
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.7
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -64,6 +75,13 @@
         "url": "http://web.archive.org/web/20160303183316/http://popcensus.nso.go.th/report/AmnatCharoen_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Amnat Charoen report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303183316/http://popcensus.nso.go.th/report/AmnatCharoen_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -73,6 +91,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -113,9 +133,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 1.0
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -148,6 +179,13 @@
         "url": "http://web.archive.org/web/20160303174311/http://popcensus.nso.go.th/report/AngThong_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Ang Thong report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303174311/http://popcensus.nso.go.th/report/AngThong_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -157,6 +195,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -213,9 +253,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 94.3
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 3.0
+      },
+      {
+        "group": "only other languages",
+        "pct": 2.7
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -260,6 +311,13 @@
         "url": "http://web.archive.org/web/20160303213735/http://popcensus.nso.go.th/report/Bangkok_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Bangkok report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303213735/http://popcensus.nso.go.th/report/Bangkok_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -269,6 +327,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -305,9 +365,16 @@
         "pct": 0.5
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.8
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -332,6 +399,13 @@
         "url": "http://web.archive.org/web/20160304023534/http://popcensus.nso.go.th/report/BuengKan_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Bueng Kan report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304023534/http://popcensus.nso.go.th/report/BuengKan_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -341,6 +415,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out. Bueng Kan was made from eight districts of Nong Khai in March 2011, six months after the census was taken; the Office published those districts' count as Bueng Kan's own report.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. A nationality the table prints as under 0.1% is left out. Bueng Kan was made from eight districts of Nong Khai in March 2011, six months after the census was taken; the Office published those districts' count as Bueng Kan's own report.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out. Bueng Kan was made from eight districts of Nong Khai in March 2011, six months after the census was taken; the Office published those districts' count as Bueng Kan's own report.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -381,9 +457,20 @@
         "pct": 0.3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 84.4
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 14.9
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.7
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -416,6 +503,13 @@
         "url": "http://web.archive.org/web/20160304023555/http://popcensus.nso.go.th/report/BuriRam_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Buri Ram report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304023555/http://popcensus.nso.go.th/report/BuriRam_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -425,6 +519,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -465,9 +561,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.4
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 1.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.5
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -504,6 +611,13 @@
         "url": "http://web.archive.org/web/20160303170110/http://popcensus.nso.go.th/report/Chachoengsao_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Chachoengsao report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303170110/http://popcensus.nso.go.th/report/Chachoengsao_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -513,6 +627,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -553,9 +669,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.4
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.5
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -588,6 +715,13 @@
         "url": "http://web.archive.org/web/20160303171649/http://popcensus.nso.go.th/report/ChaiNat_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Chai Nat report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303171649/http://popcensus.nso.go.th/report/ChaiNat_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -597,6 +731,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -633,9 +769,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.6
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.3
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -664,6 +811,13 @@
         "url": "http://web.archive.org/web/20160303210740/http://popcensus.nso.go.th/report/Chaiyaphum_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Chaiyaphum report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303210740/http://popcensus.nso.go.th/report/Chaiyaphum_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -673,6 +827,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -713,9 +869,20 @@
         "pct": 0.5
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 95.6
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.8
+      },
+      {
+        "group": "only other languages",
+        "pct": 1.6
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -752,6 +919,13 @@
         "url": "http://web.archive.org/web/20160414135618/http://popcensus.nso.go.th/report/Chanthaburi_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Chanthaburi report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160414135618/http://popcensus.nso.go.th/report/Chanthaburi_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -761,6 +935,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -801,9 +977,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 81.1
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 13.5
+      },
+      {
+        "group": "only other languages",
+        "pct": 5.3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -836,6 +1023,13 @@
         "url": "http://web.archive.org/web/20160303193158/http://popcensus.nso.go.th/report/ChiangMai_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Chiang Mai report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303193158/http://popcensus.nso.go.th/report/ChiangMai_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -845,6 +1039,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -885,9 +1081,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 81.0
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 13.0
+      },
+      {
+        "group": "only other languages",
+        "pct": 6.0
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -912,6 +1119,13 @@
         "url": "http://web.archive.org/web/20160415115826/http://popcensus.nso.go.th/report/ChiangRai_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Chiang Rai report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160415115826/http://popcensus.nso.go.th/report/ChiangRai_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -920,7 +1134,9 @@
     "religion_year": 2010,
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
-    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- it prints Thai nationality 94.3% where the key indicators print 92.3% -- so the key indicators' figures are shown. They print the share of Thai nationality alone; 'Foreign, stateless or unknown' is everyone else: people of another nationality, of none, and anyone whose nationality was not recorded.",
+    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- it prints Thai nationality 94.3% where the key indicators print 92.3% -- so the key indicators' figures are shown. They print the share of Thai nationality and the share of people not of Thai nationality, shown here as 'Foreign, stateless or unknown'.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -961,9 +1177,20 @@
         "pct": 0.8
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 93.5
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.9
+      },
+      {
+        "group": "only other languages",
+        "pct": 3.6
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -996,6 +1223,13 @@
         "url": "http://web.archive.org/web/20160303222803/http://popcensus.nso.go.th/report/ChonBuri_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Chon Buri report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303222803/http://popcensus.nso.go.th/report/ChonBuri_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1005,6 +1239,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1045,9 +1281,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 92.3
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 3.1
+      },
+      {
+        "group": "only other languages",
+        "pct": 4.6
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1088,6 +1335,13 @@
         "url": "http://web.archive.org/web/20160303181955/http://popcensus.nso.go.th/report/Chumphon_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Chumphon report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303181955/http://popcensus.nso.go.th/report/Chumphon_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1097,6 +1351,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1133,9 +1389,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 92.2
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 7.4
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.5
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1168,6 +1435,13 @@
         "url": "http://web.archive.org/web/20160415120008/http://popcensus.nso.go.th/report/Kalasin_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Kalasin report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160415120008/http://popcensus.nso.go.th/report/Kalasin_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1177,6 +1451,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1217,9 +1493,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 97.0
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.0
+      },
+      {
+        "group": "only other languages",
+        "pct": 1.0
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1260,6 +1547,13 @@
         "url": "http://web.archive.org/web/20160303174244/http://popcensus.nso.go.th/report/KamphaengPhet_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Kamphaeng Phet report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303174244/http://popcensus.nso.go.th/report/KamphaengPhet_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1269,6 +1563,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1309,9 +1605,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 90.3
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 6.5
+      },
+      {
+        "group": "only other languages",
+        "pct": 3.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1336,6 +1643,13 @@
         "url": "http://web.archive.org/web/20160303174322/http://popcensus.nso.go.th/report/Kanchanaburi_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Kanchanaburi report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303174322/http://popcensus.nso.go.th/report/Kanchanaburi_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1344,7 +1658,9 @@
     "religion_year": 2010,
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
-    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- it prints Thai nationality 93.0% where the key indicators print 91.9% -- so the key indicators' figures are shown. They print the share of Thai nationality alone; 'Foreign, stateless or unknown' is everyone else: people of another nationality, of none, and anyone whose nationality was not recorded.",
+    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- it prints Thai nationality 93.0% where the key indicators print 91.9% -- so the key indicators' figures are shown. They print the share of Thai nationality and the share of people not of Thai nationality, shown here as 'Foreign, stateless or unknown'.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1385,9 +1701,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.9
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.9
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1424,6 +1751,13 @@
         "url": "http://web.archive.org/web/20160303195950/http://popcensus.nso.go.th/report/KhonKaen_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Khon Kaen report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303195950/http://popcensus.nso.go.th/report/KhonKaen_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1433,6 +1767,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1473,9 +1809,20 @@
         "pct": 0.3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.6
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.9
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.5
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1508,6 +1855,13 @@
         "url": "http://web.archive.org/web/20160303180748/http://popcensus.nso.go.th/report/Krabi_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Krabi report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303180748/http://popcensus.nso.go.th/report/Krabi_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1517,6 +1871,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1553,9 +1909,20 @@
         "pct": 0.4
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 73.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 20.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 6.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1584,6 +1951,13 @@
         "url": "http://web.archive.org/web/20160303211634/http://popcensus.nso.go.th/report/Lamphun_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Lamphun report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303211634/http://popcensus.nso.go.th/report/Lamphun_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1593,6 +1967,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1629,9 +2005,20 @@
         "pct": 0.3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 28.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 60.1
+      },
+      {
+        "group": "only other languages",
+        "pct": 11.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1660,6 +2047,13 @@
         "url": "http://web.archive.org/web/20160303211822/http://popcensus.nso.go.th/report/Loei_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Loei report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303211822/http://popcensus.nso.go.th/report/Loei_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1669,6 +2063,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1709,9 +2105,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.4
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 1.1
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.5
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1744,6 +2151,13 @@
         "url": "http://web.archive.org/web/20160303170314/http://popcensus.nso.go.th/report/LopBuri_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Lopburi report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303170314/http://popcensus.nso.go.th/report/LopBuri_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1753,6 +2167,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1793,9 +2209,20 @@
         "pct": 0.3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 27.0
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 33.0
+      },
+      {
+        "group": "only other languages",
+        "pct": 39.9
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1820,6 +2247,13 @@
         "url": "http://web.archive.org/web/20160303200858/http://popcensus.nso.go.th/report/MaeHongSon_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Mae Hong Son report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303200858/http://popcensus.nso.go.th/report/MaeHongSon_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1828,7 +2262,9 @@
     "religion_year": 2010,
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
-    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- it prints Thai nationality 94.1% where the key indicators print 90.0% -- so the key indicators' figures are shown. They print the share of Thai nationality alone; 'Foreign, stateless or unknown' is everyone else: people of another nationality, of none, and anyone whose nationality was not recorded.",
+    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- it prints Thai nationality 94.1% where the key indicators print 90.0% -- so the key indicators' figures are shown. They print the share of Thai nationality and the share of people not of Thai nationality, shown here as 'Foreign, stateless or unknown'.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1865,21 +2301,24 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.8
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
         "pct": 99.1
       },
       {
-        "group": "Lao",
-        "pct": 0.4
-      },
-      {
-        "group": "Burmese",
-        "pct": 0.2
+        "group": "Foreign, stateless or unknown",
+        "pct": 0.9
       }
     ],
     "sources": [
@@ -1892,7 +2331,14 @@
       },
       {
         "field": "ethnicity",
-        "name": "National Statistical Office, 2010 Population and Housing Census, Maha Sarakham report: section 1.5, people by religion and nationality (percent)",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Maha Sarakham report: key indicators, 2010",
+        "url": "http://web.archive.org/web/20160303193417/http://popcensus.nso.go.th/report/MahaSarakham_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Maha Sarakham report: table 6, population by usual languages spoken at home",
         "url": "http://web.archive.org/web/20160303193417/http://popcensus.nso.go.th/report/MahaSarakham_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
@@ -1904,7 +2350,9 @@
     "religion_year": 2010,
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
-    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. A nationality the table prints as under 0.1% is left out.",
+    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- its rows add to 99.7%, further from 100 than rounding allows -- so the key indicators' figures are shown. They print the share of Thai nationality and the share of people not of Thai nationality, shown here as 'Foreign, stateless or unknown'.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -1945,9 +2393,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 76.3
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 19.6
+      },
+      {
+        "group": "only other languages",
+        "pct": 4.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -1976,6 +2435,13 @@
         "url": "http://web.archive.org/web/20160303174302/http://popcensus.nso.go.th/report/Mukdahan_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Mukdahan report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303174302/http://popcensus.nso.go.th/report/Mukdahan_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -1985,6 +2451,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2021,9 +2489,20 @@
         "pct": 0.6
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 94.9
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 4.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.9
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2060,6 +2539,13 @@
         "url": "http://web.archive.org/web/20160303191538/http://popcensus.nso.go.th/report/NakhonNayok_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Nakhon Nayok report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303191538/http://popcensus.nso.go.th/report/NakhonNayok_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2069,6 +2555,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2109,9 +2597,20 @@
         "pct": 0.4
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 96.4
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.1
+      },
+      {
+        "group": "only other languages",
+        "pct": 1.5
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2152,6 +2651,13 @@
         "url": "http://web.archive.org/web/20160415070607/http://popcensus.nso.go.th/report/NakhonPathom_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Nakhon Pathom report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160415070607/http://popcensus.nso.go.th/report/NakhonPathom_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2161,6 +2667,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2197,9 +2705,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 92.3
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 7.4
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2224,6 +2743,13 @@
         "url": "http://web.archive.org/web/20160303180617/http://popcensus.nso.go.th/report/NakhonPhanom_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Nakhon Phanom report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303180617/http://popcensus.nso.go.th/report/NakhonPhanom_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2232,7 +2758,9 @@
     "religion_year": 2010,
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
-    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- its rows add to 100.9% -- so the key indicators' figures are shown. They print the share of Thai nationality alone; 'Foreign, stateless or unknown' is everyone else: people of another nationality, of none, and anyone whose nationality was not recorded.",
+    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- its rows add to 100.9%, further from 100 than rounding allows -- so the key indicators' figures are shown. They print the share of Thai nationality and the share of people not of Thai nationality, shown here as 'Foreign, stateless or unknown'.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2273,9 +2801,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.2
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.6
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2308,6 +2847,13 @@
         "url": "http://web.archive.org/web/20160303193338/http://popcensus.nso.go.th/report/NakhonRatchasima_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Nakhon Ratchasima report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303193338/http://popcensus.nso.go.th/report/NakhonRatchasima_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2317,6 +2863,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2357,9 +2905,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.3
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.6
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2392,6 +2951,13 @@
         "url": "http://web.archive.org/web/20160303195111/http://popcensus.nso.go.th/report/NakhonSawan_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Nakhon Sawan report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303195111/http://popcensus.nso.go.th/report/NakhonSawan_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2401,6 +2967,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2441,9 +3009,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.3
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.6
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2472,6 +3051,13 @@
         "url": "http://web.archive.org/web/20160415064644/http://popcensus.nso.go.th/report/NakhonSiThammarat_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Nakhon Si Thammarat report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160415064644/http://popcensus.nso.go.th/report/NakhonSiThammarat_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2481,6 +3067,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2517,9 +3105,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 84.9
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 10.5
+      },
+      {
+        "group": "only other languages",
+        "pct": 4.6
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2548,6 +3147,13 @@
         "url": "http://web.archive.org/web/20160303184452/http://popcensus.nso.go.th/report/Nan_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Nan report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303184452/http://popcensus.nso.go.th/report/Nan_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2557,6 +3163,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2589,9 +3197,20 @@
         "pct": 85.9
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 13.8
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 63.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 22.9
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2624,6 +3243,13 @@
         "url": "http://web.archive.org/web/20160303221229/http://popcensus.nso.go.th/report/Narathiwat_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Narathiwat report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303221229/http://popcensus.nso.go.th/report/Narathiwat_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2633,6 +3259,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2669,9 +3297,16 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.4
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.6
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2700,6 +3335,13 @@
         "url": "http://web.archive.org/web/20160304191439/http://popcensus.nso.go.th/report/NongBuaLamPhu_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Nong Bua Lam Phu report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304191439/http://popcensus.nso.go.th/report/NongBuaLamPhu_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2709,6 +3351,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2745,9 +3389,16 @@
         "pct": 0.4
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.8
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2776,6 +3427,13 @@
         "url": "http://web.archive.org/web/20160303180930/http://popcensus.nso.go.th/report/NongKhai_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Nong Khai report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303180930/http://popcensus.nso.go.th/report/NongKhai_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2785,6 +3443,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out. The report counts Nong Khai as it was at the census, with the eight districts that became Bueng Kan province in March 2011; Bueng Kan's own report counts those eight districts alone.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out. The report counts Nong Khai as it was at the census, with the eight districts that became Bueng Kan province in March 2011; Bueng Kan's own report counts those eight districts alone.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out. The report counts Nong Khai as it was at the census, with the eight districts that became Bueng Kan province in March 2011; Bueng Kan's own report counts those eight districts alone.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2825,9 +3485,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 97.0
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.7
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.4
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2868,6 +3539,13 @@
         "url": "http://web.archive.org/web/20160415065002/http://popcensus.nso.go.th/report/Nonthaburi_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Nonthaburi report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160415065002/http://popcensus.nso.go.th/report/Nonthaburi_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2877,6 +3555,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -2921,9 +3601,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 96.5
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.5
+      },
+      {
+        "group": "only other languages",
+        "pct": 1.0
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -2972,6 +3663,13 @@
         "url": "http://web.archive.org/web/20160304190447/http://popcensus.nso.go.th/report/PathumThani_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Pathum Thani report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304190447/http://popcensus.nso.go.th/report/PathumThani_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -2981,6 +3679,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3013,9 +3713,20 @@
         "pct": 84.4
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 18.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 38.0
+      },
+      {
+        "group": "only other languages",
+        "pct": 43.3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3048,6 +3759,13 @@
         "url": "http://web.archive.org/web/20160415071025/http://popcensus.nso.go.th/report/Pattani_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Pattani report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160415071025/http://popcensus.nso.go.th/report/Pattani_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -3057,6 +3775,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3097,9 +3817,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 87.1
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 5.1
+      },
+      {
+        "group": "only other languages",
+        "pct": 7.8
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3132,6 +3863,13 @@
         "url": "http://web.archive.org/web/20160303204915/http://popcensus.nso.go.th/report/Phangnga_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Phangnga report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303204915/http://popcensus.nso.go.th/report/Phangnga_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -3141,6 +3879,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3181,9 +3921,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.6
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.3
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3216,6 +3967,13 @@
         "url": "http://web.archive.org/web/20160414124504/http://popcensus.nso.go.th/report/Phatthalung_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Phatthalung report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160414124504/http://popcensus.nso.go.th/report/Phatthalung_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -3225,6 +3983,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3265,9 +4025,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 96.8
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.9
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3292,6 +4063,13 @@
         "url": "http://web.archive.org/web/20160303185250/http://popcensus.nso.go.th/report/Phayao_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Phayao report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303185250/http://popcensus.nso.go.th/report/Phayao_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -3300,7 +4078,9 @@
     "religion_year": 2010,
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
-    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- it prints Thai nationality 99.0% where the key indicators print 98.3% -- so the key indicators' figures are shown. They print the share of Thai nationality alone; 'Foreign, stateless or unknown' is everyone else: people of another nationality, of none, and anyone whose nationality was not recorded.",
+    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- it prints Thai nationality 99.0% where the key indicators print 98.3% -- so the key indicators' figures are shown. They print the share of Thai nationality and the share of people not of Thai nationality, shown here as 'Foreign, stateless or unknown'.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3341,9 +4121,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 88.2
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 11.5
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3376,6 +4167,13 @@
         "url": "http://web.archive.org/web/20160414134225/http://popcensus.nso.go.th/report/Phetchabun_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Phetchabun report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160414134225/http://popcensus.nso.go.th/report/Phetchabun_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -3385,6 +4183,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3425,9 +4225,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 95.6
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.9
+      },
+      {
+        "group": "only other languages",
+        "pct": 1.5
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3460,6 +4271,13 @@
         "url": "http://web.archive.org/web/20160303211411/http://popcensus.nso.go.th/report/Phetchaburi_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Phetchaburi report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303211411/http://popcensus.nso.go.th/report/Phetchaburi_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -3469,6 +4287,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3505,9 +4325,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 97.5
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.4
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3536,6 +4367,13 @@
         "url": "http://web.archive.org/web/20160303171959/http://popcensus.nso.go.th/report/Phichit_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Phichit report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303171959/http://popcensus.nso.go.th/report/Phichit_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -3545,6 +4383,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3585,9 +4425,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 97.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3628,6 +4479,13 @@
         "url": "http://web.archive.org/web/20160303182704/http://popcensus.nso.go.th/report/Phitsanulok_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Phitsanulok report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303182704/http://popcensus.nso.go.th/report/Phitsanulok_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -3637,6 +4495,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3677,9 +4537,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.3
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.7
+      },
+      {
+        "group": "only other languages",
+        "pct": 1.0
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3720,15 +4591,24 @@
         "url": "http://web.archive.org/web/20160303165808/http://popcensus.nso.go.th/report/Ayutthaya_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Phra Nakhon Si Ayutthaya report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303165808/http://popcensus.nso.go.th/report/Ayutthaya_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
     "match_by": "shape_id",
     "shape_id": "36821470B14521381139968",
     "religion_year": 2010,
-    "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
+    "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out. The table leaves out people whose answer was not known, as its footnote says.",
     "ethnicity_year": 2010,
-    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out. The table leaves out people whose nationality was not known, as its footnote says.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3769,9 +4649,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 97.5
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.4
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3804,6 +4695,13 @@
         "url": "http://web.archive.org/web/20160303210845/http://popcensus.nso.go.th/report/Phrae_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Phrae report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303210845/http://popcensus.nso.go.th/report/Phrae_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -3813,6 +4711,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3853,9 +4753,20 @@
         "pct": 0.9
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 83.9
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 7.1
+      },
+      {
+        "group": "only other languages",
+        "pct": 9.0
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3888,15 +4799,24 @@
         "url": "http://web.archive.org/web/20160303190029/http://popcensus.nso.go.th/report/Phuket_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Phuket report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303190029/http://popcensus.nso.go.th/report/Phuket_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
     "match_by": "shape_id",
     "shape_id": "36821470B89498504013794",
     "religion_year": 2010,
-    "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
+    "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out. The table leaves out people whose answer was not known, as its footnote says.",
     "ethnicity_year": 2010,
-    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out. The table leaves out people whose nationality was not known, as its footnote says.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -3937,9 +4857,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.3
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 1.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.5
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -3972,6 +4903,13 @@
         "url": "http://web.archive.org/web/20160303174413/http://popcensus.nso.go.th/report/PrachinBuri_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Prachin Buri report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303174413/http://popcensus.nso.go.th/report/PrachinBuri_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -3981,6 +4919,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4021,9 +4961,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 95.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 3.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 1.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4052,6 +5003,13 @@
         "url": "http://web.archive.org/web/20160303171211/http://popcensus.nso.go.th/report/Phachuap_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Prachuap Khiri Khan report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303171211/http://popcensus.nso.go.th/report/Phachuap_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4061,6 +5019,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4101,9 +5061,20 @@
         "pct": 0.3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 72.4
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 3.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 24.3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4132,6 +5103,13 @@
         "url": "http://web.archive.org/web/20150514081846/http://popcensus.nso.go.th/report/Ranong_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Ranong report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20150514081846/http://popcensus.nso.go.th/report/Ranong_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4141,6 +5119,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4181,9 +5161,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 96.5
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.6
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.9
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4224,6 +5215,13 @@
         "url": "http://web.archive.org/web/20160304023635/http://popcensus.nso.go.th/report/Ratchaburi_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Ratchaburi report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304023635/http://popcensus.nso.go.th/report/Ratchaburi_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4232,7 +5230,9 @@
     "religion_year": 2010,
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
-    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out. The table leaves out people whose nationality was not known, as its footnote says.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4273,9 +5273,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 94.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.3
+      },
+      {
+        "group": "only other languages",
+        "pct": 3.0
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4308,6 +5319,13 @@
         "url": "http://web.archive.org/web/20160304023654/http://popcensus.nso.go.th/report/Rayong_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Rayong report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304023654/http://popcensus.nso.go.th/report/Rayong_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4317,6 +5335,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4353,9 +5373,20 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.4
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.4
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4384,6 +5415,13 @@
         "url": "http://web.archive.org/web/20160415064341/http://popcensus.nso.go.th/report/RoiEt_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Roi Et report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160415064341/http://popcensus.nso.go.th/report/RoiEt_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4393,6 +5431,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4433,9 +5473,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 97.4
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 1.6
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.9
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4472,6 +5523,13 @@
         "url": "http://web.archive.org/web/20160303215742/http://popcensus.nso.go.th/report/SaKaeo_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Sa Kaeo report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303215742/http://popcensus.nso.go.th/report/SaKaeo_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4481,6 +5539,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4517,9 +5577,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 97.1
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.7
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4552,6 +5623,13 @@
         "url": "http://web.archive.org/web/20160304192229/http://popcensus.nso.go.th/report/SakonNakhon_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Sakon Nakhon report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304192229/http://popcensus.nso.go.th/report/SakonNakhon_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4561,6 +5639,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4601,9 +5681,20 @@
         "pct": 0.5
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 95.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 2.0
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4636,6 +5727,13 @@
         "url": "http://web.archive.org/web/20160414131740/http://popcensus.nso.go.th/report/SamutPrakan_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Samut Prakan report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160414131740/http://popcensus.nso.go.th/report/SamutPrakan_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4645,6 +5743,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4685,9 +5785,20 @@
         "pct": 0.3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 75.0
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 4.7
+      },
+      {
+        "group": "only other languages",
+        "pct": 20.3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4720,6 +5831,13 @@
         "url": "http://web.archive.org/web/20160303220634/http://popcensus.nso.go.th/report/SamutSakhon_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Samut Sakhon report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303220634/http://popcensus.nso.go.th/report/SamutSakhon_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4729,6 +5847,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4769,9 +5889,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 95.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.0
+      },
+      {
+        "group": "only other languages",
+        "pct": 2.3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4800,6 +5931,13 @@
         "url": "http://web.archive.org/web/20160303181232/http://popcensus.nso.go.th/report/SamutSongkhram_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Samut Songkhram report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303181232/http://popcensus.nso.go.th/report/SamutSongkhram_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4809,6 +5947,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4849,9 +5989,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.9
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.9
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4884,6 +6035,13 @@
         "url": "http://web.archive.org/web/20160415070957/http://popcensus.nso.go.th/report/Saraburi_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Saraburi report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160415070957/http://popcensus.nso.go.th/report/Saraburi_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4893,6 +6051,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -4933,9 +6093,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 91.0
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 7.1
+      },
+      {
+        "group": "only other languages",
+        "pct": 2.0
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -4972,6 +6143,13 @@
         "url": "http://web.archive.org/web/20160304192756/http://popcensus.nso.go.th/report/Satun_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Satun report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304192756/http://popcensus.nso.go.th/report/Satun_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -4981,6 +6159,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5017,9 +6197,20 @@
         "pct": 0.6
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 87.2
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 12.5
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5056,6 +6247,13 @@
         "url": "http://web.archive.org/web/20160303182914/http://popcensus.nso.go.th/report/SiSaKet_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Si Sa Ket report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303182914/http://popcensus.nso.go.th/report/SiSaKet_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5065,6 +6263,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5105,9 +6305,16 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.9
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 1.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5140,6 +6347,13 @@
         "url": "http://web.archive.org/web/20160304023757/http://popcensus.nso.go.th/report/SingBuri_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Sing Buri report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304023757/http://popcensus.nso.go.th/report/SingBuri_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5149,6 +6363,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5189,9 +6405,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 93.5
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 5.4
+      },
+      {
+        "group": "only other languages",
+        "pct": 1.0
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5216,6 +6443,13 @@
         "url": "http://web.archive.org/web/20160304023900/http://popcensus.nso.go.th/report/Songkhla_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Songkhla report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304023900/http://popcensus.nso.go.th/report/Songkhla_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5224,7 +6458,9 @@
     "religion_year": 2010,
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
-    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- it prints Thai nationality 98.8% where the key indicators print 98.6% -- so the key indicators' figures are shown. They print the share of Thai nationality alone; 'Foreign, stateless or unknown' is everyone else: people of another nationality, of none, and anyone whose nationality was not recorded.",
+    "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity. The 2010 Population and Housing Census, the province's report: the province's people by nationality, in percent, as its key indicators print them. The report's section 1.5 table cannot be used -- it prints Thai nationality 98.8% where the key indicators print 98.6% -- so the key indicators' figures are shown. They print the share of Thai nationality and the share of people not of Thai nationality, shown here as 'Foreign, stateless or unknown'.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5265,9 +6501,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 1.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5300,6 +6547,13 @@
         "url": "http://web.archive.org/web/20160414135717/http://popcensus.nso.go.th/report/Sukhothai_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Sukhothai report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160414135717/http://popcensus.nso.go.th/report/Sukhothai_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5309,6 +6563,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5349,9 +6605,20 @@
         "pct": 0.6
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 94.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 3.6
+      },
+      {
+        "group": "only other languages",
+        "pct": 1.7
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5384,6 +6651,13 @@
         "url": "http://web.archive.org/web/20150925065914/http://popcensus.nso.go.th/report/SuratThani_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Surat Thani report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20150925065914/http://popcensus.nso.go.th/report/SuratThani_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5393,6 +6667,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5433,9 +6709,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 49.9
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 49.3
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.9
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5468,6 +6755,13 @@
         "url": "http://web.archive.org/web/20160303193242/http://popcensus.nso.go.th/report/Surin_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Surin report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303193242/http://popcensus.nso.go.th/report/Surin_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5477,6 +6771,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5517,9 +6813,20 @@
         "pct": 0.3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 62.8
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 24.2
+      },
+      {
+        "group": "only other languages",
+        "pct": 13.0
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5552,6 +6859,13 @@
         "url": "http://web.archive.org/web/20160303193433/http://popcensus.nso.go.th/report/Tak_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Tak report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303193433/http://popcensus.nso.go.th/report/Tak_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5561,6 +6875,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5601,9 +6917,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.9
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.7
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.4
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5636,6 +6963,13 @@
         "url": "http://web.archive.org/web/20160303212107/http://popcensus.nso.go.th/report/Trang_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Trang report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303212107/http://popcensus.nso.go.th/report/Trang_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5645,6 +6979,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5685,9 +7021,20 @@
         "pct": 0.3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 87.2
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 9.9
+      },
+      {
+        "group": "only other languages",
+        "pct": 2.9
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5720,6 +7067,13 @@
         "url": "http://web.archive.org/web/20160303182403/http://popcensus.nso.go.th/report/Trat_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Trat report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303182403/http://popcensus.nso.go.th/report/Trat_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5729,6 +7083,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5769,9 +7125,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.6
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 1.0
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5804,6 +7171,13 @@
         "url": "http://web.archive.org/web/20160303203058/http://popcensus.nso.go.th/report/Ubonatchathani_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Ubon Ratchathani report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303203058/http://popcensus.nso.go.th/report/Ubonatchathani_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5813,6 +7187,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5853,9 +7229,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.4
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.5
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.2
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5884,6 +7271,13 @@
         "url": "http://web.archive.org/web/20160303181252/http://popcensus.nso.go.th/report/UdonThani_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Udon Thani report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303181252/http://popcensus.nso.go.th/report/UdonThani_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5893,6 +7287,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -5929,9 +7325,16 @@
         "pct": 0.2
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 98.7
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 1.3
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -5964,6 +7367,13 @@
         "url": "http://web.archive.org/web/20160303200042/http://popcensus.nso.go.th/report/UthaiThani_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Uthai Thani report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303200042/http://popcensus.nso.go.th/report/UthaiThani_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -5973,6 +7383,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -6009,9 +7421,20 @@
         "pct": 0.3
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 99.6
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 0.3
+      },
+      {
+        "group": "only other languages",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -6048,6 +7471,13 @@
         "url": "http://web.archive.org/web/20160304023920/http://popcensus.nso.go.th/report/Uttaradit_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Uttaradit report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160304023920/http://popcensus.nso.go.th/report/Uttaradit_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -6057,6 +7487,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -6093,9 +7525,20 @@
         "pct": 0.1
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 25.6
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 42.3
+      },
+      {
+        "group": "only other languages",
+        "pct": 32.1
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -6136,6 +7579,13 @@
         "url": "http://web.archive.org/web/20160303194707/http://popcensus.nso.go.th/report/Yala_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Yala report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303194707/http://popcensus.nso.go.th/report/Yala_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -6145,6 +7595,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. 'Other religions' is the table's own remainder, every faith it does not name. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   },
   {
@@ -6181,9 +7633,16 @@
         "pct": 1.0
       }
     ],
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Thai only",
+        "pct": 97.1
+      },
+      {
+        "group": "Thai and other languages",
+        "pct": 2.9
+      }
+    ],
     "ethnicity": [
       {
         "group": "Thai",
@@ -6212,6 +7671,13 @@
         "url": "http://web.archive.org/web/20160303204205/http://popcensus.nso.go.th/report/Yasothon_T.pdf",
         "year": 2010,
         "license": "Open Government Data of Thailand (NSO publication)"
+      },
+      {
+        "field": "language",
+        "name": "National Statistical Office, 2010 Population and Housing Census, Yasothon report: table 6, population by usual languages spoken at home",
+        "url": "http://web.archive.org/web/20160303204205/http://popcensus.nso.go.th/report/Yasothon_T.pdf",
+        "year": 2010,
+        "license": "Open Government Data of Thailand (NSO publication)"
       }
     ],
     "country": "THA",
@@ -6221,6 +7687,8 @@
     "religion_note": "The 2010 Population and Housing Census, the province's report: the province's people by religion, in percent, as section 1.5 prints them. A faith the table prints as under 0.1% is left out.",
     "ethnicity_year": 2010,
     "ethnicity_note": "Nationality, not ethnicity: Thailand's census does not ask ethnicity, and this is the 2010 census's count of the province's people by nationality, in percent, as section 1.5 of the province's report prints it. 'Thai' names no one people: the Isan, Malay, Khmer, Kuy, hill peoples and Chinese who hold Thai nationality are all in it. 'Other nationalities' is the table's own remainder, every nationality it does not name. A nationality the table prints as under 0.1% is left out.",
+    "language_year": 2010,
+    "language_note": "The 2010 Population and Housing Census, the province's report, table 6: the province's people by the languages they usually speak at home, as shares of the table's counts. Thai there takes in its regional varieties -- Isan-speaking Bueng Kan counts 99.8% of its people as speaking only Thai -- and the table lists the other languages spoken, Malay (Yawi), Khmer, Karen, Hmong, Mon, Lao, Chinese and Burmese among them, by who speaks them. A share under 0.05% is left out.",
     "ethnicity_basis": "nationality"
   }
 ]
