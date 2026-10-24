@@ -376,8 +376,10 @@ class TheSplitAndTheMap(unittest.TestCase):
 
     def test_bueng_kan_and_nong_khai_say_what_their_reports_cover(self):
         self.assertIn("March 2011", t.read("Bueng Kan", BUENG_KAN).religion_note)
-        self.assertIn("without the eight districts", t.read("Nong Khai", NONG_KHAI)
-                      .nationality_note)
+        nong_khai = t.read("Nong Khai", NONG_KHAI)
+        for note in (nong_khai.religion_note, nong_khai.nationality_note):
+            self.assertIn("as it was at the census, with the eight districts that became "
+                          "Bueng Kan", note)
 
     def test_every_report_names_a_drawn_province(self):
         path = ROOT / "site" / "data" / "admin1" / "THA.units.json"

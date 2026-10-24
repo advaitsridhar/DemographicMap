@@ -40,10 +40,13 @@ theirs do), and the indicators count everyone: Mae Hong Son's table prints
 94.1% Thai and its indicators 90.0%. A block printed word for word in two
 reports is held to the exact figure in both.
 
-**Bueng Kan and Nong Khai.** The Office published the eight districts' count
-as Bueng Kan's report and Nong Khai's report without them, so each figure is
-for the province as it is drawn now; the two reports' populations are logged
-beside each other to show it.
+**Bueng Kan and Nong Khai.** Nong Khai's report counts the province as it
+was at the census, all seventeen districts: its district tables list Bueng
+Kan (78,423 people), Seka (74,616), So Phisai (62,328) and the five others that
+became Bueng Kan in March 2011. Bueng Kan's report counts those eight districts
+alone, 362,754 people. So Bueng Kan's figure is its own, and Nong Khai's is
+shown on Nong Khai as drawn now, as its 2000 figure is, with a note that it
+covers both (the build's ``ROW_COVERS_SHAPES`` keeps a row on its own shape).
 
 Usage:
     python -m scripts.fetch_census.thailand_2010
@@ -213,7 +216,6 @@ SLACK = 0.1
 # Bangkok's report says "Thai nationalities" and "Buddhists", Krabi's "Buddihism".
 THAI = re.compile(r"(\d+\.\d)\s+Thai (?:citizenship|nationality|nationalities)\s*\(%\)")
 FAITH = re.compile(r"(\d+\.\d)\s+(Budd\w*|Muslims?|Islam\w*|Christian\w*)\s*\(%\)")
-POPULATION = re.compile(r"([\d,]{5,})\s+Total population")
 # Pages read past the one where the table and the key indicators were first
 # both seen, so that a block continued on the next page is read: Nong Khai's
 # nationality rows are on the page after its religion rows.
@@ -261,8 +263,9 @@ NOTE_SPLIT = {
     "Bueng Kan": (" Bueng Kan was made from eight districts of Nong Khai in March 2011, six "
                   "months after the census was taken; the Office published those districts' "
                   "count as Bueng Kan's own report."),
-    "Nong Khai": (" The Office published Nong Khai's count without the eight districts that "
-                  "became Bueng Kan in 2011, so the figure is for the province as drawn."),
+    "Nong Khai": (" The report counts Nong Khai as it was at the census, with the eight "
+                  "districts that became Bueng Kan province in March 2011; Bueng Kan's own "
+                  "report counts those eight districts alone."),
 }
 # Each composition's check: the row compared, and how a note names it.
 KEYS = {"religion": ("Buddhism", "Buddhism"), "nationality": ("Thai", "Thai nationality")}
@@ -280,7 +283,6 @@ class Reading:
     nationality_from: str = "table"
     religion_note: str = ""
     nationality_note: str = ""
-    population: int | None = None
     problems: list[str] = field(default_factory=list)
     # Every block found, and the block each composition stands on.
     found: dict[str, list[Block]] = field(default_factory=dict)
@@ -360,8 +362,6 @@ def indicators(lines: list[str]) -> dict[str, Any]:
         out["thai"] = m.group(1)
     for value, word in FAITH.findall(text):
         out["faiths"].setdefault(faith(word), value)
-    if m := POPULATION.search(text):
-        out["population"] = int(m.group(1).replace(",", ""))
     return out
 
 
@@ -411,7 +411,6 @@ def read(province: str, lines: list[str],
             found[what] = [rows]
     reading.found = found
     key = indicators(lines)
-    reading.population = key.get("population")
     for what, names in (("religion", RELIGIONS), ("nationality", NATIONALITIES)):
         group, row = KEYS[what]
         printed = key["faiths"].get("Buddhism") if what == "religion" else key.get("thai")
@@ -572,8 +571,7 @@ def show(reading: Reading, probe: bool) -> None:
     log(f"  {reading.province}: religion ({reading.religion_from}) "
         + ", ".join(f"{r['group']} {r['pct']}" for r in reading.religion)
         + f"; nationality ({reading.nationality_from}) "
-        + ", ".join(f"{r['group']} {r['pct']}" for r in reading.nationality)
-        + (f"; population {reading.population:,}" if reading.population else ""))
+        + ", ".join(f"{r['group']} {r['pct']}" for r in reading.nationality))
     for problem in reading.problems:
         log(f"    PROBLEM {problem}")
     if probe:
@@ -614,10 +612,6 @@ def main() -> int:
     problems = [f"{r.province}: {p}" for r in readings.values() for p in r.problems]
     if problems:
         raise SystemExit("thailand_2010: " + "; ".join(problems))
-    split = {p: readings[p].population for p in NOTE_SPLIT if p in readings}
-    if len(split) == 2:
-        log(f"  Bueng Kan {split['Bueng Kan'] or '?'} and Nong Khai {split['Nong Khai'] or '?'} "
-            "people in their 2010 reports")
     records = build(list(readings.values()), drawn("THA", "admin1"))
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {OUT}: {len(records)} records "
