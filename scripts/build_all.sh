@@ -142,6 +142,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # article's home-language cells and a regional assignment; two API calls.
   soft python3 -m scripts.fetch_census.thailand_ethnicity
   soft python3 -m scripts.fetch_census.thailand_nationality
+  # The 2010 census's 75 provincial reports the Internet Archive kept (a few MB
+  # each, read with pypdf): religion and nationality, Bueng Kan's among them.
+  soft python3 -m scripts.fetch_census.thailand_2010
   # Papua New Guinea: two NSO PDFs, the 2024 census Final Figures (8 MB) and
   # the 2011 National Report (12 MB), read with pypdf.
   soft python3 -m scripts.fetch_census.png

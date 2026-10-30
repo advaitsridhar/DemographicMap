@@ -1062,6 +1062,13 @@ ADAPTER_FILES = [
     # census's Table 1), ethnicity_basis "nationality". A count, so it replaces
     # thailand_ethnicity's modelled estimate on the 76 provinces.
     "thailand_nationality.json",
+    # Thailand: religion, nationality and the language spoken at home by
+    # province, 2010 census (each provincial report's section 1.5 table, checked
+    # against the report's own key indicators, and its annex's table 6), as the
+    # Internet Archive kept the reports. After both 2000 files, which it replaces
+    # on 74 provinces; it adds Bueng Kan, made in 2011 and absent from 2000, and
+    # leaves Lampang and Suphan Buri standing.
+    "thailand_2010.json",
     # Guatemala's 2018 census, read from INE's person database: pueblo and
     # the language each person learned to speak in, for all 22 departments
     # and 340 municipios. Below CLEAR Global, whose 2002 sample it replaces
@@ -1454,13 +1461,13 @@ IRAN_LANGUAGE = (
     "and Kermanshah is empty because its module reaches five of its fourteen "
     "counties and under a fifth of its people.")
 ADAPTER_GAPS: dict[str, str] = {
-    "THA": "The statistical office's own tables have not been obtained from its "
-           "websites. Religion by province is the 2000 census, taken from its "
-           "provincial final reports as transcribed on Wikipedia; language was "
-           "made public once, for 2000, in a table whose shares are not parts of "
-           "one whole. "
-           "Ethnicity is not asked: the provinces carry the 2000 census's count "
-           "of Thai and foreign nationals.",
+    "THA": "Religion, nationality and the language spoken at home by province are "
+           "the 2010 census's, from the statistical office's provincial reports as "
+           "the Internet Archive kept them; Lampang and Suphan Buri, whose 2010 "
+           "reports it did not keep, carry the 2000 census's religion and nationality "
+           "and no language. No census table gives a district any of the three. "
+           "Ethnicity is not asked: the provinces carry the census's count of Thai "
+           "and foreign nationals.",
     # Only language is left for this to explain. The 2016 census's religion
     # by province now comes from iran_census.json, which reads the Statistical
     # Centre's 1395 yearbook as the Internet Archive captured it (amar.org.ir
@@ -4855,6 +4862,10 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         # tidy_citations, which also keeps an entry a note names.)
         gone = replaced & set(COMPOSITION_FIELDS)
         if gone:
+            # And a citation of why the field was empty goes with the gap it
+            # explained: Thailand's provinces cited Ranong's 2000 workbook for
+            # "language (why empty)" beside the 2010 census's table 6.
+            gone |= {f"{field} (why empty)" for field in gone}
             entity["sources"] = [src for src in (without_fields(src, gone)
                                                  for src in entity["sources"]) if src]
     for key, value in row.items():
@@ -6279,8 +6290,8 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     else:
         parent.pop(f"{field}_basis", None)
     # The year belongs to the figure, not to the record, so it is rewritten
-    # with it. Thailand is what made this matter: its 76 provinces carry the
-    # 2000 census and stamp no year at all, so the sum inherited the 2021 the
+    # with it. Thailand is what made this matter: its 76 provinces carried the
+    # 2000 census and stamped no year at all, so the sum inherited the 2021 the
     # Factbook estimate had been wearing, and the country's panel dated a
     # quarter-century-old count to five years ago. Britain and Poland were the
     # same fault pointing the other way -- 2021 census children under an
@@ -7346,15 +7357,18 @@ COUNTRY_NOT_SUMMED: dict[tuple[str, str], str] = {
     # carries that table (data/curated/admin0_detail.json).
     ("TLS", "religion"): "its municipalities' religion is the 2015 census's, and the "
                          "country's is the 2022 census's",
-    # thailand_nationality and thailand give the 76 provinces the 2000
-    # census's provincial reports, the last to print nationality and religion
-    # by province. The country's figures are later: the Factbook's 2015
-    # nationality line (Thai 97.5%, Burmese 1.3%) and its 2021 religion line.
-    # A sum would put a count from 2000 over both.
-    ("THA", "ethnicity"): "its provinces' nationality is the 2000 census's, and the "
-                          "country's figure is of 2015",
-    ("THA", "religion"): "its provinces' religion is the 2000 census's, and the "
-                         "country's figure is of 2021",
+    # thailand_2010 gives 75 provinces the 2010 census's provincial reports,
+    # the latest whose provincial tables have been obtained, and Lampang and
+    # Suphan Buri, whose 2010 reports the Internet Archive did not keep, keep
+    # the 2000 census's (thailand_nationality, thailand). The country's
+    # figures are later: the Factbook's 2015 nationality line (Thai 97.5%,
+    # Burmese 1.3%) and its 2021 religion line. A sum would put a count from
+    # 2010 over both.
+    ("THA", "ethnicity"): "its provinces' nationality is the 2010 census's (the 2000 "
+                          "census's in Lampang and Suphan Buri), and the country's figure "
+                          "is of 2015",
+    ("THA", "religion"): "its provinces' religion is the 2010 census's (the 2000 census's "
+                         "in Lampang and Suphan Buri), and the country's figure is of 2021",
     # vanuatu_census gives each province Table 6.16 of the 2020 census, first
     # language learned, which the census asked only of the people who speak
     # one of the islands' own languages: 84-97% of each province, every share
@@ -8676,7 +8690,7 @@ PLAIN_PATTERNS: tuple[tuple[re.Pattern[str], Any], ...] = (
     (re.compile(r"\(Ranong: Malay 0\.5%, Burmese and Mon 7\.0%\)"), r"(Ranong's report, for example, gives Malay 0.5% and Burmese and Mon 7.0%)"),
     (re.compile(r"\(Ranong's tables, web\.archive\.org/\S+?/ranong1\.xls\)"), r"(as in Ranong's report, for example)"),
     (re.compile(r": Ranong's tables, web\.archive\.org/\S+?/ranong1\.xls\)"), r", as in Ranong's report, for example)"),
-    # THA 77 provinces' language gap: the same quotation with its year, and the
+    # THA language gap on Lampang and Suphan Buri: the same quotation with its year, and the
     # workbook's address in brackets of its own
     (re.compile(r"\(Ranong: Malay 0\.5%, Burmese and Mon 7\.0% in 2000\)"),
      r"(Ranong's report, for example, gives Malay 0.5% and Burmese and Mon 7.0% for 2000)"),
@@ -11483,8 +11497,10 @@ def gaps_from(src: dict[str, Any], target: str, iso3: str) -> dict[str, Any] | N
             continue
         year = src.get(f"{field}_year")
         when = f" in {year}" if year else ""
-        # Not "no source publishes it": Thailand's 2010 census did, for the
-        # new province. What is true is that none read here does.
+        # Not "no source publishes it": Thailand's 2010 census did, for the new
+        # province. What is true is that this file does not; the gap is written
+        # for a file that carries the old row alone, and a file that publishes
+        # the new province (thailand_2010) fills it.
         row[field] = gap(NOT_AVAILABLE, (
             f"No {field} figure for {target} on its own has been read. The one "
             f"read for {src['name']}{when} counted this ground as part of it, and a "
