@@ -4,7 +4,7 @@ A row of small chips naming what the map is shading right now (the view, the top
 
 ## When to use
 
-- Always, in two places: directly under `.filters-head`, and at the top of the on-map legend when the panel is closed. "It is repeated outside the panel on purpose: the panel can be hidden, and a map shaded by "the Sikhism share of religion, second-level divisions only" says nothing without that line." (app.js:786-788)
+- Always, in two places: directly under `.filters-head`, and at the top of the on-map legend when the panel is closed. "It is repeated outside the panel on purpose: the panel can be hidden, and a map shaded by "the Sikhism share of religion, second-level divisions only" says nothing without that line." (app.js:824-826)
 - It reports the filter; it does not change it. Chips are `<span>`s, not buttons.
 
 ## Anatomy
@@ -55,8 +55,8 @@ Neutral chips read 6.9:1 in light and 8.8:1 in dark. The key chip is `accent-ink
 
 ## In the app
 
-- `renderSummary()` app.js:790-814 builds the chips from state (view, field, depth, group, pinned level) and writes the same HTML to `#filter-summary` and `#map-legend-summary`. It also writes the view's blank note to `#blank-note` and `#map-legend-note`.
-- It runs on every change of view, topic, category width, group and detail level (app.js:455, 502, 553, 1284, and from `renderGroupList` at 713, 732 and 779), so the chips never lag the map.
+- `renderSummary()` app.js:828-852 builds the chips from state (view, field, depth, group, pinned level) and writes the same HTML to `#filter-summary` and `#map-legend-summary`. It also writes the view's blank note to `#blank-note` and `#map-legend-note`.
+- It runs on every change of view, topic, category width, group and detail level (app.js:493, 540, 591, 1322, and from `renderGroupList` at 751, 770 and 817), so the chips never lag the map.
 - The consumer provides the chip words (the controls' labels and the group name) and which chip, if any, is the key. Nothing is computed for colour.
 - CSS: `site/css/app.css:206-221`; on the map, `app.css:383`.
 

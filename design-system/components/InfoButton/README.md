@@ -39,8 +39,8 @@ A small italic "i" in a ring at the end of a heading that opens a bubble holding
 | Open | `aria-expanded="true"` | `accent`; the bubble shows below |
 | Focus | `:focus-visible` | 2px `accent` outline at 2px |
 
-- **Opening.** Hover or focus opens the bubble unpinned; leaving closes it. A click pins it so the text can be selected, and a second click closes it. Escape, any scroll, or a click outside a `[data-info]` element closes it. Only one bubble is open at a time.
-- **Placement.** Fixed to the viewport, 6px below the button, its left edge 8px left of the button's and kept 8px inside the window; at most `min(var(--bubble-w), 100vw - 1rem)` wide. "Placed below the button and nudged back inside the viewport rather than anchored to the panel: at phone width the panel is narrower than the bubble needs to be." (app.js:261-263)
+- **Opening.** Hover or focus opens the bubble unpinned; leaving closes it, but a bubble that focus opened stays while its dot keeps the focus, wherever the pointer goes. A click pins it, and a second click closes it. Escape or a click outside a `[data-info]` element closes it. A scroll carries the bubble along with its dot, and closes it once the dot is out of sight, in the window or in a panel around it. Only one bubble is open at a time.
+- **Placement.** Fixed to the viewport, 6px below the button, its left edge 8px left of the button's and kept 8px inside the window; at most `min(var(--bubble-w), 100vw - 1rem)` wide. "Placed below the button and nudged back inside the viewport rather than anchored to the panel: at phone width the panel is narrower than the bubble needs to be." (app.js:268-270)
 - **Text source.** `data-info="topic|depth|spread|group|estimates"` looks the text up in `INFO`; `data-info-text` carries it (every place panel dot, and the Legend dot, whose text is rewritten on each repaint).
 - **Size.** `.95em` of its heading, so it scales with it: about 10.3px in a filter eyebrow, 12.9px in a panel heading, 10px in a fact label. "Small, quiet, and the same size as the heading it sits in, so it reads as punctuation rather than as another control." (app.css:617-618)
 - **None.** No note, no dot: `infoDot` returns an empty string for empty text.
@@ -59,17 +59,17 @@ At rest the "i" is 3.5:1 on `surface-1` in light (3.1:1 on a fact tile's `surfac
 
 ## Accessibility
 
-- A real `<button type="button">` with an `aria-label`; "i" alone is not a name. The legend's "Group not yet classified" line emits a dot with no `aria-label` (app.js:1022), so its name is "i". Don't copy it.
+- A real `<button type="button">` with an `aria-label`; "i" alone is not a name. The legend's "Group not yet classified" line emits a dot with no `aria-label` (app.js:1060), so its name is "i". Don't copy it.
 - `aria-expanded` is `"true"` while the bubble is open and `"false"` after it closes; it is absent until the first open.
 - Focus opens the bubble, "because hover alone is unreachable by keyboard and unusable on a touchscreen" (app.js:198-199). Inside the filters panel, the Escape that closes a bubble also hides the panel.
 - The bubble is a `role="note"` at the end of `<body>`, with no `aria-describedby` from the button, so a screen reader announces the label and state but not the note.
-- Dots that carry only `data-info-text` cannot be pinned: the outside-click listener tests `closest("[data-info]")`, so a click or Enter closes the bubble instead of pinning it (app.js:298-300).
+- Dots that carry only `data-info-text` cannot be pinned: the outside-click listener tests `closest("[data-info]")`, so a click or Enter closes the bubble instead of pinning it (app.js:327-329).
 - A heading's "i" joins the name of whatever that heading labels; measured: "TOPIC About comparing topics across borders".
 
 ## In the app
 
-- `INFO` app.js:202-234; `closeInfo` app.js:238-243; `openInfo` app.js:245-271 builds and places the bubble; `wireInfo` app.js:276-302 delegates every listener to `document`, because "most of these buttons do not exist yet: the sidebar rebuilds its panels on every selection" (app.js:273-274).
-- `infoDot(text, label)` dashboard.js:225-229 writes the place panel dots, for `factCard` (dashboard.js:83-84) and `compositionPanel` (dashboard.js:322-325). `updateLevelNote` app.js:1091-1098 rewrites the Legend dot's text.
+- `INFO` app.js:202-234; `closeInfo` app.js:238-243; `openInfo` app.js:245-263 builds the bubble and `placeInfo` app.js:265-276 places it; `wireInfo` app.js:298-340 delegates every listener to `document`, because "most of these buttons do not exist yet: the sidebar rebuilds its panels on every selection" (app.js:295-296). Its scroll listener (app.js:330-339) moves the bubble with its button and closes it once `inSight` (app.js:278-293) finds the button out of sight.
+- `infoDot(text, label)` dashboard.js:225-229 writes the place panel dots, for `factCard` (dashboard.js:83-84) and `compositionPanel` (dashboard.js:322-325). `updateLevelNote` app.js:1129-1136 rewrites the Legend dot's text.
 - The consumer provides the note (or an `INFO` key) and the `aria-label`. The bubble's `top` and `left` are computed at runtime from the button's box.
 - CSS: `site/css/app.css:617-637` (dot, bubble), 668-671 and 673-676 (heading layouts).
 

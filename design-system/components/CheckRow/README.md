@@ -34,13 +34,13 @@ The label wraps the input and both spans, so the whole row is the hit area. The 
 | Hover | `.check-row:hover` | `surface-sunken` fill on the whole row |
 | Focus | `.check-row input:focus-visible` | 2px `accent` outline at 1px around the box |
 
-The Estimates section shows only on Most populous group and Share of one group: "those are the two maps that can read an estimate's rows" (app.js:544-545).
+The Estimates section shows only on Most populous group and Share of one group: "those are the two maps that can read an estimate's rows" (app.js:582-583).
 
 ## Content
 
 - **Name**: what ticking does, as a verb phrase: "Show estimates".
 - **Hint**: what each state draws, in one or two short sentences.
-- The app's hint is stale. "Hatched, in the colour the estimate gives. Off, they are gaps." describes a map that no longer exists: "An estimate is drawn exactly like a reading, by the owner's decision of 21 September 2026" (map.js:229-230). The section's own "i" already says the new rule: "Their colour is what the estimate says, drawn like any other" (app.js:230-231). Drop "Hatched" and say only what on and off draw. The legend's estimate line still says "hatched" for the same reason (app.js:977).
+- The app's hint is stale. "Hatched, in the colour the estimate gives. Off, they are gaps." describes a map that no longer exists: "An estimate is drawn exactly like a reading, by the owner's decision of 21 September 2026" (map.js:229-230). The section's own "i" already says the new rule: "Their colour is what the estimate says, drawn like any other" (app.js:230-231). Drop "Hatched" and say only what on and off draw. The legend's estimate line still says "hatched" for the same reason (app.js:1015).
 
 ## Tokens
 
@@ -56,9 +56,9 @@ The hint is `ink-muted`: 3.5:1 on `surface-1` and 3.1:1 on the hover fill in lig
 
 ## In the app
 
-- Static markup at `site/index.html:85-95`. app.js sets the box's `checked` property from state (app.js:446) and listens for `change` (app.js:447-449).
+- Static markup at `site/index.html:85-95`. app.js sets the box's `checked` property from state (app.js:484) and listens for `change` (app.js:485-487).
 - `estimatesDefault()` app.js:154-160 reads the stored choice; `setEstimates(on)` app.js:162-169 stores `wdm-estimates` as `on` or `off` and repaints the map.
-- `syncSections()` hides the section on every other view (app.js:543-547).
+- `syncSections()` hides the section on every other view (app.js:581-585).
 - The consumer provides the name, the hint and the starting state. No colour is computed.
 - CSS: `site/css/app.css:410-421`.
 
