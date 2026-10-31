@@ -67,14 +67,14 @@ The bar across the top of the page that holds the brand, the search box and thre
 
 ## In the app
 
-- Static markup, index.html:17-46. CSS app.css:112-182, with the narrow rules at app.css:558-577 and 579-602.
+- Static markup, index.html:17-46. CSS app.css:112-182, with the narrow rules at app.css:564-583 and 585-608.
 - `trackTopbarHeight()` app.js:136-143 writes the bar's rounded height to `--topbar-h` on `<html>` and re-measures with `ResizeObserver`: "The topbar's height depends on how its own contents wrap, so it is measured rather than guessed." (app.js:133-134)
 - `setPanel()` app.js:171-185 sets the toggle's `aria-expanded` and `title`; `applyTheme()` app.js:91-104 sets the glyph and `title`; About opens the dialog with `showModal()` (app.js:1231).
-- The script finds the buttons by id (`filters-toggle`, `theme-toggle`, `about-open`), and the app's phone rules select two of them by id too (`#about-open`, `#filters-toggle`, app.css:565-568); in index.html all three carry only `class="ghost-button"`. In this system those two rules are the classes `.filters-toggle` and `.about-open`, so those buttons take the class as well as the id.
+- The script finds the buttons by id (`filters-toggle`, `theme-toggle`, `about-open`), and the app's phone rules select two of them by id too (`#about-open`, `#filters-toggle`, app.css:571-574); in index.html all three carry only `class="ghost-button"`. In this system those two rules are the classes `.filters-toggle` and `.about-open`, so those buttons take the class as well as the id.
 
 ## Do / Don't
 
-- Do keep the order brand, search, actions, and let the brand go first on a phone: "the search box is what people actually use, and it needs the row to itself." (app.css:559-560)
+- Do keep the order brand, search, actions, and let the brand go first on a phone: "the search box is what people actually use, and it needs the row to itself." (app.css:565-566)
 - Do re-measure the bar and write `--topbar-h` whenever its contents can change height.
 - Don't add a fourth action without testing 641-766px, where the labels already wrap; give the labels `white-space: nowrap` or collapse them earlier.
 - Don't style the toggle as pressed; its state is `aria-expanded`.

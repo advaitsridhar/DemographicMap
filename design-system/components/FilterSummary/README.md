@@ -58,7 +58,7 @@ Neutral chips read 6.9:1 in light and 8.8:1 in dark. The key chip is `accent-ink
 - `renderSummary()` app.js:790-814 builds the chips from state (view, field, depth, group, pinned level) and writes the same HTML to `#filter-summary` and `#map-legend-summary`. It also writes the view's blank note to `#blank-note` and `#map-legend-note`.
 - It runs on every change of view, topic, category width, group and detail level (app.js:455, 502, 553, 1284, and from `renderGroupList` at 713, 732 and 779), so the chips never lag the map.
 - The consumer provides the chip words (the controls' labels and the group name) and which chip, if any, is the key. Nothing is computed for colour.
-- CSS: `site/css/app.css:206-221`; on the map, `app.css:377`.
+- CSS: `site/css/app.css:206-221`; on the map, `app.css:383`.
 
 ## Do / Don't
 

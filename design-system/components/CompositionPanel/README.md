@@ -69,7 +69,7 @@ The data sets every state, through the inline styles and one class.
 
 ## Do / Don't
 
-- Do keep a short set's true widths and hatch the rest: “Hatched rather than a flat colour so it reads as absence and never as another group” (`site/css/app.css:484–485`).
+- Do keep a short set's true widths and hatch the rest: “Hatched rather than a flat colour so it reads as absence and never as another group” (`site/css/app.css:490–491`).
 - Do fold past eight groups into `Other groups (n)`. A ninth slot returns the neutral “so a bug shows up as grey rather than as a fabricated ninth identity” (`site/js/palette.js:105–106`).
 - Don't stretch a short set to the full bar: that “asserts the population is entirely described” (`site/js/dashboard.js:342–343`).
 - Don't give the rest a swatch or a list row.

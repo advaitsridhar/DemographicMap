@@ -83,7 +83,7 @@ The legend's grey ramp is `leading-share-0` to `-4` and its "No figure" swatch i
 
 - Markup: `site/index.html:48-128`. The consumer provides the sections and their controls, and the panel computes nothing itself; the drawer starts at `--topbar-h`, which `trackTopbarHeight` (app.js:136-143) measures from the topbar and writes on `<html>`.
 - `setPanel` app.js:171-185 sets `hidden`, `.filters-open`, the toggle's `aria-expanded` and title, the on-map legend and `wdm-filters`. `panelDefault` app.js:145-151; the closing paths (group row, toggle, ✕, Escape) app.js:509-523; `syncSections` app.js:537-555.
-- CSS: `site/css/app.css:186-204` (panel, head), 223-227 (sections), 585-589 (drawer), 664 (a heading with an "i").
+- CSS: `site/css/app.css:186-204` (panel, head), 223-227 (sections), 591-595 (drawer), 670 (a heading with an "i").
 
 ## Do / Don't
 

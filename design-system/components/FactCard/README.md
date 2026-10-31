@@ -64,7 +64,7 @@ A two-column grid of six tiles with a place's headline figures — population, c
 
 ## In the app
 
-- `factCard()` `site/js/dashboard.js:78`, `unitLabel()` `:111`, `measureCard()` `:116`, `figureNote()` `:138`; the six tiles in `render()` `site/js/dashboard.js:520–535`. CSS `site/css/app.css:465–473`, `667–670`.
+- `factCard()` `site/js/dashboard.js:78`, `unitLabel()` `:111`, `measureCard()` `:116`, `figureNote()` `:138`; the six tiles in `render()` `site/js/dashboard.js:520–535`. CSS `site/css/app.css:471–479`, `673–676`.
 - Computed at render: the population through `Fmt.number()` (`site/js/data.js:296`), which formats in the reader's locale; the glyph, colour and words from `Palette.status()` (`site/js/palette.js:267`); the meta from the measure's `unit`, `year` and `source`.
 - You provide the markup; each label; the formatted value or its gap status; the meta parts; the note; and the status token.
 

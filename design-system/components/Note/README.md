@@ -50,7 +50,7 @@ Contrast: `ink-muted` measures 3.5:1 on `surface-1` in light, below 4.5:1, and i
 
 - Names without shares (the code's `unlabelled`): `compositionPanel`, `site/js/dashboard.js:383–387`. The names are the rows with no share (`pct == null`), collected at 337.
 - Hint panels: `hintPanel(record)`, `dashboard.js:402–424`, shown only when the record has a `gap_reason` or an `adapter_hint`. Link target `SOURCE_NOTES` (393); field words 426–427; `gapReason` 430–434; `listed` 436–439.
-- CSS: `site/css/app.css:509`.
+- CSS: `site/css/app.css:515`.
 - You provide the names or the reason. The ▲ colour is `Palette.status("not_available").color`.
 
 ## Do / Don't

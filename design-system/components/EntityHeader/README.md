@@ -60,7 +60,7 @@ The record's `level` decides the variant; no class or attribute changes.
 
 ## In the app
 
-- `breadcrumb()` `site/js/dashboard.js:441`, `subtitle()` `site/js/dashboard.js:562`, the template in `render()` `site/js/dashboard.js:500–504`. CSS `site/css/app.css:451–463`.
+- `breadcrumb()` `site/js/dashboard.js:441`, `subtitle()` `site/js/dashboard.js:562`, the template in `render()` `site/js/dashboard.js:500–504`. CSS `site/css/app.css:457–469`.
 - Computed at render: the trail from `DataStore.country(record.country)` and `DataStore.get(record.parent)`, the subtitle from `record.codes`.
 - After `innerHTML` is set, every `[data-goto]` button gets a click listener (`site/js/dashboard.js:556–558`) that calls the navigator set at `site/js/app.js:1225–1228`.
 - Disputed and water records return before that wiring (`site/js/dashboard.js:514–518`), so their ancestor buttons do nothing.

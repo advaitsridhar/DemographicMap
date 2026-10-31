@@ -4,7 +4,7 @@ A single on/off choice laid out like an option row (a checkbox, its name, and a 
 
 ## When to use
 
-- For one independent on/off choice that sits among option rows. "A single on/off choice, laid out like the option rows around it so the panel keeps one rhythm: the name on the first line, the sentence under it." (app.css:404-405)
+- For one independent on/off choice that sits among option rows. "A single on/off choice, laid out like the option rows around it so the panel keeps one rhythm: the name on the first line, the sentence under it." (app.css:410-411)
 - For one of several alternatives, use OptionList or SegmentedControl.
 
 ## Anatomy
@@ -60,7 +60,7 @@ The hint is `ink-muted`: 3.5:1 on `surface-1` and 3.1:1 on the hover fill in lig
 - `estimatesDefault()` app.js:154-160 reads the stored choice; `setEstimates(on)` app.js:162-169 stores `wdm-estimates` as `on` or `off` and repaints the map.
 - `syncSections()` hides the section on every other view (app.js:543-547).
 - The consumer provides the name, the hint and the starting state. No colour is computed.
-- CSS: `site/css/app.css:404-415`.
+- CSS: `site/css/app.css:410-421`.
 
 ## Do / Don't
 

@@ -1293,6 +1293,9 @@
         selectEntity(id, { country: properties.shapeGroup, level });
       },
     });
+    // The on-map legend shares the map's bottom edge with the scale bar and
+    // the attribution; where they would meet, it rises above them.
+    window.WorldMap.keepClearOfControls(els.miniLegend);
 
     await window.Search.init({
       status: els.searchStatus,

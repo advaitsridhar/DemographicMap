@@ -28,7 +28,7 @@ A small italic "i" in a ring at the end of a heading that opens a bubble holding
 <div class="info-bubble" role="note" style="top: 198px; left: 47px;">Religion, language and ethnicity are three separate census questions, …</div>
 ```
 
-`.filter-section > h3`, `.panel-head h3` and `.fact-label` are `display: flex; align-items: center`, so the dot sits on the heading's line. In a fact label it also takes `flex: none; letter-spacing: 0`, because "The label is uppercase with a .05em tracking, which would push the "i" off its own circle." (app.css:667-668)
+`.filter-section > h3`, `.panel-head h3` and `.fact-label` are `display: flex; align-items: center`, so the dot sits on the heading's line. In a fact label it also takes `flex: none; letter-spacing: 0`, because "The label is uppercase with a .05em tracking, which would push the "i" off its own circle." (app.css:673-674)
 
 ## States and variants
 
@@ -42,7 +42,7 @@ A small italic "i" in a ring at the end of a heading that opens a bubble holding
 - **Opening.** Hover or focus opens the bubble unpinned; leaving closes it. A click pins it so the text can be selected, and a second click closes it. Escape, any scroll, or a click outside a `[data-info]` element closes it. Only one bubble is open at a time.
 - **Placement.** Fixed to the viewport, 6px below the button, its left edge 8px left of the button's and kept 8px inside the window; at most `min(var(--bubble-w), 100vw - 1rem)` wide. "Placed below the button and nudged back inside the viewport rather than anchored to the panel: at phone width the panel is narrower than the bubble needs to be." (app.js:261-263)
 - **Text source.** `data-info="topic|depth|spread|group|estimates"` looks the text up in `INFO`; `data-info-text` carries it (every place panel dot, and the Legend dot, whose text is rewritten on each repaint).
-- **Size.** `.95em` of its heading, so it scales with it: about 10.3px in a filter eyebrow, 12.9px in a panel heading, 10px in a fact label. "Small, quiet, and the same size as the heading it sits in, so it reads as punctuation rather than as another control." (app.css:611-612)
+- **Size.** `.95em` of its heading, so it scales with it: about 10.3px in a filter eyebrow, 12.9px in a panel heading, 10px in a fact label. "Small, quiet, and the same size as the heading it sits in, so it reads as punctuation rather than as another control." (app.css:617-618)
 - **None.** No note, no dot: `infoDot` returns an empty string for empty text.
 
 ## Content
@@ -71,7 +71,7 @@ At rest the "i" is 3.5:1 on `surface-1` in light (3.1:1 on a fact tile's `surfac
 - `INFO` app.js:202-234; `closeInfo` app.js:238-243; `openInfo` app.js:245-271 builds and places the bubble; `wireInfo` app.js:276-302 delegates every listener to `document`, because "most of these buttons do not exist yet: the sidebar rebuilds its panels on every selection" (app.js:273-274).
 - `infoDot(text, label)` dashboard.js:225-229 writes the place panel dots, for `factCard` (dashboard.js:83-84) and `compositionPanel` (dashboard.js:322-325). `updateLevelNote` app.js:1091-1098 rewrites the Legend dot's text.
 - The consumer provides the note (or an `INFO` key) and the `aria-label`. The bubble's `top` and `left` are computed at runtime from the button's box.
-- CSS: `site/css/app.css:611-631` (dot, bubble), 662-665 and 667-670 (heading layouts).
+- CSS: `site/css/app.css:617-637` (dot, bubble), 668-671 and 673-676 (heading layouts).
 
 ## Do / Don't
 

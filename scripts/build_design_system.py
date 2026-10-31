@@ -133,9 +133,13 @@ REPLACEMENTS = [
      "max-height: min(60vh, var(--results-h)); overflow-y: auto; z-index: var(--z-search-results);", 1),
     ("z-index: 16; min-width: 0;", "z-index: var(--z-filters); min-width: 0;", 1),
     ("position: sticky; top: 0; z-index: 2;", "position: sticky; top: 0; z-index: var(--z-sticky-head);", 1),
-    ("position: absolute; left: 12px; bottom: 12px; z-index: 10;\n  width: min(280px, calc(100% - 24px));",
-     "position: absolute; left: var(--overlay-inset); bottom: var(--overlay-inset); z-index: var(--z-map-legend);\n"
-     "  width: min(var(--legend-w), calc(100% - 2 * var(--overlay-inset)));", 1),
+    ("position: absolute; left: 12px; bottom: calc(12px + var(--map-controls-h, 0px)); z-index: 10;\n"
+     "  width: min(280px, calc(100% - 24px));\n"
+     "  max-height: calc(100% - 24px - var(--map-controls-h, 0px)); overflow-y: auto;",
+     "position: absolute; left: var(--overlay-inset); bottom: calc(var(--overlay-inset) + var(--map-controls-h, 0px));"
+     " z-index: var(--z-map-legend);\n"
+     "  width: min(var(--legend-w), calc(100% - 2 * var(--overlay-inset)));\n"
+     "  max-height: calc(100% - 2 * var(--overlay-inset) - var(--map-controls-h, 0px)); overflow-y: auto;", 1),
     ("position: absolute; top: 12px; left: 50%; transform: translateX(-50%);\n  z-index: 12;",
      "position: absolute; top: var(--overlay-inset); left: 50%; transform: translateX(-50%);\n"
      "  z-index: var(--z-map-status);", 1),
@@ -155,8 +159,8 @@ REPLACEMENTS = [
      "position: fixed; inset: var(--topbar-h) auto 0 0; width: min(var(--drawer-w), 90vw);", 1),
     ("position: fixed; inset: auto 0 0 0; height: min(62vh, 560px);",
      "position: fixed; inset: auto 0 0 0; height: min(62vh, var(--sheet-h));", 1),
-    (".map-legend { bottom: 12px; width: calc(100% - 24px); }",
-     ".map-legend { bottom: var(--overlay-inset); width: calc(100% - 2 * var(--overlay-inset)); }", 1),
+    (".map-legend { width: calc(100% - 24px); }",
+     ".map-legend { width: calc(100% - 2 * var(--overlay-inset)); }", 1),
     ("  padding: 0 .9rem 2rem;", "  padding: 0 var(--gutter-panel) 2rem;", 1),
     ("  padding: .55rem .9rem;", "  padding: .55rem var(--gutter-panel);", 1),
     ("display: flex; align-items: center; gap: 1rem;\n  padding: .55rem",

@@ -54,7 +54,7 @@ The wrapper for each topic of the place panel below the fact tiles: a section wh
 ## In the app
 
 - Composition heads in `compositionPanel()` `site/js/dashboard.js:322–325`; `hintPanel()` `:408` and `:422`; `childrenPanel()` `:484–485`; `sourceList()` `:473`.
-- CSS `site/css/app.css:475–478`. The `h3` lays out its dot with `display: flex; align-items: center`, and the dot drops the heading's letter-spacing (`site/css/app.css:662–665`).
+- CSS `site/css/app.css:481–484`. The `h3` lays out its dot with `display: flex; align-items: center`, and the dot drops the heading's letter-spacing (`site/css/app.css:668–671`).
 - You provide the markup, the title, the note for the dot, and the year or count.
 
 ## Do / Don't

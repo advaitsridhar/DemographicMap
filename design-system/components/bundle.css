@@ -304,9 +304,15 @@ html, body {
 .map-wrap { grid-area: map; position: relative; min-width: 0; }
 .map { position: absolute; inset: 0; background: var(--water); }
 
+/* --map-controls-h is the lift WorldMap.keepClearOfControls measures: zero
+   while the legend sits beside the scale bar and the attribution, their
+   height where it would cover them. The attribution is a CC BY requirement,
+   so the legend moves, and scrolls rather than run under the topbar when a
+   short screen leaves it too little room. */
 .map-legend {
-  position: absolute; left: var(--overlay-inset); bottom: var(--overlay-inset); z-index: var(--z-map-legend);
+  position: absolute; left: var(--overlay-inset); bottom: calc(var(--overlay-inset) + var(--map-controls-h, 0px)); z-index: var(--z-map-legend);
   width: min(var(--legend-w), calc(100% - 2 * var(--overlay-inset)));
+  max-height: calc(100% - 2 * var(--overlay-inset) - var(--map-controls-h, 0px)); overflow-y: auto;
   padding: .6rem .7rem;
   background: color-mix(in srgb, var(--surface-1) 92%, transparent);
   backdrop-filter: blur(8px);
@@ -537,7 +543,7 @@ dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secon
   .sidebar.is-open { transform: translateY(0); }
   .sidebar-close { display: block; }
   .brand-sub { display: none; }
-  .map-legend { bottom: var(--overlay-inset); width: calc(100% - 2 * var(--overlay-inset)); }
+  .map-legend { width: calc(100% - 2 * var(--overlay-inset)); }
   .sidebar:not(.is-open) { pointer-events: none; }
 }
 

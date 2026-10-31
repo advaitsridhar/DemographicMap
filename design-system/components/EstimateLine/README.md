@@ -54,7 +54,7 @@ Contrast: as text on `surface-1` in light, the Modelled badge measures 3.6:1 and
 
 - `estimateLine(value, note)`, `site/js/dashboard.js:304–311`; `firstSentence` 297–302; `estimateRows` 287–293 decides whether a value takes this path. Placed at 331, before the bar.
 - Badge colour, glyph and title: `Palette.status(gapStatus(value))` (`site/js/palette.js:70–80`), the same in both themes.
-- CSS: `site/css/app.css:646–660`.
+- CSS: `site/css/app.css:652–666`.
 - You provide the status, the note and the rows. The colour comes from `Palette.status`.
 - Why: an estimate "is drawn as figures: the same bar and list a reading gets, a badge that says "modelled" or "derived", and one sentence of the note in the open." (`dashboard.js:277–286`)
 

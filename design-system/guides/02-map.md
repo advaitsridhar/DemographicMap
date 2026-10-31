@@ -43,7 +43,7 @@ Three levels of units, each a fill plus its own boundary lines. The level shown 
 
 - **The on-map legend** sits bottom-left, `overlay-inset` from the edges, on `surface-1` at 92% with an 8px backdrop blur. It appears only while the filters panel is hidden: “Hiding the controls is a request for more map, not for a map whose colours mean nothing.”
 - **The map status** line sits top-centre, `overlay-inset` from the top: a `radius-pill` on `surface-1`. It says what is loading (“Loading first-level data — 1 of 2 countries”) and reports failures (“No data record for that unit”).
-- **Zoom buttons** are top-right, with no compass. The **scale bar** and the **attribution** sit at the bottom right. The attribution is required by CC BY: “geoBoundaries CC BY 4.0 · CIA World Factbook (public domain) · Natural Earth”. At 900px and below the full-width on-map legend covers both, so on a phone the attribution is hidden whenever the filters are closed (see Exceptions in the app).
+- **Zoom buttons** are top-right, with no compass. The **scale bar** and the **attribution** sit at the bottom right. The attribution is required by CC BY: “geoBoundaries CC BY 4.0 · CIA World Factbook (public domain) · Natural Earth”. The on-map legend must not cover them: where it would, it rises above them by their measured height (`--map-controls-h`), which happens at every width of 900px and below, where it spans the map, and on a desktop map too narrow for the two side by side.
 - MapLibre's own controls keep its default light styling and Helvetica/Arial text in both themes. See Exceptions in the app.
 
 ## Themes

@@ -73,7 +73,7 @@ Everything else about it is MapLibre's: a white pill, black text, links at 75% b
 - `hoverHTML(id, properties)`, `site/js/app.js:1164-1197`, passed to the map as `onHover` (`app.js:1291`).
 - The popup: `new window.maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 8 })`, `site/js/map.js:483`; filled with `setHTML` on `mousemove` over the active level's fill (`map.js:530-546`), removed on `mouseleave` (`map.js:547-552`).
 - Attribution: the source's `attribution` string `map.js:324-326`, `attributionControl: { compact: true }` `map.js:476`.
-- CSS: `site/css/app.css:424-433`. MapLibre's own: `site/vendor/maplibre-gl.css`.
+- CSS: `site/css/app.css:430-439`. MapLibre's own: `site/vendor/maplibre-gl.css`.
 - Computed at runtime: the value (`metric.evaluate`, `display` or `format` in `site/js/metrics.js`), the status glyph and label (`Palette.status`), the country name, and MapLibre's anchor and transform.
 
 ## Do / Don't

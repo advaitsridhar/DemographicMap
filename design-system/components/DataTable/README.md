@@ -41,7 +41,7 @@ A composition's numbers as a plain table behind a closed “Table view” toggle
 - Rows in the source's order, not sorted and not folded. American Samoa's languages list `English 3.3%` before `other Pacific Islander 4.1%`; the list above sorts them the other way.
 - Keep `0.0%` rows: Kerala's religion table ends `Buddhist`, `Jain`, `Other religions (not separately named)`, `Sikh`, all `0.0%`, though the bar and list leave them out.
 - One decimal on every share and on the total, as in the list.
-- The total exists for one reason: “so a reader can see the column adds up rather than take it on trust” (`site/css/app.css:672–673`).
+- The total exists for one reason: “so a reader can see the column adds up rather than take it on trust” (`site/css/app.css:678–679`).
 
 ## Tokens
 
@@ -59,7 +59,7 @@ A composition's numbers as a plain table behind a closed “Table view” toggle
 
 ## In the app
 
-- Built inside `compositionPanel()`, `site/js/dashboard.js:373–380`. CSS `site/css/app.css:530–537`, `672–678`.
+- Built inside `compositionPanel()`, `site/js/dashboard.js:373–380`. CSS `site/css/app.css:536–543`, `678–684`.
 - Computed at render: the rows are the composition after `toHundred()` (`site/js/dashboard.js:169`), so a partition's tenths match the list; the total is `Fmt.pct1()` (`site/js/data.js:317`) of every numeric share.
 - You provide the markup, and each group's name and share, its bound included.
 

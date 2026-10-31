@@ -52,7 +52,7 @@ Contrast: the partial chip's `status-serious` text measures 2.3:1 on its `surfac
 ## In the app
 
 - `basisChip(total, value)`, `site/js/dashboard.js:239–257`, wrapped in `<p class="basis-line">` at 365–366, after the stack bar and before the list.
-- CSS: `site/css/app.css:646–655`.
+- CSS: `site/css/app.css:652–661`.
 - You provide the rows, with any "<" bounds, and the two sums. No colour is computed.
 - Why it is on the page: "A reader who sees six ethnic groups totalling 114% and no explanation is looking at what appears to be an error." (`dashboard.js:231–238`)
 

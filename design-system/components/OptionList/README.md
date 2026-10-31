@@ -63,7 +63,7 @@ The chosen name is `accent` on `surface-sunken`: 3.8:1 in light, 4.3:1 in dark. 
 - View: one row per entry of `window.Metrics.METRICS` (`label`, `hint`; metrics.js:270-373), built at app.js:405-414. Picking one runs `syncSections()` and `refreshColors()`.
 - Detail level: `DETAIL_LEVELS` app.js:397-402, built at app.js:459-465. Picking one calls `WorldMap.setPinnedLevel`, with `null` for "auto".
 - The consumer provides each row's value, name and hint, and the chosen value. No colour is computed.
-- CSS: `site/css/app.css:229-258`; phone padding `app.css:572`.
+- CSS: `site/css/app.css:229-258`; phone padding `app.css:578`.
 
 ## Do / Don't
 

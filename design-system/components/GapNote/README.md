@@ -60,7 +60,7 @@ The glyph colours are not text colours: ▲ is 1.6:1 on `surface-sunken` in ligh
 - `gapBlock(value, fieldLabel)`, `site/js/dashboard.js:28–50`, called by `compositionPanel` when the value is a gap with no estimate rows (327–330).
 - Record note: `render()`, `dashboard.js:506–510`, whenever `record.note` is set. For a disputed or water unit, Sources is all that follows it (512–518).
 - Glyphs, colours and labels: `STATUS` in `site/js/palette.js:70–80`, read through `Palette.status()` (267).
-- CSS: `site/css/app.css:499–507`.
+- CSS: `site/css/app.css:505–513`.
 - You provide the status, the section's name and the sentence. The glyph's colour is computed by `Palette.status`.
 
 ## Do / Don't
