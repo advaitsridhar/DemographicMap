@@ -1,0 +1,27 @@
+<!-- @dsCard group="Shell" height=96 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GhostButton — preview</title>
+<style>
+  /* Frame only: surface-1, the ground of every ghost button (topbar, panel
+     heads, dialog head, place sheet). */
+  body { padding: 16px; }
+  .ground {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
+    padding: 16px var(--gutter-panel);
+    background: var(--surface-1); border: 1px solid var(--hairline);
+  }
+</style>
+</head>
+<body>
+<div class="ground">
+  <button class="ghost-button about-open" type="button" aria-haspopup="dialog">About &amp; sources</button>
+  <button class="ghost-button filters-toggle" type="button" aria-expanded="true" aria-controls="filters" title="Hide the filter panel">
+        <span aria-hidden="true">☰</span> Filters
+      </button>
+  <button class="ghost-button" type="button" aria-label="Hide the filters panel">✕</button>
+</div>
+</body>
+</html>

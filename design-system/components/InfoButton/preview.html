@@ -1,0 +1,101 @@
+<!-- @dsCard group="Controls" height=453 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>InfoButton — preview</title>
+<style>
+  /* Frame only: a slice of the filters panel (330px column, its inline gutter,
+     surface-1) with the map's water beside it, as on a desktop; under it a
+     slice of the place panel, edged all round like the filters pane: one
+     pixel wider than the panel so that inside its two rules and its padding
+     the content is the app's 363.8px. */
+  body { padding: 16px; }
+  .stage { display: grid; gap: 16px; justify-items: start; }
+  .row { display: flex; width: 100%; }
+  .pane {
+    width: calc(var(--filters-w) + 1px);
+    padding: 0 var(--gutter-panel) var(--section-gap);
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+  .ground { flex: 1; background: var(--water); }
+  .place {
+    display: flow-root;
+    width: calc(var(--sidebar-w) + 1px);
+    padding: 1rem var(--gutter-sidebar) 0;
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="row">
+    <div class="pane">
+      <section class="filter-section">
+        <h3 id="depth-label">Categories
+          <button type="button" class="info" data-info="depth" aria-label="About broad families and reported categories">i</button>
+        </h3>
+        <div class="segmented" role="radiogroup" aria-labelledby="depth-label"><button type="button" role="radio" class="seg" data-value="1" aria-checked="false" tabindex="-1">Traditions</button><button type="button" role="radio" class="seg" data-value="2" aria-checked="true" tabindex="0">Religions</button><button type="button" role="radio" class="seg" data-value="3" aria-checked="false" tabindex="-1">As reported</button></div>
+      </section>
+
+      <section class="filter-section">
+        <h3 id="spread-label">Shading
+          <button type="button" class="info" data-info="spread" aria-label="About how the shading is scaled" aria-expanded="true">i</button>
+        </h3>
+        <div class="segmented" role="radiogroup" aria-labelledby="spread-label"><button type="button" role="radio" class="seg" data-value="absolute" aria-checked="true" tabindex="0">Full range</button><button type="button" role="radio" class="seg" data-value="fit" aria-checked="false" tabindex="-1">Fit to view</button></div>
+      </section>
+
+      <section class="filter-section">
+        <h3>Estimates
+          <button type="button" class="info" data-info="estimates" aria-label="About estimated units">i</button>
+        </h3>
+        <label class="check-row" for="estimates-toggle">
+          <input id="estimates-toggle" type="checkbox" checked="">
+          <span class="check-name">Show estimates</span>
+          <span class="check-hint">Hatched, in the colour the estimate gives. Off, they are gaps.</span>
+        </label>
+      </section>
+    </div>
+    <div class="ground"></div>
+  </div>
+
+  <div class="place">
+    <div class="facts">
+      <div class="fact">
+      <div class="fact-label">Median age<button type="button" class="info" data-info-text="Census of India 2011 table C-13: the median of the single years of age of the 33,371,575 people whose age was returned, interpolated within the year that holds the middle person (100 and over is the open top group). The 34,486 people whose age was not stated are left out of it." aria-label="About the median age figure">i</button></div>
+      <div class="fact-value">31.8 yrs</div>
+      <div class="fact-meta">2011 · Census of India 2011</div>
+    </div>
+      <div class="fact">
+      <div class="fact-label">Sex ratio</div>
+      <div class="fact-value">92.3</div>
+      <div class="fact-meta">males per 100 females · 2011 · Census of India 2011</div>
+    </div>
+    </div>
+    <section class="panel"><div class="panel-head"><h3>Religion<button type="button" class="info" data-info-text="Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 7,618 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 15 religions in this state; the 15 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead." aria-label="About the religion figures">i</button></h3><span class="panel-year">2011</span></div></section>
+  </div>
+
+</div>
+<div class="info-bubble" role="note" style="top: 122px; left: 82px;">The full range always means the same thing, so two places can be compared anywhere on the map — but zoom into a region where every district is 85 to 95 per cent one group and it is all one flat colour. Fit to view stretches the ramp over the range actually on screen, which shows that variation at the cost of the shade meaning something different from one view to the next. The legend always names the two ends, so you can see which you are looking at.</div>
+<script>
+  /* The bubble is fixed to the viewport and placed from the button's box, as
+     openInfo does in the app: 6px below it, nudged back inside the window. */
+  (function () {
+    var button = document.querySelector('.info[aria-expanded="true"]');
+    var bubble = document.querySelector(".info-bubble");
+    function place() {
+      var box = button.getBoundingClientRect();
+      bubble.style.top = Math.round(box.bottom + 6) + "px";
+      var width = bubble.getBoundingClientRect().width;
+      bubble.style.left = Math.round(Math.min(Math.max(8, box.left - 8),
+                                              window.innerWidth - width - 8)) + "px";
+    }
+    place();
+    window.addEventListener("resize", place);
+  })();
+</script>
+</body>
+</html>

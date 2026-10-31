@@ -1,0 +1,45 @@
+<!-- @dsCard group="Place panel" height=1024 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SourceList — preview</title>
+<style>
+  /* Frame only: the place panel's own box on the page ground, edged all round
+     like the filters panes: one pixel wider than the panel so that inside its
+     two rules and its padding the content is the app's 363.8px. Under it the
+     About dialog, held in the page flow instead of centred over a backdrop. */
+  body { padding: 16px; }
+  .stage { display: flex; flex-direction: column; gap: 16px; }
+  .place {
+    width: calc(var(--sidebar-w) + 1px);
+    padding: 1rem var(--gutter-sidebar) 0;
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+  .stage dialog { position: static; margin: 0; }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="place">
+    <section class="panel"><div class="panel-head"><h3>Sources</h3></div>
+      <ul class="source-list"><li>Census of India 2011, table C-01 (Registrar General &amp; Census Commissioner) — 2011 · Government of India open data (GODL-India)<br><span style="color:var(--ink-muted)">India's next census was postponed; 2011 remains the latest official round.</span></li><li><a href="https://www.wikidata.org/wiki/Q1186" target="_blank" rel="noopener noreferrer">Wikidata</a> — CC0</li><li><a href="https://censusindia.gov.in/nada/index.php/catalog" target="_blank" rel="noopener noreferrer">Census of India 2011, table C-01 (Registrar General &amp; Census Commissioner)</a> — 2011 · Government of India open data (GODL-India)<br><span style="color:var(--ink-muted)">District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals.</span></li><li><a href="https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx" target="_blank" rel="noopener noreferrer">Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General &amp; Census Commissioner)</a> — 2011 · Government of India open data (GODL-India)<br><span style="color:var(--ink-muted)">Published for India and the states only; the table's district column is zero on every row.</span></li><li><a href="https://censusindia.gov.in/nada/index.php/catalog" target="_blank" rel="noopener noreferrer">Census of India 2011, table C-16 population by mother tongue (Registrar General &amp; Census Commissioner)</a> — 2011 · Government of India open data (GODL-India)</li><li><a href="https://censusindia.gov.in/nada/index.php/catalog/1454/download/4531" target="_blank" rel="noopener noreferrer">Census of India 2011, table C-13: single year age returns by residence and sex (Registrar General &amp; Census Commissioner)</a> — 2011 · Government of India open data (GODL-India)</li><li><a href="https://censusindia.gov.in/nada/index.php/catalog/10689/download/13801" target="_blank" rel="noopener noreferrer">Census of India 2011, table D-01: population classified by place of birth and sex (Registrar General &amp; Census Commissioner)</a> — 2011 · Government of India open data (GODL-India)</li><li>Boundary: <a href="https://www.geoboundaries.org/" target="_blank" rel="noopener noreferrer">geoBoundaries</a> CGAZ — CC BY 4.0</li></ul></section>
+  </div>
+
+  <div class="place">
+    <section class="panel"><div class="panel-head"><h3>Sources</h3></div>
+      <ul class="source-list"><li>Boundary: <a href="https://www.geoboundaries.org/" target="_blank" rel="noopener noreferrer">geoBoundaries</a> CGAZ — CC BY 4.0</li></ul></section>
+  </div>
+
+  <dialog open>
+    <article>
+      <h3>Sources &amp; licences</h3>
+      <ul id="about-sources" class="source-list"><li><a href="https://www.geoboundaries.org/" target="_blank" rel="noopener noreferrer">geoBoundaries (gbOpen / CGAZ)</a> - CC BY 4.0 - boundaries at all three levels. A few countries inherit ODbL or CC-BY-SA from OpenStreetMap.</li><li><a href="https://www.cia.gov/the-world-factbook/" target="_blank" rel="noopener noreferrer">CIA World Factbook</a> - Public domain - country religion, language, ethnicity, median age, sex ratio. Retired in February 2026; the figures are from its last edition.</li><li><a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a> - Public domain (CC0) - code concordance and largest-settlement points.</li><li><a href="https://www.geonames.org/" target="_blank" rel="noopener noreferrer">GeoNames</a> - CC BY 4.0 - the largest settlement, and the seat where no other source names a capital, placed in the map's own outlines.</li><li><a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer">Wikidata</a> - CC0 - subnational population, capital and coordinates wherever that adapter has been run.</li><li><a href="https://github.com/advaitsridhar/DemographicMap#data-sources" target="_blank" rel="noopener noreferrer">National statistical offices</a> - US Census ACS, ONS/Nomis, Statistics Canada, IBGE SIDRA, INEGI, DANE, e-Stat, Eurostat, ABS, Census of India - each under its own licence.</li><li><a href="https://www.wikipedia.org/" target="_blank" rel="noopener noreferrer">Wikipedia</a> - CC BY-SA 4.0 - census figures as its articles transcribe and cite them, only where the office's own table cannot be read; each figure names the census it came from.</li></ul>
+    </article>
+  </dialog>
+
+</div>
+</body>
+</html>

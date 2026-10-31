@@ -1,0 +1,360 @@
+<!-- @dsCard group="Shell" height=900 width=1200 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AppShell — preview</title>
+<style>
+  /* Frame only. The card is laid out 1200px wide, above the app's 900px
+     rule, so .app, .filters and .sidebar lay out as they do on a desktop, and
+     .app (100vh) fills the card's viewport as the page fills a 1200 x 900
+     window: the topbar over the filters panel, open on Most populous group,
+     the map and the place panel showing Kerala, each panel scrolling on its
+     own. The map is its water ground; MapLibre draws the rest. The on-map
+     legend is filled but hidden, as it is while the panel is open. */
+  /* The legend's group swatches: Palette.group computes each one from the
+     group's hue at its peak share for the theme on screen, and no token holds
+     them, so each is a frame-local property named after its light value and
+     reset for dark, as the app recomputes it. */
+  :root {
+    --shade-204272: #204272; --shade-114d2a: #114d2a; --shade-418186: #418186;
+    --shade-624f06: #624f06; --shade-cc6c17: #cc6c17; --shade-efdde4: #efdde4;
+    --shade-d2ac8d: #d2ac8d; --shade-799bbe: #799bbe; --shade-edb998: #edb998;
+  }
+  [data-theme="dark"] {
+    --shade-204272: #2e60a4; --shade-114d2a: #196e3d; --shade-418186: #468d92;
+    --shade-624f06: #7d6508; --shade-cc6c17: #d67118; --shade-efdde4: #ead0db;
+    --shade-d2ac8d: #d0a988; --shade-799bbe: #7b9dc0; --shade-edb998: #ecb28d;
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#filters">Skip to the filters</a>
+<a class="skip-link" href="#sidebar">Skip to the data panel</a>
+
+<div id="app" class="app filters-open">
+  <header id="topbar" class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">🗺️</span>
+      <span class="brand-text">
+        <strong>World Demographics Map</strong>
+        <span class="brand-sub">countries · first-level · second-level divisions</span>
+      </span>
+    </div>
+
+    <div class="search" role="search">
+      <label class="visually-hidden" for="search-input">Search for a country, state or district</label>
+      <input id="search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search places and groups — “Kerala”, “Islam”, “Tamil”, “Harris County”" aria-describedby="search-status" aria-expanded="false" aria-controls="search-results" role="combobox" aria-autocomplete="list">
+      <ul id="search-results" class="search-results" role="listbox" aria-label="Search results" hidden=""></ul>
+      <p id="search-status" class="visually-hidden" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="filters-toggle" class="ghost-button filters-toggle" type="button" aria-expanded="true" aria-controls="filters" title="Hide the filter panel">
+        <span aria-hidden="true">☰</span> Filters
+      </button>
+      <button id="theme-toggle" class="ghost-button" type="button" aria-label="Switch colour theme" title="Theme: auto">
+        <span data-theme-icon="">◐</span>
+      </button>
+      <button id="about-open" class="ghost-button about-open" type="button" aria-haspopup="dialog">About &amp; sources</button>
+    </div>
+  </header>
+
+  <aside id="filters" class="filters" aria-label="Map filters" tabindex="-1">
+    <div class="filters-head">
+      <h2>What the map shows</h2>
+      <button id="filters-close" class="ghost-button" type="button" aria-label="Hide the filters panel">✕</button>
+    </div>
+    <p id="filter-summary" class="filter-summary"><span class="fchip">Most populous group</span><span class="fchip">Religion</span><span class="fchip">Religions</span><span class="fchip">Detail follows zoom</span></p>
+
+    <section class="filter-section" id="field-section">
+      <h3 id="field-label">Topic
+        <button type="button" class="info" data-info="topic" aria-label="About comparing topics across borders">i</button>
+      </h3>
+      <div id="field-options" class="segmented" role="radiogroup" aria-labelledby="field-label"><button type="button" role="radio" class="seg" data-value="religion" aria-checked="true" tabindex="0">Religion</button><button type="button" role="radio" class="seg" data-value="language" aria-checked="false" tabindex="-1">Language</button><button type="button" role="radio" class="seg" data-value="ethnicity" aria-checked="false" tabindex="-1">Ethnicity</button></div>
+    </section>
+
+    <section class="filter-section">
+      <h3 id="metric-label">View</h3>
+      <div id="metric-options" class="option-list" role="radiogroup" aria-labelledby="metric-label"><button type="button" role="radio" class="opt" data-value="group" aria-checked="true" tabindex="0">
+              <span class="opt-name">Most populous group</span><span class="opt-hint">One colour per group, darker where its share is larger.</span></button><button type="button" role="radio" class="opt" data-value="coverage" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Data coverage</span><span class="opt-hint">Where a figure exists — and whether a gap is unfetched or never collected.</span></button><button type="button" role="radio" class="opt" data-value="population" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Population</span><span class="opt-hint">Latest published count, on a log scale.</span></button><button type="button" role="radio" class="opt" data-value="median_age" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Median age</span><span class="opt-hint">Median age of the resident population.</span></button><button type="button" role="radio" class="opt" data-value="largest_share" aria-checked="false" tabindex="-1">
+              <span class="opt-name">How concentrated</span><span class="opt-hint">The share held by the single largest group, whichever it is.</span></button><button type="button" role="radio" class="opt" data-value="group_share" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Share of one group</span><span class="opt-hint">One group at a time, shaded by its percentage.</span></button></div>
+    </section>
+
+    <section class="filter-section" id="depth-section">
+      <h3 id="depth-label">Categories
+        <button type="button" class="info" data-info="depth" aria-label="About broad families and reported categories">i</button>
+      </h3>
+      <div id="depth-options" class="segmented" role="radiogroup" aria-labelledby="depth-label"><button type="button" role="radio" class="seg" data-value="1" aria-checked="false" tabindex="-1">Traditions</button><button type="button" role="radio" class="seg" data-value="2" aria-checked="true" tabindex="0">Religions</button><button type="button" role="radio" class="seg" data-value="3" aria-checked="false" tabindex="-1">As reported</button></div>
+    </section>
+
+    <section class="filter-section" id="spread-section">
+      <h3 id="spread-label">Shading
+        <button type="button" class="info" data-info="spread" aria-label="About how the shading is scaled">i</button>
+      </h3>
+      <div id="spread-options" class="segmented" role="radiogroup" aria-labelledby="spread-label"><button type="button" role="radio" class="seg" data-value="absolute" aria-checked="true" tabindex="0">Full range</button><button type="button" role="radio" class="seg" data-value="fit" aria-checked="false" tabindex="-1">Fit to view</button></div>
+    </section>
+
+    <section class="filter-section" id="estimates-section">
+      <h3 id="estimates-label">Estimates
+        <button type="button" class="info" data-info="estimates" aria-label="About estimated units">i</button>
+      </h3>
+      <label class="check-row" for="estimates-toggle">
+        <input id="estimates-toggle" type="checkbox" checked="">
+        <span class="check-name">Show estimates</span>
+        <span class="check-hint">Hatched, in the colour the estimate gives. Off, they are gaps.</span>
+      </label>
+    </section>
+
+    <section class="filter-section" id="group-section" hidden="">
+      <h3 id="group-label">Group
+        <button type="button" class="info" data-info="group" aria-label="About choosing a group">i</button>
+      </h3>
+      <div class="group-search">
+        <label class="visually-hidden" for="group-search">Search groups</label>
+        <input id="group-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search — “Islam”, “Muslim”, “te reo”…" aria-controls="group-list" aria-describedby="group-count">
+      </div>
+      <p id="group-count" class="control-note" role="status" aria-live="polite"></p>
+      <div id="group-list" class="group-list" role="tree" aria-labelledby="group-label"></div>
+      <p id="group-reach" class="control-note" hidden=""></p>
+    </section>
+
+    <section class="filter-section">
+      <h3>Legend
+        <button type="button" class="info" data-info="legend" aria-label="About what the colours mean" data-info-text="Each unit takes the colour of its largest group and the shade of that group's share, from 25% up. Categories are each country's own, so a border can be a change of question rather than of population. Colours are resolved from the data each time you change a control, so the key always describes what is on screen.">i</button>
+      </h3>
+      <div id="legend" class="legend" aria-live="polite"><ul class="legend-groups"><li>
+             <span class="legend-swatch" style="background:var(--shade-204272)"></span>
+             <span class="legend-group-name">Christianity</span>
+             <span class="legend-group-count">142</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-114d2a)"></span>
+             <span class="legend-group-name">Islam</span>
+             <span class="legend-group-count">51</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-418186)"></span>
+             <span class="legend-group-name">No religion</span>
+             <span class="legend-group-count">11</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-624f06)"></span>
+             <span class="legend-group-name">Buddhism</span>
+             <span class="legend-group-count">9</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-cc6c17)"></span>
+             <span class="legend-group-name">Hinduism</span>
+             <span class="legend-group-count">3</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-efdde4)"></span>
+             <span class="legend-group-name">Buddhist or Taoist</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-d2ac8d)"></span>
+             <span class="legend-group-name">Folk and traditional religion</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-799bbe)"></span>
+             <span class="legend-group-name">Judaism</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-edb998)"></span>
+             <span class="legend-group-name">Shinto</span>
+             <span class="legend-group-count">1</span>
+           </li></ul>
+         <div class="legend-shade">
+           <span class="legend-shade-label">Share of the leading group</span>
+           <div class="legend-scale" role="img" aria-label="Paler is a smaller share, darker is a larger one">
+             <span style="background:var(--leading-share-0)"></span><span style="background:var(--leading-share-1)"></span><span style="background:var(--leading-share-2)"></span><span style="background:var(--leading-share-3)"></span><span style="background:var(--leading-share-4)"></span>
+           </div>
+           <div class="legend-ends"><span>25% or less</span><span>100%</span></div>
+         </div><div class="legend-item">
+               <span class="legend-swatch" style="background:var(--neutral)"></span>
+               <span>No figure for 49 units</span>
+             </div></div>
+      <p id="blank-note" class="control-note">Grey areas publish no composition for this field at this level.</p>
+    </section>
+
+    <section class="filter-section">
+      <h3 id="detail-label">Detail level</h3>
+      <div id="detail-options" class="option-list" role="radiogroup" aria-labelledby="detail-label"><button type="button" role="radio" class="opt" data-value="auto" aria-checked="true" tabindex="0">
+              <span class="opt-name">Follow zoom</span><span class="opt-hint">Countries, then first-level, then second-level as you zoom in.</span></button><button type="button" role="radio" class="opt" data-value="0" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Countries</span><span class="opt-hint">One shade per country at every zoom.</span></button><button type="button" role="radio" class="opt" data-value="1" aria-checked="false" tabindex="-1">
+              <span class="opt-name">First-level divisions</span><span class="opt-hint">States, provinces, regions — wherever they are tiled.</span></button><button type="button" role="radio" class="opt" data-value="2" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Second-level divisions</span><span class="opt-hint">Districts and counties. Pinning this loads every country's shard.</span></button></div>
+      <p id="level-note" class="control-note">269 countries loaded</p>
+    </section>
+
+  </aside>
+
+  <main id="map-wrap" class="map-wrap">
+    <div id="map" class="map" role="application" aria-label="Map of world administrative divisions"></div>
+
+    <div id="map-legend" class="map-legend" aria-label="Map legend" hidden="">
+      <p id="map-legend-summary" class="filter-summary"><span class="fchip">Most populous group</span><span class="fchip">Religion</span><span class="fchip">Religions</span><span class="fchip">Detail follows zoom</span></p>
+      <div id="map-legend-body" class="map-legend-body"><ul class="legend-groups"><li>
+             <span class="legend-swatch" style="background:var(--shade-204272)"></span>
+             <span class="legend-group-name">Christianity</span>
+             <span class="legend-group-count">142</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-114d2a)"></span>
+             <span class="legend-group-name">Islam</span>
+             <span class="legend-group-count">51</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-418186)"></span>
+             <span class="legend-group-name">No religion</span>
+             <span class="legend-group-count">11</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-624f06)"></span>
+             <span class="legend-group-name">Buddhism</span>
+             <span class="legend-group-count">9</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-cc6c17)"></span>
+             <span class="legend-group-name">Hinduism</span>
+             <span class="legend-group-count">3</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-efdde4)"></span>
+             <span class="legend-group-name">Buddhist or Taoist</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-d2ac8d)"></span>
+             <span class="legend-group-name">Folk and traditional religion</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-799bbe)"></span>
+             <span class="legend-group-name">Judaism</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-edb998)"></span>
+             <span class="legend-group-name">Shinto</span>
+             <span class="legend-group-count">1</span>
+           </li></ul>
+         <div class="legend-shade">
+           <span class="legend-shade-label">Share of the leading group</span>
+           <div class="legend-scale" role="img" aria-label="Paler is a smaller share, darker is a larger one">
+             <span style="background:var(--leading-share-0)"></span><span style="background:var(--leading-share-1)"></span><span style="background:var(--leading-share-2)"></span><span style="background:var(--leading-share-3)"></span><span style="background:var(--leading-share-4)"></span>
+           </div>
+           <div class="legend-ends"><span>25% or less</span><span>100%</span></div>
+         </div><div class="legend-item">
+               <span class="legend-swatch" style="background:var(--neutral)"></span>
+               <span>No figure for 49 units</span>
+             </div></div>
+      <p id="map-legend-note" class="control-note">Grey areas publish no composition for this field at this level.</p>
+    </div>
+
+    <div id="map-status" class="map-status" role="status" aria-live="polite" hidden=""></div>
+  </main>
+
+  <aside id="sidebar" class="sidebar is-open" aria-label="Selected place details" tabindex="-1">
+    <button id="sidebar-close" class="ghost-button sidebar-close" type="button" aria-label="Close the details panel">✕</button>
+    <div id="sidebar-body" class="sidebar-body"><header class="entity-head">
+      <p class="entity-breadcrumb"><button type="button" data-goto="IND">India</button> › First-level division</p>
+      <h2 class="entity-name">Kerala</h2>
+      <p class="entity-sub">India</p>
+    </header><div class="facts">
+      <div class="fact">
+      <div class="fact-label">Population</div>
+      <div class="fact-value">34.5M</div>
+      <div class="fact-meta">2017 · Wikidata (CC0)</div>
+    </div>
+      <div class="fact">
+      <div class="fact-label">Capital</div>
+      <div class="fact-value">Thiruvananthapuram</div>
+      
+    </div>
+      <div class="fact">
+      <div class="fact-label">Largest settlement</div>
+      <div class="fact-value">Kochi</div>
+      <div class="fact-meta">1.5M people</div>
+    </div>
+      <div class="fact">
+      <div class="fact-label">Median age<button type="button" class="info" data-info-text="Census of India 2011 table C-13: the median of the single years of age of the 33,371,575 people whose age was returned, interpolated within the year that holds the middle person (100 and over is the open top group). The 34,486 people whose age was not stated are left out of it." aria-label="About the median age figure">i</button></div>
+      <div class="fact-value">31.8 yrs</div>
+      <div class="fact-meta">2011 · Census of India 2011</div>
+    </div>
+      <div class="fact">
+      <div class="fact-label">Sex ratio</div>
+      <div class="fact-value">92.3</div>
+      <div class="fact-meta">males per 100 females · 2011 · Census of India 2011</div>
+    </div>
+      <div class="fact">
+        <div class="fact-label">Life expectancy</div>
+        <div class="fact-value is-gap">
+          <span style="color:var(--status-not-available)" aria-hidden="true">▲</span> Not yet available
+        </div>
+      </div>
+    </div><section class="panel"><div class="panel-head"><h3>Religion<button type="button" class="info" data-info-text="Census of India 2011 table C-01. India's next census was postponed, so these remain the most recent official figures. Census 2011 table C-01 reports 7,618 people here -- 0.0% of the state -- as one residual, 'Other religions and persuasions'. The religions standing in its place come from table C-01 Appendix, which names what is inside it. Named plus remainder is C-01's figure exactly, so nobody is counted twice and nobody is dropped. The Appendix names 15 religions in this state; the 15 smallest are summed into 'Other religions (not separately named)' rather than listed, along with the people the Appendix itself leaves unnamed: its rows do not account for the whole of the residual. The Registrar General publishes this Appendix for India and the states only; its district column reads zero on every row. So there is no district-level figure for any of these religions in any Indian census publication, and this state's districts show the undivided 'Other religions' instead." aria-label="About the religion figures">i</button></h3><span class="panel-year">2011</span></div><div class="stack-bar" role="img" aria-label="Hindu 54.7%, Muslim 26.6%, Christian 18.4%, Not stated 0.3%"><span style="flex:0 0 54.70%;background:var(--categorical-1)" title="Hindu 54.7%"></span><span style="flex:0 0 26.60%;background:var(--categorical-2)" title="Muslim 26.6%"></span><span style="flex:0 0 18.40%;background:var(--categorical-3)" title="Christian 18.4%"></span><span style="flex:0 0 0.30%;background:var(--categorical-4)" title="Not stated 0.3%"></span></div><ul class="composition-list"><li><span class="swatch" style="background:var(--categorical-1)" aria-hidden="true"></span>
+             <span class="label">Hindu</span>
+             <span class="pct">54.7%</span></li><li><span class="swatch" style="background:var(--categorical-2)" aria-hidden="true"></span>
+             <span class="label">Muslim</span>
+             <span class="pct">26.6%</span></li><li><span class="swatch" style="background:var(--categorical-3)" aria-hidden="true"></span>
+             <span class="label">Christian</span>
+             <span class="pct">18.4%</span></li><li><span class="swatch" style="background:var(--categorical-4)" aria-hidden="true"></span>
+             <span class="label">Not stated</span>
+             <span class="pct">0.3%</span></li></ul><details class="table-toggle"><summary>Table view</summary>
+        <table class="data-table"><thead><tr><th>Group</th><th>Share</th></tr></thead><tbody><tr><td>Hindu</td><td>54.7%</td></tr><tr><td>Muslim</td><td>26.6%</td></tr><tr><td>Christian</td><td>18.4%</td></tr><tr><td>Not stated</td><td>0.3%</td></tr><tr><td>Buddhist</td><td>0.0%</td></tr><tr><td>Jain</td><td>0.0%</td></tr><tr><td>Other religions (not separately named)</td><td>0.0%</td></tr><tr><td>Sikh</td><td>0.0%</td></tr><tr class="total-row"><th scope="row">Total</th><th>100.0%</th></tr></tbody></table></details></section><section class="panel"><div class="panel-head"><h3>Language<button type="button" class="info" data-info-text="Census of India 2011 table C-16, population by mother tongue. Mother tongue is what the respondent names, not a test of fluency, and is distinct from the languages a person also speaks. 79 mother-tongue groups were reported here; the 72 smallest are summed into 'Other small languages' rather than listed, so the shares still cover everyone enumerated. Shares are published rounded to one decimal and came to a tenth of a point off 100%; the difference is rounding, and it has been put back into the largest groups so the column adds up." aria-label="About the language figures">i</button></h3><span class="panel-year">2011</span></div><div class="stack-bar" role="img" aria-label="Malayalam 96.9%, Tamil 1.5%, Other small languages 0.4%, Tulu 0.4%, Kannada 0.3%, Hindi 0.2%, Konkani 0.2%, Telugu 0.1%"><span style="flex:0 0 96.90%;background:var(--categorical-1)" title="Malayalam 96.9%"></span><span style="flex:0 0 1.50%;background:var(--categorical-2)" title="Tamil 1.5%"></span><span style="flex:0 0 0.40%;background:var(--categorical-3)" title="Other small languages 0.4%"></span><span style="flex:0 0 0.40%;background:var(--categorical-4)" title="Tulu 0.4%"></span><span style="flex:0 0 0.30%;background:var(--categorical-5)" title="Kannada 0.3%"></span><span style="flex:0 0 0.20%;background:var(--categorical-6)" title="Hindi 0.2%"></span><span style="flex:0 0 0.20%;background:var(--categorical-7)" title="Konkani 0.2%"></span><span style="flex:0 0 0.10%;background:var(--categorical-8)" title="Telugu 0.1%"></span></div><ul class="composition-list"><li><span class="swatch" style="background:var(--categorical-1)" aria-hidden="true"></span>
+             <span class="label">Malayalam</span>
+             <span class="pct">96.9%</span></li><li><span class="swatch" style="background:var(--categorical-2)" aria-hidden="true"></span>
+             <span class="label">Tamil</span>
+             <span class="pct">1.5%</span></li><li><span class="swatch" style="background:var(--categorical-3)" aria-hidden="true"></span>
+             <span class="label">Other small languages</span>
+             <span class="pct">0.4%</span></li><li><span class="swatch" style="background:var(--categorical-4)" aria-hidden="true"></span>
+             <span class="label">Tulu</span>
+             <span class="pct">0.4%</span></li><li><span class="swatch" style="background:var(--categorical-5)" aria-hidden="true"></span>
+             <span class="label">Kannada</span>
+             <span class="pct">0.3%</span></li><li><span class="swatch" style="background:var(--categorical-6)" aria-hidden="true"></span>
+             <span class="label">Hindi</span>
+             <span class="pct">0.2%</span></li><li><span class="swatch" style="background:var(--categorical-7)" aria-hidden="true"></span>
+             <span class="label">Konkani</span>
+             <span class="pct">0.2%</span></li><li><span class="swatch" style="background:var(--categorical-8)" aria-hidden="true"></span>
+             <span class="label">Telugu</span>
+             <span class="pct">0.1%</span></li></ul><details class="table-toggle"><summary>Table view</summary>
+        <table class="data-table"><thead><tr><th>Group</th><th>Share</th></tr></thead><tbody><tr><td>Malayalam</td><td>96.9%</td></tr><tr><td>Tamil</td><td>1.5%</td></tr><tr><td>Other small languages</td><td>0.4%</td></tr><tr><td>Tulu</td><td>0.4%</td></tr><tr><td>Kannada</td><td>0.3%</td></tr><tr><td>Hindi</td><td>0.2%</td></tr><tr><td>Konkani</td><td>0.2%</td></tr><tr><td>Telugu</td><td>0.1%</td></tr><tr class="total-row"><th scope="row">Total</th><th>100.0%</th></tr></tbody></table></details></section><section class="panel"><div class="panel-head"><h3>Ethnicity<button type="button" class="info" data-info-text="Census of India 2011, table D-01: the 33,406,061 people counted here by where they were born -- 33,338,082 in India, 66,722 outside it and 1,257 whose birthplace could not be classified. India's census does not ask ethnicity. Each label names a country of birth under its present name, not a citizenship or an ethnic group; 'Other' is every country fewer than 50,000 people across India were born in. It is shown under ethnicity because the census counts place of birth and asks no ethnicity." aria-label="About the ethnicity figures">i</button></h3><span class="panel-year">2011</span></div><div class="stack-bar" role="img" aria-label="Indian 99.8%, Other 0.2%"><span style="flex:0 0 99.80%;background:var(--categorical-1)" title="Indian 99.8%"></span><span style="flex:0 0 0.20%;background:var(--categorical-2)" title="Other 0.2%"></span></div><ul class="composition-list"><li><span class="swatch" style="background:var(--categorical-1)" aria-hidden="true"></span>
+             <span class="label">Indian</span>
+             <span class="pct">99.8%</span></li><li><span class="swatch" style="background:var(--categorical-2)" aria-hidden="true"></span>
+             <span class="label">Other</span>
+             <span class="pct">0.2%</span></li></ul><details class="table-toggle"><summary>Table view</summary>
+        <table class="data-table"><thead><tr><th>Group</th><th>Share</th></tr></thead><tbody><tr><td>Indian</td><td>99.8%</td></tr><tr><td>Other</td><td>0.2%</td></tr><tr><td>Bangladeshi</td><td>0.0%</td></tr><tr><td>Burmese</td><td>0.0%</td></tr><tr><td>Nepalese</td><td>0.0%</td></tr><tr><td>Not stated</td><td>0.0%</td></tr><tr><td>Pakistani</td><td>0.0%</td></tr><tr><td>Sri Lankan</td><td>0.0%</td></tr><tr class="total-row"><th scope="row">Total</th><th>100.0%</th></tr></tbody></table></details></section><section class="panel"><div class="panel-head"><h3>Scheduled Caste / Tribe<button type="button" class="info" data-info-text="Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap." aria-label="About the scheduled caste / tribe figures">i</button></h3><span class="panel-year">2011</span></div><div class="stack-bar" role="img" aria-label="Scheduled Caste 9.1%, Scheduled Tribe 1.5%, not accounted for 89.4%"><span style="flex:0 0 9.10%;background:var(--categorical-1)" title="Scheduled Caste 9.1%"></span><span style="flex:0 0 1.50%;background:var(--categorical-2)" title="Scheduled Tribe 1.5%"></span><span class="stack-rest" style="flex:0 0 89.40%" title="Not accounted for by these categories 89.4%"></span></div><p class="basis-line"><span class="chip-basis chip-basis-partial" title="Shares sum to 10.6%">
+                describes 10.6% of the population</span></p><ul class="composition-list"><li><span class="swatch" style="background:var(--categorical-1)" aria-hidden="true"></span>
+             <span class="label">Scheduled Caste</span>
+             <span class="pct">9.1%</span></li><li><span class="swatch" style="background:var(--categorical-2)" aria-hidden="true"></span>
+             <span class="label">Scheduled Tribe</span>
+             <span class="pct">1.5%</span></li></ul><details class="table-toggle"><summary>Table view</summary>
+        <table class="data-table"><thead><tr><th>Group</th><th>Share</th></tr></thead><tbody><tr><td>Scheduled Caste</td><td>9.1%</td></tr><tr><td>Scheduled Tribe</td><td>1.5%</td></tr><tr class="total-row"><th scope="row">Total</th><th>10.6%</th></tr></tbody></table></details></section><section class="panel"><div class="panel-head"><h3>Second-level divisions</h3>
+      <span class="panel-year">14</span></div>
+      <ul class="children-list"><li><button type="button" data-goto="76128533B83861010847920">
+          <span>Malappuram</span>
+          <span class="c-count">4.1M</span></button></li><li><button type="button" data-goto="76128533B33162455176756">
+          <span>Thiruvananthapuram</span>
+          <span class="c-count">3.3M</span></button></li><li><button type="button" data-goto="76128533B75519739609062">
+          <span>Ernakulam</span>
+          <span class="c-count">3.3M</span></button></li><li><button type="button" data-goto="76128533B75696328527555">
+          <span>Thrissur</span>
+          <span class="c-count">3.1M</span></button></li><li><button type="button" data-goto="76128533B3985531353014">
+          <span>Kozhikode</span>
+          <span class="c-count">3.1M</span></button></li><li><button type="button" data-goto="76128533B19581555782120">
+          <span>Palakkad</span>
+          <span class="c-count">2.8M</span></button></li><li><button type="button" data-goto="76128533B61117593923933">
+          <span>Kollam</span>
+          <span class="c-count">2.6M</span></button></li><li><button type="button" data-goto="76128533B41976979530466">
+          <span>Kannur</span>
+          <span class="c-count">2.5M</span></button></li><li><button type="button" data-goto="76128533B86368264587575">
+          <span>Alappuzha</span>
+          <span class="c-count">2.1M</span></button></li><li><button type="button" data-goto="76128533B2576169508425">
+          <span>Kottayam</span>
+          <span class="c-count">2M</span></button></li><li><button type="button" data-goto="76128533B63366045987285">
+          <span>Kasaragod</span>
+          <span class="c-count">1.3M</span></button></li><li><button type="button" data-goto="76128533B29330052395581">
+          <span>Pathanamthitta</span>
+          <span class="c-count">1.2M</span></button></li><li><button type="button" data-goto="76128533B35083559759016">
+          <span>Idukki</span>
+          <span class="c-count">1.1M</span></button></li><li><button type="button" data-goto="76128533B82539771173603">
+          <span>Wayanad</span>
+          <span class="c-count">817.4K</span></button></li></ul></section><section class="panel"><div class="panel-head"><h3>Sources</h3></div>
+      <ul class="source-list"><li>Census of India 2011, table C-01 (Registrar General &amp; Census Commissioner) — 2011 · Government of India open data (GODL-India)<br><span style="color:var(--ink-muted)">India's next census was postponed; 2011 remains the latest official round.</span></li><li><a href="https://www.wikidata.org/wiki/Q1186" target="_blank" rel="noopener noreferrer">Wikidata</a> — CC0</li><li><a href="https://censusindia.gov.in/nada/index.php/catalog" target="_blank" rel="noopener noreferrer">Census of India 2011, table C-01 (Registrar General &amp; Census Commissioner)</a> — 2011 · Government of India open data (GODL-India)<br><span style="color:var(--ink-muted)">District-level extract of the 2011 primary census abstract. Validated on every run against the Registrar General's published national totals.</span></li><li><a href="https://censusindia.gov.in/nada/index.php/catalog/11398/download/14511/DDW00C-01%20Appendix%20MDDS.xlsx" target="_blank" rel="noopener noreferrer">Census of India 2011, table C-01 Appendix, details of religious community shown under 'Other religions and persuasions' in main table C-01 (Registrar General &amp; Census Commissioner)</a> — 2011 · Government of India open data (GODL-India)<br><span style="color:var(--ink-muted)">Published for India and the states only; the table's district column is zero on every row.</span></li><li><a href="https://censusindia.gov.in/nada/index.php/catalog" target="_blank" rel="noopener noreferrer">Census of India 2011, table C-16 population by mother tongue (Registrar General &amp; Census Commissioner)</a> — 2011 · Government of India open data (GODL-India)</li><li><a href="https://censusindia.gov.in/nada/index.php/catalog/1454/download/4531" target="_blank" rel="noopener noreferrer">Census of India 2011, table C-13: single year age returns by residence and sex (Registrar General &amp; Census Commissioner)</a> — 2011 · Government of India open data (GODL-India)</li><li><a href="https://censusindia.gov.in/nada/index.php/catalog/10689/download/13801" target="_blank" rel="noopener noreferrer">Census of India 2011, table D-01: population classified by place of birth and sex (Registrar General &amp; Census Commissioner)</a> — 2011 · Government of India open data (GODL-India)</li><li>Boundary: <a href="https://www.geoboundaries.org/" target="_blank" rel="noopener noreferrer">geoBoundaries</a> CGAZ — CC BY 4.0</li></ul></section></div>
+  </aside>
+</div>
+</body>
+</html>

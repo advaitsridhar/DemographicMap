@@ -51,6 +51,16 @@ jobs:
       - name: Do the panel's percentages add up?
         run: node scripts/check_percentages.js
 
+      # design-system/ copies most of its values from app.css, palette.js and
+      # group_tree.py. Change one of those without the copy and the design
+      # system goes on describing a site that no longer exists, with nothing
+      # to say so. Unlike the site/data check below, this one blocks: the
+      # rebuild needs no data and takes under a second. To fix a failure, run
+      # scripts/build_design_system.py; if it reports drift, update the value
+      # in design-system/tokens.json and read the usage note beside it.
+      - name: Does the design system still match the site?
+        run: python3 scripts/build_design_system.py --check
+
       - name: Shell syntax
         run: for f in scripts/*.sh; do bash -n "$f"; done
 

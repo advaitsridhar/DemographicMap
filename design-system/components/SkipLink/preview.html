@@ -1,0 +1,50 @@
+<!-- @dsCard group="Utilities" height=133 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SkipLink — preview</title>
+<style>
+  /* Frame only: the top-left corner of the page, with the topbar trimmed to
+     its brand. Each link is drawn as keyboard focus draws it, written inline
+     because a card cannot hold focus: .skip-link:focus adds left: 0 (at rest
+     it sits at left: -9999px), and Chromium adds its own focus-visible ring,
+     outline: auto 1px -webkit-focus-ring-color, which the app leaves alone:
+     near-black in light, near-white in dark, as measured in the app. */
+  body { padding: 16px; }
+  .stage { display: grid; gap: 16px; }
+  .corner { position: relative; overflow: hidden; border: 1px solid var(--hairline); }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="corner">
+    <a class="skip-link" href="#filters" style="left: 0; outline: auto 1px -webkit-focus-ring-color">Skip to the filters</a>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">🗺️</span>
+        <span class="brand-text">
+          <strong>World Demographics Map</strong>
+          <span class="brand-sub">countries · first-level · second-level divisions</span>
+        </span>
+      </div>
+    </header>
+  </div>
+
+  <div class="corner">
+    <a class="skip-link" href="#sidebar" style="left: 0; outline: auto 1px -webkit-focus-ring-color">Skip to the data panel</a>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">🗺️</span>
+        <span class="brand-text">
+          <strong>World Demographics Map</strong>
+          <span class="brand-sub">countries · first-level · second-level divisions</span>
+        </span>
+      </div>
+    </header>
+  </div>
+
+</div>
+</body>
+</html>

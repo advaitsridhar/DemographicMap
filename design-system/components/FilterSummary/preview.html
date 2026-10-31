@@ -1,0 +1,74 @@
+<!-- @dsCard group="Controls" height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FilterSummary — preview</title>
+<style>
+  /* Frame only: slices of the filters panel (330px column, its inline gutter,
+     surface-1) under where the panel head sits, and a patch of map (the water
+     ground) as wide as the on-map legend plus its insets. */
+  body { padding: 16px; }
+  .board { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .stack { display: grid; gap: 16px; }
+  .pane {
+    width: calc(var(--filters-w) + 1px);
+    padding: 0 var(--gutter-panel) .6rem;
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+  .ground {
+    position: relative;
+    width: calc(var(--legend-w) + 2 * var(--overlay-inset));
+    height: 16rem;
+    background: var(--water);
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="stack">
+    <div class="pane">
+      <p class="filter-summary"><span class="fchip">Population</span><span class="fchip">Detail follows zoom</span></p>
+    </div>
+    <div class="pane">
+      <p class="filter-summary"><span class="fchip">Most populous group</span><span class="fchip">Religion</span><span class="fchip">Religions</span><span class="fchip">First-level only</span></p>
+    </div>
+    <div class="pane">
+      <p class="filter-summary"><span class="fchip">Share of one group</span><span class="fchip">Religion</span><span class="fchip fchip-key">Abrahamic religions</span><span class="fchip">Detail follows zoom</span></p>
+    </div>
+  </div>
+
+  <div class="ground">
+    <div class="map-legend" aria-label="Map legend">
+      <p class="filter-summary"><span class="fchip">Data coverage</span><span class="fchip">Religion</span><span class="fchip">Detail follows zoom</span></p>
+      <div class="map-legend-body"><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-present)" aria-hidden="true">●</span>
+           <span class="legend-swatch" style="background:var(--status-present)"></span>
+           <span>Recorded</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-derived)" aria-hidden="true">◐</span>
+           <span class="legend-swatch" style="background:var(--status-derived)"></span>
+           <span>Derived from published figures</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-modelled)" aria-hidden="true">◌</span>
+           <span class="legend-swatch" style="background:var(--status-modelled)"></span>
+           <span>Estimated, not published</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-not-available)" aria-hidden="true">▲</span>
+           <span class="legend-swatch" style="background:var(--status-not-available)"></span>
+           <span>Not yet available</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-not-collected)" aria-hidden="true">◼</span>
+           <span class="legend-swatch" style="background:var(--status-not-collected)"></span>
+           <span>Not collected</span>
+         </div></div>
+      <p class="control-note">Grey means no record for that unit at all, not even a gap marker.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

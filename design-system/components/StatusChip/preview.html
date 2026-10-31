@@ -1,0 +1,31 @@
+<!-- @dsCard group="Data states" height=202 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StatusChip — preview</title>
+<style>
+  /* Frame only: the About dialog's sheet (its width, gutter, surface and edge),
+     carrying the dialog's body text style that the gap-key lines take in the app. */
+  body { padding: 16px; }
+  .sheet {
+    max-width: var(--dialog-w);
+    padding: .6rem var(--gutter-dialog);
+    background: var(--surface-1);
+    color: var(--ink-secondary);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+</style>
+</head>
+<body>
+<div class="sheet text-dialog-body">
+    <ul class="gap-key">
+      <li><span class="chip chip-present"></span><strong>Present</strong> — a value with a named source and reference year.</li>
+      <li><span class="chip chip-missing"></span><strong>Not yet available</strong> — the figure exists somewhere but this build has not fetched it.</li>
+      <li><span class="chip chip-notcollected"></span><strong>Not collected</strong> — the country does not gather it at all. France records neither ethnicity nor religion (barred by law); Germany records citizenship and migration background rather than ethnicity; Japan's census asks neither; India collects mother tongue and Scheduled Caste / Tribe status but not ethnicity; the US census may not ask a mandatory religion question.</li>
+    </ul>
+</div>
+</body>
+</html>

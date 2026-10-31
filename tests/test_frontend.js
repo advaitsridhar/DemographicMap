@@ -985,6 +985,50 @@ async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
   assert.strictEqual((await store.loadLevel("MDA", 1)).length, first.length);
 }
 
+/* The on-map legend never covers the scale bar or the attribution.
+ *
+ * CC BY requires the geoBoundaries credit to stay readable. On a phone the
+ * legend spans the map's bottom edge and is shown by default, and it covered
+ * both the attribution and the scale bar; so did the 280px legend on a desktop
+ * map too narrow for both. The rectangles are the ones measured in Chromium.
+ */
+function theLegendNeverCoversTheAttribution() {
+  const context = vm.createContext({
+    window: { maplibregl: { Map: class {}, addProtocol() {} }, pmtiles: {} },
+    document: { documentElement: {}, getElementById: () => ({}) },
+    console,
+    getComputedStyle: () => ({ getPropertyValue: () => "" }),
+  });
+  vm.runInContext(source("map.js"), context);
+  const clearance = context.window.WorldMap.controlsClearance;
+  const rect = (left, top, width, height) =>
+    ({ left, top, width, height, right: left + width, bottom: top + height });
+
+  // A 390 x 844 phone: the legend spans the map; the scale bar and the
+  // attribution, wrapped to two lines, stack 96px up from the bottom edge.
+  const phoneMap = rect(0, 55, 390, 789);
+  const phoneLegend = rect(12, 572.2, 366, 163.8);
+  assert.strictEqual(clearance(phoneLegend, rect(0, 748, 390, 96), phoneMap, 12), 96,
+                     "on a phone the legend rises above both controls");
+  // After the first drag the attribution collapses to its button, and the
+  // lift shrinks with it.
+  assert.strictEqual(clearance(phoneLegend, rect(330.6, 768, 59.4, 76), phoneMap, 12), 76,
+                     "the lift follows the controls' measured height");
+  // A 1440px desktop with the filters closed: side by side, nothing moves.
+  const legend = rect(12, 678.5, 280, 209.5);
+  assert.strictEqual(clearance(legend, rect(579.1, 824, 460.9, 76), rect(0, 53.6, 1040, 846.4), 12), 0,
+                     "a legend beside the controls stays on the map's edge");
+  // A 1024px desktop with the filters closed: the open attribution reaches
+  // under the 280px legend, until the first drag collapses it to its button.
+  const narrowMap = rect(0, 53.6, 624, 846.4);
+  assert.strictEqual(clearance(legend, rect(163.1, 824, 460.9, 76), narrowMap, 12), 76,
+                     "a narrow desktop map lifts the legend too");
+  assert.strictEqual(clearance(legend, rect(564.6, 824, 59.4, 76), narrowMap, 12), 0,
+                     "and lets it back down once the attribution collapses");
+  // A hidden legend measures nothing and asks for nothing.
+  assert.strictEqual(clearance(rect(0, 0, 0, 0), rect(0, 748, 390, 96), phoneMap, 12), 0);
+}
+
 (async () => {
   await concurrentLoadsAreIndexedOnce();
   await aFailedShardIsAskedForAgain();
@@ -1005,5 +1049,6 @@ async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
   estimatesAreDrawnAsFiguresWithOneSentence();
   estimatesPaintOnlyWhenAskedAndNeverCount();
   anEstimateIsColouredLikeAReading();
+  theLegendNeverCoversTheAttribution();
   console.log("frontend regression tests passed");
 })().catch((error) => { console.error(error); process.exitCode = 1; });

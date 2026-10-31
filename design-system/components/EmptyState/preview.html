@@ -1,0 +1,41 @@
+<!-- @dsCard group="Place panel" height=340 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EmptyState — preview</title>
+<style>
+  /* Frame only: the place panel's own box on the page ground, edged all round
+     like the filters panes: one pixel wider than the panel so that inside its
+     two rules and its padding the content is the app's 363.8px. */
+  body { padding: 16px; }
+  .stage { display: flex; flex-direction: column; gap: 16px; }
+  .place {
+    width: calc(var(--sidebar-w) + 1px);
+    padding: 1rem var(--gutter-sidebar) 0;
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="place">
+      <div class="empty-state">
+        <h2>Pick a place</h2>
+        <p>Click any country, state or district on the map, or search above. Zooming in
+           swaps the map from countries to first-level divisions, then to second-level ones.</p>
+        <p class="empty-note">Every field here is either a value with its source and year,
+           or an explicit marker saying whether the data is <em>not yet gathered</em> or
+           <em>not collected at all</em> by that country.</p>
+      </div>
+  </div>
+
+  <div class="place">
+    <div class="empty-state"><h2>Could not start</h2><p>Error: admin0.json: HTTP 404</p></div>
+  </div>
+
+</div>
+</body>
+</html>

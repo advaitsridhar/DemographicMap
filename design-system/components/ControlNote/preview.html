@@ -1,0 +1,142 @@
+<!-- @dsCard group="Controls" height=791 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ControlNote — preview</title>
+<style>
+  /* Frame only: slices of the filters panel (its 330px column, inline gutter and surface-1) on the page ground. */
+  body { padding: 16px; }
+  main { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  main > div { display: grid; gap: 16px; }
+  figure { margin: 0; width: calc(var(--filters-w) + 1px); }
+  figure > div { padding: 0 var(--gutter-panel) var(--section-gap); background: var(--surface-1); border: 1px solid var(--hairline); }
+  /* The share ramp's stops: Palette.groupRamp computes each one from Islam's
+     hue for the theme on screen, and no token holds them, so each is a
+     frame-local property named after its light value and reset for dark, as
+     the app recomputes it. */
+  :root {
+    --shade-bef0d3: #bef0d3; --shade-a5ebc2: #a5ebc2; --shade-86e3ad: #86e3ad;
+    --shade-65dc97: #65dc97; --shade-3cd37b: #3cd37b; --shade-2dc56d: #2dc56d;
+    --shade-29b564: #29b564; --shade-25a25a: #25a25a; --shade-208d4e: #208d4e;
+    --shade-1a723f: #1a723f; --shade-114d2a: #114d2a;
+  }
+  [data-theme="dark"] {
+    --shade-bef0d3: #a0eabf; --shade-a5ebc2: #8ae4b0; --shade-86e3ad: #70de9f;
+    --shade-65dc97: #51d88a; --shade-3cd37b: #2fd073; --shade-2dc56d: #2cc36c;
+    --shade-29b564: #29b665; --shade-25a25a: #26a75d; --shade-208d4e: #229854;
+    --shade-1a723f: #1e8549; --shade-114d2a: #196e3d;
+  }
+</style>
+</head>
+<body>
+<main>
+  <div>
+    <figure>
+      <div>
+    <section class="filter-section">
+      <h3>Legend
+        <button type="button" class="info" data-info="legend" aria-label="About what the colours mean" data-info-text="The percentage belonging to a single chosen group. This is the faceted answer to “which group dominates?” — one group at a time on a single hue, rather than a colour-per-group map that colour-blind readers cannot separate. Colours are resolved from the data each time you change a control, so the key always describes what is on screen.">i</button>
+      </h3>
+      <div class="legend" aria-live="polite"><div class="legend-scale" role="img" aria-label="Colour scale from 0% to 100%">
+           <span style="background:var(--shade-bef0d3)"></span><span style="background:var(--shade-a5ebc2)"></span><span style="background:var(--shade-86e3ad)"></span><span style="background:var(--shade-65dc97)"></span><span style="background:var(--shade-3cd37b)"></span><span style="background:var(--shade-2dc56d)"></span><span style="background:var(--shade-29b564)"></span><span style="background:var(--shade-25a25a)"></span><span style="background:var(--shade-208d4e)"></span><span style="background:var(--shade-1a723f)"></span><span style="background:var(--shade-114d2a)"></span>
+         </div>
+         <div class="legend-ends"><span>0%</span><span>100%</span></div><div class="legend-item">
+               <span class="legend-swatch" style="background:var(--neutral)"></span>
+               <span>No value for 128 units</span>
+             </div></div>
+      <p class="control-note">Blank means the figure is missing at this level — not that the share is zero.</p>
+    </section>
+
+    <section class="filter-section">
+      <h3 id="detail-label">Detail level</h3>
+      <div class="option-list" role="radiogroup" aria-labelledby="detail-label"><button type="button" role="radio" class="opt" data-value="auto" aria-checked="true" tabindex="0">
+              <span class="opt-name">Follow zoom</span><span class="opt-hint">Countries, then first-level, then second-level as you zoom in.</span></button><button type="button" role="radio" class="opt" data-value="0" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Countries</span><span class="opt-hint">One shade per country at every zoom.</span></button><button type="button" role="radio" class="opt" data-value="1" aria-checked="false" tabindex="-1">
+              <span class="opt-name">First-level divisions</span><span class="opt-hint">States, provinces, regions — wherever they are tiled.</span></button><button type="button" role="radio" class="opt" data-value="2" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Second-level divisions</span><span class="opt-hint">Districts and counties. Pinning this loads every country's shard.</span></button></div>
+      <p class="control-note">269 countries loaded</p>
+    </section>
+      </div>
+    </figure>
+    <figure>
+      <div>
+    <section class="filter-section">
+      <h3>Legend
+        <button type="button" class="info" data-info="legend" aria-label="About what the colours mean" data-info-text="The percentage belonging to a single chosen group. This is the faceted answer to “which group dominates?” — one group at a time on a single hue, rather than a colour-per-group map that colour-blind readers cannot separate. Colours are resolved from the data each time you change a control, so the key always describes what is on screen.">i</button>
+      </h3>
+      <div class="legend" aria-live="polite"><p class="control-note">No values at this level yet.</p></div>
+      <p class="control-note">Blank means the figure is missing at this level — not that the share is zero.</p>
+    </section>
+      </div>
+    </figure>
+    <figure>
+      <div>
+    <section class="filter-section">
+      <h3 id="detail-label-1">Detail level</h3>
+      <div class="option-list" role="radiogroup" aria-labelledby="detail-label-1"><button type="button" role="radio" class="opt" data-value="auto" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Follow zoom</span><span class="opt-hint">Countries, then first-level, then second-level as you zoom in.</span></button><button type="button" role="radio" class="opt" data-value="0" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Countries</span><span class="opt-hint">One shade per country at every zoom.</span></button><button type="button" role="radio" class="opt" data-value="1" aria-checked="true" tabindex="0">
+              <span class="opt-name">First-level divisions</span><span class="opt-hint">States, provinces, regions — wherever they are tiled.</span></button><button type="button" role="radio" class="opt" data-value="2" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Second-level divisions</span><span class="opt-hint">Districts and counties. Pinning this loads every country's shard.</span></button></div>
+      <p class="control-note">2,830 first-level divisions loaded</p>
+    </section>
+      </div>
+    </figure>
+  </div>
+  <div>
+    <figure>
+      <div>
+    <section class="filter-section">
+      <h3 id="group-label-sunni">Group
+        <button type="button" class="info" data-info="group" aria-label="About choosing a group">i</button>
+      </h3>
+      <div class="group-search">
+        <label class="visually-hidden" for="group-search-sunni">Search groups</label>
+        <input id="group-search-sunni" type="search" autocomplete="off" spellcheck="false" value="Sunni" placeholder="Search — “Islam”, “Muslim”, “te reo”…" aria-controls="group-list-sunni" aria-describedby="group-count-sunni">
+      </div>
+      <p id="group-count-sunni" class="control-note group-count" role="status" aria-live="polite">2 of 2 match “Sunni”.</p>
+      <div id="group-list-sunni" class="group-list" role="tree" aria-labelledby="group-label-sunni"><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Sunni Islam" aria-selected="false" tabindex="0" aria-checked="true">
+        <span class="g-swatch" style="background:#1E8449" aria-hidden="true"></span><span class="g-name">Sunni Islam</span>
+        <span class="g-reach">19 countries · 169 areas</span><span class="g-parent">in Islam</span>
+      </button></div><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Muslim (neither Sunni nor Shia)" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#1E8449" aria-hidden="true"></span><span class="g-name">Muslim (neither Sunni nor Shia)</span>
+        <span class="g-reach">1 country · 75 areas</span><span class="g-parent">in Islam</span>
+      </button></div></div>
+      <p class="control-note group-reach">At this level: 131 first-level divisions across 18 countries. Everything else is blank because the figure is missing, not zero. 19 countries report it nationally. Within Russia, the figures below the country count survey estimate: self-identification, adults 18+ rather than answers people gave, so they are not on the same footing as the rest. Within Pakistan, the figures below the country count sectarian affiliation rather than answers people gave, so they are not on the same footing as the rest.</p>
+      <template><details class="reach-labels" open><summary>Combines 7 source labels</summary>Ançardine, Mouridiya Brotherhood, Qadiriya Brotherhood, Sunni, Sunni Islam, Sunni Muslim, Tijaniya Brotherhood</details></template>
+    </section>
+      </div>
+    </figure>
+    <figure>
+      <div>
+    <section class="filter-section">
+      <h3 id="group-label-evangelical">Group
+        <button type="button" class="info" data-info="group" aria-label="About choosing a group">i</button>
+      </h3>
+      <div class="group-search">
+        <label class="visually-hidden" for="group-search-evangelical">Search groups</label>
+        <input id="group-search-evangelical" type="search" autocomplete="off" spellcheck="false" value="Christian Evangelical" placeholder="Search — “Islam”, “Muslim”, “te reo”…" aria-controls="group-list-evangelical" aria-describedby="group-count-evangelical">
+      </div>
+      <p id="group-count-evangelical" class="control-note group-count" role="status" aria-live="polite">1 of 1 match “Christian Evangelical”.</p>
+      <div id="group-list-evangelical" class="group-list" role="tree" aria-labelledby="group-label-evangelical"><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Christian Evangelical" aria-selected="false" tabindex="0" aria-checked="true">
+        <span class="g-swatch" style="background:#2E86C1" aria-hidden="true"></span><span class="g-name">Christian Evangelical</span>
+        <span class="g-reach">1 country · 881 areas</span><span class="g-parent">in Protestantism</span>
+      </button></div></div>
+      <p class="control-note group-reach">No countries carry this figure. It is reported for 42 first-level divisions and 839 second-level divisions — change Detail level to see them. The map is blank here because the figure is missing at this level, not because the share is zero.</p>
+    </section>
+      </div>
+    </figure>
+  </div>
+</main>
+<script>
+  document.querySelectorAll("template").forEach(function (t) {
+    t.previousElementSibling.appendChild(t.content);
+    t.remove();
+  });
+</script>
+</body>
+</html>

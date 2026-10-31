@@ -1,0 +1,97 @@
+<!-- @dsCard group="Place panel" height=618 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FactCard — preview</title>
+<style>
+  /* Frame only: the place panel's own box on the page ground, edged all round
+     like the filters panes: one pixel wider than the panel so that inside its
+     two rules and its padding the content is the app's 363.8px. */
+  body { padding: 16px; }
+  .stage { display: flex; flex-direction: column; gap: 16px; }
+  .place {
+    width: calc(var(--sidebar-w) + 1px);
+    padding: 1rem var(--gutter-sidebar) 0;
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="place">
+    <div class="facts">
+      <div class="fact">
+      <div class="fact-label">Population</div>
+      <div class="fact-value">34.5M</div>
+      <div class="fact-meta">2017 · Wikidata (CC0)</div>
+    </div>
+      <div class="fact">
+      <div class="fact-label">Capital</div>
+      <div class="fact-value">Thiruvananthapuram</div>
+
+    </div>
+      <div class="fact">
+      <div class="fact-label">Largest settlement</div>
+      <div class="fact-value">Kochi</div>
+      <div class="fact-meta">1.5M people</div>
+    </div>
+      <div class="fact">
+      <div class="fact-label">Median age<button type="button" class="info" data-info-text="Census of India 2011 table C-13: the median of the single years of age of the 33,371,575 people whose age was returned, interpolated within the year that holds the middle person (100 and over is the open top group). The 34,486 people whose age was not stated are left out of it." aria-label="About the median age figure">i</button></div>
+      <div class="fact-value">31.8 yrs</div>
+      <div class="fact-meta">2011 · Census of India 2011</div>
+    </div>
+      <div class="fact">
+      <div class="fact-label">Sex ratio</div>
+      <div class="fact-value">92.3</div>
+      <div class="fact-meta">males per 100 females · 2011 · Census of India 2011</div>
+    </div>
+      <div class="fact">
+        <div class="fact-label">Life expectancy</div>
+        <div class="fact-value is-gap">
+          <span style="color:var(--status-not-available)" aria-hidden="true">▲</span> Not yet available
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="place">
+    <div class="facts">
+      <div class="fact">
+      <div class="fact-label">Population</div>
+      <div class="fact-value">68.5M</div>
+      <div class="fact-meta">2025 · CIA World Factbook (public domain)</div>
+    </div>
+      <div class="fact">
+      <div class="fact-label">Capital</div>
+      <div class="fact-value">Paris</div>
+
+    </div>
+      <div class="fact">
+      <div class="fact-label">Largest settlement</div>
+      <div class="fact-value">Paris</div>
+
+    </div>
+      <div class="fact">
+      <div class="fact-label">Median age</div>
+      <div class="fact-value">42.7 yrs</div>
+      <div class="fact-meta">2025 · CIA World Factbook (public domain)</div>
+    </div>
+      <div class="fact">
+      <div class="fact-label">Sex ratio</div>
+      <div class="fact-value">96</div>
+      <div class="fact-meta">males per 100 females · 2024 · CIA World Factbook</div>
+    </div>
+      <div class="fact">
+      <div class="fact-label">Life expectancy</div>
+      <div class="fact-value">82.6 yrs</div>
+      <div class="fact-meta">CIA World Factbook (public domain)</div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

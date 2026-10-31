@@ -1,0 +1,145 @@
+<!-- @dsCard group="Map" height=364 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Legend — preview</title>
+<style>
+  /* Frame only: the filters panel's column (330px, its inline gutter, surface-1) on the page ground. */
+  body { padding: 16px; }
+  .board { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .stack { display: grid; gap: 16px; }
+  .pane {
+    width: calc(var(--filters-w) + 1px);
+    padding: 14px var(--gutter-panel);
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+  /* The group swatches and the share ramp's stops: Palette.group and
+     Palette.groupRamp compute each one from the group's hue for the theme on
+     screen, and no token holds them, so each is a frame-local property named
+     after its light value and reset for dark, as the app recomputes it. */
+  :root {
+    --shade-204272: #204272; --shade-114d2a: #114d2a; --shade-418186: #418186;
+    --shade-624f06: #624f06; --shade-cc6c17: #cc6c17; --shade-efdde4: #efdde4;
+    --shade-d2ac8d: #d2ac8d; --shade-799bbe: #799bbe; --shade-edb998: #edb998;
+    --shade-bef0d3: #bef0d3; --shade-a5ebc2: #a5ebc2; --shade-86e3ad: #86e3ad;
+    --shade-65dc97: #65dc97; --shade-3cd37b: #3cd37b; --shade-2dc56d: #2dc56d;
+    --shade-29b564: #29b564; --shade-25a25a: #25a25a; --shade-208d4e: #208d4e;
+    --shade-1a723f: #1a723f;
+  }
+  [data-theme="dark"] {
+    --shade-204272: #2e60a4; --shade-114d2a: #196e3d; --shade-418186: #468d92;
+    --shade-624f06: #7d6508; --shade-cc6c17: #d67118; --shade-efdde4: #ead0db;
+    --shade-d2ac8d: #d0a988; --shade-799bbe: #7b9dc0; --shade-edb998: #ecb28d;
+    --shade-bef0d3: #a0eabf; --shade-a5ebc2: #8ae4b0; --shade-86e3ad: #70de9f;
+    --shade-65dc97: #51d88a; --shade-3cd37b: #2fd073; --shade-2dc56d: #2cc36c;
+    --shade-29b564: #29b665; --shade-25a25a: #26a75d; --shade-208d4e: #229854;
+    --shade-1a723f: #1e8549;
+  }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="stack">
+
+    <div class="pane">
+      <div class="legend" aria-live="polite"><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-present)" aria-hidden="true">●</span>
+           <span class="legend-swatch" style="background:var(--status-present)"></span>
+           <span>Recorded</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-derived)" aria-hidden="true">◐</span>
+           <span class="legend-swatch" style="background:var(--status-derived)"></span>
+           <span>Derived from published figures</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-modelled)" aria-hidden="true">◌</span>
+           <span class="legend-swatch" style="background:var(--status-modelled)"></span>
+           <span>Estimated, not published</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-not-available)" aria-hidden="true">▲</span>
+           <span class="legend-swatch" style="background:var(--status-not-available)"></span>
+           <span>Not yet available</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-not-collected)" aria-hidden="true">◼</span>
+           <span class="legend-swatch" style="background:var(--status-not-collected)"></span>
+           <span>Not collected</span>
+         </div></div>
+    </div>
+
+    <div class="pane">
+      <div class="legend" aria-live="polite"><div class="legend-scale" role="img" aria-label="Colour scale from 1,739 to 257M">
+           <span style="background:var(--sequential-0)"></span><span style="background:var(--sequential-1)"></span><span style="background:var(--sequential-2)"></span><span style="background:var(--sequential-3)"></span><span style="background:var(--sequential-4)"></span><span style="background:var(--sequential-5)"></span><span style="background:var(--sequential-6)"></span><span style="background:var(--sequential-7)"></span><span style="background:var(--sequential-8)"></span><span style="background:var(--sequential-9)"></span><span style="background:var(--sequential-10)"></span>
+         </div>
+         <div class="legend-ends"><span>1,739</span><span>257M</span></div><div class="legend-item">
+               <span class="legend-swatch" style="background:var(--neutral)"></span>
+               <span>No value for 31 units</span>
+             </div></div>
+    </div>
+
+    <div class="pane">
+      <div class="legend" aria-live="polite"><div class="legend-scale" role="img" aria-label="Colour scale from 0% to 100%">
+           <span style="background:var(--shade-bef0d3)"></span><span style="background:var(--shade-a5ebc2)"></span><span style="background:var(--shade-86e3ad)"></span><span style="background:var(--shade-65dc97)"></span><span style="background:var(--shade-3cd37b)"></span><span style="background:var(--shade-2dc56d)"></span><span style="background:var(--shade-29b564)"></span><span style="background:var(--shade-25a25a)"></span><span style="background:var(--shade-208d4e)"></span><span style="background:var(--shade-1a723f)"></span><span style="background:var(--shade-114d2a)"></span>
+         </div>
+         <div class="legend-ends"><span>0%</span><span>100%</span></div><p class="legend-fitted-note">Fitted to the range on screen.</p><div class="legend-item">
+               <span class="legend-swatch" style="background:var(--neutral)"></span>
+               <span>No value for 128 units</span>
+             </div></div>
+    </div>
+
+  </div>
+
+  <div class="pane">
+    <div class="legend" aria-live="polite"><ul class="legend-groups"><li>
+             <span class="legend-swatch" style="background:var(--shade-204272)"></span>
+             <span class="legend-group-name">Christianity</span>
+             <span class="legend-group-count">142</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-114d2a)"></span>
+             <span class="legend-group-name">Islam</span>
+             <span class="legend-group-count">51</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-418186)"></span>
+             <span class="legend-group-name">No religion</span>
+             <span class="legend-group-count">11</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-624f06)"></span>
+             <span class="legend-group-name">Buddhism</span>
+             <span class="legend-group-count">9</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-cc6c17)"></span>
+             <span class="legend-group-name">Hinduism</span>
+             <span class="legend-group-count">3</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-efdde4)"></span>
+             <span class="legend-group-name">Buddhist or Taoist</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-d2ac8d)"></span>
+             <span class="legend-group-name">Folk and traditional religion</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-799bbe)"></span>
+             <span class="legend-group-name">Judaism</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-edb998)"></span>
+             <span class="legend-group-name">Shinto</span>
+             <span class="legend-group-count">1</span>
+           </li></ul>
+         <div class="legend-shade">
+           <span class="legend-shade-label">Share of the leading group</span>
+           <div class="legend-scale" role="img" aria-label="Paler is a smaller share, darker is a larger one">
+             <span style="background:var(--leading-share-0)"></span><span style="background:var(--leading-share-1)"></span><span style="background:var(--leading-share-2)"></span><span style="background:var(--leading-share-3)"></span><span style="background:var(--leading-share-4)"></span>
+           </div>
+           <div class="legend-ends"><span>25% or less</span><span>100%</span></div>
+         </div><div class="legend-item">
+               <span class="legend-swatch" style="background:var(--neutral)"></span>
+               <span>No figure for 49 units</span>
+             </div></div>
+  </div>
+
+</div>
+</body>
+</html>
