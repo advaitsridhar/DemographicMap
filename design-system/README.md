@@ -14,7 +14,7 @@ The site's visual language, written down: tokens, the component stylesheet, and 
 
 To browse the catalogue, run `python3 scripts/serve.py --root design-system` and open http://127.0.0.1:8899/. The previews expect `tokens.css` and `components/bundle.css` to be loaded around them, and the catalogue does that.
 
-`python3 scripts/build_design_system.py` rebuilds the two generated files after a change to `site/css/app.css` or `tokens.json`. With `--check` it changes nothing and exits 1 if either is stale, or if a token no longer matches the source it was taken from.
+`python3 scripts/build_design_system.py` rebuilds the two generated files after a change to `site/css/app.css` or `tokens.json`. With `--check` it changes nothing and exits 1 if either is stale, or if a token no longer matches the source it was taken from. CI runs that check on every push.
 
 ---
 

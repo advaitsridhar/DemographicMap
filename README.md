@@ -241,7 +241,8 @@ rules. The site loads nothing from it.
 Two of its files are generated: `components/bundle.css` from
 `site/css/app.css`, and `tokens.css` from `tokens.json`. After changing either
 source, run `python3 scripts/build_design_system.py`. With `--check` it
-changes nothing and exits 1 if the design system no longer matches the site.
+changes nothing and exits 1 if the design system no longer matches the site;
+CI runs that check on every push.
 
 ### Groups are a three-tier tree
 
