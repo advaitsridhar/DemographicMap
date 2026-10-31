@@ -1,0 +1,80 @@
+<!-- @dsCard height=288 width=960 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>World Demographics Map</title>
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--surface-2); color: var(--ink-primary); font-family: var(--font-sans); overflow: hidden; }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; }
+  .band { position: absolute; left: 0; top: 0; width: 960px; height: 160px; }
+  .band svg { display: block; width: 960px; height: 160px; }
+  .accent { fill: var(--accent); }
+  .deep { fill: var(--sequential-10); }
+  .good { fill: var(--status-good); }
+  .warning { fill: var(--status-warning); }
+  .serious { fill: var(--status-serious); }
+  .bar { rx: var(--radius-xs); }
+  .hatch { stroke: var(--ink-muted); stroke-width: 3px; fill: none; }
+  .rest { fill: none; stroke: var(--ink-muted); stroke-width: 1px; }
+  .words { position: absolute; left: 32px; right: 32px; top: 176px; }
+  .name { margin: 0; font-size: 64px; line-height: .95; font-weight: 700; letter-spacing: -.02em; color: var(--ink-primary); white-space: nowrap; }
+  .tag { margin: 8px 0 0 2px; font-size: 14px; line-height: 20px; color: var(--ink-secondary); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="band" aria-hidden="true">
+<svg viewBox="0 0 960 160" width="960" height="160">
+<!--
+  blocks      accent 352x112 (the one interactive hue, first and widest) · sequential-10 200x112 (the deep end of the magnitude ramp) · status-good 72, status-warning 48, status-serious 32 (the three data states, kept small: they only ever mean a state) — about 34% of 960x288
+  arrangement top-band skeleton, because the name is wider than 440px at 64px: one strip of unequal bands cut like the composition bar (.stack-bar), tile-gap gutters between them and radius-xs on the two outer ends only; the name below on the ground
+  pattern     the hatched rest, this system's one pattern: it marks the share a composition does not describe ("A gap is data") — ink-muted strokes, 3px wide at an overlay-inset (12px) pitch, 45 degrees, inside a 1px outline, never a swatch
+  scales      sides in tile-gap (8px) multiples; insets 4 x tile-gap; band 14 x tile-gap tall; corners radius-xs; hatch pitch overlay-inset; name 64px at text-place-name's -.02em tracking
+-->
+<defs>
+  <clipPath id="bar-ends"><rect class="bar" x="32" y="32" width="896" height="112" rx="4"/></clipPath>
+  <clipPath id="rest-cut"><rect x="776" y="32" width="152" height="112"/></clipPath>
+</defs>
+<g clip-path="url(#bar-ends)">
+  <rect class="accent" x="32" y="32" width="352" height="112"/>
+  <rect class="deep" x="392" y="32" width="200" height="112"/>
+  <rect class="good" x="600" y="32" width="72" height="112"/>
+  <rect class="warning" x="680" y="32" width="48" height="112"/>
+  <rect class="serious" x="736" y="32" width="32" height="112"/>
+  <g clip-path="url(#rest-cut)">
+    <line class="hatch" x1="764" y1="156" x2="904" y2="16"/>
+    <line class="hatch" x1="776" y1="156" x2="916" y2="16"/>
+    <line class="hatch" x1="788" y1="156" x2="928" y2="16"/>
+    <line class="hatch" x1="800" y1="156" x2="940" y2="16"/>
+    <line class="hatch" x1="812" y1="156" x2="952" y2="16"/>
+    <line class="hatch" x1="824" y1="156" x2="964" y2="16"/>
+    <line class="hatch" x1="836" y1="156" x2="976" y2="16"/>
+    <line class="hatch" x1="848" y1="156" x2="988" y2="16"/>
+    <line class="hatch" x1="860" y1="156" x2="1000" y2="16"/>
+    <line class="hatch" x1="872" y1="156" x2="1012" y2="16"/>
+    <line class="hatch" x1="884" y1="156" x2="1024" y2="16"/>
+    <line class="hatch" x1="896" y1="156" x2="1036" y2="16"/>
+    <line class="hatch" x1="908" y1="156" x2="1048" y2="16"/>
+    <line class="hatch" x1="920" y1="156" x2="1060" y2="16"/>
+    <line class="hatch" x1="752" y1="156" x2="892" y2="16"/>
+    <line class="hatch" x1="740" y1="156" x2="880" y2="16"/>
+    <line class="hatch" x1="728" y1="156" x2="868" y2="16"/>
+    <line class="hatch" x1="716" y1="156" x2="856" y2="16"/>
+    <line class="hatch" x1="704" y1="156" x2="844" y2="16"/>
+    <line class="hatch" x1="692" y1="156" x2="832" y2="16"/>
+    <line class="hatch" x1="680" y1="156" x2="820" y2="16"/>
+    <line class="hatch" x1="668" y1="156" x2="808" y2="16"/>
+  </g>
+  <rect class="rest" x="776.5" y="32.5" width="151" height="111"/>
+</g>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">World Demographics Map</h1>
+<p class="tag">Population, religion, language and ethnicity, and an explicit record of where the figures do not exist.</p>
+</div>
+</div>
+</body>
+</html>

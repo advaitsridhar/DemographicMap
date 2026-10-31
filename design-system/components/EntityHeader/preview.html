@@ -1,0 +1,50 @@
+<!-- @dsCard group="Place panel" height=383 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EntityHeader — preview</title>
+<style>
+  /* Frame only: the place panel's own box on the page ground, edged all round
+     like the filters panes: one pixel wider than the panel so that inside its
+     two rules and its padding the content is the app's 363.8px. */
+  body { padding: 16px; }
+  .stage { display: flex; flex-direction: column; gap: 16px; }
+  .place {
+    width: calc(var(--sidebar-w) + 1px);
+    padding: 1rem var(--gutter-sidebar) 0;
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="place">
+    <header class="entity-head">
+      <p class="entity-breadcrumb">Country</p>
+      <h2 class="entity-name">France</h2>
+      <p class="entity-sub">FRA · FR</p>
+    </header>
+  </div>
+
+  <div class="place">
+    <header class="entity-head">
+      <p class="entity-breadcrumb"><button type="button" data-goto="IND">India</button> › First-level division</p>
+      <h2 class="entity-name">Kerala</h2>
+      <p class="entity-sub">India</p>
+    </header>
+  </div>
+
+  <div class="place">
+    <header class="entity-head">
+      <p class="entity-breadcrumb"><button type="button" data-goto="IND">India</button> › <button type="button" data-goto="1811400B45534780755480">Kerala</button> › Second-level division</p>
+      <h2 class="entity-name">Malappuram</h2>
+      <p class="entity-sub">India</p>
+    </header>
+  </div>
+
+</div>
+</body>
+</html>

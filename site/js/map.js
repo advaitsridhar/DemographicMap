@@ -587,7 +587,51 @@ window.WorldMap = (function () {
   function getLevel() { return activeLevel; }
   function levelId(i) { return LEVELS[i].id; }
 
+  /* How far an overlay in the map's bottom-left corner has to rise to clear
+   * the controls in its bottom-right corner: the scale bar and the
+   * attribution, which CC BY requires to stay readable.
+   *
+   * Nothing while the two sit side by side. On a phone or a tablet the on-map
+   * legend spans the map and is shown by default, and it used to cover both;
+   * so did the 280px legend on a desktop map too narrow for both. Where they
+   * meet, it is the controls' height above the map's bottom edge: added to
+   * the overlay's own bottom inset, it keeps that inset between the two.
+   */
+  function controlsClearance(overlay, controls, frame, gap) {
+    if (!overlay || !controls || !overlay.width || !controls.width) return 0;
+    if (overlay.right + gap <= controls.left) return 0;
+    return Math.max(0, Math.ceil(frame.bottom - controls.top));
+  }
+
+  /* Keep `element` clear of the bottom-right controls by writing the lift it
+   * needs to --map-controls-h, which its CSS adds to its bottom offset.
+   *
+   * Measured rather than guessed, as the topbar is: the attribution wraps to
+   * two lines on a phone, collapses to its button after the first drag, and
+   * sets its text in MapLibre's font, not ours. The element, the controls and
+   * the map are all watched, because a resize can change how they meet
+   * without changing the size of either side. */
+  function keepClearOfControls(element) {
+    if (!map || !element) return;
+    const frame = map.getContainer();
+    const controls = frame.querySelector(".maplibregl-ctrl-bottom-right");
+    if (!controls) return;
+    const update = () => {
+      const lift = controlsClearance(element.getBoundingClientRect(), controls.getBoundingClientRect(),
+                                     frame.getBoundingClientRect(), 12);
+      element.style.setProperty("--map-controls-h", `${lift}px`);
+    };
+    update();
+    if (window.ResizeObserver) {
+      const observer = new ResizeObserver(update);
+      [element, controls, frame].forEach((el) => observer.observe(el));
+    } else {
+      window.addEventListener("resize", update);
+    }
+  }
+
   return { init, applyColors, repaintAll, select, fitBBox, visibleCountries, inView,
            getMap, getLevel, levelId, restyle, setPinnedLevel, getPinnedLevel,
-           setPartialLevels, stableSource, forgetfulCache, LEVELS };
+           setPartialLevels, stableSource, forgetfulCache, controlsClearance,
+           keepClearOfControls, LEVELS };
 })();

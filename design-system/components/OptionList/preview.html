@@ -1,0 +1,49 @@
+<!-- @dsCard group="Controls" height=323 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OptionList — preview</title>
+<style>
+  /* Frame only: slices of the filters panel (330px column, its inline gutter,
+     surface-1) on the page ground; each section brings its own top margin. */
+  body { padding: 16px; }
+  .board { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .pane {
+    width: calc(var(--filters-w) + 1px);
+    padding: 0 var(--gutter-panel) var(--section-gap);
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="pane">
+    <section class="filter-section">
+      <h3 id="metric-label">View</h3>
+      <div class="option-list" role="radiogroup" aria-labelledby="metric-label"><button type="button" role="radio" class="opt" data-value="group" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Most populous group</span><span class="opt-hint">One colour per group, darker where its share is larger.</span></button><button type="button" role="radio" class="opt" data-value="coverage" aria-checked="true" tabindex="0">
+              <span class="opt-name">Data coverage</span><span class="opt-hint">Where a figure exists — and whether a gap is unfetched or never collected.</span></button><button type="button" role="radio" class="opt" data-value="population" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Population</span><span class="opt-hint">Latest published count, on a log scale.</span></button><button type="button" role="radio" class="opt" data-value="median_age" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Median age</span><span class="opt-hint">Median age of the resident population.</span></button><button type="button" role="radio" class="opt" data-value="largest_share" aria-checked="false" tabindex="-1">
+              <span class="opt-name">How concentrated</span><span class="opt-hint">The share held by the single largest group, whichever it is.</span></button><button type="button" role="radio" class="opt" data-value="group_share" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Share of one group</span><span class="opt-hint">One group at a time, shaded by its percentage.</span></button></div>
+    </section>
+  </div>
+
+  <div class="pane">
+    <section class="filter-section">
+      <h3 id="detail-label">Detail level</h3>
+      <div class="option-list" role="radiogroup" aria-labelledby="detail-label"><button type="button" role="radio" class="opt" data-value="auto" aria-checked="true" tabindex="0">
+              <span class="opt-name">Follow zoom</span><span class="opt-hint">Countries, then first-level, then second-level as you zoom in.</span></button><button type="button" role="radio" class="opt" data-value="0" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Countries</span><span class="opt-hint">One shade per country at every zoom.</span></button><button type="button" role="radio" class="opt" data-value="1" aria-checked="false" tabindex="-1">
+              <span class="opt-name">First-level divisions</span><span class="opt-hint">States, provinces, regions — wherever they are tiled.</span></button><button type="button" role="radio" class="opt" data-value="2" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Second-level divisions</span><span class="opt-hint">Districts and counties. Pinning this loads every country's shard.</span></button></div>
+    </section>
+  </div>
+
+</div>
+</body>
+</html>

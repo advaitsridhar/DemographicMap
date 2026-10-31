@@ -1,0 +1,28 @@
+<!-- @dsCard group="Map" height=314 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MapTooltip — preview</title>
+<style>
+  /* Frame only: a patch of map (water ground) at its desktop width, or the card's width where that is narrower.
+     MapLibre's stylesheet is not loaded: its map container gives the popup a 20px line height, set here, and its
+     wrapper shrink-wraps the box, as a flex item does. */
+  body { padding: 16px; }
+  main { width: min(100%, calc(1440px - var(--filters-w) - var(--sidebar-w))); padding: 28px 24px 32px; background: var(--water); line-height: 20px;
+          display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px 20px; }
+</style>
+</head>
+<body>
+<main>
+    <div class="maplibregl-popup maplibregl-popup-anchor-bottom" style="max-width: 240px;"><div class="maplibregl-popup-tip"></div><div class="maplibregl-popup-content"><span class="tip-name">Russia</span><span class="tip-meta">Christianity 47%</span></div></div>
+    <div class="maplibregl-popup maplibregl-popup-anchor-bottom" style="max-width: 240px;"><div class="maplibregl-popup-tip"></div><div class="maplibregl-popup-content"><span class="tip-name">Belarus</span><span class="tip-meta">● Recorded — religion</span></div></div>
+    <div class="maplibregl-popup maplibregl-popup-anchor-bottom" style="max-width: 240px;"><div class="maplibregl-popup-tip"></div><div class="maplibregl-popup-content"><span class="tip-name">Belarus</span><span class="tip-meta">Population: 9.5M</span></div></div>
+    <div class="maplibregl-popup maplibregl-popup-anchor-bottom" style="max-width: 240px;"><div class="maplibregl-popup-tip"></div><div class="maplibregl-popup-content"><span class="tip-name">Belarus</span><span class="tip-meta">Median age: 42.5 yrs</span></div></div>
+    <div class="maplibregl-popup maplibregl-popup-anchor-bottom" style="max-width: 240px;"><div class="maplibregl-popup-tip"></div><div class="maplibregl-popup-content"><span class="tip-name">Belarus</span><span class="tip-meta">How concentrated: 48%</span></div></div>
+    <div class="maplibregl-popup maplibregl-popup-anchor-bottom" style="max-width: 240px;"><div class="maplibregl-popup-tip"></div><div class="maplibregl-popup-content"><span class="tip-name">Belarus</span><span class="tip-meta">Share of one group: 55%</span></div></div>
+    <div class="maplibregl-popup maplibregl-popup-anchor-bottom" style="max-width: 240px;"><div class="maplibregl-popup-tip"></div><div class="maplibregl-popup-content"><span class="tip-name">Zhytomyr Oblast</span><span class="tip-meta">◼ Not collected — religion · Ukraine</span></div></div>
+    <div class="maplibregl-popup maplibregl-popup-anchor-bottom" style="max-width: 240px;"><div class="maplibregl-popup-tip"></div><div class="maplibregl-popup-content"><span class="tip-name">Ukraine</span><span class="tip-meta">—</span></div></div>
+</main>
+</body>
+</html>
