@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Demographics Map design system</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components/bundle.css">
+<style>
+  /* The catalogue is built from the system itself: tokens.css for colour and
+     type, bundle.css for the topbar and buttons. Only its own layout is here. */
+  .catalogue { max-width: 1240px; margin: 0 auto; padding: 1.1rem var(--gutter-panel) 3rem; }
+  .catalogue > p { max-width: 65ch; }
+  .group { margin-top: var(--section-gap); }
+  .group > h2 { margin: 0 0 .5rem; }
+  .cards { display: grid; gap: 16px; }
+  .card { background: var(--surface-1); border: 1px solid var(--hairline); border-radius: var(--radius); overflow: hidden; }
+  .card-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem .75rem; padding: .7rem .9rem; border-bottom: 1px solid var(--hairline); }
+  .card-head h3 { margin: 0; }
+  .card-head a { color: var(--accent); margin-left: auto; }
+  .card-head p { flex-basis: 100%; margin: 0; color: var(--ink-secondary); }
+  .frame { position: relative; overflow: hidden; background: var(--surface-2); }
+  .frame iframe { position: absolute; left: 0; top: 0; border: 0; transform-origin: 0 0; }
+  .problem { padding: .9rem; background: var(--surface-sunken); border: 1px solid var(--hairline); border-radius: var(--radius-sm); }
+  .problem code { font-size: .9em; }
+  a.ghost-button { text-decoration: none; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">🗺️</span>
+    <span class="brand-text">
+      <strong>World Demographics Map</strong>
+      <span class="brand-sub">design system · tokens · components</span>
+    </span>
+  </div>
+  <div class="topbar-actions" style="margin-left: auto">
+    <a class="ghost-button" href="README.md">Brand book</a>
+    <a class="ghost-button" href="guides/">Guides</a>
+    <button id="theme" class="ghost-button" type="button" aria-label="Switch colour theme">◐</button>
+  </div>
+</header>
+
+<main class="catalogue">
+  <p class="text-lede">Every component as the app draws it, rendered with <code>tokens.css</code> and <code>components/bundle.css</code>. Each card links to its guidelines.</p>
+  <div id="groups"></div>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var NAMES = ["Cover", "AppShell", "Topbar", "GhostButton", "ThemeToggle", "Search", "AboutDialog",
+    "FiltersPanel", "FilterSummary", "OptionList", "SegmentedControl", "CheckRow", "InfoButton", "ControlNote",
+    "GroupPicker", "Legend", "MapLegend", "MapStatus", "MapTooltip", "EntityHeader", "FactCard", "PanelSection",
+    "CompositionPanel", "DataTable", "ChildrenList", "SourceList", "EmptyState", "StatusChip", "GapNote",
+    "BasisChip", "EstimateLine", "Note", "SkipLink"];
+  var ORDER = ["Overview", "Shell", "Controls", "Map", "Place panel", "Data states", "Utilities"];
+  var styles = "";
+  var cards = [];
+  var root = document.documentElement;
+  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  root.setAttribute("data-theme", prefersDark ? "dark" : "light");
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; });
+  }
+  function text(url) {
+    return fetch(url).then(function (r) { if (!r.ok) throw new Error(url + ": HTTP " + r.status); return r.text(); });
+  }
+  function summary(readme) {
+    var body = readme.replace(/^# .*\n+/, "").split("\n\n")[0].replace(/\s+/g, " ");
+    var m = /^(.+?[.!?])(\s|$)/.exec(body);
+    return (m ? m[1] : body).replace(/[*`]/g, "");
+  }
+  function srcdoc(raw, theme) {
+    var doc = raw.replace(/^<!--\s*@dsCard[^\n]*\n/, "");
+    var inject = "<style>" + styles + "</style>";
+    doc = /<head[^>]*>/i.test(doc) ? doc.replace(/<head([^>]*)>/i, "<head$1>" + inject) : inject + doc;
+    return doc.replace(/<html([^>]*)>/i, function (m, attrs) {
+      return "<html" + attrs.replace(/\sdata-theme="[^"]*"/, "") + ' data-theme="' + theme + '">';
+    });
+  }
+  function fit(card) {
+    var w = card.frame.clientWidth || card.width;
+    var s = Math.min(1, w / card.width);
+    card.iframe.style.transform = "scale(" + s + ")";
+    card.frame.style.height = Math.ceil(card.height * s) + "px";
+  }
+  function paint() {
+    var theme = root.getAttribute("data-theme");
+    cards.forEach(function (card) {
+      card.iframe.title = card.name + " preview, " + theme + " theme";
+      card.iframe.srcdoc = srcdoc(card.raw, theme);
+    });
+  }
+
+  Promise.all([text("tokens.css"), text("components/bundle.css")]).then(function (css) {
+    styles = css.join("\n");
+    return Promise.all(NAMES.map(function (name) {
+      return Promise.all([
+        text("components/" + name + "/preview.html"),
+        name === "Cover" ? Promise.resolve("") : text("components/" + name + "/README.md"),
+      ]).then(function (pair) {
+        var marker = /^<!--\s*@dsCard\b(.*?)-->/.exec(pair[0]) || ["", ""];
+        var attr = function (re, fallback) { var m = re.exec(marker[1]); return m ? m[1] : fallback; };
+        return { name: name, raw: pair[0], summary: pair[1] ? summary(pair[1]) : "",
+          group: name === "Cover" ? "Overview" : attr(/group="([^"]*)"/, "Other"),
+          height: Number(attr(/height=(\d+)/, "120")), width: Number(attr(/width=(\d+)/, "760")) };
+      });
+    }));
+  }).then(function (list) {
+    var host = document.getElementById("groups");
+    ORDER.forEach(function (group) {
+      var members = list.filter(function (c) { return c.group === group; });
+      if (!members.length) return;
+      var section = document.createElement("section");
+      section.className = "group";
+      section.innerHTML = '<h2 class="text-panel-heading">' + esc(group) + '</h2><div class="cards"></div>';
+      members.forEach(function (c) {
+        var el = document.createElement("article");
+        el.className = "card";
+        el.innerHTML = '<div class="card-head"><h3 class="text-section-title">' + esc(c.name) + "</h3>" +
+          (c.name === "Cover" ? "" : '<a class="text-note" href="components/' + c.name + '/README.md">Guidelines</a>') +
+          (c.summary ? '<p class="text-note">' + esc(c.summary) + "</p>" : "") +
+          '</div><div class="frame"><iframe loading="lazy"></iframe></div>';
+        section.querySelector(".cards").appendChild(el);
+        c.frame = el.querySelector(".frame");
+        c.iframe = el.querySelector("iframe");
+        c.iframe.width = c.width;
+        c.iframe.height = c.height;
+        cards.push(c);
+      });
+      host.appendChild(section);
+    });
+    cards.forEach(fit);
+    paint();
+    window.addEventListener("resize", function () { cards.forEach(fit); });
+  }).catch(function (err) {
+    document.getElementById("groups").innerHTML =
+      '<p class="problem text-gap-note"><strong>The previews could not be loaded.</strong> ' +
+      "Browsers block these reads from a file opened directly. From the repository, run " +
+      "<code>python3 scripts/serve.py --root design-system</code> and open http://127.0.0.1:8899/. " +
+      "(" + esc(err.message) + ")</p>";
+  });
+
+  document.getElementById("theme").addEventListener("click", function () {
+    root.setAttribute("data-theme", root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+    if (cards.length) paint();
+  });
+})();
+</script>
+</body>
+</html>

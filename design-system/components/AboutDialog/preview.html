@@ -1,0 +1,62 @@
+<!-- @dsCard group="Shell" height=1240 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AboutDialog — preview</title>
+<style>
+  /* Frame only: the backdrop over the page ground, a viewport tall. The app
+     opens the dialog with showModal(), which centres it in the window; here it
+     is open in place, set 8vh down so it sits where the modal does (84vh tall
+     at most). The card is as tall as a window that holds the whole dialog;
+     in a shorter one the article scrolls under its sticky head. */
+  .backdrop { position: relative; height: 100vh; padding-top: 8vh; background: var(--backdrop); }
+</style>
+</head>
+<body>
+<div class="backdrop">
+  <dialog aria-labelledby="about-title" open="">
+    <article>
+      <header class="dialog-head">
+        <h2 id="about-title">About this map</h2>
+        <button class="ghost-button" type="button" aria-label="Close">✕</button>
+      </header>
+  
+      <h3>What it shows</h3>
+      <p>Administrative boundaries at three levels — countries (ADM0), first-level
+         divisions (ADM1) and second-level divisions (ADM2) — joined to population,
+         religion, language and ethnicity figures from national censuses and the CIA
+         World Factbook.</p>
+  
+      <h3>Gaps are data too</h3>
+      <p>Demographic coverage is extremely uneven, and this map refuses to paper over
+         that. Three distinct states are shown wherever a value is absent:</p>
+      <ul class="gap-key">
+        <li><span class="chip chip-present"></span><strong>Present</strong> — a value with a named source and reference year.</li>
+        <li><span class="chip chip-missing"></span><strong>Not yet available</strong> — the figure exists somewhere but this build has not fetched it.</li>
+        <li><span class="chip chip-notcollected"></span><strong>Not collected</strong> — the country does not gather it at all. France records neither ethnicity nor religion (barred by law); Germany records citizenship and migration background rather than ethnicity; Japan's census asks neither; India collects mother tongue and Scheduled Caste / Tribe status but not ethnicity; the US census may not ask a mandatory religion question.</li>
+      </ul>
+  
+      <h3>Comparability warning</h3>
+      <p>Religion and ethnicity categories are <em>not</em> comparable across borders.
+         US race, Brazilian <em>cor ou raça</em>, UK ethnic group, Australian ancestry,
+         Chinese <em>minzu</em> and Indonesian <em>suku</em> are different questions with
+         different answer sets. Percentages here should be read within a country, never
+         across a border.</p>
+  
+      <h3>Sources &amp; licences</h3>
+      <ul id="about-sources" class="source-list"><li><a href="https://www.geoboundaries.org/" target="_blank" rel="noopener noreferrer">geoBoundaries (gbOpen / CGAZ)</a> - CC BY 4.0 - boundaries at all three levels. A few countries inherit ODbL or CC-BY-SA from OpenStreetMap.</li><li><a href="https://www.cia.gov/the-world-factbook/" target="_blank" rel="noopener noreferrer">CIA World Factbook</a> - Public domain - country religion, language, ethnicity, median age, sex ratio. Retired in February 2026; the figures are from its last edition.</li><li><a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth</a> - Public domain (CC0) - code concordance and largest-settlement points.</li><li><a href="https://www.geonames.org/" target="_blank" rel="noopener noreferrer">GeoNames</a> - CC BY 4.0 - the largest settlement, and the seat where no other source names a capital, placed in the map's own outlines.</li><li><a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer">Wikidata</a> - CC0 - subnational population, capital and coordinates wherever that adapter has been run.</li><li><a href="https://github.com/advaitsridhar/DemographicMap#data-sources" target="_blank" rel="noopener noreferrer">National statistical offices</a> - US Census ACS, ONS/Nomis, Statistics Canada, IBGE SIDRA, INEGI, DANE, e-Stat, Eurostat, ABS, Census of India - each under its own licence.</li><li><a href="https://www.wikipedia.org/" target="_blank" rel="noopener noreferrer">Wikipedia</a> - CC BY-SA 4.0 - census figures as its articles transcribe and cite them, only where the office's own table cannot be read; each figure names the census it came from.</li></ul>
+  
+      <h3>Caveats worth knowing</h3>
+      <ul class="caveat-list">
+        <li>The Factbook was retired in February 2026, so country figures are a frozen snapshot.</li>
+        <li>India's subnational data is from the 2011 census; the next round was postponed.</li>
+        <li>Indonesia's ethnicity and religion data is from 2010 — the 2020 census dropped both questions.</li>
+        <li>The 2020 US Religion Census counts adherents reported by religious bodies (about 48.6% of the population), not self-identification.</li>
+        <li>geoBoundaries' global composite (CGAZ) simplifies polygons, fills gaps along shared edges, and substitutes disputed areas using US Department of State definitions. It is fine for a demographics choropleth and not authoritative for boundary disputes.</li>
+      </ul>
+    </article>
+  </dialog>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- @dsCard group="Controls" height=150 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CheckRow — preview</title>
+<style>
+  /* Frame only: slices of the filters panel (330px column, its inline gutter,
+     surface-1) on the page ground; each section brings its own top margin. */
+  body { padding: 16px; }
+  .board { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .pane {
+    width: calc(var(--filters-w) + 1px);
+    padding: 0 var(--gutter-panel) var(--section-gap);
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="pane">
+    <section class="filter-section">
+      <h3>Estimates
+        <button type="button" class="info" data-info="estimates" aria-label="About estimated units">i</button>
+      </h3>
+      <label class="check-row" for="estimates-toggle">
+        <input id="estimates-toggle" type="checkbox" checked="">
+        <span class="check-name">Show estimates</span>
+        <span class="check-hint">Hatched, in the colour the estimate gives. Off, they are gaps.</span>
+      </label>
+    </section>
+  </div>
+
+  <div class="pane">
+    <section class="filter-section">
+      <h3>Estimates
+        <button type="button" class="info" data-info="estimates" aria-label="About estimated units">i</button>
+      </h3>
+      <label class="check-row">
+        <input type="checkbox">
+        <span class="check-name">Show estimates</span>
+        <span class="check-hint">Hatched, in the colour the estimate gives. Off, they are gaps.</span>
+      </label>
+    </section>
+  </div>
+
+</div>
+</body>
+</html>

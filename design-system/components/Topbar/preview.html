@@ -1,0 +1,46 @@
+<!-- @dsCard group="Shell" height=54 width=1200 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Topbar — preview</title>
+<style>
+  /* Frame only: the bar edge to edge across the top of a 1200px window, as
+     on a desktop: one line, the subline under the wordmark, 54px tall. At
+     900px and below the subline goes, from 641px to 766px the labels wrap to
+     two lines, and at 640px and below the bar collapses to glyphs. */
+  /* The status line is visually hidden but keeps a paragraph's 1em margins,
+     which put its 1px box 7px below the bar: over the map in the app, but
+     here it would make the card 61px tall. Zeroed so the card is the bar. */
+  #search-status { margin: 0; }
+</style>
+</head>
+<body>
+<header id="topbar" class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">🗺️</span>
+      <span class="brand-text">
+        <strong>World Demographics Map</strong>
+        <span class="brand-sub">countries · first-level · second-level divisions</span>
+      </span>
+    </div>
+
+    <div class="search" role="search">
+      <label class="visually-hidden" for="search-input">Search for a country, state or district</label>
+      <input id="search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search places and groups — “Kerala”, “Islam”, “Tamil”, “Harris County”" aria-describedby="search-status" aria-expanded="false" aria-controls="search-results" role="combobox" aria-autocomplete="list">
+      <ul id="search-results" class="search-results" role="listbox" aria-label="Search results" hidden=""></ul>
+      <p id="search-status" class="visually-hidden" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="filters-toggle" class="ghost-button filters-toggle" type="button" aria-expanded="true" aria-controls="filters" title="Hide the filter panel">
+        <span aria-hidden="true">☰</span> Filters
+      </button>
+      <button id="theme-toggle" class="ghost-button" type="button" aria-label="Switch colour theme" title="Theme: auto">
+        <span data-theme-icon="">◐</span>
+      </button>
+      <button id="about-open" class="ghost-button about-open" type="button" aria-haspopup="dialog">About &amp; sources</button>
+    </div>
+  </header>
+</body>
+</html>

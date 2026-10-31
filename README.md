@@ -133,12 +133,14 @@ scripts/
 ├── simplify.sh             # mapshaper simplification for the GeoJSON path
 ├── build_entities.py       # the join: boundaries x attributes -> site/data
 ├── build_all.sh            # end-to-end
+├── build_design_system.py  # rebuilds design-system/'s generated files; --check reports drift
 └── serve.py                # dev server with HTTP Range support
 site/                       # the deployed static app
 ├── index.html
 ├── js/{palette,data,metrics,dashboard,search,map,app}.js
 ├── tiles/{admin0,admin1,admin2}.pmtiles
 └── data/{admin0.json,admin1/*.json,admin2/*.json,search-index-*.json,coverage.json}
+design-system/              # the site's tokens, component styles and guidelines (see its README)
 ```
 
 ### Boundaries: geoBoundaries, not GADM
@@ -225,6 +227,21 @@ relatives rather than strangers — mistaking Sunni for Shia costs a reader far
 less than mistaking Islam for Buddhism. And the map does have room for a label:
 every unit names its group and share on hover, the legend names each colour in
 the order it leads the most units, and the panel names it again on selection.
+
+### Design system
+
+`design-system/` writes the site's visual language down so that new work can
+match it: a token for every colour (light and dark), size and type style, each
+with a note on where it is used; the component styles; and, for each of the 32
+components, guidelines and a preview built from the app's own markup. Its
+README is the brand book, and its `guides/` cover data visualisation, the map,
+writing, accessibility and the places where the app departs from its own
+rules. The site loads nothing from it.
+
+Two of its files are generated: `components/bundle.css` from
+`site/css/app.css`, and `tokens.css` from `tokens.json`. After changing either
+source, run `python3 scripts/build_design_system.py`. With `--check` it
+changes nothing and exits 1 if the design system no longer matches the site.
 
 ### Groups are a three-tier tree
 

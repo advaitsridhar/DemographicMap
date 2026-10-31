@@ -1,0 +1,69 @@
+<!-- @dsCard group="Place panel" height=677 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CompositionPanel — preview</title>
+<style>
+  /* Frame only: the place panel's own box on the page ground, edged all round
+     like the filters panes: one pixel wider than the panel so that inside its
+     two rules and its padding the content is the app's 363.8px. */
+  body { padding: 16px; }
+  .stage { display: flex; flex-direction: column; gap: 16px; }
+  .place {
+    width: calc(var(--sidebar-w) + 1px);
+    padding: 1rem var(--gutter-sidebar) 0;
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="place">
+    <section class="panel"><div class="panel-head"><h3>Religion<button type="button" class="info" data-info-text="Shares are published rounded to one decimal and came to 5 tenths of a point off 100%; the difference is rounding, and it has been put back into the largest groups so the column adds up." aria-label="About the religion figures">i</button></h3><span class="panel-year">2012</span></div><div class="stack-bar" role="img" aria-label="Muslim 98.3%, unspecified &lt;0.9%, Christian &lt;0.8%"><span style="flex:0 0 98.30%;background:var(--categorical-1)" title="Muslim 98.3%"></span><span style="flex:0 0 0.90%;background:var(--categorical-2)" title="unspecified &lt;0.9%"></span><span style="flex:0 0 0.80%;background:var(--categorical-3)" title="Christian &lt;0.8%"></span></div><ul class="composition-list"><li><span class="swatch" style="background:var(--categorical-1)" aria-hidden="true"></span>
+             <span class="label">Muslim</span>
+             <span class="pct">98.3%</span></li><li><span class="swatch" style="background:var(--categorical-2)" aria-hidden="true"></span>
+             <span class="label">unspecified</span>
+             <span class="pct">&lt;0.9%</span></li><li><span class="swatch" style="background:var(--categorical-3)" aria-hidden="true"></span>
+             <span class="label">Christian</span>
+             <span class="pct">&lt;0.8%</span></li></ul><details class="table-toggle"><summary>Table view</summary>
+        <table class="data-table"><thead><tr><th>Group</th><th>Share</th></tr></thead><tbody><tr><td>Muslim</td><td>98.3%</td></tr><tr><td>Christian</td><td>&lt;0.8%</td></tr><tr><td>unspecified</td><td>&lt;0.9%</td></tr><tr class="total-row"><th scope="row">Total</th><th>100.0%</th></tr></tbody></table></details><p class="note"><span style="color:var(--status-not-available)" aria-hidden="true">▲</span> Named without published shares:
+        other, unaffiliated.</p></section>
+  </div>
+
+  <div class="place">
+    <section class="panel"><div class="panel-head"><h3>Religion<button type="button" class="info" data-info-text="European Social Survey, ESS rounds 7, 8, 9, 10, 11 (2014-2024), pooled: religious belonging and denomination (rlgblg, rlgdnm): &quot;Do you consider yourself as belonging to any particular religion or denomination?&quot; and, if so, which; &quot;no&quot; is written as No religion. A survey estimate, not a count: 9,655 respondents aged 15 and over in private households, weighted within each round by the post-stratification weight (pspwght), rescaled to the round's respondents, and pooled. The census does not ask this question. Where one of the country's regions holds 100 respondents or more, its division carries the same survey's regional estimate. Shares are published rounded to one decimal and came to a tenth of a point off 100%; the difference is rounding, and it has been put back into the largest groups so the column adds up." aria-label="About the religion figures">i</button></h3><span class="panel-year">2023</span></div><div class="stack-bar" role="img" aria-label="No religion 49.1%, Roman Catholic 38.9%, Islam 7.5%, Protestant 2.0%, Other Christian 0.8%, Judaism 0.5%, Other religions 0.5%, Other groups 0.7%"><span style="flex:0 0 49.10%;background:var(--categorical-1)" title="No religion 49.1%"></span><span style="flex:0 0 38.90%;background:var(--categorical-2)" title="Roman Catholic 38.9%"></span><span style="flex:0 0 7.50%;background:var(--categorical-3)" title="Islam 7.5%"></span><span style="flex:0 0 2.00%;background:var(--categorical-4)" title="Protestant 2.0%"></span><span style="flex:0 0 0.80%;background:var(--categorical-5)" title="Other Christian 0.8%"></span><span style="flex:0 0 0.50%;background:var(--categorical-6)" title="Judaism 0.5%"></span><span style="flex:0 0 0.50%;background:var(--categorical-7)" title="Other religions 0.5%"></span><span style="flex:0 0 0.70%;background:var(--categorical-8)" title="Other groups 0.7%"></span></div><ul class="composition-list"><li><span class="swatch" style="background:var(--categorical-1)" aria-hidden="true"></span>
+             <span class="label">No religion</span>
+             <span class="pct">49.1%</span></li><li><span class="swatch" style="background:var(--categorical-2)" aria-hidden="true"></span>
+             <span class="label">Roman Catholic</span>
+             <span class="pct">38.9%</span></li><li><span class="swatch" style="background:var(--categorical-3)" aria-hidden="true"></span>
+             <span class="label">Islam</span>
+             <span class="pct">7.5%</span></li><li><span class="swatch" style="background:var(--categorical-4)" aria-hidden="true"></span>
+             <span class="label">Protestant</span>
+             <span class="pct">2.0%</span></li><li><span class="swatch" style="background:var(--categorical-5)" aria-hidden="true"></span>
+             <span class="label">Other Christian</span>
+             <span class="pct">0.8%</span></li><li><span class="swatch" style="background:var(--categorical-6)" aria-hidden="true"></span>
+             <span class="label">Judaism</span>
+             <span class="pct">0.5%</span></li><li><span class="swatch" style="background:var(--categorical-7)" aria-hidden="true"></span>
+             <span class="label">Other religions</span>
+             <span class="pct">0.5%</span></li><li><span class="swatch" style="background:var(--categorical-8)" aria-hidden="true"></span>
+             <span class="label">Other groups (2)</span>
+             <span class="pct">0.7%</span></li></ul><details class="table-toggle"><summary>Table view</summary>
+        <table class="data-table"><thead><tr><th>Group</th><th>Share</th></tr></thead><tbody><tr><td>No religion</td><td>49.1%</td></tr><tr><td>Roman Catholic</td><td>38.9%</td></tr><tr><td>Islam</td><td>7.5%</td></tr><tr><td>Protestant</td><td>2.0%</td></tr><tr><td>Other Christian</td><td>0.8%</td></tr><tr><td>Judaism</td><td>0.5%</td></tr><tr><td>Other religions</td><td>0.5%</td></tr><tr><td>Orthodox</td><td>0.4%</td></tr><tr><td>Eastern religions</td><td>0.3%</td></tr><tr class="total-row"><th scope="row">Total</th><th>100.0%</th></tr></tbody></table></details></section>
+  </div>
+
+  <div class="place">
+    <section class="panel"><div class="panel-head"><h3>Scheduled Caste / Tribe<button type="button" class="info" data-info-text="Scheduled Caste and Scheduled Tribe shares (Census 2011). These are constitutional-schedule classifications used for reservation policy, not ethnic categories, and the two do not overlap." aria-label="About the scheduled caste / tribe figures">i</button></h3><span class="panel-year">2011</span></div><div class="stack-bar" role="img" aria-label="Scheduled Caste 9.1%, Scheduled Tribe 1.5%, not accounted for 89.4%"><span style="flex:0 0 9.10%;background:var(--categorical-1)" title="Scheduled Caste 9.1%"></span><span style="flex:0 0 1.50%;background:var(--categorical-2)" title="Scheduled Tribe 1.5%"></span><span class="stack-rest" style="flex:0 0 89.40%" title="Not accounted for by these categories 89.4%"></span></div><p class="basis-line"><span class="chip-basis chip-basis-partial" title="Shares sum to 10.6%">
+                describes 10.6% of the population</span></p><ul class="composition-list"><li><span class="swatch" style="background:var(--categorical-1)" aria-hidden="true"></span>
+             <span class="label">Scheduled Caste</span>
+             <span class="pct">9.1%</span></li><li><span class="swatch" style="background:var(--categorical-2)" aria-hidden="true"></span>
+             <span class="label">Scheduled Tribe</span>
+             <span class="pct">1.5%</span></li></ul><details class="table-toggle"><summary>Table view</summary>
+        <table class="data-table"><thead><tr><th>Group</th><th>Share</th></tr></thead><tbody><tr><td>Scheduled Caste</td><td>9.1%</td></tr><tr><td>Scheduled Tribe</td><td>1.5%</td></tr><tr class="total-row"><th scope="row">Total</th><th>10.6%</th></tr></tbody></table></details></section>
+  </div>
+
+</div>
+</body>
+</html>

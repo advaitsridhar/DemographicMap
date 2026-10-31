@@ -1,0 +1,122 @@
+<!-- @dsCard group="Map" height=432 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MapLegend — preview</title>
+<style>
+  /* Frame only: a patch of map (the water ground) just wide enough for the
+     legend's desktop width plus its insets, so it sits where the app puts it. */
+  body { padding: 16px; }
+  .board { display: flex; flex-wrap: wrap; gap: 16px; }
+  .ground {
+    position: relative;
+    width: calc(var(--legend-w) + 2 * var(--overlay-inset));
+    height: 400px;
+    background: var(--water);
+    overflow: hidden;
+  }
+  /* The group swatches: Palette.group computes each one from the group's hue
+     at its peak share for the theme on screen, and no token holds them, so
+     each is a frame-local property named after its light value and reset for
+     dark, as the app recomputes it. */
+  :root {
+    --shade-204272: #204272; --shade-114d2a: #114d2a; --shade-418186: #418186;
+    --shade-624f06: #624f06; --shade-cc6c17: #cc6c17; --shade-efdde4: #efdde4;
+    --shade-d2ac8d: #d2ac8d; --shade-799bbe: #799bbe; --shade-edb998: #edb998;
+  }
+  [data-theme="dark"] {
+    --shade-204272: #2e60a4; --shade-114d2a: #196e3d; --shade-418186: #468d92;
+    --shade-624f06: #7d6508; --shade-cc6c17: #d67118; --shade-efdde4: #ead0db;
+    --shade-d2ac8d: #d0a988; --shade-799bbe: #7b9dc0; --shade-edb998: #ecb28d;
+  }
+</style>
+</head>
+<body>
+<div class="board">
+
+  <div class="ground">
+    <div class="map-legend" aria-label="Map legend">
+      <p class="filter-summary"><span class="fchip">Most populous group</span><span class="fchip">Religion</span><span class="fchip">Religions</span><span class="fchip">Detail follows zoom</span></p>
+      <div class="map-legend-body"><ul class="legend-groups"><li>
+             <span class="legend-swatch" style="background:var(--shade-204272)"></span>
+             <span class="legend-group-name">Christianity</span>
+             <span class="legend-group-count">142</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-114d2a)"></span>
+             <span class="legend-group-name">Islam</span>
+             <span class="legend-group-count">51</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-418186)"></span>
+             <span class="legend-group-name">No religion</span>
+             <span class="legend-group-count">11</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-624f06)"></span>
+             <span class="legend-group-name">Buddhism</span>
+             <span class="legend-group-count">9</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-cc6c17)"></span>
+             <span class="legend-group-name">Hinduism</span>
+             <span class="legend-group-count">3</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-efdde4)"></span>
+             <span class="legend-group-name">Buddhist or Taoist</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-d2ac8d)"></span>
+             <span class="legend-group-name">Folk and traditional religion</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-799bbe)"></span>
+             <span class="legend-group-name">Judaism</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-edb998)"></span>
+             <span class="legend-group-name">Shinto</span>
+             <span class="legend-group-count">1</span>
+           </li></ul>
+         <div class="legend-shade">
+           <span class="legend-shade-label">Share of the leading group <em class="legend-fitted">fitted to this view</em></span>
+           <div class="legend-scale" role="img" aria-label="Paler is a smaller share, darker is a larger one">
+             <span style="background:var(--leading-share-0)"></span><span style="background:var(--leading-share-1)"></span><span style="background:var(--leading-share-2)"></span><span style="background:var(--leading-share-3)"></span><span style="background:var(--leading-share-4)"></span>
+           </div>
+           <div class="legend-ends"><span>19%</span><span>100%</span></div>
+         </div><div class="legend-item">
+               <span class="legend-swatch" style="background:var(--neutral)"></span>
+               <span>No figure for 49 units</span>
+             </div></div>
+      <p class="control-note">Grey areas publish no composition for this field at this level.</p>
+    </div>
+  </div>
+
+  <div class="ground">
+    <div class="map-legend" aria-label="Map legend">
+      <p class="filter-summary"><span class="fchip">Data coverage</span><span class="fchip">Religion</span><span class="fchip">Detail follows zoom</span></p>
+      <div class="map-legend-body"><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-present)" aria-hidden="true">●</span>
+           <span class="legend-swatch" style="background:var(--status-present)"></span>
+           <span>Recorded</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-derived)" aria-hidden="true">◐</span>
+           <span class="legend-swatch" style="background:var(--status-derived)"></span>
+           <span>Derived from published figures</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-modelled)" aria-hidden="true">◌</span>
+           <span class="legend-swatch" style="background:var(--status-modelled)"></span>
+           <span>Estimated, not published</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-not-available)" aria-hidden="true">▲</span>
+           <span class="legend-swatch" style="background:var(--status-not-available)"></span>
+           <span>Not yet available</span>
+         </div><div class="legend-item">
+           <span class="legend-icon" style="color:var(--status-not-collected)" aria-hidden="true">◼</span>
+           <span class="legend-swatch" style="background:var(--status-not-collected)"></span>
+           <span>Not collected</span>
+         </div></div>
+      <p class="control-note">Grey means no record for that unit at all, not even a gap marker.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

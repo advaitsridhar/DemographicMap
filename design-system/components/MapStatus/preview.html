@@ -1,0 +1,39 @@
+<!-- @dsCard group="Map" height=444 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MapStatus — preview</title>
+<style>
+  /* Frame only: the top edge of the map (water ground) at its desktop width, 1440px less both side panels,
+     or the card's width where that is narrower: three sticky messages, then the two transient ones. The
+     last strip is a 390px phone map. */
+  body { padding: 16px; }
+  main { display: grid; gap: 16px; justify-items: start; }
+  main > div { position: relative; width: min(100%, calc(1440px - var(--filters-w) - var(--sidebar-w))); height: 52px; background: var(--water); }
+  main > div:last-child { width: min(100%, 390px); height: 72px; }
+</style>
+</head>
+<body>
+<main>
+  <div>
+    <div class="map-status" role="status" aria-live="polite">Loading country data</div>
+  </div>
+  <div>
+    <div class="map-status" role="status" aria-live="polite">Loading first-level data — 42 of 172 countries</div>
+  </div>
+  <div>
+    <div class="map-status" role="status" aria-live="polite">Something failed to load - see the browser console</div>
+  </div>
+  <div>
+    <div class="map-status" role="status" aria-live="polite">No data record for that unit</div>
+  </div>
+  <div>
+    <div class="map-status" role="status" aria-live="polite">Couldn't load that country's data -- click again to retry</div>
+  </div>
+  <div>
+    <div class="map-status" role="status" aria-live="polite">Loading second-level data — 1 of 185 countries</div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,645 @@
+/* World Demographics Map — components.
+   The app's own stylesheet (site/css/app.css) with its theme blocks moved
+   into tokens.json and each id selector given a class of the same name
+   (#sidebar -> .sidebar), so the components can be used outside the one page
+   they were written for. Declarations and values are the app's, with one
+   omission: html, body drop the app's height: 100%, which only the full-page
+   grid needs and .app already sizes itself. The layout classes (.app,
+   .filters, .sidebar, .map-legend) keep the app's viewport breakpoints, so use
+   them for a full-page shell only. */
+
+/* Every colour, shadow, radius, size, z-index and the font stack is a token in
+   tokens.json, compiled to tokens.css, which loads before this file and themes
+   by data-theme. This file sets only what tokens.css does not. */
+:root { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--surface-2);
+  color: var(--ink-primary);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Filters on the left, map in the middle, the selected place on the right.
+   The left column is zero-width rather than absent when the panel is hidden,
+   so showing it is a column resize the map can follow rather than a reflow of
+   the whole grid. */
+.app {
+  display: grid;
+  grid-template-columns: 0 1fr var(--sidebar-w);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "top top top" "filters map side";
+  height: 100vh; height: 100dvh;
+}
+.app.filters-open { grid-template-columns: var(--filters-w) 1fr var(--sidebar-w); }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: var(--z-skip-link);
+  background: var(--accent); color: var(--accent-ink);
+  padding: .6rem 1rem; border-radius: 0 0 var(--radius-sm) 0;
+}
+.skip-link:focus { left: 0; }
+
+/* ---------------------------------------------------------------- topbar */
+
+.topbar {
+  grid-area: top;
+  display: flex; align-items: center; gap: var(--topbar-gap);
+  padding: .55rem var(--gutter-panel);
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--hairline);
+  z-index: var(--z-topbar);
+}
+
+.brand { display: flex; align-items: center; gap: .55rem; min-width: 0; }
+.brand-mark { font-size: 1.35rem; line-height: 1; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+.brand-text strong { font-size: .95rem; letter-spacing: -.01em; }
+.brand-sub { font-size: .7rem; color: var(--ink-muted); white-space: nowrap; }
+
+.search { position: relative; flex: 1 1 auto; max-width: var(--search-w); margin-inline: auto; }
+.search input {
+  width: 100%; padding: .5rem .8rem;
+  font: inherit; font-size: .875rem;
+  color: var(--ink-primary);
+  background: var(--surface-sunken);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+}
+.search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.search-results {
+  position: absolute; inset-inline: 0; top: calc(100% + 6px);
+  margin: 0; padding: .25rem; list-style: none;
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-height: min(60vh, var(--results-h)); overflow-y: auto; z-index: var(--z-search-results);
+}
+.search-results li {
+  display: flex; align-items: baseline; gap: .5rem;
+  padding: .45rem .6rem; border-radius: var(--radius-sm); cursor: pointer;
+  font-size: .85rem;
+}
+.search-results li[aria-selected="true"], .search-results li:hover { background: var(--surface-sunken); }
+.search-results .r-name { font-weight: 600; }
+.search-results .r-context { color: var(--ink-muted); font-size: .75rem; margin-left: auto; }
+.search-results .r-level {
+  font-size: .65rem; text-transform: uppercase; letter-spacing: .04em;
+  color: var(--ink-secondary); background: var(--surface-sunken);
+  border: 1px solid var(--hairline); border-radius: var(--radius-pill); padding: .05rem .4rem;
+}
+/* A group result does something different from a place result -- it shades the
+   map instead of moving it -- so its chip is the accent colour rather than the
+   neutral one, and the row says so in its context line. */
+.search-results .r-group {
+  color: var(--accent-ink); background: var(--accent);
+  border-color: transparent;
+}
+.search-results .r-empty { color: var(--ink-muted); cursor: default; }
+
+.topbar-actions { display: flex; gap: .4rem; align-items: center; }
+
+.ghost-button {
+  font: inherit; font-size: .8rem;
+  color: var(--ink-secondary);
+  background: transparent;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: .38rem .6rem; cursor: pointer;
+}
+.ghost-button:hover { background: var(--surface-sunken); color: var(--ink-primary); }
+.ghost-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* --------------------------------------------------------- filters panel */
+
+.filters {
+  grid-area: filters;
+  background: var(--surface-1);
+  border-right: 1px solid var(--hairline);
+  overflow-y: auto; overscroll-behavior: contain;
+  z-index: var(--z-filters); min-width: 0;
+  padding: 0 var(--gutter-panel) 2rem;
+}
+.filters:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+.filters-head {
+  display: flex; align-items: center; gap: .5rem;
+  position: sticky; top: 0; z-index: var(--z-sticky-head);
+  background: var(--surface-1);
+  padding: .8rem 0 .5rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.filters-head h2 { margin: 0; font-size: .9rem; letter-spacing: -.01em; }
+.filters-head button { margin-left: auto; }
+
+/* The current filter, as chips. Repeated on the map itself when the panel is
+   hidden, which is why it is styled here rather than inside .filters. */
+.filter-summary {
+  display: flex; flex-wrap: wrap; gap: .3rem;
+  margin: .6rem 0 0;
+}
+.fchip {
+  font-size: .68rem; line-height: 1.5;
+  padding: .1rem .45rem; border-radius: var(--radius-pill);
+  color: var(--ink-secondary); background: var(--surface-sunken);
+  border: 1px solid var(--hairline);
+}
+.fchip-key {
+  color: var(--accent-ink); background: var(--accent); border-color: transparent;
+  font-weight: 600;
+}
+
+.filter-section { margin-top: var(--section-gap); }
+.filter-section > h3 {
+  margin: 0 0 .4rem; font-size: .68rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--ink-muted);
+}
+
+/* One choice per row, with room for the sentence that says what it does. The
+   <select> this replaced had room for neither. */
+.option-list { display: grid; gap: .2rem; }
+.opt {
+  display: grid; gap: .1rem; text-align: left;
+  font: inherit; cursor: pointer;
+  padding: .4rem .5rem;
+  color: var(--ink-secondary);
+  background: transparent;
+  border: 1px solid transparent; border-radius: var(--radius-sm);
+}
+.opt:hover { background: var(--surface-sunken); }
+.opt:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.opt[aria-checked="true"] {
+  background: var(--surface-sunken);
+  border-color: var(--accent);
+  color: var(--ink-primary);
+}
+.opt .opt-name { font-size: .82rem; font-weight: 600; }
+.opt[aria-checked="true"] .opt-name { color: var(--accent); }
+/* The sentence under a choice explains the one you are on, not the five you
+   are not. Six of them at once ran the list to 300px and pushed the legend --
+   the thing that says what the colours mean -- below the fold on a laptop.
+   Hovering brings a hint back for the option under the pointer, so the list
+   is still browsable without choosing. */
+.opt .opt-hint {
+  font-size: .69rem; color: var(--ink-muted); line-height: 1.4; display: none;
+}
+.opt[aria-checked="true"] .opt-hint, .opt:hover .opt-hint,
+.opt:focus-visible .opt-hint { display: block; }
+
+/* Three mutually exclusive fields read better side by side than stacked: they
+   are alternatives of one kind, not a menu of different things. */
+.segmented { display: flex; gap: 2px; padding: 2px; background: var(--surface-sunken);
+             border: 1px solid var(--hairline); border-radius: var(--radius-sm); }
+.seg {
+  flex: 1; min-width: 0; font: inherit; font-size: .76rem; cursor: pointer;
+  padding: .3rem .2rem; border: none; border-radius: var(--radius-xs);
+  background: transparent; color: var(--ink-secondary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.seg:hover { color: var(--ink-primary); }
+.seg:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
+.seg[aria-checked="true"] {
+  background: var(--surface-1); color: var(--ink-primary); font-weight: 600;
+  box-shadow: var(--shadow-seg);
+}
+
+.group-search input {
+  width: 100%; font: inherit; font-size: .8rem; padding: .35rem .5rem;
+  color: var(--ink-primary); background: var(--surface-sunken);
+  border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+}
+.group-search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.group-search input::placeholder { color: var(--ink-muted); }
+
+.group-list {
+  display: grid; gap: .1rem;
+  max-height: min(46vh, var(--group-list-h)); overflow-y: auto; overscroll-behavior: contain;
+  border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+  padding: .2rem;
+}
+/* A row is the twist and the choice side by side. Indenting the row rather
+   than the button keeps the whole hit area aligned with its level, so a child
+   never looks like it starts where its parent's label does. */
+.g-row {
+  display: grid; grid-template-columns: 1.1rem 1fr; align-items: start;
+  padding-left: calc(var(--g-depth, 0) * .85rem);
+}
+.g-twist {
+  font: inherit; font-size: .7rem; line-height: 1.9;
+  cursor: pointer; padding: 0; color: var(--ink-muted);
+  background: transparent; border: none; border-radius: var(--radius-swatch);
+}
+.g-twist:hover { color: var(--ink-primary); background: var(--surface-sunken); }
+.g-twist:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
+.g-twist-empty { cursor: default; }
+
+.g-opt {
+  display: grid; gap: .05rem; text-align: left; min-width: 0;
+  grid-template-columns: auto 1fr; grid-template-areas: "swatch name" ". reach" ". parent";
+  font: inherit; cursor: pointer;
+  padding: .32rem .45rem;
+  background: transparent; color: var(--ink-secondary);
+  border: 1px solid transparent; border-radius: var(--radius-xs);
+}
+.g-name { grid-area: name; }
+.g-reach { grid-area: reach; }
+.g-parent { grid-area: parent; font-size: .66rem; color: var(--ink-muted); font-style: italic; }
+/* The colour this group carries on the most-populous-group map, so the two
+   controls are visibly the same vocabulary. */
+.g-swatch {
+  grid-area: swatch; width: .55rem; height: .55rem; margin: .28rem .4rem 0 0;
+  border-radius: var(--radius-dot); box-shadow: inset 0 0 0 1px var(--border-ring);
+}
+.g-swatch-none {
+  /* The inline colour wins; this keeps the shape recognisable if the script
+     that sets it has not run, and marks the dot as an outline rather than a
+     fill so it reads as provisional. */
+  box-shadow: var(--shadow-swatch-provisional);
+}
+.g-opt:hover { background: var(--surface-sunken); }
+.g-opt:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; }
+.g-opt[aria-selected="true"] {
+  background: var(--surface-sunken); border-color: var(--accent); color: var(--ink-primary);
+}
+.g-name { font-size: .8rem; font-weight: 600; overflow-wrap: anywhere; }
+.g-opt[aria-selected="true"] .g-name { color: var(--accent); }
+.g-reach { font-size: .67rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+/* The source labels folded into this entry. Clipped to one line: it is
+   reassurance that "Christianity" also answers for the census that said
+   "Catholic", not a list to read. The full set is spelled out in the reach
+   note once the group is chosen. */
+.g-labels {
+  font-size: .66rem; color: var(--ink-muted); font-style: italic;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.group-divider {
+  margin: .5rem 0 .25rem; padding: .35rem .45rem 0;
+  border-top: 1px solid var(--hairline);
+  display: grid; gap: .12rem;
+}
+.group-divider strong { font-size: .7rem; color: var(--ink-secondary); }
+.group-divider span { font-size: .66rem; color: var(--ink-muted); line-height: 1.45; }
+
+.group-empty { margin: .4rem .2rem; font-size: .72rem; color: var(--ink-muted); line-height: 1.5; }
+
+.reach-labels { margin-top: .3rem; font-size: .68rem; color: var(--ink-muted); line-height: 1.5; }
+.reach-labels > summary { cursor: pointer; }
+.reach-labels > summary:hover { color: var(--ink-primary); }
+.reach-labels > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* ------------------------------------------------------------------- map */
+
+.map-wrap { grid-area: map; position: relative; min-width: 0; }
+.map { position: absolute; inset: 0; background: var(--water); }
+
+.map-legend {
+  position: absolute; left: var(--overlay-inset); bottom: var(--overlay-inset); z-index: var(--z-map-legend);
+  width: min(var(--legend-w), calc(100% - 2 * var(--overlay-inset)));
+  padding: .6rem .7rem;
+  background: color-mix(in srgb, var(--surface-1) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-ring);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.map-legend .filter-summary { margin: 0 0 .45rem; }
+.control-note { margin: .5rem 0 0; font-size: .7rem; color: var(--ink-muted); line-height: 1.45; }
+/* What the chosen filter covers. Sits at the foot of the panel because it
+   qualifies the map that is already drawn, not the next thing the reader does. */
+.group-reach { margin-top: .45rem; }
+.group-count { margin-top: .35rem; }
+
+/* The panel's legend and the on-map copy are the same markup in two places,
+   so they share the rule rather than drifting apart in size. */
+.legend, .map-legend-body {
+  display: flex; flex-direction: column; gap: .28rem; font-size: .74rem;
+}
+.legend-scale { display: flex; height: 10px; border-radius: var(--radius-swatch); overflow: hidden; border: 1px solid var(--border-ring); }
+.legend-scale span { flex: 1; }
+.legend-ends { display: flex; justify-content: space-between; color: var(--ink-muted); font-size: .68rem; }
+.legend-item { display: flex; align-items: center; gap: .45rem; color: var(--ink-secondary); }
+.legend-swatch { width: 12px; height: 12px; border-radius: var(--radius-swatch); border: 1px solid var(--border-ring); flex: none; }
+.legend-icon { font-size: .78rem; width: 1em; text-align: center; flex: none; }
+/* The key to a hatched unit: the same two-tone diagonal the map draws, over
+   the grey that stands for any group colour in the share ramp. */
+.legend-swatch-hatched {
+  background:
+    repeating-linear-gradient(135deg, var(--hatch-dark) 0 1.6px, var(--hatch-light) 1.6px 2.3px,
+                              var(--hatch-dark) 2.3px 3px, transparent 3px 6px),
+    var(--group-any);
+}
+
+/* A single on/off choice, laid out like the option rows around it so the
+   panel keeps one rhythm: the name on the first line, the sentence under it. */
+.check-row {
+  display: grid; grid-template-columns: auto 1fr; column-gap: .5rem; align-items: center;
+  padding: .4rem .5rem; border-radius: var(--radius-sm); cursor: pointer;
+  color: var(--ink-secondary);
+}
+.check-row:hover { background: var(--surface-sunken); }
+.check-row input { margin: 0; accent-color: var(--accent); }
+.check-row input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.check-row .check-name { font-size: .82rem; font-weight: 600; color: var(--ink-primary); }
+.check-row .check-hint { grid-column: 2; font-size: .69rem; color: var(--ink-muted); line-height: 1.4; }
+
+.map-status {
+  position: absolute; top: var(--overlay-inset); left: 50%; transform: translateX(-50%);
+  z-index: var(--z-map-status); padding: .35rem .7rem; font-size: .75rem;
+  background: var(--surface-1); color: var(--ink-secondary);
+  border: 1px solid var(--hairline); border-radius: var(--radius-pill); box-shadow: var(--shadow);
+}
+
+.maplibregl-popup-content {
+  font-family: var(--font-sans); font-size: .78rem; padding: .5rem .65rem;
+  background: var(--surface-1); color: var(--ink-primary);
+  border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+.maplibregl-popup-tip { display: none; }
+.tip-name { font-weight: 600; display: block; }
+.tip-meta { color: var(--ink-muted); font-size: .72rem; }
+.maplibregl-ctrl-attrib { font-size: .68rem; }
+
+/* --------------------------------------------------------------- sidebar */
+
+.sidebar {
+  grid-area: side;
+  background: var(--surface-1);
+  border-left: 1px solid var(--hairline);
+  overflow-y: auto; position: relative; z-index: var(--z-sidebar);
+}
+.sidebar-close { position: absolute; top: .6rem; right: .6rem; display: none; }
+
+.sidebar-body { padding: 1rem var(--gutter-sidebar) 3rem; }
+
+.empty-state h2 { margin: .4rem 0 .5rem; font-size: 1rem; }
+.empty-state p { font-size: .82rem; color: var(--ink-secondary); line-height: 1.55; }
+.empty-note { color: var(--ink-muted) !important; font-size: .76rem !important; }
+
+.entity-head { border-bottom: 1px solid var(--hairline); padding-bottom: .7rem; margin-bottom: .9rem; }
+.entity-breadcrumb {
+  font-size: .7rem; color: var(--ink-muted);
+  text-transform: uppercase; letter-spacing: .05em; margin: 0 0 .25rem;
+  display: flex; flex-wrap: wrap; gap: .3rem; align-items: center;
+}
+.entity-breadcrumb button {
+  font: inherit; font-size: inherit; letter-spacing: inherit;
+  background: none; border: none; padding: 0; cursor: pointer;
+  color: var(--accent); text-decoration: underline; text-underline-offset: 2px;
+}
+.entity-name { margin: 0; font-size: 1.3rem; letter-spacing: -.02em; line-height: 1.15; }
+.entity-sub { margin: .3rem 0 0; font-size: .76rem; color: var(--ink-muted); }
+
+.facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--tile-gap); margin-bottom: 1rem; }
+.fact {
+  background: var(--surface-sunken); border: 1px solid var(--border-ring);
+  border-radius: var(--radius-sm); padding: .5rem .6rem; min-width: 0;
+}
+.fact-label { font-size: .66rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-muted); }
+.fact-value { font-size: 1rem; font-weight: 600; margin-top: .15rem; overflow-wrap: break-word; hyphens: auto; }
+.fact-value.is-gap { font-size: .78rem; font-weight: 500; color: var(--ink-muted); }
+.fact-meta { font-size: .66rem; color: var(--ink-muted); margin-top: .15rem; }
+
+.panel { margin-bottom: var(--panel-gap); }
+.panel-head { display: flex; align-items: baseline; gap: .5rem; margin-bottom: .45rem; }
+.panel-head h3 { margin: 0; font-size: .85rem; letter-spacing: -.01em; }
+.panel-year { font-size: .68rem; color: var(--ink-muted); margin-left: auto; }
+
+.stack-bar { display: flex; height: 16px; border-radius: var(--radius-xs); overflow: hidden; gap: 2px; background: transparent; }
+.stack-bar > span { display: block; min-width: 2px; }
+.stack-bar > span:first-child { border-radius: var(--radius-xs) 0 0 var(--radius-xs); }
+.stack-bar > span:last-child { border-radius: 0 var(--radius-xs) var(--radius-xs) 0; }
+/* The share of a population these categories do not describe. Hatched rather
+   than a flat colour so it reads as absence and never as another group -- it
+   has no swatch in the list below the bar and must not look like one. */
+.stack-rest {
+  background: repeating-linear-gradient(45deg,
+    var(--hairline) 0 3px, transparent 3px 6px);
+  box-shadow: inset 0 0 0 1px var(--hairline);
+}
+
+.composition-list { list-style: none; margin: .55rem 0 0; padding: 0; display: grid; gap: .3rem; }
+.composition-list li { display: flex; align-items: center; gap: .45rem; font-size: .78rem; }
+.composition-list .swatch { width: 10px; height: 10px; border-radius: var(--radius-swatch); flex: none; border: 1px solid var(--border-ring); }
+.composition-list .label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.composition-list .pct { margin-left: auto; font-variant-numeric: tabular-nums; color: var(--ink-secondary); }
+
+.gap-note {
+  display: flex; gap: .5rem; align-items: flex-start;
+  font-size: .76rem; line-height: 1.5;
+  padding: .55rem .65rem; border-radius: var(--radius-sm);
+  background: var(--surface-sunken); border: 1px solid var(--border-ring);
+  color: var(--ink-secondary);
+}
+.gap-note .gap-icon { flex: none; font-size: .9rem; line-height: 1.2; }
+.gap-note strong { color: var(--ink-primary); }
+
+.note { font-size: .72rem; color: var(--ink-muted); line-height: 1.5; margin: .45rem 0 0; }
+
+.source-list { list-style: none; margin: .4rem 0 0; padding: 0; display: grid; gap: .35rem; }
+.source-list li { font-size: .72rem; color: var(--ink-secondary); line-height: 1.45; }
+.source-list a { color: var(--accent); }
+
+.chip { display: inline-block; width: 12px; height: 12px; border-radius: var(--radius-swatch); margin-right: .4rem; vertical-align: -1px; border: 1px solid var(--border-ring); }
+.chip-present { background: var(--status-good); }
+.chip-missing { background: var(--status-warning); }
+.chip-notcollected { background: var(--status-serious); }
+
+.children-list { list-style: none; margin: .4rem 0 0; padding: 0; display: grid; gap: .15rem; max-height: var(--children-h); overflow-y: auto; }
+.children-list button {
+  width: 100%; text-align: left; font: inherit; font-size: .78rem;
+  background: none; border: none; border-radius: var(--radius-sm);
+  padding: .3rem .4rem; cursor: pointer; color: var(--ink-secondary);
+  display: flex; gap: .5rem; align-items: baseline;
+}
+.children-list button:hover { background: var(--surface-sunken); color: var(--ink-primary); }
+.children-list .c-count { margin-left: auto; font-size: .7rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: .74rem; margin-top: .5rem; }
+.data-table th, .data-table td { text-align: left; padding: .25rem .3rem; border-bottom: 1px solid var(--hairline); }
+.data-table td:last-child, .data-table th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.data-table th { color: var(--ink-muted); font-weight: 600; font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; }
+
+details.table-toggle { margin-top: .5rem; }
+details.table-toggle > summary { cursor: pointer; font-size: .72rem; color: var(--ink-muted); }
+details.table-toggle > summary:hover { color: var(--ink-primary); }
+
+/* ---------------------------------------------------------------- dialog */
+
+dialog {
+  max-width: var(--dialog-w); width: calc(100% - 2rem); max-height: 84vh;
+  padding: 0; border: 1px solid var(--hairline); border-radius: var(--radius);
+  background: var(--surface-1); color: var(--ink-primary); box-shadow: var(--shadow);
+}
+dialog::backdrop { background: var(--backdrop); }
+dialog article { padding: 1rem var(--gutter-dialog) 1.6rem; overflow-y: auto; max-height: 84vh; }
+.dialog-head { display: flex; align-items: center; gap: 1rem; position: sticky; top: 0; background: var(--surface-1); padding-block: .3rem; }
+.dialog-head h2 { margin: 0; font-size: 1.05rem; }
+.dialog-head button { margin-left: auto; }
+dialog h3 { font-size: .84rem; margin: 1.1rem 0 .3rem; }
+dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secondary); }
+.gap-key, .caveat-list { margin: .4rem 0; padding-left: 1.1rem; }
+.gap-key { list-style: none; padding-left: 0; display: grid; gap: .4rem; }
+
+/* --------------------------------------------------------------- responsive */
+
+@media (max-width: 640px) {
+  /* At phone widths the wordmark is the first thing to go: the search box is
+     what people actually use, and it needs the row to itself. */
+  .topbar { gap: .5rem; padding: .5rem .6rem; }
+  .brand-text { display: none; }
+  .search { max-width: none; margin-inline: 0; }
+  .search input { font-size: 1rem; padding: .5rem .6rem; }
+  .about-open { font-size: 0; padding: .38rem .5rem; }
+  .about-open::before { content: "?"; font-size: .85rem; }
+  .filters-toggle { font-size: 0; padding: .38rem .5rem; }
+  .filters-toggle span { font-size: .85rem; }
+  .map-legend { padding: .5rem .6rem; }
+  /* The panel is the whole screen on a phone, so its controls get room to
+     breathe rather than being squeezed to desktop proportions. */
+  .opt { padding: .5rem .55rem; }
+  .g-opt { padding: .42rem .5rem; }
+  .group-search input { font-size: 1rem; }
+  .group-list { max-height: 50vh; }
+  .facts { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .app, .app.filters-open { grid-template-columns: 1fr; grid-template-areas: "top" "map"; }
+  /* Below this width there is no room for three columns, so the panel becomes
+     a drawer over the map. It covers the topbar too -- its own ✕ and the
+     Escape key are how it closes, and both return focus to the button that
+     opened it. */
+  .filters {
+    position: fixed; inset: var(--topbar-h) auto 0 0; width: min(var(--drawer-w), 90vw);
+    border-right: 1px solid var(--hairline);
+    box-shadow: var(--shadow); z-index: var(--z-drawer);
+  }
+  .sidebar {
+    position: fixed; inset: auto 0 0 0; height: min(62vh, var(--sheet-h));
+    border-left: none; border-top: 1px solid var(--hairline);
+    border-radius: var(--radius) var(--radius) 0 0;
+    box-shadow: var(--shadow);
+    transform: translateY(100%); transition: transform .22s ease;
+  }
+  .sidebar.is-open { transform: translateY(0); }
+  .sidebar-close { display: block; }
+  .brand-sub { display: none; }
+  .map-legend { bottom: var(--overlay-inset); width: calc(100% - 2 * var(--overlay-inset)); }
+  .sidebar:not(.is-open) { pointer-events: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+
+/* ------------------------------------------------------------- info bubbles */
+
+/* The "i" beside a heading. Small, quiet, and the same size as the heading it
+   sits in, so it reads as punctuation rather than as another control. */
+.info {
+  display: inline-grid; place-items: center;
+  width: 1.05em; height: 1.05em; margin-left: .35em; padding: 0;
+  font: inherit; font-size: .95em; font-style: italic; font-weight: 700;
+  line-height: 1; text-transform: none; cursor: help;
+  color: var(--ink-muted); background: transparent;
+  border: 1px solid var(--axis); border-radius: var(--radius-round);
+}
+.info:hover, .info[aria-expanded="true"] { color: var(--accent); border-color: var(--accent); }
+.info:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.info-bubble {
+  position: fixed; z-index: var(--z-info-bubble); max-width: min(var(--bubble-w), calc(100vw - 1rem));
+  padding: .55rem .7rem;
+  font-size: .74rem; line-height: 1.5; color: var(--ink-primary);
+  background: var(--surface-1);
+  border: 1px solid var(--hairline); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+
+/* ------------------------------------------------- most-populous-group key */
+
+.legend-groups { list-style: none; margin: 0 0 .5rem; padding: 0; display: grid; gap: .12rem; }
+.legend-groups li {
+  display: grid; grid-template-columns: auto 1fr auto; gap: .4rem; align-items: center;
+  font-size: .74rem; color: var(--ink-secondary);
+}
+.legend-group-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.legend-group-count { font-size: .67rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.legend-more { font-size: .67rem; color: var(--ink-muted); font-style: italic; }
+.legend-shade { display: grid; gap: .15rem; margin-top: .3rem; }
+.legend-shade-label { font-size: .67rem; color: var(--ink-muted); }
+
+/* The one fact from a composition note that changes how the bar is read, kept
+   on the page while the rest of the note goes behind the "i". */
+.basis-line { margin: .3rem 0 0; }
+.chip-basis {
+  display: inline-block; padding: .1rem .4rem;
+  font-size: .66rem; font-weight: 600; letter-spacing: .01em;
+  color: var(--ink-secondary); background: var(--surface-sunken);
+  border: 1px solid var(--hairline); border-radius: var(--radius-pill);
+}
+.chip-basis-partial { color: var(--status-serious); border-color: var(--status-serious); }
+/* An estimate's badge sits before the one sentence that says what it is;
+   the badge takes the status colour the map paints the unit in. */
+.estimate-line { display: flex; gap: .45rem; align-items: baseline; font-size: .72rem;
+  color: var(--ink-secondary); line-height: 1.45; }
+.chip-estimate { flex: none; background: transparent; }
+
+/* A heading that carries an "i" has to lay the two out on one line without the
+   button inheriting the heading's letter-spacing. */
+.filter-section > h3, .panel-head h3 { display: flex; align-items: center; }
+.panel-head h3 .info { letter-spacing: 0; }
+
+/* Same trade one size down, on the fact tiles. The label is uppercase with a
+   .05em tracking, which would push the "i" off its own circle. */
+.fact-label { display: flex; align-items: center; }
+.fact-label .info { letter-spacing: 0; flex: none; }
+
+/* The table view's total, which exists so a reader can see the column adds up
+   rather than take it on trust. */
+.data-table .total-row th {
+  padding-top: .3rem; border-top: 1px solid var(--hairline);
+  font-size: .7rem; color: var(--ink-secondary); text-align: left;
+}
+.data-table .total-row th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* The shading scale, when it has been stretched to the range on screen.
+   It is called out because a shade that means something different from one
+   view to the next has to say so where the shade is explained. */
+.legend-fitted {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--ink-muted);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-pill);
+  padding: 0 5px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+.legend-fitted-note {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+/* ----------------------------------------------------------- type utilities */
+
+/* The text-* classes come from tokens.json. The token format has no
+   text-transform, so the five label styles get their uppercase here. */
+.text-eyebrow, .text-fact-label, .text-breadcrumb, .text-table-head, .text-level-chip {
+  text-transform: uppercase;
+}

@@ -1,0 +1,53 @@
+<!-- @dsCard group="Data states" height=590 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GapNote — preview</title>
+<style>
+  /* Frame only: the place panel's own box on the page ground, edged all round
+     like the filters panes: one pixel wider than the panel so that inside its
+     two rules and its padding the content is the app's 363.8px. */
+  body { padding: 16px; }
+  .stage { display: flex; flex-direction: column; gap: 16px; }
+  .place {
+    width: calc(var(--sidebar-w) + 1px);
+    padding: 1rem var(--gutter-sidebar) 0;
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="place">
+    <section class="panel"><div class="panel-head"><h3>Ethnicity</h3></div><div class="gap-note">
+      <span class="gap-icon" style="color:var(--status-not-collected)" aria-hidden="true">◼</span>
+      <span><strong>Not collected.</strong> France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007).</span>
+    </div></section>
+  </div>
+
+  <div class="place">
+    <section class="panel"><div class="panel-head"><h3>Ethnicity</h3></div><div class="gap-note">
+      <span class="gap-icon" style="color:var(--status-not-available)" aria-hidden="true">▲</span>
+      <span><strong>Not yet available.</strong> The CIA World Factbook gives only the words “Palestinian Arab”.</span>
+    </div></section>
+  </div>
+
+  <div class="place">
+    <section class="panel"><div class="panel-head"><h3>Religion</h3></div><div class="gap-note">
+      <span class="gap-icon" style="color:var(--status-not-applicable)" aria-hidden="true">–</span>
+      <span><strong>Not applicable.</strong> Redonda is uninhabited; the census counts no one there.</span>
+    </div></section>
+  </div>
+
+  <div class="place">
+    <div class="gap-note" style="margin-bottom:1rem">
+        <span class="gap-icon" aria-hidden="true">ⓘ</span>
+        <span>The map draws the Gaza Strip as a disputed area of its own, as geoBoundaries' global composite delimits it, and shows no figures on that outline; the territory's own figures are shown here instead.</span></div>
+  </div>
+
+</div>
+</body>
+</html>

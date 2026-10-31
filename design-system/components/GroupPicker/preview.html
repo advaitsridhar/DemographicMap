@@ -1,0 +1,244 @@
+<!-- @dsCard group="Controls" height=1034 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GroupPicker — preview</title>
+<style>
+  /* Frame only: slices of the filters panel (its 330px column, inline gutter and surface-1) on the page ground. */
+  body { padding: 16px; }
+  main { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  main > div { display: grid; gap: 16px; }
+  figure { margin: 0; width: calc(var(--filters-w) + 1px); }
+  figure > div { padding: 0 var(--gutter-panel) var(--section-gap); background: var(--surface-1); border: 1px solid var(--hairline); }
+</style>
+</head>
+<body>
+<main>
+  <div>
+    <figure>
+      <div>
+    <section class="filter-section">
+      <h3 id="group-label">Group
+        <button type="button" class="info" data-info="group" aria-label="About choosing a group">i</button>
+      </h3>
+      <div class="group-search">
+        <label class="visually-hidden" for="group-search">Search groups</label>
+        <input id="group-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search — “Islam”, “Muslim”, “te reo”…" aria-controls="group-list" aria-describedby="group-count">
+      </div>
+      <p id="group-count" class="control-note group-count" role="status" aria-live="polite">372 groups, widest reach first. 15 of them open to show what is inside.</p>
+      <div id="group-list" class="group-list" role="tree" aria-labelledby="group-label"><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="Abrahamic religions" aria-expanded="true" aria-label="Hide the 7 groups inside Abrahamic religions" tabindex="-1">▾</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Abrahamic religions" aria-selected="false" tabindex="0" aria-checked="true">
+        <span class="g-swatch" style="background:#0072B2" aria-hidden="true"></span><span class="g-name">Abrahamic religions</span>
+        <span class="g-reach">219 countries · 26.4K areas · 73 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:1"><button type="button" class="g-twist" data-branch="Christianity" aria-expanded="false" aria-label="Show the 7 groups inside Christianity" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Christianity" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#2E5FA3" aria-hidden="true"></span><span class="g-name">Christianity</span>
+        <span class="g-reach">209 countries · 26.3K areas · 73 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:1"><button type="button" class="g-twist" data-branch="Islam" aria-expanded="false" aria-label="Show the 3 groups inside Islam" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Islam" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#1E8449" aria-hidden="true"></span><span class="g-name">Islam</span>
+        <span class="g-reach">158 countries · 11.6K areas · 4 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:1"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Judaism" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#5D6D7E" aria-hidden="true"></span><span class="g-name">Judaism</span>
+        <span class="g-reach">52 countries · 6,319 areas</span>
+      </button></div><div class="g-row" style="--g-depth:1"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Baha'i" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#F5B041" aria-hidden="true"></span><span class="g-name">Baha'i</span>
+        <span class="g-reach">24 countries · 357 areas</span>
+      </button></div><div class="g-row" style="--g-depth:1"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Rastafarian" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#58D68D" aria-hidden="true"></span><span class="g-name">Rastafarian</span>
+        <span class="g-reach">11 countries · 441 areas</span>
+      </button></div><div class="g-row" style="--g-depth:1"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Druze" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#16A085" aria-hidden="true"></span><span class="g-name">Druze</span>
+        <span class="g-reach">3 countries · 4 areas</span>
+      </button></div><div class="g-row" style="--g-depth:1"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Muslim/Jewish" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#1067bb" aria-hidden="true"></span><span class="g-name">Muslim/Jewish</span>
+        <span class="g-reach">1 country · 1 area</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="Other and new religions" aria-expanded="false" aria-label="Show the 8 groups inside Other and new religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Other and new religions" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#00A0B0" aria-hidden="true"></span><span class="g-name">Other and new religions</span>
+        <span class="g-reach">186 countries · 21K areas · 73 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="No religion" aria-expanded="false" aria-label="Show the 6 groups inside No religion" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="No religion" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#7F8C8D" aria-hidden="true"></span><span class="g-name">No religion</span>
+        <span class="g-reach">169 countries · 21.1K areas · 73 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="Indian religions" aria-expanded="false" aria-label="Show the 4 groups inside Indian religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Indian religions" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#E69F00" aria-hidden="true"></span><span class="g-name">Indian religions</span>
+        <span class="g-reach">79 countries · 8,661 areas · 69 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="Folk and traditional religions" aria-expanded="false" aria-label="Show the 33 groups inside Folk and traditional religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Folk and traditional religions" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#7A5230" aria-hidden="true"></span><span class="g-name">Folk and traditional religions</span>
+        <span class="g-reach">64 countries · 2,837 areas</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="East Asian religions" aria-expanded="false" aria-label="Show the 7 groups inside East Asian religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="East Asian religions" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#CC79A7" aria-hidden="true"></span><span class="g-name">East Asian religions</span>
+        <span class="g-reach">11 countries · 462 areas · 69 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="African diaspora religions" aria-expanded="false" aria-label="Show the 3 groups inside African diaspora religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="African diaspora religions" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#8B4A9C" aria-hidden="true"></span><span class="g-name">African diaspora religions</span>
+        <span class="g-reach">9 countries · 5,126 areas</span>
+      </button></div><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Other denomination" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch g-swatch-none" title="Not yet placed in the classification" style="background:var(--unplaced)" aria-hidden="true"></span><span class="g-name">Other denomination</span>
+        <span class="g-reach">1 country · 31 areas</span>
+      </button></div><div role="group" aria-label="Residual answers: other, and not stated"><p class="group-divider"><strong>Residual answers</strong>
+       <span>“Other” and “not stated” are the absence of an answer, not a group
+             anyone belongs to. They are here because leaving them out would hide
+             people, and last because nobody is looking for them.</span></p><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="Not stated" aria-expanded="false" aria-label="Show the 16 groups inside Not stated" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Not stated" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#B0B7BC" aria-hidden="true"></span><span class="g-name">Not stated</span>
+        <span class="g-reach">117 countries · 16.3K areas · 4 modelled</span>
+      </button></div></div></div>
+    </section>
+      </div>
+    </figure>
+    <figure>
+      <div>
+    <section class="filter-section">
+      <h3 id="group-label-end">Group
+        <button type="button" class="info" data-info="group" aria-label="About choosing a group">i</button>
+      </h3>
+      <div class="group-search">
+        <label class="visually-hidden" for="group-search-end">Search groups</label>
+        <input id="group-search-end" type="search" autocomplete="off" spellcheck="false" placeholder="Search — “Islam”, “Muslim”, “te reo”…" aria-controls="group-list-end" aria-describedby="group-count-end">
+      </div>
+      <p id="group-count-end" class="control-note group-count" role="status" aria-live="polite">372 groups, widest reach first. 15 of them open to show what is inside.</p>
+      <div id="group-list-end" class="group-list" role="tree" aria-labelledby="group-label-end" style="max-height: 358px"><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="Abrahamic religions" aria-expanded="false" aria-label="Show the 7 groups inside Abrahamic religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Abrahamic religions" aria-selected="false" tabindex="0" aria-checked="true">
+        <span class="g-swatch" style="background:#0072B2" aria-hidden="true"></span><span class="g-name">Abrahamic religions</span>
+        <span class="g-reach">219 countries · 26.4K areas · 73 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="Other and new religions" aria-expanded="false" aria-label="Show the 8 groups inside Other and new religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Other and new religions" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#00A0B0" aria-hidden="true"></span><span class="g-name">Other and new religions</span>
+        <span class="g-reach">186 countries · 21K areas · 73 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="No religion" aria-expanded="false" aria-label="Show the 6 groups inside No religion" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="No religion" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#7F8C8D" aria-hidden="true"></span><span class="g-name">No religion</span>
+        <span class="g-reach">169 countries · 21.1K areas · 73 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="Indian religions" aria-expanded="false" aria-label="Show the 4 groups inside Indian religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Indian religions" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#E69F00" aria-hidden="true"></span><span class="g-name">Indian religions</span>
+        <span class="g-reach">79 countries · 8,661 areas · 69 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="Folk and traditional religions" aria-expanded="false" aria-label="Show the 33 groups inside Folk and traditional religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Folk and traditional religions" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#7A5230" aria-hidden="true"></span><span class="g-name">Folk and traditional religions</span>
+        <span class="g-reach">64 countries · 2,837 areas</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="East Asian religions" aria-expanded="false" aria-label="Show the 7 groups inside East Asian religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="East Asian religions" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#CC79A7" aria-hidden="true"></span><span class="g-name">East Asian religions</span>
+        <span class="g-reach">11 countries · 462 areas · 69 modelled</span>
+      </button></div><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="African diaspora religions" aria-expanded="false" aria-label="Show the 3 groups inside African diaspora religions" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="African diaspora religions" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#8B4A9C" aria-hidden="true"></span><span class="g-name">African diaspora religions</span>
+        <span class="g-reach">9 countries · 5,126 areas</span>
+      </button></div><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Other denomination" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch g-swatch-none" title="Not yet placed in the classification" style="background:var(--unplaced)" aria-hidden="true"></span><span class="g-name">Other denomination</span>
+        <span class="g-reach">1 country · 31 areas</span>
+      </button></div><div role="group" aria-label="Residual answers: other, and not stated"><p class="group-divider"><strong>Residual answers</strong>
+       <span>“Other” and “not stated” are the absence of an answer, not a group
+             anyone belongs to. They are here because leaving them out would hide
+             people, and last because nobody is looking for them.</span></p><div class="g-row" style="--g-depth:0"><button type="button" class="g-twist" data-branch="Not stated" aria-expanded="false" aria-label="Show the 16 groups inside Not stated" tabindex="-1">▸</button>
+      <button type="button" role="treeitem" class="g-opt" data-value="Not stated" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#B0B7BC" aria-hidden="true"></span><span class="g-name">Not stated</span>
+        <span class="g-reach">117 countries · 16.3K areas · 4 modelled</span>
+      </button></div></div></div>
+    </section>
+      </div>
+    </figure>
+  </div>
+  <div>
+    <figure>
+      <div>
+    <section class="filter-section">
+      <h3 id="group-label-islam">Group
+        <button type="button" class="info" data-info="group" aria-label="About choosing a group">i</button>
+      </h3>
+      <div class="group-search">
+        <label class="visually-hidden" for="group-search-islam">Search groups</label>
+        <input id="group-search-islam" type="search" autocomplete="off" spellcheck="false" value="Islam" placeholder="Search — “Islam”, “Muslim”, “te reo”…" aria-controls="group-list-islam" aria-describedby="group-count-islam">
+      </div>
+      <p id="group-count-islam" class="control-note group-count" role="status" aria-live="polite">6 of 6 match “Islam”.</p>
+      <div id="group-list-islam" class="group-list" role="tree" aria-labelledby="group-label-islam"><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Islam" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#1E8449" aria-hidden="true"></span><span class="g-name">Islam</span>
+        <span class="g-reach">158 countries · 11.6K areas · 4 modelled</span><span class="g-parent">in Abrahamic religions</span>
+      </button></div><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Sunni Islam" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#1E8449" aria-hidden="true"></span><span class="g-name">Sunni Islam</span>
+        <span class="g-reach">19 countries · 169 areas</span><span class="g-parent">in Islam</span>
+      </button></div><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Shia Islam" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#7DCEA0" aria-hidden="true"></span><span class="g-name">Shia Islam</span>
+        <span class="g-reach">11 countries · 63 areas</span><span class="g-parent">in Islam</span>
+      </button></div><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Ismailism" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#7DCEA0" aria-hidden="true"></span><span class="g-name">Ismailism</span>
+        <span class="g-reach">8 countries · 16 areas</span><span class="g-parent">in Shia Islam</span>
+      </button></div><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Twelver Shia Islam" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#7DCEA0" aria-hidden="true"></span><span class="g-name">Twelver Shia Islam</span>
+        <span class="g-reach">1 country · 8 areas</span><span class="g-parent">in Shia Islam</span>
+      </button></div><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Nurbakhshia" aria-selected="false" tabindex="-1" aria-checked="false">
+        <span class="g-swatch" style="background:#7DCEA0" aria-hidden="true"></span><span class="g-name">Nurbakhshia</span>
+        <span class="g-reach">1 country · 5 areas</span><span class="g-parent">in Shia Islam</span>
+      </button></div><div role="group" aria-label="Still on the map"><p class="group-divider"><strong>Still on the map</strong><span>Outside the list above, and shading the map until you pick something else.</span></p><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Abrahamic religions" aria-selected="false" tabindex="0" aria-checked="true">
+        <span class="g-swatch" style="background:#0072B2" aria-hidden="true"></span><span class="g-name">Abrahamic religions</span>
+        <span class="g-reach">219 countries · 26.4K areas · 73 modelled</span>
+      </button></div></div></div>
+    </section>
+      </div>
+    </figure>
+    <figure>
+      <div>
+    <section class="filter-section">
+      <h3 id="group-label-none">Group
+        <button type="button" class="info" data-info="group" aria-label="About choosing a group">i</button>
+      </h3>
+      <div class="group-search">
+        <label class="visually-hidden" for="group-search-none">Search groups</label>
+        <input id="group-search-none" type="search" autocomplete="off" spellcheck="false" value="zzzzqq" placeholder="Search — “Islam”, “Muslim”, “te reo”…" aria-controls="group-list-none" aria-describedby="group-count-none">
+      </div>
+      <p id="group-count-none" class="control-note group-count" role="status" aria-live="polite">0 of 0 match “zzzzqq”.</p>
+      <div id="group-list-none" class="group-list" role="tree" aria-labelledby="group-label-none"><div role="group" aria-label="Still on the map"><p class="group-divider"><strong>Still on the map</strong><span>Outside the list above, and shading the map until you pick something else.</span></p><div class="g-row" style="--g-depth:0"><span class="g-twist g-twist-empty" aria-hidden="true"></span>
+      <button type="button" role="treeitem" class="g-opt" data-value="Islam" aria-selected="false" tabindex="0" aria-checked="true">
+        <span class="g-swatch" style="background:#1E8449" aria-hidden="true"></span><span class="g-name">Islam</span>
+        <span class="g-reach">158 countries · 11.6K areas · 4 modelled</span><span class="g-parent">in Abrahamic religions</span>
+      </button></div></div></div>
+    </section>
+      </div>
+    </figure>
+    <figure>
+      <div>
+    <section class="filter-section">
+      <h3 id="group-label-loading">Group
+        <button type="button" class="info" data-info="group" aria-label="About choosing a group">i</button>
+      </h3>
+      <div class="group-search">
+        <label class="visually-hidden" for="group-search-loading">Search groups</label>
+        <input id="group-search-loading" type="search" autocomplete="off" spellcheck="false" placeholder="Search — “Islam”, “Muslim”, “te reo”…" aria-controls="group-list-loading" aria-describedby="group-count-loading">
+      </div>
+      <p id="group-count-loading" class="control-note group-count" role="status" aria-live="polite"></p>
+      <div id="group-list-loading" class="group-list" role="tree" aria-labelledby="group-label-loading"><p class="group-empty">Loading the worldwide group list…</p></div>
+    </section>
+      </div>
+    </figure>
+  </div>
+</main>
+<script>
+  /* The second list is the app's default tree, scrolled to its end. Its
+     inline max-height (358px, in place of 380px) makes the scrolled view
+     start at a whole row rather than at the last line of the row above. */
+  var end = document.getElementById("group-list-end");
+  end.scrollTop = end.scrollHeight;
+</script>
+</body>
+</html>

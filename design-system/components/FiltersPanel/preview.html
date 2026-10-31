@@ -1,0 +1,165 @@
+<!-- @dsCard group="Controls" height=1259 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FiltersPanel — preview</title>
+<style>
+  /* Frame only: the panel's desktop column (330px, its padding, surface-1)
+     on the page ground, in the "Most populous group" view, whole, as a window
+     tall enough not to scroll it shows it. At 900px and below .filters itself
+     turns into a fixed drawer, so the aside takes this frame class instead. */
+  body { padding: 16px; }
+  .pane {
+    width: calc(var(--filters-w) + 1px);
+    padding: 0 var(--gutter-panel) 2rem;
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+  }
+  /* The group swatches: Palette.group computes each one from the group's hue
+     at its peak share for the theme on screen, and no token holds them, so
+     each is a frame-local property named after its light value and reset for
+     dark, as the app recomputes it. */
+  :root {
+    --shade-204272: #204272; --shade-114d2a: #114d2a; --shade-418186: #418186;
+    --shade-624f06: #624f06; --shade-cc6c17: #cc6c17; --shade-efdde4: #efdde4;
+    --shade-d2ac8d: #d2ac8d; --shade-799bbe: #799bbe; --shade-edb998: #edb998;
+  }
+  [data-theme="dark"] {
+    --shade-204272: #2e60a4; --shade-114d2a: #196e3d; --shade-418186: #468d92;
+    --shade-624f06: #7d6508; --shade-cc6c17: #d67118; --shade-efdde4: #ead0db;
+    --shade-d2ac8d: #d0a988; --shade-799bbe: #7b9dc0; --shade-edb998: #ecb28d;
+  }
+</style>
+</head>
+<body>
+<aside id="filters" class="pane" aria-label="Map filters" tabindex="-1">
+    <div class="filters-head">
+      <h2>What the map shows</h2>
+      <button id="filters-close" class="ghost-button" type="button" aria-label="Hide the filters panel">✕</button>
+    </div>
+    <p id="filter-summary" class="filter-summary"><span class="fchip">Most populous group</span><span class="fchip">Religion</span><span class="fchip">Religions</span><span class="fchip">Detail follows zoom</span></p>
+
+    <section class="filter-section" id="field-section">
+      <h3 id="field-label">Topic
+        <button type="button" class="info" data-info="topic" aria-label="About comparing topics across borders">i</button>
+      </h3>
+      <div id="field-options" class="segmented" role="radiogroup" aria-labelledby="field-label"><button type="button" role="radio" class="seg" data-value="religion" aria-checked="true" tabindex="0">Religion</button><button type="button" role="radio" class="seg" data-value="language" aria-checked="false" tabindex="-1">Language</button><button type="button" role="radio" class="seg" data-value="ethnicity" aria-checked="false" tabindex="-1">Ethnicity</button></div>
+    </section>
+
+    <section class="filter-section">
+      <h3 id="metric-label">View</h3>
+      <div id="metric-options" class="option-list" role="radiogroup" aria-labelledby="metric-label"><button type="button" role="radio" class="opt" data-value="group" aria-checked="true" tabindex="0">
+              <span class="opt-name">Most populous group</span><span class="opt-hint">One colour per group, darker where its share is larger.</span></button><button type="button" role="radio" class="opt" data-value="coverage" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Data coverage</span><span class="opt-hint">Where a figure exists — and whether a gap is unfetched or never collected.</span></button><button type="button" role="radio" class="opt" data-value="population" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Population</span><span class="opt-hint">Latest published count, on a log scale.</span></button><button type="button" role="radio" class="opt" data-value="median_age" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Median age</span><span class="opt-hint">Median age of the resident population.</span></button><button type="button" role="radio" class="opt" data-value="largest_share" aria-checked="false" tabindex="-1">
+              <span class="opt-name">How concentrated</span><span class="opt-hint">The share held by the single largest group, whichever it is.</span></button><button type="button" role="radio" class="opt" data-value="group_share" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Share of one group</span><span class="opt-hint">One group at a time, shaded by its percentage.</span></button></div>
+    </section>
+
+    <section class="filter-section" id="depth-section">
+      <h3 id="depth-label">Categories
+        <button type="button" class="info" data-info="depth" aria-label="About broad families and reported categories">i</button>
+      </h3>
+      <div id="depth-options" class="segmented" role="radiogroup" aria-labelledby="depth-label"><button type="button" role="radio" class="seg" data-value="1" aria-checked="false" tabindex="-1">Traditions</button><button type="button" role="radio" class="seg" data-value="2" aria-checked="true" tabindex="0">Religions</button><button type="button" role="radio" class="seg" data-value="3" aria-checked="false" tabindex="-1">As reported</button></div>
+    </section>
+
+    <section class="filter-section" id="spread-section">
+      <h3 id="spread-label">Shading
+        <button type="button" class="info" data-info="spread" aria-label="About how the shading is scaled">i</button>
+      </h3>
+      <div id="spread-options" class="segmented" role="radiogroup" aria-labelledby="spread-label"><button type="button" role="radio" class="seg" data-value="absolute" aria-checked="true" tabindex="0">Full range</button><button type="button" role="radio" class="seg" data-value="fit" aria-checked="false" tabindex="-1">Fit to view</button></div>
+    </section>
+
+    <section class="filter-section" id="estimates-section">
+      <h3 id="estimates-label">Estimates
+        <button type="button" class="info" data-info="estimates" aria-label="About estimated units">i</button>
+      </h3>
+      <label class="check-row" for="estimates-toggle">
+        <input id="estimates-toggle" type="checkbox" checked="">
+        <span class="check-name">Show estimates</span>
+        <span class="check-hint">Hatched, in the colour the estimate gives. Off, they are gaps.</span>
+      </label>
+    </section>
+
+    <section class="filter-section" id="group-section" hidden="">
+      <h3 id="group-label">Group
+        <button type="button" class="info" data-info="group" aria-label="About choosing a group">i</button>
+      </h3>
+      <div class="group-search">
+        <label class="visually-hidden" for="group-search">Search groups</label>
+        <input id="group-search" type="search" autocomplete="off" spellcheck="false" placeholder="Search — “Islam”, “Muslim”, “te reo”…" aria-controls="group-list" aria-describedby="group-count">
+      </div>
+      <p id="group-count" class="control-note" role="status" aria-live="polite"></p>
+      <div id="group-list" class="group-list" role="tree" aria-labelledby="group-label"></div>
+      <p id="group-reach" class="control-note" hidden=""></p>
+    </section>
+
+    <section class="filter-section">
+      <h3>Legend
+        <button type="button" class="info" data-info="legend" aria-label="About what the colours mean" data-info-text="Each unit takes the colour of its largest group and the shade of that group's share, from 25% up. Categories are each country's own, so a border can be a change of question rather than of population. Colours are resolved from the data each time you change a control, so the key always describes what is on screen.">i</button>
+      </h3>
+      <div id="legend" class="legend" aria-live="polite"><ul class="legend-groups"><li>
+             <span class="legend-swatch" style="background:var(--shade-204272)"></span>
+             <span class="legend-group-name">Christianity</span>
+             <span class="legend-group-count">142</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-114d2a)"></span>
+             <span class="legend-group-name">Islam</span>
+             <span class="legend-group-count">51</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-418186)"></span>
+             <span class="legend-group-name">No religion</span>
+             <span class="legend-group-count">11</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-624f06)"></span>
+             <span class="legend-group-name">Buddhism</span>
+             <span class="legend-group-count">9</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-cc6c17)"></span>
+             <span class="legend-group-name">Hinduism</span>
+             <span class="legend-group-count">3</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-efdde4)"></span>
+             <span class="legend-group-name">Buddhist or Taoist</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-d2ac8d)"></span>
+             <span class="legend-group-name">Folk and traditional religion</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-799bbe)"></span>
+             <span class="legend-group-name">Judaism</span>
+             <span class="legend-group-count">1</span>
+           </li><li>
+             <span class="legend-swatch" style="background:var(--shade-edb998)"></span>
+             <span class="legend-group-name">Shinto</span>
+             <span class="legend-group-count">1</span>
+           </li></ul>
+         <div class="legend-shade">
+           <span class="legend-shade-label">Share of the leading group</span>
+           <div class="legend-scale" role="img" aria-label="Paler is a smaller share, darker is a larger one">
+             <span style="background:var(--leading-share-0)"></span><span style="background:var(--leading-share-1)"></span><span style="background:var(--leading-share-2)"></span><span style="background:var(--leading-share-3)"></span><span style="background:var(--leading-share-4)"></span>
+           </div>
+           <div class="legend-ends"><span>25% or less</span><span>100%</span></div>
+         </div><div class="legend-item">
+               <span class="legend-swatch" style="background:var(--neutral)"></span>
+               <span>No figure for 49 units</span>
+             </div></div>
+      <p id="blank-note" class="control-note">Grey areas publish no composition for this field at this level.</p>
+    </section>
+
+    <section class="filter-section">
+      <h3 id="detail-label">Detail level</h3>
+      <div id="detail-options" class="option-list" role="radiogroup" aria-labelledby="detail-label"><button type="button" role="radio" class="opt" data-value="auto" aria-checked="true" tabindex="0">
+              <span class="opt-name">Follow zoom</span><span class="opt-hint">Countries, then first-level, then second-level as you zoom in.</span></button><button type="button" role="radio" class="opt" data-value="0" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Countries</span><span class="opt-hint">One shade per country at every zoom.</span></button><button type="button" role="radio" class="opt" data-value="1" aria-checked="false" tabindex="-1">
+              <span class="opt-name">First-level divisions</span><span class="opt-hint">States, provinces, regions — wherever they are tiled.</span></button><button type="button" role="radio" class="opt" data-value="2" aria-checked="false" tabindex="-1">
+              <span class="opt-name">Second-level divisions</span><span class="opt-hint">Districts and counties. Pinning this loads every country's shard.</span></button></div>
+      <p id="level-note" class="control-note">269 countries loaded</p>
+    </section>
+
+  </aside>
+</body>
+</html>

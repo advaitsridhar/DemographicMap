@@ -1,0 +1,31 @@
+<!-- @dsCard group="Shell" height=96 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ThemeToggle — preview</title>
+<style>
+  /* Frame only: the topbar's surface. The three states in click order:
+     auto, light, dark. */
+  body { padding: 16px; }
+  .ground {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px var(--gutter-panel);
+    background: var(--surface-1); border: 1px solid var(--hairline);
+  }
+</style>
+</head>
+<body>
+<div class="ground">
+  <button class="ghost-button" type="button" aria-label="Switch colour theme" title="Theme: auto">
+        <span data-theme-icon="">◐</span>
+      </button>
+  <button class="ghost-button" type="button" aria-label="Switch colour theme" title="Theme: light">
+        <span data-theme-icon="">☀</span>
+      </button>
+  <button class="ghost-button" type="button" aria-label="Switch colour theme" title="Theme: dark">
+        <span data-theme-icon="">☾</span>
+      </button>
+</div>
+</body>
+</html>

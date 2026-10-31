@@ -1,0 +1,113 @@
+<!-- @dsCard group="Shell" height=598 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Search — preview</title>
+<style>
+  /* Frame only: each state is the topbar, trimmed to its search box, over the
+     map it drops onto. The results are absolutely placed under the box, so
+     each scene keeps room below for them. "India" returns fifteen rows; the
+     list stops at min(60vh, 460px) and scrolls, so in a card this tall the
+     last four rows sit below its edge, as they would in a window this tall
+     (the app's own capture, in a 900px window, shows fourteen). Four
+     presses of ArrowDown from the box make the country row active. The
+     second scene's ids end -2 so that no id is used twice. Results are open
+     only while the box has focus, so each input carries the focus ring
+     inline: it stands in for :focus-visible, which a static card cannot
+     hold. */
+  body { padding: 16px; }
+  .stage { display: grid; gap: 16px; }
+  .scene { background: var(--water); border: 1px solid var(--hairline); overflow: hidden; }
+  .scene-results { height: 434px; }
+  .scene-empty { height: 116px; }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="scene scene-results">
+    <header class="topbar">
+    <div class="search" role="search">
+      <label class="visually-hidden" for="search-input">Search for a country, state or district</label>
+      <input id="search-input" type="search" autocomplete="off" spellcheck="false" placeholder="Search places and groups — “Kerala”, “Islam”, “Tamil”, “Harris County”" aria-describedby="search-status" aria-expanded="true" aria-controls="search-results" role="combobox" aria-autocomplete="list" value="India" style="outline: 2px solid var(--accent); outline-offset: 1px">
+      <ul id="search-results" class="search-results" role="listbox" aria-label="Search results"><li role="option" id="sr-0" aria-selected="false" data-group="ethnicity|India">
+              <span class="r-level r-group">Ethnicity</span>
+              <span class="r-name">India</span>
+              <span class="r-context">Shade the map · 1 country</span>
+            </li><li role="option" id="sr-1" aria-selected="false" data-group="religion|Indian religions">
+              <span class="r-level r-group">Religion</span>
+              <span class="r-name">Indian religions</span>
+              <span class="r-context">Shade the map · 79 countries</span>
+            </li><li role="option" id="sr-2" aria-selected="false" data-group="ethnicity|Indian">
+              <span class="r-level r-group">Ethnicity</span>
+              <span class="r-name">Indian</span>
+              <span class="r-context">Shade the map · 23 countries</span>
+            </li><li role="option" id="sr-3" aria-selected="true" data-id="IND">
+            <span class="r-level">Country</span>
+            <span class="r-name">India</span>
+            <span class="r-context"></span>
+          </li><li role="option" id="sr-4" aria-selected="false" data-id="46923920B71258573989723">
+            <span class="r-level">Admin 2</span>
+            <span class="r-name">Ineia</span>
+            <span class="r-context">Paphos · Cyprus</span>
+          </li><li role="option" id="sr-5" aria-selected="false" data-id="385441B58689174477974">
+            <span class="r-level">Admin 1</span>
+            <span class="r-name">Kindia</span>
+            <span class="r-context">Guinea</span>
+          </li><li role="option" id="sr-6" aria-selected="false" data-id="49546643B82751767083924">
+            <span class="r-level">Admin 2</span>
+            <span class="r-name">Kindia</span>
+            <span class="r-context">Kindia · Guinea</span>
+          </li><li role="option" id="sr-7" aria-selected="false" data-id="3690345B479778676508">
+            <span class="r-level">Admin 2</span>
+            <span class="r-name">Ndia</span>
+            <span class="r-context">Kirinyaga · Kenya</span>
+          </li><li role="option" id="sr-8" aria-selected="false" data-id="56859067B57981845225789">
+            <span class="r-level">Admin 2</span>
+            <span class="r-name">Indiara</span>
+            <span class="r-context">Goias · Brazil</span>
+          </li><li role="option" id="sr-9" aria-selected="false" data-id="56859067B3233688790189">
+            <span class="r-level">Admin 2</span>
+            <span class="r-name">Indiavaí</span>
+            <span class="r-context">Mato Grosso · Brazil</span>
+          </li><li role="option" id="sr-10" aria-selected="false" data-id="56859067B75422103596121">
+            <span class="r-level">Admin 2</span>
+            <span class="r-name">Indiaroba</span>
+            <span class="r-context">Sergipe · Brazil</span>
+          </li><li role="option" id="sr-11" aria-selected="false" data-id="56859067B57389916946553">
+            <span class="r-level">Admin 2</span>
+            <span class="r-name">Indiaporã</span>
+            <span class="r-context">Sao Paulo · Brazil</span>
+          </li><li role="option" id="sr-12" aria-selected="false" data-id="66186276B82803899326534">
+            <span class="r-level">Admin 1</span>
+            <span class="r-name">Indiana</span>
+            <span class="r-context">United States</span>
+          </li><li role="option" id="sr-13" aria-selected="false" data-id="52423323B69347257455112">
+            <span class="r-level">Admin 2</span>
+            <span class="r-name">Indiana</span>
+            <span class="r-context">Pennsylvania · United States</span>
+          </li><li role="option" id="sr-14" aria-selected="false" data-id="56859067B42433068505408">
+            <span class="r-level">Admin 2</span>
+            <span class="r-name">Indiana</span>
+            <span class="r-context">Sao Paulo · Brazil</span>
+          </li></ul>
+      <p id="search-status" class="visually-hidden" role="status" aria-live="polite">15 results</p>
+    </div>
+    </header>
+  </div>
+
+  <div class="scene scene-empty">
+    <header class="topbar">
+    <div class="search" role="search">
+      <label class="visually-hidden" for="search-input-2">Search for a country, state or district</label>
+      <input id="search-input-2" type="search" autocomplete="off" spellcheck="false" placeholder="Search places and groups — “Kerala”, “Islam”, “Tamil”, “Harris County”" aria-describedby="search-status-2" aria-expanded="true" aria-controls="search-results-2" role="combobox" aria-autocomplete="list" value="zzzzqqq" style="outline: 2px solid var(--accent); outline-offset: 1px">
+      <ul id="search-results-2" class="search-results" role="listbox" aria-label="Search results"><li class="r-empty" role="option" aria-disabled="true">No match</li></ul>
+      <p id="search-status-2" class="visually-hidden" role="status" aria-live="polite">No results</p>
+    </div>
+    </header>
+  </div>
+
+</div>
+</body>
+</html>
