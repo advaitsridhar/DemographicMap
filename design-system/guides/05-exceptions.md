@@ -47,6 +47,7 @@ Places where the app today departs from the rules in this system. The components
 - **One shade disappears into the sea.** In the light theme, Not stated at 25% renders #dce6ee, almost exactly `water` (#dfe6ee).
 - **Residual answers can lead.** “Unclassified language answers” and “Unclassified ethnicity answers” lead some units (Paraguay, Qatar, Vanuatu), though residual rows are meant never to lead.
 - **MapLibre's controls are unthemed.** The zoom buttons, scale bar and attribution stay light in the dark theme. They use a #0096ff focus glow, not the app's accent outline, and set their text in Helvetica/Arial.
+- **The place sheet hides the attribution on phones.** At 900px and below the place sheet covers the bottom of the map whenever a place is open, the scale bar and the CC BY attribution with it, and the open filters drawer covers most of the attribution.
 - **Auto theme follows the OS only halfway.** With Auto, `data-theme` is removed, so app.css's `prefers-color-scheme` block re-themes the panels the moment the OS switches. Nothing listens for the change, though. The map keeps the old `water`, `land-base`, `boundary` and outline colours until the next restyle, and unit fills switch only on the next pan or zoom, so the page shows dark panels over a light map.
 
 ## Search
