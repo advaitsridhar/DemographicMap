@@ -56,7 +56,7 @@ The pill is absolutely positioned inside `.map-wrap` (`position: relative`): `ov
 
 - Markup: `site/index.html:142`.
 - `status(text, sticky)`, `site/js/app.js:113-120`: a falsy text hides the pill and cancels the timer; a non-sticky message starts a 2,200 ms timer; every call cancels the previous timer.
-- Callers: startup `app.js:1387-1389`; shard progress `app.js:1378-1385`; cleared after a view's shards load `app.js:1349`; no record `app.js:1253-1254`; window errors `app.js:1479-1482`.
+- Callers: startup `app.js:1403-1405`; shard progress `app.js:1394-1401`; cleared after a view's shards load `app.js:1365`; no record `app.js:1269-1270`; window errors `app.js:1495-1498`.
 - CSS: `site/css/app.css:423-428`.
 - Computed at runtime: the counts in the progress line, from each DataStore `progress` event.
 

@@ -80,8 +80,8 @@ The modal "About this map" dialog, opened from "About & sources": what the map s
 
 ## In the app
 
-- Static markup, index.html:160-201. Only the source list is generated: `renderAboutSources()` app.js:1458-1477 maps a fixed list of seven `[name, url, note]` entries into `<li>`s.
-- Wiring in `start()`, app.js:1365-1369: open with `showModal()`, close on the ✕ and on a click whose target is the dialog.
+- Static markup, index.html:160-201. Only the source list is generated: `renderAboutSources()` app.js:1474-1493 maps a fixed list of seven `[name, url, note]` entries into `<li>`s.
+- Wiring in `start()`, app.js:1381-1385: open with `showModal()`, close on the ✕ and on a click whose target is the dialog.
 - CSS: app.css:545-560 for the dialog, app.css:517-524 for the source list and the chips.
 
 ## Do / Don't

@@ -52,7 +52,7 @@ Contrast: `.empty-note` is `ink-muted`, 3.5:1 on `surface-1` in light, below 4.5
 ## In the app
 
 - Markup: `site/index.html:148–155`, inside the place panel's body.
-- Failure: the `catch` on `start()` in `site/js/app.js:1484–1488` sets the body to `<div class="empty-state"><h2>Could not start</h2><p>${esc(String(err))}</p></div>`.
+- Failure: the `catch` on `start()` in `site/js/app.js:1500–1504` sets the body to `<div class="empty-state"><h2>Could not start</h2><p>${esc(String(err))}</p></div>`.
 - CSS: `site/css/app.css:453–455`. `.empty-note` needs `!important` to beat `.empty-state p`, which is more specific.
 - You provide the copy. In the failure state the text is `String(err)`, escaped. No colour is computed.
 

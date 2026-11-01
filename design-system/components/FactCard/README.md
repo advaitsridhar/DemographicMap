@@ -59,7 +59,7 @@ A two-column grid of six tiles with a place's headline figures — population, c
 ## Accessibility
 
 - Tiles are plain `div`s, read in order: label, value, meta. A gap reads “Life expectancy Not yet available”; the glyph is hidden and the words carry the state.
-- The info dot is a `button` named `About the {label} figure`, label lower-cased: `About the median age figure`. Hover or focus opens its note; a click closes it, because `site/js/app.js:420–422` spares only `[data-info]`.
+- The info dot is a `button` named `About the {label} figure`, label lower-cased: `About the median age figure`. Hover or focus opens its note; a click closes it, because `site/js/app.js:431–433` spares only `[data-info]`.
 - Contrast: label, meta and gap words are `ink-muted` on `surface-sunken`: 3.1:1 in light and 4.4:1 in dark, below 4.5:1 at 10.6–12.5px. A gap's words must be read, so this breaks the brand book's own rule for `ink-muted`; it is the source's value, flagged.
 
 ## In the app

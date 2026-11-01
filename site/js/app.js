@@ -135,8 +135,12 @@
    */
   function trackTopbarHeight() {
     const bar = document.getElementById("topbar");
-    const set = () => document.documentElement.style.setProperty(
-      "--topbar-h", `${Math.round(bar.getBoundingClientRect().height)}px`);
+    const set = () => {
+      document.documentElement.style.setProperty(
+        "--topbar-h", `${Math.round(bar.getBoundingClientRect().height)}px`);
+      // The drawer moves with it, and an info bubble on one of its dots follows.
+      followInfo(true);
+    };
     set();
     if (window.ResizeObserver) new ResizeObserver(set).observe(bar);
     else window.addEventListener("resize", set);
@@ -312,8 +316,9 @@
       else placeInfo();
     } else if (keyboardFocused(button) ||
                // A resize, such as a phone turning on its side, is not the
-               // reader leaving a pinned note; turning back brings it back.
-               (resized && infoOpen.pinned && button.getClientRects().length)) {
+               // reader leaving a pinned note: it hides, and stays hidden
+               // through scrolls too, until its button is back in sight.
+               ((resized || hidden) && infoOpen.pinned && button.getClientRects().length)) {
       if (!hidden) showInfo(false);
     } else {
       closeInfo();
@@ -385,17 +390,23 @@
       // over a panel gets a mouseover whenever the panel scrolls under it, and
       // that is not the reader moving away. One that stays is placed again,
       // because an option's hint opening under the pointer moves everything
-      // below it without a scroll.
+      // below it without a scroll; placing it closes it if its button went
+      // with a hidden section. It is not checked for sight here: a pinned
+      // note on a dot half under the panel's head would close as the pointer
+      // moved to read it.
       else if (infoOpen) {
         infoOpen.revealed = false;
         if (!infoOpen.pinned && !keyboardFocused(infoOpen.button)) closeInfo();
-        else if (!infoOpen.bubble.style.visibility) followInfo();
+        else if (!infoOpen.bubble.style.visibility) placeInfo();
       }
     });
     // The pointer leaving the window takes its hover with it, and an option's
     // hint closing then moves the dots below it, with no mouseover to say so.
     document.addEventListener("mouseout", (event) => {
-      if (!event.relatedTarget && infoOpen) requestAnimationFrame(() => followInfo());
+      if (event.relatedTarget || !infoOpen) return;
+      requestAnimationFrame(() => {
+        if (infoOpen && !infoOpen.bubble.style.visibility) placeInfo();
+      });
     });
     document.addEventListener("focusin", (event) => {
       const button = at(event);
@@ -432,7 +443,12 @@
       if (scroller !== document && !(scroller.contains && scroller.contains(infoOpen.button))) return;
       followInfo();
     }, true);
-    window.addEventListener("resize", () => followInfo(true));
+    window.addEventListener("resize", () => {
+      // Measured afresh: left where it was, the bubble would shrink to fit
+      // between its old left edge and the new window's right one.
+      if (infoOpen) infoOpen.bubble.style.left = "";
+      followInfo(true);
+    });
   }
 
   /* ------------------------------------------------------ choice controls */
