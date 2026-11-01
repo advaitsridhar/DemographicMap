@@ -51,7 +51,7 @@ The three are written into the page; no script sets or changes them. The fills a
 
 ## In the app
 
-- Markup: site/index.html:176-179, in the About dialog (`#about-dialog`, index.html:160-201) under “Gaps are data too”. The dialog opens from “About & sources” (`showModal()`, site/js/app.js:1269).
+- Markup: site/index.html:176-179, in the About dialog (`#about-dialog`, index.html:160-201) under “Gaps are data too”. The dialog opens from “About & sources” (`showModal()`, site/js/app.js:1295).
 - Styles: `.chip`, `.chip-present`, `.chip-missing`, `.chip-notcollected` in components/bundle.css (site/css/app.css:521-524); `.gap-key` (app.css:559-560) lays the lines out as a grid .4rem apart.
 - Nothing is computed at runtime: the fills are the status tokens, the same values `Palette.STATUS` paints on the coverage map.
 

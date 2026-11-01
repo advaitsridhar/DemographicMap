@@ -248,7 +248,10 @@
     const text = button.dataset.infoText || INFO[button.dataset.info];
     if (!text) return;
     if (infoOpen && infoOpen.button === button) {
-      if (pinned) infoOpen.pinned = true;
+      if (pinned) {
+        infoOpen.pinned = true;
+        infoOpen.bubble.style.pointerEvents = "";
+      }
       return;
     }
     closeInfo();
@@ -256,6 +259,10 @@
     bubble.className = "info-bubble";
     bubble.setAttribute("role", "note");
     bubble.textContent = text;
+    // Until it is pinned, the pointer goes through it: a bubble that keyboard
+    // focus keeps open must not take the click or the wheel meant for the
+    // control it happens to cover.
+    if (!pinned) bubble.style.pointerEvents = "none";
     document.body.appendChild(bubble);
     button.setAttribute("aria-expanded", "true");
     infoOpen = { button, bubble, pinned: Boolean(pinned) };
@@ -265,19 +272,23 @@
   function placeInfo() {
     const { button, bubble } = infoOpen;
     const box = button.getBoundingClientRect();
+    const width = bubble.getBoundingClientRect().width;
     // Placed below the button and nudged back inside the viewport rather than
     // anchored to the panel: at phone width the panel is narrower than the
     // bubble needs to be.
-    bubble.style.top = `${Math.round(box.bottom + 6)}px`;
-    const width = bubble.getBoundingClientRect().width;
-    const left = Math.min(Math.max(8, box.left - 8),
-                          window.innerWidth - width - 8);
-    bubble.style.left = `${Math.round(left)}px`;
+    const top = `${Math.round(box.bottom + 6)}px`;
+    const left = `${Math.round(Math.min(Math.max(8, box.left - 8),
+                                        window.innerWidth - width - 8))}px`;
+    // Measured before anything is written, and written only when it moved, so
+    // following a scroll forces no layout.
+    if (bubble.style.top !== top) bubble.style.top = top;
+    if (bubble.style.left !== left) bubble.style.left = left;
   }
 
-  /* Whether any of the button is still on screen: inside the window and
-   * inside every panel around it that scrolls or clips. A button taken out
-   * of the page measures nothing, so it is never in sight. */
+  /* Whether the button can still be seen: inside the window, inside every
+   * panel around it that scrolls or clips, and not under something drawn over
+   * it, such as the filters panel's sticky head. A button taken out of the
+   * page measures nothing, so it is never in sight. */
   function inSight(button) {
     const box = button.getBoundingClientRect();
     if (!box.width || !box.height) return false;
@@ -289,7 +300,17 @@
       top = Math.max(top, frame.top); bottom = Math.min(bottom, frame.bottom);
       left = Math.max(left, frame.left); right = Math.min(right, frame.right);
     }
-    return box.bottom > top && box.top < bottom && box.right > left && box.left < right;
+    if (!(box.bottom > top && box.top < bottom && box.right > left && box.left < right)) return false;
+    const hit = document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2);
+    return Boolean(hit) && button.contains(hit);
+  }
+
+  /* Focus the keyboard gave it, rather than a mouse press, which focuses a
+   * button in most browsers too: a bubble the pointer opened should still
+   * close when the pointer leaves. */
+  function keyboardFocused(button) {
+    if (document.activeElement !== button) return false;
+    try { return button.matches(":focus-visible"); } catch (err) { return false; }
   }
 
   /* Delegated rather than bound per button, because most of these buttons do
@@ -300,18 +321,14 @@
     document.addEventListener("mouseover", (event) => {
       const button = at(event);
       if (button) openInfo(button, false);
-      // A bubble that focus opened stays for as long as the focus does: a
-      // pointer resting over a panel gets a mouseover whenever the panel
-      // scrolls under it, and that is not the reader moving away.
-      else if (infoOpen && !infoOpen.pinned &&
-               !(infoOpen.focused && document.activeElement === infoOpen.button)) closeInfo();
+      // A bubble stays while its button has keyboard focus: a pointer resting
+      // over a panel gets a mouseover whenever the panel scrolls under it, and
+      // that is not the reader moving away.
+      else if (infoOpen && !infoOpen.pinned && !keyboardFocused(infoOpen.button)) closeInfo();
     });
     document.addEventListener("focusin", (event) => {
       const button = at(event);
-      if (button) {
-        openInfo(button, false);
-        if (infoOpen && infoOpen.button === button) infoOpen.focused = true;
-      }
+      if (button) openInfo(button, false);
       else if (infoOpen && !infoOpen.pinned) closeInfo();
     });
     document.addEventListener("click", (event) => {
@@ -329,13 +346,22 @@
     });
     // The bubble is fixed to the window, so a scroll would leave it pointing
     // at whatever has moved under it. It follows its button instead, and
-    // closes once the button is out of sight. Closing on every scroll lost
-    // the bubble that focus opens on a button out of view, because the focus
-    // scrolls the button into view and the scroll's event comes after it.
+    // closes once the button is out of sight, or, while the button has
+    // keyboard focus, hides until the button is back in sight: a smooth
+    // scroll that brings it into view starts with it still out of sight.
+    // Closing on every scroll lost the bubble that focus opens on a button
+    // out of view, because the focus scrolls the button into view and the
+    // scroll's event comes after it.
     window.addEventListener("scroll", () => {
       if (!infoOpen) return;
-      if (inSight(infoOpen.button)) placeInfo();
-      else closeInfo();
+      if (inSight(infoOpen.button)) {
+        infoOpen.bubble.style.visibility = "";
+        placeInfo();
+      } else if (keyboardFocused(infoOpen.button)) {
+        infoOpen.bubble.style.visibility = "hidden";
+      } else {
+        closeInfo();
+      }
     }, true);
   }
 
