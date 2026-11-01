@@ -69,7 +69,7 @@ The bar across the top of the page that holds the brand, the search box and thre
 
 - Static markup, index.html:17-46. CSS app.css:112-182, with the narrow rules at app.css:564-583 and 585-608.
 - `trackTopbarHeight()` app.js:136-143 writes the bar's rounded height to `--topbar-h` on `<html>` and re-measures with `ResizeObserver`: "The topbar's height depends on how its own contents wrap, so it is measured rather than guessed." (app.js:133-134)
-- `setPanel()` app.js:171-185 sets the toggle's `aria-expanded` and `title`; `applyTheme()` app.js:91-104 sets the glyph and `title`; About opens the dialog with `showModal()` (app.js:1339).
+- `setPanel()` app.js:171-185 sets the toggle's `aria-expanded` and `title`; `applyTheme()` app.js:91-104 sets the glyph and `title`; About opens the dialog with `showModal()` (app.js:1365).
 - The script finds the buttons by id (`filters-toggle`, `theme-toggle`, `about-open`), and the app's phone rules select two of them by id too (`#about-open`, `#filters-toggle`, app.css:571-574); in index.html all three carry only `class="ghost-button"`. In this system those two rules are the classes `.filters-toggle` and `.about-open`, so those buttons take the class as well as the id.
 
 ## Do / Don't

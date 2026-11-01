@@ -250,7 +250,7 @@
     if (infoOpen && !infoOpen.button.isConnected) closeInfo();
   });
 
-  function openInfo(button, pinned) {
+  function openInfo(button, pinned, reached = true) {
     // Either a key into the table above, for the fixed controls, or the text
     // itself, for the notes the sidebar builds per record.
     const text = button.dataset.infoText || INFO[button.dataset.info];
@@ -260,8 +260,18 @@
         infoOpen.pinned = true;
         infoOpen.bubble.style.pointerEvents = "";
       }
-      // Pointing at the button, or pressing it, shows a bubble a scroll hid.
-      if (infoOpen.bubble.style.visibility) showInfo(true);
+      // The pointer reaching the button, or a press on it, shows a bubble
+      // that a scroll or a resize hid; the click that follows the pointer's
+      // arrival then keeps it rather than counting as a second click. A focus
+      // that arrives again, as when the window gets it back, leaves it to the
+      // sight check.
+      if (!infoOpen.bubble.style.visibility) return;
+      if (reached) {
+        showInfo(true);
+        if (infoOpen) infoOpen.revealed = true;
+      } else {
+        followInfo();
+      }
       return;
     }
     closeInfo();
@@ -293,13 +303,17 @@
    * sight the bubble closes, or, while the button has keyboard focus, hides
    * until it is back: a smooth scroll that brings it into view starts with it
    * still out of sight. */
-  function followInfo() {
+  function followInfo(resized = false) {
     if (!infoOpen) return;
     const hidden = Boolean(infoOpen.bubble.style.visibility);
-    if (inSight(infoOpen.button)) {
+    const button = infoOpen.button;
+    if (inSight(button)) {
       if (hidden) showInfo(true);
       else placeInfo();
-    } else if (keyboardFocused(infoOpen.button)) {
+    } else if (keyboardFocused(button) ||
+               // A resize, such as a phone turning on its side, is not the
+               // reader leaving a pinned note; turning back brings it back.
+               (resized && infoOpen.pinned && button.getClientRects().length)) {
       if (!hidden) showInfo(false);
     } else {
       closeInfo();
@@ -309,6 +323,7 @@
   function placeInfo() {
     const { button, bubble } = infoOpen;
     const box = button.getBoundingClientRect();
+    if (!box.width && !box.height) { closeInfo(); return; }
     const width = bubble.getBoundingClientRect().width;
     // Placed below the button and nudged back inside the viewport rather than
     // anchored to the panel: at phone width the panel is narrower than the
@@ -340,9 +355,12 @@
     if (!(box.bottom > top && box.top < bottom && box.right > left && box.left < right)) return false;
     // Looked through the bubble itself, which a scroll can leave over its
     // button until it is placed again.
+    const x = box.left + box.width / 2, y = box.top + box.height / 2;
     const own = infoOpen && infoOpen.bubble;
-    const hit = document.elementsFromPoint(box.left + box.width / 2, box.top + box.height / 2)
-      .find((el) => !own || !own.contains(el));
+    let hit = document.elementFromPoint(x, y);
+    if (hit && own && own.contains(hit)) {
+      hit = document.elementsFromPoint(x, y).find((el) => !own.contains(el));
+    }
     return Boolean(hit) && button.contains(hit);
   }
 
@@ -369,24 +387,32 @@
       // because an option's hint opening under the pointer moves everything
       // below it without a scroll.
       else if (infoOpen) {
+        infoOpen.revealed = false;
         if (!infoOpen.pinned && !keyboardFocused(infoOpen.button)) closeInfo();
-        else if (!infoOpen.bubble.style.visibility) placeInfo();
+        else if (!infoOpen.bubble.style.visibility) followInfo();
       }
+    });
+    // The pointer leaving the window takes its hover with it, and an option's
+    // hint closing then moves the dots below it, with no mouseover to say so.
+    document.addEventListener("mouseout", (event) => {
+      if (!event.relatedTarget && infoOpen) requestAnimationFrame(() => followInfo());
     });
     document.addEventListener("focusin", (event) => {
       const button = at(event);
-      if (button) openInfo(button, false);
+      if (button) openInfo(button, false, false);
       else if (infoOpen && (!infoOpen.pinned || infoOpen.bubble.style.visibility)) closeInfo();
     });
     document.addEventListener("click", (event) => {
       const button = at(event);
       if (!button) return;
       event.preventDefault();
-      // A second click closes a pinned bubble, unless a scroll has hidden it:
-      // then the reader sees none, and the click shows it.
+      // A second click closes a pinned bubble, unless a scroll or a resize
+      // hid it, so the reader sees none, or the pointer has just brought it
+      // back: then the click keeps it.
       if (infoOpen && infoOpen.button === button && infoOpen.pinned &&
-          !infoOpen.bubble.style.visibility) closeInfo();
+          !infoOpen.bubble.style.visibility && !infoOpen.revealed) closeInfo();
       else openInfo(button, true);
+      if (infoOpen) infoOpen.revealed = false;
     });
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") closeInfo();
@@ -406,7 +432,7 @@
       if (scroller !== document && !(scroller.contains && scroller.contains(infoOpen.button))) return;
       followInfo();
     }, true);
-    window.addEventListener("resize", followInfo);
+    window.addEventListener("resize", () => followInfo(true));
   }
 
   /* ------------------------------------------------------ choice controls */
