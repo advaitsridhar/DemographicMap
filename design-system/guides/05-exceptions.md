@@ -68,6 +68,7 @@ Places where the app today departs from the rules in this system. The components
 - **One info dot has no name.** The “i” beside the legend's “Group not yet classified” line has no `aria-label`, so its accessible name is just “i”.
 - **Headings with an “i” lend it their name.** A radiogroup labelled by its heading includes the info button in its accessible name (“SHADING About how the shading is scaled”). Label the group with the heading's text alone.
 - **The on-map legend's `aria-label="Map legend"` sits on a `div` with no role.** Its computed role is generic, which ARIA does not allow to be named, so the card is no landmark and the label is not reliably announced.
+- **Focus can land under the filters panel's sticky head.** The panel has no `scroll-padding-top`, so Shift+Tab onto a dot that straddles its top edge scrolls the dot only to that edge, under the head, where neither its focus ring nor its bubble can be seen. Focus on a dot already under the head opens its bubble over the head.
 - **Focus.** Opening the filters drawer does not move focus into it. Escape does not close the place sheet on small screens. The place panel is a skip-link target but has no `:focus-visible` style.
 
 ## Unused

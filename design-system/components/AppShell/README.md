@@ -71,10 +71,10 @@ The frame holds no copy of its own. Landmark names, verbatim: "Map filters", "Se
 
 ## In the app
 
-- `start()` app.js:1284-1386 applies the theme, calls `trackTopbarHeight()` (app.js:136-143) and builds the controls.
+- `start()` app.js:1328-1430 applies the theme, calls `trackTopbarHeight()` (app.js:136-143) and builds the controls.
 - `setPanel(open)` app.js:171-185 toggles `.filters-open`, `#filters[hidden]`, the toggle's `aria-expanded` and `title`, the on-map legend, stores `wdm-filters` and calls `map.resize()`. `panelDefault()` app.js:145-151.
-- Toggle, ✕ and Escape: app.js:578-587. A click on a group row closes the drawer at 900px and below (app.js:573-576).
-- `selectEntity()` app.js:1167-1218 renders the place with `Dashboard.render(record, els.sidebarBody)` and adds `is-open` (app.js:1200); the sheet's ✕ removes it (app.js:1294).
+- Toggle, ✕ and Escape: app.js:622-631. A click on a group row closes the drawer at 900px and below (app.js:617-620).
+- `selectEntity()` app.js:1211-1262 renders the place with `Dashboard.render(record, els.sidebarBody)` and adds `is-open` (app.js:1244); the sheet's ✕ removes it (app.js:1338).
 - Runtime values: `--topbar-h`, both classes, the two `hidden` attributes. The place panel content is `dashboard.js`.
 - Why the column stays: "The left column is zero-width rather than absent when the panel is hidden, so showing it is a column resize the map can follow rather than a reflow of the whole grid." (app.css:88-90)
 - Why the default depends on width: "Wide screens get it open: it is the map's legend and its caveats … Phones get it closed, because at that width it covers the map it describes." (app.js:126-129)
