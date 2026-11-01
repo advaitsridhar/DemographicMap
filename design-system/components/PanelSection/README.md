@@ -47,7 +47,7 @@ The wrapper for each topic of the place panel below the fact tiles: a section wh
 
 - Each `h3` sits under the panel's `h2`, the place name. The sections have no accessible name, so they are not landmarks.
 - The dot sits inside the `h3`, so the heading's accessible name includes the dot's label: Chrome names it “Religion About the religion figures”.
-- Hover or focus on the dot opens its note in a bubble; a click closes it, because `site/js/app.js:431–433` spares only `[data-info]`.
+- Hover or focus on the dot opens its note in a bubble; a click closes it, because `site/js/app.js:464–466` spares only `[data-info]`.
 - `.panel-year` is a plain `span` after the heading, read as a bare “2011” or “14” with nothing to say which it is.
 - Contrast: `.panel-year` is `ink-muted` on `surface-1`, 3.5:1 in light — below 4.5:1 at 10.9px (4.85:1 in dark).
 

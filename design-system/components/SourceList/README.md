@@ -57,7 +57,7 @@ Contrast in light: `accent` links measure 4.3:1 on `surface-1` and `ink-muted` n
 ## In the app
 
 - `sourceList(record)`, `site/js/dashboard.js:459–475`: dedupes on name plus URL, builds each row, then appends the boundary row (472).
-- About: `renderAboutSources()`, `site/js/app.js:1474–1493`, fills `<ul id="about-sources" class="source-list">` (`site/index.html:190`).
+- About: `renderAboutSources()`, `site/js/app.js:1507–1526`, fills `<ul id="about-sources" class="source-list">` (`site/index.html:190`).
 - In the dialog, `.source-list li` (.72rem, 1.45) is more specific than `dialog li` (.8rem, 1.6), so the list keeps its panel size there.
 - CSS: `site/css/app.css:517–519`.
 - You provide each source's name, URL, year, licence and note. No colour is computed.

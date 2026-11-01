@@ -49,7 +49,7 @@ Those of GhostButton: `ink-secondary`, `hairline`, `radius-sm`, `surface-sunken`
 ## In the app
 
 - `currentTheme()` app.js:83-89 reads `wdm-theme` (default auto); `applyTheme(theme)` app.js:91-104 sets or removes `data-theme`, stores the value, writes the glyph and `title`, then restyles the map and legend once the map exists; the click handler is app.js:106-109.
-- `start()` calls `applyTheme(currentTheme())` before anything else (app.js:1371).
+- `start()` calls `applyTheme(currentTheme())` before anything else (app.js:1404).
 - The script finds the button by `id="theme-toggle"`; no CSS rule uses that id.
 - Why two explicit themes: "both themes are explicitly selected rather than auto-inverted." (app.css:2-3)
 
