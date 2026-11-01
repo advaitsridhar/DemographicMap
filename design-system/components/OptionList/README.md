@@ -53,15 +53,15 @@ The chosen name is `accent` on `surface-sunken`: 3.8:1 in light, 4.3:1 in dark. 
 ## Accessibility
 
 - The list is a `role="radiogroup"` named by its section `h3` through `aria-labelledby`; each row is a `<button role="radio">` with `aria-checked`.
-- One tab stop: the chosen row has `tabindex="0"`, the others `-1`; if nothing is chosen the first row takes `0`, "or the whole control drops out of the keyboard order" (app.js:328-329).
-- Arrow Down or Right moves to the next row and chooses it, wrapping; Up or Left goes back; Home and End jump to the ends; Enter and Space press the button. "a single tab stop, arrows to move, and moving selects. That is the WAI-ARIA radio pattern" (app.js:306-307).
+- One tab stop: the chosen row has `tabindex="0"`, the others `-1`; if nothing is chosen the first row takes `0`, "or the whole control drops out of the keyboard order" (app.js:511-512).
+- Arrow Down or Right moves to the next row and chooses it, wrapping; Up or Left goes back; Home and End jump to the ends; Enter and Space press the button. "a single tab stop, arrows to move, and moving selects. That is the WAI-ARIA radio pattern" (app.js:489-490).
 - The hint sits inside the button, so it joins the accessible name wherever it is displayed: the chosen, hovered or focused row.
 
 ## In the app
 
-- `optionHTML(role, cls, value, label, hint)` app.js:358-364 writes each row; `markChoice(host, value)` app.js:317-331 sets `aria-checked` and `tabindex`; `wireChoice(host, onPick)` app.js:333-356 handles clicks and keys.
-- View: one row per entry of `window.Metrics.METRICS` (`label`, `hint`; metrics.js:270-373), built at app.js:405-414. Picking one runs `syncSections()` and `refreshColors()`.
-- Detail level: `DETAIL_LEVELS` app.js:397-402, built at app.js:459-465. Picking one calls `WorldMap.setPinnedLevel`, with `null` for "auto".
+- `optionHTML(role, cls, value, label, hint)` app.js:541-547 writes each row; `markChoice(host, value)` app.js:500-514 sets `aria-checked` and `tabindex`; `wireChoice(host, onPick)` app.js:516-539 handles clicks and keys.
+- View: one row per entry of `window.Metrics.METRICS` (`label`, `hint`; metrics.js:270-373), built at app.js:588-597. Picking one runs `syncSections()` and `refreshColors()`.
+- Detail level: `DETAIL_LEVELS` app.js:580-585, built at app.js:642-648. Picking one calls `WorldMap.setPinnedLevel`, with `null` for "auto".
 - The consumer provides each row's value, name and hint, and the chosen value. No colour is computed.
 - CSS: `site/css/app.css:229-258`; phone padding `app.css:578`.
 
@@ -75,4 +75,4 @@ Do:
 Don't:
 - Don't show every hint at once.
 - Don't use it for two or three alternatives of one kind; use SegmentedControl.
-- Don't put a caveat in a hint. View and Detail level have no "i" of their own; the app puts each view's caveat behind the Legend's "i" instead (app.js:1088-1098).
+- Don't put a caveat in a hint. View and Detail level have no "i" of their own; the app puts each view's caveat behind the Legend's "i" instead (app.js:1271-1281).

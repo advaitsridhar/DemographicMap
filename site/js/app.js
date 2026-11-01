@@ -135,8 +135,12 @@
    */
   function trackTopbarHeight() {
     const bar = document.getElementById("topbar");
-    const set = () => document.documentElement.style.setProperty(
-      "--topbar-h", `${Math.round(bar.getBoundingClientRect().height)}px`);
+    const set = () => {
+      document.documentElement.style.setProperty(
+        "--topbar-h", `${Math.round(bar.getBoundingClientRect().height)}px`);
+      // The drawer moves with it, and an info bubble on one of its dots follows.
+      followInfo(true);
+    };
     set();
     if (window.ResizeObserver) new ResizeObserver(set).observe(bar);
     else window.addEventListener("resize", set);
@@ -240,15 +244,38 @@
     infoOpen.button.setAttribute("aria-expanded", "false");
     infoOpen.bubble.remove();
     infoOpen = null;
+    orphans.disconnect();
   }
 
-  function openInfo(button, pinned) {
+  // The place panel is rebuilt on every selection and again when the level
+  // below arrives, and the legend on every repaint. A button removed that way
+  // leaves its bubble describing something no longer on screen.
+  const orphans = new MutationObserver(() => {
+    if (infoOpen && !infoOpen.button.isConnected) closeInfo();
+  });
+
+  function openInfo(button, pinned, reached = true) {
     // Either a key into the table above, for the fixed controls, or the text
     // itself, for the notes the sidebar builds per record.
     const text = button.dataset.infoText || INFO[button.dataset.info];
     if (!text) return;
     if (infoOpen && infoOpen.button === button) {
-      if (pinned) infoOpen.pinned = true;
+      if (pinned) {
+        infoOpen.pinned = true;
+        infoOpen.bubble.style.pointerEvents = "";
+      }
+      // The pointer reaching the button, or a press on it, shows a bubble
+      // that a scroll or a resize hid; the click that follows the pointer's
+      // arrival then keeps it rather than counting as a second click. A focus
+      // that arrives again, as when the window gets it back, leaves it to the
+      // sight check.
+      if (!infoOpen.bubble.style.visibility) return;
+      if (reached) {
+        showInfo(true);
+        if (infoOpen) infoOpen.revealed = true;
+      } else {
+        followInfo();
+      }
       return;
     }
     closeInfo();
@@ -256,18 +283,121 @@
     bubble.className = "info-bubble";
     bubble.setAttribute("role", "note");
     bubble.textContent = text;
+    // Until it is pinned, the pointer goes through it: a bubble that keyboard
+    // focus keeps open must not take the click or the wheel meant for the
+    // control it happens to cover.
+    if (!pinned) bubble.style.pointerEvents = "none";
     document.body.appendChild(bubble);
+    button.setAttribute("aria-expanded", "true");
+    infoOpen = { button, bubble, pinned: Boolean(pinned) };
+    orphans.observe(document.body, { childList: true, subtree: true });
+    placeInfo();
+  }
+
+  /* Hidden is neither open nor closed for the reader, so the button says
+   * closed while its bubble is hidden. */
+  function showInfo(shown) {
+    const { button, bubble } = infoOpen;
+    bubble.style.visibility = shown ? "" : "hidden";
+    button.setAttribute("aria-expanded", String(shown));
+    if (shown) placeInfo();
+  }
+
+  /* A pointer move, or the pointer leaving the window, places a shown bubble
+   * again and shows a hidden one whose button is back in sight, as when an
+   * option's hint closes. It does not judge a shown one: a pinned note on a
+   * dot half under the panel's head would close as the pointer moved to read
+   * it. Placing closes a bubble whose button went with a hidden section. */
+  function keepInfo() {
+    if (!infoOpen) return;
+    if (!infoOpen.bubble.style.visibility) placeInfo();
+    else if (inSight(infoOpen.button)) showInfo(true);
+  }
+
+  /* The panel that scrolls the button: its nearest ancestor whose overflow
+   * scrolls. */
+  function scrollerOf(button) {
+    for (let el = button.parentElement; el && el !== document.body; el = el.parentElement) {
+      const overflow = getComputedStyle(el).overflowY;
+      if (overflow === "auto" || overflow === "scroll") return el;
+    }
+    return null;
+  }
+
+  /* Where the button has gone, the bubble follows. Once the button is out of
+   * sight the bubble closes, or, while the button has keyboard focus, hides
+   * until it is back: a smooth scroll that brings it into view starts with it
+   * still out of sight. */
+  function followInfo(resized = false) {
+    if (!infoOpen) return;
+    const hidden = Boolean(infoOpen.bubble.style.visibility);
+    const button = infoOpen.button;
+    if (inSight(button)) {
+      if (hidden) showInfo(true);
+      else placeInfo();
+    } else if (keyboardFocused(button) ||
+               // A resize, such as a phone turning on its side, is not the
+               // reader leaving a pinned note: it hides. A pinned bubble once
+               // hidden, by a resize or by keyboard focus since gone, stays
+               // hidden through scrolls too, until its button is back in sight.
+               ((resized || hidden) && infoOpen.pinned && button.getClientRects().length)) {
+      if (!hidden) showInfo(false);
+    } else {
+      closeInfo();
+    }
+  }
+
+  function placeInfo() {
+    const { button, bubble } = infoOpen;
     const box = button.getBoundingClientRect();
+    if (!box.width && !box.height) { closeInfo(); return; }
+    const width = bubble.getBoundingClientRect().width;
     // Placed below the button and nudged back inside the viewport rather than
     // anchored to the panel: at phone width the panel is narrower than the
     // bubble needs to be.
-    bubble.style.top = `${Math.round(box.bottom + 6)}px`;
-    const width = bubble.getBoundingClientRect().width;
-    const left = Math.min(Math.max(8, box.left - 8),
-                          window.innerWidth - width - 8);
-    bubble.style.left = `${Math.round(left)}px`;
-    button.setAttribute("aria-expanded", "true");
-    infoOpen = { button, bubble, pinned: Boolean(pinned) };
+    const top = `${Math.round(box.bottom + 6)}px`;
+    const left = `${Math.round(Math.min(Math.max(8, box.left - 8),
+                                        window.innerWidth - width - 8))}px`;
+    // Measured before anything is written, and written only when it moved, so
+    // following a scroll forces no layout.
+    if (bubble.style.top !== top) bubble.style.top = top;
+    if (bubble.style.left !== left) bubble.style.left = left;
+  }
+
+  /* Whether the button can still be seen: inside the window, inside every
+   * panel around it that scrolls or clips, and not under something drawn over
+   * it, such as the filters panel's sticky head. A button taken out of the
+   * page measures nothing, so it is never in sight. */
+  function inSight(button) {
+    const box = button.getBoundingClientRect();
+    if (!box.width || !box.height) return false;
+    let top = 0, bottom = window.innerHeight, left = 0, right = window.innerWidth;
+    for (let el = button.parentElement; el && el !== document.body; el = el.parentElement) {
+      const style = getComputedStyle(el);
+      if (style.overflowX === "visible" && style.overflowY === "visible") continue;
+      const frame = el.getBoundingClientRect();
+      top = Math.max(top, frame.top); bottom = Math.min(bottom, frame.bottom);
+      left = Math.max(left, frame.left); right = Math.min(right, frame.right);
+    }
+    if (!(box.bottom > top && box.top < bottom && box.right > left && box.left < right)) return false;
+    // Looked through the bubble itself, which a scroll can leave over its
+    // button until it is placed again.
+    const x = box.left + box.width / 2, y = box.top + box.height / 2;
+    const own = infoOpen && infoOpen.bubble;
+    let hit = document.elementFromPoint(x, y);
+    if (hit && own && own.contains(hit)) {
+      hit = document.elementsFromPoint(x, y).find((el) => !own.contains(el));
+    }
+    return Boolean(hit) && button.contains(hit);
+  }
+
+  /* Focus as :focus-visible has it: focus the keyboard gave, or a mouse
+   * focus followed by a key press, but not a bare mouse press, which focuses
+   * a button in most browsers too. A bubble the pointer opened should still
+   * close when the pointer leaves. */
+  function keyboardFocused(button) {
+    if (document.activeElement !== button) return false;
+    try { return button.matches(":focus-visible"); } catch (err) { return false; }
   }
 
   /* Delegated rather than bound per button, because most of these buttons do
@@ -278,19 +408,55 @@
     document.addEventListener("mouseover", (event) => {
       const button = at(event);
       if (button) openInfo(button, false);
-      else if (infoOpen && !infoOpen.pinned) closeInfo();
+      // A bubble stays while its button has keyboard focus: a pointer resting
+      // over a panel gets a mouseover whenever the panel scrolls under it, and
+      // that is not the reader moving away. One that stays is kept in place
+      // (keepInfo), because an option's hint opening under the pointer moves
+      // everything below it without a scroll.
+      else if (infoOpen) {
+        // A bubble the pointer brought back stays brought back, for the click
+        // that keeps it, while its dot is still mostly hidden: on a strip of
+        // dot below the panel's head the pointer is bound to wander.
+        if (infoOpen.revealed && inSight(infoOpen.button)) infoOpen.revealed = false;
+        if (!infoOpen.pinned && !keyboardFocused(infoOpen.button)) closeInfo();
+        else keepInfo();
+      }
     });
+    // The pointer leaving the window takes its hover with it, and an option's
+    // hint closing then moves the dots below it, with no mouseover to say so.
+    document.addEventListener("mouseout", (event) => {
+      if (event.relatedTarget || !infoOpen) return;
+      requestAnimationFrame(keepInfo);
+    });
+    // A wheel or a finger scrolling the dot's panel, or starting on the
+    // bubble, closes a pinned bubble, as any scroll used to: pinned, it takes
+    // the pointer, and following its dot would carry it under the pointer to
+    // take the next turn of the wheel, the next drag or the next tap itself.
+    // Focus scrolls, and the unpinned bubbles that let the pointer through,
+    // still follow.
+    const scrollIntent = (event) => {
+      if (!infoOpen || !infoOpen.pinned) return;
+      const panel = scrollerOf(infoOpen.button);
+      if (infoOpen.bubble.contains(event.target) || (panel && panel.contains(event.target))) closeInfo();
+    };
+    document.addEventListener("wheel", scrollIntent, { capture: true, passive: true });
+    document.addEventListener("touchmove", scrollIntent, { capture: true, passive: true });
     document.addEventListener("focusin", (event) => {
       const button = at(event);
-      if (button) openInfo(button, false);
-      else if (infoOpen && !infoOpen.pinned) closeInfo();
+      if (button) openInfo(button, false, false);
+      else if (infoOpen && (!infoOpen.pinned || infoOpen.bubble.style.visibility)) closeInfo();
     });
     document.addEventListener("click", (event) => {
       const button = at(event);
       if (!button) return;
       event.preventDefault();
-      if (infoOpen && infoOpen.button === button && infoOpen.pinned) closeInfo();
+      // A second click closes a pinned bubble, unless a scroll or a resize
+      // hid it, so the reader sees none, or the pointer has just brought it
+      // back: then the click keeps it.
+      if (infoOpen && infoOpen.button === button && infoOpen.pinned &&
+          !infoOpen.bubble.style.visibility && !infoOpen.revealed) closeInfo();
       else openInfo(button, true);
+      if (infoOpen) infoOpen.revealed = false;
     });
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") closeInfo();
@@ -298,7 +464,24 @@
     document.addEventListener("click", (event) => {
       if (infoOpen && !event.target.closest("[data-info]")) closeInfo();
     });
-    window.addEventListener("scroll", closeInfo, true);
+    // The bubble is fixed to the window, so a scroll would leave it pointing
+    // at whatever has moved under it; it follows its button instead. Closing
+    // on every scroll lost the bubble that focus opens on a button out of
+    // view, because the focus scrolls the button into view and the scroll's
+    // event comes after it. Only a scroll of something that holds the button
+    // can move it.
+    window.addEventListener("scroll", (event) => {
+      if (!infoOpen) return;
+      const scroller = event.target;
+      if (scroller !== document && !(scroller.contains && scroller.contains(infoOpen.button))) return;
+      followInfo();
+    }, true);
+    window.addEventListener("resize", () => {
+      // Measured afresh: left where it was, the bubble would shrink to fit
+      // between its old left edge and the new window's right one.
+      if (infoOpen) infoOpen.bubble.style.left = "";
+      followInfo(true);
+    });
   }
 
   /* ------------------------------------------------------ choice controls */

@@ -58,8 +58,8 @@ Contrast: the `ink-muted` counts measure 3.5:1 on `surface-1` and 3.1:1 on the h
 ## In the app
 
 - `childrenPanel(record)`, `site/js/dashboard.js:477–492`: `DataStore.children(record.id)` filtered to a different level, sorted, first 400 rendered.
-- `render()` wires every `[data-goto]` button (`dashboard.js:556–558`) to the navigator set in `site/js/app.js:1225–1228`, which calls `selectEntity(id, { fly: true, bbox: record && record.bbox })`. The map flies there and the panel re-renders.
-- The list appears when the level below arrives: `afterLoad` re-renders the panel (`app.js:1156–1160`; the loads start at 1145 and 1147).
+- `render()` wires every `[data-goto]` button (`dashboard.js:556–558`) to the navigator set in `site/js/app.js:1408–1411`, which calls `selectEntity(id, { fly: true, bbox: record && record.bbox })`. The map flies there and the panel re-renders.
+- The list appears when the level below arrives: `afterLoad` re-renders the panel (`app.js:1339–1343`; the loads start at 1328 and 1330).
 - CSS: `site/css/app.css:526–534`.
 - You provide each child's id, name and population, the formatted count, and the total for the heading. No colour is computed.
 

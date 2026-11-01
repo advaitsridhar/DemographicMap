@@ -5,7 +5,7 @@ The left-hand panel that says what the map is shading and holds the controls tha
 ## When to use
 
 - Use one per map. It is the map's key as well as its controls: open on wide screens because "a first-time reader who never presses the button would otherwise be looking at coloured shapes with no key", closed on phones "because at that width it covers the map it describes" (app.js:126-129).
-- Give each control its own `filter-section`, and show a section only in the views it applies to. The old panel kept a "Group" row in every view and quietly changed its label, "which meant the same control did two different jobs depending on a setting three rows up" (app.js:534-535).
+- Give each control its own `filter-section`, and show a section only in the views it applies to. The old panel kept a "Group" row in every view and quietly changed its label, "which meant the same control did two different jobs depending on a setting three rows up" (app.js:717-718).
 
 ## Anatomy
 
@@ -46,7 +46,7 @@ Sections, top to bottom: Topic (SegmentedControl), View (OptionList), Categories
 | Section hidden | `hidden` on a `section.filter-section` | `syncSections()`, per view (below) |
 | Focused | `.filters:focus-visible` | the skip link moves focus to the aside: 2px `accent` outline at -2px |
 
-When the panel closes, the on-map legend opens with the same chips and key: "Hiding the controls is a request for more map, not for a map whose colours mean nothing" (app.js:177-178).
+When the panel closes, the on-map legend opens with the same chips and key: "Hiding the controls is a request for more map, not for a map whose colours mean nothing" (app.js:181-182).
 
 | View | Topic | Categories | Shading | Estimates | Group |
 |---|---|---|---|---|---|
@@ -62,7 +62,7 @@ View, Legend and Detail level are always shown.
 
 - The head names the thing: "What the map shows". Section headings are one or two words typed in sentence case and uppercased by CSS: "Topic", "View", "Categories", "Shading", "Estimates", "Group", "Legend", "Detail level".
 - The close button is the glyph ✕ with its words in `aria-label`: "Hide the filters panel". The topbar toggle's title reads "Hide the filter panel" / "Show the filter panel"; the two wordings have drifted, so pick one.
-- Keep prose out of the panel. Every caveat goes behind its section's "i" (InfoButton); as paragraphs, "the effect was a filter panel that read as a document, where the controls were the things between the prose" (app.js:193-195).
+- Keep prose out of the panel. Every caveat goes behind its section's "i" (InfoButton); as paragraphs, "the effect was a filter panel that read as a document, where the controls were the things between the prose" (app.js:197-199).
 
 ## Tokens
 
@@ -70,7 +70,7 @@ View, Legend and Detail level are always shown.
 
 The section headings are `ink-muted` at .68rem: 3.5:1 on `surface-1` in light, below the 4.5:1 that text this small needs (4.85:1 in dark). Kept from the source; flagged.
 
-The legend's grey ramp is `leading-share-0` to `-4` and its "No figure" swatch is `neutral`. Its group swatches have no token: `Palette.group(hue, peak)` (app.js:1000) computes each for the theme on screen. The preview declares each as a frame-local property named after its light hex (`--shade-204272`), set to the light shade on `:root` and the dark one under `[data-theme="dark"]` (Christianity `#2e60a4`), so they theme like the app.
+The legend's grey ramp is `leading-share-0` to `-4` and its "No figure" swatch is `neutral`. Its group swatches have no token: `Palette.group(hue, peak)` (app.js:1183) computes each for the theme on screen. The preview declares each as a frame-local property named after its light hex (`--shade-204272`), set to the light shade on `:root` and the dark one under `[data-theme="dark"]` (Christianity `#2e60a4`), so they theme like the app.
 
 ## Accessibility
 
@@ -81,8 +81,8 @@ The legend's grey ramp is `leading-share-0` to `-4` and its "No figure" swatch i
 
 ## In the app
 
-- Markup: `site/index.html:48-128`. The consumer provides the sections and their controls, and the panel computes nothing itself; the drawer starts at `--topbar-h`, which `trackTopbarHeight` (app.js:136-143) measures from the topbar and writes on `<html>`.
-- `setPanel` app.js:171-185 sets `hidden`, `.filters-open`, the toggle's `aria-expanded` and title, the on-map legend and `wdm-filters`. `panelDefault` app.js:145-151; the closing paths (group row, toggle, ✕, Escape) app.js:509-523; `syncSections` app.js:537-555.
+- Markup: `site/index.html:48-128`. The consumer provides the sections and their controls, and the panel computes nothing itself; the drawer starts at `--topbar-h`, which `trackTopbarHeight` (app.js:136-147) measures from the topbar and writes on `<html>`.
+- `setPanel` app.js:175-189 sets `hidden`, `.filters-open`, the toggle's `aria-expanded` and title, the on-map legend and `wdm-filters`. `panelDefault` app.js:149-155; the closing paths (group row, toggle, ✕, Escape) app.js:692-706; `syncSections` app.js:720-738.
 - CSS: `site/css/app.css:186-204` (panel, head), 223-227 (sections), 591-595 (drawer), 670 (a heading with an "i").
 
 ## Do / Don't

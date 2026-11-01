@@ -72,7 +72,7 @@ The topbar's one search box: a combobox that finds places (countries, first- and
 
 - `attach(input, list)` search.js:134-226 wires the box; `paint(results)` search.js:145-187 writes the rows, the empty message and the status.
 - `query(text, limit)` search.js:111-122 searches names with MiniSearch (prefix, fuzzy 0.2); `queryGroups(text, limit)` search.js:78-109 scans the group index and every census label, so "muslim" finds Islam.
-- app.js:1300-1307 starts it: a group row calls `applyGroupFilter`, a place row calls `selectEntity` and flies there.
+- app.js:1483-1490 starts it: a group row calls `applyGroupFilter`, a place row calls `selectEntity` and flies there.
 - Runtime values: the rows, their counts and contexts, the active row and the status text. Nothing is coloured inline.
 
 ## Do / Don't
