@@ -333,6 +333,7 @@
     const hidden = Boolean(infoOpen.bubble.style.visibility);
     const button = infoOpen.button;
     if (inSight(button)) {
+      infoOpen.revealed = false;
       if (hidden) showInfo(true);
       else placeInfo();
     } else if (keyboardFocused(button) ||
@@ -415,9 +416,15 @@
       // everything below it without a scroll.
       else if (infoOpen) {
         // A bubble the pointer brought back stays brought back, for the click
-        // that keeps it, while its dot is still mostly hidden: on a strip of
-        // dot below the panel's head the pointer is bound to wander.
-        if (infoOpen.revealed && inSight(infoOpen.button)) infoOpen.revealed = false;
+        // that keeps it, while its dot is still mostly hidden and the pointer
+        // stays near: on a strip of dot below the panel's head it is bound to
+        // wander. Once the dot is back, or the pointer has gone elsewhere, the
+        // next click is a second click again.
+        if (infoOpen.revealed) {
+          const panel = scrollerOf(infoOpen.button);
+          const near = infoOpen.bubble.contains(event.target) || (panel && panel.contains(event.target));
+          if (!near || inSight(infoOpen.button)) infoOpen.revealed = false;
+        }
         if (!infoOpen.pinned && !keyboardFocused(infoOpen.button)) closeInfo();
         else keepInfo();
       }
@@ -428,16 +435,22 @@
       if (event.relatedTarget || !infoOpen) return;
       requestAnimationFrame(keepInfo);
     });
-    // A wheel or a finger scrolling the dot's panel, or starting on the
-    // bubble, closes a pinned bubble, as any scroll used to: pinned, it takes
-    // the pointer, and following its dot would carry it under the pointer to
-    // take the next turn of the wheel, the next drag or the next tap itself.
-    // Focus scrolls, and the unpinned bubbles that let the pointer through,
-    // still follow.
+    // A wheel or a finger scrolling the dot's panel closes a pinned bubble,
+    // as any scroll used to: pinned, it takes the pointer, and following its
+    // dot would carry it under the pointer to take the next turn of the
+    // wheel, the next drag or the next tap itself. A turn or a drag that
+    // starts on the bubble closes it at once; one over the panel closes it
+    // only when the panel scrolls, so a wheel at the panel's end, a sideways
+    // one, a drag in a nested list or a tap's small slip leaves it open. A
+    // zoom, by Ctrl and the wheel or by two fingers, is someone making the
+    // note big enough to read. Focus scrolls, and the unpinned bubbles that
+    // let the pointer through, still follow.
     const scrollIntent = (event) => {
       if (!infoOpen || !infoOpen.pinned) return;
+      if (event.ctrlKey || (event.touches && event.touches.length > 1)) return;
+      if (infoOpen.bubble.contains(event.target)) { closeInfo(); return; }
       const panel = scrollerOf(infoOpen.button);
-      if (infoOpen.bubble.contains(event.target) || (panel && panel.contains(event.target))) closeInfo();
+      if (panel && panel.contains(event.target)) infoOpen.scrolledBy = event.timeStamp;
     };
     document.addEventListener("wheel", scrollIntent, { capture: true, passive: true });
     document.addEventListener("touchmove", scrollIntent, { capture: true, passive: true });
@@ -474,6 +487,13 @@
       if (!infoOpen) return;
       const scroller = event.target;
       if (scroller !== document && !(scroller.contains && scroller.contains(infoOpen.button))) return;
+      // The scroll that a turn of the wheel or a drag over the panel causes
+      // comes within a frame or so of it, and well inside a second even when
+      // it is animated.
+      if (infoOpen.pinned && event.timeStamp - (infoOpen.scrolledBy || -Infinity) < 1000) {
+        closeInfo();
+        return;
+      }
       followInfo();
     }, true);
     window.addEventListener("resize", () => {
