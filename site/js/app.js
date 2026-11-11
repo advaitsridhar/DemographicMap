@@ -459,7 +459,7 @@
     // holds back the scroll that a wheel or a drag causes, for seconds at a
     // time while a level of detail loads on a slow machine; it draws frames
     // meanwhile, but its timers fire late, and each late one starts the
-    // second again, so a mark lasts until the load is done.
+    // second again, so a mark lasts as long as the page stays busy.
     const markIntent = (open) => {
       open.marked = true;
       open.calm = 0;
@@ -486,7 +486,7 @@
         }
         return;
       }
-      if (!infoOpen.pinned || event.ctrlKey) return;
+      if (!infoOpen.pinned || (event.ctrlKey && event.type === "wheel")) return;
       if (event.type === "touchstart") {
         // Any finger can be the last to lift, wherever it started, and a
         // touch's end goes to the node it started on, even once a repaint has
