@@ -39,7 +39,7 @@ The three in the app:
 ## Content
 
 - One to three words in sentence case that name the alternative itself: "Religion", "As reported", "Fit to view".
-- Name what a tier is in this topic, not its number: "a control that said "Tier 1" would be asking the reader to hold the abstraction rather than the question" (app.js:593-594).
+- Name what a tier is in this topic, not its number: "a control that said "Tier 1" would be asking the reader to hold the abstraction rather than the question" (app.js:614-615).
 - Keep labels short enough not to clip. Segments ellipsise, and "The longer "Ethnicity / race" was ellipsed to "Ethnicity / ra…", which is worse than the shorter word" (metrics.js:375-377).
 
 ## Tokens
@@ -56,10 +56,10 @@ Labels pass at 6.9:1 or more. The chosen tile differs from the track by only 1.1
 
 ## In the app
 
-- Topic: built at app.js:626-643 from `window.Metrics.FIELDS` (metrics.js:379-383). Picking a different topic remembers the group chosen in the old one, restores the new one's, clears the group search, rebuilds Categories and repaints.
-- Categories: `renderDepths()` app.js:767-773 from `DEPTH_LABELS` app.js:596-600, rebuilt on every topic change and keeping its value; picking one re-renders the summary and repaints (app.js:662-667).
-- Shading: the literal list at app.js:645-654; picking one repaints. While Fit to view is on, every map move repaints (app.js:1499).
-- `markChoice` and `wireChoice` (app.js:527-566) are shared with OptionList.
+- Topic: built at app.js:647-664 from `window.Metrics.FIELDS` (metrics.js:379-383). Picking a different topic remembers the group chosen in the old one, restores the new one's, clears the group search, rebuilds Categories and repaints.
+- Categories: `renderDepths()` app.js:788-794 from `DEPTH_LABELS` app.js:617-621, rebuilt on every topic change and keeping its value; picking one re-renders the summary and repaints (app.js:683-688).
+- Shading: the literal list at app.js:666-675; picking one repaints. While Fit to view is on, every map move repaints (app.js:1520).
+- `markChoice` and `wireChoice` (app.js:548-587) are shared with OptionList.
 - The consumer provides each segment's value and label, the chosen value, and the heading id for `aria-labelledby`. No colour is computed.
 - CSS: `site/css/app.css:260-275`.
 

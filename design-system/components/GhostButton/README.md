@@ -53,7 +53,7 @@ The app's one style for action buttons: a transparent button with a hairline bor
 ## In the app
 
 - Six in the app, all static markup: `#filters-toggle`, `#theme-toggle` and `#about-open` in the topbar (index.html:37-44), `#filters-close` in the filters head (51-52), `#sidebar-close` in the place sheet (146), `#about-close` in the dialog (164). CSS app.css:173-182.
-- Actions in app.js: the filters toggle 724; the filters ✕ 725-728, which also returns focus to the toggle; the sheet's ✕ 1440; About 1441; the dialog's ✕ 1442; the theme button 106-109.
+- Actions in app.js: the filters toggle 745; the filters ✕ 746-749, which also returns focus to the toggle; the sheet's ✕ 1461; About 1462; the dialog's ✕ 1463; the theme button 106-109.
 - Nothing about the button is computed at runtime except the toggles' `aria-expanded`, `title` and theme glyph.
 
 ## Do / Don't

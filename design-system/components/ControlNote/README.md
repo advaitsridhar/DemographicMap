@@ -66,7 +66,7 @@ The legend above the notes in the preview is the app's own markup for a Share of
 ## In the app
 
 - Markup: `site/index.html:108` (count), `:110` (reach), `:119` (blank), `:125` (level), `:139` (the on-map legend's note).
-- Level: `updateLevelNote`, `site/js/app.js:1295-1297`. Blank: `renderSummary`, `app.js:1019-1023`, from each view's `blank` (`site/js/metrics.js:286-358`). Empty legend: `renderLegend`, `app.js:1195`. Count: `renderGroupList`, `app.js:921-922`, `:941` and `:974-977`. Reach: `describeReach`, `app.js:1046-1135`, set with `innerHTML` at `:1133`.
+- Level: `updateLevelNote`, `site/js/app.js:1316-1318`. Blank: `renderSummary`, `app.js:1040-1044`, from each view's `blank` (`site/js/metrics.js:286-358`). Empty legend: `renderLegend`, `app.js:1216`. Count: `renderGroupList`, `app.js:942-943`, `:962` and `:995-998`. Reach: `describeReach`, `app.js:1067-1156`, set with `innerHTML` at `:1154`.
 - CSS: `site/css/app.css:384` (`.control-note`), `:387-388` (`#group-reach`, `#group-count`), `:357-360` (`.reach-labels`).
 
 ## Do / Don't

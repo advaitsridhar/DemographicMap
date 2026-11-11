@@ -87,15 +87,15 @@ You provide the markup, the words and numbers (labels, group names, units led, t
 - Hue is never alone: status rows carry a glyph and words, group rows a name. "Every unit names its own group on hover, so nothing is unreachable."
 - Ends, counts, shade label and fitted text are `ink-muted`: 3.5:1 on surface-1 and 3.4:1 on the on-map card in light, below 4.5:1 at 10.7–11px (4.9:1 in dark). Kept from the source.
 - In light, `status-warning` (1.8:1) and `status-serious` (2.6:1) fail 3:1 against surface-1 as glyph or swatch; their words carry those rows. The `neutral` swatch is 1.4:1 by design and keeps its edge from `border-ring`.
-- The unplaced line's "i" has no `aria-label`, so its accessible name is "i". It carries only `data-info-text`, so hover and focus open its bubble but a click closes it at once (app.js:484-486).
+- The unplaced line's "i" has no `aria-label`, so its accessible name is "i". It carries only `data-info-text`, so hover and focus open its bubble but a click closes it at once (app.js:499-501).
 
 ## In the app
 
-- `renderLegend(legend)`, site/js/app.js:1192-1267, writes one HTML string to `#legend` and `#map-legend-body` (1265-1266); `estimateLegendHTML`, app.js:1179-1190. `refreshColors()`, app.js:1271-1293, calls it after each paint.
+- `renderLegend(legend)`, site/js/app.js:1213-1288, writes one HTML string to `#legend` and `#map-legend-body` (1286-1287); `estimateLegendHTML`, app.js:1200-1211. `refreshColors()`, app.js:1292-1314, calls it after each paint.
 - The `legend` object comes from `Metrics.paint`, site/js/metrics.js:414-582 (`statusLegend` 584-593; `spanOf` 400-412 sets floor, ceiling and `fitted`).
 - Computed at runtime: status rows `Palette.status(key).color` (the same in both themes); ramp stops `Palette.ramp()`, or `Palette.groupRamp(hue, 11, floor, top)` on a share map; group swatches `Palette.group(item.hue, item.peak)`, the group's hue at its highest share among the units it leads; the shade ramp `Palette.groupRamp("#6b6b6b", 5, floor, ceiling)`; `Palette.neutral()`; `Palette.unplaced()`. All but the status colours change with the theme: dark emits `#33332f` for the missing swatch and `#2e60a4` where light emits `#204272`.
 - In the preview the slot colours are tokens, so they theme as the app does on a fresh load. The group swatches and the Islam share ramp have no token, so each is a frame-local property named after its light hex (`--shade-204272`), set on `:root` to the shade the app emits in light and under `[data-theme="dark"]` to the one it emits in dark: swatches `#204272` … `#edb998` and `#2e60a4` … `#ecb28d`, ramp `#bef0d3` … `#114d2a` and `#a0eabf` … `#196e3d`. They theme like the app too.
-- The heading's "i" reads the view's note plus the sentence quoted above (app.js:1302-1308).
+- The heading's "i" reads the view's note plus the sentence quoted above (app.js:1323-1329).
 
 ## Do / Don't
 

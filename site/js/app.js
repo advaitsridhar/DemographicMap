@@ -340,7 +340,9 @@
                // A resize, such as a phone turning on its side, is not the
                // reader leaving a pinned note: it hides. A pinned bubble once
                // hidden, by a resize or by keyboard focus since gone, stays
-               // hidden through scrolls too, until its button is back in sight.
+               // hidden through keyboard, scrollbar and focus scrolls too,
+               // until its button is back in sight; a wheel or a finger over
+               // its panel closes it first (the scroll listener, below).
                ((resized || hidden) && infoOpen.pinned && button.getClientRects().length)) {
       if (!hidden) showInfo(false);
     } else {
@@ -438,29 +440,42 @@
     // A wheel or a finger scrolling the dot's panel closes a pinned bubble,
     // as any scroll used to: pinned, it takes the pointer, and following its
     // dot would carry it under the pointer to take the next turn of the
-    // wheel, the next drag or the next tap itself. One over the panel closes
-    // it only when the panel scrolls, so a wheel at the panel's end, a
-    // sideways one, a drag in a nested list or a tap's small slip leaves it
-    // open. A turn of the wheel over the bubble, which scrolls nothing,
-    // closes it at once, so that the next one reaches the panel. A finger on
-    // the bubble is left to the tap or the long-press it mostly is: some
-    // browsers send a touchmove for a tap's slip, and closing then would hand
-    // the tap to the control underneath. A zoom, by Ctrl and the wheel or by
-    // two fingers, is someone making the note big enough to read. Focus
-    // scrolls, and the unpinned bubbles that let the pointer through, still
-    // follow.
+    // wheel, the next drag or the next tap itself. The scroll decides: a
+    // wheel over the panel marks the time, a finger on it counts until it
+    // lifts and marks the time then, and the scroll listener closes the
+    // bubble if the panel scrolls meanwhile or within a second. So a wheel
+    // at the panel's end, a sideways one, a drag in a nested list, a pinch
+    // or a tap's small slip leaves it open. A turn of the wheel over the
+    // bubble, which scrolls nothing, closes it at once, so that the next
+    // turn or swipe reaches the panel. A finger on the bubble is left to the
+    // tap or the long-press it mostly is: some browsers send a touchmove for
+    // a tap's slip, and closing then would hand the tap to the control
+    // underneath. Ctrl and the wheel is a zoom, someone making the note big
+    // enough to read, and the page reflowing for it can scroll the panel.
+    // Focus scrolls, and the unpinned bubbles that let the pointer through,
+    // still follow.
     const scrollIntent = (event) => {
-      if (!infoOpen || !infoOpen.pinned) return;
-      if (event.ctrlKey || (event.touches && event.touches.length > 1)) return;
+      if (!infoOpen) return;
+      if (event.type === "touchend" || event.type === "touchcancel") {
+        if (infoOpen.fingerDown && !event.touches.length) {
+          infoOpen.fingerDown = false;
+          infoOpen.scrolledBy = performance.now();
+        }
+        return;
+      }
+      if (!infoOpen.pinned || event.ctrlKey) return;
       if (infoOpen.bubble.contains(event.target)) {
         if (event.type === "wheel") closeInfo();
         return;
       }
       const panel = scrollerOf(infoOpen.button);
-      if (panel && panel.contains(event.target)) infoOpen.scrolledBy = event.timeStamp;
+      if (!panel || !panel.contains(event.target)) return;
+      if (event.type === "touchstart") infoOpen.fingerDown = true;
+      infoOpen.scrolledBy = performance.now();
     };
-    document.addEventListener("wheel", scrollIntent, { capture: true, passive: true });
-    document.addEventListener("touchmove", scrollIntent, { capture: true, passive: true });
+    for (const type of ["wheel", "touchstart", "touchmove", "touchend", "touchcancel"]) {
+      document.addEventListener(type, scrollIntent, { capture: true, passive: true });
+    }
     document.addEventListener("focusin", (event) => {
       const button = at(event);
       if (button) openInfo(button, false, false);
@@ -494,10 +509,16 @@
       if (!infoOpen) return;
       const scroller = event.target;
       if (scroller !== document && !(scroller.contains && scroller.contains(infoOpen.button))) return;
-      // The scroll that a turn of the wheel or a drag over the panel causes
-      // comes within a frame or so of it, and well inside a second even when
-      // it is animated.
-      if (infoOpen.pinned && event.timeStamp - (infoOpen.scrolledBy || -Infinity) < 1000) {
+      // Whatever moved the panel, a scroll while a finger is down on it or
+      // within a second of the mark closes a pinned bubble. The scroll that a
+      // turn of the wheel causes is handled within a frame or so of it, and
+      // well inside a second even when it is animated, unless the page is
+      // busy. So both are timed as they are handled: an input event's own
+      // timeStamp is when the input happened, which a busy page can leave a
+      // second or more behind, and a busy page can drop a drag's touchmoves
+      // altogether, which is why the finger counts until it lifts. With no
+      // mark the difference is NaN, which is never under a second.
+      if (infoOpen.pinned && (infoOpen.fingerDown || performance.now() - infoOpen.scrolledBy < 1000)) {
         closeInfo();
         return;
       }
