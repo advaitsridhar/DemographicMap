@@ -441,11 +441,11 @@
     // as any scroll used to: pinned, it takes the pointer, and following its
     // dot would carry it under the pointer to take the next turn of the
     // wheel, the next drag or the next tap itself. The scroll decides: a
-    // wheel over the panel marks the time, a finger on it counts until it
-    // lifts and marks the time then, and the scroll listener closes the
-    // bubble if the panel scrolls meanwhile or within a second. So a wheel
-    // at the panel's end, a sideways one, a drag in a nested list, a pinch
-    // or a tap's small slip leaves it open. A turn of the wheel over the
+    // wheel over the panel marks it, a finger on it counts until the last
+    // finger lifts and marks it then, and the scroll listener closes the
+    // bubble if the panel scrolls meanwhile or while the mark lasts. So a
+    // wheel at the panel's end, a sideways one, a drag in a nested list or
+    // a pinch that stays put leaves it open. A turn of the wheel over the
     // bubble, which scrolls nothing, closes it at once, so that the next
     // turn or swipe reaches the panel. A finger on the bubble is left to the
     // tap or the long-press it mostly is: some browsers send a touchmove for
@@ -454,12 +454,35 @@
     // enough to read, and the page reflowing for it can scroll the panel.
     // Focus scrolls, and the unpinned bubbles that let the pointer through,
     // still follow.
+    //
+    // A mark lasts until the page has had a second to itself. A busy page
+    // holds back the scroll that a wheel or a drag causes, for seconds at a
+    // time while a level of detail loads on a slow machine; it draws frames
+    // meanwhile, but its timers fire late, and each late one starts the
+    // second again.
+    const markIntent = (open) => {
+      open.marked = true;
+      open.calm = 0;
+      if (open.ticking) return;
+      open.ticking = true;
+      let last = performance.now();
+      const tick = setInterval(() => {
+        const now = performance.now();
+        open.calm = now - last < 150 ? open.calm + 1 : 0;
+        last = now;
+        if (open.calm >= 10 || infoOpen !== open) {
+          clearInterval(tick);
+          open.ticking = false;
+          open.marked = false;
+        }
+      }, 100);
+    };
     const scrollIntent = (event) => {
       if (!infoOpen) return;
       if (event.type === "touchend" || event.type === "touchcancel") {
-        if (infoOpen.fingerDown && !event.touches.length) {
+        if (infoOpen.fingerDown && !(event.touches && event.touches.length)) {
           infoOpen.fingerDown = false;
-          infoOpen.scrolledBy = performance.now();
+          markIntent(infoOpen);
         }
         return;
       }
@@ -470,8 +493,15 @@
       }
       const panel = scrollerOf(infoOpen.button);
       if (!panel || !panel.contains(event.target)) return;
-      if (event.type === "touchstart") infoOpen.fingerDown = true;
-      infoOpen.scrolledBy = performance.now();
+      if (event.type !== "touchstart") {
+        markIntent(infoOpen);
+        return;
+      }
+      infoOpen.fingerDown = true;
+      // The touch's end goes to the node it started on, even once a repaint
+      // has taken that node off the page, where the document cannot hear it.
+      event.target.addEventListener("touchend", scrollIntent, { once: true, passive: true });
+      event.target.addEventListener("touchcancel", scrollIntent, { once: true, passive: true });
     };
     for (const type of ["wheel", "touchstart", "touchmove", "touchend", "touchcancel"]) {
       document.addEventListener(type, scrollIntent, { capture: true, passive: true });
@@ -506,19 +536,15 @@
     // event comes after it. Only a scroll of something that holds the button
     // can move it.
     window.addEventListener("scroll", (event) => {
-      if (!infoOpen) return;
-      const scroller = event.target;
-      if (scroller !== document && !(scroller.contains && scroller.contains(infoOpen.button))) return;
-      // Whatever moved the panel, a scroll while a finger is down on it or
-      // within a second of the mark closes a pinned bubble. The scroll that a
-      // turn of the wheel causes is handled within a frame or so of it, and
-      // well inside a second even when it is animated, unless the page is
-      // busy. So both are timed as they are handled: an input event's own
-      // timeStamp is when the input happened, which a busy page can leave a
-      // second or more behind, and a busy page can drop a drag's touchmoves
-      // altogether, which is why the finger counts until it lifts. With no
-      // mark the difference is NaN, which is never under a second.
-      if (infoOpen.pinned && (infoOpen.fingerDown || performance.now() - infoOpen.scrolledBy < 1000)) {
+      if (!infoOpen || !event.target.contains(infoOpen.button)) return;
+      // Whatever moved the panel, a scroll while a finger that touched it is
+      // down, or while the mark lasts, closes a pinned bubble. The scroll
+      // that a turn of the wheel causes comes within a frame or so of it,
+      // and well inside a second even when it is animated, unless the page
+      // is busy: then it can come seconds later, and a busy page can drop a
+      // drag's touchmoves altogether, which is why the finger counts until
+      // it lifts.
+      if (infoOpen.pinned && (infoOpen.fingerDown || infoOpen.marked)) {
         closeInfo();
         return;
       }
