@@ -459,7 +459,7 @@
     // holds back the scroll that a wheel or a drag causes, for seconds at a
     // time while a level of detail loads on a slow machine; it draws frames
     // meanwhile, but its timers fire late, and each late one starts the
-    // second again.
+    // second again, so a mark lasts until the load is done.
     const markIntent = (open) => {
       open.marked = true;
       open.calm = 0;
@@ -487,21 +487,23 @@
         return;
       }
       if (!infoOpen.pinned || event.ctrlKey) return;
+      if (event.type === "touchstart") {
+        // Any finger can be the last to lift, wherever it started, and a
+        // touch's end goes to the node it started on, even once a repaint has
+        // taken that node off the page, where the document cannot hear it. A
+        // node keeps one of each listener however many fingers touch it, and a
+        // lift heard twice changes nothing the second time.
+        event.target.addEventListener("touchend", scrollIntent, { passive: true });
+        event.target.addEventListener("touchcancel", scrollIntent, { passive: true });
+      }
       if (infoOpen.bubble.contains(event.target)) {
         if (event.type === "wheel") closeInfo();
         return;
       }
       const panel = scrollerOf(infoOpen.button);
       if (!panel || !panel.contains(event.target)) return;
-      if (event.type !== "touchstart") {
-        markIntent(infoOpen);
-        return;
-      }
-      infoOpen.fingerDown = true;
-      // The touch's end goes to the node it started on, even once a repaint
-      // has taken that node off the page, where the document cannot hear it.
-      event.target.addEventListener("touchend", scrollIntent, { once: true, passive: true });
-      event.target.addEventListener("touchcancel", scrollIntent, { once: true, passive: true });
+      if (event.type === "touchstart") infoOpen.fingerDown = true;
+      else markIntent(infoOpen);
     };
     for (const type of ["wheel", "touchstart", "touchmove", "touchend", "touchcancel"]) {
       document.addEventListener(type, scrollIntent, { capture: true, passive: true });
@@ -536,14 +538,15 @@
     // event comes after it. Only a scroll of something that holds the button
     // can move it.
     window.addEventListener("scroll", (event) => {
-      if (!infoOpen || !event.target.contains(infoOpen.button)) return;
-      // Whatever moved the panel, a scroll while a finger that touched it is
-      // down, or while the mark lasts, closes a pinned bubble. The scroll
-      // that a turn of the wheel causes comes within a frame or so of it,
-      // and well inside a second even when it is animated, unless the page
-      // is busy: then it can come seconds later, and a busy page can drop a
-      // drag's touchmoves altogether, which is why the finger counts until
-      // it lifts.
+      if (!infoOpen) return;
+      // A script can send a scroll to the window itself, which has no
+      // contains().
+      const scroller = event.target;
+      if (!(scroller.contains && scroller.contains(infoOpen.button))) return;
+      // Whatever moved the panel, a scroll closes a pinned bubble from a
+      // finger touching the panel until the last finger lifts, and while the
+      // mark lasts (markIntent, above). The finger counts all the while
+      // because a busy page can drop a drag's touchmoves altogether.
       if (infoOpen.pinned && (infoOpen.fingerDown || infoOpen.marked)) {
         closeInfo();
         return;
