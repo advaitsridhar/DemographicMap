@@ -438,17 +438,24 @@
     // A wheel or a finger scrolling the dot's panel closes a pinned bubble,
     // as any scroll used to: pinned, it takes the pointer, and following its
     // dot would carry it under the pointer to take the next turn of the
-    // wheel, the next drag or the next tap itself. A turn or a drag that
-    // starts on the bubble closes it at once; one over the panel closes it
-    // only when the panel scrolls, so a wheel at the panel's end, a sideways
-    // one, a drag in a nested list or a tap's small slip leaves it open. A
-    // zoom, by Ctrl and the wheel or by two fingers, is someone making the
-    // note big enough to read. Focus scrolls, and the unpinned bubbles that
-    // let the pointer through, still follow.
+    // wheel, the next drag or the next tap itself. One over the panel closes
+    // it only when the panel scrolls, so a wheel at the panel's end, a
+    // sideways one, a drag in a nested list or a tap's small slip leaves it
+    // open. A turn of the wheel over the bubble, which scrolls nothing,
+    // closes it at once, so that the next one reaches the panel. A finger on
+    // the bubble is left to the tap or the long-press it mostly is: some
+    // browsers send a touchmove for a tap's slip, and closing then would hand
+    // the tap to the control underneath. A zoom, by Ctrl and the wheel or by
+    // two fingers, is someone making the note big enough to read. Focus
+    // scrolls, and the unpinned bubbles that let the pointer through, still
+    // follow.
     const scrollIntent = (event) => {
       if (!infoOpen || !infoOpen.pinned) return;
       if (event.ctrlKey || (event.touches && event.touches.length > 1)) return;
-      if (infoOpen.bubble.contains(event.target)) { closeInfo(); return; }
+      if (infoOpen.bubble.contains(event.target)) {
+        if (event.type === "wheel") closeInfo();
+        return;
+      }
       const panel = scrollerOf(infoOpen.button);
       if (panel && panel.contains(event.target)) infoOpen.scrolledBy = event.timeStamp;
     };

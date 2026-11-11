@@ -73,9 +73,9 @@ You provide the markup, one row per group (name, colour, reach counts, parent, n
 
 ## In the app
 
-- Markup: `site/index.html:97-111`. Rows: `groupRowHTML`, `site/js/app.js:864-904`. List, dividers and count: `renderGroupList`, `app.js:906-983`. Which rows: `visibleRows`, `app.js:841-862` (`byReach` 821-826, `GROUP_LIMIT` 783).
-- Search input `app.js:670-682`; twist click (capture phase, re-render, refocus the twist) `app.js:684-698`; pick `app.js:700-707`, which does not re-render the list, so a Still on the map block goes stale after a pick; on a click at ≤900px the drawer closes (`app.js:709-715`).
-- `markChoice` `app.js:520-534`, `wireChoice` `app.js:536-559`. CSS: `site/css/app.css:277-355`, phone rules 579-581.
+- Markup: `site/index.html:97-111`. Rows: `groupRowHTML`, `site/js/app.js:871-911`. List, dividers and count: `renderGroupList`, `app.js:913-990`. Which rows: `visibleRows`, `app.js:848-869` (`byReach` 828-833, `GROUP_LIMIT` 790).
+- Search input `app.js:677-689`; twist click (capture phase, re-render, refocus the twist) `app.js:691-705`; pick `app.js:707-714`, which does not re-render the list, so a Still on the map block goes stale after a pick; on a click at ≤900px the drawer closes (`app.js:716-722`).
+- `markChoice` `app.js:527-541`, `wireChoice` `app.js:543-566`. CSS: `site/css/app.css:277-355`, phone rules 579-581.
 - Computed at runtime: the dot is `group.hue` from `site/data/groups.json`, written by `scripts/group_tree.py` (`TIER_HUE`, `FAMILY_HUE`) and painted flat only here; with no hue it is `Palette.unplaced()`, #a48fbb in light and #6b5980 in dark, read when the list is drawn and not redrawn on a theme switch. Counts come from `Fmt.number` (`site/js/data.js:296-299`).
 - Colour in markup: a dot is the group's own hue exactly as `groups.json` spells it (upper-case hex for most groups). It is the same in both themes, so the markup keeps the hex; the tree's named hues are also tokens (`religion-islam` is #1e8449), but a group such as "Muslim/Jewish" (#1067bb) has none. The unplaced dot is written `var(--unplaced)`, which resolves to the hex the app writes on a fresh load in each theme.
 
